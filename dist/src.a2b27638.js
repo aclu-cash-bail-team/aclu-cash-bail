@@ -153,12 +153,12 @@ var Cell = /*#__PURE__*/function () {
 
     this.content = content;
     this.class = className;
-    this.export();
+    this.render();
   }
 
   _createClass(Cell, [{
-    key: "export",
-    value: function _export() {
+    key: "render",
+    value: function render() {
       var cell = document.createElement("td");
       cell.className = this.class;
       cell.appendChild(document.createTextNode(this.content));
@@ -183,8 +183,8 @@ var Header = /*#__PURE__*/function (_Cell) {
   }
 
   _createClass(Header, [{
-    key: "export",
-    value: function _export() {
+    key: "render",
+    value: function render() {
       var cell = document.createElement("th");
       cell.className = this.class;
       cell.appendChild(document.createTextNode(this.content));
@@ -202,12 +202,12 @@ var Row = /*#__PURE__*/function () {
     _classCallCheck(this, Row);
 
     this.cells = cells;
-    this.export();
+    this.render();
   }
 
   _createClass(Row, [{
-    key: "export",
-    value: function _export() {
+    key: "render",
+    value: function render() {
       var row = document.createElement("tr");
       this.cells.forEach(function (cell) {
         row.appendChild(cell.element);
@@ -228,7 +228,7 @@ var Table = /*#__PURE__*/function () {
     this.header = header;
     this.rows = rows;
     this.element = element;
-    this.export();
+    this.render();
   }
 
   _createClass(Table, [{
@@ -249,8 +249,8 @@ var Table = /*#__PURE__*/function () {
       });
     }
   }, {
-    key: "export",
-    value: function _export() {
+    key: "render",
+    value: function render() {
       // create header row
       var thead = this.element.getElementsByTagName("thead")[0];
       thead.appendChild(this.header.element); // create rows
@@ -324,7 +324,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58661" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58808" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -2,10 +2,10 @@ export class Cell {
   constructor(content, className) {
     this.content = content;
     this.class = className;
-    this.export();
+    this.render();
   }
 
-  export() {
+  render() {
     const cell = document.createElement("td");
     cell.className = this.class;
     cell.appendChild(document.createTextNode(this.content));
@@ -19,7 +19,7 @@ export class Header extends Cell {
     super(content, className);
   }
 
-  export() {
+  render() {
     const cell = document.createElement("th");
     cell.className = this.class;
     cell.appendChild(document.createTextNode(this.content));
@@ -31,10 +31,10 @@ export class Header extends Cell {
 export class Row {
   constructor(cells) {
     this.cells = cells;
-    this.export();
+    this.render();
   }
 
-  export() {
+  render() {
     const row = document.createElement("tr");
     this.cells.forEach(cell => {
       row.appendChild(cell.element);
@@ -49,7 +49,7 @@ export class Table {
     this.header = header;
     this.rows = rows;
     this.element = element;
-    this.export();
+    this.render();
   }
 
   sort() {
@@ -68,7 +68,7 @@ export class Table {
     });
   }
 
-  export() {
+  render() {
     // create header row
     const thead = this.element.getElementsByTagName("thead")[0];
     thead.appendChild(this.header.element);
