@@ -1,0 +1,27 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    padding: .625rem 0;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    padding: .625rem 0;
+    border-top: 1px #191919 solid;
+}
+
+th.bail-rate-cell, th.bail-cases-cell, th.total-cases-cell {
+    text-align: right;
+}
+
+td.county-name-cell, th.county-name-cell {
+    text-align: left;
+}
+
+td.space-cell {
+    width: 5%;
+}
