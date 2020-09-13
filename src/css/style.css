@@ -1,7 +1,14 @@
 /* Base styles for dev template */
 
 body {
-    font-family: sans-serif; /* TODO: Get Centuryschoolbook font */
-    color: #fff;
-    background-color: #000;
+  /* TODO: Get Century Schoolbook font */
+  font-family: sans-serif;
+  font-size: 80%;
+  color: #eee;
+  background-color: #000;
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
 }
