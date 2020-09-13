@@ -148,19 +148,20 @@ class RankedBodyRow {
 
 
 export class RankedTable {
-  constructor(data, classNames, headers, sortCols, initSort, tableElement) {
-    this.validate(data, classNames, headers);
-    this.classNames = classNames;
-    this.sortCols = sortCols;
-    this.element = tableElement;
+  constructor(data, columnConfigs, initSort, tableElement) {
+    this.classNames = columnConfigs.map((config) => config.class)
+    this.headers = columnConfigs.map((config) => config.header)
     this.data = data;
+    this.validate(this.data, this.classNames, this.headers);
+    this.element = tableElement;
 
+    this.sortCols = columnConfigs.map((config) => config.sortable);
     // start with sorting descending; add one to account for rank
     this.sortCol = initSort + 1;
     this.sortDir = -1;
     this.sort(true); // this initial sort populates this.rows
 
-    this.header = this.getHeaderRow(headers);
+    this.header = this.getHeaderRow(this.headers);
 
     this.render();
   }

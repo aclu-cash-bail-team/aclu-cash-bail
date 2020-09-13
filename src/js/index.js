@@ -1,27 +1,33 @@
 import { RankedTable } from './classes/Table.js';
 
 const createBailRateTable = () => {
-  const classNames = [
-    "county-name-cell",
-    "viz-cell",
-    "bail-rate-cell number-cell",
-    "bail-cases-cell number-cell",
-    "total-cases-cell number-cell"
+  const columnConfigs = [
+    {
+      class: "county-name-cell",
+      header: "County",
+      sortable: false
+    },
+    {
+      class: "viz-cell",
+      header: "Viz Placeholder",
+      sortable: false
+    },
+    {
+      class: "bail-rate-cell number-cell",
+      header: "Cash Bail Rate (%)",
+      sortable: true
+    },
+    {
+      class: "bail-cases-cell number-cell",
+      header: "Cash Bail Cases",
+      sortable: true
+    },
+    {
+      class: "total-cases-cell number-cell",
+      header: "Total Cases",
+      sortable: true
+    },
   ]
-  const headers = [
-    "County",
-    "Viz Placeholder",
-    "Cash Bail Rate (%)",
-    "Cash Bail Cases",
-    "Total Cases"
-  ];
-  const sortCols = [
-    false,
-    false,
-    true,
-    true,
-    true
-  ];
   const initSort = 2; // initially sort by cash bail rate
   const data = [
     ["Delaware", "", 55.7, 9514, 17863],
@@ -32,32 +38,38 @@ const createBailRateTable = () => {
     ["Beaver", "", 50.9, 6226, 12230]
   ];
   const tableElement = document.getElementById("bail-rate-table");
-  new RankedTable(data, classNames, headers, sortCols, initSort, tableElement);
+  new RankedTable(data, columnConfigs, initSort, tableElement);
 }
 
 
 const createBailRaceTable = () => {
-  const classNames = [
-    "county-name-cell",
-    "viz-cell",
-    "bail-black-cell number-cell",
-    "bail-white-cell number-cell",
-    "diff-cell number-cell"
+  const columnConfigs = [
+    {
+      class: "county-name-cell",
+      header: "County",
+      sortable: false
+    },
+    {
+      class: "viz-cell",
+      header: "Viz Placeholder",
+      sortable: false
+    },
+    {
+      class: "bail-black-cell number-cell",
+      header: "% Cash Bail Black",
+      sortable: true
+    },
+    {
+      class: "bail-white-cell number-cell",
+      header: "% Cash Bail White",
+      sortable: true
+    },
+    {
+      class: "diff-cell number-cell",
+      header: "Difference",
+      sortable: true
+    },
   ]
-  const headers = [
-    "County",
-    "Viz Placeholder",
-    "% Cash Bail Black",
-    "% Cash Bail White",
-    "Difference"
-  ];
-  const sortCols = [
-    false,
-    false,
-    true,
-    true,
-    true
-  ];
   const initSort = 4; // initially sort by difference
   const data = [
     ["Somerset", "", 69.6, 23.2, "+46.4"],
@@ -69,7 +81,7 @@ const createBailRaceTable = () => {
   ]
   const tableElement = document.getElementById("bail-race-table");
 
-  new RankedTable(data, classNames, headers, sortCols, initSort, tableElement);
+  new RankedTable(data, columnConfigs, initSort, tableElement);
 }
 
 createBailRateTable();
