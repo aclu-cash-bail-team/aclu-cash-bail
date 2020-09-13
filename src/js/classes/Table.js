@@ -217,13 +217,6 @@ class Table {
   sort(initialSort) {
     if (!initialSort) this.header.clearedSortedCells();
 
-    // handle the rank column separately
-    if (this.sortCol === 0) {
-      this.rows.reverse();
-      this.updateTable(this.sortDir > 0);
-      return;
-    }
-
     // data doesn't have rank or spacer, so subtract two from the index
     const dataCol = this.sortCol - 2;
     this.data.sort((a, b) => {
