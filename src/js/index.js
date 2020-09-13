@@ -5,27 +5,32 @@ const createBailRateTable = () => {
     {
       class: "county-name-cell",
       header: "County",
-      sortable: false
+      sortable: false,
+      searchable: true
     },
     {
       class: "viz-cell",
       header: "Viz Placeholder",
-      sortable: false
+      sortable: false,
+      searchable: false
     },
     {
       class: "bail-rate-cell number-cell",
       header: "Cash Bail Rate (%)",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
     {
       class: "bail-cases-cell number-cell",
       header: "Cash Bail Cases",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
     {
       class: "total-cases-cell number-cell",
       header: "Total Cases",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
   ];
   const initSort = 2; // initially sort by cash bail rate
@@ -37,8 +42,8 @@ const createBailRateTable = () => {
     ["Philadelphia", "", 50.1, 32823, 65487],
     ["Beaver", "", 50.9, 6226, 12230]
   ];
-  const tableElement = document.getElementById("bail-rate-table");
-  new RankedTable(data, columnConfigs, initSort, tableElement);
+  const tableContainer = document.getElementById("bail-rate-container");
+  new RankedTable(data, columnConfigs, initSort, tableContainer);
 };
 
 
@@ -47,27 +52,32 @@ const createBailRaceTable = () => {
     {
       class: "county-name-cell",
       header: "County",
-      sortable: false
+      sortable: false,
+      searchable: true
     },
     {
       class: "viz-cell",
       header: "Viz Placeholder",
-      sortable: false
+      sortable: false,
+      searchable: false
     },
     {
       class: "bail-black-cell number-cell",
       header: "% Cash Bail Black",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
     {
       class: "bail-white-cell number-cell",
       header: "% Cash Bail White",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
     {
       class: "diff-cell number-cell",
       header: "Difference",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
   ];
   const initSort = 4; // initially sort by difference
@@ -79,9 +89,9 @@ const createBailRaceTable = () => {
     ["Crawford", "", 53.3, 28.3, "+25"],
     ["Blair", "", 58.7, 31.8, "+26.9"]
   ];
-  const tableElement = document.getElementById("bail-race-table");
+  const tableContainer = document.getElementById("bail-race-container");
 
-  new RankedTable(data, columnConfigs, initSort, tableElement);
+  new RankedTable(data, columnConfigs, initSort, tableContainer);
 };
 
 createBailRateTable();

@@ -125,35 +125,44 @@ class HeaderRow {
 
 
 class RankedBodyRow {
-  constructor(cells, initialRank) {
+  constructor(cells, initialRank, isHidden = false) {
     this.cells = cells;
+    this.isHidden = isHidden;
     this.render(initialRank);
   }
 
   render(rank, sorted) {
     const row = document.createElement("tr");
-    const rankedCells = [
-      new TextCell(rank, "rank-cell"),
-      ...this.cells
-    ];
-    rankedCells.forEach((cell, i) => {
-      cell.setElementClass(
-        i === sorted ? `${cell.className} sorted` : cell.className
-      );
-      row.appendChild(cell.element);
-    });
+    if (this.isHidden) {
+      row.className = "hidden";
+    } else {
+      const rankedCells = [
+        new TextCell(rank, "rank-cell"),
+        ...this.cells
+      ];
+      rankedCells.forEach((cell, i) => {
+        cell.setElementClass(
+          i === sorted ? `${cell.className} sorted` : cell.className
+        );
+        row.appendChild(cell.element);
+      });
+    }
     this.element = row;
   }
 }
 
 
 export class RankedTable {
-  constructor(data, columnConfigs, initSort, tableElement) {
+  constructor(data, columnConfigs, initSort, tableContainer) {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
     this.validate(this.data, this.classNames, this.headers);
-    this.element = tableElement;
+    this.container = tableContainer;
+    this.element = tableContainer.getElementsByTagName("table")[0];
+
+    this.searchCols = columnConfigs.map((config) => config.searchable);
+    this.searchTerms = [];
 
     this.sortCols = columnConfigs.map((config) => config.sortable);
     // start with sorting descending; add one to account for rank
@@ -202,8 +211,22 @@ export class RankedTable {
         const CellType = typeof(cell) == "number" ? NumberCell : TextCell;
         return new CellType(cell, this.classNames[j]);
       });
-      return new RankedBodyRow(cells, i + 1);
+      const isHidden = !this.matchesSearchTerm(row);
+      return new RankedBodyRow(cells, i + 1, isHidden);
     });
+  }
+
+  matchesSearchTerm(row) {
+    if (this.searchTerms.length == 0) {
+      return true;
+    }
+    return this.searchTerms.some(searchTerm =>
+      row.some((value, i) =>
+        // Search term is selected from dropdown so
+        // is guaranteed to be equal to a value
+        this.searchCols[i] && value.toLowerCase() === searchTerm.toLowerCase()
+      )
+    );
   }
 
   setSortColumn(i) {
@@ -245,6 +268,31 @@ export class RankedTable {
   }
 
   render() {
+    // set up search bar
+    const searchMenu = this.container.getElementsByClassName("menu")[0];
+    const searchOptions = this.data.flatMap((row) =>
+      row.flatMap((value, i) => this.searchCols[i] ? [value] : []
+      )
+    );
+    // Current behavior is to alphabetically sort all options,
+    // potentially mixing values from different columns
+    // TODO: Consider dividing values by column
+    searchOptions.sort();
+    searchMenu.textContent = "";
+    searchOptions.forEach(searchOption => {
+      const element = document.createElement("div");
+      element.className = "item";
+      element.innerText = searchOption;
+      searchMenu.appendChild(element);
+    });
+    const searchInput = this.container.getElementsByTagName("input")[0];
+    searchInput.addEventListener("change", e => {
+      const searchValue = e.target.value;
+      this.searchTerms = searchValue.split(",").filter(s => s !== "");
+      this.rows = this.getRows(this.data);
+      this.updateTable(false);
+    });
+
     // create header row
     const thead = this.element.getElementsByTagName("thead")[0];
     thead.appendChild(this.header.element);
