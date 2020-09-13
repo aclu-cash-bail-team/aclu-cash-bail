@@ -43,10 +43,18 @@ td.space-cell {
 
 .sort-desc:before {
   top: 0.67em;
-  border-top-color: #eee;
+  border-top-color: #444;
 }
 
 .sort-asc:before {
   bottom: 0.8em;
+  border-bottom-color: #444;
+}
+
+.sort-desc.sorted:before {
+  border-top-color: #eee;
+}
+
+.sort-asc.sorted:before {
   border-bottom-color: #eee;
 }

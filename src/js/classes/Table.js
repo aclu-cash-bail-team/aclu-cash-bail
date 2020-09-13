@@ -4,9 +4,12 @@ class Cell {
   }
 
   render() {
-    const cell = document.createElement("td");
-    cell.className = this.className;
-    this.element = cell;
+    this.element = document.createElement("td");
+    this.setElementClass();
+  }
+
+  setElementClass() {
+    this.element.className = this.className;
   }
 }
 
@@ -47,19 +50,19 @@ class SpaceCell extends Cell {
   }
 
   render() {
-    const cell = document.createElement(this.tag);
-    cell.className = this.className;
-    this.element = cell;
+    this.element = document.createElement(this.tag);
+    this.setElementClass();
   }
 }
 
 
 class HeaderCell extends Cell {
-  constructor(content, className, sortCol, sortDir, table, id) {
+  constructor(content, className, sortCol, sortDir, initSort, table, id) {
     super(className);
     this.content = content;
     this.sortCol = sortCol;
     this.sortDir = sortDir;
+    this.initSort = initSort;
     this.table = table;
     this.id = id;
     this.render();
@@ -70,10 +73,18 @@ class HeaderCell extends Cell {
         this.addSortDirectionClass();
         this.table.setSortColumn(this.id);
         this.table.sort();
+        // after sorting set the class to ensure its the only column highlighted
+        this.setElementClass(true);
         // toggle sort direction for the next click
         this.table.setSortDirection(this.sortDir);
         this.sortDir *= -1;
       });
+    }
+
+    // if we're initializing this sort, update these params on construction
+    if (this.initSort) {
+      this.table.setSortDirection(this.sortDir);
+      this.sortDir *= -1;
     }
   }
 
@@ -82,12 +93,21 @@ class HeaderCell extends Cell {
     cell.className = this.className;
     cell.appendChild(document.createTextNode(this.content));
     this.element = cell;
-    if (this.sortCol) this.addSortDirectionClass();
+    if (this.sortCol) {
+      this.addSortDirectionClass();
+      this.setElementClass(this.initSort);
+    }
   }
 
   addSortDirectionClass() {
     const sortClass = this.sortDir > 0 ? "sort-asc" : "sort-desc";
-    this.element.className = `${this.className} ${sortClass}`;
+    this.classNameWithSort = `${this.className} ${sortClass}`;
+    this.element.className = this.classNameWithSort;
+  }
+
+  setElementClass(addSorted) {
+    const sorted = addSorted ? "sorted" : "";
+    this.element.className = `${this.classNameWithSort} ${sorted}`;
   }
 }
 
@@ -104,6 +124,12 @@ class HeaderRow {
       row.appendChild(cell.element);
     });
     this.element = row;
+  }
+
+  clearedSortedCells() {
+    this.cells.forEach(cell => {
+      cell.setElementClass(false);
+    });
   }
 }
 
@@ -160,6 +186,7 @@ class Table {
         this.sortCols[i],
         // 1 designates ascending; -1, descending (default); 0, not sortable
         this.sortCols[i] ? -1 : 0,
+        false,
         this,
         i
       );
@@ -179,6 +206,8 @@ class Table {
   }
 
   sort() {
+    this.header.clearedSortedCells();
+
     // handle the rank column separately
     if (this.sortCol === 0) {
       this.rows.reverse();
@@ -231,7 +260,7 @@ class RankedTable extends Table {
   getHeaderRow(headers, classNames) {
     const headerCells = super.getHeaderRow(headers, classNames).cells;
     const headersWithRank = [
-      new HeaderCell("Rank", "rank-cell", true, 1, this, 0),
+      new HeaderCell("Rank", "rank-cell", true, 1, true, this, 0),
       new SpaceCell("space-cell", "th"),
       ...headerCells
     ];
