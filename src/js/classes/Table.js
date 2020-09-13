@@ -143,14 +143,20 @@ class VizHeaderCell extends HeaderCell {
     const average = this.content["average"];
     const cell = document.createElement("th");
     cell.className = this.className;
+    // create start, end, and average number elements
     const startElement = this.createRangeElement(start, "start-num");
     const endElement = this.createRangeElement(end, "end-num");
-    // const averageElement = this.createRangeElement(
-    //   `State Average:\n${average}`, "average"
-    // );
-    // // offset the average element by the correct value/end ratio
-    // averageElement.style.left = `calc(${average / end * 100}% - 1.5em)`;
-    [startElement, endElement,/* averageElement*/].forEach(element => {
+    const averageElement = this.createRangeElement(
+      `State Average:\n${average}`, "average"
+    );
+    // offset the average element by the value/end ratio (and subtract padding)
+    averageElement.style.left = `calc(${average / end * 100}% - 1.5em)`;
+    // create wrapper around average for positioning
+    const averageWrapper = document.createElement("div");
+    averageWrapper.className = "average-wrapper";
+    averageWrapper.appendChild(averageElement);
+    // add all the elements to the cell
+    [startElement, endElement, averageWrapper].forEach(element => {
       cell.appendChild(element);
     });
     this.element = cell;
@@ -167,7 +173,7 @@ class VizHeaderCell extends HeaderCell {
 
     // create the vertical tick underneath the number
     const line = document.createElement("div");
-    line.className = `viz-line ${className === "average" ? "average-line" : ""}`;
+    line.className = `${className === "average" ? "average-line" : "viz-line"}`;
     num.appendChild(line);
     return num;
   }
