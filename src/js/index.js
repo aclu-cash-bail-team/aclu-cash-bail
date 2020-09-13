@@ -11,7 +11,7 @@ const createBailRateTable = () => {
   const headers = [
     "County",
     "Viz Placeholder",
-    "Cash Bail Rate %",
+    "Cash Bail Rate (%)",
     "Cash Bail Cases",
     "Total Cases"
   ];
@@ -22,6 +22,7 @@ const createBailRateTable = () => {
     true,
     true
   ];
+  const initSort = 2; // initially sort by cash bail rate
   const data = [
     ["Delaware", "", 55.7, 9514, 17863],
     ["Lehigh", "", 54.9, 6526, 13069],
@@ -31,7 +32,7 @@ const createBailRateTable = () => {
     ["Beaver", "", 50.9, 6226, 12230]
   ];
   const tableElement = document.getElementById("bail-rate-table");
-  return new BailTable(data, classNames, headers, sortCols, tableElement);
+  new BailTable(data, classNames, headers, sortCols, initSort, tableElement);
 }
 
 
@@ -57,6 +58,7 @@ const createBailRaceTable = () => {
     true,
     true
   ];
+  const initSort = 4; // initially sort by difference
   const data = [
     ["Somerset", "", 69.6, 23.2, "+46.4"],
     ["Centre", "", 46.7, 21.9, "+25.7"],
@@ -67,8 +69,8 @@ const createBailRaceTable = () => {
   ]
   const tableElement = document.getElementById("bail-race-table");
 
-  return new BailTable(data, classNames, headers, sortCols, tableElement);
+  new BailTable(data, classNames, headers, sortCols, initSort, tableElement);
 }
 
-const rateTable = createBailRateTable();
-const raceTable = createBailRaceTable();
+createBailRateTable();
+createBailRaceTable();

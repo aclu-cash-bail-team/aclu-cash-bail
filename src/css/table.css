@@ -15,11 +15,15 @@ th {
 td {
   text-align: left;
   padding: 1em;
-  border-top: 1px #191919 solid;
+  border-top: 1px #222 solid;
 }
 
 td.space-cell {
   width: 5%;
+}
+
+td.sorted {
+  background: #111;
 }
 
 .number-cell {
