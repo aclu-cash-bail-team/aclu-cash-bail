@@ -5,6 +5,10 @@ table {
   font-weight: 300;
 }
 
+tbody tr {
+  border-top: 1px #333 solid;
+}
+
 th {
   padding: 1em;
   font-weight: 300;
@@ -15,7 +19,6 @@ th {
 td {
   text-align: left;
   padding: 1em;
-  border-top: 1px #222 solid;
 }
 
 td.space-cell {
@@ -24,6 +27,46 @@ td.space-cell {
 
 td.sorted {
   background: #111;
+}
+
+th.viz-cell {
+  padding: 1em 1.5em;
+}
+
+td.viz-cell {
+  display: block;
+  margin: 0 2em;
+  padding: 1.5em;
+  width: 100px;
+  border-left: 1px dashed #333;
+  border-right: 1px dashed #333;
+}
+
+.start-num {
+  position: relative;
+  float: left;
+}
+
+.end-num {
+  position: relative;
+  float: right;
+}
+
+.viz-line {
+  position: absolute;
+  top: 1.25em;
+  bottom: -0.5em;
+  width: 1px;
+  background: #333;
+  z-index: 1;
+}
+
+.start-num .viz-line {
+  left: 0.5em;
+}
+
+.end-num .viz-line {
+  right: 0.5em;
 }
 
 .number-cell {

@@ -101,6 +101,40 @@ class HeaderCell extends Cell {
 }
 
 
+class VizHeaderCell extends HeaderCell {
+  constructor(range, className, sortCol, sortDir, initSort, table, id) {
+    super(range, className, sortCol, sortDir, initSort, table, id);
+  }
+
+  render() {
+    const cell = document.createElement("th");
+    cell.className = this.className;
+    const startNum = this.createRangeNumSpan(this.content[0], "start-num");
+    cell.appendChild(startNum);
+    const endNum = this.createRangeNumSpan(this.content[1], "end-num");
+    cell.appendChild(endNum);
+    this.element = cell;
+  }
+
+  createRangeNumSpan(content, className) {
+    const num = document.createElement("span");
+    num.textContent = content;
+    num.className = className;
+    // adjust padding based on number of digits
+    console.log(content.toString().length);
+    if (className === "start-num" && content.toString().length === 1) {
+      num.style.paddingLeft = `${0.25}em`;
+    }
+
+    // create the vertical tick underneath the number
+    const line = document.createElement("span");
+    line.className = "viz-line";
+    num.appendChild(line);
+    return num;
+  }
+}
+
+
 class HeaderRow {
   constructor(cells) {
     this.cells = cells;
@@ -176,8 +210,9 @@ export class RankedTable {
   }
 
   getHeaderRow(headers) {
-    const headerCells = headers.map((header, i) =>
-      new HeaderCell(
+    const headerCells = headers.map((header, i) => {
+      const CellType = typeof(header) == "string" ? HeaderCell : VizHeaderCell;
+      return new CellType(
         header,
         this.classNames[i],
         this.sortCols[i],
@@ -187,7 +222,8 @@ export class RankedTable {
         this,
         // adjust ids for rank and space headers
         i + 1
-      ))
+      );
+    });
     const headersWithRank = [
       new HeaderCell("Rank", "rank-cell", false, 0, false, this, 0),
       ...headerCells

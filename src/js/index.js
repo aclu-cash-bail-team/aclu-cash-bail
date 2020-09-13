@@ -9,7 +9,7 @@ const createBailRateTable = () => {
     },
     {
       class: "viz-cell",
-      header: "Viz Placeholder",
+      header: [0, 60],
       sortable: false
     },
     {
@@ -51,7 +51,7 @@ const createBailRaceTable = () => {
     },
     {
       class: "viz-cell",
-      header: "Viz Placeholder",
+      header: [0, 100],
       sortable: false
     },
     {
