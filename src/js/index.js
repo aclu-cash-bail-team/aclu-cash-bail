@@ -1,4 +1,4 @@
-import { RankedTable } from './classes/Table.js';
+import { RankedTable } from "./classes/Table.js";
 
 const createBailRateTable = () => {
   const columnConfigs = [
@@ -27,7 +27,7 @@ const createBailRateTable = () => {
       header: "Total Cases",
       sortable: true
     },
-  ]
+  ];
   const initSort = 2; // initially sort by cash bail rate
   const data = [
     ["Delaware", "", 55.7, 9514, 17863],
@@ -39,7 +39,7 @@ const createBailRateTable = () => {
   ];
   const tableElement = document.getElementById("bail-rate-table");
   new RankedTable(data, columnConfigs, initSort, tableElement);
-}
+};
 
 
 const createBailRaceTable = () => {
@@ -69,7 +69,7 @@ const createBailRaceTable = () => {
       header: "Difference",
       sortable: true
     },
-  ]
+  ];
   const initSort = 4; // initially sort by difference
   const data = [
     ["Somerset", "", 69.6, 23.2, "+46.4"],
@@ -78,11 +78,11 @@ const createBailRaceTable = () => {
     ["Jefferson", "", 73, 38.4, "+34.6"],
     ["Crawford", "", 53.3, 28.3, "+25"],
     ["Blair", "", 58.7, 31.8, "+26.9"]
-  ]
+  ];
   const tableElement = document.getElementById("bail-race-table");
 
   new RankedTable(data, columnConfigs, initSort, tableElement);
-}
+};
 
 createBailRateTable();
 createBailRaceTable();
