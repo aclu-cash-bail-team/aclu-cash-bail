@@ -46,20 +46,6 @@ class NumberCell extends Cell {
 }
 
 
-class SpaceCell extends Cell {
-  constructor(className, tag) {
-    super(className);
-    this.tag = tag;
-    this.render();
-  }
-
-  render() {
-    this.element = document.createElement(this.tag);
-    this.setElementClass(this.className);
-  }
-}
-
-
 class HeaderCell extends Cell {
   constructor(content, className, sortCol, sortDir, initSort, table, id) {
     super(className);
@@ -148,7 +134,6 @@ class RankedBodyRow {
     const row = document.createElement("tr");
     const rankedCells = [
       new TextCell(rank, "rank-cell"),
-      new SpaceCell("space-cell", "td"),
       ...this.cells
     ];
     rankedCells.forEach((cell, i) => {
@@ -170,8 +155,8 @@ class Table {
     this.element = tableElement;
     this.data = data;
 
-    // start with sorting descending; add two to account for rank and space
-    this.sortCol = initSort + 2;
+    // start with sorting descending; add one to account for rank
+    this.sortCol = initSort + 1;
     this.sortDir = -1;
     this.sort(true); // this initial sort populates this.rows
 
@@ -194,10 +179,10 @@ class Table {
         this.sortCols[i],
         // 1 designates ascending; -1, descending (default); 0, not sortable
         this.sortCols[i] ? -1 : 0,
-        i + 2 === this.sortCol,
+        i + 1 === this.sortCol,
         this,
         // adjust ids for rank and space headers
-        i + 2
+        i + 1
       );
     }));
   }
@@ -218,7 +203,7 @@ class Table {
     if (!initialSort) this.header.clearedSortedCells();
 
     // data doesn't have rank or spacer, so subtract two from the index
-    const dataCol = this.sortCol - 2;
+    const dataCol = this.sortCol - 1;
     this.data.sort((a, b) => {
       if (a[dataCol] < b[dataCol]) {
         return this.sortDir * -1;
@@ -266,7 +251,6 @@ class RankedTable extends Table {
     const headerCells = super.getHeaderRow(headers, classNames).cells;
     const headersWithRank = [
       new HeaderCell("Rank", "rank-cell", false, 0, false, this, 0),
-      new SpaceCell("space-cell", "th"),
       ...headerCells
     ];
     return new HeaderRow(headersWithRank);
