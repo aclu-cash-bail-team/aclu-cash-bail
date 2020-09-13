@@ -46,6 +46,37 @@ class NumberCell extends Cell {
 }
 
 
+class BarGraphCell extends Cell {
+  constructor(content, className, data) {
+    super(className);
+    this.content = content[0];
+    this.average = data["average"];
+    this.range = data;
+    this.render();
+  }
+
+  render() {
+    super.render();
+    // create the horizontal bar and scale its width by the value and range
+    const bar = document.createElement("div");
+    bar.className = "viz-bar";
+    bar.style.width = `${this.content / this.range["end"] * 100}%`;
+    // label the bar with the difference between value and average
+    const label = document.createElement("div");
+    const diff = this.content - this.average;
+    label.textContent = `${diff > 0 ? "+" : ""}${diff.toFixed(1)}`;
+    label.className = "bar-label";
+    bar.appendChild(label);
+    this.element.appendChild(bar);
+    // add the vertical line denoting the average
+    const averageLine = document.createElement("div");
+    averageLine.className = "bar-average-line";
+    averageLine.style.left = `${this.average / this.range["end"] * 100}%`;
+    this.element.appendChild(averageLine);
+  }
+}
+
+
 class HeaderCell extends Cell {
   constructor(content, className, sortCol, sortDir, initSort, table, id) {
     super(className);
@@ -102,33 +133,41 @@ class HeaderCell extends Cell {
 
 
 class VizHeaderCell extends HeaderCell {
-  constructor(range, className, sortCol, sortDir, initSort, table, id) {
-    super(range, className, sortCol, sortDir, initSort, table, id);
+  constructor(data, className, sortCol, sortDir, initSort, table, id) {
+    super(data, className, sortCol, sortDir, initSort, table, id);
   }
 
   render() {
+    const start = this.content["start"];
+    const end = this.content["end"];
+    const average = this.content["average"];
     const cell = document.createElement("th");
     cell.className = this.className;
-    const startNum = this.createRangeNumSpan(this.content[0], "start-num");
-    cell.appendChild(startNum);
-    const endNum = this.createRangeNumSpan(this.content[1], "end-num");
-    cell.appendChild(endNum);
+    const startElement = this.createRangeElement(start, "start-num");
+    const endElement = this.createRangeElement(end, "end-num");
+    // const averageElement = this.createRangeElement(
+    //   `State Average:\n${average}`, "average"
+    // );
+    // // offset the average element by the correct value/end ratio
+    // averageElement.style.left = `calc(${average / end * 100}% - 1.5em)`;
+    [startElement, endElement,/* averageElement*/].forEach(element => {
+      cell.appendChild(element);
+    });
     this.element = cell;
   }
 
-  createRangeNumSpan(content, className) {
-    const num = document.createElement("span");
+  createRangeElement(content, className) {
+    const num = document.createElement("div");
     num.textContent = content;
     num.className = className;
     // adjust padding based on number of digits
-    console.log(content.toString().length);
     if (className === "start-num" && content.toString().length === 1) {
       num.style.paddingLeft = `${0.25}em`;
     }
 
     // create the vertical tick underneath the number
-    const line = document.createElement("span");
-    line.className = "viz-line";
+    const line = document.createElement("div");
+    line.className = `viz-line ${className === "average" ? "average-line" : ""}`;
     num.appendChild(line);
     return num;
   }
@@ -195,7 +234,7 @@ export class RankedTable {
     this.sortDir = -1;
     this.sort(true); // this initial sort populates this.rows
 
-    this.header = this.getHeaderRow(this.headers);
+    this.header = this.getHeaderRow();
 
     this.render();
   }
@@ -209,8 +248,8 @@ export class RankedTable {
     }
   }
 
-  getHeaderRow(headers) {
-    const headerCells = headers.map((header, i) => {
+  getHeaderRow() {
+    const headerCells = this.headers.map((header, i) => {
       const CellType = typeof(header) == "string" ? HeaderCell : VizHeaderCell;
       return new CellType(
         header,
@@ -235,8 +274,10 @@ export class RankedTable {
     return data.map((row, i) => {
       // Specify how data will be rendered
       const cells = row.map((cell, j) => {
-        const CellType = typeof(cell) == "number" ? NumberCell : TextCell;
-        return new CellType(cell, this.classNames[j]);
+        let CellType = TextCell;
+        if (typeof(cell) == "number") CellType = NumberCell;
+        if (typeof(cell) == "object") CellType = BarGraphCell;
+        return new CellType(cell, this.classNames[j], this.headers[j]);
       });
       return new RankedBodyRow(cells, i + 1);
     });

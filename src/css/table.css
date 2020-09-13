@@ -21,10 +21,6 @@ td {
   padding: 1em;
 }
 
-td.space-cell {
-  width: 5%;
-}
-
 td.sorted {
   background: #111;
 }
@@ -34,12 +30,13 @@ th.viz-cell {
 }
 
 td.viz-cell {
+  position: relative;
   display: block;
   margin: 0 2em;
-  padding: 1.5em;
+  padding: 1.5em 0;
   width: 100px;
-  border-left: 1px dashed #333;
-  border-right: 1px dashed #333;
+  border-left: 1px dotted #333;
+  border-right: 1px dotted #333;
 }
 
 .start-num {
@@ -50,6 +47,14 @@ td.viz-cell {
 .end-num {
   position: relative;
   float: right;
+}
+
+.average {
+  position: absolute;
+  font-size: 0.75em;
+  text-align: center;
+  text-transform: none;
+  color: #aaa;
 }
 
 .viz-line {
@@ -67,6 +72,37 @@ td.viz-cell {
 
 .end-num .viz-line {
   right: 0.5em;
+}
+
+.average-line {
+  position: absolute;
+  top: 1.25em;
+  bottom: -0.5em;
+  left: 50%;
+  width: 1px;
+  background: #65D998;
+  z-index: 1;
+}
+
+.viz-bar {
+  position: relative;
+  height: 0.5em;
+  background-color: #65D998;
+}
+
+.bar-label {
+  position: absolute;
+  top: -0.4em;
+  left: calc(100% + 1em);
+  font-size: 0.75em;
+  color: #aaa;
+}
+
+.bar-average-line {
+  position: absolute;
+  height: 100%;
+  margin: -2em 0;
+  border-right: 1px dotted #65D998;
 }
 
 .number-cell {
