@@ -1,4 +1,4 @@
-import { BailTable } from './classes/Table.js';
+import { RankedTable } from './classes/Table.js';
 
 const createBailRateTable = () => {
   const classNames = [
@@ -32,7 +32,7 @@ const createBailRateTable = () => {
     ["Beaver", "", 50.9, 6226, 12230]
   ];
   const tableElement = document.getElementById("bail-rate-table");
-  new BailTable(data, classNames, headers, sortCols, initSort, tableElement);
+  new RankedTable(data, classNames, headers, sortCols, initSort, tableElement);
 }
 
 
@@ -69,7 +69,7 @@ const createBailRaceTable = () => {
   ]
   const tableElement = document.getElementById("bail-race-table");
 
-  new BailTable(data, classNames, headers, sortCols, initSort, tableElement);
+  new RankedTable(data, classNames, headers, sortCols, initSort, tableElement);
 }
 
 createBailRateTable();

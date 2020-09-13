@@ -147,7 +147,7 @@ class RankedBodyRow {
 }
 
 
-class Table {
+export class RankedTable {
   constructor(data, classNames, headers, sortCols, initSort, tableElement) {
     this.validate(data, classNames, headers);
     this.classNames = classNames;
@@ -169,11 +169,14 @@ class Table {
     if (classNames.length !== headers.length) {
       throw new Error("Number of class names does not match number of headers");
     }
+    if (data.some((row) => row.length != headers.length)) {
+      throw new Error(`${headers.length} columns of data required`);
+    }
   }
 
   getHeaderRow(headers) {
-    return new HeaderRow(headers.map((header, i) => {
-      return new HeaderCell(
+    const headerCells = headers.map((header, i) =>
+      new HeaderCell(
         header,
         this.classNames[i],
         this.sortCols[i],
@@ -183,12 +186,23 @@ class Table {
         this,
         // adjust ids for rank and space headers
         i + 1
-      );
-    }));
+      ))
+    const headersWithRank = [
+      new HeaderCell("Rank", "rank-cell", false, 0, false, this, 0),
+      ...headerCells
+    ];
+    return new HeaderRow(headersWithRank);
   }
 
   getRows(data) {
-    throw new Error("Table class is abstract. Please use a concrete subclass");
+    return data.map((row, i) => {
+      // Specify how data will be rendered
+      const cells = row.map((cell, j) => {
+        const CellType = typeof(cell) == "number" ? NumberCell : TextCell;
+        return new CellType(cell, this.classNames[j]);
+      });
+      return new RankedBodyRow(cells, i + 1);
+    });
   }
 
   setSortColumn(i) {
@@ -238,45 +252,6 @@ class Table {
     const tbody = this.element.getElementsByTagName("tbody")[0];
     this.rows.forEach(row => {
       tbody.appendChild(row.element);
-    });
-  }
-}
-
-class RankedTable extends Table {
-  constructor(data, classNames, headers, sortCols, initSort, tableElement) {
-    super(data, classNames, headers, sortCols, initSort, tableElement);
-  }
-
-  getHeaderRow(headers, classNames) {
-    const headerCells = super.getHeaderRow(headers, classNames).cells;
-    const headersWithRank = [
-      new HeaderCell("Rank", "rank-cell", false, 0, false, this, 0),
-      ...headerCells
-    ];
-    return new HeaderRow(headersWithRank);
-  }
-}
-
-export class BailTable extends RankedTable {
-  constructor(data, classNames, headers, sortCols, initSort, tableElement) {
-    super(data, classNames, headers, sortCols, initSort, tableElement);
-  }
-
-  validate(data, classNames, headers) {
-    super.validate(data, classNames, headers);
-    if (data.some((row) => row.length != headers.length)) {
-      throw new Error(`${headers.length} columns of data required`);
-    }
-  }
-
-  getRows(data) {
-    return data.map((row, i) => {
-      // Specify how data will be rendered
-      const cells = row.map((cell, j) => {
-        const CellType = typeof(cell) == "number" ? NumberCell : TextCell;
-        return new CellType(cell, this.classNames[j]);
-      });
-      return new RankedBodyRow(cells, i + 1);
     });
   }
 }
