@@ -93,14 +93,14 @@ class DoubleGraphCell extends Cell {
     // create the number line
     const bar = document.createElement("div");
     bar.className = "viz-double-bar";
-    bar.style.width = `${this.content / this.range["end"] * 100}%`;
-    // label the bar with the difference between value and average
-    const label = document.createElement("div");
-    const diff = this.content - this.average;
-    label.textContent = `${diff > 0 ? "+" : ""}${diff.toFixed(1)}`;
-    label.className = "bar-label";
-    bar.appendChild(label);
     this.element.appendChild(bar);
+    // create the points on the number line
+    this.content.forEach((value, i) => {
+      const point = document.createElement("div");
+      point.className = `viz-double-bar-point ${this.vizColors[i]}`;
+      point.style.left = `${value / this.range["end"] * 100}%`;
+      this.element.appendChild(point);
+    });
     // add the vertical line denoting the average
     this.averages.forEach((average, i) => {
       const averageLine = document.createElement("div");

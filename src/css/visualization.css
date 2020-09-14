@@ -101,9 +101,17 @@ td.viz-cell {
 
 .viz-double-bar {
   position: relative;
+  width: 100%;
   height: 0.2em;
   margin: 0.15em 0;
   background-color: #333;
+}
+
+.viz-double-bar-point {
+  position: absolute;
+  top: 1.25em;
+  width: 0.25em;
+  height: 1em;
 }
 
 .viz-double-bar-point.green {
