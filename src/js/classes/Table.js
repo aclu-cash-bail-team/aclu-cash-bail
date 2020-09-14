@@ -194,7 +194,7 @@ class VizHeaderCell extends HeaderCell {
     // offset the average elements by the value/end ratio (and subtract padding)
     averageElements.forEach((element, i) => {
       const left = averages[i]["value"] / end * 100;
-      const padding = averages.length > 1 ? "0.7em" : "2.65em";
+      const padding = averages.length > 1 ? "0.8em" : "2.75em";
       element.style.left = `calc(${left}% - ${padding})`;
       averageWrapper.appendChild(element);
     });

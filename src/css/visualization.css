@@ -46,8 +46,8 @@ th.viz-cell {
 
 .average-line {
   position: absolute;
-  top: 2.65em;
-  bottom: -0.75em;
+  top: 2.75em;
+  bottom: -0.85em;
   left: 50%;
   width: 1px;
   z-index: 1;
