@@ -1,8 +1,9 @@
 /* Base styles for dev template */
 
 body {
-  /* TODO: Get Century Schoolbook font */
-  font-family: sans-serif;
+  /* TODO: Get GT America font */
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
   font-size: 80%;
   color: #eee;
   background-color: #000;

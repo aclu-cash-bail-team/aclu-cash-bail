@@ -2,7 +2,6 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 2.5em 0;
-  font-weight: 300;
 }
 
 tbody tr {
@@ -11,7 +10,7 @@ tbody tr {
 
 th {
   padding: 1em;
-  font-weight: 300;
+  text-align: left;
   text-transform: uppercase;
   vertical-align: bottom;
 }
