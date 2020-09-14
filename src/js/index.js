@@ -12,7 +12,12 @@ const createBailRateTable = () => {
       header: {
         "start": 0,
         "end": 60,
-        "average": 42.5
+        "averages": [
+          {
+            "name": "State Average",
+            "value": 42.5
+          }
+        ]
       },
       sortable: false
     },
@@ -58,7 +63,16 @@ const createBailRaceTable = () => {
       header: {
         "start": 0,
         "end": 100,
-        "average": 0
+        "averages": [
+          {
+            "name": "Black",
+            "value": 54.7
+          },
+          {
+            "name": "White",
+            "value": 37.9
+          }
+        ]
       },
       sortable: false
     },
@@ -80,12 +94,12 @@ const createBailRaceTable = () => {
   ]
   const initSort = 4; // initially sort by difference
   const data = [
-    ["Somerset", "", 69.6, 23.2, "+46.4"],
-    ["Centre", "", 46.7, 21.9, "+25.7"],
-    ["Lycoming", "", 55, 28.1, "+26.9"],
-    ["Jefferson", "", 73, 38.4, "+34.6"],
-    ["Crawford", "", 53.3, 28.3, "+25"],
-    ["Blair", "", 58.7, 31.8, "+26.9"]
+    ["Somerset", [69.6, 23.2], 69.6, 23.2, "+46.4"],
+    ["Centre", [46.7, 21.9], 46.7, 21.9, "+25.7"],
+    ["Lycoming", [55, 28.1], 55, 28.1, "+26.9"],
+    ["Jefferson", [73, 38.4], 73, 38.4, "+34.6"],
+    ["Crawford", [53.3, 28.3], 53.3, 28.3, "+25"],
+    ["Blair", [58.7, 31.8], 58.7, 31.8, "+26.9"]
   ]
   const tableElement = document.getElementById("bail-race-table");
 

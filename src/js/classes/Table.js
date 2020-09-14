@@ -49,8 +49,9 @@ class NumberCell extends Cell {
 class BarGraphCell extends Cell {
   constructor(content, className, data) {
     super(className);
+    // BarGraphCell should only ever be passed one number
     this.content = content[0];
-    this.average = data["average"];
+    this.average = data["averages"][0]["value"];
     this.range = data;
     this.render();
   }
@@ -70,9 +71,43 @@ class BarGraphCell extends Cell {
     this.element.appendChild(bar);
     // add the vertical line denoting the average
     const averageLine = document.createElement("div");
-    averageLine.className = "bar-average-line";
+    averageLine.className = "bar-average-line green";
     averageLine.style.left = `${this.average / this.range["end"] * 100}%`;
     this.element.appendChild(averageLine);
+  }
+}
+
+
+class DoubleGraphCell extends Cell {
+  constructor(content, className, data) {
+    super(className);
+    this.content = content;
+    this.averages = data["averages"];
+    this.range = data;
+    this.vizColors = ["green", "purple"];
+    this.render();
+  }
+
+  render() {
+    super.render();
+    // create the number line
+    const bar = document.createElement("div");
+    bar.className = "viz-double-bar";
+    bar.style.width = `${this.content / this.range["end"] * 100}%`;
+    // label the bar with the difference between value and average
+    const label = document.createElement("div");
+    const diff = this.content - this.average;
+    label.textContent = `${diff > 0 ? "+" : ""}${diff.toFixed(1)}`;
+    label.className = "bar-label";
+    bar.appendChild(label);
+    this.element.appendChild(bar);
+    // add the vertical line denoting the average
+    this.averages.forEach((average, i) => {
+      const averageLine = document.createElement("div");
+      averageLine.className = `bar-average-line ${this.vizColors[i]}`;
+      averageLine.style.left = `${average["value"] / this.range["end"] * 100}%`;
+      this.element.appendChild(averageLine);
+    });
   }
 }
 
@@ -138,23 +173,31 @@ class VizHeaderCell extends HeaderCell {
   }
 
   render() {
+    const vizColors = ["green", "purple"];
     const start = this.content["start"];
     const end = this.content["end"];
-    const average = this.content["average"];
+    const averages = this.content["averages"];
+
     const cell = document.createElement("th");
     cell.className = this.className;
-    // create start, end, and average number elements
-    const startElement = this.createRangeElement(start, "start-num");
-    const endElement = this.createRangeElement(end, "end-num");
-    const averageElement = this.createRangeElement(
-      `State Average:\n${average}`, "average"
-    );
-    // offset the average element by the value/end ratio (and subtract padding)
-    averageElement.style.left = `calc(${average / end * 100}% - 1.5em)`;
-    // create wrapper around average for positioning
+    // create start, end, and average tick/number elements
+    const startElement = this.createTickElement(start, "start-num");
+    const endElement = this.createTickElement(end, "end-num");
+    const averageElements = averages.map((average, i) => {
+      const text = `${average["name"]}:<br>${average["value"]}%`;
+      const className = "average";
+      return this.createTickElement(text, className, vizColors[i]);
+    });
+    // create wrapper around averages for positioning
     const averageWrapper = document.createElement("div");
     averageWrapper.className = "average-wrapper";
-    averageWrapper.appendChild(averageElement);
+    // offset the average elements by the value/end ratio (and subtract padding)
+    averageElements.forEach((element, i) => {
+      const left = averages[i]["value"] / end * 100;
+      const padding = averages.length > 1 ? "0.7em" : "2.65em";
+      element.style.left = `calc(${left}% - ${padding})`;
+      averageWrapper.appendChild(element);
+    });
     // add all the elements to the cell
     [startElement, endElement, averageWrapper].forEach(element => {
       cell.appendChild(element);
@@ -162,9 +205,9 @@ class VizHeaderCell extends HeaderCell {
     this.element = cell;
   }
 
-  createRangeElement(content, className) {
+  createTickElement(content, className, averageColor) {
     const num = document.createElement("div");
-    num.textContent = content;
+    num.innerHTML = content;
     num.className = className;
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
@@ -174,6 +217,7 @@ class VizHeaderCell extends HeaderCell {
     // create the vertical tick underneath the number
     const line = document.createElement("div");
     line.className = `${className === "average" ? "average-line" : "viz-line"}`;
+    if (averageColor) line.className += ` ${averageColor}`;
     num.appendChild(line);
     return num;
   }
@@ -282,7 +326,9 @@ export class RankedTable {
       const cells = row.map((cell, j) => {
         let CellType = TextCell;
         if (typeof(cell) == "number") CellType = NumberCell;
-        if (typeof(cell) == "object") CellType = BarGraphCell;
+        if (typeof(cell) == "object") {
+          CellType = cell.length === 1 ? BarGraphCell : DoubleGraphCell;
+        }
         return new CellType(cell, this.classNames[j], this.headers[j]);
       });
       return new RankedBodyRow(cells, i + 1);
