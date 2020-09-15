@@ -156,7 +156,7 @@ class HeaderCell extends Cell {
 
   getClassName() {
     const sortClass = this.sortDir > 0 ? "sort-asc" :
-                      this.sortDir < 0 ? "sort-desc" : "";
+      this.sortDir < 0 ? "sort-desc" : "";
     return `${this.className} ${sortClass}`;
   }
 
@@ -272,8 +272,8 @@ class RankedBodyRow {
 
 export class RankedTable {
   constructor(data, columnConfigs, initSort, tableElement) {
-    this.classNames = columnConfigs.map((config) => config.class)
-    this.headers = columnConfigs.map((config) => config.header)
+    this.classNames = columnConfigs.map((config) => config.class);
+    this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
     this.validate(this.data, this.classNames, this.headers);
     this.element = tableElement;
