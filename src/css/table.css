@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "GT America Condensed";
+  src: url("./GT-America-Condensed-Regular.otf") format("opentype");
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -10,6 +15,8 @@ tbody tr {
 
 th {
   padding: 1em;
+  font-family: "GT America Condensed";
+  font-weight: 400;
   text-align: left;
   text-transform: uppercase;
   vertical-align: bottom;

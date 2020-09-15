@@ -1,9 +1,8 @@
 /* Base styles for dev template */
 
 body {
-  /* TODO: Get GT America font */
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 200;
+  font-family: "GT America", sans-serif;
+  font-weight: 400;
   font-size: 80%;
   color: #eee;
   background-color: #000;
