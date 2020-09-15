@@ -50,7 +50,7 @@ class BarGraphCell extends Cell {
   constructor(content, className, data) {
     super(className);
     // BarGraphCell should only ever be passed one number
-    this.content = content[0];
+    this.content = content["values"][0];
     this.average = data["averages"][0]["value"];
     this.range = data;
     this.render();
@@ -78,10 +78,10 @@ class BarGraphCell extends Cell {
 }
 
 
-class DoubleGraphCell extends Cell {
+class NumberLineCell extends Cell {
   constructor(content, className, data) {
     super(className);
-    this.content = content;
+    this.content = content["values"];
     this.averages = data["averages"];
     this.range = data;
     this.vizColors = ["green", "purple"];
@@ -92,12 +92,12 @@ class DoubleGraphCell extends Cell {
     super.render();
     // create the number line
     const bar = document.createElement("div");
-    bar.className = "viz-double-bar";
+    bar.className = "viz-number-line";
     this.element.appendChild(bar);
     // create the points on the number line
     this.content.forEach((value, i) => {
       const point = document.createElement("div");
-      point.className = `viz-double-bar-point ${this.vizColors[i]}`;
+      point.className = `viz-number-line-point ${this.vizColors[i]}`;
       point.style.left = `${value / this.range["end"] * 100}%`;
       this.element.appendChild(point);
     });
@@ -327,7 +327,7 @@ export class RankedTable {
         let CellType = TextCell;
         if (typeof(cell) == "number") CellType = NumberCell;
         if (typeof(cell) == "object") {
-          CellType = cell.length === 1 ? BarGraphCell : DoubleGraphCell;
+          CellType = cell["type"] === "bar" ? BarGraphCell : NumberLineCell;
         }
         return new CellType(cell, this.classNames[j], this.headers[j]);
       });
