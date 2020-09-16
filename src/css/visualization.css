@@ -42,13 +42,17 @@ th.viz-cell {
   text-align: center;
   text-transform: none;
   color: #aaa;
+  transform: translateX(0.75em);
+}
+
+.average-text {
+  transform: translateX(-50%);
 }
 
 .average-line {
   position: absolute;
   top: 2.75em;
   bottom: -0.85em;
-  left: 50%;
   width: 1px;
   z-index: 1;
 }

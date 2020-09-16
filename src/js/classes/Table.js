@@ -193,9 +193,7 @@ class VizHeaderCell extends HeaderCell {
     averageWrapper.className = "average-wrapper";
     // offset the average elements by the value/end ratio (and subtract padding)
     averageElements.forEach((element, i) => {
-      const left = averages[i]["value"] / end * 100;
-      const padding = averages.length > 1 ? "0.45em" : "2.05em";
-      element.style.left = `calc(${left}% - ${padding})`;
+      element.style.left = `calc(${averages[i]["value"] / end * 100}%)`;
       averageWrapper.appendChild(element);
     });
     // add all the elements to the cell
@@ -206,20 +204,23 @@ class VizHeaderCell extends HeaderCell {
   }
 
   createTickElement(content, className, averageColor) {
-    const num = document.createElement("div");
-    num.innerHTML = content;
-    num.className = className;
+    const wrapper = document.createElement("div");
+    wrapper.className = className;
+    const text = document.createElement("div");
+    text.innerHTML = content;
+    if (className === "average") text.className = "average-text";
+    wrapper.appendChild(text);
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
-      num.style.paddingLeft = `${0.25}em`;
+      wrapper.style.paddingLeft = `${0.25}em`;
     }
 
     // create the vertical tick underneath the number
     const line = document.createElement("div");
     line.className = `${className === "average" ? "average-line" : "viz-line"}`;
     if (averageColor) line.className += ` ${averageColor}`;
-    num.appendChild(line);
-    return num;
+    wrapper.appendChild(line);
+    return wrapper;
   }
 }
 
