@@ -16,7 +16,7 @@ const createBailRateTable = () => {
         "averages": [
           {
             "name": "State Average",
-            "value": 38.9
+            "value": 42.5966697900
           }
         ]
       },
@@ -59,11 +59,11 @@ const createBailRaceTable = () => {
         "averages": [
           {
             "name": "Black",
-            "value": 54.6
+            "value": 54.7462525
           },
           {
             "name": "White",
-            "value": 35.9
+            "value": 37.87542236
           }
         ]
       },
