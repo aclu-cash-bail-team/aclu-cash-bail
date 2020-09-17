@@ -35,7 +35,7 @@ class TextCell extends Cell {
 class NumberCell extends Cell {
   constructor(content, className) {
     super(className);
-    this.content = content.toLocaleString();
+    this.content = content % 1 === 0 ? content.toLocaleString() : content.toFixed(1);
     this.render();
   }
 
