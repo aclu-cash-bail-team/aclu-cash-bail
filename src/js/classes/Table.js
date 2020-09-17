@@ -287,6 +287,7 @@ export class RankedTable {
 
     this.searchCols = columnConfigs.map((config) => config.searchable);
     this.searchTerms = [];
+    this.isTruncated = true;
 
     this.sortCols = columnConfigs.map((config) => config.sortable);
     // start with sorting descending; add one to account for rank
@@ -331,6 +332,7 @@ export class RankedTable {
   }
 
   getRows(data) {
+    let numVisibleRows = 0;
     return data.map((row, i) => {
       // Specify how data will be rendered
       const cells = row.map((cell, j) => {
@@ -341,7 +343,8 @@ export class RankedTable {
         }
         return new CellType(cell, this.classNames[j], this.headers[j]);
       });
-      const isHidden = !this.matchesSearchTerm(row);
+      const isHidden = (this.isTruncated && numVisibleRows >= 10) || !this.matchesSearchTerm(row);
+      numVisibleRows += isHidden ? 0 : 1;
       return new RankedBodyRow(cells, i + 1, isHidden);
     });
   }
@@ -435,6 +438,16 @@ export class RankedTable {
     const tbody = this.element.getElementsByTagName("tbody")[0];
     this.rows.forEach(row => {
       tbody.appendChild(row.element);
+    });
+
+    // set up view all button
+    const viewAllButton = this.container.getElementsByClassName("view-all-btn")[0];
+    viewAllButton.innerText = this.isTruncated ? "VIEW ALL" : "COLLAPSE";
+    viewAllButton.addEventListener("click", () => {
+      this.isTruncated = !this.isTruncated;
+      viewAllButton.innerText = this.isTruncated ? "VIEW ALL" : "COLLAPSE";
+      this.rows = this.getRows(this.data);
+      this.updateTable(false);
     });
   }
 }
