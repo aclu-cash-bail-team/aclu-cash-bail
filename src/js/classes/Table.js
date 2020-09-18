@@ -35,7 +35,7 @@ class TextCell extends Cell {
 class NumberCell extends Cell {
   constructor(content, className) {
     super(className);
-    this.content = content.toLocaleString();
+    this.content = content % 1 === 0 ? content.toLocaleString() : content.toFixed(1);
     this.render();
   }
 
@@ -184,7 +184,7 @@ class VizHeaderCell extends HeaderCell {
     const startElement = this.createTickElement(start, "start-num");
     const endElement = this.createTickElement(end, "end-num");
     const averageElements = averages.map((average, i) => {
-      const text = `${average["name"]}:<br>${average["value"]}%`;
+      const text = `${average["name"]}:<br>${average["value"].toFixed(1)}%`;
       const className = "average";
       return this.createTickElement(text, className, vizColors[i]);
     });
@@ -347,12 +347,16 @@ export class RankedTable {
   sort(initialSort) {
     if (!initialSort) this.header.clearedSortedCells();
 
-    // data doesn't have rank or spacer, so subtract two from the index
+    // data doesn't have rank, so subtract one from the index
     const dataCol = this.sortCol - 1;
     this.data.sort((a, b) => {
-      if (a[dataCol] < b[dataCol]) {
+      // Assumes that we only want to sort numbers, which is fine for now
+      // May need to support sorting multiple types
+      const i = Number(a[dataCol]);
+      const j = Number(b[dataCol]);
+      if (i < j) {
         return this.sortDir * -1;
-      } else if (a[dataCol] > b[dataCol]) {
+      } else if (i > j) {
         return this.sortDir;
       } else {
         return 0;
