@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "GT America Condensed";
+  src: url("/GT-America-Condensed-Regular.d6dbbdf1.otf") format("opentype");
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2.5em 0;
+}
+
+tbody tr {
+  border-top: 1px #333 solid;
+}
+
+th {
+  padding: 1em;
+  font-family: "GT America Condensed";
+  font-weight: 400;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+
+td {
+  text-align: left;
+  padding: 1em;
+}
+
+td.sorted {
+  background: #111;
+}
+
+.number-cell {
+  text-align: right;
+}
+
+.rank-cell {
+  text-align: center;
+}
+
+.sort-desc, .sort-asc {
+  cursor: pointer;
+}
+
+.sort-desc:before, .sort-asc:before {
+  content: ' ';
+  position: relative;
+  right: 5px;
+  border: 0.33em solid transparent;
+}
+
+.sort-desc:before {
+  top: 0.67em;
+  border-top-color: #444;
+}
+
+.sort-asc:before {
+  bottom: 0.8em;
+  border-bottom-color: #444;
+}
+
+.sort-desc.sorted:before {
+  border-top-color: #eee;
+}
+
+.sort-asc.sorted:before {
+  border-bottom-color: #eee;
+}
+
+
+/*# sourceMappingURL=/table.233cc489.css.map */
