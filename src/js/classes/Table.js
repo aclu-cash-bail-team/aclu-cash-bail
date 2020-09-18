@@ -35,7 +35,7 @@ class TextCell extends Cell {
 class NumberCell extends Cell {
   constructor(content, className) {
     super(className);
-    this.content = content.toLocaleString();
+    this.content = content % 1 === 0 ? content.toLocaleString() : content.toFixed(1);
     this.render();
   }
 
@@ -184,7 +184,7 @@ class VizHeaderCell extends HeaderCell {
     const startElement = this.createTickElement(start, "start-num");
     const endElement = this.createTickElement(end, "end-num");
     const averageElements = averages.map((average, i) => {
-      const text = `${average["name"]}:<br>${average["value"]}%`;
+      const text = `${average["name"]}:<br>${average["value"].toFixed(1)}%`;
       const className = "average";
       return this.createTickElement(text, className, vizColors[i]);
     });
