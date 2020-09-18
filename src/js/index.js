@@ -1,4 +1,5 @@
 import { RankedTable } from "./classes/Table.js";
+import { BAIL_RATE_DATA, BAIL_RACE_DATA } from "./data.js";
 
 const createBailRateTable = () => {
   const columnConfigs = [
@@ -10,7 +11,16 @@ const createBailRateTable = () => {
     },
     {
       class: "viz-cell",
-      header: "Viz Placeholder",
+      header: {
+        "start": 0,
+        "end": 60,
+        "averages": [
+          {
+            "name": "State Average",
+            "value": 42.5966697900
+          }
+        ]
+      },
       sortable: false,
       searchable: false
     },
@@ -34,16 +44,8 @@ const createBailRateTable = () => {
     },
   ];
   const initSort = 2; // initially sort by cash bail rate
-  const data = [
-    ["Delaware", "", 55.7, 9514, 17863],
-    ["Lehigh", "", 54.9, 6526, 13069],
-    ["Lackawanna", "", 52.6, 3236, 6148],
-    ["Berks", "", 50.9, 6266, 12230],
-    ["Philadelphia", "", 50.1, 32823, 65487],
-    ["Beaver", "", 50.9, 6226, 12230]
-  ];
   const tableContainer = document.getElementById("bail-rate-container");
-  new RankedTable(data, columnConfigs, initSort, tableContainer);
+  new RankedTable(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer);
 };
 
 
@@ -57,7 +59,20 @@ const createBailRaceTable = () => {
     },
     {
       class: "viz-cell",
-      header: "Viz Placeholder",
+      header: {
+        "start": 0,
+        "end": 100,
+        "averages": [
+          {
+            "name": "Black",
+            "value": 54.7462525
+          },
+          {
+            "name": "White",
+            "value": 37.87542236
+          }
+        ]
+      },
       sortable: false,
       searchable: false
     },
@@ -75,23 +90,16 @@ const createBailRaceTable = () => {
     },
     {
       class: "diff-cell number-cell",
-      header: "Difference",
+      header: "Diff",
       sortable: true,
       searchable: false
     },
   ];
   const initSort = 4; // initially sort by difference
-  const data = [
-    ["Somerset", "", 69.6, 23.2, "+46.4"],
-    ["Centre", "", 46.7, 21.9, "+25.7"],
-    ["Lycoming", "", 55, 28.1, "+26.9"],
-    ["Jefferson", "", 73, 38.4, "+34.6"],
-    ["Crawford", "", 53.3, 28.3, "+25"],
-    ["Blair", "", 58.7, 31.8, "+26.9"]
-  ];
   const tableContainer = document.getElementById("bail-race-container");
 
-  new RankedTable(data, columnConfigs, initSort, tableContainer);
+  new RankedTable(BAIL_RACE_DATA, columnConfigs, initSort, tableContainer);
+
 };
 
 createBailRateTable();

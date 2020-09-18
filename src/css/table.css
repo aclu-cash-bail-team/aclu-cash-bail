@@ -1,13 +1,24 @@
+@font-face {
+  font-family: "GT America Condensed";
+  src: url("./GT-America-Condensed-Regular.otf") format("opentype");
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
   margin: 1em 0 2.5em;
-  font-weight: 300;
+}
+
+tbody tr {
+  border-top: 1px #333 solid;
+
 }
 
 th {
   padding: 1em;
-  font-weight: 300;
+  font-family: "GT America Condensed";
+  font-weight: 400;
+  text-align: left;
   text-transform: uppercase;
   vertical-align: bottom;
 }
@@ -15,11 +26,6 @@ th {
 td {
   text-align: left;
   padding: 1em;
-  border-top: 1px #222 solid;
-}
-
-td.space-cell {
-  width: 5%;
 }
 
 td.sorted {
