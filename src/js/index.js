@@ -40,9 +40,8 @@ const createBailRateTable = () => {
   ];
   const initSort = 2; // initially sort by cash bail rate
   const tableElement = document.getElementById("bail-rate-table");
-  new RankedTable(BAIL_RATE_DATA, columnConfigs, initSort, tableElement);
+  return new RankedTable(BAIL_RATE_DATA, columnConfigs, initSort, tableElement);
 };
-
 
 const createBailRaceTable = () => {
   const columnConfigs = [
@@ -88,8 +87,12 @@ const createBailRaceTable = () => {
   const initSort = 4; // initially sort by difference
   const tableElement = document.getElementById("bail-race-table");
 
-  new RankedTable(BAIL_RACE_DATA, columnConfigs, initSort, tableElement);
+  return new RankedTable(BAIL_RACE_DATA, columnConfigs, initSort, tableElement);
 };
 
-createBailRateTable();
-createBailRaceTable();
+const bailRateTable = createBailRateTable();
+const bailRaceTable = createBailRaceTable();
+
+document.getElementById("race-outliers").addEventListener("click", () => {
+  bailRaceTable.toggleOutliers();
+});

@@ -249,8 +249,9 @@ class HeaderRow {
 
 
 class RankedBodyRow {
-  constructor(cells, initialRank) {
+  constructor(cells, initialRank, outlier) {
     this.cells = cells;
+    this.outlier = outlier;
     this.render(initialRank);
   }
 
@@ -276,8 +277,10 @@ export class RankedTable {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
-    this.validate(this.data, this.classNames, this.headers);
     this.element = tableElement;
+    this.showOutliers = false;
+
+    this.validate(this.data, this.classNames, this.headers);
 
     this.sortCols = columnConfigs.map((config) => config.sortable);
     // start with sorting descending; add one to account for rank
@@ -285,9 +288,10 @@ export class RankedTable {
     this.sortDir = -1;
     this.sort(true); // this initial sort populates this.rows
 
+    // create header row
     this.header = this.getHeaderRow();
-
-    this.render();
+    const thead = this.element.getElementsByTagName("thead")[0];
+    thead.appendChild(this.header.element);
   }
 
   validate(data, classNames, headers) {
@@ -330,9 +334,11 @@ export class RankedTable {
         if (typeof(cell) == "object") {
           CellType = cell["type"] === "bar" ? BarGraphCell : NumberLineCell;
         }
+        // for county names, append an asterisk if it's an outlier
+        if (j === 0 && row.outlier) cell += "*";
         return new CellType(cell, this.classNames[j], this.headers[j]);
       });
-      return new RankedBodyRow(cells, i + 1);
+      return new RankedBodyRow(cells, i + 1, row.outlier);
     });
   }
 
@@ -363,30 +369,26 @@ export class RankedTable {
       }
     });
     this.rows = this.getRows(this.data);
-    this.updateTable(false);
+    this.render();
   }
 
-  updateTable(rankReverse) {
+  toggleOutliers() {
+    this.showOutliers = !this.showOutliers;
+    this.render();
+  }
+
+  render() {
     const tbody = this.element.getElementsByTagName("tbody")[0];
     tbody.textContent = "";
 
     // repopulate with updated rows
-    this.rows.forEach((row, i) => {
-      const rank = rankReverse ? this.rows.length - i : i + 1;
-      row.render(rank, this.sortCol);
-      tbody.appendChild(row.element);
-    });
-  }
-
-  render() {
-    // create header row
-    const thead = this.element.getElementsByTagName("thead")[0];
-    thead.appendChild(this.header.element);
-
-    // create rows
-    const tbody = this.element.getElementsByTagName("tbody")[0];
+    let rowRank = 1;
     this.rows.forEach(row => {
-      tbody.appendChild(row.element);
+      if (!row.outlier || this.showOutliers) {
+        row.render(rowRank, this.sortCol);
+        tbody.appendChild(row.element);
+        rowRank++;
+      }
     });
   }
 }

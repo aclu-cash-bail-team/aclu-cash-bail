@@ -13,16 +13,20 @@
  * lines.forEach((line, i) => {
  *   const cells = line.split(",");
  *   const diff = parseFloat(cells[3]);
- *   data.push([
- *     cells[0], // county
- *     {
- *       "type": "line", // visualization
- *       "values": [parseFloat(cells[1]), parseFloat(cells[2])]
- *     },
- *     parseFloat(cells[1]), // black cash bail rate
- *     parseFloat(cells[2]), // white cash bail rate
- *     `${diff > 0 ? "+" : ""}${diff.toFixed(1)}` // overall cash bail rate
- *   ]);
+ *   const entry = {
+ *     "data": [
+ *       cells[0], // county
+ *       {
+ *         "type": "line", // visualization
+ *         "values": [parseFloat(cells[1]), parseFloat(cells[2])]
+ *       },
+ *       parseFloat(cells[1]), // black cash bail rate
+ *       parseFloat(cells[2]), // white cash bail rate
+ *       `${diff > 0 ? "+" : ""}${diff.toFixed(1)}` // overall rate
+ *     ],
+ *     "outlier": false
+ *   };
+ *   data.push(entry);
  * });
  *
  * console.log(JSON.stringify(data));
