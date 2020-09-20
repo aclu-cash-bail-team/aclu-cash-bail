@@ -294,7 +294,7 @@ export class RankedTable {
     if (classNames.length !== headers.length) {
       throw new Error("Number of class names does not match number of headers");
     }
-    if (data.some((row) => row.length != headers.length)) {
+    if (data.some(row => row.data.length != headers.length)) {
       throw new Error(`${headers.length} columns of data required`);
     }
   }
@@ -324,7 +324,7 @@ export class RankedTable {
   getRows(data) {
     return data.map((row, i) => {
       // Specify how data will be rendered
-      const cells = row.map((cell, j) => {
+      const cells = row.data.map((cell, j) => {
         let CellType = TextCell;
         if (typeof(cell) == "number") CellType = NumberCell;
         if (typeof(cell) == "object") {
@@ -352,8 +352,8 @@ export class RankedTable {
     this.data.sort((a, b) => {
       // Assumes that we only want to sort numbers, which is fine for now
       // May need to support sorting multiple types
-      const i = Number(a[dataCol]);
-      const j = Number(b[dataCol]);
+      const i = Number(a.data[dataCol]);
+      const j = Number(b.data[dataCol]);
       if (i < j) {
         return this.sortDir * -1;
       } else if (i > j) {
