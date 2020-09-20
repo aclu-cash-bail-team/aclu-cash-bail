@@ -375,6 +375,7 @@ export class RankedTable {
   toggleOutliers() {
     this.showOutliers = !this.showOutliers;
     this.render();
+    return this.showOutliers;
   }
 
   render() {

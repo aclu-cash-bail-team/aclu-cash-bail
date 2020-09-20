@@ -1,6 +1,7 @@
 import { RankedTable } from "./classes/Table.js";
 import { BAIL_RATE_DATA, BAIL_RACE_DATA } from "./data.js";
 
+/* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
   const columnConfigs = [
     {
@@ -90,9 +91,11 @@ const createBailRaceTable = () => {
   return new RankedTable(BAIL_RACE_DATA, columnConfigs, initSort, tableElement);
 };
 
+/* RENDER PAGE */
 const bailRateTable = createBailRateTable();
-const bailRaceTable = createBailRaceTable();
 
-document.getElementById("race-outliers").addEventListener("click", () => {
-  bailRaceTable.toggleOutliers();
+const bailRaceTable = createBailRaceTable();
+document.getElementById("race-outliers").addEventListener("click", (e) => {
+  const showOutliers = bailRaceTable.toggleOutliers();
+  e.target.className = showOutliers ? "outliers-btn showing" : "outliers-btn";
 });
