@@ -249,49 +249,57 @@ class HeaderRow {
 
 
 class RankedBodyRow {
-  constructor(cells, initialRank, outlier) {
+  constructor(cells, initialRank, outlier, isHidden = false) {
     this.cells = cells;
     this.outlier = outlier;
+    this.isHidden = isHidden;
     this.render(initialRank);
   }
 
   render(rank, sorted) {
     const row = document.createElement("tr");
-    const rankedCells = [
-      new TextCell(rank, "rank-cell"),
-      ...this.cells
-    ];
-    rankedCells.forEach((cell, i) => {
-      cell.setElementClass(
-        i === sorted ? `${cell.className} sorted` : cell.className
-      );
-      row.appendChild(cell.element);
-    });
+    if (this.isHidden) {
+      row.className = "hidden";
+    } else {
+      const rankedCells = [
+        new TextCell(rank, "rank-cell"),
+        ...this.cells
+      ];
+      rankedCells.forEach((cell, i) => {
+        cell.setElementClass(
+          i === sorted ? `${cell.className} sorted` : cell.className
+        );
+        row.appendChild(cell.element);
+      });
+    }
     this.element = row;
   }
 }
 
 
 export class RankedTable {
-  constructor(data, columnConfigs, initSort, tableElement) {
+  constructor(data, columnConfigs, initSort, tableContainer) {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
-    this.element = tableElement;
+    this.container = tableContainer;
+    this.element = tableContainer.getElementsByTagName("table")[0];
     this.showOutliers = false;
 
     this.validate(this.data, this.classNames, this.headers);
+    this.searchCols = columnConfigs.map((config) => config.searchable);
+    this.searchTerms = [];
 
     this.sortCols = columnConfigs.map((config) => config.sortable);
     // start with sorting descending; add one to account for rank
     this.sortCol = initSort + 1;
     this.sortDir = -1;
+
+    this.header = this.getHeaderRow();
+
+    this.initRender(); // Initial table DOM setup
     this.sort(true); // this initial sort populates this.rows
 
-    // create header row
-    this.header = this.getHeaderRow();
-    const thead = this.element.getElementsByTagName("thead")[0];
-    thead.appendChild(this.header.element);
   }
 
   validate(data, classNames, headers) {
@@ -301,6 +309,36 @@ export class RankedTable {
     if (data.some(row => row.data.length != headers.length)) {
       throw new Error(`${headers.length} columns of data required`);
     }
+  }
+
+  initRender() {
+    // create header row
+    const thead = this.element.getElementsByTagName("thead")[0];
+    thead.appendChild(this.header.element);
+
+    // set up search bar
+    const searchMenu = this.container.getElementsByClassName("menu")[0];
+    const searchOptions = this.data.flatMap((row) =>
+      row.data.flatMap((value, i) => this.searchCols[i] ? [value] : [])
+    );
+    // Current behavior is to alphabetically sort all options,
+    // potentially mixing values from different columns
+    // TODO: Consider dividing values by column
+    searchOptions.sort();
+    searchMenu.textContent = "";
+    searchOptions.forEach(searchOption => {
+      const element = document.createElement("div");
+      element.className = "item";
+      element.innerText = searchOption;
+      searchMenu.appendChild(element);
+    });
+    const searchInput = this.container.getElementsByTagName("input")[0];
+    searchInput.addEventListener("change", e => {
+      const searchValue = e.target.value;
+      this.searchTerms = searchValue.split(",").filter(s => s !== "");
+      this.rows = this.getRows(this.data);
+      this.render(false);
+    });
   }
 
   getHeaderRow() {
@@ -338,8 +376,22 @@ export class RankedTable {
         if (j === 0 && row.outlier) cell += "*";
         return new CellType(cell, this.classNames[j], this.headers[j]);
       });
-      return new RankedBodyRow(cells, i + 1, row.outlier);
+      const isHidden = !this.matchesSearchTerm(row);
+      return new RankedBodyRow(cells, i + 1, row.outlier, isHidden);
     });
+  }
+
+  matchesSearchTerm(row) {
+    if (this.searchTerms.length == 0) {
+      return true;
+    }
+    return this.searchTerms.some(searchTerm =>
+      row.data.some((value, i) =>
+        // Search term is selected from dropdown so
+        // is guaranteed to be equal to a value
+        this.searchCols[i] && value.toLowerCase() === searchTerm.toLowerCase()
+      )
+    );
   }
 
   setSortColumn(i) {
@@ -379,6 +431,7 @@ export class RankedTable {
   }
 
   render() {
+    // create rows
     const tbody = this.element.getElementsByTagName("tbody")[0];
     tbody.textContent = "";
 
