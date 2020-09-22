@@ -6,7 +6,8 @@ const createBailRateTable = () => {
     {
       class: "county-name-cell",
       header: "County",
-      sortable: false
+      sortable: false,
+      searchable: true
     },
     {
       class: "viz-cell",
@@ -20,27 +21,31 @@ const createBailRateTable = () => {
           }
         ]
       },
-      sortable: false
+      sortable: false,
+      searchable: false
     },
     {
       class: "bail-rate-cell number-cell",
       header: "Cash Bail Rate (%)",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
     {
       class: "bail-cases-cell number-cell",
       header: "Cash Bail Cases",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
     {
       class: "total-cases-cell number-cell",
       header: "Total Cases",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
   ];
   const initSort = 2; // initially sort by cash bail rate
-  const tableElement = document.getElementById("bail-rate-table");
-  new RankedTable(BAIL_RATE_DATA, columnConfigs, initSort, tableElement);
+  const tableContainer = document.getElementById("bail-rate-container");
+  new RankedTable(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer);
 };
 
 
@@ -49,7 +54,8 @@ const createBailRaceTable = () => {
     {
       class: "county-name-cell",
       header: "County",
-      sortable: false
+      sortable: false,
+      searchable: true
     },
     {
       class: "viz-cell",
@@ -67,28 +73,33 @@ const createBailRaceTable = () => {
           }
         ]
       },
-      sortable: false
+      sortable: false,
+      searchable: false
     },
     {
       class: "bail-black-cell number-cell",
       header: "% Cash Bail Black",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
     {
       class: "bail-white-cell number-cell",
       header: "% Cash Bail White",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
     {
       class: "diff-cell number-cell",
       header: "Diff",
-      sortable: true
+      sortable: true,
+      searchable: false
     },
   ];
   const initSort = 4; // initially sort by difference
-  const tableElement = document.getElementById("bail-race-table");
+  const tableContainer = document.getElementById("bail-race-container");
 
-  new RankedTable(BAIL_RACE_DATA, columnConfigs, initSort, tableElement);
+  new RankedTable(BAIL_RACE_DATA, columnConfigs, initSort, tableContainer);
+
 };
 
 createBailRateTable();

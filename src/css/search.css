@@ -1,0 +1,71 @@
+/* Search Bar */
+.ui.fluid.dropdown {
+  background-color: #000;
+  border: 1px #222 solid;
+  min-height: unset;
+}
+
+.ui.fluid.dropdown > .dropdown.icon {
+  color: #222;
+}
+
+.ui.multiple.search.dropdown > input.search {
+  color: #fff;
+}
+
+/* Selection Label */
+.ui.multiple.dropdown > .label {
+  background-color: #222;
+  color: #fff;
+  vertical-align: middle;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+i.icon.delete {
+  margin-left: 0.25em;
+  border-left: 0.1em rgba(255, 255, 255, 0.1) solid;
+}
+
+i.icon.delete:before {
+  content: "X";
+  color: #5c5c5c;
+  font-style: normal;
+  padding-left: 0.25em;
+}
+
+/* Dropdown */
+.ui.selection.active.dropdown {
+  border-color: #222;
+}
+
+.ui.selection.active.dropdown:hover {
+  border-color: #5c5c5c;
+}
+
+.ui.selection.active.dropdown .menu {
+  background-color: #000;
+  border-radius: 0;
+  border-color: #222;
+}
+
+.ui.selection.active.dropdown:hover .menu {
+  border-color: #5c5c5c;
+}
+
+.ui.selection.dropdown .menu > .item {
+  border-top: unset;
+  color: #fff;
+}
+
+.ui.dropdown.selected, .ui.dropdown .menu .selected.item {
+  background-color: #222;
+}
+
+.ui.dropdown .menu > .item:hover {
+  background: #5c5c5c;
+}
+
+.ui.selection.dropdown .menu > .message {
+  color: #fff;
+}

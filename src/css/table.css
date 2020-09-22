@@ -6,11 +6,12 @@
 table {
   border-collapse: collapse;
   width: 100%;
-  margin: 2.5em 0;
+  margin: 1em 0 2.5em;
 }
 
 tbody tr {
   border-top: 1px #333 solid;
+
 }
 
 th {
