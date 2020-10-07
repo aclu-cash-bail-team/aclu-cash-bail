@@ -298,7 +298,7 @@ export class RankedTable {
 
     this.header = this.getHeaderRow();
 
-    this.initRender(); // Initial table DOM setup
+    this.init(); // Initial table DOM setup
     this.sort(true); // this initial sort populates this.rows
 
   }
@@ -312,7 +312,7 @@ export class RankedTable {
     }
   }
 
-  initRender() {
+  init() {
     // create header row
     const thead = this.element.getElementsByTagName("thead")[0];
     thead.appendChild(this.header.element);
