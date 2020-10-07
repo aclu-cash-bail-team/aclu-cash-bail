@@ -13,7 +13,7 @@ const createBailRateTable = () => {
       class: "viz-cell",
       header: {
         "start": 0,
-        "end": 60,
+        "end": 90,
         "averages": [
           {
             "name": "State Average",
@@ -99,7 +99,6 @@ const createBailRaceTable = () => {
   const tableContainer = document.getElementById("bail-race-container");
 
   new RankedTable(BAIL_RACE_DATA, columnConfigs, initSort, tableContainer);
-
 };
 
 createBailRateTable();

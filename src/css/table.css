@@ -6,7 +6,7 @@
 table {
   border-collapse: collapse;
   width: 100%;
-  margin: 1em 0 2.5em;
+  margin: 1em 0 0;
 }
 
 tbody tr {
@@ -40,6 +40,10 @@ td.sorted {
   text-align: center;
 }
 
+.county-name-cell {
+  width: 95px;
+}
+
 .sort-desc, .sort-asc {
   cursor: pointer;
 }
@@ -67,4 +71,15 @@ td.sorted {
 
 .sort-asc.sorted:before {
   border-bottom-color: #eee;
+}
+
+.view-all-btn {
+  width: 100%;
+  padding: 1em;
+  margin: 0 0 2.5em;
+  text-align: center;
+  font-weight: 600;
+  border: 1px #333 solid;
+  cursor: pointer;
+  user-select: none;
 }
