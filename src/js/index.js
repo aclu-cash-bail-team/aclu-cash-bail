@@ -14,7 +14,7 @@ const createBailRateTable = () => {
       class: "viz-cell",
       header: {
         "start": 0,
-        "end": 60,
+        "end": 90,
         "averages": [
           {
             "name": "State Average",
