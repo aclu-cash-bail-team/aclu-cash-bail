@@ -92,7 +92,7 @@ const createBailRaceTable = () => {
       class: "diff-cell number-cell",
       header: "Diff",
       sortable: true,
-      searchable:false
+      searchable: false
     },
   ];
   const initSort = 4; // initially sort by difference
