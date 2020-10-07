@@ -10,7 +10,7 @@ Before push your changes, make sure to lint your code. You can do this by runnin
 
 ## Building and Deploying
 
-To deploy an example to our [GitHub pages site](https://aclu-cash-bail-team.github.io/aclu-cash-bail/), first run `npm run build`, which will build the necessary `dist` files. The run `npm run deploy` to push those files to the `gh-pages` branch, off of which the site is built.
+To deploy an example to our [GitHub pages site](https://aclu-cash-bail-team.github.io/aclu-cash-bail/), first run `npm run build`, which will build the necessary `dist` files. Push those changes to master. Then run `npm run deploy` to push those files to the `gh-pages` branch, off of which the site is built.
 
 ## Webflow Integration
 Though the visualization code is hosted here, it will actually be deployed on the ACLU site.

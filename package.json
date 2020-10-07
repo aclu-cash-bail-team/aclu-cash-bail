@@ -18,8 +18,9 @@
   "author": "Alex Graves and Arjun Pothukuchi",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "eslint": "^5.16.0"
+    "cssnano": "^4.1.10",
+    "eslint": "^5.16.0",
+    "parcel-bundler": "^1.12.4"
   },
   "bugs": {
     "url": "https://github.com/apothuku/aclu-cash-bail/issues"
