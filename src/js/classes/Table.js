@@ -249,8 +249,9 @@ class HeaderRow {
 
 
 class RankedBodyRow {
-  constructor(cells, initialRank, isHidden = false) {
+  constructor(cells, initialRank, outlier, isHidden = false) {
     this.cells = cells;
+    this.outlier = outlier;
     this.isHidden = isHidden;
     this.render(initialRank);
   }
@@ -281,10 +282,11 @@ export class RankedTable {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
-    this.validate(this.data, this.classNames, this.headers);
     this.container = tableContainer;
     this.element = tableContainer.getElementsByTagName("table")[0];
+    this.showOutliers = false;
 
+    this.validate(this.data, this.classNames, this.headers);
     this.searchCols = columnConfigs.map((config) => config.searchable);
     this.searchTerms = [];
     this.isTruncated = true;
@@ -293,20 +295,51 @@ export class RankedTable {
     // start with sorting descending; add one to account for rank
     this.sortCol = initSort + 1;
     this.sortDir = -1;
-    this.sort(true); // this initial sort populates this.rows
 
     this.header = this.getHeaderRow();
 
-    this.render();
+    this.init(); // Initial table DOM setup
+    this.sort(true); // this initial sort populates this.rows
+
   }
 
   validate(data, classNames, headers) {
     if (classNames.length !== headers.length) {
       throw new Error("Number of class names does not match number of headers");
     }
-    if (data.some((row) => row.length != headers.length)) {
+    if (data.some(row => row.data.length != headers.length)) {
       throw new Error(`${headers.length} columns of data required`);
     }
+  }
+
+  init() {
+    // create header row
+    const thead = this.element.getElementsByTagName("thead")[0];
+    thead.appendChild(this.header.element);
+
+    // set up search bar
+    const searchMenu = this.container.getElementsByClassName("menu")[0];
+    const searchOptions = this.data.flatMap((row) =>
+      row.data.flatMap((value, i) => this.searchCols[i] ? [value] : [])
+    );
+    // Current behavior is to alphabetically sort all options,
+    // potentially mixing values from different columns
+    // TODO: Consider dividing values by column
+    searchOptions.sort();
+    searchMenu.textContent = "";
+    searchOptions.forEach(searchOption => {
+      const element = document.createElement("div");
+      element.className = "item";
+      element.innerText = searchOption;
+      searchMenu.appendChild(element);
+    });
+    const searchInput = this.container.getElementsByTagName("input")[0];
+    searchInput.addEventListener("change", e => {
+      const searchValue = e.target.value;
+      this.searchTerms = searchValue.split(",").filter(s => s !== "");
+      this.rows = this.getRows(this.data);
+      this.render(false);
+    });
   }
 
   getHeaderRow() {
@@ -335,12 +368,14 @@ export class RankedTable {
     let numVisibleRows = 0;
     return data.map((row, i) => {
       // Specify how data will be rendered
-      const cells = row.map((cell, j) => {
+      const cells = row.data.map((cell, j) => {
         let CellType = TextCell;
         if (typeof(cell) == "number") CellType = NumberCell;
         if (typeof(cell) == "object") {
           CellType = cell["type"] === "bar" ? BarGraphCell : NumberLineCell;
         }
+        // for county names, append an asterisk if it's an outlier
+        if (j === 0 && row.outlier) cell += "*";
         return new CellType(cell, this.classNames[j], this.headers[j]);
       });
       const isHidden = (this.isTruncated && numVisibleRows >= 10) || !this.matchesSearchTerm(row);
@@ -354,7 +389,7 @@ export class RankedTable {
       return true;
     }
     return this.searchTerms.some(searchTerm =>
-      row.some((value, i) =>
+      row.data.some((value, i) =>
         // Search term is selected from dropdown so
         // is guaranteed to be equal to a value
         this.searchCols[i] && value.toLowerCase() === searchTerm.toLowerCase()
@@ -378,8 +413,8 @@ export class RankedTable {
     this.data.sort((a, b) => {
       // Assumes that we only want to sort numbers, which is fine for now
       // May need to support sorting multiple types
-      const i = Number(a[dataCol]);
-      const j = Number(b[dataCol]);
+      const i = Number(a.data[dataCol]);
+      const j = Number(b.data[dataCol]);
       if (i < j) {
         return this.sortDir * -1;
       } else if (i > j) {
@@ -389,55 +424,28 @@ export class RankedTable {
       }
     });
     this.rows = this.getRows(this.data);
-    this.updateTable(false);
+    this.render();
   }
 
-  updateTable(rankReverse) {
+  toggleOutliers() {
+    this.showOutliers = !this.showOutliers;
+    this.render();
+    return this.showOutliers;
+  }
+
+  render() {
+    // create rows
     const tbody = this.element.getElementsByTagName("tbody")[0];
     tbody.textContent = "";
 
     // repopulate with updated rows
-    this.rows.forEach((row, i) => {
-      const rank = rankReverse ? this.rows.length - i : i + 1;
-      row.render(rank, this.sortCol);
-      tbody.appendChild(row.element);
-    });
-  }
-
-  render() {
-    // set up search bar
-    const searchMenu = this.container.getElementsByClassName("menu")[0];
-    const searchOptions = this.data.flatMap((row) =>
-      row.flatMap((value, i) => this.searchCols[i] ? [value] : []
-      )
-    );
-    // Current behavior is to alphabetically sort all options,
-    // potentially mixing values from different columns
-    // TODO: Consider dividing values by column
-    searchOptions.sort();
-    searchMenu.textContent = "";
-    searchOptions.forEach(searchOption => {
-      const element = document.createElement("div");
-      element.className = "item";
-      element.innerText = searchOption;
-      searchMenu.appendChild(element);
-    });
-    const searchInput = this.container.getElementsByTagName("input")[0];
-    searchInput.addEventListener("change", e => {
-      const searchValue = e.target.value;
-      this.searchTerms = searchValue.split(",").filter(s => s !== "");
-      this.rows = this.getRows(this.data);
-      this.updateTable(false);
-    });
-
-    // create header row
-    const thead = this.element.getElementsByTagName("thead")[0];
-    thead.appendChild(this.header.element);
-
-    // create rows
-    const tbody = this.element.getElementsByTagName("tbody")[0];
+    let rowRank = 1;
     this.rows.forEach(row => {
-      tbody.appendChild(row.element);
+      if (!row.outlier || this.showOutliers) {
+        row.render(rowRank, this.sortCol);
+        tbody.appendChild(row.element);
+        rowRank++;
+      }
     });
 
     // set up view all button

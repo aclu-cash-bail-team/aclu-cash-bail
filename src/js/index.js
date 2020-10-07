@@ -1,6 +1,7 @@
 import { RankedTable } from "./classes/Table.js";
 import { BAIL_RATE_DATA, BAIL_RACE_DATA } from "./data.js";
 
+/* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
   const columnConfigs = [
     {
@@ -45,9 +46,8 @@ const createBailRateTable = () => {
   ];
   const initSort = 2; // initially sort by cash bail rate
   const tableContainer = document.getElementById("bail-rate-container");
-  new RankedTable(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer);
+  return new RankedTable(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer);
 };
-
 
 const createBailRaceTable = () => {
   const columnConfigs = [
@@ -98,8 +98,14 @@ const createBailRaceTable = () => {
   const initSort = 4; // initially sort by difference
   const tableContainer = document.getElementById("bail-race-container");
 
-  new RankedTable(BAIL_RACE_DATA, columnConfigs, initSort, tableContainer);
+  return new RankedTable(BAIL_RACE_DATA, columnConfigs, initSort, tableContainer);
 };
 
-createBailRateTable();
-createBailRaceTable();
+/* RENDER PAGE */
+const bailRateTable = createBailRateTable();
+
+const bailRaceTable = createBailRaceTable();
+document.getElementById("race-outliers").addEventListener("click", (e) => {
+  const showOutliers = bailRaceTable.toggleOutliers();
+  e.target.className = showOutliers ? "outliers-btn showing" : "outliers-btn";
+});

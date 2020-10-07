@@ -11,7 +11,6 @@ table {
 
 tbody tr {
   border-top: 1px #333 solid;
-
 }
 
 th {
@@ -82,4 +81,22 @@ td.sorted {
   border: 1px #333 solid;
   cursor: pointer;
   user-select: none;
+}
+
+.outliers-btn {
+  cursor: pointer;
+  user-select: none;
+  padding: 1em;
+  margin: 0 0 2.5em;
+  border: 1px #333 solid;
+  border-radius: 5px;
+  color: #595959;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.outliers-btn.showing {
+  color: #fff;
+  background-color: #1D1D1D;
 }
