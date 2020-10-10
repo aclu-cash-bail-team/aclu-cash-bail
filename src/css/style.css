@@ -1,14 +1,22 @@
-/* Base styles for dev template */
+@font-face {
+  font-family: "GT America";
+  src: url("./GT-America-Standard-Regular.otf") format("opentype");
+}
 
 body {
-  font-family: "GT America", sans-serif;
+  font-family: "GT America";
   font-weight: 400;
-  font-size: 80%;
+  font-size: 13px;
   color: #eee;
   background-color: #000;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  max-width: 640px;
+  max-width: 600px;
   margin: auto;
+}
+
+.table-container {
+  margin: 3em 0;
 }

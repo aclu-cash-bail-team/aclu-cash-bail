@@ -1,3 +1,6 @@
+const VIEW_ALL = "view all";
+const VIEW_LESS = "view less";
+
 class Cell {
   constructor(className) {
     this.className = className;
@@ -184,7 +187,7 @@ class VizHeaderCell extends HeaderCell {
     const startElement = this.createTickElement(start, "start-num");
     const endElement = this.createTickElement(end, "end-num");
     const averageElements = averages.map((average, i) => {
-      const text = `${average["name"]}:<br>${average["value"].toFixed(1)}%`;
+      const text = `${average["name"]}<br>${average["value"].toFixed(1)}%`;
       const className = "average";
       return this.createTickElement(text, className, vizColors[i]);
     });
@@ -212,7 +215,7 @@ class VizHeaderCell extends HeaderCell {
     wrapper.appendChild(text);
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
-      wrapper.style.paddingLeft = `${0.25}em`;
+      wrapper.style.paddingLeft = `${4}px`;
     }
 
     // create the vertical tick underneath the number
@@ -248,24 +251,25 @@ class HeaderRow {
 }
 
 
-class RankedBodyRow {
-  constructor(cells, initialRank, outlier, isHidden = false) {
+class BodyRow {
+  constructor(cells, outlier, isHidden) {
     this.cells = cells;
     this.outlier = outlier;
     this.isHidden = isHidden;
-    this.render(initialRank);
+    this.render();
   }
 
-  render(rank, sorted) {
+  setIsHidden(isHidden) {
+    this.isHidden = isHidden;
+  }
+
+  render(sorted) {
     const row = document.createElement("tr");
     if (this.isHidden) {
       row.className = "hidden";
     } else {
-      const rankedCells = [
-        new TextCell(rank, "rank-cell"),
-        ...this.cells
-      ];
-      rankedCells.forEach((cell, i) => {
+      row.className = "";
+      this.cells.forEach((cell, i) => {
         cell.setElementClass(
           i === sorted ? `${cell.className} sorted` : cell.className
         );
@@ -277,7 +281,7 @@ class RankedBodyRow {
 }
 
 
-export class RankedTable {
+export class Table {
   constructor(data, columnConfigs, initSort, tableContainer) {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
@@ -292,8 +296,8 @@ export class RankedTable {
     this.isTruncated = true;
 
     this.sortCols = columnConfigs.map((config) => config.sortable);
-    // start with sorting descending; add one to account for rank
-    this.sortCol = initSort + 1;
+    // start with sorting descending
+    this.sortCol = initSort;
     this.sortDir = -1;
 
     this.header = this.getHeaderRow();
@@ -337,8 +341,18 @@ export class RankedTable {
     searchInput.addEventListener("change", e => {
       const searchValue = e.target.value;
       this.searchTerms = searchValue.split(",").filter(s => s !== "");
-      this.rows = this.getRows(this.data);
-      this.render(false);
+      this.rows = this.getRows();
+      this.render();
+    });
+
+    // set up view all button
+    const viewAllButton = this.container.getElementsByClassName("view-all-btn")[0];
+    viewAllButton.innerText = this.isTruncated ? VIEW_ALL : VIEW_LESS;
+    viewAllButton.addEventListener("click", () => {
+      this.isTruncated = !this.isTruncated;
+      viewAllButton.innerText = this.isTruncated ? VIEW_ALL : VIEW_LESS;
+      this.rows = this.getRows();
+      this.render();
     });
   }
 
@@ -351,22 +365,17 @@ export class RankedTable {
         this.sortCols[i],
         // 1 designates ascending; -1, descending (default); 0, not sortable
         this.sortCols[i] ? -1 : 0,
-        i + 1 === this.sortCol,
+        i === this.sortCol,
         this,
-        // adjust ids for rank and space headers
-        i + 1
+        i
       );
     });
-    const headersWithRank = [
-      new HeaderCell("Rank", "rank-cell", false, 0, false, this, 0),
-      ...headerCells
-    ];
-    return new HeaderRow(headersWithRank);
+    return new HeaderRow(headerCells);
   }
 
-  getRows(data) {
+  getRows() {
     let numVisibleRows = 0;
-    return data.map((row, i) => {
+    return this.data.map((row, i) => {
       // Specify how data will be rendered
       const cells = row.data.map((cell, j) => {
         let CellType = TextCell;
@@ -378,9 +387,10 @@ export class RankedTable {
         if (j === 0 && row.outlier) cell += "*";
         return new CellType(cell, this.classNames[j], this.headers[j]);
       });
-      const isHidden = (this.isTruncated && numVisibleRows >= 10) || !this.matchesSearchTerm(row);
-      numVisibleRows += isHidden ? 0 : 1;
-      return new RankedBodyRow(cells, i + 1, isHidden);
+      const isHidden = (this.isTruncated && numVisibleRows >= 10) ||
+        (row.outlier && !this.showOutliers) || !this.matchesSearchTerm(row);
+      if (!isHidden) numVisibleRows++;
+      return new BodyRow(cells, row.outlier, isHidden);
     });
   }
 
@@ -408,13 +418,11 @@ export class RankedTable {
   sort(initialSort) {
     if (!initialSort) this.header.clearedSortedCells();
 
-    // data doesn't have rank, so subtract one from the index
-    const dataCol = this.sortCol - 1;
     this.data.sort((a, b) => {
       // Assumes that we only want to sort numbers, which is fine for now
       // May need to support sorting multiple types
-      const i = Number(a.data[dataCol]);
-      const j = Number(b.data[dataCol]);
+      const i = Number(a.data[this.sortCol]);
+      const j = Number(b.data[this.sortCol]);
       if (i < j) {
         return this.sortDir * -1;
       } else if (i > j) {
@@ -423,12 +431,13 @@ export class RankedTable {
         return 0;
       }
     });
-    this.rows = this.getRows(this.data);
+    this.rows = this.getRows();
     this.render();
   }
 
   toggleOutliers() {
     this.showOutliers = !this.showOutliers;
+    this.rows = this.getRows();
     this.render();
     return this.showOutliers;
   }
@@ -439,23 +448,9 @@ export class RankedTable {
     tbody.textContent = "";
 
     // repopulate with updated rows
-    let rowRank = 1;
     this.rows.forEach(row => {
-      if (!row.outlier || this.showOutliers) {
-        row.render(rowRank, this.sortCol);
-        tbody.appendChild(row.element);
-        rowRank++;
-      }
-    });
-
-    // set up view all button
-    const viewAllButton = this.container.getElementsByClassName("view-all-btn")[0];
-    viewAllButton.innerText = this.isTruncated ? "VIEW ALL" : "COLLAPSE";
-    viewAllButton.addEventListener("click", () => {
-      this.isTruncated = !this.isTruncated;
-      viewAllButton.innerText = this.isTruncated ? "VIEW ALL" : "COLLAPSE";
-      this.rows = this.getRows(this.data);
-      this.updateTable(false);
+      row.render(this.sortCol);
+      tbody.appendChild(row.element);
     });
   }
 }

@@ -1,4 +1,4 @@
-import { RankedTable } from "./classes/Table.js";
+import { Table } from "./classes/Table.js";
 import { BAIL_RATE_DATA, BAIL_RACE_DATA } from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
@@ -14,10 +14,10 @@ const createBailRateTable = () => {
       class: "viz-cell",
       header: {
         "start": 0,
-        "end": 90,
+        "end": 60,
         "averages": [
           {
-            "name": "State Average",
+            "name": "Avg.",
             "value": 42.5966697900
           }
         ]
@@ -46,7 +46,7 @@ const createBailRateTable = () => {
   ];
   const initSort = 2; // initially sort by cash bail rate
   const tableContainer = document.getElementById("bail-rate-container");
-  return new RankedTable(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer);
+  return new Table(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer);
 };
 
 const createBailRaceTable = () => {
@@ -98,7 +98,7 @@ const createBailRaceTable = () => {
   const initSort = 4; // initially sort by difference
   const tableContainer = document.getElementById("bail-race-container");
 
-  return new RankedTable(BAIL_RACE_DATA, columnConfigs, initSort, tableContainer);
+  return new Table(BAIL_RACE_DATA, columnConfigs, initSort, tableContainer);
 };
 
 /* RENDER PAGE */
