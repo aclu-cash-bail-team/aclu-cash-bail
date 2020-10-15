@@ -2113,3 +2113,1011 @@ export const BAIL_RACE_DATA = [
     "outlier": false
   }
 ];
+
+export const ROR_RATE_DATA = [
+  {
+    "data": [
+      "Adams",
+      {
+        "type": "bar",
+        "values": [
+          24.8748556
+        ]
+      },
+      24.8748556,
+      631,
+      2537
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Allegheny",
+      {
+        "type": "bar",
+        "values": [
+          29.55770303
+        ]
+      },
+      29.55770303,
+      9377,
+      31723
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Armstrong",
+      {
+        "type": "bar",
+        "values": [
+          43.273906
+        ]
+      },
+      43.273906,
+      782,
+      1808
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Beaver",
+      {
+        "type": "bar",
+        "values": [
+          35.80876494
+        ]
+      },
+      35.80876494,
+      2137,
+      5967
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bedford",
+      {
+        "type": "bar",
+        "values": [
+          1.804812834
+        ]
+      },
+      1.804812834,
+      26,
+      1460
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Berks",
+      {
+        "type": "bar",
+        "values": [
+          15.21347947
+        ]
+      },
+      15.21347947,
+      1778,
+      11688
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Blair",
+      {
+        "type": "bar",
+        "values": [
+          0.3598560576
+        ]
+      },
+      0.3598560576,
+      17,
+      4826
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bradford",
+      {
+        "type": "bar",
+        "values": [
+          11.53638814
+        ]
+      },
+      11.53638814,
+      208,
+      1805
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bucks",
+      {
+        "type": "bar",
+        "values": [
+          17.70282471
+        ]
+      },
+      17.70282471,
+      2688,
+      15185
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Butler",
+      {
+        "type": "bar",
+        "values": [
+          57.27539063
+        ]
+      },
+      57.27539063,
+      1155,
+      2017
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cambria",
+      {
+        "type": "bar",
+        "values": [
+          21.61761592
+        ]
+      },
+      21.61761592,
+      997,
+      4613
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cameron",
+      {
+        "type": "bar",
+        "values": [
+          0
+        ]
+      },
+      0,
+      0,
+      112
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Carbon",
+      {
+        "type": "bar",
+        "values": [
+          13.12718786
+        ]
+      },
+      13.12718786,
+      434,
+      3307
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Centre",
+      {
+        "type": "bar",
+        "values": [
+          61.55555556
+        ]
+      },
+      61.55555556,
+      2074,
+      3370
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Chester",
+      {
+        "type": "bar",
+        "values": [
+          20.7253886
+        ]
+      },
+      20.7253886,
+      2145,
+      10351
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clarion",
+      {
+        "type": "bar",
+        "values": [
+          25.70281124
+        ]
+      },
+      25.70281124,
+      307,
+      1193
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clearfield",
+      {
+        "type": "bar",
+        "values": [
+          0.09832841691
+        ]
+      },
+      0.09832841691,
+      2,
+      2002
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clinton",
+      {
+        "type": "bar",
+        "values": [
+          11.40472879
+        ]
+      },
+      11.40472879,
+      162,
+      1421
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Columbia",
+      {
+        "type": "bar",
+        "values": [
+          19.6287964
+        ]
+      },
+      19.6287964,
+      338,
+      1722
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Crawford",
+      {
+        "type": "bar",
+        "values": [
+          53.99239544
+        ]
+      },
+      53.99239544,
+      415,
+      768
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cumberland",
+      {
+        "type": "bar",
+        "values": [
+          41.36118008
+        ]
+      },
+      41.36118008,
+      2784,
+      6732
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Dauphin",
+      {
+        "type": "bar",
+        "values": [
+          18.47205582
+        ]
+      },
+      18.47205582,
+      2509,
+      13585
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Delaware",
+      {
+        "type": "bar",
+        "values": [
+          0.1063889356
+        ]
+      },
+      0.1063889356,
+      18,
+      16808
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Elk",
+      {
+        "type": "bar",
+        "values": [
+          0
+        ]
+      },
+      0,
+      0,
+      799
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Erie",
+      {
+        "type": "bar",
+        "values": [
+          36.48249027
+        ]
+      },
+      36.48249027,
+      2261,
+      6198
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fayette",
+      {
+        "type": "bar",
+        "values": [
+          0.7816663706
+        ]
+      },
+      0.7816663706,
+      43,
+      5546
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Forest",
+      {
+        "type": "bar",
+        "values": [
+          12.80487805
+        ]
+      },
+      12.80487805,
+      16,
+      123
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Franklin",
+      {
+        "type": "bar",
+        "values": [
+          50.02097315
+        ]
+      },
+      50.02097315,
+      2341,
+      4681
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fulton",
+      {
+        "type": "bar",
+        "values": [
+          51.42180095
+        ]
+      },
+      51.42180095,
+      197,
+      383
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Greene",
+      {
+        "type": "bar",
+        "values": [
+          26.58371041
+        ]
+      },
+      26.58371041,
+      222,
+      834
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Huntingdon",
+      {
+        "type": "bar",
+        "values": [
+          29.07216495
+        ]
+      },
+      29.07216495,
+      393,
+      1353
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Indiana",
+      {
+        "type": "bar",
+        "values": [
+          30.72805139
+        ]
+      },
+      30.72805139,
+      283,
+      922
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Jefferson",
+      {
+        "type": "bar",
+        "values": [
+          0.08291873964
+        ]
+      },
+      0.08291873964,
+      1,
+      1166
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Juniata",
+      {
+        "type": "bar",
+        "values": [
+          18.92430279
+        ]
+      },
+      18.92430279,
+      86,
+      455
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Lackawanna",
+      {
+        "type": "bar",
+        "values": [
+          1.805465192
+        ]
+      },
+      1.805465192,
+      104,
+      5783
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lancaster",
+      {
+        "type": "bar",
+        "values": [
+          15.22326915
+        ]
+      },
+      15.22326915,
+      1823,
+      11977
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lawrence",
+      {
+        "type": "bar",
+        "values": [
+          24.68534308
+        ]
+      },
+      24.68534308,
+      592,
+      2398
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lebanon",
+      {
+        "type": "bar",
+        "values": [
+          3.52189781
+        ]
+      },
+      3.52189781,
+      188,
+      5329
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lehigh",
+      {
+        "type": "bar",
+        "values": [
+          8.111417202
+        ]
+      },
+      8.111417202,
+      961,
+      11845
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Luzerne",
+      {
+        "type": "bar",
+        "values": [
+          29.28027748
+        ]
+      },
+      29.28027748,
+      2913,
+      9950
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lycoming",
+      {
+        "type": "bar",
+        "values": [
+          0.3315649867
+        ]
+      },
+      0.3315649867,
+      15,
+      4475
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "McKean",
+      {
+        "type": "bar",
+        "values": [
+          4.912572856
+        ]
+      },
+      4.912572856,
+      56,
+      1147
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mercer",
+      {
+        "type": "bar",
+        "values": [
+          11.8556701
+        ]
+      },
+      11.8556701,
+      542,
+      4571
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mifflin",
+      {
+        "type": "bar",
+        "values": [
+          0.4682274247
+        ]
+      },
+      0.4682274247,
+      7,
+      1477
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Monroe",
+      {
+        "type": "bar",
+        "values": [
+          17.01694915
+        ]
+      },
+      17.01694915,
+      980,
+      5757
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montgomery",
+      {
+        "type": "bar",
+        "values": [
+          14.69809841
+        ]
+      },
+      14.69809841,
+      2896,
+      19702
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montour",
+      {
+        "type": "bar",
+        "values": [
+          39.02439024
+        ]
+      },
+      39.02439024,
+      107,
+      275
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Northampton",
+      {
+        "type": "bar",
+        "values": [
+          15.20764512
+        ]
+      },
+      15.20764512,
+      1252,
+      8234
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Northumberland",
+      {
+        "type": "bar",
+        "values": [
+          11.87628866
+        ]
+      },
+      11.87628866,
+      287,
+      2414
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Perry",
+      {
+        "type": "bar",
+        "values": [
+          41.48148148
+        ]
+      },
+      41.48148148,
+      441,
+      1064
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Philadelphia",
+      {
+        "type": "bar",
+        "values": [
+          36.20163088
+        ]
+      },
+      36.20163088,
+      22872,
+      63180
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Pike",
+      {
+        "type": "bar",
+        "values": [
+          31.06125971
+        ]
+      },
+      31.06125971,
+      344,
+      1109
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Potter",
+      {
+        "type": "bar",
+        "values": [
+          16.50326797
+        ]
+      },
+      16.50326797,
+      98,
+      593
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Schuylkill",
+      {
+        "type": "bar",
+        "values": [
+          10.6870229
+        ]
+      },
+      10.6870229,
+      591,
+      5531
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Snyder",
+      {
+        "type": "bar",
+        "values": [
+          6.472795497
+        ]
+      },
+      6.472795497,
+      69,
+      1060
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Somerset",
+      {
+        "type": "bar",
+        "values": [
+          4.640718563
+        ]
+      },
+      4.640718563,
+      91,
+      1962
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Sullivan",
+      {
+        "type": "bar",
+        "values": [
+          1.869158879
+        ]
+      },
+      1.869158879,
+      2,
+      103
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Susquehanna",
+      {
+        "type": "bar",
+        "values": [
+          25.50251256
+        ]
+      },
+      25.50251256,
+      200,
+      783
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Tioga",
+      {
+        "type": "bar",
+        "values": [
+          13.05954825
+        ]
+      },
+      13.05954825,
+      311,
+      2385
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Union",
+      {
+        "type": "bar",
+        "values": [
+          47.70039422
+        ]
+      },
+      47.70039422,
+      354,
+      743
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Venango",
+      {
+        "type": "bar",
+        "values": [
+          0.1282873637
+        ]
+      },
+      0.1282873637,
+      2,
+      1549
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Warren",
+      {
+        "type": "bar",
+        "values": [
+          42.03069658
+        ]
+      },
+      42.03069658,
+      349,
+      831
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Washington",
+      {
+        "type": "bar",
+        "values": [
+          25.6113633
+        ]
+      },
+      25.6113633,
+      1694,
+      6615
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wayne",
+      {
+        "type": "bar",
+        "values": [
+          34.58177278
+        ]
+      },
+      34.58177278,
+      269,
+      779
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Westmoreland",
+      {
+        "type": "bar",
+        "values": [
+          32.92518089
+        ]
+      },
+      32.92518089,
+      3929,
+      11934
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wyoming",
+      {
+        "type": "bar",
+        "values": [
+          0.1853568119
+        ]
+      },
+      0.1853568119,
+      2,
+      1056
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "York",
+      {
+        "type": "bar",
+        "values": [
+          33.30952381
+        ]
+      },
+      33.30952381,
+      5509,
+      16539
+    ],
+    "outlier": false
+  }
+]
