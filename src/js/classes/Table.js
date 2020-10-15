@@ -340,6 +340,16 @@ export class RankedTable {
       this.rows = this.getRows(this.data);
       this.render(false);
     });
+
+    // set up view all button
+    const viewAllButton = this.container.getElementsByClassName("view-all-btn")[0];
+    viewAllButton.innerText = this.isTruncated ? "VIEW ALL" : "COLLAPSE";
+    viewAllButton.addEventListener("click", () => {
+      this.isTruncated = !this.isTruncated;
+      viewAllButton.innerText = this.isTruncated ? "VIEW ALL" : "COLLAPSE";
+      this.rows = this.getRows(this.data);
+      this.render();
+    });
   }
 
   getHeaderRow() {
@@ -446,16 +456,6 @@ export class RankedTable {
         tbody.appendChild(row.element);
         rowRank++;
       }
-    });
-
-    // set up view all button
-    const viewAllButton = this.container.getElementsByClassName("view-all-btn")[0];
-    viewAllButton.innerText = this.isTruncated ? "VIEW ALL" : "COLLAPSE";
-    viewAllButton.addEventListener("click", () => {
-      this.isTruncated = !this.isTruncated;
-      viewAllButton.innerText = this.isTruncated ? "VIEW ALL" : "COLLAPSE";
-      this.rows = this.getRows(this.data);
-      this.updateTable(false);
     });
   }
 }
