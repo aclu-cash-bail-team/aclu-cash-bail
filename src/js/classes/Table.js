@@ -184,7 +184,12 @@ class VizHeaderCell extends HeaderCell {
     const startElement = this.createTickElement(start, "start-num");
     const endElement = this.createTickElement(end, "end-num");
     const averageElements = averages.map((average, i) => {
-      const text = `${average["name"]}:<br>${average["value"].toFixed(1)}%`;
+      let text = "";
+      if (average["unit"] === "percent") {
+        text = `${average["name"]}:<br>${average["value"].toFixed(1)}`;
+      } else if (average["unit"] === "dollars") {
+        text =`${average["name"]}:<br>$${Math.round(average["value"]).toString().substring(0, 2)}K`;
+      }
       const className = "average";
       return this.createTickElement(text, className, vizColors[i]);
     });

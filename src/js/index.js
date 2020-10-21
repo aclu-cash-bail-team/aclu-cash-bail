@@ -18,7 +18,8 @@ const createBailRateTable = () => {
         "averages": [
           {
             "name": "State Average",
-            "value": 42.5966697900
+            "value": 42.5966697900,
+            "unit": "percent"
           }
         ]
       },
@@ -65,7 +66,8 @@ const createRorRateTable = () => {
         "averages": [
           {
             "name": "State Average",
-            "value": 22.73
+            "value": 22.73,
+            "unit": "percent"
           }
         ]
       },
@@ -112,11 +114,13 @@ const createBailRaceRateTable = () => {
         "averages": [
           {
             "name": "Black",
-            "value": 54.7462525
+            "value": 54.7462525,
+            "unit": "percent"
           },
           {
             "name": "White",
-            "value": 37.87542236
+            "value": 37.87542236,
+            "unit": "percent"
           }
         ]
       },
@@ -165,10 +169,12 @@ const createBailRaceAmountTable = () => {
           {
             "name": "Black",
             "value": 38700.61968,
+            "unit": "dollars"
           },
           {
             "name": "White",
             "value": 27572.55514,
+            "unit": "dollars"
           }
         ]
       },
