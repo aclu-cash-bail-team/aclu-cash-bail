@@ -3120,4 +3120,1079 @@ export const ROR_RATE_DATA = [
     ],
     "outlier": false
   }
-]
+];
+
+export const BAIL_RACE_AMOUNT_DATA = [
+  {
+    "data": [
+      "Adams",
+      {
+        "type": "line",
+        "values": [
+          29479,
+          26077
+        ]
+      },
+      29479,
+      26077,
+      "+3401.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Allegheny",
+      {
+        "type": "line",
+        "values": [
+          21080,
+          15881
+        ]
+      },
+      21080,
+      15881,
+      "+5199.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Armstrong",
+      {
+        "type": "line",
+        "values": [
+          18541,
+          13560
+        ]
+      },
+      18541,
+      13560,
+      "+4981.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Beaver",
+      {
+        "type": "line",
+        "values": [
+          26145,
+          13733
+        ]
+      },
+      26145,
+      13733,
+      "+12412.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bedford",
+      {
+        "type": "line",
+        "values": [
+          65010,
+          49176
+        ]
+      },
+      65010,
+      49176,
+      "+15834.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Berks",
+      {
+        "type": "line",
+        "values": [
+          35039,
+          27399
+        ]
+      },
+      35039,
+      27399,
+      "+7640.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Blair",
+      {
+        "type": "line",
+        "values": [
+          43726,
+          29256
+        ]
+      },
+      43726,
+      29256,
+      "+14470.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bradford",
+      {
+        "type": "line",
+        "values": [
+          63125,
+          32077
+        ]
+      },
+      63125,
+      32077,
+      "+31048.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bucks",
+      {
+        "type": "line",
+        "values": [
+          73635,
+          58683
+        ]
+      },
+      73635,
+      58683,
+      "+14951.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Butler",
+      {
+        "type": "line",
+        "values": [
+          42155,
+          12248
+        ]
+      },
+      42155,
+      12248,
+      "+29907.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cambria",
+      {
+        "type": "line",
+        "values": [
+          51483,
+          28879
+        ]
+      },
+      51483,
+      28879,
+      "+22604.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cameron",
+      {
+        "type": "line",
+        "values": [
+          10000,
+          26481
+        ]
+      },
+      10000,
+      26481,
+      "-16481.0"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Carbon",
+      {
+        "type": "line",
+        "values": [
+          35236,
+          24452
+        ]
+      },
+      35236,
+      24452,
+      "+10784.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Centre",
+      {
+        "type": "line",
+        "values": [
+          45976,
+          34614
+        ]
+      },
+      45976,
+      34614,
+      "+11361.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Chester",
+      {
+        "type": "line",
+        "values": [
+          32205,
+          22836
+        ]
+      },
+      32205,
+      22836,
+      "+9369.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clarion",
+      {
+        "type": "line",
+        "values": [
+          14200,
+          20698
+        ]
+      },
+      14200,
+      20698,
+      "-6498.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clearfield",
+      {
+        "type": "line",
+        "values": [
+          43890,
+          23215
+        ]
+      },
+      43890,
+      23215,
+      "+20675.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clinton",
+      {
+        "type": "line",
+        "values": [
+          29609,
+          19817
+        ]
+      },
+      29609,
+      19817,
+      "+9792.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Columbia",
+      {
+        "type": "line",
+        "values": [
+          57747,
+          33130
+        ]
+      },
+      57747,
+      33130,
+      "+24617.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Crawford",
+      {
+        "type": "line",
+        "values": [
+          32600,
+          21505
+        ]
+      },
+      32600,
+      21505,
+      "+11095.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cumberland",
+      {
+        "type": "line",
+        "values": [
+          34037,
+          23281
+        ]
+      },
+      34037,
+      23281,
+      "+10756.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Dauphin",
+      {
+        "type": "line",
+        "values": [
+          40031,
+          32313
+        ]
+      },
+      40031,
+      32313,
+      "+7718.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Delaware",
+      {
+        "type": "line",
+        "values": [
+          43250,
+          31974
+        ]
+      },
+      43250,
+      31974,
+      "+11275.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Elk",
+      {
+        "type": "line",
+        "values": [
+          14375,
+          21093
+        ]
+      },
+      14375,
+      21093,
+      "-6718.0"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Erie",
+      {
+        "type": "line",
+        "values": [
+          38881,
+          23611
+        ]
+      },
+      38881,
+      23611,
+      "+15270.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fayette",
+      {
+        "type": "line",
+        "values": [
+          25444,
+          17203
+        ]
+      },
+      25444,
+      17203,
+      "+8240.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Forest",
+      {
+        "type": "line",
+        "values": [
+          21438,
+          22344
+        ]
+      },
+      21438,
+      22344,
+      "-906.0"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Franklin",
+      {
+        "type": "line",
+        "values": [
+          61407,
+          50242
+        ]
+      },
+      61407,
+      50242,
+      "+11165.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fulton",
+      {
+        "type": "line",
+        "values": [
+          24000,
+          57879
+        ]
+      },
+      24000,
+      57879,
+      "-33879.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Greene",
+      {
+        "type": "line",
+        "values": [
+          20977,
+          15107
+        ]
+      },
+      20977,
+      15107,
+      "+5870.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Huntingdon",
+      {
+        "type": "line",
+        "values": [
+          22010,
+          18028
+        ]
+      },
+      22010,
+      18028,
+      "+3982.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Indiana",
+      {
+        "type": "line",
+        "values": [
+          20861,
+          15479
+        ]
+      },
+      20861,
+      15479,
+      "+5382.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Jefferson",
+      {
+        "type": "line",
+        "values": [
+          35040,
+          45707
+        ]
+      },
+      35040,
+      45707,
+      "-10667.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Juniata",
+      {
+        "type": "line",
+        "values": [
+          29167,
+          22330
+        ]
+      },
+      29167,
+      22330,
+      "+6837.0"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Lackawanna",
+      {
+        "type": "line",
+        "values": [
+          41104,
+          26940
+        ]
+      },
+      41104,
+      26940,
+      "+14163.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lancaster",
+      {
+        "type": "line",
+        "values": [
+          57668,
+          48383
+        ]
+      },
+      57668,
+      48383,
+      "+9285.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lawrence",
+      {
+        "type": "line",
+        "values": [
+          25778,
+          15192
+        ]
+      },
+      25778,
+      15192,
+      "+10586.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lebanon",
+      {
+        "type": "line",
+        "values": [
+          36343,
+          23902
+        ]
+      },
+      36343,
+      23902,
+      "+12441.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lehigh",
+      {
+        "type": "line",
+        "values": [
+          25138,
+          16341
+        ]
+      },
+      25138,
+      16341,
+      "+8797.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Luzerne",
+      {
+        "type": "line",
+        "values": [
+          47113,
+          32968
+        ]
+      },
+      47113,
+      32968,
+      "+14145.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lycoming",
+      {
+        "type": "line",
+        "values": [
+          77030,
+          37028
+        ]
+      },
+      77030,
+      37028,
+      "+40002.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "McKean",
+      {
+        "type": "line",
+        "values": [
+          34911,
+          23475
+        ]
+      },
+      34911,
+      23475,
+      "+11436.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mercer",
+      {
+        "type": "line",
+        "values": [
+          29504,
+          23005
+        ]
+      },
+      29504,
+      23005,
+      "+6500.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mifflin",
+      {
+        "type": "line",
+        "values": [
+          52219,
+          35331
+        ]
+      },
+      52219,
+      35331,
+      "+16889.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Monroe",
+      {
+        "type": "line",
+        "values": [
+          34085,
+          21495
+        ]
+      },
+      34085,
+      21495,
+      "+12591.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montgomery",
+      {
+        "type": "line",
+        "values": [
+          29169,
+          21885
+        ]
+      },
+      29169,
+      21885,
+      "+7284.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montour",
+      {
+        "type": "line",
+        "values": [
+          25556,
+          27449
+        ]
+      },
+      25556,
+      27449,
+      "-1893.0"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Northampton",
+      {
+        "type": "line",
+        "values": [
+          34972,
+          24095
+        ]
+      },
+      34972,
+      24095,
+      "+10877.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Northumberland",
+      {
+        "type": "line",
+        "values": [
+          63255,
+          38641
+        ]
+      },
+      63255,
+      38641,
+      "+24614.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Perry",
+      {
+        "type": "line",
+        "values": [
+          41126,
+          24007
+        ]
+      },
+      41126,
+      24007,
+      "+17119.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Philadelphia",
+      {
+        "type": "line",
+        "values": [
+          54302,
+          43459
+        ]
+      },
+      54302,
+      43459,
+      "+10843.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Pike",
+      {
+        "type": "line",
+        "values": [
+          34755,
+          21534
+        ]
+      },
+      34755,
+      21534,
+      "+13221.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Potter",
+      {
+        "type": "line",
+        "values": [
+          15700,
+          19338
+        ]
+      },
+      15700,
+      19338,
+      "-3638.0"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Schuylkill",
+      {
+        "type": "line",
+        "values": [
+          28947,
+          19996
+        ]
+      },
+      28947,
+      19996,
+      "+8951.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Snyder",
+      {
+        "type": "line",
+        "values": [
+          29659,
+          27551
+        ]
+      },
+      29659,
+      27551,
+      "+2107.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Somerset",
+      {
+        "type": "line",
+        "values": [
+          78071,
+          33896
+        ]
+      },
+      78071,
+      33896,
+      "+44175.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Sullivan",
+      {
+        "type": "line",
+        "values": [
+          5000,
+          18667
+        ]
+      },
+      5000,
+      18667,
+      "-13667.0"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Susquehanna",
+      {
+        "type": "line",
+        "values": [
+          29808,
+          27138
+        ]
+      },
+      29808,
+      27138,
+      "+2670.0"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Tioga",
+      {
+        "type": "line",
+        "values": [
+          30455,
+          18916
+        ]
+      },
+      30455,
+      18916,
+      "+11539.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Union",
+      {
+        "type": "line",
+        "values": [
+          34667,
+          25807
+        ]
+      },
+      34667,
+      25807,
+      "+8860.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Venango",
+      {
+        "type": "line",
+        "values": [
+          48712,
+          35510
+        ]
+      },
+      48712,
+      35510,
+      "+13202.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Warren",
+      {
+        "type": "line",
+        "values": [
+          32692,
+          25369
+        ]
+      },
+      32692,
+      25369,
+      "+7323.0"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Washington",
+      {
+        "type": "line",
+        "values": [
+          33527,
+          19878
+        ]
+      },
+      33527,
+      19878,
+      "+13649.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wayne",
+      {
+        "type": "line",
+        "values": [
+          28682,
+          32101
+        ]
+      },
+      28682,
+      32101,
+      "-3419.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Westmoreland",
+      {
+        "type": "line",
+        "values": [
+          30920,
+          17072
+        ]
+      },
+      30920,
+      17072,
+      "+13848.0"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wyoming",
+      {
+        "type": "line",
+        "values": [
+          22611,
+          25042
+        ]
+      },
+      22611,
+      25042,
+      "-2431.0"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "York",
+      {
+        "type": "line",
+        "values": [
+          30258,
+          18416
+        ]
+      },
+      30258,
+      18416,
+      "+11842.0"
+    ],
+    "outlier": false
+  }
+];
