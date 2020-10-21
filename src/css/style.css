@@ -12,3 +12,7 @@ body {
   max-width: 640px;
   margin: auto;
 }
+
+.hidden {
+  display: none;
+}

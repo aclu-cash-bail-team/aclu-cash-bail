@@ -16,18 +16,41 @@
   </head>
   <body>
     <div class="container">
-      <div id="bail-rate-container">
-        <div class="ui fluid multiple search selection dropdown">
-          <input type="hidden" name="county">
-          <i class="dropdown icon"></i>
-          <div class="default text">Select Counties</div>
-          <div class="menu"></div>
+      <div id="rate-container">
+        <div id="bail-rate-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select Counties</div>
+            <div class="menu"></div>
+          </div>
+          <div class="switch-btn">
+            <div class="child-btn left showing">Cash Bail Rate</div>
+            <div class="child-btn right">ROR Rate</div>
+          </div>
+          <table id="bail-rate-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="view-all-btn"></div>
         </div>
-        <table id="bail-rate-table">
-          <thead></thead>
-          <tbody></tbody>
-        </table>
-        <div class="view-all-btn"></div>
+        <div id="ror-rate-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select Counties</div>
+            <div class="menu"></div>
+          </div>
+          <div class="switch-btn">
+            <div class="child-btn left">Cash Bail Rate</div>
+            <div class="child-btn right showing">ROR Rate</div>
+          </div>
+          <table id="ror-rate-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="view-all-btn"></div>
+        </div>
       </div>
       <div id="bail-race-container">
         <div class="ui fluid multiple search selection dropdown">
