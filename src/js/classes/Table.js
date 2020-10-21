@@ -278,7 +278,7 @@ class RankedBodyRow {
 
 
 export class RankedTable {
-  constructor(data, columnConfigs, initSort, tableContainer) {
+  constructor(data, columnConfigs, initSort, tableContainer, isVisible = true) {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
@@ -296,6 +296,7 @@ export class RankedTable {
     this.sortCol = initSort + 1;
     this.sortDir = -1;
 
+    this.isVisible = isVisible;
     this.header = this.getHeaderRow();
 
     this.init(); // Initial table DOM setup
@@ -443,19 +444,69 @@ export class RankedTable {
     return this.showOutliers;
   }
 
-  render() {
-    // create rows
-    const tbody = this.element.getElementsByTagName("tbody")[0];
-    tbody.textContent = "";
+  hide() {
+    this.isVisible = false;
+    this.render();
+  }
 
-    // repopulate with updated rows
-    let rowRank = 1;
-    this.rows.forEach(row => {
-      if (!row.outlier || this.showOutliers) {
-        row.render(rowRank, this.sortCol);
-        tbody.appendChild(row.element);
-        rowRank++;
-      }
-    });
+  show() {
+    this.isVisible = true;
+    this.render();
+  }
+
+  render() {
+    if (!this.isVisible) {
+      this.container.classList.add("hidden");
+    } else {
+      this.container.classList.remove("hidden");
+
+      // create rows
+      const tbody = this.element.getElementsByTagName("tbody")[0];
+      tbody.textContent = "";
+
+      // repopulate with updated rows
+      let rowRank = 1;
+      this.rows.forEach(row => {
+        if (!row.outlier || this.showOutliers) {
+          row.render(rowRank, this.sortCol);
+          tbody.appendChild(row.element);
+          rowRank++;
+        }
+      });
+    }
+  }
+}
+
+export class SwitchableTable {
+  constructor(leftTable, rightTable, container) {
+    this.leftTable = leftTable;
+    this.rightTable = rightTable;
+    this.container = container;
+
+    // set up switch buttons
+    const rightSwitch =
+      this.leftTable.container
+        .getElementsByClassName("switch-btn")[0]
+        .getElementsByClassName("right")[0];
+    rightSwitch.addEventListener("click", this.showRightTable.bind(this));
+
+    const leftSwitch =
+      this.rightTable.container
+        .getElementsByClassName("switch-btn")[0]
+        .getElementsByClassName("left")[0];
+    leftSwitch.addEventListener("click", this.showLeftTable.bind(this));
+
+    // show left table by default
+    this.showLeftTable();
+  }
+
+  showLeftTable() {
+    this.leftTable.show();
+    this.rightTable.hide();
+  }
+
+  showRightTable() {
+    this.rightTable.show();
+    this.leftTable.hide();
   }
 }
