@@ -52,20 +52,45 @@
           <div class="view-all-btn"></div>
         </div>
       </div>
-      <div id="bail-race-container">
-        <div class="ui fluid multiple search selection dropdown">
-          <input type="hidden" name="county">
-          <i class="dropdown icon"></i>
-          <div class="default text">Select Counties</div>
-          <div class="menu"></div>
+      <div id="race-container">
+        <div id="bail-race-rate-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select Counties</div>
+            <div class="menu"></div>
+          </div>
+          <div class="outliers-btn">Show Outliers</div>
+          <div class="switch-btn">
+            <div class="child-btn left showing">Cash Bail Rate</div>
+            <div class="child-btn right">Cash Bail Amount</div>
+          </div>
+          <table id="bail-race-rate-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="view-all-btn"></div>
         </div>
-      <div class="outliers-btn" id="race-outliers">Show Outliers</div>
-        <table id="bail-race-table">
-          <thead></thead>
-          <tbody></tbody>
-        </table>
-        <div class="view-all-btn"></div>
+        <div id="bail-race-amount-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select Counties</div>
+            <div class="menu"></div>
+          </div>
+          <div class="outliers-btn">Show Outliers</div>
+          <div class="switch-btn">
+            <div class="child-btn left">Cash Bail Rate</div>
+            <div class="child-btn right showing">Cash Bail Amount</div>
+          </div>
+          <table id="bail-race-amount-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="view-all-btn"></div>
+        </div>
       </div>
+    </div>
   </body>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script>

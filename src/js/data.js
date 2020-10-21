@@ -1039,7 +1039,7 @@ export const BAIL_RATE_DATA = [
     "outlier": false
   }
 ];
-export const BAIL_RACE_DATA = [
+export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Adams",

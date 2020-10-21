@@ -351,6 +351,17 @@ export class RankedTable {
       this.rows = this.getRows(this.data);
       this.render();
     });
+
+    // set up outlier button
+    const outlierButtonList = this.container.getElementsByClassName("outliers-btn");
+    if (outlierButtonList.length > 0) {
+      const outlierButton = outlierButtonList[0];
+
+      outlierButton.addEventListener("click", (e) => {
+        const showOutliers = this.toggleOutliers();
+        e.target.className = showOutliers ? "outliers-btn showing" : "outliers-btn";
+      });
+    }
   }
 
   getHeaderRow() {
