@@ -502,13 +502,13 @@ export class SwitchableTable {
     // set up switch buttons
     const rightSwitch =
       this.leftTable.container
-        .getElementsByClassName("switch-btn")[0]
+        .getElementsByClassName("switch-container")[0]
         .getElementsByClassName("right")[0];
     rightSwitch.addEventListener("click", this.showRightTable.bind(this));
 
     const leftSwitch =
       this.rightTable.container
-        .getElementsByClassName("switch-btn")[0]
+        .getElementsByClassName("switch-container")[0]
         .getElementsByClassName("left")[0];
     leftSwitch.addEventListener("click", this.showLeftTable.bind(this));
 

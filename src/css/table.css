@@ -101,7 +101,7 @@ td.sorted {
   background-color: #1D1D1D;
 }
 
-.switch-btn {
+.switch-container {
   cursor: pointer;
   user-select: none;
   padding: 1.5em 0 1.5em 0;
@@ -109,7 +109,7 @@ td.sorted {
   color: #eee;
 }
 
-.switch-btn .child-btn {
+.switch-container .switch {
   float: left;
   border: 1px #333 solid;
   padding: .85em 2em;
@@ -119,18 +119,18 @@ td.sorted {
   text-transform: uppercase;
 }
 
-.switch-btn .child-btn.left {
+.switch-container .switch.left {
   border-radius: 2px 0 0 2px;
 }
 
-.switch-btn .child-btn.right {
+.switch-container .switch.right {
   border-radius: 0 2px 2px 0;
 }
 
-.switch-btn .child-btn.showing {
+.switch-container .switch.showing {
   background-color: #1D1D1D;
 }
 
-.switch-btn .child-btn:hover {
+.switch-container .switch:hover {
   background-color: #1D1D1D;
 }
