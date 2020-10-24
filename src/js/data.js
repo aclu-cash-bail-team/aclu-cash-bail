@@ -3133,9 +3133,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           26077
         ]
       },
-      29479,
-      26077,
-      "+3401.0"
+      "$29,479",
+      "$26,077",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$3,401"
+      }
     ],
     "outlier": false
   },
@@ -3149,9 +3153,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           15881
         ]
       },
-      21080,
-      15881,
-      "+5199.0"
+      "$21,080",
+      "$15,881",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$5,199"
+      }
     ],
     "outlier": false
   },
@@ -3165,9 +3173,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           13560
         ]
       },
-      18541,
-      13560,
-      "+4981.0"
+      "$18,541",
+      "$13,560",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$4,981"
+      }
     ],
     "outlier": false
   },
@@ -3181,9 +3193,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           13733
         ]
       },
-      26145,
-      13733,
-      "+12412.0"
+      "$26,145",
+      "$13,733",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$12,412"
+      }
     ],
     "outlier": false
   },
@@ -3197,9 +3213,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           49176
         ]
       },
-      65010,
-      49176,
-      "+15834.0"
+      "$65,010",
+      "$49,176",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$15,834"
+      }
     ],
     "outlier": false
   },
@@ -3213,9 +3233,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           27399
         ]
       },
-      35039,
-      27399,
-      "+7640.0"
+      "$35,039",
+      "$27,399",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$7,640"
+      }
     ],
     "outlier": false
   },
@@ -3229,9 +3253,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           29256
         ]
       },
-      43726,
-      29256,
-      "+14470.0"
+      "$43,726",
+      "$29,256",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$14,470"
+      }
     ],
     "outlier": false
   },
@@ -3245,9 +3273,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           32077
         ]
       },
-      63125,
-      32077,
-      "+31048.0"
+      "$63,125",
+      "$32,077",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$31,048"
+      }
     ],
     "outlier": false
   },
@@ -3261,9 +3293,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           58683
         ]
       },
-      73635,
-      58683,
-      "+14951.0"
+      "$73,635",
+      "$58,683",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$14,951"
+      }
     ],
     "outlier": false
   },
@@ -3277,9 +3313,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           12248
         ]
       },
-      42155,
-      12248,
-      "+29907.0"
+      "$42,155",
+      "$12,248",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$29,907"
+      }
     ],
     "outlier": false
   },
@@ -3293,9 +3333,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           28879
         ]
       },
-      51483,
-      28879,
-      "+22604.0"
+      "$51,483",
+      "$28,879",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$22,604"
+      }
     ],
     "outlier": false
   },
@@ -3309,11 +3353,15 @@ export const BAIL_RACE_AMOUNT_DATA = [
           26481
         ]
       },
-      10000,
-      26481,
-      "-16481.0"
+      "$10,000",
+      "$26,481",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$16,481"
+      }
     ],
-    "outlier": true
+    "outlier": false
   },
   {
     "data": [
@@ -3325,9 +3373,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           24452
         ]
       },
-      35236,
-      24452,
-      "+10784.0"
+      "$35,236",
+      "$24,452",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$10,784"
+      }
     ],
     "outlier": false
   },
@@ -3341,9 +3393,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           34614
         ]
       },
-      45976,
-      34614,
-      "+11361.0"
+      "$45,976",
+      "$34,614",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$11,361"
+      }
     ],
     "outlier": false
   },
@@ -3357,9 +3413,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           22836
         ]
       },
-      32205,
-      22836,
-      "+9369.0"
+      "$32,205",
+      "$22,836",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$9,369"
+      }
     ],
     "outlier": false
   },
@@ -3373,9 +3433,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           20698
         ]
       },
-      14200,
-      20698,
-      "-6498.0"
+      "$14,200",
+      "$20,698",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$6,498"
+      }
     ],
     "outlier": false
   },
@@ -3389,9 +3453,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23215
         ]
       },
-      43890,
-      23215,
-      "+20675.0"
+      "$43,890",
+      "$23,215",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$20,675"
+      }
     ],
     "outlier": false
   },
@@ -3405,9 +3473,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           19817
         ]
       },
-      29609,
-      19817,
-      "+9792.0"
+      "$29,609",
+      "$19,817",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$9,792"
+      }
     ],
     "outlier": false
   },
@@ -3421,9 +3493,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           33130
         ]
       },
-      57747,
-      33130,
-      "+24617.0"
+      "$57,747",
+      "$33,130",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$24,617"
+      }
     ],
     "outlier": false
   },
@@ -3437,9 +3513,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           21505
         ]
       },
-      32600,
-      21505,
-      "+11095.0"
+      "$32,600",
+      "$21,505",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$11,095"
+      }
     ],
     "outlier": false
   },
@@ -3453,9 +3533,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23281
         ]
       },
-      34037,
-      23281,
-      "+10756.0"
+      "$34,037",
+      "$23,281",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$10,756"
+      }
     ],
     "outlier": false
   },
@@ -3469,9 +3553,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           32313
         ]
       },
-      40031,
-      32313,
-      "+7718.0"
+      "$40,031",
+      "$32,313",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$7,718"
+      }
     ],
     "outlier": false
   },
@@ -3485,9 +3573,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           31974
         ]
       },
-      43250,
-      31974,
-      "+11275.0"
+      "$43,250",
+      "$31,974",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$11,275"
+      }
     ],
     "outlier": false
   },
@@ -3501,11 +3593,15 @@ export const BAIL_RACE_AMOUNT_DATA = [
           21093
         ]
       },
-      14375,
-      21093,
-      "-6718.0"
+      "$14,375",
+      "$21,093",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$6,718"
+      }
     ],
-    "outlier": true
+    "outlier": false
   },
   {
     "data": [
@@ -3517,9 +3613,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23611
         ]
       },
-      38881,
-      23611,
-      "+15270.0"
+      "$38,881",
+      "$23,611",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$15,270"
+      }
     ],
     "outlier": false
   },
@@ -3533,9 +3633,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           17203
         ]
       },
-      25444,
-      17203,
-      "+8240.0"
+      "$25,444",
+      "$17,203",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$8,240"
+      }
     ],
     "outlier": false
   },
@@ -3549,11 +3653,15 @@ export const BAIL_RACE_AMOUNT_DATA = [
           22344
         ]
       },
-      21438,
-      22344,
-      "-906.0"
+      "$21,438",
+      "$22,344",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$906"
+      }
     ],
-    "outlier": true
+    "outlier": false
   },
   {
     "data": [
@@ -3565,9 +3673,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           50242
         ]
       },
-      61407,
-      50242,
-      "+11165.0"
+      "$61,407",
+      "$50,242",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$11,165"
+      }
     ],
     "outlier": false
   },
@@ -3581,9 +3693,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           57879
         ]
       },
-      24000,
-      57879,
-      "-33879.0"
+      "$24,000",
+      "$57,879",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$33,879"
+      }
     ],
     "outlier": false
   },
@@ -3597,9 +3713,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           15107
         ]
       },
-      20977,
-      15107,
-      "+5870.0"
+      "$20,977",
+      "$15,107",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$5,870"
+      }
     ],
     "outlier": false
   },
@@ -3613,9 +3733,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           18028
         ]
       },
-      22010,
-      18028,
-      "+3982.0"
+      "$22,010",
+      "$18,028",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$3,982"
+      }
     ],
     "outlier": false
   },
@@ -3629,9 +3753,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           15479
         ]
       },
-      20861,
-      15479,
-      "+5382.0"
+      "$20,861",
+      "$15,479",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$5,382"
+      }
     ],
     "outlier": false
   },
@@ -3645,9 +3773,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           45707
         ]
       },
-      35040,
-      45707,
-      "-10667.0"
+      "$35,040",
+      "$45,707",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$10,667"
+      }
     ],
     "outlier": false
   },
@@ -3661,11 +3793,15 @@ export const BAIL_RACE_AMOUNT_DATA = [
           22330
         ]
       },
-      29167,
-      22330,
-      "+6837.0"
+      "$29,167",
+      "$22,330",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$6,837"
+      }
     ],
-    "outlier": true
+    "outlier": false
   },
   {
     "data": [
@@ -3677,9 +3813,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           26940
         ]
       },
-      41104,
-      26940,
-      "+14163.0"
+      "$41,104",
+      "$26,940",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$14,163"
+      }
     ],
     "outlier": false
   },
@@ -3693,9 +3833,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           48383
         ]
       },
-      57668,
-      48383,
-      "+9285.0"
+      "$57,668",
+      "$48,383",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$9,285"
+      }
     ],
     "outlier": false
   },
@@ -3709,9 +3853,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           15192
         ]
       },
-      25778,
-      15192,
-      "+10586.0"
+      "$25,778",
+      "$15,192",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$10,586"
+      }
     ],
     "outlier": false
   },
@@ -3725,9 +3873,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23902
         ]
       },
-      36343,
-      23902,
-      "+12441.0"
+      "$36,343",
+      "$23,902",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$12,441"
+      }
     ],
     "outlier": false
   },
@@ -3741,9 +3893,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           16341
         ]
       },
-      25138,
-      16341,
-      "+8797.0"
+      "$25,138",
+      "$16,341",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$8,797"
+      }
     ],
     "outlier": false
   },
@@ -3757,9 +3913,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           32968
         ]
       },
-      47113,
-      32968,
-      "+14145.0"
+      "$47,113",
+      "$32,968",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$14,145"
+      }
     ],
     "outlier": false
   },
@@ -3773,9 +3933,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           37028
         ]
       },
-      77030,
-      37028,
-      "+40002.0"
+      "$77,030",
+      "$37,028",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$40,002"
+      }
     ],
     "outlier": false
   },
@@ -3789,9 +3953,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23475
         ]
       },
-      34911,
-      23475,
-      "+11436.0"
+      "$34,911",
+      "$23,475",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$11,436"
+      }
     ],
     "outlier": false
   },
@@ -3805,9 +3973,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23005
         ]
       },
-      29504,
-      23005,
-      "+6500.0"
+      "$29,504",
+      "$23,005",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$6,500"
+      }
     ],
     "outlier": false
   },
@@ -3821,9 +3993,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           35331
         ]
       },
-      52219,
-      35331,
-      "+16889.0"
+      "$52,219",
+      "$35,331",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$16,889"
+      }
     ],
     "outlier": false
   },
@@ -3837,9 +4013,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           21495
         ]
       },
-      34085,
-      21495,
-      "+12591.0"
+      "$34,085",
+      "$21,495",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$12,591"
+      }
     ],
     "outlier": false
   },
@@ -3853,9 +4033,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           21885
         ]
       },
-      29169,
-      21885,
-      "+7284.0"
+      "$29,169",
+      "$21,885",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$7,284"
+      }
     ],
     "outlier": false
   },
@@ -3869,11 +4053,15 @@ export const BAIL_RACE_AMOUNT_DATA = [
           27449
         ]
       },
-      25556,
-      27449,
-      "-1893.0"
+      "$25,556",
+      "$27,449",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$1,893"
+      }
     ],
-    "outlier": true
+    "outlier": false
   },
   {
     "data": [
@@ -3885,9 +4073,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           24095
         ]
       },
-      34972,
-      24095,
-      "+10877.0"
+      "$34,972",
+      "$24,095",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$10,877"
+      }
     ],
     "outlier": false
   },
@@ -3901,9 +4093,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           38641
         ]
       },
-      63255,
-      38641,
-      "+24614.0"
+      "$63,255",
+      "$38,641",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$24,614"
+      }
     ],
     "outlier": false
   },
@@ -3917,9 +4113,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           24007
         ]
       },
-      41126,
-      24007,
-      "+17119.0"
+      "$41,126",
+      "$24,007",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$17,119"
+      }
     ],
     "outlier": false
   },
@@ -3933,9 +4133,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           43459
         ]
       },
-      54302,
-      43459,
-      "+10843.0"
+      "$54,302",
+      "$43,459",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$10,843"
+      }
     ],
     "outlier": false
   },
@@ -3949,9 +4153,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           21534
         ]
       },
-      34755,
-      21534,
-      "+13221.0"
+      "$34,755",
+      "$21,534",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$13,221"
+      }
     ],
     "outlier": false
   },
@@ -3965,11 +4173,15 @@ export const BAIL_RACE_AMOUNT_DATA = [
           19338
         ]
       },
-      15700,
-      19338,
-      "-3638.0"
+      "$15,700",
+      "$19,338",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$3,638"
+      }
     ],
-    "outlier": true
+    "outlier": false
   },
   {
     "data": [
@@ -3981,9 +4193,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           19996
         ]
       },
-      28947,
-      19996,
-      "+8951.0"
+      "$28,947",
+      "$19,996",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$8,951"
+      }
     ],
     "outlier": false
   },
@@ -3997,9 +4213,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           27551
         ]
       },
-      29659,
-      27551,
-      "+2107.0"
+      "$29,659",
+      "$27,551",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$2,107"
+      }
     ],
     "outlier": false
   },
@@ -4013,9 +4233,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           33896
         ]
       },
-      78071,
-      33896,
-      "+44175.0"
+      "$78,071",
+      "$33,896",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$44,175"
+      }
     ],
     "outlier": false
   },
@@ -4029,11 +4253,15 @@ export const BAIL_RACE_AMOUNT_DATA = [
           18667
         ]
       },
-      5000,
-      18667,
-      "-13667.0"
+      "$5,000",
+      "$18,667",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$13,667"
+      }
     ],
-    "outlier": true
+    "outlier": false
   },
   {
     "data": [
@@ -4045,11 +4273,15 @@ export const BAIL_RACE_AMOUNT_DATA = [
           27138
         ]
       },
-      29808,
-      27138,
-      "+2670.0"
+      "$29,808",
+      "$27,138",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$2,670"
+      }
     ],
-    "outlier": true
+    "outlier": false
   },
   {
     "data": [
@@ -4061,9 +4293,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           18916
         ]
       },
-      30455,
-      18916,
-      "+11539.0"
+      "$30,455",
+      "$18,916",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$11,539"
+      }
     ],
     "outlier": false
   },
@@ -4077,9 +4313,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           25807
         ]
       },
-      34667,
-      25807,
-      "+8860.0"
+      "$34,667",
+      "$25,807",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$8,860"
+      }
     ],
     "outlier": false
   },
@@ -4093,9 +4333,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           35510
         ]
       },
-      48712,
-      35510,
-      "+13202.0"
+      "$48,712",
+      "$35,510",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$13,202"
+      }
     ],
     "outlier": false
   },
@@ -4109,11 +4353,15 @@ export const BAIL_RACE_AMOUNT_DATA = [
           25369
         ]
       },
-      32692,
-      25369,
-      "+7323.0"
+      "$32,692",
+      "$25,369",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$7,323"
+      }
     ],
-    "outlier": true
+    "outlier": false
   },
   {
     "data": [
@@ -4125,9 +4373,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           19878
         ]
       },
-      33527,
-      19878,
-      "+13649.0"
+      "$33,527",
+      "$19,878",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$13,649"
+      }
     ],
     "outlier": false
   },
@@ -4141,9 +4393,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           32101
         ]
       },
-      28682,
-      32101,
-      "-3419.0"
+      "$28,682",
+      "$32,101",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$3,419"
+      }
     ],
     "outlier": false
   },
@@ -4157,9 +4413,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           17072
         ]
       },
-      30920,
-      17072,
-      "+13848.0"
+      "$30,920",
+      "$17,072",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$13,848"
+      }
     ],
     "outlier": false
   },
@@ -4173,11 +4433,15 @@ export const BAIL_RACE_AMOUNT_DATA = [
           25042
         ]
       },
-      22611,
-      25042,
-      "-2431.0"
+      "$22,611",
+      "$25,042",
+      {
+        "type": "styled",
+        "className": "negative-diff",
+        "value": "-$2,431"
+      }
     ],
-    "outlier": true
+    "outlier": false
   },
   {
     "data": [
@@ -4189,9 +4453,13 @@ export const BAIL_RACE_AMOUNT_DATA = [
           18416
         ]
       },
-      30258,
-      18416,
-      "+11842.0"
+      "$30,258",
+      "$18,416",
+      {
+        "type": "styled",
+        "className": "positive-diff",
+        "value": "+$11,842"
+      }
     ],
     "outlier": false
   }

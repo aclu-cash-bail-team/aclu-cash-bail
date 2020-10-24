@@ -134,3 +134,11 @@ td.sorted {
 .switch-container .switch:hover {
   background-color: #1D1D1D;
 }
+
+.positive-diff {
+  color: #65D998;
+}
+
+.negative-diff {
+  color: #C14EF8;
+}

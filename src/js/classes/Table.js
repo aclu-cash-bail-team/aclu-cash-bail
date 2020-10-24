@@ -32,6 +32,20 @@ class TextCell extends Cell {
 }
 
 
+class StyledTextCell extends Cell {
+  constructor(content, className) {
+    super(`${className} ${content["className"]}`);
+    this.content = content["value"].toLocaleString();
+    this.render();
+  }
+
+  render() {
+    super.render();
+    this.element.appendChild(document.createTextNode(this.content));
+  }
+}
+
+
 class NumberCell extends Cell {
   constructor(content, className) {
     super(className);
@@ -397,9 +411,16 @@ export class RankedTable {
       // Specify how data will be rendered
       const cells = row.data.map((cell, j) => {
         let CellType = TextCell;
-        if (typeof(cell) == "number") CellType = NumberCell;
-        if (typeof(cell) == "object") {
-          CellType = cell["type"] === "bar" ? BarGraphCell : NumberLineCell;
+        if (typeof(cell) == "number") {
+          CellType = NumberCell;
+        } else if (typeof(cell) == "object") {
+          if (cell["type"] === "bar") {
+            CellType = BarGraphCell;
+          } else if (cell["type"] === "line") {
+            CellType = NumberLineCell;
+          } else if (cell["type"] === "styled") {
+            CellType = StyledTextCell;
+          }
         }
         // for county names, append an asterisk if it's an outlier
         if (j === 0 && row.outlier) cell += "*";
@@ -432,16 +453,20 @@ export class RankedTable {
     this.sortDir = sortDir;
   }
 
+  toNumber(str) {
+    return Number(str.replace ? str.replace(/[^\d.-]/g, "") : str);
+  }
+
   sort(initialSort) {
     if (!initialSort) this.header.clearedSortedCells();
 
     // data doesn't have rank, so subtract one from the index
     const dataCol = this.sortCol - 1;
-    this.data.sort((a, b) => {
-      // Assumes that we only want to sort numbers, which is fine for now
-      // May need to support sorting multiple types
-      const i = Number(a.data[dataCol]);
-      const j = Number(b.data[dataCol]);
+    this.data.sort((x, y) => {
+      const xData = x.data[dataCol];
+      const yData = y.data[dataCol];
+      const i = typeof(xData) === "object" ? this.toNumber(xData["value"]) : this.toNumber(xData);
+      const j = typeof(yData) === "object" ? this.toNumber(yData["value"]) : this.toNumber(yData);
       if (i < j) {
         return this.sortDir * -1;
       } else if (i > j) {
