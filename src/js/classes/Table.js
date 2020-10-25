@@ -1,5 +1,6 @@
 const VIEW_ALL = "view all";
 const VIEW_LESS = "view less";
+const NUM_TRUNCATED_ROWS = 10;
 
 class Cell {
   constructor(className) {
@@ -307,30 +308,49 @@ class BodyRow {
     this.cells = cells;
     this.outlier = outlier;
     this.isHidden = isHidden;
-    this.render();
   }
 
   setIsHidden(isHidden) {
     this.isHidden = isHidden;
   }
 
+  // Returns a list of DOM nodes to add to table body
   render(sorted) {
     const row = document.createElement("tr");
-    if (this.isHidden) {
-      row.className = "hidden";
-    } else {
-      row.className = "";
-      this.cells.forEach((cell, i) => {
-        cell.setElementClass(
-          i === sorted ? `${cell.className} sorted` : cell.className
-        );
-        row.appendChild(cell.element);
-      });
-    }
     this.element = row;
+    if (this.isHidden) {
+      return [];
+    }
+
+    row.className = "";
+    this.cells.forEach((cell, i) => {
+      cell.setElementClass(
+        i === sorted ? `${cell.className} sorted` : cell.className
+      );
+      row.appendChild(cell.element);
+    });
+    return [this.element];
   }
 }
 
+class CollapsibleBodyRow extends BodyRow {
+  constructor(cells, outlier, collapseRows, isHidden, isCollapsed) {
+    super(cells, outlier, isHidden);
+    this.isCollapsed = isCollapsed;
+    this.collapseRows = collapseRows;
+  }
+
+  render(sorted) {
+    const rowElements = super.render(sorted);
+    this.element.className = "collapsible";
+
+    const subRowElements = this.collapseRows.flatMap(row => {
+      row.setIsHidden(this.isHidden || this.isCollapsed);
+      return row.render(sorted);
+    });
+    return [...rowElements, ...subRowElements];
+  }
+}
 
 export class Table {
   constructor(data, columnConfigs, initSort, tableContainer, isVisible = true) {
@@ -341,7 +361,7 @@ export class Table {
     this.element = tableContainer.getElementsByTagName("table")[0];
     this.showOutliers = false;
 
-    this.validate(this.data, this.classNames, this.headers);
+    this.validate();
     this.searchCols = columnConfigs.map((config) => config.searchable);
     this.searchTerms = [];
     this.isTruncated = true;
@@ -359,12 +379,12 @@ export class Table {
 
   }
 
-  validate(data, classNames, headers) {
-    if (classNames.length !== headers.length) {
+  validate() {
+    if (this.classNames.length !== this.headers.length) {
       throw new Error("Number of class names does not match number of headers");
     }
-    if (data.some(row => row.data.length != headers.length)) {
-      throw new Error(`${headers.length} columns of data required`);
+    if (this.data.some(row => row.data.length != this.headers.length)) {
+      throw new Error(`${this.headers.length} columns of data required`);
     }
   }
 
@@ -436,33 +456,46 @@ export class Table {
     return new HeaderRow(headerCells);
   }
 
+  getCells(data, isOutlier) {
+    return data.map((cell, j) => {
+      let CellType = TextCell;
+      if (typeof(cell) == "number") {
+        CellType = NumberCell;
+      } else if (typeof(cell) == "object") {
+        if (cell["type"] === "bar") {
+          CellType = BarGraphCell;
+        } else if (cell["type"] === "line") {
+          CellType = NumberLineCell;
+        } else if (cell["type"] === "styled") {
+          CellType = StyledTextCell;
+        } else if (cell["type"] === "dist") {
+          CellType = DistributionBarCell;
+        }
+      }
+      // for county names, append an asterisk if it's an outlier
+      if (j === 0 && isOutlier) cell += "*";
+      return new CellType(cell, this.classNames[j], this.headers[j]);
+    });
+  }
+
   getRows() {
     let numVisibleRows = 0;
-    return this.data.map((row, i) => {
+    return this.data.map(row => {
       // Specify how data will be rendered
-      const cells = row.data.map((cell, j) => {
-        let CellType = TextCell;
-        if (typeof(cell) == "number") {
-          CellType = NumberCell;
-        } else if (typeof(cell) == "object") {
-          if (cell["type"] === "bar") {
-            CellType = BarGraphCell;
-          } else if (cell["type"] === "line") {
-            CellType = NumberLineCell;
-          } else if (cell["type"] === "styled") {
-            CellType = StyledTextCell;
-          } else if (cell["type"] === "dist") {
-            CellType = DistributionBarCell;
-          }
-        }
-        // for county names, append an asterisk if it's an outlier
-        if (j === 0 && row.outlier) cell += "*";
-        return new CellType(cell, this.classNames[j], this.headers[j]);
-      });
-      const isHidden = (this.isTruncated && numVisibleRows >= 10) ||
+      const cells = this.getCells(row.data, row.outlier);
+      const isHidden = (this.isTruncated && numVisibleRows >= NUM_TRUNCATED_ROWS) ||
         (row.outlier && !this.showOutliers) || !this.matchesSearchTerm(row);
       if (!isHidden) numVisibleRows++;
-      return new BodyRow(cells, row.outlier, isHidden);
+      if (row.collapseData !== undefined) {
+        // collapsed rows do not count towards the numVisibleRows
+        const collapseRows = row.collapseData.map(data =>
+          // sub-row cannot be an outlier
+          new BodyRow(this.getCells(data, false), false, isHidden || row.isCollapsed)
+        );
+        return new CollapsibleBodyRow(cells, row.outlier, collapseRows, isHidden, row.isCollapsed);
+      } else {
+        return new BodyRow(cells, row.outlier, isHidden);
+      }
     });
   }
 
@@ -538,9 +571,18 @@ export class Table {
       tbody.textContent = "";
 
       // repopulate with updated rows
-      this.rows.forEach(row => {
-        row.render(this.sortCol);
-        tbody.appendChild(row.element);
+      this.rows.forEach((row, i) => {
+        const domNodes = row.render(this.sortCol);
+        domNodes.forEach(node => tbody.appendChild(node));
+
+        // set up collapse toggle
+        if (row instanceof CollapsibleBodyRow) {
+          row.element.addEventListener("click", () => {
+            this.data[i].isCollapsed = !row.isCollapsed;
+            this.rows = this.getRows();
+            this.render();
+          });
+        }
       });
     }
   }

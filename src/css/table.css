@@ -140,3 +140,7 @@ td.sorted {
 .negative-diff {
   color: #C14EF8;
 }
+
+tr.collapsible {
+  cursor: pointer;
+}
