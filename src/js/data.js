@@ -4732,3 +4732,2350 @@ export const BAIL_RACE_AMOUNT_DATA = [
     "outlier": false
   }
 ];
+
+export const MDJ_DATA = [
+  {
+    "data": [
+      "Adams",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 30.18867925
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 30.431399999999996
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 14.3297
+          },
+          {
+            "className": "ror-bar",
+            "value": 24.8844
+          }
+        ]
+      },
+      30.18867925,
+      {
+        "type": "line",
+        "values": [
+          43.56060606,
+          29.036515619999996
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Allegheny",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 43.50802205
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 2.7704
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 23.8085
+          },
+          {
+            "className": "ror-bar",
+            "value": 29.5724
+          }
+        ]
+      },
+      43.50802205,
+      {
+        "type": "line",
+        "values": [
+          57.06645057000001,
+          35.29897333
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Armstrong",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 41.05888709
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 12.371699999999999
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 3.2954999999999997
+          },
+          {
+            "className": "ror-bar",
+            "value": 43.2739
+          }
+        ]
+      },
+      41.05888709,
+      {
+        "type": "line",
+        "values": [
+          62.71186441,
+          39.52662722
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Beaver",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 49.051792830000004
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 12.6554
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 1.833
+          },
+          {
+            "className": "ror-bar",
+            "value": 35.8145
+          }
+        ]
+      },
+      49.051792830000004,
+      {
+        "type": "line",
+        "values": [
+          64.33048433,
+          43.922127259999996
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bedford",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 38.63636364
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 59.5588
+          },
+          {
+            "className": "ror-bar",
+            "value": 1.8048000000000002
+          }
+        ]
+      },
+      38.63636364,
+      {
+        "type": "line",
+        "values": [
+          52.57731959,
+          37.564196630000005
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Berks",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 50.92425977
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 32.9706
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.8427
+          },
+          {
+            "className": "ror-bar",
+            "value": 15.2172
+          }
+        ]
+      },
+      50.92425977,
+      {
+        "type": "line",
+        "values": [
+          58.42078961,
+          50.242593170000006
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Blair",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 34.04638145
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 65.5338
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.06
+          },
+          {
+            "className": "ror-bar",
+            "value": 0.3599
+          }
+        ]
+      },
+      34.04638145,
+      {
+        "type": "line",
+        "values": [
+          58.6998088,
+          31.768533580000003
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bradford",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 45.49865229
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 13.8544
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 29.110500000000002
+          },
+          {
+            "className": "ror-bar",
+            "value": 11.536399999999999
+          }
+        ]
+      },
+      45.49865229,
+      {
+        "type": "line",
+        "values": [
+          62.26415093999999,
+          45.148401830000005
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bucks",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 32.41325938
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 49.297000000000004
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.5676
+          },
+          {
+            "className": "ror-bar",
+            "value": 17.705099999999998
+          }
+        ]
+      },
+      32.41325938,
+      {
+        "type": "line",
+        "values": [
+          41.069012179999994,
+          30.62392673
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Butler",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 31.15234375
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 5.0806
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 5.8134
+          },
+          {
+            "className": "ror-bar",
+            "value": 57.3034
+          }
+        ]
+      },
+      31.15234375,
+      {
+        "type": "line",
+        "values": [
+          44.7761194,
+          29.515418500000003
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cambria",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 44.29388101
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 33.629799999999996
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.0424
+          },
+          {
+            "className": "ror-bar",
+            "value": 21.6222
+          }
+        ]
+      },
+      44.29388101,
+      {
+        "type": "line",
+        "values": [
+          65.52083332999999,
+          39.145907470000004
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cameron",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 21.67832168
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 78.3217
+          },
+        ]
+      },
+      21.67832168,
+      {
+        "type": "line",
+        "values": [
+          100,
+          25.454545449999998
+        ]
+      },
+      "--"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Carbon",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 32.99299883
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 53.85060000000001
+          },
+          {
+            "className": "ror-bar",
+            "value": 13.1272
+          }
+        ]
+      },
+      32.99299883,
+      {
+        "type": "line",
+        "values": [
+          43.7751004,
+          32.341399609999996
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Centre",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 26.083333330000002
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 12.062299999999999
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.0278
+          },
+          {
+            "className": "ror-bar",
+            "value": 61.5898
+          }
+        ]
+      },
+      26.083333330000002,
+      {
+        "type": "line",
+        "values": [
+          46.74115456,
+          21.884927639999997
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Chester",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 38.0970325
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 40.0132
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.009399999999999999
+          },
+          {
+            "className": "ror-bar",
+            "value": 20.7273
+          }
+        ]
+      },
+      38.0970325,
+      {
+        "type": "line",
+        "values": [
+          48.47354138,
+          34.29690666
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clarion",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 40
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 34.2169
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.0803
+          },
+          {
+            "className": "ror-bar",
+            "value": 25.702799999999996
+          }
+        ]
+      },
+      40,
+      {
+        "type": "line",
+        "values": [
+          40.625,
+          40.83259522
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clearfield",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 36.28318584
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 63.6185
+          },
+          {
+            "className": "ror-bar",
+            "value": 0.0983
+          }
+        ]
+      },
+      36.28318584,
+      {
+        "type": "line",
+        "values": [
+          59.30232558,
+          35.647181630000006
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clinton",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 36.92628651
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 51.078599999999994
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.1392
+          },
+          {
+            "className": "ror-bar",
+            "value": 11.412700000000001
+          }
+        ]
+      },
+      36.92628651,
+      {
+        "type": "line",
+        "values": [
+          47.14285714,
+          35.98750976
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Columbia",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 38.18897638
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 42.0697
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.11249999999999999
+          },
+          {
+            "className": "ror-bar",
+            "value": 19.6288
+          }
+        ]
+      },
+      38.18897638,
+      {
+        "type": "line",
+        "values": [
+          40.796019900000005,
+          38.46153846
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Crawford",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 28.8973384
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 13.054499999999999
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 3.5488
+          },
+          {
+            "className": "ror-bar",
+            "value": 53.992399999999996
+          }
+        ]
+      },
+      28.8973384,
+      {
+        "type": "line",
+        "values": [
+          53.33333333,
+          28.3197832
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cumberland",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 38.5278224
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 19.132099999999998
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.4985
+          },
+          {
+            "className": "ror-bar",
+            "value": 41.5188
+          }
+        ]
+      },
+      38.5278224,
+      {
+        "type": "line",
+        "values": [
+          51.61744023,
+          35.0094162
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Dauphin",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 42.44132779
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 37.7645
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 1.0226000000000002
+          },
+          {
+            "className": "ror-bar",
+            "value": 18.4838
+          }
+        ]
+      },
+      42.44132779,
+      {
+        "type": "line",
+        "values": [
+          51.21710526,
+          36.4556962
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Delaware",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 55.68060922
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 43.554700000000004
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.0056
+          },
+          {
+            "className": "ror-bar",
+            "value": 0.10640000000000001
+          }
+        ]
+      },
+      55.68060922,
+      {
+        "type": "line",
+        "values": [
+          63.75237882,
+          48.4952381
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Elk",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 28.62318841
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 71.3768
+          },
+        ]
+      },
+      28.62318841,
+      {
+        "type": "line",
+        "values": [
+          27.77777778,
+          28.68117798
+        ]
+      },
+      "--"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Erie",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 43.95330739
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 18.932
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.6072
+          },
+          {
+            "className": "ror-bar",
+            "value": 36.493900000000004
+          }
+        ]
+      },
+      43.95330739,
+      {
+        "type": "line",
+        "values": [
+          63.73239437,
+          37.027147310000004
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fayette",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 44.27074081
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 54.6505
+          },
+          {
+            "className": "ror-bar",
+            "value": 0.7825000000000001
+          }
+        ]
+      },
+      44.27074081,
+      {
+        "type": "line",
+        "values": [
+          54,
+          42.30092389
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Forest",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 34.75609756
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 52.439
+          },
+          {
+            "className": "ror-bar",
+            "value": 12.8049
+          }
+        ]
+      },
+      34.75609756,
+      {
+        "type": "line",
+        "values": [
+          85,
+          32.03883495
+        ]
+      },
+      "--"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Franklin",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 37.479026850000004
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 11.6548
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.567
+          },
+          {
+            "className": "ror-bar",
+            "value": 50.083999999999996
+          }
+        ]
+      },
+      37.479026850000004,
+      {
+        "type": "line",
+        "values": [
+          49.26553672,
+          35.19494204
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fulton",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 28.672985779999998
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 14.691899999999999
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 5.2133
+          },
+          {
+            "className": "ror-bar",
+            "value": 51.4218
+          }
+        ]
+      },
+      28.672985779999998,
+      {
+        "type": "line",
+        "values": [
+          31.578947369999998,
+          29.27536232
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Greene",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 37.44343891
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 34.6546
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.3398
+          },
+          {
+            "className": "ror-bar",
+            "value": 26.613799999999998
+          }
+        ]
+      },
+      37.44343891,
+      {
+        "type": "line",
+        "values": [
+          58.97435897,
+          37.861635220000004
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Huntingdon",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 38.96907216
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 30.3158
+          },
+          {
+            "className": "ror-bar",
+            "value": 29.6842
+          }
+        ]
+      },
+      38.96907216,
+      {
+        "type": "line",
+        "values": [
+          64.05228758,
+          37.83333333
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Indiana",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 35.01070664
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 33.3333
+          },
+          {
+            "className": "ror-bar",
+            "value": 30.761
+          }
+        ]
+      },
+      35.01070664,
+      {
+        "type": "line",
+        "values": [
+          30.392156860000004,
+          36.21169916
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Jefferson",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 38.55721393
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 61.2769
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.0829
+          },
+          {
+            "className": "ror-bar",
+            "value": 0.0829
+          }
+        ]
+      },
+      38.55721393,
+      {
+        "type": "line",
+        "values": [
+          72.97297297,
+          38.352524360000004
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Juniata",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 34.46215139
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 39.243
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 7.370500000000001
+          },
+          {
+            "className": "ror-bar",
+            "value": 18.9243
+          }
+        ]
+      },
+      34.46215139,
+      {
+        "type": "line",
+        "values": [
+          43.75,
+          36.67425968
+        ]
+      },
+      "--"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Lackawanna",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 52.635003250000004
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 37.931
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 7.563400000000001
+          },
+          {
+            "className": "ror-bar",
+            "value": 1.8055
+          }
+        ]
+      },
+      52.635003250000004,
+      {
+        "type": "line",
+        "values": [
+          67.13459950000001,
+          48.9720035
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lancaster",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 44.932404749999996
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 39.6443
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.0902
+          },
+          {
+            "className": "ror-bar",
+            "value": 15.2283
+          }
+        ]
+      },
+      44.932404749999996,
+      {
+        "type": "line",
+        "values": [
+          55.54532904,
+          43.07425541
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lawrence",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 48.92407633
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 2.233
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 23.3455
+          },
+          {
+            "className": "ror-bar",
+            "value": 24.685299999999998
+          }
+        ]
+      },
+      48.92407633,
+      {
+        "type": "line",
+        "values": [
+          66.28477905,
+          43.4806939
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lebanon",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 38.70437956
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 56.2432
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.6207
+          },
+          {
+            "className": "ror-bar",
+            "value": 3.5232
+          }
+        ]
+      },
+      38.70437956,
+      {
+        "type": "line",
+        "values": [
+          48.84547069,
+          37.97733949
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lehigh",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 54.88215488
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 36.5018
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.030699999999999998
+          },
+          {
+            "className": "ror-bar",
+            "value": 8.1388
+          }
+        ]
+      },
+      54.88215488,
+      {
+        "type": "line",
+        "values": [
+          61.816340309999994,
+          52.853765620000004
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Luzerne",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 38.288852490000004
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 31.285600000000002
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 1.0030000000000001
+          },
+          {
+            "className": "ror-bar",
+            "value": 29.3085
+          }
+        ]
+      },
+      38.288852490000004,
+      {
+        "type": "line",
+        "values": [
+          53.5892323,
+          34.6550856
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lycoming",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 34.68169761
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 64.91029999999999
+          },
+          {
+            "className": "ror-bar",
+            "value": 0.3321
+          }
+        ]
+      },
+      34.68169761,
+      {
+        "type": "line",
+        "values": [
+          55.01355014,
+          28.14726841
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "McKean",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 42.381348880000004
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 52.5042
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.0835
+          },
+          {
+            "className": "ror-bar",
+            "value": 4.9249
+          }
+        ]
+      },
+      42.381348880000004,
+      {
+        "type": "line",
+        "values": [
+          61.333333329999995,
+          41.23134328
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mercer",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 36.12542955
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 39.6907
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 12.070400000000001
+          },
+          {
+            "className": "ror-bar",
+            "value": 11.855699999999999
+          }
+        ]
+      },
+      36.12542955,
+      {
+        "type": "line",
+        "values": [
+          45.40337711,
+          33.35235378
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mifflin",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 48.49498328
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 50.6355
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.33440000000000003
+          },
+          {
+            "className": "ror-bar",
+            "value": 0.46820000000000006
+          }
+        ]
+      },
+      48.49498328,
+      {
+        "type": "line",
+        "values": [
+          70.11494253000001,
+          47.482014389999996
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Monroe",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 32.79661017
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 49.6091
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.4249
+          },
+          {
+            "className": "ror-bar",
+            "value": 17.063200000000002
+          }
+        ]
+      },
+      32.79661017,
+      {
+        "type": "line",
+        "values": [
+          35.13011152,
+          32.41612358
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montgomery",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 33.63556165
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 46.1889
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.466
+          },
+          {
+            "className": "ror-bar",
+            "value": 14.7096
+          }
+        ]
+      },
+      33.63556165,
+      {
+        "type": "line",
+        "values": [
+          43.27198364,
+          28.69733969
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montour",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 35.19163763
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 24.738699999999998
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.6969000000000001
+          },
+          {
+            "className": "ror-bar",
+            "value": 39.0244
+          }
+        ]
+      },
+      35.19163763,
+      {
+        "type": "line",
+        "values": [
+          46.15384615,
+          35.34136546
+        ]
+      },
+      "--"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Northampton",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 45.835299670000005
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 36.5278
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 1.9356000000000002
+          },
+          {
+            "className": "ror-bar",
+            "value": 15.213
+          }
+        ]
+      },
+      45.835299670000005,
+      {
+        "type": "line",
+        "values": [
+          55.7063541,
+          43.86813852
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Northumberland",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 36
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 51.91909999999999
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.0825
+          },
+          {
+            "className": "ror-bar",
+            "value": 11.886099999999999
+          }
+        ]
+      },
+      36,
+      {
+        "type": "line",
+        "values": [
+          56.81818182,
+          33.910665449999996
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Perry",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 28.98148148
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 26.2963
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 1.0185
+          },
+          {
+            "className": "ror-bar",
+            "value": 41.4815
+          }
+        ]
+      },
+      28.98148148,
+      {
+        "type": "line",
+        "values": [
+          40,
+          27.68130746
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Philadelphia",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 50.122163519999994
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 7.017900000000001
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 6.6315
+          },
+          {
+            "className": "ror-bar",
+            "value": 36.207699999999996
+          }
+        ]
+      },
+      50.122163519999994,
+      {
+        "type": "line",
+        "values": [
+          56.02170568,
+          43.3107617
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Pike",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 34.16738568
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 5.6228
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 28.0277
+          },
+          {
+            "className": "ror-bar",
+            "value": 31.1419
+          }
+        ]
+      },
+      34.16738568,
+      {
+        "type": "line",
+        "values": [
+          37.41007194,
+          34.020618559999996
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Potter",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 23.36601307
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 57.7741
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 1.9640000000000002
+          },
+          {
+            "className": "ror-bar",
+            "value": 16.5303
+          }
+        ]
+      },
+      23.36601307,
+      {
+        "type": "line",
+        "values": [
+          75,
+          23.24786325
+        ]
+      },
+      "--"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Schuylkill",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 37.741878220000004
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 51.349900000000005
+          },
+          {
+            "className": "ror-bar",
+            "value": 10.692699999999999
+          }
+        ]
+      },
+      37.741878220000004,
+      {
+        "type": "line",
+        "values": [
+          46.5060241,
+          37.275215010000004
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Snyder",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 35.92870544
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 54.1276
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 2.9081
+          },
+          {
+            "className": "ror-bar",
+            "value": 6.472799999999999
+          }
+        ]
+      },
+      35.92870544,
+      {
+        "type": "line",
+        "values": [
+          52.5,
+          34.59183673
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Somerset",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 25
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 23.6146
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 46.0809
+          },
+          {
+            "className": "ror-bar",
+            "value": 4.643
+          }
+        ]
+      },
+      25,
+      {
+        "type": "line",
+        "values": [
+          69.56521739,
+          23.20855615
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Sullivan",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 36.44859813
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 61.682199999999995
+          },
+          {
+            "className": "ror-bar",
+            "value": 1.8692
+          }
+        ]
+      },
+      36.44859813,
+      {
+        "type": "line",
+        "values": [
+          62.5,
+          32.63157895
+        ]
+      },
+      "--"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Susquehanna",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 40.32663317
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 33.2075
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.8805000000000001
+          },
+          {
+            "className": "ror-bar",
+            "value": 25.5346
+          }
+        ]
+      },
+      40.32663317,
+      {
+        "type": "line",
+        "values": [
+          66.66666667,
+          39.76377953
+        ]
+      },
+      "--"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Tioga",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 36.38603696
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 48.5597
+          },
+          {
+            "className": "ror-bar",
+            "value": 13.086400000000001
+          }
+        ]
+      },
+      36.38603696,
+      {
+        "type": "line",
+        "values": [
+          56.99999999999999,
+          34.50800915
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Union",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 25.36136662
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 11.958
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 14.4547
+          },
+          {
+            "className": "ror-bar",
+            "value": 47.7004
+          }
+        ]
+      },
+      25.36136662,
+      {
+        "type": "line",
+        "values": [
+          38.20224719,
+          23.24159021
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Venango",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 37.84477229
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 61.7818
+          },
+          {
+            "className": "ror-bar",
+            "value": 0.1291
+          }
+        ]
+      },
+      37.84477229,
+      {
+        "type": "line",
+        "values": [
+          60.13986014,
+          35.56187767
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Warren",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 40.61393152
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 15.112200000000001
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 2.2432
+          },
+          {
+            "className": "ror-bar",
+            "value": 42.030699999999996
+          }
+        ]
+      },
+      40.61393152,
+      {
+        "type": "line",
+        "values": [
+          70,
+          39.95067818
+        ]
+      },
+      "--"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Washington",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 38.93688681
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 34.2627
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.9538
+          },
+          {
+            "className": "ror-bar",
+            "value": 25.663999999999998
+          }
+        ]
+      },
+      38.93688681,
+      {
+        "type": "line",
+        "values": [
+          55.77092511,
+          35.82116788
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wayne",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 37.20349563
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 28.214699999999997
+          },
+          {
+            "className": "ror-bar",
+            "value": 34.5818
+          }
+        ]
+      },
+      37.20349563,
+      {
+        "type": "line",
+        "values": [
+          64.86486486000001,
+          35.309973049999996
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Westmoreland",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 31.716625590000003
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 30.687900000000003
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 4.66
+          },
+          {
+            "className": "ror-bar",
+            "value": 32.9304
+          }
+        ]
+      },
+      31.716625590000003,
+      {
+        "type": "line",
+        "values": [
+          50.050454089999995,
+          28.61736334
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wyoming",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 35.68118628
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 63.974
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 0.0929
+          },
+          {
+            "className": "ror-bar",
+            "value": 0.1857
+          }
+        ]
+      },
+      35.68118628,
+      {
+        "type": "line",
+        "values": [
+          40,
+          35.596508240000006
+        ]
+      },
+      "--"
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "York",
+      {
+        "type": "dist",
+        "values": [
+          {
+            "className": "cash-bar",
+            "value": 44.27380952
+          },
+          {
+            "className": "unsecured-bar",
+            "value": 15.765299999999998
+          },
+          {
+            "className": "nonmonetary-bar",
+            "value": 5.7181999999999995
+          },
+          {
+            "className": "ror-bar",
+            "value": 33.3671
+          }
+        ]
+      },
+      44.27380952,
+      {
+        "type": "line",
+        "values": [
+          54.119850189999994,
+          41.118447870000004
+        ]
+      },
+      "--"
+    ],
+    "outlier": false
+  }
+];

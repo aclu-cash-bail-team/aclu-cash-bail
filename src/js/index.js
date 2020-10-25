@@ -1,5 +1,5 @@
 import { Table, SwitchableTable } from "./classes/Table.js";
-import { BAIL_RATE_DATA, BAIL_RACE_RATE_DATA, ROR_RATE_DATA, BAIL_RACE_AMOUNT_DATA } from "./data.js";
+import { BAIL_RATE_DATA, BAIL_RACE_RATE_DATA, ROR_RATE_DATA, BAIL_RACE_AMOUNT_DATA, MDJ_DATA } from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -202,6 +202,58 @@ const createBailRaceAmountTable = () => {
   return new Table(BAIL_RACE_AMOUNT_DATA, columnConfigs, initSort, tableContainer, false);
 };
 
+const createMdjTable = () => {
+  const columnConfigs = [
+    {
+      class: "county-name-cell",
+      header: "County",
+      sortable: false,
+      searchable: true
+    },
+    {
+      class: "viz-cell",
+      header: "Bail Type Dist",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "bail-rate-cell  number-cell",
+      header: "% Cash Bail",
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 100,
+        "averages": [
+          {
+            "name": "Black",
+            "value": 54.7462525,
+          },
+          {
+            "name": "White",
+            "value": 37.87542236,
+          }
+        ],
+        "unit": "percent"
+      },
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "diff-cell number-cell",
+      header: "Diff",
+      sortable: false,
+      searchable: false
+    },
+  ];
+  const initSort = 2;
+  const tableContainer = document.getElementById("mdj-container");
+  return new Table(MDJ_DATA, columnConfigs, initSort, tableContainer);
+};
+
 /* RENDER PAGE */
 const bailRateTable = createBailRateTable();
 const rorRateTable = createRorRateTable();
@@ -214,3 +266,5 @@ const bailRaceAmountTable = createBailRaceAmountTable();
 
 const raceContainer = document.getElementById("race-container");
 new SwitchableTable(bailRaceRateTable, bailRaceAmountTable, raceContainer);
+
+const mdjTable = createMdjTable();
