@@ -3629,7 +3629,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
         "value": "-$16,481"
       }
     ],
-    "outlier": false
+    "outlier": true
   },
   {
     "data": [
@@ -3869,7 +3869,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
         "value": "-$6,718"
       }
     ],
-    "outlier": false
+    "outlier": true
   },
   {
     "data": [
@@ -3929,7 +3929,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
         "value": "-$906"
       }
     ],
-    "outlier": false
+    "outlier": true
   },
   {
     "data": [
@@ -4069,7 +4069,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
         "value": "+$6,837"
       }
     ],
-    "outlier": false
+    "outlier": true
   },
   {
     "data": [
@@ -4329,7 +4329,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
         "value": "-$1,893"
       }
     ],
-    "outlier": false
+    "outlier": true
   },
   {
     "data": [
@@ -4449,7 +4449,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
         "value": "-$3,638"
       }
     ],
-    "outlier": false
+    "outlier": true
   },
   {
     "data": [
@@ -4529,7 +4529,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
         "value": "-$13,667"
       }
     ],
-    "outlier": false
+    "outlier": true
   },
   {
     "data": [
@@ -4549,7 +4549,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
         "value": "+$2,670"
       }
     ],
-    "outlier": false
+    "outlier": true
   },
   {
     "data": [
@@ -4629,7 +4629,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
         "value": "+$7,323"
       }
     ],
-    "outlier": false
+    "outlier": true
   },
   {
     "data": [
@@ -4709,7 +4709,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
         "value": "-$2,431"
       }
     ],
-    "outlier": false
+    "outlier": true
   },
   {
     "data": [

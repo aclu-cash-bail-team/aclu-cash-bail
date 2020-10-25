@@ -426,9 +426,10 @@ export class RankedTable {
         if (j === 0 && row.outlier) cell += "*";
         return new CellType(cell, this.classNames[j], this.headers[j]);
       });
-      const isHidden = (this.isTruncated && numVisibleRows >= 10) || !this.matchesSearchTerm(row);
+      const isOutlier = row["outlier"];
+      const isHidden = (this.isTruncated && numVisibleRows >= 10) || (!this.showOutliers && isOutlier) || !this.matchesSearchTerm(row);
       numVisibleRows += isHidden ? 0 : 1;
-      return new RankedBodyRow(cells, i + 1, isHidden);
+      return new RankedBodyRow(cells, i + 1, isOutlier, isHidden);
     });
   }
 
@@ -481,6 +482,7 @@ export class RankedTable {
 
   toggleOutliers() {
     this.showOutliers = !this.showOutliers;
+    this.rows = this.getRows(this.data);
     this.render();
     return this.showOutliers;
   }
