@@ -5,6 +5,7 @@
 
 table {
   border-collapse: collapse;
+  max-width: 600px;
   width: 100%;
   margin: 1em 0 0;
 }
@@ -17,9 +18,15 @@ th {
   padding: 1em;
   font-family: "GT America Condensed";
   font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
   text-align: left;
   text-transform: uppercase;
   vertical-align: bottom;
+}
+
+th.number-cell {
+  text-align: center;
 }
 
 td {
@@ -33,10 +40,7 @@ td.sorted {
 
 .number-cell {
   text-align: right;
-}
-
-.rank-cell {
-  text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 
 .county-name-cell {
@@ -73,12 +77,10 @@ td.sorted {
 }
 
 .view-all-btn {
-  width: 100%;
-  padding: 1em;
-  margin: 0 0 2.5em;
+  margin: 1.5em 0;
   text-align: center;
+  text-transform: uppercase;
   font-weight: 600;
-  border: 1px #333 solid;
   cursor: pointer;
   user-select: none;
 }
@@ -101,6 +103,10 @@ td.sorted {
   background-color: #1D1D1D;
 }
 
+.ui.fluid.dropdown {
+  width: auto;
+}
+
 .switch-container {
   cursor: pointer;
   user-select: none;
@@ -119,14 +125,6 @@ td.sorted {
   text-transform: uppercase;
 }
 
-.switch-container .switch.left {
-  border-radius: 2px 0 0 2px;
-}
-
-.switch-container .switch.right {
-  border-radius: 0 2px 2px 0;
-}
-
 .switch-container .switch.showing {
   background-color: #1D1D1D;
 }
@@ -136,7 +134,7 @@ td.sorted {
 }
 
 .positive-diff {
-  color: #08d964;
+  color: #00ED89;
 }
 
 .negative-diff {

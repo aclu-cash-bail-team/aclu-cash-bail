@@ -1,4 +1,4 @@
-import { RankedTable, SwitchableTable } from "./classes/Table.js";
+import { Table, SwitchableTable } from "./classes/Table.js";
 import { BAIL_RATE_DATA, BAIL_RACE_RATE_DATA, ROR_RATE_DATA, BAIL_RACE_AMOUNT_DATA } from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
@@ -14,14 +14,14 @@ const createBailRateTable = () => {
       class: "viz-cell",
       header: {
         "start": 0,
-        "end": 90,
+        "end": 60,
         "averages": [
           {
-            "name": "State Average",
+            "name": "Avg.",
             "value": 42.5966697900,
-            "unit": "percent"
-          }
-        ]
+          },
+        ],
+        "unit": "percent"
       },
       sortable: false,
       searchable: false
@@ -47,7 +47,7 @@ const createBailRateTable = () => {
   ];
   const initSort = 2; // initially sort by cash bail rate
   const tableContainer = document.getElementById("bail-rate-container");
-  return new RankedTable(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer, false);
 };
 
 const createRorRateTable = () => {
@@ -65,11 +65,11 @@ const createRorRateTable = () => {
         "end": 75,
         "averages": [
           {
-            "name": "State Average",
+            "name": "Avg.",
             "value": 22.73,
-            "unit": "percent"
           }
-        ]
+        ],
+        "unit": "percent"
       },
       sortable: false,
       searchable: false
@@ -95,7 +95,7 @@ const createRorRateTable = () => {
   ];
   const initSort = 2; // initially sort by ror bail rate
   const tableContainer = document.getElementById("ror-rate-container");
-  return new RankedTable(ROR_RATE_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(ROR_RATE_DATA, columnConfigs, initSort, tableContainer, false);
 };
 
 const createBailRaceRateTable = () => {
@@ -115,14 +115,13 @@ const createBailRaceRateTable = () => {
           {
             "name": "Black",
             "value": 54.7462525,
-            "unit": "percent"
           },
           {
             "name": "White",
             "value": 37.87542236,
-            "unit": "percent"
           }
-        ]
+        ],
+        "unit": "percent"
       },
       sortable: false,
       searchable: false
@@ -148,8 +147,7 @@ const createBailRaceRateTable = () => {
   ];
   const initSort = 4; // initially sort by difference
   const tableContainer = document.getElementById("bail-race-rate-container");
-
-  return new RankedTable(BAIL_RACE_RATE_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(BAIL_RACE_RATE_DATA, columnConfigs, initSort, tableContainer, false);
 };
 
 const createBailRaceAmountTable = () => {
@@ -163,20 +161,19 @@ const createBailRaceAmountTable = () => {
     {
       class: "viz-cell",
       header: {
-        "start": 5000,
+        "start": 10000,
         "end": 80000,
         "averages": [
           {
             "name": "Black",
             "value": 38700.61968,
-            "unit": "dollars"
           },
           {
             "name": "White",
             "value": 27572.55514,
-            "unit": "dollars"
           }
-        ]
+        ],
+        "unit": "dollars"
       },
       sortable: false,
       searchable: false
@@ -202,8 +199,7 @@ const createBailRaceAmountTable = () => {
   ];
   const initSort = 4; // initially sort by difference
   const tableContainer = document.getElementById("bail-race-amount-container");
-
-  return new RankedTable(BAIL_RACE_AMOUNT_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(BAIL_RACE_AMOUNT_DATA, columnConfigs, initSort, tableContainer, false);
 };
 
 /* RENDER PAGE */
