@@ -129,3 +129,19 @@ td.viz-cell {
 .viz-number-line-point.purple {
   background-color: #C14EF8;
 }
+
+.cash-bar {
+  background-color: #00ED89;
+}
+
+.unsecured-bar {
+  background-color: #75CBD6;
+}
+
+.nonmonetary-bar {
+  background-color: #303030;
+}
+
+.ror-bar {
+  background-color: #C14EF8;
+}

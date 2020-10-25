@@ -95,6 +95,35 @@ class BarGraphCell extends Cell {
 }
 
 
+class DistributionBarCell extends Cell {
+  constructor(content, className) {
+    super(`${className} distribution-cell`);
+    this.content = content["values"];
+    this.render();
+  }
+
+  render() {
+    super.render();
+    // create bars for each distribution
+    this.content.forEach(dist => {
+      const bar = document.createElement("div");
+      bar.className = `viz-bar ${dist["className"]}`;
+      this.element.appendChild(bar);
+    });
+    // configure sizes of distribution bars
+    const numDists = this.content.length;
+    const [gapSize, gapUnits] = [2, "px"];
+    const gapCorrection = Math.round(((numDists - 1) * gapSize) / numDists);
+    const distWidths = this.content.map((dist) =>
+      `calc(${dist["value"]}% - ${gapCorrection}${gapUnits})`
+    );
+    this.element.style.display = "inline-grid";
+    this.element.style.columnGap = `${gapSize}${gapUnits}`;
+    this.element.style.gridTemplateColumns = distWidths.join(" ");
+  }
+}
+
+
 class NumberLineCell extends Cell {
   constructor(content, className, data) {
     super(className);
@@ -422,6 +451,8 @@ export class Table {
             CellType = NumberLineCell;
           } else if (cell["type"] === "styled") {
             CellType = StyledTextCell;
+          } else if (cell["type"] === "dist") {
+            CellType = DistributionBarCell;
           }
         }
         // for county names, append an asterisk if it's an outlier
