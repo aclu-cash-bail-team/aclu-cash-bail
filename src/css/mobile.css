@@ -8,16 +8,10 @@
   }
 
   th.viz-cell {
-    width: 150px;
     padding: 1em 0.5em;
   }
 
-  .average-wrapper {
-    width: 150px;
-  }
-
   td.viz-cell {
-    width: 150px;
     margin: 0 1em;
     padding: 1.5em 0;
     border-left: 1px dotted #333;

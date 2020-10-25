@@ -1,3 +1,6 @@
+const VIEW_ALL = "view all";
+const VIEW_LESS = "view less";
+
 class Cell {
   constructor(className) {
     this.className = className;
@@ -22,6 +25,20 @@ class TextCell extends Cell {
   constructor(content, className) {
     super(className);
     this.content = content;
+    this.render();
+  }
+
+  render() {
+    super.render();
+    this.element.appendChild(document.createTextNode(this.content));
+  }
+}
+
+
+class StyledTextCell extends Cell {
+  constructor(content, className) {
+    super(`${className} ${content["className"]}`);
+    this.content = content["value"].toLocaleString();
     this.render();
   }
 
@@ -98,14 +115,14 @@ class NumberLineCell extends Cell {
     this.content.forEach((value, i) => {
       const point = document.createElement("div");
       point.className = `viz-number-line-point ${this.vizColors[i]}`;
-      point.style.left = `${value / this.range["end"] * 100}%`;
+      point.style.left = `${(value - this.range["start"]) / this.range["end"] * 100}%`;
       this.element.appendChild(point);
     });
     // add the vertical line denoting the average
     this.averages.forEach((average, i) => {
       const averageLine = document.createElement("div");
       averageLine.className = `bar-average-line ${this.vizColors[i]}`;
-      averageLine.style.left = `${average["value"] / this.range["end"] * 100}%`;
+      averageLine.style.left = `${(average["value"] - this.range["start"]) / this.range["end"] * 100}%`;
       this.element.appendChild(averageLine);
     });
   }
@@ -177,14 +194,22 @@ class VizHeaderCell extends HeaderCell {
     const start = this.content["start"];
     const end = this.content["end"];
     const averages = this.content["averages"];
+    const unit = this.content["unit"];
 
     const cell = document.createElement("th");
     cell.className = this.className;
     // create start, end, and average tick/number elements
-    const startElement = this.createTickElement(start, "start-num");
-    const endElement = this.createTickElement(end, "end-num");
+    const startText = unit === "dollars" ? `$${Math.round(start / 1000)}K` : start;
+    const endText = unit === "dollars" ? `$${Math.round(end / 1000)}K` : end;
+    const startElement = this.createTickElement(startText, "start-num");
+    const endElement = this.createTickElement(endText, "end-num");
     const averageElements = averages.map((average, i) => {
-      const text = `${average["name"]}:<br>${average["value"].toFixed(1)}%`;
+      let text = "";
+      if (unit === "percent") {
+        text = `${average["name"]}<br>${average["value"].toFixed(1)}%`;
+      } else if (unit === "dollars") {
+        text =`${average["name"]}<br>$${Math.round(average["value"] / 1000)}K`;
+      }
       const className = "average";
       return this.createTickElement(text, className, vizColors[i]);
     });
@@ -193,7 +218,7 @@ class VizHeaderCell extends HeaderCell {
     averageWrapper.className = "average-wrapper";
     // offset the average elements by the value/end ratio (and subtract padding)
     averageElements.forEach((element, i) => {
-      element.style.left = `calc(${averages[i]["value"] / end * 100}%)`;
+      element.style.left = `calc(${(averages[i]["value"] - start) / end * 100}%)`;
       averageWrapper.appendChild(element);
     });
     // add all the elements to the cell
@@ -212,7 +237,7 @@ class VizHeaderCell extends HeaderCell {
     wrapper.appendChild(text);
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
-      wrapper.style.paddingLeft = `${0.25}em`;
+      wrapper.style.paddingLeft = `${4}px`;
     }
 
     // create the vertical tick underneath the number
@@ -248,24 +273,25 @@ class HeaderRow {
 }
 
 
-class RankedBodyRow {
-  constructor(cells, initialRank, outlier, isHidden = false) {
+class BodyRow {
+  constructor(cells, outlier, isHidden) {
     this.cells = cells;
     this.outlier = outlier;
     this.isHidden = isHidden;
-    this.render(initialRank);
+    this.render();
   }
 
-  render(rank, sorted) {
+  setIsHidden(isHidden) {
+    this.isHidden = isHidden;
+  }
+
+  render(sorted) {
     const row = document.createElement("tr");
     if (this.isHidden) {
       row.className = "hidden";
     } else {
-      const rankedCells = [
-        new TextCell(rank, "rank-cell"),
-        ...this.cells
-      ];
-      rankedCells.forEach((cell, i) => {
+      row.className = "";
+      this.cells.forEach((cell, i) => {
         cell.setElementClass(
           i === sorted ? `${cell.className} sorted` : cell.className
         );
@@ -277,8 +303,8 @@ class RankedBodyRow {
 }
 
 
-export class RankedTable {
-  constructor(data, columnConfigs, initSort, tableContainer) {
+export class Table {
+  constructor(data, columnConfigs, initSort, tableContainer, isVisible = true) {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
@@ -292,10 +318,11 @@ export class RankedTable {
     this.isTruncated = true;
 
     this.sortCols = columnConfigs.map((config) => config.sortable);
-    // start with sorting descending; add one to account for rank
-    this.sortCol = initSort + 1;
+    // start with sorting descending
+    this.sortCol = initSort;
     this.sortDir = -1;
 
+    this.isVisible = isVisible;
     this.header = this.getHeaderRow();
 
     this.init(); // Initial table DOM setup
@@ -337,9 +364,30 @@ export class RankedTable {
     searchInput.addEventListener("change", e => {
       const searchValue = e.target.value;
       this.searchTerms = searchValue.split(",").filter(s => s !== "");
-      this.rows = this.getRows(this.data);
-      this.render(false);
+      this.rows = this.getRows();
+      this.render();
     });
+
+    // set up view all button
+    const viewAllButton = this.container.getElementsByClassName("view-all-btn")[0];
+    viewAllButton.innerText = this.isTruncated ? VIEW_ALL : VIEW_LESS;
+    viewAllButton.addEventListener("click", () => {
+      this.isTruncated = !this.isTruncated;
+      viewAllButton.innerText = this.isTruncated ? VIEW_ALL : VIEW_LESS;
+      this.rows = this.getRows();
+      this.render();
+    });
+
+    // set up outlier button
+    const outlierButtons = this.container.getElementsByClassName("outliers-btn");
+    if (outlierButtons.length > 0) {
+      const outlierButton = outlierButtons[0];
+
+      outlierButton.addEventListener("click", (e) => {
+        const showOutliers = this.toggleOutliers();
+        e.target.className = showOutliers ? "outliers-btn showing" : "outliers-btn";
+      });
+    }
   }
 
   getHeaderRow() {
@@ -351,36 +399,39 @@ export class RankedTable {
         this.sortCols[i],
         // 1 designates ascending; -1, descending (default); 0, not sortable
         this.sortCols[i] ? -1 : 0,
-        i + 1 === this.sortCol,
+        i === this.sortCol,
         this,
-        // adjust ids for rank and space headers
-        i + 1
+        i
       );
     });
-    const headersWithRank = [
-      new HeaderCell("Rank", "rank-cell", false, 0, false, this, 0),
-      ...headerCells
-    ];
-    return new HeaderRow(headersWithRank);
+    return new HeaderRow(headerCells);
   }
 
-  getRows(data) {
+  getRows() {
     let numVisibleRows = 0;
-    return data.map((row, i) => {
+    return this.data.map((row, i) => {
       // Specify how data will be rendered
       const cells = row.data.map((cell, j) => {
         let CellType = TextCell;
-        if (typeof(cell) == "number") CellType = NumberCell;
-        if (typeof(cell) == "object") {
-          CellType = cell["type"] === "bar" ? BarGraphCell : NumberLineCell;
+        if (typeof(cell) == "number") {
+          CellType = NumberCell;
+        } else if (typeof(cell) == "object") {
+          if (cell["type"] === "bar") {
+            CellType = BarGraphCell;
+          } else if (cell["type"] === "line") {
+            CellType = NumberLineCell;
+          } else if (cell["type"] === "styled") {
+            CellType = StyledTextCell;
+          }
         }
         // for county names, append an asterisk if it's an outlier
         if (j === 0 && row.outlier) cell += "*";
         return new CellType(cell, this.classNames[j], this.headers[j]);
       });
-      const isHidden = (this.isTruncated && numVisibleRows >= 10) || !this.matchesSearchTerm(row);
-      numVisibleRows += isHidden ? 0 : 1;
-      return new RankedBodyRow(cells, i + 1, isHidden);
+      const isHidden = (this.isTruncated && numVisibleRows >= 10) ||
+        (row.outlier && !this.showOutliers) || !this.matchesSearchTerm(row);
+      if (!isHidden) numVisibleRows++;
+      return new BodyRow(cells, row.outlier, isHidden);
     });
   }
 
@@ -405,16 +456,17 @@ export class RankedTable {
     this.sortDir = sortDir;
   }
 
+  toNumber(data) {
+    const value = typeof(data) === "object" ? data["value"] : data;
+    return Number(value.replace ? value.replace(/[^\d.-]/g, "") : value);
+  }
+
   sort(initialSort) {
     if (!initialSort) this.header.clearedSortedCells();
 
-    // data doesn't have rank, so subtract one from the index
-    const dataCol = this.sortCol - 1;
     this.data.sort((a, b) => {
-      // Assumes that we only want to sort numbers, which is fine for now
-      // May need to support sorting multiple types
-      const i = Number(a.data[dataCol]);
-      const j = Number(b.data[dataCol]);
+      const i = this.toNumber(a.data[this.sortCol]);
+      const j = this.toNumber(b.data[this.sortCol]);
       if (i < j) {
         return this.sortDir * -1;
       } else if (i > j) {
@@ -423,39 +475,76 @@ export class RankedTable {
         return 0;
       }
     });
-    this.rows = this.getRows(this.data);
+    this.rows = this.getRows();
     this.render();
   }
 
   toggleOutliers() {
     this.showOutliers = !this.showOutliers;
+    this.rows = this.getRows();
     this.render();
     return this.showOutliers;
   }
 
+  hide() {
+    this.isVisible = false;
+    this.render();
+  }
+
+  show() {
+    this.isVisible = true;
+    this.render();
+  }
+
   render() {
-    // create rows
-    const tbody = this.element.getElementsByTagName("tbody")[0];
-    tbody.textContent = "";
+    if (!this.isVisible) {
+      this.container.classList.add("hidden");
+    } else {
+      this.container.classList.remove("hidden");
 
-    // repopulate with updated rows
-    let rowRank = 1;
-    this.rows.forEach(row => {
-      if (!row.outlier || this.showOutliers) {
-        row.render(rowRank, this.sortCol);
+      // clear rows
+      const tbody = this.element.getElementsByTagName("tbody")[0];
+      tbody.textContent = "";
+
+      // repopulate with updated rows
+      this.rows.forEach(row => {
+        row.render(this.sortCol);
         tbody.appendChild(row.element);
-        rowRank++;
-      }
-    });
+      });
+    }
+  }
+}
 
-    // set up view all button
-    const viewAllButton = this.container.getElementsByClassName("view-all-btn")[0];
-    viewAllButton.innerText = this.isTruncated ? "VIEW ALL" : "COLLAPSE";
-    viewAllButton.addEventListener("click", () => {
-      this.isTruncated = !this.isTruncated;
-      viewAllButton.innerText = this.isTruncated ? "VIEW ALL" : "COLLAPSE";
-      this.rows = this.getRows(this.data);
-      this.updateTable(false);
-    });
+export class SwitchableTable {
+  constructor(leftTable, rightTable, container) {
+    this.leftTable = leftTable;
+    this.rightTable = rightTable;
+    this.container = container;
+
+    // set up switch buttons
+    const rightSwitch =
+      this.leftTable.container
+        .getElementsByClassName("switch-container")[0]
+        .getElementsByClassName("right")[0];
+    rightSwitch.addEventListener("click", this.showRightTable.bind(this));
+
+    const leftSwitch =
+      this.rightTable.container
+        .getElementsByClassName("switch-container")[0]
+        .getElementsByClassName("left")[0];
+    leftSwitch.addEventListener("click", this.showLeftTable.bind(this));
+
+    // show left table by default
+    this.showLeftTable();
+  }
+
+  showLeftTable() {
+    this.leftTable.show();
+    this.rightTable.hide();
+  }
+
+  showRightTable() {
+    this.rightTable.show();
+    this.leftTable.hide();
   }
 }

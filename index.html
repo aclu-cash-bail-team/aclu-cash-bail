@@ -16,33 +16,81 @@
   </head>
   <body>
     <div class="container">
-      <div id="bail-rate-container">
-        <div class="ui fluid multiple search selection dropdown">
-          <input type="hidden" name="county">
-          <i class="dropdown icon"></i>
-          <div class="default text">Select Counties</div>
-          <div class="menu"></div>
+      <div id="rate-container">
+        <div class="table-container" id="bail-rate-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Search counties</div>
+            <div class="menu"></div>
+          </div>
+          <div class="switch-container">
+            <div class="switch left showing">Cash Bail Rate</div>
+            <div class="switch right">ROR Rate</div>
+          </div>
+          <table id="bail-rate-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="view-all-btn"></div>
         </div>
-        <table id="bail-rate-table">
-          <thead></thead>
-          <tbody></tbody>
-        </table>
-        <div class="view-all-btn"></div>
-      </div>
-      <div id="bail-race-container">
-        <div class="ui fluid multiple search selection dropdown">
-          <input type="hidden" name="county">
-          <i class="dropdown icon"></i>
-          <div class="default text">Select Counties</div>
-          <div class="menu"></div>
+        <div class="table-container" id="ror-rate-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select counties</div>
+            <div class="menu"></div>
+          </div>
+          <div class="switch-container">
+            <div class="switch left">Cash Bail Rate</div>
+            <div class="switch right showing">ROR Rate</div>
+          </div>
+          <table id="ror-rate-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="view-all-btn"></div>
         </div>
-      <div class="outliers-btn" id="race-outliers">Show Outliers</div>
-        <table id="bail-race-table">
-          <thead></thead>
-          <tbody></tbody>
-        </table>
-        <div class="view-all-btn"></div>
       </div>
+      <div id="race-container">
+        <div class="table-container" id="bail-race-rate-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select counties</div>
+            <div class="menu"></div>
+          </div>
+          <div class="outliers-btn">Show Outliers</div>
+          <div class="switch-container">
+            <div class="switch left showing">Cash Bail Rate</div>
+            <div class="switch right">Cash Bail Amount</div>
+          </div>
+          <table id="bail-race-rate-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="view-all-btn"></div>
+        </div>
+        <div class="table-container" id="bail-race-amount-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select counties</div>
+            <div class="menu"></div>
+          </div>
+          <div class="outliers-btn">Show Outliers</div>
+          <div class="switch-container">
+            <div class="switch left">Cash Bail Rate</div>
+            <div class="switch right showing">Cash Bail Amount</div>
+          </div>
+          <table id="bail-race-amount-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="view-all-btn"></div>
+        </div>
+      </div>
+    </div>
   </body>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script>
