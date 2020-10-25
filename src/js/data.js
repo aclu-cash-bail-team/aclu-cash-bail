@@ -4768,7 +4768,158 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Harvey, Matthew Robert",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.2
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 44.22
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 3.06
+            },
+            {
+              "className": "ror-bar",
+              "value": 17.52
+            }
+          ]
+        },
+        35.2,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bowman, Daniel S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.72
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.39
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 26.51
+            },
+            {
+              "className": "ror-bar",
+              "value": 27.38
+            }
+          ]
+        },
+        33.72,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Beauchat, Mark D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.13
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.12
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 28.24
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.33
+            }
+          ]
+        },
+        29.13,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Little, Tony J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.48
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 46.79
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.28
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.44
+            }
+          ]
+        },
+        25.48,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -4804,7 +4955,2072 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Welsh, Regis C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 85.43
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.64
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 3.72
+            },
+            {
+              "className": "ror-bar",
+              "value": 10.21
+            }
+          ]
+        },
+        85.43,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cramer, Jesse J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 75.62
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 15.89
+            },
+            {
+              "className": "ror-bar",
+              "value": 8.39
+            }
+          ]
+        },
+        75.62,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Brletic, Thomas S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 73.89
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.87
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 8.57
+            },
+            {
+              "className": "ror-bar",
+              "value": 16.57
+            }
+          ]
+        },
+        73.89,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Tibbs, Edward A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 73.79
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 19.59
+            },
+            {
+              "className": "ror-bar",
+              "value": 6.49
+            }
+          ]
+        },
+        73.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Barner, Robert L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 71.38
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 18.73
+            },
+            {
+              "className": "ror-bar",
+              "value": 9.89
+            }
+          ]
+        },
+        71.38,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Armour, John W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 67.19
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 25.28
+            },
+            {
+              "className": "ror-bar",
+              "value": 7.53
+            }
+          ]
+        },
+        67.19,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Costa, Ron Sr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 58.39
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 18.08
+            },
+            {
+              "className": "ror-bar",
+              "value": 23.53
+            }
+          ]
+        },
+        58.39,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ricciardi, Gene",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.89
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 19.07
+            },
+            {
+              "className": "ror-bar",
+              "value": 27.04
+            }
+          ]
+        },
+        53.89,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Martini, Randy",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.25
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 24.68
+            },
+            {
+              "className": "ror-bar",
+              "value": 22.08
+            }
+          ]
+        },
+        53.25,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Motznik, James A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 51.79
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 19.98
+            },
+            {
+              "className": "ror-bar",
+              "value": 28.24
+            }
+          ]
+        },
+        51.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hromyak, Leonard J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 51.42
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.24
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 35.31
+            },
+            {
+              "className": "ror-bar",
+              "value": 13.03
+            }
+          ]
+        },
+        51.42,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Miller, Thomas Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 49.86
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 6.09
+            },
+            {
+              "className": "ror-bar",
+              "value": 44.04
+            }
+          ]
+        },
+        49.86,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bengel, Carolyn S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 49.29
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 1.42
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 16.27
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.02
+            }
+          ]
+        },
+        49.29,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Butler, Daniel E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 48.64
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 25
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.36
+            }
+          ]
+        },
+        48.64,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Larotonda, Blaise P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47.09
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.26
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 14.29
+            },
+            {
+              "className": "ror-bar",
+              "value": 38.36
+            }
+          ]
+        },
+        47.09,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Sosovicka, David J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47.05
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.21
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 26.37
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.37
+            }
+          ]
+        },
+        47.05,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Shaffer, Peter H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.63
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 1.23
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 20.86
+            },
+            {
+              "className": "ror-bar",
+              "value": 31.29
+            }
+          ]
+        },
+        46.63,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Stephens, Craig C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.46
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.02
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 19.03
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.49
+            }
+          ]
+        },
+        46.46,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kovach, David T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.59
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.55
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 7.21
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.12
+            }
+          ]
+        },
+        44.59,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Joyce, Dennis R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.31
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.29
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 36.73
+            },
+            {
+              "className": "ror-bar",
+              "value": 18.08
+            }
+          ]
+        },
+        44.31,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cooper, Kevin E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.46
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 25.08
+            },
+            {
+              "className": "ror-bar",
+              "value": 28.46
+            }
+          ]
+        },
+        44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Fullerton, William T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.47
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.25
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 10.28
+            },
+            {
+              "className": "ror-bar",
+              "value": 42.29
+            }
+          ]
+        },
+        43.47,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Martin, Armand",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.25
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.99
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 44.84
+            },
+            {
+              "className": "ror-bar",
+              "value": 10.71
+            }
+          ]
+        },
+        43.25,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Riazzi, Eugene F. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.92
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.33
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 23.16
+            },
+            {
+              "className": "ror-bar",
+              "value": 34.42
+            }
+          ]
+        },
+        41.92,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mills, Beth S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.74
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 16.52
+            },
+            {
+              "className": "ror-bar",
+              "value": 42.74
+            }
+          ]
+        },
+        40.74,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ceoffe, Anthony M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.35
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 3.31
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 26.37
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.83
+            }
+          ]
+        },
+        40.35,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Arnoni, Ronald",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.83
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 15.93
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 41.09
+            },
+            {
+              "className": "ror-bar",
+              "value": 3.14
+            }
+          ]
+        },
+        39.83,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Petite, Oscar J. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.55
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 24.44
+            },
+            {
+              "className": "ror-bar",
+              "value": 36.01
+            }
+          ]
+        },
+        39.55,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Rushing, Derwin",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.55
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.4
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 29.69
+            },
+            {
+              "className": "ror-bar",
+              "value": 30.36
+            }
+          ]
+        },
+        39.55,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hanley, James J. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.9
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.54
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 25.19
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.37
+            }
+          ]
+        },
+        38.9,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Saveikis, Anthony William",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.71
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.59
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 14.37
+            },
+            {
+              "className": "ror-bar",
+              "value": 46.33
+            }
+          ]
+        },
+        38.71,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Wagner, William",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.51
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 7.14
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 11.8
+            },
+            {
+              "className": "ror-bar",
+              "value": 42.55
+            }
+          ]
+        },
+        38.51,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Smith, Tara",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.19
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 6.61
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 38.13
+            },
+            {
+              "className": "ror-bar",
+              "value": 19.07
+            }
+          ]
+        },
+        36.19,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ravenstahl, Robert P. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.28
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 31.44
+            },
+            {
+              "className": "ror-bar",
+              "value": 34.28
+            }
+          ]
+        },
+        34.28,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Stoughton, Lewis E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.96
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 4.4
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 15.47
+            },
+            {
+              "className": "ror-bar",
+              "value": 45.28
+            }
+          ]
+        },
+        33.96,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "DeLuca, Anthony",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.17
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.24
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 21.88
+            },
+            {
+              "className": "ror-bar",
+              "value": 44.71
+            }
+          ]
+        },
+        33.17,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dzvonick, Robert Paul",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.07
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 8.73
+            },
+            {
+              "className": "ror-bar",
+              "value": 59.01
+            }
+          ]
+        },
+        32.07,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ford, Robert L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.56
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.28
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 66.48
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.68
+            }
+          ]
+        },
+        31.56,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Olasz, Richard D. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.23
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 1.67
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 43.12
+            },
+            {
+              "className": "ror-bar",
+              "value": 23.98
+            }
+          ]
+        },
+        31.23,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "King, Richard G.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.79
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.45
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 47.41
+            },
+            {
+              "className": "ror-bar",
+              "value": 19.35
+            }
+          ]
+        },
+        30.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Haggerty, Sue",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.69
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.94
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 4.38
+            },
+            {
+              "className": "ror-bar",
+              "value": 51.36
+            }
+          ]
+        },
+        30.69,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Zucco, Linda",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 30
+            },
+            {
+              "className": "ror-bar",
+              "value": 39.6
+            }
+          ]
+        },
+        30,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Caulfield, Thomas",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.88
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.3
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 64.2
+            },
+            {
+              "className": "ror-bar",
+              "value": 5.62
+            }
+          ]
+        },
+        29.88,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Schricker, Scott H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.03
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.56
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 4.68
+            },
+            {
+              "className": "ror-bar",
+              "value": 65.73
+            }
+          ]
+        },
+        29.03,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Swearingen-Batch, Carla M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.58
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 58.18
+            },
+            {
+              "className": "ror-bar",
+              "value": 14.24
+            }
+          ]
+        },
+        27.58,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Eichler, Roxanne Sakoian",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.55
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 6.02
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 18.52
+            },
+            {
+              "className": "ror-bar",
+              "value": 47.92
+            }
+          ]
+        },
+        27.55,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Barton, David J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.52
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 10.74
+            },
+            {
+              "className": "ror-bar",
+              "value": 61.74
+            }
+          ]
+        },
+        27.52,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "McGraw-Desmet, Maureen",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.38
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.86
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 19.02
+            },
+            {
+              "className": "ror-bar",
+              "value": 52.74
+            }
+          ]
+        },
+        27.38,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lang, Elissa M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.27
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 40.19
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.54
+            }
+          ]
+        },
+        27.27,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cercone, Mary A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.22
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 61.74
+            },
+            {
+              "className": "ror-bar",
+              "value": 13.04
+            }
+          ]
+        },
+        25.22,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Opiela, Richard J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 24.7
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 16.95
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 30.75
+            },
+            {
+              "className": "ror-bar",
+              "value": 27.6
+            }
+          ]
+        },
+        24.7,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kaiser, Ralph",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 24.17
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.19
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 10.72
+            },
+            {
+              "className": "ror-bar",
+              "value": 64.91
+            }
+          ]
+        },
+        24.17,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Swan, Tom",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 24.11
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.24
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 29.36
+            },
+            {
+              "className": "ror-bar",
+              "value": 46.3
+            }
+          ]
+        },
+        24.11,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Shaffer, William",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 23.33
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.83
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 42.5
+            },
+          ]
+        },
+        23.33,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Murray, Mary P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 22.8
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.16
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 36.48
+            },
+            {
+              "className": "ror-bar",
+              "value": 40.25
+            }
+          ]
+        },
+        22.8,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Seibel, Wayne D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 20.58
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.08
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 18.57
+            },
+            {
+              "className": "ror-bar",
+              "value": 48.32
+            }
+          ]
+        },
+        20.58,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Herbst, Jeffrey L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 17.67
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 13.25
+            },
+            {
+              "className": "ror-bar",
+              "value": 68.88
+            }
+          ]
+        },
+        17.67,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Manning, Jeffrey A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 7.91
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 1.35
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 68.69
+            },
+            {
+              "className": "ror-bar",
+              "value": 21.72
+            }
+          ]
+        },
+        7.91,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -4840,7 +7056,117 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Andring, James",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 60.57
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 38.57
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.86
+            }
+          ]
+        },
+        60.57,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Owen, James H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.05
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.74
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.06
+            },
+            {
+              "className": "ror-bar",
+              "value": 48.14
+            }
+          ]
+        },
+        40.05,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Decomo, J. Gary",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.65
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 1.19
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 8.15
+            },
+            {
+              "className": "ror-bar",
+              "value": 55.01
+            }
+          ]
+        },
+        35.65,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -4876,7 +7202,343 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Livingston, William R. II",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 67.48
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 5.13
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.24
+            },
+            {
+              "className": "ror-bar",
+              "value": 27.14
+            }
+          ]
+        },
+        67.48,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hladio, Andrew M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 59.03
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.87
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.05
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.05
+            }
+          ]
+        },
+        59.03,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Howe, Edward",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.84
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.49
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.28
+            },
+            {
+              "className": "ror-bar",
+              "value": 31.4
+            }
+          ]
+        },
+        53.84,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Armour, John W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.66
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.09
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 6.62
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.63
+            }
+          ]
+        },
+        53.66,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Loughner, C. Douglas.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 52.62
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 3.39
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.7
+            },
+            {
+              "className": "ror-bar",
+              "value": 42.15
+            }
+          ]
+        },
+        52.62,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Swihart, Janet",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 51.94
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 14.4
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.11
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.41
+            }
+          ]
+        },
+        51.94,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Nicholson, Dale",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47.45
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 17.96
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.46
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.13
+            }
+          ]
+        },
+        47.45,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Schafer, Joseph",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.12
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 17
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.25
+            },
+            {
+              "className": "ror-bar",
+              "value": 39.62
+            }
+          ]
+        },
+        42.12,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Finn, Timothy",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.84
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 23.2
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.59
+            },
+            {
+              "className": "ror-bar",
+              "value": 43.37
+            }
+          ]
+        },
+        31.84,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -4908,7 +7570,138 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Bingham, H. Cyril Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.85
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 55.15
+            },
+          ]
+        },
+        44.85,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Baker, Brian K.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.85
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 58.84
+            },
+            {
+              "className": "ror-bar",
+              "value": 3.31
+            }
+          ]
+        },
+        37.85,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Calhoun, Kathy S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.06
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 60.14
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.8
+            }
+          ]
+        },
+        37.06,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Osman, Tonya M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.8
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 68.06
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.14
+            }
+          ]
+        },
+        30.8,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -4944,7 +7737,646 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Hall, William N. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 95.81
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 4.03
+            },
+          ]
+        },
+        95.81,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hadzick, Paul J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 82.72
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 16.82
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.46
+            }
+          ]
+        },
+        82.72,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Robinson, Alvin B.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 67.48
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 32.19
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.33
+            }
+          ]
+        },
+        67.48,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kennedy, Stuart D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 62.97
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 20.99
+            },
+            {
+              "className": "ror-bar",
+              "value": 16.04
+            }
+          ]
+        },
+        62.97,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Glass, David E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 57.02
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 42.98
+            },
+          ]
+        },
+        57.02,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kowalski, Phyllis J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 55.56
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 43.89
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.56
+            }
+          ]
+        },
+        55.56,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Xavios, Thomas H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 54.71
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 43.5
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.79
+            }
+          ]
+        },
+        54.71,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Scott, Kyley L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 51.4
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 20.73
+            },
+            {
+              "className": "ror-bar",
+              "value": 27.86
+            }
+          ]
+        },
+        51.4,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Patton, Dean R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 45.8
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 54.08
+            },
+          ]
+        },
+        45.8,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Yoch, David L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.48
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 32.05
+            },
+            {
+              "className": "ror-bar",
+              "value": 24.48
+            }
+          ]
+        },
+        43.48,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Book, Andrea J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.38
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 38.77
+            },
+            {
+              "className": "ror-bar",
+              "value": 17.54
+            }
+          ]
+        },
+        43.38,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gauby, Thomas M. Sr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.23
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 32.3
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 24.47
+            },
+          ]
+        },
+        43.23,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bentz, Nicholas M. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.58
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 27.11
+            },
+            {
+              "className": "ror-bar",
+              "value": 35.31
+            }
+          ]
+        },
+        37.58,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Young, Ann L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.2
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 16.3
+            },
+            {
+              "className": "ror-bar",
+              "value": 46.38
+            }
+          ]
+        },
+        37.2,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Frederick, Victor M. IV",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.03
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.97
+            },
+          ]
+        },
+        37.03,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Greth, Gail M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.95
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 65.05
+            },
+          ]
+        },
+        34.95,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hartman, Michael G.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.33
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 66.67
+            },
+          ]
+        },
+        33.33,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Fegley, Sandra L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.79
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 29.71
+            },
+            {
+              "className": "ror-bar",
+              "value": 38.27
+            }
+          ]
+        },
+        31.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bagenstose, Kim L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.05
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 31.58
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.37
+            }
+          ]
+        },
+        31.05,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dougherty, Timothy M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.9
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 6.7
+            },
+            {
+              "className": "ror-bar",
+              "value": 63.4
+            }
+          ]
+        },
+        29.9,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -4980,7 +8412,196 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Aigner, Paula M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 52.64
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 47.36
+            },
+          ]
+        },
+        52.64,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Miller, Fred B.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.81
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 55.58
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.61
+            }
+          ]
+        },
+        43.81,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ormsby, Craig E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.34
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 64.66
+            },
+          ]
+        },
+        35.34,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kelly, Todd F.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.92
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 70.08
+            },
+          ]
+        },
+        29.92,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Auker, Jeffrey P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 28.26
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 69.98
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.33
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.43
+            }
+          ]
+        },
+        28.26,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Jackson, Steven D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 18.59
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 81.41
+            },
+          ]
+        },
+        18.59,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5016,7 +8637,158 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Shaw, Michael",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 60.71
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.46
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 36.16
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.67
+            }
+          ]
+        },
+        60.71,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Wheaton, Fred M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.23
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 49.22
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.55
+            },
+            {
+              "className": "ror-bar",
+              "value": 6.99
+            }
+          ]
+        },
+        42.23,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Clark, Timothy M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.82
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 1.85
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 54.78
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.54
+            }
+          ]
+        },
+        41.82,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Wilcox, Jonathan",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.79
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.02
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 4.64
+            },
+            {
+              "className": "ror-bar",
+              "value": 47.54
+            }
+          ]
+        },
+        35.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5052,7 +8824,900 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Waltman, John I.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.82
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 34.1
+            },
+            {
+              "className": "ror-bar",
+              "value": 19.08
+            }
+          ]
+        },
+        46.82,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Wagner, Robert",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.98
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 18.28
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.16
+            },
+            {
+              "className": "ror-bar",
+              "value": 36.57
+            }
+          ]
+        },
+        44.98,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Peranteau, Frank W. Sr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.86
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 52.98
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.35
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.81
+            }
+          ]
+        },
+        43.86,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kline, Joanne V.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.64
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 6.98
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 2.08
+            },
+            {
+              "className": "ror-bar",
+              "value": 48.29
+            }
+          ]
+        },
+        42.64,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Douple, Mark D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.26
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 58.74
+            },
+          ]
+        },
+        41.26,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Schnell, Robert A. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.03
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 22.22
+            },
+            {
+              "className": "ror-bar",
+              "value": 36.75
+            }
+          ]
+        },
+        41.03,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Petrucci, Michael W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 60
+            },
+          ]
+        },
+        40,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Burns, Michael J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.7
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 50
+            },
+            {
+              "className": "ror-bar",
+              "value": 12.3
+            }
+          ]
+        },
+        37.7,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Finello, Daniel J. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.11
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.11
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.78
+            },
+          ]
+        },
+        37.11,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Durkin, John J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.25
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 63.93
+            },
+          ]
+        },
+        35.25,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Snow, Maggie",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.92
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 28.07
+            },
+            {
+              "className": "ror-bar",
+              "value": 38.01
+            }
+          ]
+        },
+        33.92,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Falcone, Joseph P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.58
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 64.35
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.05
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.96
+            }
+          ]
+        },
+        33.58,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Baranoski, Daniel",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.33
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 24.59
+            },
+            {
+              "className": "ror-bar",
+              "value": 41.93
+            }
+          ]
+        },
+        33.33,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Deatelhauser, Kenneth E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.79
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.11
+            },
+            {
+              "className": "ror-bar",
+              "value": 54.1
+            }
+          ]
+        },
+        32.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gallagher, Michael W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.78
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 66.82
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.07
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.33
+            }
+          ]
+        },
+        32.78,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Vislosky, Jan",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.6
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 66.74
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.22
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.44
+            }
+          ]
+        },
+        32.6,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kelly, John J. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.3
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 67.43
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.27
+            }
+          ]
+        },
+        32.3,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gambardella, Gary",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.86
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 34.65
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.15
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.33
+            }
+          ]
+        },
+        31.86,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Seaman, Jean",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.31
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 17.91
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.23
+            },
+            {
+              "className": "ror-bar",
+              "value": 50.56
+            }
+          ]
+        },
+        31.31,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Armitage, Regina",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.84
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 43.82
+            },
+            {
+              "className": "ror-bar",
+              "value": 25.34
+            }
+          ]
+        },
+        30.84,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Baum, Charles W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.7
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 69
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.15
+            },
+          ]
+        },
+        30.7,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Roth, Robert",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 28.64
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 21
+            },
+            {
+              "className": "ror-bar",
+              "value": 50.36
+            }
+          ]
+        },
+        28.64,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Daly, Philip J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.21
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 32.35
+            },
+            {
+              "className": "ror-bar",
+              "value": 40.44
+            }
+          ]
+        },
+        27.21,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cepparulo, Albert J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.75
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 19.76
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 3.59
+            },
+            {
+              "className": "ror-bar",
+              "value": 50.9
+            }
+          ]
+        },
+        25.75,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Benz, William J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 17.92
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 81.48
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.3
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.3
+            }
+          ]
+        },
+        17.92,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Waite, Clyde W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 10
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 64.44
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.11
+            },
+            {
+              "className": "ror-bar",
+              "value": 24.44
+            }
+          ]
+        },
+        10,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5088,7 +9753,376 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "McCune, Timothy F.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 55.34
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 4.85
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.04
+            }
+          ]
+        },
+        55.34,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Fullerton, William T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.82
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.05
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 11.16
+            },
+            {
+              "className": "ror-bar",
+              "value": 40.18
+            }
+          ]
+        },
+        44.82,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kovach, David T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.86
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 7.09
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.14
+            }
+          ]
+        },
+        44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Stoughton, Lewis E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.74
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 4.24
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 15.06
+            },
+            {
+              "className": "ror-bar",
+              "value": 44.22
+            }
+          ]
+        },
+        35.74,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "O'donnell, Kevin P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.74
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.65
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 3.54
+            },
+            {
+              "className": "ror-bar",
+              "value": 61.06
+            }
+          ]
+        },
+        32.74,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Haggerty, Sue",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.66
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.18
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 4.23
+            },
+            {
+              "className": "ror-bar",
+              "value": 50.42
+            }
+          ]
+        },
+        32.66,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "O'Donnell, William S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.98
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.16
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.3
+            },
+            {
+              "className": "ror-bar",
+              "value": 59.55
+            }
+          ]
+        },
+        30.98,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "O'Donnell, Kevin P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.69
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.76
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.38
+            },
+            {
+              "className": "ror-bar",
+              "value": 71.87
+            }
+          ]
+        },
+        25.69,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Seibel, Wayne D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 22.69
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.79
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 18.15
+            },
+            {
+              "className": "ror-bar",
+              "value": 44.65
+            }
+          ]
+        },
+        22.69,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Shaffer, William",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 15.72
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.63
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 48.43
+            },
+            {
+              "className": "ror-bar",
+              "value": 25.79
+            }
+          ]
+        },
+        15.72,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5124,7 +10158,282 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Musulin, Michael",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 55.29
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 19.62
+            },
+            {
+              "className": "ror-bar",
+              "value": 25.09
+            }
+          ]
+        },
+        55.29,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Zanghi, Mary Ann",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 54.42
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 19.81
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.24
+            },
+            {
+              "className": "ror-bar",
+              "value": 25.54
+            }
+          ]
+        },
+        54.42,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Varner, Rick W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.68
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 45.92
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.4
+            }
+          ]
+        },
+        53.68,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Creany, Fred",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 49.92
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.12
+            },
+            {
+              "className": "ror-bar",
+              "value": 39.97
+            }
+          ]
+        },
+        49.92,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Price, Kevin J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.55
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 56.93
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.52
+            }
+          ]
+        },
+        40.55,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Prebish, John Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.68
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 40.08
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.2
+            },
+            {
+              "className": "ror-bar",
+              "value": 22.04
+            }
+          ]
+        },
+        37.68,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Barron, John W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.07
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.54
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.39
+            }
+          ]
+        },
+        36.07,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Zungali, Michael",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.31
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 31.63
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.86
+            }
+          ]
+        },
+        35.31,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5152,7 +10461,39 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": true
+    "outlier": true,
+    "collapseData": [
+      [
+        "Brown, Barry D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 21.28
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 78.72
+            },
+          ]
+        },
+        21.28,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5184,7 +10525,241 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Kosciolek, Casimir T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 46.57
+            },
+            {
+              "className": "ror-bar",
+              "value": 15.99
+            }
+          ]
+        },
+        37.44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Homanko, Joseph D. Sr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.13
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 56.16
+            },
+            {
+              "className": "ror-bar",
+              "value": 6.71
+            }
+          ]
+        },
+        37.13,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Schrantz, Eric M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.71
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 50.31
+            },
+            {
+              "className": "ror-bar",
+              "value": 16.98
+            }
+          ]
+        },
+        32.71,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Serfass, Steven R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.97
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 71.19
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.85
+            }
+          ]
+        },
+        27.97,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Matika, Joseph J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 71.11
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.48
+            }
+          ]
+        },
+        27.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kissner, William J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.02
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 56.93
+            },
+            {
+              "className": "ror-bar",
+              "value": 16.05
+            }
+          ]
+        },
+        27.02,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lewis, Edward M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 20.52
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 60.7
+            },
+            {
+              "className": "ror-bar",
+              "value": 18.78
+            }
+          ]
+        },
+        20.52,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5220,7 +10795,245 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Gillette-Walker, Kelley",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.8
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.55
+            },
+            {
+              "className": "ror-bar",
+              "value": 47.44
+            }
+          ]
+        },
+        43.8,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Jordan, Thomas N.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.16
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.86
+            },
+            {
+              "className": "ror-bar",
+              "value": 46.98
+            }
+          ]
+        },
+        40.16,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Sinclair, Allen W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 26.59
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.57
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.28
+            },
+            {
+              "className": "ror-bar",
+              "value": 59.56
+            }
+          ]
+        },
+        26.59,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Prestia, Carmine W. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 20
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 15.29
+            },
+            {
+              "className": "ror-bar",
+              "value": 64.71
+            }
+          ]
+        },
+        20,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lachman, Steven Frederic",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 16.34
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.43
+            },
+            {
+              "className": "ror-bar",
+              "value": 70.06
+            }
+          ]
+        },
+        16.34,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Horner, Ronald J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 5.93
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 3.95
+            },
+            {
+              "className": "ror-bar",
+              "value": 90.11
+            }
+          ]
+        },
+        5.93,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Nileski, Charity L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 0.74
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.74
+            },
+            {
+              "className": "ror-bar",
+              "value": 98.52
+            }
+          ]
+        },
+        0.74,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5256,7 +11069,608 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Hines, Gregory V.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 60.94
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 33.4
+            },
+            {
+              "className": "ror-bar",
+              "value": 5.28
+            }
+          ]
+        },
+        60.94,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Koon, Grover E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 52.15
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 39.08
+            },
+            {
+              "className": "ror-bar",
+              "value": 8.17
+            }
+          ]
+        },
+        52.15,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Vito, Marian T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 33.01
+            },
+            {
+              "className": "ror-bar",
+              "value": 19.86
+            }
+          ]
+        },
+        46.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gill, Nancy",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.86
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 47.41
+            },
+            {
+              "className": "ror-bar",
+              "value": 9.32
+            }
+          ]
+        },
+        42.86,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Donatelli, Lori Novak",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.77
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 36.17
+            },
+            {
+              "className": "ror-bar",
+              "value": 20.43
+            }
+          ]
+        },
+        42.77,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Massey, Scott A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.36
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 38.88
+            },
+            {
+              "className": "ror-bar",
+              "value": 18.01
+            }
+          ]
+        },
+        42.36,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cabry, Michael J. III",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.83
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 38.23
+            },
+            {
+              "className": "ror-bar",
+              "value": 20.03
+            }
+          ]
+        },
+        40.83,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bailey, John R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.69
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 41.72
+            },
+            {
+              "className": "ror-bar",
+              "value": 19.11
+            }
+          ]
+        },
+        38.69,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Tartaglio, Thomas W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.13
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.55
+            },
+            {
+              "className": "ror-bar",
+              "value": 22.57
+            }
+          ]
+        },
+        38.13,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bruno, Mark A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.74
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 31.83
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.67
+            }
+          ]
+        },
+        36.74,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Seavey, Matthew",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.73
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 35.19
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.5
+            }
+          ]
+        },
+        35.73,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Michaels, Theodore Peter Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.98
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 43.21
+            },
+            {
+              "className": "ror-bar",
+              "value": 21.6
+            }
+          ]
+        },
+        34.98,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Sondergaard, Analisa",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.14
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.27
+            },
+            {
+              "className": "ror-bar",
+              "value": 28.73
+            }
+          ]
+        },
+        32.14,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kraut, William D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.3
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 41.81
+            },
+            {
+              "className": "ror-bar",
+              "value": 25.84
+            }
+          ]
+        },
+        31.3,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Valocchi, Jeffrey J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.3
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 48.03
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.12
+            },
+            {
+              "className": "ror-bar",
+              "value": 18.52
+            }
+          ]
+        },
+        31.3,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Brown, Leonard J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.89
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 44.35
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.76
+            }
+          ]
+        },
+        25.89,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Nistico, Charles",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 23.93
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 34.36
+            },
+            {
+              "className": "ror-bar",
+              "value": 41.72
+            }
+          ]
+        },
+        23.93,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Knapp, Gwenn S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 20.91
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 47.27
+            },
+            {
+              "className": "ror-bar",
+              "value": 30.91
+            }
+          ]
+        },
+        20.91,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5292,7 +11706,146 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Miller, Jeffrey C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 52.35
+            },
+            {
+              "className": "ror-bar",
+              "value": 3.24
+            }
+          ]
+        },
+        44.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Schill, Timothy P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.53
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 18.82
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.65
+            }
+          ]
+        },
+        43.53,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Quinn, Duane L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.9
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 29.03
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.27
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.8
+            }
+          ]
+        },
+        37.9,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Long Turk, Amy L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.21
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.64
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.15
+            }
+          ]
+        },
+        29.21,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5324,7 +11877,130 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Ireland, Richard Allen",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.04
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 57.96
+            },
+          ]
+        },
+        42.04,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hawkins, James L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.13
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 60.87
+            },
+          ]
+        },
+        39.13,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ford, Patrick N.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.42
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 65.58
+            },
+          ]
+        },
+        34.42,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Nevling, Jerome M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.03
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 69.42
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.55
+            }
+          ]
+        },
+        30.03,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5360,7 +12036,109 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Sanders, Joseph L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 68.98
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 29.92
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.55
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.28
+            }
+          ]
+        },
+        68.98,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Maggs, John W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 59.44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 40.56
+            },
+          ]
+        },
+        59.44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mills, Frank P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 12.34
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 66.14
+            },
+            {
+              "className": "ror-bar",
+              "value": 21.39
+            }
+          ]
+        },
+        12.34,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5396,7 +12174,146 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Brewer, Doug D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.33
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 22.37
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.33
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.97
+            }
+          ]
+        },
+        50.33,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Knecht, Richard W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.72
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.27
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.24
+            },
+            {
+              "className": "ror-bar",
+              "value": 44.77
+            }
+          ]
+        },
+        46.72,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Long, Craig W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.73
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 20
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.27
+            }
+          ]
+        },
+        42.73,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lawton, Russell L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.35
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 72.65
+            },
+          ]
+        },
+        27.35,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5432,7 +12349,154 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Pendolino, Samuel V.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.42
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 11.96
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 9.63
+            },
+            {
+              "className": "ror-bar",
+              "value": 40.99
+            }
+          ]
+        },
+        37.42,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Nicols, Amy L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.96
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 14.37
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.37
+            },
+            {
+              "className": "ror-bar",
+              "value": 51.31
+            }
+          ]
+        },
+        33.96,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Zilhaver, Lincoln S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.8
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 3.63
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 20.07
+            },
+            {
+              "className": "ror-bar",
+              "value": 45.16
+            }
+          ]
+        },
+        30.8,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Marwood, Rita J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 24.54
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 16.97
+            },
+            {
+              "className": "ror-bar",
+              "value": 58.49
+            }
+          ]
+        },
+        24.54,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5468,7 +12532,352 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Beckley, Elizabeth S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.98
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 48.7
+            },
+          ]
+        },
+        50.98,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Silcox, Kathryn H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.11
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 26.14
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.29
+            },
+            {
+              "className": "ror-bar",
+              "value": 27.31
+            }
+          ]
+        },
+        46.11,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Clement, Charles A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.14
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 11.13
+            },
+            {
+              "className": "ror-bar",
+              "value": 44.82
+            }
+          ]
+        },
+        43.14,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Birbeck, Jonathan R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.02
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 6.33
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 2.23
+            },
+            {
+              "className": "ror-bar",
+              "value": 47.3
+            }
+          ]
+        },
+        43.02,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Fegley, Paul M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.93
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.7
+            },
+            {
+              "className": "ror-bar",
+              "value": 43.42
+            }
+          ]
+        },
+        40.93,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Day, Susan K.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.72
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 11.24
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.16
+            },
+            {
+              "className": "ror-bar",
+              "value": 47.88
+            }
+          ]
+        },
+        40.72,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dougherty, Richard S. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.14
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 11.93
+            },
+            {
+              "className": "ror-bar",
+              "value": 47.2
+            }
+          ]
+        },
+        40.14,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cohick, Vivian J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.52
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 14.34
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.84
+            },
+            {
+              "className": "ror-bar",
+              "value": 44.3
+            }
+          ]
+        },
+        39.52,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Martin, Mark W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.06
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 23.13
+            },
+            {
+              "className": "ror-bar",
+              "value": 41.81
+            }
+          ]
+        },
+        35.06,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Adams, H. Anthony",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.31
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 15.36
+            },
+            {
+              "className": "ror-bar",
+              "value": 59.21
+            }
+          ]
+        },
+        25.31,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5504,7 +12913,567 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Shugars, Raymond F.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 90.57
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.43
+            }
+          ]
+        },
+        90.57,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Semic, Steven M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 84.79
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 14.86
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.35
+            }
+          ]
+        },
+        84.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Zozos, George A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 65.83
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 32.5
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.17
+            }
+          ]
+        },
+        65.83,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Pianka, Barbara",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 59.16
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 40.7
+            },
+          ]
+        },
+        59.16,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Zozos, Paul T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.32
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 49.04
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.64
+            }
+          ]
+        },
+        50.32,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Witmer, Lowell A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.95
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 20.58
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.32
+            }
+          ]
+        },
+        46.95,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lenker, James A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.25
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 56.97
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.77
+            }
+          ]
+        },
+        42.25,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Wenner, William C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.78
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.12
+            },
+            {
+              "className": "ror-bar",
+              "value": 46.1
+            }
+          ]
+        },
+        41.78,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lenker, Kenneth A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.08
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 24.7
+            },
+            {
+              "className": "ror-bar",
+              "value": 35.22
+            }
+          ]
+        },
+        40.08,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "McKnight, Sonya M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.06
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 25.84
+            },
+            {
+              "className": "ror-bar",
+              "value": 34.51
+            }
+          ]
+        },
+        39.06,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Judy, David H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.99
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 19.75
+            },
+            {
+              "className": "ror-bar",
+              "value": 41.13
+            }
+          ]
+        },
+        38.99,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "O'Leary, David",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.03
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 61.86
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.22
+            }
+          ]
+        },
+        35.03,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Margerum, Rebecca J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.87
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 29.77
+            },
+            {
+              "className": "ror-bar",
+              "value": 36.36
+            }
+          ]
+        },
+        33.87,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lindsey, Joseph S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.86
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 66.14
+            },
+          ]
+        },
+        33.86,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Smith, Michael J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.43
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 68.34
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.23
+            }
+          ]
+        },
+        31.43,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Johnson, Gregory D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.92
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.22
+            },
+            {
+              "className": "ror-bar",
+              "value": 56.56
+            }
+          ]
+        },
+        30.92,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Pelino, Dominic",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 24.61
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.62
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 15.25
+            },
+            {
+              "className": "ror-bar",
+              "value": 49.42
+            }
+          ]
+        },
+        24.61,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5540,7 +13509,958 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Davis, Wilden H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 75.87
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 23.7
+            },
+          ]
+        },
+        75.87,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Tenaglia, Leonard V.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 74.28
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 25.72
+            },
+          ]
+        },
+        74.28,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Seaton, Spencer B. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 74.02
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 25.08
+            },
+          ]
+        },
+        74.02,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gallagher, Vincent D. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 71.73
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 28.27
+            },
+          ]
+        },
+        71.73,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Berardocco, Ann",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 71.53
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 28.47
+            },
+          ]
+        },
+        71.53,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Sandone, Steven A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 71.18
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 28.6
+            },
+          ]
+        },
+        71.18,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Loftus, Greg J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 69.26
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 30.57
+            },
+          ]
+        },
+        69.26,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Radano, Robert J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 62.88
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.12
+            },
+          ]
+        },
+        62.88,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Merkins, James",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 61.84
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.81
+            },
+          ]
+        },
+        61.84,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Turner, Phillip S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 61.05
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 38.67
+            },
+          ]
+        },
+        61.05,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lippincott, Nicholas S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 60.52
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 39.48
+            },
+          ]
+        },
+        60.52,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mattox, Christopher R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 60.36
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 39.49
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.15
+            }
+          ]
+        },
+        60.36,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Tozer, Peter P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 59.06
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 40.94
+            },
+          ]
+        },
+        59.06,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Puppio, Andrea B.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 57.44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 41.75
+            },
+          ]
+        },
+        57.44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Karapalides, Harry J. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 57.36
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 41.98
+            },
+          ]
+        },
+        57.36,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Williams, W Keith II",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 56.54
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 43.09
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.18
+            }
+          ]
+        },
+        56.54,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Vann, Dawn L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.29
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 46.55
+            },
+          ]
+        },
+        53.29,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hunter, Leon",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 52.2
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 44.4
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.8
+            }
+          ]
+        },
+        52.2,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Holefelder, Diane M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 51.46
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 47.96
+            },
+          ]
+        },
+        51.46,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Griffin, David",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 51.33
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 48.67
+            },
+          ]
+        },
+        51.33,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Burke, Robert R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.66
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 49.34
+            },
+          ]
+        },
+        50.66,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Strohl, Walter A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.21
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 49.16
+            },
+          ]
+        },
+        50.21,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Micozzie-Aguirre, Kelly A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 49.32
+            },
+          ]
+        },
+        50,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Krull, Deborah A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 48.54
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 51.46
+            },
+          ]
+        },
+        48.54,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Nistico, Charles",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.14
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 54.3
+            },
+          ]
+        },
+        44.14,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lacey, Thomas J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.49
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 53.65
+            },
+          ]
+        },
+        43.49,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lippart, Jack D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.1
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 56.8
+            },
+          ]
+        },
+        43.1,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lacianca, Elisa C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.76
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 57.95
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.28
+            }
+          ]
+        },
+        41.76,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lang, David H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.43
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 60.45
+            },
+          ]
+        },
+        34.43,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "McCray, C. Walter III",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.33
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 54.61
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.71
+            }
+          ]
+        },
+        33.33,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "D'Agostino, Robert M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 28.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 70.85
+            },
+          ]
+        },
+        28.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Roberts, Wendy B.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.98
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 71.76
+            },
+          ]
+        },
+        27.98,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5568,7 +14488,68 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": true
+    "outlier": true,
+    "collapseData": [
+      [
+        "Martin, James L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 26.69
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 73.31
+            },
+          ]
+        },
+        26.69,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Jacob, Mark S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.67
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 74.33
+            },
+          ]
+        },
+        25.67,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5604,7 +14585,574 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Dipaolo, Dominick",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 97.36
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.35
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.29
+            }
+          ]
+        },
+        97.36,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Carney, Thomas",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 91.02
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.38
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.3
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.3
+            }
+          ]
+        },
+        91.02,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mack, Suzanne C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 60.68
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.04
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 4.49
+            },
+            {
+              "className": "ror-bar",
+              "value": 24.57
+            }
+          ]
+        },
+        60.68,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Urbaniak, Paul G.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 60.33
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 6.05
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.46
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.15
+            }
+          ]
+        },
+        60.33,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bizzarro, Paul A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 48.66
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.36
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.76
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.21
+            }
+          ]
+        },
+        48.66,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hammer, Scott B.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.32
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.06
+            },
+            {
+              "className": "ror-bar",
+              "value": 43.62
+            }
+          ]
+        },
+        43.32,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mackendrick, Chris K.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.37
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 61.39
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.24
+            }
+          ]
+        },
+        38.37,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Fischer, Deborah",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.71
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 7.63
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 2.12
+            },
+            {
+              "className": "ror-bar",
+              "value": 52.54
+            }
+          ]
+        },
+        37.71,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Manzi, Paul",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.25
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.18
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.57
+            }
+          ]
+        },
+        35.25,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Stuck-Lewis, Denise",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.14
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 9.29
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.24
+            },
+            {
+              "className": "ror-bar",
+              "value": 58.1
+            }
+          ]
+        },
+        32.14,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Muir, Shannon L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.93
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.73
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 55.84
+            },
+            {
+              "className": "ror-bar",
+              "value": 13.14
+            }
+          ]
+        },
+        29.93,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Strohmeyer, Susan D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.22
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 9.07
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.57
+            },
+            {
+              "className": "ror-bar",
+              "value": 63.14
+            }
+          ]
+        },
+        27.22,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cooper, Alan B.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.17
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.2
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 25.85
+            },
+            {
+              "className": "ror-bar",
+              "value": 38.1
+            }
+          ]
+        },
+        25.17,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Krahe, Mark R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 24.31
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.24
+            },
+            {
+              "className": "ror-bar",
+              "value": 63.45
+            }
+          ]
+        },
+        24.31,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "McGowan, Brian M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 18.8
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 17.54
+            },
+            {
+              "className": "ror-bar",
+              "value": 63.67
+            }
+          ]
+        },
+        18.8,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Nichols, Brenda",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 17.81
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.44
+            },
+            {
+              "className": "ror-bar",
+              "value": 68.75
+            }
+          ]
+        },
+        17.81,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5636,7 +15184,217 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Jeffries, Jennifer L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 52.58
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 47.25
+            },
+          ]
+        },
+        52.58,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dennis, Wendy D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.96
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 52.88
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.16
+            }
+          ]
+        },
+        46.96,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Haggerty, Ronald J. Sr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 45.95
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 53.93
+            },
+          ]
+        },
+        45.95,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Shimshock, Daniel C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 45.89
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 54.11
+            },
+          ]
+        },
+        45.89,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Metros, Michael",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 45.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 54.49
+            },
+          ]
+        },
+        45.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Defino, Michael J. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.78
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 58.78
+            },
+          ]
+        },
+        40.78,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kasunic, Richard II",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.85
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.15
+            },
+          ]
+        },
+        37.85,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5668,7 +15426,43 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": true
+    "outlier": true,
+    "collapseData": [
+      [
+        "Miller, Daniel L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.2
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 55.7
+            },
+            {
+              "className": "ror-bar",
+              "value": 14.09
+            }
+          ]
+        },
+        30.2,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5704,7 +15498,265 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Cunningham, Duane K.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 52.94
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 7.51
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.61
+            },
+            {
+              "className": "ror-bar",
+              "value": 38.74
+            }
+          ]
+        },
+        52.94,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Plum, David L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 48
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 15.73
+            },
+            {
+              "className": "ror-bar",
+              "value": 36.27
+            }
+          ]
+        },
+        48,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Eyer, Jody C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.06
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 22.52
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.1
+            },
+            {
+              "className": "ror-bar",
+              "value": 34.66
+            }
+          ]
+        },
+        41.06,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Manns, Glenn Kenneth",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.93
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.57
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.17
+            },
+            {
+              "className": "ror-bar",
+              "value": 52.06
+            }
+          ]
+        },
+        38.93,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Rock, Kelly L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.31
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.7
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.39
+            },
+            {
+              "className": "ror-bar",
+              "value": 53.61
+            }
+          ]
+        },
+        35.31,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Williams, Todd R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 28.95
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 15.81
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.71
+            },
+            {
+              "className": "ror-bar",
+              "value": 54.53
+            }
+          ]
+        },
+        28.95,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Pentz, Larry G.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.51
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 7.13
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.21
+            },
+            {
+              "className": "ror-bar",
+              "value": 66.14
+            }
+          ]
+        },
+        25.51,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5740,7 +15792,84 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Heming, Tamela M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.36
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 25.42
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 16.95
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.27
+            }
+          ]
+        },
+        31.36,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mellott, Wendy",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 23.74
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.08
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.51
+            },
+            {
+              "className": "ror-bar",
+              "value": 67.68
+            }
+          ]
+        },
+        23.74,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5776,7 +15905,109 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Watson, Lee",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 51.13
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 18.8
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.75
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.32
+            }
+          ]
+        },
+        51.13,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cramer, Jesse J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.37
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 21.22
+            },
+            {
+              "className": "ror-bar",
+              "value": 46.04
+            }
+          ]
+        },
+        32.37,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bates, D Glenn",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.06
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 67.94
+            },
+          ]
+        },
+        32.06,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5808,7 +16039,105 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Wilt, Richard",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.54
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.14
+            },
+            {
+              "className": "ror-bar",
+              "value": 43.01
+            }
+          ]
+        },
+        43.54,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Jamison, Mary",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.78
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 58.22
+            },
+          ]
+        },
+        41.78,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gummo, Douglas L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 26.93
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 34.66
+            },
+            {
+              "className": "ror-bar",
+              "value": 38.41
+            }
+          ]
+        },
+        26.93,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5840,7 +16169,175 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Steffee, Susanne V.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.02
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 18.36
+            },
+            {
+              "className": "ror-bar",
+              "value": 40.48
+            }
+          ]
+        },
+        41.02,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Haberl, Guy B.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 30.08
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.75
+            }
+          ]
+        },
+        40,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Rega, Jennifer J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.66
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 46.35
+            },
+            {
+              "className": "ror-bar",
+              "value": 14.6
+            }
+          ]
+        },
+        38.66,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Thachik, George M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.22
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 61.56
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.22
+            }
+          ]
+        },
+        38.22,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Martin, William J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 10.9
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 41.71
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.91
+            }
+          ]
+        },
+        10.9,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5876,7 +16373,101 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Inzana, David B.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.07
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 56.93
+            },
+          ]
+        },
+        43.07,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Chambers, Douglas R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.91
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.09
+            },
+          ]
+        },
+        37.91,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bazylak, Gregory M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.71
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 65.05
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.24
+            },
+          ]
+        },
+        34.71,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5912,7 +16503,76 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": true
+    "outlier": true,
+    "collapseData": [
+      [
+        "Leister, Jacqueline T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.47
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.93
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 15.95
+            },
+            {
+              "className": "ror-bar",
+              "value": 39.66
+            }
+          ]
+        },
+        31.47,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lyter, Barbara M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.3
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 68.7
+            },
+          ]
+        },
+        31.3,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5948,7 +16608,343 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Giglio, Theodore J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 67.94
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 19.77
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 8.97
+            },
+            {
+              "className": "ror-bar",
+              "value": 3.32
+            }
+          ]
+        },
+        67.94,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Corbett, Joanne Price",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 58.27
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 31.22
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 10.05
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.31
+            }
+          ]
+        },
+        58.27,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ware, Paul J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 55.44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 35.38
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 7.81
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.38
+            }
+          ]
+        },
+        55.44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "McGraw, Sean P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 55.3
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 42.52
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.71
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.31
+            }
+          ]
+        },
+        55.3,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Pesota, John P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.91
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 27.33
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 14.77
+            },
+            {
+              "className": "ror-bar",
+              "value": 3.99
+            }
+          ]
+        },
+        53.91,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Keeler, Paul",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 52.27
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 39.94
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 4.25
+            },
+            {
+              "className": "ror-bar",
+              "value": 3.4
+            }
+          ]
+        },
+        52.27,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Farrell, Alyce Hailstone",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 49.92
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 42.83
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 6.43
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.82
+            }
+          ]
+        },
+        49.92,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Turlip-Murphy, Laura",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.17
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 50.71
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 2.98
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.13
+            }
+          ]
+        },
+        46.17,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gallagher, Terrence V.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.52
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 47.7
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 12.59
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.19
+            }
+          ]
+        },
+        38.52,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -5984,7 +16980,757 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Hamill, Nancy G.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 64.32
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 35.44
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.24
+            },
+          ]
+        },
+        64.32,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Jimenez, Janice",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 63.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 30.46
+            },
+            {
+              "className": "ror-bar",
+              "value": 6.13
+            }
+          ]
+        },
+        63.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Roth, Bruce A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 62.44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 35.85
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.46
+            }
+          ]
+        },
+        62.44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Benner, William E. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 59.79
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 39.95
+            },
+          ]
+        },
+        59.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Sheller, Raymond S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 59.6
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 31.82
+            },
+            {
+              "className": "ror-bar",
+              "value": 8.59
+            }
+          ]
+        },
+        59.6,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hartman, Rodney H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 57.28
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 34.21
+            },
+            {
+              "className": "ror-bar",
+              "value": 8.51
+            }
+          ]
+        },
+        57.28,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Russell, Tony S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 56.44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.02
+            },
+            {
+              "className": "ror-bar",
+              "value": 6.53
+            }
+          ]
+        },
+        56.44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mylin, Stuart J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.93
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 48.88
+            },
+          ]
+        },
+        50.93,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Witkonis, Adam J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.47
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 38.02
+            },
+            {
+              "className": "ror-bar",
+              "value": 11.1
+            }
+          ]
+        },
+        50.47,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Tobin, Edward A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.11
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 40.7
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.97
+            },
+            {
+              "className": "ror-bar",
+              "value": 7.22
+            }
+          ]
+        },
+        50.11,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Albert, Scott E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 49.06
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 50.94
+            },
+          ]
+        },
+        49.06,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bixler, Miles K.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.7
+            },
+            {
+              "className": "ror-bar",
+              "value": 14.89
+            }
+          ]
+        },
+        47.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Chudzik, Brian E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.31
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 53.69
+            },
+          ]
+        },
+        46.31,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Miller, David P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 45.52
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.11
+            },
+            {
+              "className": "ror-bar",
+              "value": 17.38
+            }
+          ]
+        },
+        45.52,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mongiovi-Sponaugle, Mary",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.38
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 20.37
+            },
+            {
+              "className": "ror-bar",
+              "value": 34.97
+            }
+          ]
+        },
+        44.38,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Keller, Joshua R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.28
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 38.14
+            },
+            {
+              "className": "ror-bar",
+              "value": 18.09
+            }
+          ]
+        },
+        43.28,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Wilt, Richard S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.83
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.86
+            },
+            {
+              "className": "ror-bar",
+              "value": 43.04
+            }
+          ]
+        },
+        42.83,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Commins, B Denise",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.23
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 52.96
+            },
+            {
+              "className": "ror-bar",
+              "value": 6.81
+            }
+          ]
+        },
+        40.23,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Jamison, Mary G.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.06
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 59.94
+            },
+          ]
+        },
+        40.06,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Duncan, Jayne F.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.62
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 63.64
+            },
+            {
+              "className": "ror-bar",
+              "value": 3.74
+            }
+          ]
+        },
+        32.62,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gummo, Douglas L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.51
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 33.68
+            },
+            {
+              "className": "ror-bar",
+              "value": 38.82
+            }
+          ]
+        },
+        27.51,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Herman, Robert A. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 10.35
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 24.81
+            },
+            {
+              "className": "ror-bar",
+              "value": 64.83
+            }
+          ]
+        },
+        10.35,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Reinaker, Dennis E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 6.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 46.45
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.23
+            },
+            {
+              "className": "ror-bar",
+              "value": 46.91
+            }
+          ]
+        },
+        6.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6020,7 +17766,191 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Amodie, Melissa Ann",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 65.79
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 1.7
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 20.71
+            },
+            {
+              "className": "ror-bar",
+              "value": 11.66
+            }
+          ]
+        },
+        65.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Nicholson, Jennifer L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 48.46
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 32.82
+            },
+            {
+              "className": "ror-bar",
+              "value": 18.73
+            }
+          ]
+        },
+        48.46,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "McGrath, Scott",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47.88
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 7.94
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 20.9
+            },
+            {
+              "className": "ror-bar",
+              "value": 23.28
+            }
+          ]
+        },
+        47.88,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Rishel, David B.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.13
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 1.64
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 20.72
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.5
+            }
+          ]
+        },
+        40.13,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cartwright, Jerry G. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.82
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.11
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 28.17
+            },
+            {
+              "className": "ror-bar",
+              "value": 41.9
+            }
+          ]
+        },
+        27.82,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6056,7 +17986,291 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Capello, Thomas M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 48.29
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 51.71
+            },
+          ]
+        },
+        48.29,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Garver, Carl Russell",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.51
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 57.35
+            },
+          ]
+        },
+        42.51,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Wolfe, Kim R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.89
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 59.11
+            },
+          ]
+        },
+        40.89,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kline, Samuel A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.43
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.53
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 2.13
+            },
+            {
+              "className": "ror-bar",
+              "value": 43.09
+            }
+          ]
+        },
+        40.43,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Jones, Charles T. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.21
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 61.79
+            },
+          ]
+        },
+        38.21,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Verna, Anthony J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.64
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 64.25
+            },
+          ]
+        },
+        35.64,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dissinger, Maria M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.26
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 64.62
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.12
+            },
+          ]
+        },
+        35.26,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Charles, Bradford H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.14
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.66
+            },
+            {
+              "className": "ror-bar",
+              "value": 55.63
+            }
+          ]
+        },
+        29.14,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ditzler, John W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.04
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 69.1
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.86
+            }
+          ]
+        },
+        29.04,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6092,7 +18306,531 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Manescu, Ronald S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 68.18
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 31.55
+            },
+          ]
+        },
+        68.18,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Maura, Wayne",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 64.84
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 35.16
+            },
+          ]
+        },
+        64.84,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Pochron, Michael Joseph",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 63.99
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 36.01
+            },
+          ]
+        },
+        63.99,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Trexler, Daniel C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 61.95
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.73
+            },
+            {
+              "className": "ror-bar",
+              "value": 25.04
+            }
+          ]
+        },
+        61.95,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Santiago, Rashid",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 60.72
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 33
+            },
+            {
+              "className": "ror-bar",
+              "value": 5.95
+            }
+          ]
+        },
+        60.72,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Butler, Donna R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 59.62
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 38.79
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.27
+            }
+          ]
+        },
+        59.62,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Engler, Patricia M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 58.02
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 41.56
+            },
+          ]
+        },
+        58.02,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Devine, Karen C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 57.78
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 42.11
+            },
+          ]
+        },
+        57.78,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Howells, David M. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 57.1
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 42.9
+            },
+          ]
+        },
+        57.1,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Beck, Rod",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.89
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 26.01
+            },
+            {
+              "className": "ror-bar",
+              "value": 20.11
+            }
+          ]
+        },
+        53.89,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Halal, Robert C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.25
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 46.59
+            },
+          ]
+        },
+        53.25,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Crawford, Charles H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.37
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 49.63
+            },
+          ]
+        },
+        50.37,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hammond, Jacob E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.1
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 21.83
+            },
+            {
+              "className": "ror-bar",
+              "value": 27.98
+            }
+          ]
+        },
+        50.1,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "D'Amore, Michael D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.59
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 19.3
+            },
+            {
+              "className": "ror-bar",
+              "value": 36.84
+            }
+          ]
+        },
+        42.59,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Faulkner, Michael J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.49
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 58.24
+            },
+          ]
+        },
+        41.49,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Anthony, James T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.43
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 65
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.71
+            },
+          ]
+        },
+        31.43,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dantos, Maria L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.81
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 64.86
+            },
+          ]
+        },
+        30.81,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6128,7 +18866,644 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Whittaker, Donald L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 60.13
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 7.31
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.33
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.06
+            }
+          ]
+        },
+        60.13,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hasay, John E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.37
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.51
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 6.74
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.38
+            }
+          ]
+        },
+        53.37,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Halesey, Joseph A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 52.26
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 22.37
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.38
+            },
+            {
+              "className": "ror-bar",
+              "value": 25
+            }
+          ]
+        },
+        52.26,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dixon, James M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.81
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 39.35
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.27
+            },
+            {
+              "className": "ror-bar",
+              "value": 13.57
+            }
+          ]
+        },
+        46.81,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "O'Donnell, Daniel",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.64
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 19.96
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 3.45
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.95
+            }
+          ]
+        },
+        46.64,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Spagnuolo, Joseph D. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 32.22
+            },
+            {
+              "className": "ror-bar",
+              "value": 23.02
+            }
+          ]
+        },
+        44.44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Roberts, Paul J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.77
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 56.23
+            },
+          ]
+        },
+        43.77,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Barilla, David A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.61
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 32.37
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.17
+            },
+            {
+              "className": "ror-bar",
+              "value": 23.85
+            }
+          ]
+        },
+        43.61,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Zola, Joseph D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.47
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 20.17
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.28
+            },
+            {
+              "className": "ror-bar",
+              "value": 38.08
+            }
+          ]
+        },
+        41.47,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kravitz, Alexandra Kokura",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.42
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 29.94
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.45
+            },
+            {
+              "className": "ror-bar",
+              "value": 28.59
+            }
+          ]
+        },
+        40.42,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Carmody, Joseph J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.76
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 44.95
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.62
+            },
+            {
+              "className": "ror-bar",
+              "value": 15.46
+            }
+          ]
+        },
+        38.76,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cronauer, Rick",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.59
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 29.42
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.74
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.13
+            }
+          ]
+        },
+        36.59,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Malloy, Thomas F. Sr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.99
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 34
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.11
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.79
+            }
+          ]
+        },
+        31.99,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dotzel, Michael G.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 28.88
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.57
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 5.3
+            },
+            {
+              "className": "ror-bar",
+              "value": 52.85
+            }
+          ]
+        },
+        28.88,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Tupper, Brian James",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.47
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 14.31
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.16
+            },
+            {
+              "className": "ror-bar",
+              "value": 57.89
+            }
+          ]
+        },
+        27.47,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Sharkey, Thomas",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 15.29
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.28
+            },
+            {
+              "className": "ror-bar",
+              "value": 76.43
+            }
+          ]
+        },
+        15.29,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lupas, David W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 14.73
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 85.27
+            },
+          ]
+        },
+        14.73,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Sklarosky, Joseph F. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 10.53
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 89.47
+            },
+          ]
+        },
+        10.53,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6160,7 +19535,192 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Solomon, William C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.91
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 57.87
+            },
+          ]
+        },
+        41.91,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Page, Allen P. III",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.3
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 61.7
+            },
+          ]
+        },
+        38.3,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lepley, Jerry C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.55
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 63.25
+            },
+          ]
+        },
+        36.55,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Frey, Christian David",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.52
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 66.7
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.78
+            }
+          ]
+        },
+        32.52,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kemp, Jon Edward",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.51
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 68.95
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.18
+            }
+          ]
+        },
+        30.51,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Whiteman, Gary A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.37
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 70.63
+            },
+          ]
+        },
+        29.37,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6196,7 +19756,146 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Engman, David Richard",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.85
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 50.45
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.7
+            }
+          ]
+        },
+        46.85,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cercone, Dominic Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.11
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 49.86
+            },
+            {
+              "className": "ror-bar",
+              "value": 7.48
+            }
+          ]
+        },
+        42.11,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Todd, William K.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.07
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 54.37
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.32
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.91
+            }
+          ]
+        },
+        42.07,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Luther, Richard W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.74
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 55.05
+            },
+            {
+              "className": "ror-bar",
+              "value": 5.21
+            }
+          ]
+        },
+        39.74,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6232,7 +19931,216 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Arthur, Brian R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 45.28
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 53.83
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.89
+            }
+          ]
+        },
+        45.28,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Songer, Dennis M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.1
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 28.76
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 12.67
+            },
+            {
+              "className": "ror-bar",
+              "value": 14.48
+            }
+          ]
+        },
+        44.1,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "McEwen, D. Neil",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.69
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 55.65
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.66
+            }
+          ]
+        },
+        41.69,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hinch, Lorinda L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.37
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 46.72
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.25
+            },
+            {
+              "className": "ror-bar",
+              "value": 15.66
+            }
+          ]
+        },
+        37.37,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Antos, Ronald E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 26.72
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 24.88
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 29.04
+            },
+            {
+              "className": "ror-bar",
+              "value": 19.36
+            }
+          ]
+        },
+        26.72,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Fagley, William L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 17.69
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 82.31
+            },
+          ]
+        },
+        17.69,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6268,7 +20176,113 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Miller, Jack E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 55.1
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 43.73
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.39
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.59
+            }
+          ]
+        },
+        55.1,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Reed, Jonathan W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.95
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 48.63
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.42
+            }
+          ]
+        },
+        50.95,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Smith, Kent A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.71
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 60.86
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.43
+            },
+          ]
+        },
+        38.71,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6304,7 +20318,336 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Fluegel, Anthony D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 45.39
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 30.26
+            },
+            {
+              "className": "ror-bar",
+              "value": 23.46
+            }
+          ]
+        },
+        45.39,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Muth, Michael R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.07
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 60.61
+            },
+          ]
+        },
+        38.07,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Anzini, Kristina",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.88
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 61.65
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.32
+            }
+          ]
+        },
+        37.88,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Riley, Phillip R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.18
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 15.44
+            },
+            {
+              "className": "ror-bar",
+              "value": 47.38
+            }
+          ]
+        },
+        37.18,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mancuso, Colleen",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.01
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.71
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.28
+            }
+          ]
+        },
+        37.01,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Krawitz, Jolana",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.63
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.78
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 3.9
+            },
+            {
+              "className": "ror-bar",
+              "value": 52.52
+            }
+          ]
+        },
+        34.63,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Claypool, Richard",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.32
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 70.28
+            },
+          ]
+        },
+        29.32,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Germano, Brian",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.33
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 69.42
+            },
+            {
+              "className": "ror-bar",
+              "value": 3.1
+            }
+          ]
+        },
+        27.33,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Olsen, Thomas E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 26.43
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 73.43
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.14
+            },
+          ]
+        },
+        26.43,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Higgins, C. Daniel",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 23.4
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 32.64
+            },
+            {
+              "className": "ror-bar",
+              "value": 43.77
+            }
+          ]
+        },
+        23.4,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6340,7 +20683,1120 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Lawrence, Francis J. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 60.12
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 15.72
+            },
+            {
+              "className": "ror-bar",
+              "value": 20.04
+            }
+          ]
+        },
+        60.12,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Scott, Gregory L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 58.68
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 32.54
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.18
+            },
+            {
+              "className": "ror-bar",
+              "value": 4.94
+            }
+          ]
+        },
+        58.68,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Palladino, Scott T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47.93
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 44.12
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.88
+            }
+          ]
+        },
+        47.93,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cerski, Christopher",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.5
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 51.5
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.75
+            }
+          ]
+        },
+        44.5,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hunsicker, Margaret A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.48
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 27.91
+            },
+            {
+              "className": "ror-bar",
+              "value": 24.78
+            }
+          ]
+        },
+        44.48,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kropp, Edward C. Sr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.39
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 54.02
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.19
+            }
+          ]
+        },
+        43.39,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "McHugh Casey, Elizabeth A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.42
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 55.39
+            },
+          ]
+        },
+        41.42,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kelly Rebar, Cathleen",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.5
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.58
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.13
+            }
+          ]
+        },
+        36.5,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Nesbitt, Harry J. III",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.18
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 57.26
+            },
+          ]
+        },
+        36.18,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Augustine, Albert J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.01
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.5
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.14
+            }
+          ]
+        },
+        36.01,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bernhardt, Francis J. III",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.87
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 30.71
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.61
+            }
+          ]
+        },
+        35.87,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Sobeck, Robert M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.65
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 29.03
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.28
+            }
+          ]
+        },
+        35.65,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Saylor, Maurice H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.62
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 58.47
+            },
+          ]
+        },
+        35.62,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Zaffarano, Patricia Ann",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.37
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.72
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.15
+            }
+          ]
+        },
+        35.37,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Price, Juanita Ann",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.33
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 24.42
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 12.28
+            },
+            {
+              "className": "ror-bar",
+              "value": 21.56
+            }
+          ]
+        },
+        35.33,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Rebar, Cathleen Kelly",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.03
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 47.77
+            },
+          ]
+        },
+        35.03,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lukens, Deborah",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.92
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 23.54
+            },
+            {
+              "className": "ror-bar",
+              "value": 39.68
+            }
+          ]
+        },
+        34.92,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Casillo, Ester J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.38
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.83
+            },
+          ]
+        },
+        34.38,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gallagher, James",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.74
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 29.37
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.14
+            }
+          ]
+        },
+        32.74,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "McGill, Katherine E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.77
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.24
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.26
+            }
+          ]
+        },
+        31.77,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Leo, Paul N.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.73
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 63.84
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.55
+            }
+          ]
+        },
+        31.73,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Quinn, Michael P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.21
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.03
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.53
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.53
+            }
+          ]
+        },
+        30.21,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gadzicki, Walter F. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.01
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 31.46
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.96
+            }
+          ]
+        },
+        30.01,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hudak Duffy, Andrea",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.42
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 46.91
+            },
+            {
+              "className": "ror-bar",
+              "value": 24.12
+            }
+          ]
+        },
+        27.42,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Schireson, Henry J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 67.36
+            },
+          ]
+        },
+        27.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Eisner Zucker, Karen",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.34
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 70.56
+            },
+          ]
+        },
+        27.34,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hummel Fried, Catherine M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.24
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 68.79
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.17
+            }
+          ]
+        },
+        27.24,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Maruszczak, William I.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 26.84
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 69.56
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.27
+            }
+          ]
+        },
+        26.84,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Levine, Edward",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.51
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 22.04
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.12
+            },
+            {
+              "className": "ror-bar",
+              "value": 48.38
+            }
+          ]
+        },
+        25.51,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Friedenberg, Jay S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 23.6
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 23.49
+            },
+            {
+              "className": "ror-bar",
+              "value": 50.93
+            }
+          ]
+        },
+        23.6,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kessler, John D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 22.17
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 32.69
+            },
+            {
+              "className": "ror-bar",
+              "value": 35.76
+            }
+          ]
+        },
+        22.17,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Smyth, Joseph A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 9.66
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 57.56
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.42
+            }
+          ]
+        },
+        9.66,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Corso, S. Gerald",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 7.82
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 60.38
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.43
+            }
+          ]
+        },
+        7.82,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Nicholas, William T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 6.73
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 57.4
+            },
+            {
+              "className": "ror-bar",
+              "value": 17.49
+            }
+          ]
+        },
+        6.73,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6376,7 +21832,47 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": true
+    "outlier": true,
+    "collapseData": [
+      [
+        "Shrawder, Marvin K.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 22.44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 22.44
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.98
+            },
+            {
+              "className": "ror-bar",
+              "value": 53.66
+            }
+          ]
+        },
+        22.44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6412,7 +21908,600 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Matos-Gonzalez, Nancy",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 63.3
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 30.64
+            },
+            {
+              "className": "ror-bar",
+              "value": 5.87
+            }
+          ]
+        },
+        63.3,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Corpora, Daniel G.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 57.62
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.47
+            },
+            {
+              "className": "ror-bar",
+              "value": 4.91
+            }
+          ]
+        },
+        57.62,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Yetter, Richard H. III",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 56.91
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 34.99
+            },
+            {
+              "className": "ror-bar",
+              "value": 7.37
+            }
+          ]
+        },
+        56.91,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Grifo, Antonia",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 55.76
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 25.65
+            },
+            {
+              "className": "ror-bar",
+              "value": 18.35
+            }
+          ]
+        },
+        55.76,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Zito, Alicia Rose",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 55.52
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 44.16
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.32
+            }
+          ]
+        },
+        55.52,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hawke, Robert A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.61
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 46.18
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.2
+            }
+          ]
+        },
+        53.61,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Taschner, Jacqueline M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.58
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 26.97
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.18
+            },
+            {
+              "className": "ror-bar",
+              "value": 18.9
+            }
+          ]
+        },
+        53.58,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Capobianco, John",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 52.85
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 47.15
+            },
+          ]
+        },
+        52.85,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Schlegel, Douglas",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47.81
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 17.19
+            },
+            {
+              "className": "ror-bar",
+              "value": 34.06
+            }
+          ]
+        },
+        47.81,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Manwaring, Roy A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.04
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 48.48
+            },
+            {
+              "className": "ror-bar",
+              "value": 5.49
+            }
+          ]
+        },
+        46.04,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Narlesky, James J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 44.19
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 55.81
+            },
+          ]
+        },
+        44.19,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Broscius, Patricia C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.69
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 60.12
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.2
+            }
+          ]
+        },
+        39.69,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Pendolino, Samuel V.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.72
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.71
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 11.01
+            },
+            {
+              "className": "ror-bar",
+              "value": 41.56
+            }
+          ]
+        },
+        34.72,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Rapp, Anthony G. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.62
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 65.96
+            },
+          ]
+        },
+        32.62,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Zilhaver, Lincoln S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.2
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 3.88
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 20
+            },
+            {
+              "className": "ror-bar",
+              "value": 45.51
+            }
+          ]
+        },
+        30.2,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Barner, Joseph K.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.44
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 72.56
+            },
+          ]
+        },
+        27.44,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Marwood, Rita J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 23.04
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 16.46
+            },
+            {
+              "className": "ror-bar",
+              "value": 60.51
+            }
+          ]
+        },
+        23.04,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Romig, Elizabeth A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 21.2
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 18.89
+            },
+            {
+              "className": "ror-bar",
+              "value": 59.91
+            }
+          ]
+        },
+        21.2,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6448,7 +22537,146 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Gembic, John",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.67
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 57.2
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.13
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.01
+            }
+          ]
+        },
+        41.67,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Diehl, Michael I.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.57
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 56.14
+            },
+            {
+              "className": "ror-bar",
+              "value": 3.07
+            }
+          ]
+        },
+        40.57,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cashman, Richard P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.14
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 64.86
+            },
+          ]
+        },
+        35.14,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Apfelbaum, Benjamin",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 28.29
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 30.24
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.16
+            },
+            {
+              "className": "ror-bar",
+              "value": 40.81
+            }
+          ]
+        },
+        28.29,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6484,7 +22712,117 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "McGuire, Daniel R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.2
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 4.09
+            },
+            {
+              "className": "ror-bar",
+              "value": 49.71
+            }
+          ]
+        },
+        46.2,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Frownfelter, Elizabeth R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.5
+            },
+            {
+              "className": "ror-bar",
+              "value": 45.5
+            }
+          ]
+        },
+        46,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Schechterly, Michael E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 16.36
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.9
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.67
+            },
+            {
+              "className": "ror-bar",
+              "value": 41.57
+            }
+          ]
+        },
+        16.36,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6520,7 +22858,232 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Rebstock, Francis J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 51.31
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 5.21
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.79
+            },
+            {
+              "className": "ror-bar",
+              "value": 42.68
+            }
+          ]
+        },
+        51.31,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Rice, Jane M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 51.06
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 16.32
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.83
+            },
+            {
+              "className": "ror-bar",
+              "value": 30.77
+            }
+          ]
+        },
+        51.06,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "O'Brien, James",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.56
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 9.03
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 6.41
+            },
+            {
+              "className": "ror-bar",
+              "value": 34
+            }
+          ]
+        },
+        50.56,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Stack, Patrick",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.24
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.16
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.62
+            },
+            {
+              "className": "ror-bar",
+              "value": 48.97
+            }
+          ]
+        },
+        50.24,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bedford, Sheila M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 49.04
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 3.47
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 12.8
+            },
+            {
+              "className": "ror-bar",
+              "value": 34.69
+            }
+          ]
+        },
+        49.04,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Devlin, Kevin R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47.39
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.03
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 13.4
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.17
+            }
+          ]
+        },
+        47.39,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6556,7 +23119,191 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Chelak, Gregory H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 5
+            },
+            {
+              "className": "ror-bar",
+              "value": 39
+            }
+          ]
+        },
+        47,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Fischer, Deborah",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.33
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 6.67
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 2.67
+            },
+            {
+              "className": "ror-bar",
+              "value": 51
+            }
+          ]
+        },
+        39.33,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Muir, Shannon L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.84
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 0.59
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 53.25
+            },
+            {
+              "className": "ror-bar",
+              "value": 13.02
+            }
+          ]
+        },
+        32.84,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Menditto, Paul D. Sr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.03
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 9.22
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 40.09
+            },
+            {
+              "className": "ror-bar",
+              "value": 21.2
+            }
+          ]
+        },
+        29.03,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cooper, Alan B.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 28.12
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 8.85
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 25.52
+            },
+            {
+              "className": "ror-bar",
+              "value": 36.98
+            }
+          ]
+        },
+        28.12,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6592,7 +23339,109 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": true
+    "outlier": true,
+    "collapseData": [
+      [
+        "McCleaft, Kari A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.71
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 71.69
+            },
+          ]
+        },
+        27.71,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Weiss, Delores G.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 24.06
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 61.5
+            },
+            {
+              "className": "ror-bar",
+              "value": 14.44
+            }
+          ]
+        },
+        24.06,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Easton, Annette L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 19.26
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 45.9
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 4.92
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.92
+            }
+          ]
+        },
+        19.26,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6624,7 +23473,287 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Rossi, David J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47.99
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 52.01
+            },
+          ]
+        },
+        47.99,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Plachko, David A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 47.6
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 51.94
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.47
+            }
+          ]
+        },
+        47.6,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hale, Christina E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.88
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 23.65
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.46
+            }
+          ]
+        },
+        42.88,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Reiley, James",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.96
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 58.95
+            },
+          ]
+        },
+        40.96,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kilker, Anthony J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.28
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 62.45
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.13
+            }
+          ]
+        },
+        37.28,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bayer, Stephen J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.99
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 14.55
+            },
+            {
+              "className": "ror-bar",
+              "value": 50.61
+            }
+          ]
+        },
+        33.99,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ferrier, James R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.59
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 68.41
+            },
+          ]
+        },
+        31.59,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Domalakes, John E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 22.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 77.59
+            },
+          ]
+        },
+        22.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dolbin, Cyrus P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 17.43
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 82.57
+            },
+          ]
+        },
+        17.43,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6660,7 +23789,84 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Reed, John H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.96
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 60.28
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.77
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.99
+            }
+          ]
+        },
+        36.96,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Hackenberg, Lori R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.79
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 52.17
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 5.69
+            },
+            {
+              "className": "ror-bar",
+              "value": 5.35
+            }
+          ]
+        },
+        36.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6696,7 +23902,228 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Stevanus, Sandra L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.11
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 26.79
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 33.96
+            },
+            {
+              "className": "ror-bar",
+              "value": 1.13
+            }
+          ]
+        },
+        38.11,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mankamyer, Susan",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.35
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 14.48
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 55.71
+            },
+            {
+              "className": "ror-bar",
+              "value": 4.46
+            }
+          ]
+        },
+        25.35,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Seger, William E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 24.46
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 25.54
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 49.64
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.36
+            }
+          ]
+        },
+        24.46,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Johnson, Kenneth W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 22.53
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 27.34
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 50.14
+            },
+          ]
+        },
+        22.53,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Geary, D Gregory",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 21.9
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 22.86
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.95
+            },
+            {
+              "className": "ror-bar",
+              "value": 41.9
+            }
+          ]
+        },
+        21.9,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bell, Douglas McCall",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 19.92
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 20.31
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 49.43
+            },
+            {
+              "className": "ror-bar",
+              "value": 9.96
+            }
+          ]
+        },
+        19.92,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6728,7 +24155,9 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": true
+    "outlier": true,
+    "collapseData": [],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6764,7 +24193,113 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": true
+    "outlier": true,
+    "collapseData": [
+      [
+        "Hollister, Jeffrey L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.19
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 37.59
+            },
+            {
+              "className": "ror-bar",
+              "value": 9.22
+            }
+          ]
+        },
+        53.19,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Cordner, Jodi L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.69
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 24.92
+            },
+            {
+              "className": "ror-bar",
+              "value": 39.06
+            }
+          ]
+        },
+        35.69,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Brainard, Suzanne M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.09
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 38.89
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 3.24
+            },
+            {
+              "className": "ror-bar",
+              "value": 27.78
+            }
+          ]
+        },
+        30.09,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6796,7 +24331,225 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Steffee, Susanne V.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.76
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 18.49
+            },
+            {
+              "className": "ror-bar",
+              "value": 39.6
+            }
+          ]
+        },
+        41.76,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Thachik, George M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.52
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 61.21
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.26
+            }
+          ]
+        },
+        38.52,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Edgcomb, James R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.31
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 61.69
+            },
+          ]
+        },
+        38.31,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Rega, Jennifer J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 37.96
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 47.2
+            },
+            {
+              "className": "ror-bar",
+              "value": 14.36
+            }
+          ]
+        },
+        37.96,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Carlson, James Edgar",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.5
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 69.88
+            },
+          ]
+        },
+        29.5,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Repard, Robert L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 23.15
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 76.35
+            },
+          ]
+        },
+        23.15,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Martin, William J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 13.91
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 47.83
+            },
+          ]
+        },
+        13.91,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6832,7 +24585,84 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Mensch, Jeffrey L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 26.3
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 18.89
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 34.07
+            },
+            {
+              "className": "ror-bar",
+              "value": 20.74
+            }
+          ]
+        },
+        26.3,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Armbruster, Leo S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 16.58
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 5.87
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 3.32
+            },
+            {
+              "className": "ror-bar",
+              "value": 74.23
+            }
+          ]
+        },
+        16.58,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6864,7 +24694,105 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Fish, Andrew F.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 42.95
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 56.54
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.17
+            }
+          ]
+        },
+        42.95,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Lowrey, Patrick E.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.47
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 57.26
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.21
+            }
+          ]
+        },
+        41.47,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kirtland, Matthew T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 28.12
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 71.43
+            },
+          ]
+        },
+        28.12,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6900,7 +24828,117 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": true
+    "outlier": true,
+    "collapseData": [
+      [
+        "Carlson, Glenn S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 45.68
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 20.37
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.31
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.64
+            }
+          ]
+        },
+        45.68,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bauer, Laura",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.16
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 6.39
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 8.22
+            },
+            {
+              "className": "ror-bar",
+              "value": 50.23
+            }
+          ]
+        },
+        35.16,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Woodin, Todd A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 32.83
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 16.23
+            },
+            {
+              "className": "ror-bar",
+              "value": 50.94
+            }
+          ]
+        },
+        32.83,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6936,7 +24974,377 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Hopkins, Larry W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.38
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 46.17
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.3
+            }
+          ]
+        },
+        53.38,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Wilson, Mark",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.38
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 22.84
+            },
+            {
+              "className": "ror-bar",
+              "value": 23.78
+            }
+          ]
+        },
+        53.38,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Havelka, Gary H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.66
+            },
+            {
+              "className": "ror-bar",
+              "value": 37.34
+            }
+          ]
+        },
+        50,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ward, Ethan T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 49.1
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 50.45
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.23
+            }
+          ]
+        },
+        49.1,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Redlinger, Robert W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.93
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 38.54
+            },
+            {
+              "className": "ror-bar",
+              "value": 17.42
+            }
+          ]
+        },
+        43.93,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mark, David W.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.65
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 7.31
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 4.22
+            },
+            {
+              "className": "ror-bar",
+              "value": 47.54
+            }
+          ]
+        },
+        40.65,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Thompson, Curtis",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.55
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 65.21
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.24
+            },
+          ]
+        },
+        34.55,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ellis, James C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.19
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 11.93
+            },
+            {
+              "className": "ror-bar",
+              "value": 56.88
+            }
+          ]
+        },
+        31.19,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kanalis, Joshua P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.04
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 70.03
+            },
+          ]
+        },
+        29.04,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Weller, Jay",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 3
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 3.2
+            },
+            {
+              "className": "ror-bar",
+              "value": 64.5
+            }
+          ]
+        },
+        29,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "McDonald, Traci L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 28.08
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 52.36
+            },
+            {
+              "className": "ror-bar",
+              "value": 19.38
+            }
+          ]
+        },
+        28.08,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -6968,7 +25376,109 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Edwards, Ronald",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.25
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 7.01
+            },
+            {
+              "className": "ror-bar",
+              "value": 53.74
+            }
+          ]
+        },
+        39.25,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Carney, Bonnie L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 38.95
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 49.06
+            },
+            {
+              "className": "ror-bar",
+              "value": 11.99
+            }
+          ]
+        },
+        38.95,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Myers, Linus H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.87
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 23.36
+            },
+            {
+              "className": "ror-bar",
+              "value": 41.78
+            }
+          ]
+        },
+        34.87,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -7004,7 +25514,689 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Pallone, Frank J. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 45.75
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 24.49
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.08
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.69
+            }
+          ]
+        },
+        45.75,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "DeMarchis, Joseph R.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 45.22
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 51.01
+            },
+            {
+              "className": "ror-bar",
+              "value": 3.77
+            }
+          ]
+        },
+        45.22,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bilik, Mark",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.73
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 14.18
+            },
+            {
+              "className": "ror-bar",
+              "value": 49.09
+            }
+          ]
+        },
+        36.73,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dalfonso, Joseph A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 35.51
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.51
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 21.9
+            },
+            {
+              "className": "ror-bar",
+              "value": 29.08
+            }
+          ]
+        },
+        35.51,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Eckels, Roger",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.17
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 29.17
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.21
+            },
+            {
+              "className": "ror-bar",
+              "value": 36.46
+            }
+          ]
+        },
+        34.17,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mansour, Mark Stephen",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 34.01
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 13.73
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 25.44
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.83
+            }
+          ]
+        },
+        34.01,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Christner, Charles M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.97
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 10.3
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 17.58
+            },
+            {
+              "className": "ror-bar",
+              "value": 40.15
+            }
+          ]
+        },
+        31.97,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Thiel, Denise S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.55
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 26.48
+            },
+            {
+              "className": "ror-bar",
+              "value": 41.97
+            }
+          ]
+        },
+        31.55,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Moore, Charles D.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.77
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 3.27
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 4.58
+            },
+            {
+              "className": "ror-bar",
+              "value": 61.37
+            }
+          ]
+        },
+        30.77,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Kistler, Helen M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.55
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 68.69
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.76
+            }
+          ]
+        },
+        30.55,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Buczak, Jason",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.77
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 26.74
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.18
+            },
+            {
+              "className": "ror-bar",
+              "value": 43.32
+            }
+          ]
+        },
+        29.77,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Albert, James",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.28
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 50.87
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.29
+            },
+            {
+              "className": "ror-bar",
+              "value": 19.57
+            }
+          ]
+        },
+        29.28,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Peck, Yackopec Cheryl J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 28.3
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 71.46
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.12
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.12
+            }
+          ]
+        },
+        28.3,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Weimer, Douglas Reid",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.37
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 68.42
+            },
+            {
+              "className": "ror-bar",
+              "value": 4.21
+            }
+          ]
+        },
+        27.37,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Falcon, James N.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 27.1
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 44.99
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.9
+            },
+            {
+              "className": "ror-bar",
+              "value": 26.02
+            }
+          ]
+        },
+        27.1,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Mahady, Michael",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 25.36
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 6.73
+            },
+            {
+              "className": "ror-bar",
+              "value": 67.92
+            }
+          ]
+        },
+        25.36,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bompiani, L. Anthony",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 24.78
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 25.82
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.45
+            },
+            {
+              "className": "ror-bar",
+              "value": 48.81
+            }
+          ]
+        },
+        24.78,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gongaware, Wayne",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 18.59
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 50.14
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.7
+            },
+            {
+              "className": "ror-bar",
+              "value": 30.56
+            }
+          ]
+        },
+        18.59,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Conway, Charles",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 15.7
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 24.73
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.54
+            },
+            {
+              "className": "ror-bar",
+              "value": 58.84
+            }
+          ]
+        },
+        15.7,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -7040,7 +26232,80 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": true
+    "outlier": true,
+    "collapseData": [
+      [
+        "Smith, Carl W. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.65
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 55.89
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.23
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.23
+            }
+          ]
+        },
+        43.65,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Plummer, David K.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 29.21
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 70.3
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.17
+            }
+          ]
+        },
+        29.21,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   },
   {
     "data": [
@@ -7076,6 +26341,856 @@ export const MDJ_DATA = [
       },
       "--"
     ],
-    "outlier": false
+    "outlier": false,
+    "collapseData": [
+      [
+        "Meisenhelter, Douglas F.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 81.79
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 17.45
+            },
+            {
+              "className": "ror-bar",
+              "value": 0.11
+            }
+          ]
+        },
+        81.79,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Martin, Richard E. II",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 74.9
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 21.84
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.2
+            },
+            {
+              "className": "ror-bar",
+              "value": 2.65
+            }
+          ]
+        },
+        74.9,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Eshbach, David C.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 54.02
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 9.62
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 12.65
+            },
+            {
+              "className": "ror-bar",
+              "value": 23.45
+            }
+          ]
+        },
+        54.02,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Clancy, Jennifer J.P.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 53.55
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 19.84
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 2.58
+            },
+            {
+              "className": "ror-bar",
+              "value": 23.87
+            }
+          ]
+        },
+        53.55,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Morgan, James H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 51.83
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 15.27
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.51
+            },
+            {
+              "className": "ror-bar",
+              "value": 30.75
+            }
+          ]
+        },
+        51.83,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Groom, Walter",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.99
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 27.23
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.99
+            },
+            {
+              "className": "ror-bar",
+              "value": 20.79
+            }
+          ]
+        },
+        50.99,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Williams, Linda L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 50.54
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.78
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 14.37
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.15
+            }
+          ]
+        },
+        50.54,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Haskell, Ronald J. Jr.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 48.41
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 16.19
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 8.25
+            },
+            {
+              "className": "ror-bar",
+              "value": 25.56
+            }
+          ]
+        },
+        48.41,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Bloss, Barry L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.99
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 5.61
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 14.37
+            },
+            {
+              "className": "ror-bar",
+              "value": 32.75
+            }
+          ]
+        },
+        46.99,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Miner, James S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 46.07
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 6.5
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.22
+            },
+            {
+              "className": "ror-bar",
+              "value": 46.07
+            }
+          ]
+        },
+        46.07,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Manifold, Laura S.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.35
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 16.45
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 5.15
+            },
+            {
+              "className": "ror-bar",
+              "value": 34.91
+            }
+          ]
+        },
+        43.35,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Laird, Scott",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 43.05
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 7.08
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 13.35
+            },
+            {
+              "className": "ror-bar",
+              "value": 36.38
+            }
+          ]
+        },
+        43.05,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Toluba, Joel N.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.99
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 23.72
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.45
+            },
+            {
+              "className": "ror-bar",
+              "value": 33.53
+            }
+          ]
+        },
+        41.99,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Gross, Scott J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 41.36
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 17.48
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 6.29
+            },
+            {
+              "className": "ror-bar",
+              "value": 34.54
+            }
+          ]
+        },
+        41.36,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Albright, Keith L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 40.73
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 31.53
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 2.65
+            },
+            {
+              "className": "ror-bar",
+              "value": 25.09
+            }
+          ]
+        },
+        40.73,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Thomas, Richard T.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.78
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 14.66
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 8.89
+            },
+            {
+              "className": "ror-bar",
+              "value": 34.32
+            }
+          ]
+        },
+        39.78,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Reilly, Thomas J.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 39.6
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 28.6
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.2
+            },
+            {
+              "className": "ror-bar",
+              "value": 30.6
+            }
+          ]
+        },
+        39.6,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Dubs, Dwayne A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 36.35
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 14.3
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 0.36
+            },
+            {
+              "className": "ror-bar",
+              "value": 48.75
+            }
+          ]
+        },
+        36.35,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Eckenrode, Robert A.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 33.2
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 12.05
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 2.41
+            },
+            {
+              "className": "ror-bar",
+              "value": 52.34
+            }
+          ]
+        },
+        33.2,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Fishel, John H.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 31.29
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 7.59
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 7.19
+            },
+            {
+              "className": "ror-bar",
+              "value": 50.6
+            }
+          ]
+        },
+        31.29,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Oberdorf, Jeffrey L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 30.24
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 21.36
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 2.57
+            },
+            {
+              "className": "ror-bar",
+              "value": 45.43
+            }
+          ]
+        },
+        30.24,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Ness, Harry M.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 21.35
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 48.88
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.69
+            },
+            {
+              "className": "ror-bar",
+              "value": 24.16
+            }
+          ]
+        },
+        21.35,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ],
+      [
+        "Edie, Nancy L.",
+        {
+          "type": "dist",
+          "values": [
+            {
+              "className": "cash-bar",
+              "value": 18.12
+            },
+            {
+              "className": "unsecured-bar",
+              "value": 2.35
+            },
+            {
+              "className": "nonmonetary-bar",
+              "value": 1.18
+            },
+            {
+              "className": "ror-bar",
+              "value": 78.12
+            }
+          ]
+        },
+        18.12,
+        {
+          "type": "line",
+          "values": [
+            60,
+            40
+          ]
+        },
+        {
+          "type": "styled",
+          "className": "positive-diff",
+          "value": "+20"
+        }
+      ]
+    ],
+    "isCollapsed": true
   }
 ];
