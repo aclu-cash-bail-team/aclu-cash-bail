@@ -2113,3 +2113,1011 @@ export const BAIL_RACE_DATA = [
     "outlier": false
   }
 ];
+
+export const BAIL_POSTING_DATA = [
+  {
+    "data": [
+      "Adams",
+      "$27,070",
+      {
+        "type": "line",
+        "values": [
+          43.62244898
+        ]
+      },
+      43.62244898,
+      342
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Allegheny",
+      "$18,665",
+      {
+        "type": "line",
+        "values": [
+          61.27998861
+        ]
+      },
+      61.27998861,
+      8608
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Armstrong",
+      "$13,996",
+      {
+        "type": "line",
+        "values": [
+          56.05263158
+        ]
+      },
+      56.05263158,
+      426
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Beaver",
+      "$17,681",
+      {
+        "type": "line",
+        "values": [
+          67.60883691
+        ]
+      },
+      67.60883691,
+      2081
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bedford",
+      "$50,181",
+      {
+        "type": "line",
+        "values": [
+          72.3183391
+        ]
+      },
+      72.3183391,
+      418
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Berks",
+      "$28,302",
+      {
+        "type": "line",
+        "values": [
+          56.45679409
+        ]
+      },
+      56.45679409,
+      3515
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Blair",
+      "$33,185",
+      {
+        "type": "line",
+        "values": [
+          68.23253083
+        ]
+      },
+      68.23253083,
+      1162
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bradford",
+      "$32,706",
+      {
+        "type": "line",
+        "values": [
+          89.21800948
+        ]
+      },
+      89.21800948,
+      753
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bucks",
+      "$62,695",
+      {
+        "type": "line",
+        "values": [
+          48.80620772
+        ]
+      },
+      48.80620772,
+      2453
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Butler",
+      "$17,603",
+      {
+        "type": "line",
+        "values": [
+          66.14420063
+        ]
+      },
+      66.14420063,
+      422
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cambria",
+      "$37,015",
+      {
+        "type": "line",
+        "values": [
+          41.87380497
+        ]
+      },
+      41.87380497,
+      876
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cameron",
+      "$26,833",
+      {
+        "type": "line",
+        "values": [
+          51.61290323
+        ]
+      },
+      51.61290323,
+      16
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Carbon",
+      "$26,807",
+      {
+        "type": "line",
+        "values": [
+          49.51370469
+        ]
+      },
+      49.51370469,
+      560
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Centre",
+      "$44,339",
+      {
+        "type": "line",
+        "values": [
+          65.17571885
+        ]
+      },
+      65.17571885,
+      612
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Chester",
+      "$26,417",
+      {
+        "type": "line",
+        "values": [
+          51.38476756
+        ]
+      },
+      51.38476756,
+      2078
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clarion",
+      "$20,081",
+      {
+        "type": "line",
+        "values": [
+          72.08835341
+        ]
+      },
+      72.08835341,
+      359
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clearfield",
+      "$24,314",
+      {
+        "type": "line",
+        "values": [
+          82.5203252
+        ]
+      },
+      82.5203252,
+      609
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clinton",
+      "$21,072",
+      {
+        "type": "line",
+        "values": [
+          74.19962335
+        ]
+      },
+      74.19962335,
+      394
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Columbia",
+      "$35,889",
+      {
+        "type": "line",
+        "values": [
+          27.68777614
+        ]
+      },
+      27.68777614,
+      188
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Crawford",
+      "$22,638",
+      {
+        "type": "line",
+        "values": [
+          55.26315789
+        ]
+      },
+      55.26315789,
+      126
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cumberland",
+      "$25,090",
+      {
+        "type": "line",
+        "values": [
+          57.75502465
+        ]
+      },
+      57.75502465,
+      1523
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Dauphin",
+      "$36,627",
+      {
+        "type": "line",
+        "values": [
+          67.51909665
+        ]
+      },
+      67.51909665,
+      4066
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Delaware",
+      "$38,551",
+      {
+        "type": "line",
+        "values": [
+          61.44408689
+        ]
+      },
+      61.44408689,
+      6110
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Elk",
+      "$21,336",
+      {
+        "type": "line",
+        "values": [
+          79.74683544
+        ]
+      },
+      79.74683544,
+      189
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Erie",
+      "$27,835",
+      {
+        "type": "line",
+        "values": [
+          60.4815864
+        ]
+      },
+      60.4815864,
+      1708
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fayette",
+      "$19,585",
+      {
+        "type": "line",
+        "values": [
+          39.92776886
+        ]
+      },
+      39.92776886,
+      995
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Forest",
+      "$22,745",
+      {
+        "type": "line",
+        "values": [
+          80.70175439
+        ]
+      },
+      80.70175439,
+      46
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Franklin",
+      "$53,507",
+      {
+        "type": "line",
+        "values": [
+          76.32904309
+        ]
+      },
+      76.32904309,
+      1364
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fulton",
+      "$54,747",
+      {
+        "type": "line",
+        "values": [
+          78.51239669
+        ]
+      },
+      78.51239669,
+      95
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Greene",
+      "$15,600",
+      {
+        "type": "line",
+        "values": [
+          55.89123867
+        ]
+      },
+      55.89123867,
+      185
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Huntingdon",
+      "$18,370",
+      {
+        "type": "line",
+        "values": [
+          76.89594356
+        ]
+      },
+      76.89594356,
+      436
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Indiana",
+      "$16,626",
+      {
+        "type": "line",
+        "values": [
+          42.81345566
+        ]
+      },
+      42.81345566,
+      140
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Jefferson",
+      "$45,007",
+      {
+        "type": "line",
+        "values": [
+          85.16129032
+        ]
+      },
+      85.16129032,
+      396
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Juniata",
+      "$22,417",
+      {
+        "type": "line",
+        "values": [
+          73.98843931
+        ]
+      },
+      73.98843931,
+      128
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lackawanna",
+      "$31,102",
+      {
+        "type": "line",
+        "values": [
+          72.46600742
+        ]
+      },
+      72.46600742,
+      2345
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lancaster",
+      "$52,605",
+      {
+        "type": "line",
+        "values": [
+          64.47848286
+        ]
+      },
+      64.47848286,
+      3536
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lawrence",
+      "$19,204",
+      {
+        "type": "line",
+        "values": [
+          43.81742739
+        ]
+      },
+      43.81742739,
+      528
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lebanon",
+      "$24,515",
+      {
+        "type": "line",
+        "values": [
+          43.23432343
+        ]
+      },
+      43.23432343,
+      917
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lehigh",
+      "$20,172",
+      {
+        "type": "line",
+        "values": [
+          57.91968767
+        ]
+      },
+      57.91968767,
+      4154
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Luzerne",
+      "$37,043",
+      {
+        "type": "line",
+        "values": [
+          66.80926019
+        ]
+      },
+      66.80926019,
+      2655
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lycoming",
+      "$52,783",
+      {
+        "type": "line",
+        "values": [
+          71.89292543
+        ]
+      },
+      71.89292543,
+      1128
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "McKean",
+      "$23,733",
+      {
+        "type": "line",
+        "values": [
+          70.13752456
+        ]
+      },
+      70.13752456,
+      357
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mercer",
+      "$25,052",
+      {
+        "type": "line",
+        "values": [
+          49.10820452
+        ]
+      },
+      49.10820452,
+      826
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mifflin",
+      "$39,841",
+      {
+        "type": "line",
+        "values": [
+          82.62068966
+        ]
+      },
+      82.62068966,
+      599
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Monroe",
+      "$27,444",
+      {
+        "type": "line",
+        "values": [
+          38.39793282
+        ]
+      },
+      38.39793282,
+      743
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montgomery",
+      "$25,369",
+      {
+        "type": "line",
+        "values": [
+          64.50531837
+        ]
+      },
+      64.50531837,
+      4427
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montour",
+      "$28,679",
+      {
+        "type": "line",
+        "values": [
+          65.34653465
+        ]
+      },
+      65.34653465,
+      66
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Northampton",
+      "$27,509",
+      {
+        "type": "line",
+        "values": [
+          54.74903475
+        ]
+      },
+      54.74903475,
+      2127
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Northumberland",
+      "$41,870",
+      {
+        "type": "line",
+        "values": [
+          57.73195876
+        ]
+      },
+      57.73195876,
+      504
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Perry",
+      "$25,670",
+      {
+        "type": "line",
+        "values": [
+          76.99680511
+        ]
+      },
+      76.99680511,
+      241
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Philadelphia",
+      "$54,046",
+      {
+        "type": "line",
+        "values": [
+          50.7113914
+        ]
+      },
+      50.7113914,
+      16645
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Pike",
+      "$22,282",
+      {
+        "type": "line",
+        "values": [
+          63.88888889
+        ]
+      },
+      63.88888889,
+      253
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Potter",
+      "$19,489",
+      {
+        "type": "line",
+        "values": [
+          67.83216783
+        ]
+      },
+      67.83216783,
+      97
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Schuylkill",
+      "$20,625",
+      {
+        "type": "line",
+        "values": [
+          59.0780809
+        ]
+      },
+      59.0780809,
+      1256
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Snyder",
+      "$28,025",
+      {
+        "type": "line",
+        "values": [
+          45.69190601
+        ]
+      },
+      45.69190601,
+      175
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Somerset",
+      "$37,980",
+      {
+        "type": "line",
+        "values": [
+          55.08982036
+        ]
+      },
+      55.08982036,
+      276
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Sullivan",
+      "$16,973",
+      {
+        "type": "line",
+        "values": [
+          69.23076923
+        ]
+      },
+      69.23076923,
+      27
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Susquehanna",
+      "$27,633",
+      {
+        "type": "line",
+        "values": [
+          75.07788162
+        ]
+      },
+      75.07788162,
+      241
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Tioga",
+      "$20,683",
+      {
+        "type": "line",
+        "values": [
+          60.72234763
+        ]
+      },
+      60.72234763,
+      538
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Union",
+      "$27,552",
+      {
+        "type": "line",
+        "values": [
+          74.61139896
+        ]
+      },
+      74.61139896,
+      144
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Venango",
+      "$37,520",
+      {
+        "type": "line",
+        "values": [
+          72.88135593
+        ]
+      },
+      72.88135593,
+      430
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Warren",
+      "$25,476",
+      {
+        "type": "line",
+        "values": [
+          75.87209302
+        ]
+      },
+      75.87209302,
+      261
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Washington",
+      "$25,195",
+      {
+        "type": "line",
+        "values": [
+          63.82098533
+        ]
+      },
+      63.82098533,
+      1697
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wayne",
+      "$34,180",
+      {
+        "type": "line",
+        "values": [
+          46.6442953
+        ]
+      },
+      46.6442953,
+      139
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Westmoreland",
+      "$21,095",
+      {
+        "type": "line",
+        "values": [
+          71.47154675
+        ]
+      },
+      71.47154675,
+      2851
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wyoming",
+      "$25,128",
+      {
+        "type": "line",
+        "values": [
+          67.53246753
+        ]
+      },
+      67.53246753,
+      260
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "York",
+      "$20,852",
+      {
+        "type": "line",
+        "values": [
+          58.36246303
+        ]
+      },
+      58.36246303,
+      4341
+    ],
+    "outlier": false
+  }
+];

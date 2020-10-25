@@ -1,5 +1,5 @@
 import { Table } from "./classes/Table.js";
-import { BAIL_RATE_DATA, BAIL_RACE_DATA } from "./data.js";
+import { BAIL_RATE_DATA, BAIL_RACE_DATA, BAIL_POSTING_DATA } from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -101,8 +101,56 @@ const createBailRaceTable = () => {
   return new Table(BAIL_RACE_DATA, columnConfigs, initSort, tableContainer);
 };
 
+const createBailPostingTable = () => {
+  const columnConfigs = [
+    {
+      class: "county-name-cell",
+      header: "County",
+      sortable: false,
+      searchable: true
+    },
+    {
+      class: "bail-amount-cell number-cell",
+      header: "Average Bail Set",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 100,
+        "averages": [
+          {
+            "name": "Avg.",
+            "value": 58.5211725
+          }
+        ]
+      },
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "nonposting-rate-cell number-cell",
+      header: "Non-Posting Rate (%)",
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "num-incarcerated-cell number-cell",
+      header: "Number Incarcerated",
+      sortable: true,
+      searchable: false
+    },
+  ];
+  const initSort = 3;
+  const tableContainer = document.getElementById("bail-posting-container");
+  return new Table(BAIL_POSTING_DATA, columnConfigs, initSort, tableContainer);
+};
+
 /* RENDER PAGE */
 const bailRateTable = createBailRateTable();
+const bailPostingTable = createBailPostingTable();
 
 const bailRaceTable = createBailRaceTable();
 document.getElementById("race-outliers").addEventListener("click", (e) => {
