@@ -35,6 +35,20 @@ class TextCell extends Cell {
 }
 
 
+class StyledTextCell extends Cell {
+  constructor(content, className) {
+    super(`${className} ${content["className"]}`);
+    this.content = content["value"].toLocaleString();
+    this.render();
+  }
+
+  render() {
+    super.render();
+    this.element.appendChild(document.createTextNode(this.content));
+  }
+}
+
+
 class NumberCell extends Cell {
   constructor(content, className) {
     super(className);
@@ -101,14 +115,14 @@ class NumberLineCell extends Cell {
     this.content.forEach((value, i) => {
       const point = document.createElement("div");
       point.className = `viz-number-line-point ${this.vizColors[i]}`;
-      point.style.left = `${value / this.range["end"] * 100}%`;
+      point.style.left = `${(value - this.range["start"]) / this.range["end"] * 100}%`;
       this.element.appendChild(point);
     });
     // add the vertical line denoting the average
     this.averages.forEach((average, i) => {
       const averageLine = document.createElement("div");
       averageLine.className = `bar-average-line ${this.vizColors[i]}`;
-      averageLine.style.left = `${average["value"] / this.range["end"] * 100}%`;
+      averageLine.style.left = `${(average["value"] - this.range["start"]) / this.range["end"] * 100}%`;
       this.element.appendChild(averageLine);
     });
   }
@@ -180,14 +194,22 @@ class VizHeaderCell extends HeaderCell {
     const start = this.content["start"];
     const end = this.content["end"];
     const averages = this.content["averages"];
+    const unit = this.content["unit"];
 
     const cell = document.createElement("th");
     cell.className = this.className;
     // create start, end, and average tick/number elements
-    const startElement = this.createTickElement(start, "start-num");
-    const endElement = this.createTickElement(end, "end-num");
+    const startText = unit === "dollars" ? `$${Math.round(start / 1000)}K` : start;
+    const endText = unit === "dollars" ? `$${Math.round(end / 1000)}K` : end;
+    const startElement = this.createTickElement(startText, "start-num");
+    const endElement = this.createTickElement(endText, "end-num");
     const averageElements = averages.map((average, i) => {
-      const text = `${average["name"]}<br>${average["value"].toFixed(1)}%`;
+      let text = "";
+      if (unit === "percent") {
+        text = `${average["name"]}<br>${average["value"].toFixed(1)}%`;
+      } else if (unit === "dollars") {
+        text =`${average["name"]}<br>$${Math.round(average["value"] / 1000)}K`;
+      }
       const className = "average";
       return this.createTickElement(text, className, vizColors[i]);
     });
@@ -196,7 +218,7 @@ class VizHeaderCell extends HeaderCell {
     averageWrapper.className = "average-wrapper";
     // offset the average elements by the value/end ratio (and subtract padding)
     averageElements.forEach((element, i) => {
-      element.style.left = `calc(${averages[i]["value"] / end * 100}%)`;
+      element.style.left = `calc(${(averages[i]["value"] - start) / end * 100}%)`;
       averageWrapper.appendChild(element);
     });
     // add all the elements to the cell
@@ -282,7 +304,7 @@ class BodyRow {
 
 
 export class Table {
-  constructor(data, columnConfigs, initSort, tableContainer) {
+  constructor(data, columnConfigs, initSort, tableContainer, isVisible = true) {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
@@ -300,6 +322,7 @@ export class Table {
     this.sortCol = initSort;
     this.sortDir = -1;
 
+    this.isVisible = isVisible;
     this.header = this.getHeaderRow();
 
     this.init(); // Initial table DOM setup
@@ -354,6 +377,17 @@ export class Table {
       this.rows = this.getRows();
       this.render();
     });
+
+    // set up outlier button
+    const outlierButtons = this.container.getElementsByClassName("outliers-btn");
+    if (outlierButtons.length > 0) {
+      const outlierButton = outlierButtons[0];
+
+      outlierButton.addEventListener("click", (e) => {
+        const showOutliers = this.toggleOutliers();
+        e.target.className = showOutliers ? "outliers-btn showing" : "outliers-btn";
+      });
+    }
   }
 
   getHeaderRow() {
@@ -379,9 +413,16 @@ export class Table {
       // Specify how data will be rendered
       const cells = row.data.map((cell, j) => {
         let CellType = TextCell;
-        if (typeof(cell) == "number") CellType = NumberCell;
-        if (typeof(cell) == "object") {
-          CellType = cell["type"] === "bar" ? BarGraphCell : NumberLineCell;
+        if (typeof(cell) == "number") {
+          CellType = NumberCell;
+        } else if (typeof(cell) == "object") {
+          if (cell["type"] === "bar") {
+            CellType = BarGraphCell;
+          } else if (cell["type"] === "line") {
+            CellType = NumberLineCell;
+          } else if (cell["type"] === "styled") {
+            CellType = StyledTextCell;
+          }
         }
         // for county names, append an asterisk if it's an outlier
         if (j === 0 && row.outlier) cell += "*";
@@ -415,14 +456,17 @@ export class Table {
     this.sortDir = sortDir;
   }
 
+  toNumber(data) {
+    const value = typeof(data) === "object" ? data["value"] : data;
+    return Number(value.replace ? value.replace(/[^\d.-]/g, "") : value);
+  }
+
   sort(initialSort) {
     if (!initialSort) this.header.clearedSortedCells();
 
     this.data.sort((a, b) => {
-      // Assumes that we only want to sort numbers, which is fine for now
-      // May need to support sorting multiple types
-      const i = Number(a.data[this.sortCol]);
-      const j = Number(b.data[this.sortCol]);
+      const i = this.toNumber(a.data[this.sortCol]);
+      const j = this.toNumber(b.data[this.sortCol]);
       if (i < j) {
         return this.sortDir * -1;
       } else if (i > j) {
@@ -442,15 +486,65 @@ export class Table {
     return this.showOutliers;
   }
 
-  render() {
-    // create rows
-    const tbody = this.element.getElementsByTagName("tbody")[0];
-    tbody.textContent = "";
+  hide() {
+    this.isVisible = false;
+    this.render();
+  }
 
-    // repopulate with updated rows
-    this.rows.forEach(row => {
-      row.render(this.sortCol);
-      tbody.appendChild(row.element);
-    });
+  show() {
+    this.isVisible = true;
+    this.render();
+  }
+
+  render() {
+    if (!this.isVisible) {
+      this.container.classList.add("hidden");
+    } else {
+      this.container.classList.remove("hidden");
+
+      // clear rows
+      const tbody = this.element.getElementsByTagName("tbody")[0];
+      tbody.textContent = "";
+
+      // repopulate with updated rows
+      this.rows.forEach(row => {
+        row.render(this.sortCol);
+        tbody.appendChild(row.element);
+      });
+    }
+  }
+}
+
+export class SwitchableTable {
+  constructor(leftTable, rightTable, container) {
+    this.leftTable = leftTable;
+    this.rightTable = rightTable;
+    this.container = container;
+
+    // set up switch buttons
+    const rightSwitch =
+      this.leftTable.container
+        .getElementsByClassName("switch-container")[0]
+        .getElementsByClassName("right")[0];
+    rightSwitch.addEventListener("click", this.showRightTable.bind(this));
+
+    const leftSwitch =
+      this.rightTable.container
+        .getElementsByClassName("switch-container")[0]
+        .getElementsByClassName("left")[0];
+    leftSwitch.addEventListener("click", this.showLeftTable.bind(this));
+
+    // show left table by default
+    this.showLeftTable();
+  }
+
+  showLeftTable() {
+    this.leftTable.show();
+    this.rightTable.hide();
+  }
+
+  showRightTable() {
+    this.rightTable.show();
+    this.leftTable.hide();
   }
 }

@@ -106,3 +106,37 @@ td.sorted {
 .ui.fluid.dropdown {
   width: auto;
 }
+
+.switch-container {
+  cursor: pointer;
+  user-select: none;
+  padding: 1.5em 0 1.5em 0;
+  margin: 1.5em 0 1.5em 0;
+  color: #eee;
+}
+
+.switch-container .switch {
+  float: left;
+  border: 1px #333 solid;
+  padding: .85em 2em;
+  font-size: 75%;
+  font-weight: 550;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.switch-container .switch.showing {
+  background-color: #1D1D1D;
+}
+
+.switch-container .switch:hover {
+  background-color: #1D1D1D;
+}
+
+.positive-diff {
+  color: #00ED89;
+}
+
+.negative-diff {
+  color: #C14EF8;
+}
