@@ -98,7 +98,7 @@ class BarGraphCell extends Cell {
 
 class DistributionBarCell extends Cell {
   constructor(content, className) {
-    super(`${className} distribution-cell`);
+    super(className);
     this.content = content["values"];
     this.render();
   }
