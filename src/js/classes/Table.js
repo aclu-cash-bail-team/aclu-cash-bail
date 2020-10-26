@@ -344,10 +344,8 @@ class CollapsibleBodyRow extends BodyRow {
     const rowElements = super.render(sorted);
     this.element.className = "collapsible";
 
-    const subRowElements = this.collapseRows.flatMap(row => {
-      row.setIsHidden(this.isHidden || this.isCollapsed);
-      return row.render(sorted);
-    });
+    const subRowElements = this.collapseRows.flatMap(row => row.render(sorted));
+
     return [...rowElements, ...subRowElements];
   }
 }
@@ -487,11 +485,13 @@ export class Table {
         (row.outlier && !this.showOutliers) || !this.matchesSearchTerm(row);
       if (!isHidden) numVisibleRows++;
       if (row.collapseData !== undefined) {
-        // collapsed rows do not count towards the numVisibleRows
-        const collapseRows = row.collapseData.map(data =>
-          // sub-row cannot be an outlier
-          new BodyRow(this.getCells(data, false), false, isHidden || row.isCollapsed)
-        );
+        // When a row is expanded, the sub-rows may need to be truncated under NUM_TRUNCATED_ROWS
+        const numTruncatedRows = this.isTruncated ? NUM_TRUNCATED_ROWS - numVisibleRows : Number.MAX_SAFE_INTEGER;
+        const collapseRows = row.collapseData.slice(0, numTruncatedRows).map(collapseRow => {
+          const isCollapsed = isHidden || row.isCollapsed || (collapseRow.outlier && !this.showOutliers);
+          return new BodyRow(this.getCells(collapseRow.data, collapseRow.outlier), collapseRow.outlier, isCollapsed);
+        });
+        if (!isHidden && !row.isCollapsed) numVisibleRows += collapseRows.length;
         return new CollapsibleBodyRow(cells, row.outlier, collapseRows, isHidden, row.isCollapsed);
       } else {
         return new BodyRow(cells, row.outlier, isHidden);
