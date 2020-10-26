@@ -6,6 +6,10 @@ th.viz-cell {
   line-height: 13px;
 }
 
+th.bail-dist-cell {
+  text-align: center;
+}
+
 .start-num {
   color: rgba(255, 255, 255, 0.75);
   position: relative;

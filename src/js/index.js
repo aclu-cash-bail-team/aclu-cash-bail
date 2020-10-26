@@ -206,12 +206,12 @@ const createMdjTable = () => {
   const columnConfigs = [
     {
       class: "county-name-cell",
-      header: "County",
+      header: "",
       sortable: false,
       searchable: true
     },
     {
-      class: "viz-cell",
+      class: "viz-cell bail-dist-cell",
       header: "Bail Type Dist",
       sortable: false,
       searchable: false
