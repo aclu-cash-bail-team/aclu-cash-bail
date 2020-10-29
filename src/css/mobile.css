@@ -29,7 +29,7 @@
   }
 
   .county-name-cell {
-    min-width: 80px;
+    min-width: 100px;
   }
 
   .bar-label {
@@ -48,5 +48,9 @@
 
   td.viz-cell {
     width: 80px;
+  }
+
+  .diff-cell, .total-cases-cell {
+    display: none;
   }
 }

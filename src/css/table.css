@@ -15,8 +15,8 @@ table {
   margin: 1em 0 0;
 }
 
-tbody tr {
-  border-top: 1px #333 solid;
+thead tr, tbody tr {
+  border-bottom: 1px #333 solid;
 }
 
 th {
@@ -81,6 +81,15 @@ td.sorted {
   border-bottom-color: #eee;
 }
 
+.search-container {
+  display: flex;
+}
+
+.ui.fluid.dropdown {
+  width: auto;
+  flex-grow: 1;
+}
+
 .btn-text {
   color: #fff;
   font-family: "GT America Bold";
@@ -98,12 +107,11 @@ td.sorted {
 }
 
 .outliers-btn {
+  margin-left: 1em;
+  padding: 9px 25px;
+  border: 1px #333 solid;
   cursor: pointer;
   user-select: none;
-  padding: 9px 25px;
-  margin: 0 0 2.5em;
-  border: 1px #333 solid;
-  color: #595959;
 }
 
 .outliers-btn.showing {
@@ -111,19 +119,14 @@ td.sorted {
   background-color: #1D1D1D;
 }
 
-.ui.fluid.dropdown {
-  width: auto;
-}
-
 .switch-container {
+  display: flex;
+  margin: 1.5em 0;
   cursor: pointer;
   user-select: none;
-  margin: 1.5em 0;
-  color: #eee;
 }
 
 .switch-container .switch {
-  float: left;
   border: 1px #333 solid;
   padding: 9px 25px;
 }
