@@ -140,7 +140,7 @@ const createBailRaceRateTable = () => {
     },
     {
       class: "diff-cell number-cell",
-      header: "Diff",
+      header: "Difference",
       sortable: true,
       searchable: false
     },
@@ -192,7 +192,7 @@ const createBailRaceAmountTable = () => {
     },
     {
       class: "diff-cell number-cell",
-      header: "Diff",
+      header: "Difference",
       sortable: true,
       searchable: false
     },
