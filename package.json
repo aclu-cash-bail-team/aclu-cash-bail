@@ -7,6 +7,7 @@
     "dev": "rm -rf dist/ && parcel watch index.html",
     "build": "rm -rf dist/ && parcel build index.html --public-url='/aclu-cash-bail'",
     "deploy": "git subtree push --prefix dist origin gh-pages",
+    "deploy-test": "git subtree push --prefix dist origin gh-pages-test",
     "lint": "./node_modules/.bin/eslint src/js/*.js src/js/classes/*.js",
     "fix": "./node_modules/.bin/eslint --fix src/js/*.js src/js/classes/*.js"
   },
