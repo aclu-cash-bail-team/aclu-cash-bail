@@ -203,6 +203,7 @@ class VizHeaderCell extends HeaderCell {
     const endText = unit === "dollars" ? `$${Math.round(end / 1000)}K` : end;
     const startElement = this.createTickElement(startText, "start-num");
     const endElement = this.createTickElement(endText, "end-num");
+    const multiple = averages.length > 1;
     const averageElements = averages.map((average, i) => {
       let text = "";
       if (unit === "percent") {
@@ -210,7 +211,7 @@ class VizHeaderCell extends HeaderCell {
       } else if (unit === "dollars") {
         text =`${average["name"]}<br>$${Math.round(average["value"] / 1000)}K`;
       }
-      const className = "average";
+      const className = `average ${average["name"].toLowerCase()}`;
       return this.createTickElement(text, className, vizColors[i]);
     });
     // create wrapper around averages for positioning
@@ -233,7 +234,7 @@ class VizHeaderCell extends HeaderCell {
     wrapper.className = className;
     const text = document.createElement("div");
     text.innerHTML = content;
-    if (className === "average") text.className = "average-text";
+    if (className.includes("average")) text.className = "average-text";
     wrapper.appendChild(text);
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
@@ -242,7 +243,7 @@ class VizHeaderCell extends HeaderCell {
 
     // create the vertical tick underneath the number
     const line = document.createElement("div");
-    line.className = `${className === "average" ? "average-line" : "viz-line"}`;
+    line.className = `${className.includes("average") ? "average-line" : "viz-line"}`;
     if (averageColor) line.className += ` ${averageColor}`;
     wrapper.appendChild(line);
     return wrapper;

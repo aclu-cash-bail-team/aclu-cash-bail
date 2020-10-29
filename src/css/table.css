@@ -44,7 +44,7 @@ td.sorted {
 }
 
 .county-name-cell {
-  width: 95px;
+  min-width: 150px;
 }
 
 .sort-desc, .sort-asc {
