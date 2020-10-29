@@ -385,8 +385,11 @@ export class Table {
       const outlierButton = outlierButtons[0];
 
       outlierButton.addEventListener("click", (e) => {
-        const showOutliers = this.toggleOutliers();
-        e.target.className = showOutliers ? "outliers-btn showing" : "outliers-btn";
+        if (this.toggleOutliers()) {
+          e.target.classList.add("showing");
+        } else {
+          e.target.classList.remove("showing");
+        }
       });
     }
   }
