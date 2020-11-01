@@ -28,19 +28,19 @@ const createBailRateTable = () => {
     },
     {
       class: "bail-rate-cell number-cell",
-      header: "Cash Bail Rate (%)",
+      header: "Cash\xa0Bail Rate\xa0(%)",
       sortable: true,
       searchable: false
     },
     {
       class: "bail-cases-cell number-cell",
-      header: "Cash Bail Cases",
+      header: "Cash\xa0Bail Cases",
       sortable: true,
       searchable: false
     },
     {
       class: "total-cases-cell number-cell",
-      header: "Total Cases",
+      header: "Total\xa0Cases",
       sortable: true,
       searchable: false
     },
@@ -76,19 +76,19 @@ const createRorRateTable = () => {
     },
     {
       class: "ror-rate-cell number-cell",
-      header: "ROR Bail Rate (%)",
+      header: "ROR\xa0Bail Rate\xa0(%)",
       sortable: true,
       searchable: false
     },
     {
       class: "ror-cases-cell number-cell",
-      header: "ROR Cases",
+      header: "ROR\xa0Cases",
       sortable: true,
       searchable: false
     },
     {
       class: "total-cases-cell number-cell",
-      header: "Total Cases",
+      header: "Total\xa0Cases",
       sortable: true,
       searchable: false
     },
@@ -128,19 +128,19 @@ const createBailRaceRateTable = () => {
     },
     {
       class: "bail-black-cell number-cell",
-      header: "% Cash Bail Black",
+      header: "Black\xa0(%)",
       sortable: true,
       searchable: false
     },
     {
       class: "bail-white-cell number-cell",
-      header: "% Cash Bail White",
+      header: "White\xa0(%)",
       sortable: true,
       searchable: false
     },
     {
       class: "diff-cell number-cell",
-      header: "Difference",
+      header: "Diff",
       sortable: true,
       searchable: false
     },
@@ -180,19 +180,19 @@ const createBailRaceAmountTable = () => {
     },
     {
       class: "bail-black-cell number-cell",
-      header: "Bail Amt Black",
+      header: "Black",
       sortable: true,
       searchable: false
     },
     {
       class: "bail-white-cell number-cell",
-      header: "Bail Amt White",
+      header: "White",
       sortable: true,
       searchable: false
     },
     {
       class: "diff-cell number-cell",
-      header: "Difference",
+      header: "Diff",
       sortable: true,
       searchable: false
     },

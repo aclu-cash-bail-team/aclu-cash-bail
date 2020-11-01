@@ -5,7 +5,6 @@
 
 body {
   font-family: "GT America";
-  font-weight: 400;
   font-size: 13px;
   color: #eee;
   background-color: #000;
@@ -23,4 +22,10 @@ body {
 
 .hidden {
   display: none;
+}
+
+.footnote {
+  color: #4f4f4f;
+  font-family: "GT America";
+  font-size: 11px;
 }

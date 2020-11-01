@@ -12,6 +12,7 @@ table {
   border-collapse: collapse;
   max-width: 600px;
   width: 100%;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 thead tr, tbody tr {
@@ -20,6 +21,7 @@ thead tr, tbody tr {
 
 th {
   padding: 1em 0.5em;
+  color: #fff;
   font-family: "GT America Condensed";
   font-weight: 400;
   font-size: 12px;
@@ -35,11 +37,7 @@ th.number-cell {
 
 td {
   text-align: left;
-  padding: 1em 0.5em;
-}
-
-td.sorted {
-  background: #111;
+  padding: 1em;
 }
 
 .number-cell {
@@ -48,36 +46,48 @@ td.sorted {
 }
 
 .county-name-cell {
-  min-width: 150px;
+  min-width: 170px;
+  width: 170px;
+  padding: 1em 0.5em;
+}
+
+.th-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.th-text {
+  width: min-content;
 }
 
 .sort-desc, .sort-asc {
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.sort-desc:before, .sort-asc:before {
-  content: ' ';
-  position: relative;
-  right: 5px;
-  border: 0.33em solid transparent;
+.sort-desc:hover, .sort-asc:hover {
+  color: #fff;
+  transition: 0.3s ease;
 }
 
-.sort-desc:before {
-  top: 0.67em;
-  border-top-color: #444;
+.carat {
+  min-width: 8px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 5px;
+  opacity: 0;
 }
 
-.sort-asc:before {
-  bottom: 0.8em;
-  border-bottom-color: #444;
+.sort-asc .carat {
+  transform: rotateX(180deg);
 }
 
-.sort-desc.sorted:before {
-  border-top-color: #eee;
+.sorted .carat {
+  opacity: 1;
 }
 
-.sort-asc.sorted:before {
-  border-bottom-color: #eee;
+.sorted {
+  color: #fff;
 }
 
 .btn-text {
