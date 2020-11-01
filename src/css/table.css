@@ -37,27 +37,24 @@ th.number-cell {
 
 td {
   text-align: left;
-  padding: 1em;
+  padding: 1em 0.5em;
 }
 
 .number-cell {
+  width: 60px;
+  min-width: 60px;
+  max-width: 60px;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
 .county-name-cell {
   min-width: 170px;
-  width: 170px;
-  padding: 1em 0.5em;
 }
 
 .th-wrapper {
   display: flex;
   justify-content: center;
-}
-
-.th-text {
-  width: min-content;
 }
 
 .sort-desc, .sort-asc {

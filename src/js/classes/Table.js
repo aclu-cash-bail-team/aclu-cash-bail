@@ -176,7 +176,6 @@ class HeaderCell extends Cell {
       wrapper.className = "th-wrapper";
       wrapper.innerHTML = CARAT_SVG;
       const text = document.createElement("div");
-      text.className = "th-text";
       text.appendChild(document.createTextNode(this.content));
       wrapper.appendChild(text);
       cell.appendChild(wrapper);

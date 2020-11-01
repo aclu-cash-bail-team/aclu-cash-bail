@@ -40,7 +40,7 @@ const createBailRateTable = () => {
     },
     {
       class: "total-cases-cell number-cell",
-      header: "Total\xa0Cases",
+      header: "Total Cases",
       sortable: true,
       searchable: false
     },
@@ -82,13 +82,13 @@ const createRorRateTable = () => {
     },
     {
       class: "ror-cases-cell number-cell",
-      header: "ROR\xa0Cases",
+      header: "ROR Cases",
       sortable: true,
       searchable: false
     },
     {
       class: "total-cases-cell number-cell",
-      header: "Total\xa0Cases",
+      header: "Total Cases",
       sortable: true,
       searchable: false
     },
