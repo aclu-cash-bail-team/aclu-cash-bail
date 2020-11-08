@@ -34,6 +34,10 @@ i.icon.delete:before {
   padding-left: 0.25em;
 }
 
+i.icon.delete:hover {
+  cursor: pointer;
+}
+
 /* Dropdown */
 .ui.selection.active.dropdown {
   border-color: #222;
