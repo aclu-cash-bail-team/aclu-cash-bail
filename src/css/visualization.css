@@ -134,6 +134,10 @@ td.viz-cell {
   background-color: #C14EF8;
 }
 
+td.bail-dist-cell {
+  vertical-align: bottom;
+}
+
 .cash-bar {
   background-color: #00ED89;
 }
