@@ -393,9 +393,11 @@ export class Table {
 
     // set up search bar
     const searchMenu = this.container.getElementsByClassName("menu")[0];
-    const searchOptions = this.data.flatMap((row) =>
-      row.data.flatMap((value, i) => this.searchCols[i] ? [value] : [])
-    );
+    let searchOptions = this.data.flatMap((row) => {
+      const rowOptions = row.data.flatMap((value, i) => this.searchCols[i] ? [value] : []);
+      const subRowOptions = row.collapseData ? row.collapseData.map(subRow => subRow.data[0]) : [];
+      return rowOptions.concat(subRowOptions);
+    });
     // Current behavior is to alphabetically sort all options,
     // potentially mixing values from different columns
     // TODO: Consider dividing values by column
@@ -410,7 +412,7 @@ export class Table {
     const searchInput = this.container.getElementsByTagName("input")[0];
     searchInput.addEventListener("change", e => {
       const searchValue = e.target.value;
-      this.searchTerms = searchValue.split(",").filter(s => s !== "");
+      this.searchTerms = searchValue.split(";").filter(s => s !== "");
       this.rows = this.getRows();
       this.render();
     });
@@ -481,35 +483,32 @@ export class Table {
     return this.data.map(row => {
       // Specify how data will be rendered
       const cells = this.getCells(row.data, row.outlier);
-      const isHidden = (this.isTruncated && numVisibleRows >= NUM_TRUNCATED_ROWS) ||
-        (row.outlier && !this.showOutliers) || !this.matchesSearchTerm(row);
-      if (!isHidden) numVisibleRows++;
+      const isRowSearched = this.searchTerms.some(searchTerm =>
+        row.data.some((value, i) =>
+          // Search term is selected from dropdown so
+          // is guaranteed to be equal to a value
+          this.searchCols[i] && value.toLowerCase() === searchTerm.toLowerCase()));
+      const isTruncated = (this.isTruncated && numVisibleRows >= NUM_TRUNCATED_ROWS);
+      const isHiddenOutlier = row.outlier && !this.showOutliers;
+      const isRowVisible = isRowSearched || (!isTruncated && !isHiddenOutlier && this.searchTerms.length === 0);
       if (row.collapseData !== undefined) {
-        // When a row is expanded, the sub-rows may need to be truncated under NUM_TRUNCATED_ROWS
-        const numTruncatedRows = this.isTruncated ? NUM_TRUNCATED_ROWS - numVisibleRows : Number.MAX_SAFE_INTEGER;
-        const collapseRows = row.collapseData.slice(0, numTruncatedRows).map(collapseRow => {
-          const isCollapsed = isHidden || row.isCollapsed || (collapseRow.outlier && !this.showOutliers);
-          return new BodyRow(this.getCells(collapseRow.data, collapseRow.outlier), collapseRow.outlier, isCollapsed);
+        const collapseRows = row.collapseData.map(collapseRow => {
+          const isSubRowSearched = this.searchTerms.some(searchTerm =>
+          // For simplicity, only the first sub-row column is searchable
+            collapseRow.data[0].toLowerCase() === searchTerm.toLowerCase()
+          );
+          const isSubRowHiddenOutlier = collapseRow.outlier && !this.showOutliers;
+          const isSubRowVisible = isSubRowSearched || (!row.isCollapsed && !isSubRowHiddenOutlier);
+          return new BodyRow(this.getCells(collapseRow.data, collapseRow.outlier), collapseRow.outlier, !isSubRowVisible);
         });
-        if (!isHidden && !row.isCollapsed) numVisibleRows += collapseRows.length;
-        return new CollapsibleBodyRow(cells, row.outlier, collapseRows, isHidden, row.isCollapsed);
+        const isParentRowVisible = isRowVisible || collapseRows.some(bodyRow => !bodyRow.isHidden);
+        if (isParentRowVisible) numVisibleRows += collapseRows.reduce((acc, bodyRow) => !bodyRow.isHidden ? acc + 1 : acc, 1);
+        return new CollapsibleBodyRow(cells, row.outlier, collapseRows, !isParentRowVisible, row.isCollapsed);
       } else {
-        return new BodyRow(cells, row.outlier, isHidden);
+        if (isRowVisible) numVisibleRows++;
+        return new BodyRow(cells, row.outlier, !isRowVisible);
       }
     });
-  }
-
-  matchesSearchTerm(row) {
-    if (this.searchTerms.length == 0) {
-      return true;
-    }
-    return this.searchTerms.some(searchTerm =>
-      row.data.some((value, i) =>
-        // Search term is selected from dropdown so
-        // is guaranteed to be equal to a value
-        this.searchCols[i] && value.toLowerCase() === searchTerm.toLowerCase()
-      )
-    );
   }
 
   setSortColumn(i) {
