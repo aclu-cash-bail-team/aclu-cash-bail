@@ -94,7 +94,7 @@
         <div class="ui fluid multiple search selection dropdown">
           <input type="hidden" name="county">
           <i class="dropdown icon"></i>
-          <div class="default text">Select counties</div>
+          <div class="default text">Select counties or judges</div>
           <div class="menu"></div>
         </div>
         <div class="outliers-btn">Show Outliers</div>
@@ -113,7 +113,6 @@
     <script>
       $(document).ready(() => {
         $('.dropdown').dropdown({
-          fullTextSearch: true,
           ignoreCase: true,
           delimiter: ';',
           label: {

@@ -149,3 +149,7 @@ td.sorted {
 tr.collapsible {
   cursor: pointer;
 }
+
+tr.expanded {
+  background-color: #131313;
+}

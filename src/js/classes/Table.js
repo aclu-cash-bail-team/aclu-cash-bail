@@ -352,7 +352,7 @@ class CollapsibleBodyRow extends BodyRow {
 
   render(sorted) {
     const rowElements = super.render(sorted);
-    this.element.className = "collapsible";
+    this.element.className = `collapsible ${this.isCollapsed ? "collapsed" : "expanded"}`;
     if (rowElements.length > 0) {
       const rowNode = rowElements[0];
       const caretCell = rowNode.firstChild;
