@@ -205,6 +205,12 @@ const createBailRaceAmountTable = () => {
 const createMdjTable = () => {
   const columnConfigs = [
     {
+      class: "caret-cell",
+      header: "",
+      sortable: false,
+      searchable: false,
+    },
+    {
       class: "county-name-cell",
       header: "",
       sortable: false,
@@ -249,7 +255,7 @@ const createMdjTable = () => {
       searchable: false
     },
   ];
-  const initSort = 2;
+  const initSort = 3;
   const tableContainer = document.getElementById("mdj-container");
   return new Table(MDJ_DATA, columnConfigs, initSort, tableContainer);
 };

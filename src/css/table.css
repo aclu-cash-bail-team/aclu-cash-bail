@@ -47,6 +47,11 @@ td.sorted {
   min-width: 95px;
 }
 
+.caret-cell {
+  min-width: 8px;
+  padding: 0.25em;
+}
+
 .sort-desc, .sort-asc {
   cursor: pointer;
 }

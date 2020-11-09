@@ -1,6 +1,16 @@
 const VIEW_ALL = "view all";
 const VIEW_LESS = "view less";
 const NUM_TRUNCATED_ROWS = 10;
+const HORIZONTAL_CARET_SVG = `
+<svg width="5" height="7" viewBox="0 0 5 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.349609 0.349609L3.37961 3.37961L0.349609 6.39961" stroke="white" stroke-miterlimit="10"/>
+</svg>
+`;
+const VERTICAL_CARET_SVG = `
+<svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.07031 0.689453L4.04031 3.71945L1.02031 0.689453" stroke="white" stroke-miterlimit="10"/>
+</svg>
+`;
 
 class Cell {
   constructor(className) {
@@ -343,7 +353,11 @@ class CollapsibleBodyRow extends BodyRow {
   render(sorted) {
     const rowElements = super.render(sorted);
     this.element.className = "collapsible";
-
+    if (rowElements.length > 0) {
+      const rowNode = rowElements[0];
+      const caretCell = rowNode.firstChild;
+      caretCell.innerHTML = this.isCollapsed ? HORIZONTAL_CARET_SVG : VERTICAL_CARET_SVG;
+    }
     const subRowElements = this.collapseRows.flatMap(row => row.render(sorted));
 
     return [...rowElements, ...subRowElements];
@@ -395,7 +409,7 @@ export class Table {
     const searchMenu = this.container.getElementsByClassName("menu")[0];
     let searchOptions = this.data.flatMap((row) => {
       const rowOptions = row.data.flatMap((value, i) => this.searchCols[i] ? [value] : []);
-      const subRowOptions = row.collapseData ? row.collapseData.map(subRow => subRow.data[0]) : [];
+      const subRowOptions = row.collapseData ? row.collapseData.map(subRow => subRow.data[1]) : [];
       return rowOptions.concat(subRowOptions);
     });
     // Current behavior is to alphabetically sort all options,
@@ -473,7 +487,8 @@ export class Table {
         }
       }
       // for county names, append an asterisk if it's an outlier
-      if (j === 0 && isOutlier) cell += "*";
+      // there could be an empty column for carets, ignore those
+      if (typeof(cell) === "string" && cell.length > 0 && j <= 1 && isOutlier) cell += "*";
       return new CellType(cell, this.classNames[j], this.headers[j]);
     });
   }
@@ -494,16 +509,17 @@ export class Table {
       if (row.collapseData !== undefined) {
         const collapseRows = row.collapseData.map(collapseRow => {
           const isSubRowSearched = this.searchTerms.some(searchTerm =>
-          // For simplicity, only the first sub-row column is searchable
-            collapseRow.data[0].toLowerCase() === searchTerm.toLowerCase()
+            // For simplicity, only the first sub-row column is searchable
+            collapseRow.data[1].toLowerCase() === searchTerm.toLowerCase()
           );
           const isSubRowHiddenOutlier = collapseRow.outlier && !this.showOutliers;
           const isSubRowVisible = isSubRowSearched || (!row.isCollapsed && !isSubRowHiddenOutlier);
           return new BodyRow(this.getCells(collapseRow.data, collapseRow.outlier), collapseRow.outlier, !isSubRowVisible);
         });
-        const isParentRowVisible = isRowVisible || collapseRows.some(bodyRow => !bodyRow.isHidden);
+        const hasVisibleChildRow = collapseRows.some(bodyRow => !bodyRow.isHidden);
+        const isParentRowVisible = isRowVisible || hasVisibleChildRow;
         if (isParentRowVisible) numVisibleRows += collapseRows.reduce((acc, bodyRow) => !bodyRow.isHidden ? acc + 1 : acc, 1);
-        return new CollapsibleBodyRow(cells, row.outlier, collapseRows, !isParentRowVisible, row.isCollapsed);
+        return new CollapsibleBodyRow(cells, row.outlier, collapseRows, !isParentRowVisible, !hasVisibleChildRow && row.isCollapsed);
       } else {
         if (isRowVisible) numVisibleRows++;
         return new BodyRow(cells, row.outlier, !isRowVisible);
