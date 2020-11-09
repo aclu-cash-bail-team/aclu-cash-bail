@@ -136,6 +136,7 @@ td.viz-cell {
 
 td.bail-dist-cell {
   vertical-align: bottom;
+  margin-right: 0;
 }
 
 .cash-bar {

@@ -217,45 +217,31 @@ const createMdjTable = () => {
       searchable: true
     },
     {
+      class: "bail-rate-cell number-cell",
+      header: "Cash Bail Rate",
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-black-cell number-cell",
+      header: "Black",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "bail-white-cell number-cell",
+      header: "White",
+      sortable: false,
+      searchable: false
+    },
+    {
       class: "viz-cell bail-dist-cell",
       header: "Bail Type Dist",
       sortable: false,
       searchable: false
     },
-    {
-      class: "bail-rate-cell  number-cell",
-      header: "% Cash Bail",
-      sortable: true,
-      searchable: false
-    },
-    {
-      class: "viz-cell",
-      header: {
-        "start": 0,
-        "end": 100,
-        "averages": [
-          {
-            "name": "Black",
-            "value": 54.7462525,
-          },
-          {
-            "name": "White",
-            "value": 37.87542236,
-          }
-        ],
-        "unit": "percent"
-      },
-      sortable: false,
-      searchable: false
-    },
-    {
-      class: "diff-cell number-cell",
-      header: "Diff",
-      sortable: false,
-      searchable: false
-    },
   ];
-  const initSort = 3;
+  const initSort = 2;
   const tableContainer = document.getElementById("mdj-container");
   return new Table(MDJ_DATA, columnConfigs, initSort, tableContainer);
 };

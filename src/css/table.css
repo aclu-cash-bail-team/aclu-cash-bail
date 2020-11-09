@@ -25,10 +25,6 @@ th {
   vertical-align: bottom;
 }
 
-th.number-cell {
-  text-align: center;
-}
-
 td {
   text-align: left;
   padding: 1em;
