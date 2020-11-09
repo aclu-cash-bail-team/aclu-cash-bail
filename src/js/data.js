@@ -4732,3 +4732,408 @@ export const BAIL_RACE_AMOUNT_DATA = [
     "outlier": false
   }
 ];
+
+export const BAIL_RETENTION_FEE_DATA = [
+  {
+    "data": [
+      "Adams",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Allegheny",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Armstrong",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Beaver",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Bedford",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Berks",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Blair",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Bradford",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Bucks",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Butler",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Cambria",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Cameron",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Carbon",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Centre",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Chester",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Clarion",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Clearfield",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Clinton",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Columbia",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Crawford",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Cumberland",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Dauphin",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Delaware",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Elk",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Erie",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Fayette",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Forest",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Franklin",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Fulton",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Greene",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Huntingdon",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Indiana",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Jefferson",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Juniata",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Lackawanna",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Lancaster",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Lawrence",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Lebanon",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Lehigh",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Luzerne",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Lycoming",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "McKean",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Mercer",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Mifflin",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Monroe",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Montgomery",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Montour",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Northampton",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Northumberland",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Perry",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Philadelphia",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Pike",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Potter",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Schuylkill",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Snyder",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Somerset",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Sullivan",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Susquehanna",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Tioga",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Union",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Venango",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Warren",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Washington",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Wayne",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Westmoreland",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "Wyoming",
+      "Placeholder....!!!!!"
+    ]
+  },
+  {
+    "data": [
+      "York",
+      "Placeholder....!!!!!"
+    ]
+  }
+];
