@@ -6145,3 +6145,1026 @@ export const BAIL_RETENTION_FEE_DATA = [
     ]
   }
 ];
+
+export const PRETRIAL_SPENDING_DATA = [
+  {
+    "data": [
+      "Average",
+      "$10.1M",
+      "$16.1M",
+      62.44427927,
+      {
+        "type": "bar",
+        "values": [
+          62.44427927
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Adams",
+      "$3.6M",
+      "$11.1M",
+      32.43914185,
+      {
+        "type": "bar",
+        "values": [
+          32.43914185
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Allegheny",
+      "$57.6M",
+      "$86.M",
+      67.01743239,
+      {
+        "type": "bar",
+        "values": [
+          67.01743239
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Armstrong",
+      "$2.9M",
+      "$4.6M",
+      63.23898622,
+      {
+        "type": "bar",
+        "values": [
+          63.23898622
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Beaver",
+      "$4.7M",
+      "$9.3M",
+      49.91935539,
+      {
+        "type": "bar",
+        "values": [
+          49.91935539
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bedford",
+      "$2.2M",
+      "$3.1M",
+      70.14284972,
+      {
+        "type": "bar",
+        "values": [
+          70.14284972
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Berks",
+      "$27.4M",
+      "$35.7M",
+      76.92692634,
+      {
+        "type": "bar",
+        "values": [
+          76.92692634
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Blair",
+      "N/R",
+      "$8.6M",
+      "N/R",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bradford",
+      "$0.7M",
+      "$4.1M",
+      16.17296357,
+      {
+        "type": "bar",
+        "values": [
+          16.17296357
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bucks",
+      "$16.M",
+      "$27.6M",
+      57.90105653,
+      {
+        "type": "bar",
+        "values": [
+          57.90105653
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Butler",
+      "$10.M",
+      "$11.6M",
+      86.19403059,
+      {
+        "type": "bar",
+        "values": [
+          86.19403059
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cambria",
+      "$4.9M",
+      "$10.6M",
+      46.00591555,
+      {
+        "type": "bar",
+        "values": [
+          46.00591555
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cameron",
+      "N/A",
+      "N/A",
+      "N/A",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Carbon",
+      "$2.7M",
+      "$5.M",
+      55.20362881,
+      {
+        "type": "bar",
+        "values": [
+          55.20362881
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Centre",
+      "$3.M",
+      "$8.9M",
+      33.49236863,
+      {
+        "type": "bar",
+        "values": [
+          33.49236863
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Chester",
+      "$16.3M",
+      "$30.M",
+      54.39229774,
+      {
+        "type": "bar",
+        "values": [
+          54.39229774
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clarion",
+      "$0.8M",
+      "$2.4M",
+      32.47664265,
+      {
+        "type": "bar",
+        "values": [
+          32.47664265
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clearfield",
+      "$1.6M",
+      "$3.4M",
+      47.56945001,
+      {
+        "type": "bar",
+        "values": [
+          47.56945001
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clinton",
+      "$1.7M",
+      "$6.5M",
+      26.20482058,
+      {
+        "type": "bar",
+        "values": [
+          26.20482058
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Columbia",
+      "$2.8M",
+      "$6.M",
+      45.91836515,
+      {
+        "type": "bar",
+        "values": [
+          45.91836515
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Crawford",
+      "$3.3M",
+      "$6.M",
+      54.53667276,
+      {
+        "type": "bar",
+        "values": [
+          54.53667276
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cumberland",
+      "$8.5M",
+      "$11.3M",
+      75.28473396,
+      {
+        "type": "bar",
+        "values": [
+          75.28473396
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Dauphin",
+      "$0.3M",
+      "N/R",
+      "N/R",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Delaware",
+      "$0.4M",
+      "N/R",
+      "N/R",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Elk",
+      "$1.9M",
+      "$2.7M",
+      70.16631838,
+      {
+        "type": "bar",
+        "values": [
+          70.16631838
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Erie",
+      "$6.7M",
+      "$17.M",
+      39.4405589,
+      {
+        "type": "bar",
+        "values": [
+          39.4405589
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fayette",
+      "$9.3M",
+      "$7.6M",
+      121.3963915,
+      {
+        "type": "bar",
+        "values": [
+          121.3963915
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Forest",
+      "N/A",
+      "N/A",
+      "N/A",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Franklin",
+      "$6.2M",
+      "$13.3M",
+      46.55092852,
+      {
+        "type": "bar",
+        "values": [
+          46.55092852
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fulton",
+      "N/A",
+      "N/A",
+      "N/A",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Greene",
+      "$1.3M",
+      "$2.7M",
+      47.56944381,
+      {
+        "type": "bar",
+        "values": [
+          47.56944381
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Huntingdon",
+      "$1.3M",
+      "$1.7M",
+      77.32557584,
+      {
+        "type": "bar",
+        "values": [
+          77.32557584
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Indiana",
+      "$3.6M",
+      "$7.1M",
+      51.53061275,
+      {
+        "type": "bar",
+        "values": [
+          51.53061275
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Jefferson",
+      "$1.5M",
+      "$3.3M",
+      46.1397167,
+      {
+        "type": "bar",
+        "values": [
+          46.1397167
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Juniata",
+      "N/A",
+      "N/A",
+      "N/A",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lackawanna",
+      "$16.9M",
+      "$25.4M",
+      66.42315908,
+      {
+        "type": "bar",
+        "values": [
+          66.42315908
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lancaster",
+      "$15.5M",
+      "$27.6M",
+      56.0542793,
+      {
+        "type": "bar",
+        "values": [
+          56.0542793
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lawrence",
+      "N/R",
+      "$6.2M",
+      "N/R",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lebanon",
+      "$4.7M",
+      "$9.3M",
+      50.50411042,
+      {
+        "type": "bar",
+        "values": [
+          50.50411042
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lehigh",
+      "$9.M",
+      "$30.M",
+      30.0079569,
+      {
+        "type": "bar",
+        "values": [
+          30.0079569
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Luzerne",
+      "N/R",
+      "$26.3M",
+      "N/R",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lycoming",
+      "$9.M",
+      "$10.3M",
+      87.12023555,
+      {
+        "type": "bar",
+        "values": [
+          87.12023555
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "McKean",
+      "$2.1M",
+      "$2.6M",
+      80.62499691,
+      {
+        "type": "bar",
+        "values": [
+          80.62499691
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mercer",
+      "$3.5M",
+      "$7.8M",
+      45.21396757,
+      {
+        "type": "bar",
+        "values": [
+          45.21396757
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mifflin",
+      "$2.1M",
+      "$3.6M",
+      58.29183635,
+      {
+        "type": "bar",
+        "values": [
+          58.29183635
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Monroe",
+      "$6.3M",
+      "$12.7M",
+      49.18033199,
+      {
+        "type": "bar",
+        "values": [
+          49.18033199
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montgomery",
+      "$29.6M",
+      "$38.8M",
+      76.43072401,
+      {
+        "type": "bar",
+        "values": [
+          76.43072401
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montour",
+      "$0.7M",
+      "$0.9M",
+      76.64233742,
+      {
+        "type": "bar",
+        "values": [
+          76.64233742
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Northampton",
+      "$12.6M",
+      "$26.6M",
+      47.6338724,
+      {
+        "type": "bar",
+        "values": [
+          47.6338724
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Northumberland",
+      "$1.5M",
+      "$2.4M",
+      64.0957536,
+      {
+        "type": "bar",
+        "values": [
+          64.0957536
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Perry",
+      "$3.1M",
+      "$4.8M",
+      64.92248608,
+      {
+        "type": "bar",
+        "values": [
+          64.92248608
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Philadelphia",
+      "$205.1M",
+      "$260.9M",
+      78.60564543,
+      {
+        "type": "bar",
+        "values": [
+          78.60564543
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Pike",
+      "$8.1M",
+      "$10.2M",
+      79.57516231,
+      {
+        "type": "bar",
+        "values": [
+          79.57516231
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Potter",
+      "$0.3M",
+      "$0.7M",
+      38.28125105,
+      {
+        "type": "bar",
+        "values": [
+          38.28125105
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Schuylkill",
+      "$4.9M",
+      "$7.3M",
+      67.50973321,
+      {
+        "type": "bar",
+        "values": [
+          67.50973321
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Snyder",
+      "$1.1M",
+      "$3.4M",
+      33.18584058,
+      {
+        "type": "bar",
+        "values": [
+          33.18584058
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Somerset",
+      "$3.8M",
+      "$2.9M",
+      130.5309721,
+      {
+        "type": "bar",
+        "values": [
+          130.5309721
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Sullivan",
+      "N/A",
+      "N/A",
+      "N/A",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Susquehanna",
+      "$2.7M",
+      "$3.1M",
+      87.27389024,
+      {
+        "type": "bar",
+        "values": [
+          87.27389024
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Tioga",
+      "$1.2M",
+      "$2.6M",
+      44.75309491,
+      {
+        "type": "bar",
+        "values": [
+          44.75309491
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Union",
+      "$0.4M",
+      "$0.9M",
+      41.91170231,
+      {
+        "type": "bar",
+        "values": [
+          41.91170231
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Venango",
+      "$1.8M",
+      "$2.7M",
+      65.28663594,
+      {
+        "type": "bar",
+        "values": [
+          65.28663594
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Warren",
+      "N/R",
+      "$3.1M",
+      "N/R",
+      {
+        "type": "bar",
+        "values": [
+          62.4
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Washington",
+      "$4.M",
+      "$7.7M",
+      51.11357976,
+      {
+        "type": "bar",
+        "values": [
+          51.11357976
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wayne",
+      "$2.8M",
+      "$4.4M",
+      63.54167183,
+      {
+        "type": "bar",
+        "values": [
+          63.54167183
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Westmoreland",
+      "$8.4M",
+      "$16.5M",
+      51.29716715,
+      {
+        "type": "bar",
+        "values": [
+          51.29716715
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wyoming",
+      "$1.9M",
+      "$2.2M",
+      85.99998119,
+      {
+        "type": "bar",
+        "values": [
+          85.99998119
+        ]
+      }
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "York",
+      "$16.7M",
+      "$54.6M",
+      30.66932716,
+      {
+        "type": "bar",
+        "values": [
+          30.66932716
+        ]
+      }
+    ],
+    "outlier": false
+  }
+];

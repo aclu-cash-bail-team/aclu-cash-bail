@@ -5,7 +5,8 @@ import {
   ROR_RATE_DATA,
   BAIL_RACE_AMOUNT_DATA,
   BAIL_POSTING_DATA,
-  BAIL_RETENTION_FEE_DATA } from "./data.js";
+  BAIL_RETENTION_FEE_DATA,
+  PRETRIAL_SPENDING_DATA } from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -276,6 +277,54 @@ const createBailRetentionFeeTable = () => {
   return new Table(BAIL_RETENTION_FEE_DATA, columnConfigs, initSort, tableContainer);
 };
 
+const createPretrialSpendingTable = () => {
+  const columnConfigs = [
+    {
+      class: "county-name-cell",
+      header: "",
+      sortable: false,
+      searchable: true
+    },
+    {
+      class: "spending-cell",
+      header: "Cost",
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "total-budget-cell",
+      header: "Total Budget",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "fraction-budget-cell number-cell",
+      header: "% of Budget",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 140,
+        "averages": [
+          {
+            "name": "",
+            "value": 62.4,
+          },
+        ],
+        "unit": "percent"
+      },
+      sortable: false,
+      searchable: false
+    }
+  ];
+  const initSort = 1;
+  const tableContainer = document.getElementById("pretrial-spending-container");
+  return new Table(PRETRIAL_SPENDING_DATA, columnConfigs, initSort, tableContainer);
+};
+
 /* RENDER PAGE */
 const bailRateTable = createBailRateTable();
 const rorRateTable = createRorRateTable();
@@ -291,3 +340,4 @@ new SwitchableTable(bailRaceRateTable, bailRaceAmountTable, raceContainer);
 
 const bailPostingTable = createBailPostingTable();
 const bailRetentionTable = createBailRetentionFeeTable();
+const pretrialSpendingTable = createPretrialSpendingTable();
