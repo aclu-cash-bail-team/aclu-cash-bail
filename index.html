@@ -25,69 +25,77 @@
             <div class="menu"></div>
           </div>
           <div class="switch-container">
-            <div class="switch left showing">Cash Bail Rate</div>
-            <div class="switch right">ROR Rate</div>
+            <div class="btn-text switch left showing">Cash Bail Rate</div>
+            <div class="btn-text switch right">ROR Rate</div>
           </div>
           <table id="bail-rate-table">
             <thead></thead>
             <tbody></tbody>
           </table>
-          <div class="view-all-btn"></div>
+          <div class="btn-text view-all-btn"></div>
+          <p class="footnote">Outliers exceeding the 99th percentile were removed in calculating bail rate averages.</p>
         </div>
         <div class="table-container" id="ror-rate-container">
           <div class="ui fluid multiple search selection dropdown">
             <input type="hidden" name="county">
             <i class="dropdown icon"></i>
-            <div class="default text">Select counties</div>
+            <div class="default text">Search counties</div>
             <div class="menu"></div>
           </div>
           <div class="switch-container">
-            <div class="switch left">Cash Bail Rate</div>
-            <div class="switch right showing">ROR Rate</div>
+            <div class="btn-text switch left">Cash Bail Rate</div>
+            <div class="btn-text switch right showing">ROR Rate</div>
           </div>
           <table id="ror-rate-table">
             <thead></thead>
             <tbody></tbody>
           </table>
-          <div class="view-all-btn"></div>
+          <div class="btn-text view-all-btn"></div>
+          <p class="footnote">Outliers exceeding the 99th percentile were removed in calculating bail rate averages.</p>
         </div>
       </div>
       <div id="race-container">
         <div class="table-container" id="bail-race-rate-container">
-          <div class="ui fluid multiple search selection dropdown">
-            <input type="hidden" name="county">
-            <i class="dropdown icon"></i>
-            <div class="default text">Select counties</div>
-            <div class="menu"></div>
+          <div class="search-container">
+            <div class="ui fluid multiple search selection dropdown">
+              <input type="hidden" name="county">
+              <i class="dropdown icon"></i>
+              <div class="default text">Search counties</div>
+              <div class="menu"></div>
+            </div>
+            <div class="btn-text outliers-btn">Show Outliers</div>
           </div>
-          <div class="outliers-btn">Show Outliers</div>
           <div class="switch-container">
-            <div class="switch left showing">Cash Bail Rate</div>
-            <div class="switch right">Cash Bail Amount</div>
+            <div class="btn-text switch left showing">Cash Bail Rate</div>
+            <div class="btn-text switch right">Cash Bail Amount</div>
           </div>
           <table id="bail-race-rate-table">
             <thead></thead>
             <tbody></tbody>
           </table>
-          <div class="view-all-btn"></div>
+          <div class="btn-text view-all-btn"></div>
+          <p class="footnote">*Outlier for low number of cases with black defendants.</p>
         </div>
         <div class="table-container" id="bail-race-amount-container">
-          <div class="ui fluid multiple search selection dropdown">
-            <input type="hidden" name="county">
-            <i class="dropdown icon"></i>
-            <div class="default text">Select counties</div>
-            <div class="menu"></div>
+          <div class="search-container">
+            <div class="ui fluid multiple search selection dropdown">
+              <input type="hidden" name="county">
+              <i class="dropdown icon"></i>
+              <div class="default text">Search counties</div>
+              <div class="menu"></div>
+            </div>
+            <div class="btn-text outliers-btn">Show Outliers</div>
           </div>
-          <div class="outliers-btn">Show Outliers</div>
           <div class="switch-container">
-            <div class="switch left">Cash Bail Rate</div>
-            <div class="switch right showing">Cash Bail Amount</div>
+            <div class="btn-text switch left">Cash Bail Rate</div>
+            <div class="btn-text switch right showing">Cash Bail Amount</div>
           </div>
           <table id="bail-race-amount-table">
             <thead></thead>
             <tbody></tbody>
           </table>
-          <div class="view-all-btn"></div>
+          <div class="btn-text view-all-btn"></div>
+          <p class="footnote">*Outlier for low number of cases with black defendants.</p>
         </div>
       </div>
       <div class="table-container" id="bail-posting-container">

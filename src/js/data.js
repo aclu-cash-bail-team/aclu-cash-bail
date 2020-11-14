@@ -3389,7 +3389,6 @@ export const ROR_RATE_DATA = [
     "outlier": false
   }
 ];
-
 export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [

@@ -1,5 +1,8 @@
 const VIEW_ALL = "view all";
 const VIEW_LESS = "view less";
+const CARAT_SVG = `<svg class="carat" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 0.999999L4 4L1 1" stroke="white" stroke-miterlimit="10"/>
+</svg>`;
 
 class Cell {
   constructor(className) {
@@ -163,11 +166,22 @@ class HeaderCell extends Cell {
   render() {
     const cell = document.createElement("th");
     cell.className = this.className;
-    cell.appendChild(document.createTextNode(this.content));
     this.element = cell;
     if (this.sortCol) {
       const classNameWithSort = this.getClassName();
       this.setElementClass(classNameWithSort, this.initSort);
+
+      // if this is a sortable column, create wrapper with carat and text
+      const wrapper = document.createElement("div");
+      wrapper.className = "th-wrapper";
+      wrapper.innerHTML = CARAT_SVG;
+      const text = document.createElement("div");
+      text.appendChild(document.createTextNode(this.content));
+      wrapper.appendChild(text);
+      cell.appendChild(wrapper);
+    } else {
+      // otherwise, all we need is the text
+      cell.appendChild(document.createTextNode(this.content));
     }
   }
 
@@ -203,6 +217,7 @@ class VizHeaderCell extends HeaderCell {
     const endText = unit === "dollars" ? `$${Math.round(end / 1000)}K` : end;
     const startElement = this.createTickElement(startText, "start-num");
     const endElement = this.createTickElement(endText, "end-num");
+    const multiple = averages.length > 1;
     const averageElements = averages.map((average, i) => {
       let text = "";
       if (unit === "percent") {
@@ -210,7 +225,7 @@ class VizHeaderCell extends HeaderCell {
       } else if (unit === "dollars") {
         text =`${average["name"]}<br>$${Math.round(average["value"] / 1000)}K`;
       }
-      const className = "average";
+      const className = `average ${average["name"].toLowerCase()}`;
       return this.createTickElement(text, className, vizColors[i]);
     });
     // create wrapper around averages for positioning
@@ -233,7 +248,7 @@ class VizHeaderCell extends HeaderCell {
     wrapper.className = className;
     const text = document.createElement("div");
     text.innerHTML = content;
-    if (className === "average") text.className = "average-text";
+    if (className.includes("average")) text.className = "average-text";
     wrapper.appendChild(text);
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
@@ -242,7 +257,7 @@ class VizHeaderCell extends HeaderCell {
 
     // create the vertical tick underneath the number
     const line = document.createElement("div");
-    line.className = `${className === "average" ? "average-line" : "viz-line"}`;
+    line.className = `${className.includes("average") ? "average-line" : "viz-line"}`;
     if (averageColor) line.className += ` ${averageColor}`;
     wrapper.appendChild(line);
     return wrapper;
@@ -384,8 +399,11 @@ export class Table {
       const outlierButton = outlierButtons[0];
 
       outlierButton.addEventListener("click", (e) => {
-        const showOutliers = this.toggleOutliers();
-        e.target.className = showOutliers ? "outliers-btn showing" : "outliers-btn";
+        if (this.toggleOutliers()) {
+          e.target.classList.add("showing");
+        } else {
+          e.target.classList.remove("showing");
+        }
       });
     }
   }
