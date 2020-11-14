@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "GT America";
+  src: url("/GT-America-Standard-Regular.08b93adf.otf") format("opentype");
+}
+
+body {
+  font-family: "GT America";
+  font-weight: 400;
+  font-size: 13px;
+  color: #eee;
+  background-color: #000;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.table-container {
+  margin: 3em 0;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/*# sourceMappingURL=/style.967ba849.css.map */

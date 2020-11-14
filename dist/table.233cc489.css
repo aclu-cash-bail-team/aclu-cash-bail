@@ -1,0 +1,145 @@
+@font-face {
+  font-family: "GT America Condensed";
+  src: url("/GT-America-Condensed-Regular.d6dbbdf1.otf") format("opentype");
+}
+
+table {
+  border-collapse: collapse;
+  max-width: 600px;
+  width: 100%;
+  margin: 1em 0 0;
+}
+
+tbody tr {
+  border-top: 1px #333 solid;
+}
+
+th {
+  padding: 1em;
+  font-family: "GT America Condensed";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+
+th.number-cell {
+  text-align: center;
+}
+
+td {
+  text-align: left;
+  padding: 1em;
+}
+
+td.sorted {
+  background: #111;
+}
+
+.number-cell {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.county-name-cell {
+  width: 95px;
+}
+
+.sort-desc, .sort-asc {
+  cursor: pointer;
+}
+
+.sort-desc:before, .sort-asc:before {
+  content: ' ';
+  position: relative;
+  right: 5px;
+  border: 0.33em solid transparent;
+}
+
+.sort-desc:before {
+  top: 0.67em;
+  border-top-color: #444;
+}
+
+.sort-asc:before {
+  bottom: 0.8em;
+  border-bottom-color: #444;
+}
+
+.sort-desc.sorted:before {
+  border-top-color: #eee;
+}
+
+.sort-asc.sorted:before {
+  border-bottom-color: #eee;
+}
+
+.view-all-btn {
+  margin: 1.5em 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.outliers-btn {
+  cursor: pointer;
+  user-select: none;
+  padding: 1em;
+  margin: 0 0 2.5em;
+  border: 1px #333 solid;
+  border-radius: 5px;
+  color: #595959;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.outliers-btn.showing {
+  color: #fff;
+  background-color: #1D1D1D;
+}
+
+.ui.fluid.dropdown {
+  width: auto;
+}
+
+.switch-container {
+  cursor: pointer;
+  user-select: none;
+  padding: 1.5em 0 1.5em 0;
+  margin: 1.5em 0 1.5em 0;
+  color: #eee;
+}
+
+.switch-container .switch {
+  float: left;
+  border: 1px #333 solid;
+  padding: .85em 2em;
+  font-size: 75%;
+  font-weight: 550;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.switch-container .switch.showing {
+  background-color: #1D1D1D;
+}
+
+.switch-container .switch:hover {
+  background-color: #1D1D1D;
+}
+
+.positive-diff {
+  color: #00ED89;
+}
+
+.negative-diff {
+  color: #C14EF8;
+}
+
+
+/*# sourceMappingURL=/table.233cc489.css.map */
