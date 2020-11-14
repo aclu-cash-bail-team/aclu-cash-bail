@@ -29,6 +29,10 @@ th.number-cell {
   text-align: center;
 }
 
+th.retention-fee-cell {
+  text-align: left;
+}
+
 td {
   text-align: left;
   padding: 1em;
@@ -45,6 +49,10 @@ td.sorted {
 
 .county-name-cell {
   width: 95px;
+}
+
+.retention-fee-cell {
+  text-align: right;
 }
 
 .sort-desc, .sort-asc {

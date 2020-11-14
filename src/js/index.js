@@ -1,5 +1,11 @@
 import { Table, SwitchableTable } from "./classes/Table.js";
-import { BAIL_RATE_DATA, BAIL_RACE_RATE_DATA, ROR_RATE_DATA, BAIL_RACE_AMOUNT_DATA, BAIL_POSTING_DATA } from "./data.js";
+import {
+  BAIL_RATE_DATA,
+  BAIL_RACE_RATE_DATA,
+  ROR_RATE_DATA,
+  BAIL_RACE_AMOUNT_DATA,
+  BAIL_POSTING_DATA,
+  BAIL_RETENTION_FEE_DATA } from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -250,6 +256,26 @@ const createBailPostingTable = () => {
   return new Table(BAIL_POSTING_DATA, columnConfigs, initSort, tableContainer);
 };
 
+const createBailRetentionFeeTable = () => {
+  const columnConfigs = [
+    {
+      class: "county-name-cell",
+      header: "County",
+      sortable: false,
+      searchable: true
+    },
+    {
+      class: "retention-fee-cell",
+      header: "Retention Fee",
+      sortable: false,
+      searchable: false
+    },
+  ];
+  const initSort = 0; // initially sort by difference
+  const tableContainer = document.getElementById("bail-retention-fee-container");
+  return new Table(BAIL_RETENTION_FEE_DATA, columnConfigs, initSort, tableContainer);
+};
+
 /* RENDER PAGE */
 const bailRateTable = createBailRateTable();
 const rorRateTable = createRorRateTable();
@@ -264,3 +290,4 @@ const raceContainer = document.getElementById("race-container");
 new SwitchableTable(bailRaceRateTable, bailRaceAmountTable, raceContainer);
 
 const bailPostingTable = createBailPostingTable();
+const bailRetentionTable = createBailRetentionFeeTable();
