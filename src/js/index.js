@@ -259,4 +259,4 @@ const bailRaceAmountTable = createBailRaceAmountTable();
 const raceContainer = document.getElementById("race-container");
 new SwitchableTable(bailRaceRateTable, bailRaceAmountTable, raceContainer);
 
-const mdjTable = createMdjTable();
+createMdjTable();

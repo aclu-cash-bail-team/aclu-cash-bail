@@ -18,7 +18,6 @@
   "author": "Alex Graves and Arjun Pothukuchi",
   "license": "ISC",
   "devDependencies": {
-    "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
     "parcel-bundler": "^1.12.4"
   },
