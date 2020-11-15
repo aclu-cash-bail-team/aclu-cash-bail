@@ -363,9 +363,9 @@ class CollapsibleBodyRow extends BodyRow {
       const caretCell = rowNode.firstChild;
       caretCell.innerHTML = CARET_SVG;
       if (this.isCollapsed) {
-        caretCell.addClass("caret-rotated");
+        caretCell.classList.add("caret-rotated");
       } else {
-        caretCell.removeClass("caret-rotated");
+        caretCell.classList.remove("caret-rotated");
       }
     }
     const subRowElements = this.collapseRows.flatMap(row => row.render(sorted));

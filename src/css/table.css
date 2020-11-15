@@ -76,11 +76,6 @@ td {
   transition: 0.3s ease;
 }
 
-.caret-cell {
-  min-width: 8px;
-  padding: 0.25em;
-}
-
 .caret {
   min-width: 8px;
   padding-top: 7px;
@@ -89,12 +84,22 @@ td {
   opacity: 0;
 }
 
-.sort-asc .caret, .caret-rotated .caret {
-  transform: rotateX(180deg);
-}
-
 .sorted .caret, .caret-cell .caret {
   opacity: 1;
+}
+
+.caret-cell .caret {
+  padding-left: 7px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+
+.caret-rotated .caret {
+  transform: rotateZ(-90deg);
+}
+
+.sort-asc .caret {
+  transform: rotateX(180deg);
 }
 
 .sorted {
