@@ -247,7 +247,6 @@ class VizHeaderCell extends HeaderCell {
     const endText = unit === "dollars" ? `$${Math.round(end / 1000)}K` : end;
     const startElement = this.createTickElement(startText, "start-num");
     const endElement = this.createTickElement(endText, "end-num");
-    const multiple = averages.length > 1;
     const averageElements = averages.map((average, i) => {
       let text = "";
       if (unit === "percent") {
