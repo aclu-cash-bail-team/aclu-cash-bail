@@ -1,5 +1,9 @@
 const VIEW_ALL = "view all";
 const VIEW_LESS = "view less";
+const NUM_TRUNCATED_ROWS = 10;
+const CARET_SVG = `<svg class="caret" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 0.999999L4 4L1 1" stroke="white" stroke-miterlimit="10"/>
+</svg>`;
 
 class Cell {
   constructor(className) {
@@ -95,6 +99,35 @@ class BarGraphCell extends Cell {
 }
 
 
+class DistributionBarCell extends Cell {
+  constructor(content, className) {
+    super(className);
+    this.content = content["values"];
+    this.render();
+  }
+
+  render() {
+    super.render();
+    // create bars for each distribution
+    this.content.forEach(dist => {
+      const bar = document.createElement("div");
+      bar.className = `viz-bar ${dist["className"]}`;
+      this.element.appendChild(bar);
+    });
+    // configure sizes of distribution bars
+    const numDists = this.content.length;
+    const [gapSize, gapUnits] = [2, "px"];
+    const gapCorrection = Math.round(((numDists - 1) * gapSize) / numDists);
+    const distWidths = this.content.map((dist) =>
+      `calc(${dist["value"]}% - ${gapCorrection}${gapUnits})`
+    );
+    this.element.style.display = "inline-grid";
+    this.element.style.columnGap = `${gapSize}${gapUnits}`;
+    this.element.style.gridTemplateColumns = distWidths.join(" ");
+  }
+}
+
+
 class NumberLineCell extends Cell {
   constructor(content, className, data) {
     super(className);
@@ -163,11 +196,22 @@ class HeaderCell extends Cell {
   render() {
     const cell = document.createElement("th");
     cell.className = this.className;
-    cell.appendChild(document.createTextNode(this.content));
     this.element = cell;
     if (this.sortCol) {
       const classNameWithSort = this.getClassName();
       this.setElementClass(classNameWithSort, this.initSort);
+
+      // if this is a sortable column, create wrapper with caret and text
+      const wrapper = document.createElement("div");
+      wrapper.className = "th-wrapper";
+      wrapper.innerHTML = CARET_SVG;
+      const text = document.createElement("div");
+      text.appendChild(document.createTextNode(this.content));
+      wrapper.appendChild(text);
+      cell.appendChild(wrapper);
+    } else {
+      // otherwise, all we need is the text
+      cell.appendChild(document.createTextNode(this.content));
     }
   }
 
@@ -203,6 +247,7 @@ class VizHeaderCell extends HeaderCell {
     const endText = unit === "dollars" ? `$${Math.round(end / 1000)}K` : end;
     const startElement = this.createTickElement(startText, "start-num");
     const endElement = this.createTickElement(endText, "end-num");
+    const multiple = averages.length > 1;
     const averageElements = averages.map((average, i) => {
       let text = "";
       if (unit === "percent") {
@@ -210,7 +255,7 @@ class VizHeaderCell extends HeaderCell {
       } else if (unit === "dollars") {
         text =`${average["name"]}<br>$${Math.round(average["value"] / 1000)}K`;
       }
-      const className = "average";
+      const className = `average ${average["name"].toLowerCase()}`;
       return this.createTickElement(text, className, vizColors[i]);
     });
     // create wrapper around averages for positioning
@@ -233,7 +278,7 @@ class VizHeaderCell extends HeaderCell {
     wrapper.className = className;
     const text = document.createElement("div");
     text.innerHTML = content;
-    if (className === "average") text.className = "average-text";
+    if (className.includes("average")) text.className = "average-text";
     wrapper.appendChild(text);
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
@@ -242,7 +287,7 @@ class VizHeaderCell extends HeaderCell {
 
     // create the vertical tick underneath the number
     const line = document.createElement("div");
-    line.className = `${className === "average" ? "average-line" : "viz-line"}`;
+    line.className = `${className.includes("average") ? "average-line" : "viz-line"}`;
     if (averageColor) line.className += ` ${averageColor}`;
     wrapper.appendChild(line);
     return wrapper;
@@ -278,30 +323,56 @@ class BodyRow {
     this.cells = cells;
     this.outlier = outlier;
     this.isHidden = isHidden;
-    this.render();
   }
 
   setIsHidden(isHidden) {
     this.isHidden = isHidden;
   }
 
+  // Returns a list of DOM nodes to add to table body
   render(sorted) {
     const row = document.createElement("tr");
-    if (this.isHidden) {
-      row.className = "hidden";
-    } else {
-      row.className = "";
-      this.cells.forEach((cell, i) => {
-        cell.setElementClass(
-          i === sorted ? `${cell.className} sorted` : cell.className
-        );
-        row.appendChild(cell.element);
-      });
-    }
     this.element = row;
+    if (this.isHidden) {
+      return [];
+    }
+
+    row.className = "";
+    this.cells.forEach((cell, i) => {
+      cell.setElementClass(
+        i === sorted ? `${cell.className} sorted` : cell.className
+      );
+      row.appendChild(cell.element);
+    });
+    return [this.element];
   }
 }
 
+class CollapsibleBodyRow extends BodyRow {
+  constructor(cells, outlier, collapseRows, isHidden, isCollapsed) {
+    super(cells, outlier, isHidden);
+    this.isCollapsed = isCollapsed;
+    this.collapseRows = collapseRows;
+  }
+
+  render(sorted) {
+    const rowElements = super.render(sorted);
+    this.element.className = `collapsible ${this.isCollapsed ? "collapsed" : "expanded"}`;
+    if (rowElements.length > 0) {
+      const rowNode = rowElements[0];
+      const caretCell = rowNode.firstChild;
+      caretCell.innerHTML = CARET_SVG;
+      if (this.isCollapsed) {
+        caretCell.classList.add("caret-rotated");
+      } else {
+        caretCell.classList.remove("caret-rotated");
+      }
+    }
+    const subRowElements = this.collapseRows.flatMap(row => row.render(sorted));
+
+    return [...rowElements, ...subRowElements];
+  }
+}
 
 export class Table {
   constructor(data, columnConfigs, initSort, tableContainer, isVisible = true) {
@@ -312,7 +383,7 @@ export class Table {
     this.element = tableContainer.getElementsByTagName("table")[0];
     this.showOutliers = false;
 
-    this.validate(this.data, this.classNames, this.headers);
+    this.validate();
     this.searchCols = columnConfigs.map((config) => config.searchable);
     this.searchTerms = [];
     this.isTruncated = true;
@@ -330,12 +401,12 @@ export class Table {
 
   }
 
-  validate(data, classNames, headers) {
-    if (classNames.length !== headers.length) {
+  validate() {
+    if (this.classNames.length !== this.headers.length) {
       throw new Error("Number of class names does not match number of headers");
     }
-    if (data.some(row => row.data.length != headers.length)) {
-      throw new Error(`${headers.length} columns of data required`);
+    if (this.data.some(row => row.data.length != this.headers.length)) {
+      throw new Error(`${this.headers.length} columns of data required`);
     }
   }
 
@@ -346,9 +417,11 @@ export class Table {
 
     // set up search bar
     const searchMenu = this.container.getElementsByClassName("menu")[0];
-    const searchOptions = this.data.flatMap((row) =>
-      row.data.flatMap((value, i) => this.searchCols[i] ? [value] : [])
-    );
+    let searchOptions = this.data.flatMap((row) => {
+      const rowOptions = row.data.flatMap((value, i) => this.searchCols[i] ? [value] : []);
+      const subRowOptions = row.collapseData ? row.collapseData.map(subRow => subRow.data[1]) : [];
+      return rowOptions.concat(subRowOptions);
+    });
     // Current behavior is to alphabetically sort all options,
     // potentially mixing values from different columns
     // TODO: Consider dividing values by column
@@ -363,7 +436,7 @@ export class Table {
     const searchInput = this.container.getElementsByTagName("input")[0];
     searchInput.addEventListener("change", e => {
       const searchValue = e.target.value;
-      this.searchTerms = searchValue.split(",").filter(s => s !== "");
+      this.searchTerms = searchValue.split(";").filter(s => s !== "");
       this.rows = this.getRows();
       this.render();
     });
@@ -384,8 +457,11 @@ export class Table {
       const outlierButton = outlierButtons[0];
 
       outlierButton.addEventListener("click", (e) => {
-        const showOutliers = this.toggleOutliers();
-        e.target.className = showOutliers ? "outliers-btn showing" : "outliers-btn";
+        if (this.toggleOutliers()) {
+          e.target.classList.add("showing");
+        } else {
+          e.target.classList.remove("showing");
+        }
       });
     }
   }
@@ -407,45 +483,61 @@ export class Table {
     return new HeaderRow(headerCells);
   }
 
-  getRows() {
-    let numVisibleRows = 0;
-    return this.data.map((row, i) => {
-      // Specify how data will be rendered
-      const cells = row.data.map((cell, j) => {
-        let CellType = TextCell;
-        if (typeof(cell) == "number") {
-          CellType = NumberCell;
-        } else if (typeof(cell) == "object") {
-          if (cell["type"] === "bar") {
-            CellType = BarGraphCell;
-          } else if (cell["type"] === "line") {
-            CellType = NumberLineCell;
-          } else if (cell["type"] === "styled") {
-            CellType = StyledTextCell;
-          }
+  getCells(data, isOutlier) {
+    return data.map((cell, j) => {
+      let CellType = TextCell;
+      if (typeof(cell) == "number") {
+        CellType = NumberCell;
+      } else if (typeof(cell) == "object") {
+        if (cell["type"] === "bar") {
+          CellType = BarGraphCell;
+        } else if (cell["type"] === "line") {
+          CellType = NumberLineCell;
+        } else if (cell["type"] === "styled") {
+          CellType = StyledTextCell;
+        } else if (cell["type"] === "dist") {
+          CellType = DistributionBarCell;
         }
-        // for county names, append an asterisk if it's an outlier
-        if (j === 0 && row.outlier) cell += "*";
-        return new CellType(cell, this.classNames[j], this.headers[j]);
-      });
-      const isHidden = (this.isTruncated && numVisibleRows >= 10) ||
-        (row.outlier && !this.showOutliers) || !this.matchesSearchTerm(row);
-      if (!isHidden) numVisibleRows++;
-      return new BodyRow(cells, row.outlier, isHidden);
+      }
+      // for county names, append an asterisk if it's an outlier
+      // there could be an empty column for carets, ignore those
+      if (typeof(cell) === "string" && cell.length > 0 && j <= 1 && isOutlier) cell += "*";
+      return new CellType(cell, this.classNames[j], this.headers[j]);
     });
   }
 
-  matchesSearchTerm(row) {
-    if (this.searchTerms.length == 0) {
-      return true;
-    }
-    return this.searchTerms.some(searchTerm =>
-      row.data.some((value, i) =>
-        // Search term is selected from dropdown so
-        // is guaranteed to be equal to a value
-        this.searchCols[i] && value.toLowerCase() === searchTerm.toLowerCase()
-      )
-    );
+  getRows() {
+    let numVisibleRows = 0;
+    return this.data.map(row => {
+      // Specify how data will be rendered
+      const cells = this.getCells(row.data, row.outlier);
+      const isRowSearched = this.searchTerms.some(searchTerm =>
+        row.data.some((value, i) =>
+          // Search term is selected from dropdown so
+          // is guaranteed to be equal to a value
+          this.searchCols[i] && value.toLowerCase() === searchTerm.toLowerCase()));
+      const isTruncated = (this.isTruncated && numVisibleRows >= NUM_TRUNCATED_ROWS);
+      const isHiddenOutlier = row.outlier && !this.showOutliers;
+      const isRowVisible = isRowSearched || (!isTruncated && !isHiddenOutlier && this.searchTerms.length === 0);
+      if (row.collapseData !== undefined) {
+        const collapseRows = row.collapseData.map(collapseRow => {
+          const isSubRowSearched = this.searchTerms.some(searchTerm =>
+            // For simplicity, only the first sub-row column is searchable
+            collapseRow.data[1].toLowerCase() === searchTerm.toLowerCase()
+          );
+          const isSubRowHiddenOutlier = collapseRow.outlier && !this.showOutliers;
+          const isSubRowVisible = isSubRowSearched || (!row.isCollapsed && !isSubRowHiddenOutlier);
+          return new BodyRow(this.getCells(collapseRow.data, collapseRow.outlier), collapseRow.outlier, !isSubRowVisible);
+        });
+        const hasVisibleChildRow = collapseRows.some(bodyRow => !bodyRow.isHidden);
+        const isParentRowVisible = isRowVisible || hasVisibleChildRow;
+        if (isParentRowVisible) numVisibleRows += collapseRows.reduce((acc, bodyRow) => !bodyRow.isHidden ? acc + 1 : acc, 1);
+        return new CollapsibleBodyRow(cells, row.outlier, collapseRows, !isParentRowVisible, !hasVisibleChildRow && row.isCollapsed);
+      } else {
+        if (isRowVisible) numVisibleRows++;
+        return new BodyRow(cells, row.outlier, !isRowVisible);
+      }
+    });
   }
 
   setSortColumn(i) {
@@ -507,9 +599,18 @@ export class Table {
       tbody.textContent = "";
 
       // repopulate with updated rows
-      this.rows.forEach(row => {
-        row.render(this.sortCol);
-        tbody.appendChild(row.element);
+      this.rows.forEach((row, i) => {
+        const domNodes = row.render(this.sortCol);
+        domNodes.forEach(node => tbody.appendChild(node));
+
+        // set up collapse toggle
+        if (row instanceof CollapsibleBodyRow) {
+          row.element.addEventListener("click", () => {
+            this.data[i].isCollapsed = !row.isCollapsed;
+            this.rows = this.getRows();
+            this.render();
+          });
+        }
       });
     }
   }

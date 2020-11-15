@@ -1,5 +1,13 @@
 import { Table, SwitchableTable } from "./classes/Table.js";
-import { BAIL_RATE_DATA, BAIL_RACE_RATE_DATA, ROR_RATE_DATA, BAIL_RACE_AMOUNT_DATA } from "./data.js";
+import {
+  BAIL_RATE_DATA,
+  BAIL_RACE_RATE_DATA,
+  ROR_RATE_DATA,
+  BAIL_RACE_AMOUNT_DATA,
+  BAIL_POSTING_DATA,
+  BAIL_RETENTION_FEE_DATA,
+  PRETRIAL_SPENDING_DATA,
+  MDJ_DATA } from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -28,13 +36,13 @@ const createBailRateTable = () => {
     },
     {
       class: "bail-rate-cell number-cell",
-      header: "Cash Bail Rate (%)",
+      header: "Cash\xa0Bail Rate\xa0(%)",
       sortable: true,
       searchable: false
     },
     {
       class: "bail-cases-cell number-cell",
-      header: "Cash Bail Cases",
+      header: "Cash\xa0Bail Cases",
       sortable: true,
       searchable: false
     },
@@ -76,7 +84,7 @@ const createRorRateTable = () => {
     },
     {
       class: "ror-rate-cell number-cell",
-      header: "ROR Bail Rate (%)",
+      header: "ROR\xa0Bail Rate\xa0(%)",
       sortable: true,
       searchable: false
     },
@@ -128,13 +136,13 @@ const createBailRaceRateTable = () => {
     },
     {
       class: "bail-black-cell number-cell",
-      header: "% Cash Bail Black",
+      header: "Black\xa0(%)",
       sortable: true,
       searchable: false
     },
     {
       class: "bail-white-cell number-cell",
-      header: "% Cash Bail White",
+      header: "White\xa0(%)",
       sortable: true,
       searchable: false
     },
@@ -180,13 +188,13 @@ const createBailRaceAmountTable = () => {
     },
     {
       class: "bail-black-cell number-cell",
-      header: "Bail Amt Black",
+      header: "Black",
       sortable: true,
       searchable: false
     },
     {
       class: "bail-white-cell number-cell",
-      header: "Bail Amt White",
+      header: "White",
       sortable: true,
       searchable: false
     },
@@ -202,6 +210,166 @@ const createBailRaceAmountTable = () => {
   return new Table(BAIL_RACE_AMOUNT_DATA, columnConfigs, initSort, tableContainer, false);
 };
 
+const createBailPostingTable = () => {
+  const columnConfigs = [
+    {
+      class: "county-name-cell",
+      header: "County",
+      sortable: false,
+      searchable: true
+    },
+    {
+      class: "bail-amount-cell number-cell",
+      header: "Average Bail Set",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 100,
+        "averages": [
+          {
+            "name": "Avg.",
+            "value": 58.5211725
+          }
+        ],
+        "unit": "percent"
+      },
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "nonposting-rate-cell number-cell",
+      header: "Non-Posting Rate (%)",
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "num-incarcerated-cell number-cell",
+      header: "Number Incarcerated",
+      sortable: true,
+      searchable: false
+    },
+  ];
+  const initSort = 3;
+  const tableContainer = document.getElementById("bail-posting-container");
+  return new Table(BAIL_POSTING_DATA, columnConfigs, initSort, tableContainer);
+};
+
+const createBailRetentionFeeTable = () => {
+  const columnConfigs = [
+    {
+      class: "county-name-cell",
+      header: "County",
+      sortable: false,
+      searchable: true
+    },
+    {
+      class: "retention-fee-cell",
+      header: "Retention Fee",
+      sortable: false,
+      searchable: false
+    },
+  ];
+  const initSort = 0; // initially sort by difference
+  const tableContainer = document.getElementById("bail-retention-fee-container");
+  return new Table(BAIL_RETENTION_FEE_DATA, columnConfigs, initSort, tableContainer);
+};
+
+const createPretrialSpendingTable = () => {
+  const columnConfigs = [
+    {
+      class: "county-name-cell",
+      header: "",
+      sortable: false,
+      searchable: true
+    },
+    {
+      class: "spending-cell",
+      header: "Cost",
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "total-budget-cell",
+      header: "Total Budget",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "fraction-budget-cell number-cell",
+      header: "% of Budget",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 140,
+        "averages": [
+          {
+            "name": "",
+            "value": 62.4,
+          },
+        ],
+        "unit": "percent"
+      },
+      sortable: false,
+      searchable: false
+    }
+  ];
+  const initSort = 1;
+  const tableContainer = document.getElementById("pretrial-spending-container");
+  return new Table(PRETRIAL_SPENDING_DATA, columnConfigs, initSort, tableContainer);
+};
+
+const createMdjTable = () => {
+  const columnConfigs = [
+    {
+      class: "caret-cell",
+      header: "",
+      sortable: false,
+      searchable: false,
+    },
+    {
+      class: "county-name-cell",
+      header: "",
+      sortable: false,
+      searchable: true
+    },
+    {
+      class: "bail-rate-cell number-cell",
+      header: "Cash Bail Rate",
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-black-cell number-cell",
+      header: "Black",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "bail-white-cell number-cell",
+      header: "White",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "viz-cell bail-dist-cell",
+      header: "Bail Type Dist",
+      sortable: false,
+      searchable: false
+    },
+  ];
+  const initSort = 2;
+  const tableContainer = document.getElementById("mdj-container");
+  return new Table(MDJ_DATA, columnConfigs, initSort, tableContainer);
+};
+
 /* RENDER PAGE */
 const bailRateTable = createBailRateTable();
 const rorRateTable = createRorRateTable();
@@ -214,3 +382,8 @@ const bailRaceAmountTable = createBailRaceAmountTable();
 
 const raceContainer = document.getElementById("race-container");
 new SwitchableTable(bailRaceRateTable, bailRaceAmountTable, raceContainer);
+
+createBailPostingTable();
+createBailRetentionFeeTable();
+createPretrialSpendingTable();
+createMdjTable();

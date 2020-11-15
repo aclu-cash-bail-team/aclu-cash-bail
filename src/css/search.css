@@ -1,8 +1,14 @@
 /* Search Bar */
-.ui.fluid.dropdown {
+.search-container {
+  display: flex;
+}
+
+.ui.fluid.dropdown, .ui.fluid.dropdown:hover {
+  width: auto;
+  min-height: unset;
+  flex-grow: 1;
   background-color: #000;
   border: 1px #222 solid;
-  min-height: unset;
 }
 
 .ui.fluid.dropdown > .dropdown.icon {
@@ -34,6 +40,10 @@ i.icon.delete:before {
   padding-left: 0.25em;
 }
 
+i.icon.delete:hover {
+  cursor: pointer;
+}
+
 /* Dropdown */
 .ui.selection.active.dropdown {
   border-color: #222;
@@ -54,8 +64,9 @@ i.icon.delete:before {
 }
 
 .ui.selection.dropdown .menu > .item {
-  border-top: unset;
+  border-top: 0;
   color: #fff;
+  font-size: 11px;
 }
 
 .ui.dropdown.selected, .ui.dropdown .menu .selected.item {
