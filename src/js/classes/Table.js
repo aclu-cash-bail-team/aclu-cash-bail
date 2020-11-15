@@ -1,7 +1,7 @@
 const VIEW_ALL = "view all";
 const VIEW_LESS = "view less";
 const NUM_TRUNCATED_ROWS = 10;
-const CARET_SVG = `<svg class="carat" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+const CARET_SVG = `<svg class="caret" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7 0.999999L4 4L1 1" stroke="white" stroke-miterlimit="10"/>
 </svg>`;
 
@@ -201,7 +201,7 @@ class HeaderCell extends Cell {
       const classNameWithSort = this.getClassName();
       this.setElementClass(classNameWithSort, this.initSort);
 
-      // if this is a sortable column, create wrapper with carat and text
+      // if this is a sortable column, create wrapper with caret and text
       const wrapper = document.createElement("div");
       wrapper.className = "th-wrapper";
       wrapper.innerHTML = CARET_SVG;
