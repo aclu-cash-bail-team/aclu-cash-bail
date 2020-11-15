@@ -63,6 +63,7 @@ td {
 
 .retention-fee-cell {
   text-align: right;
+  min-width: 95px;
 }
 
 .sort-desc, .sort-asc {
@@ -75,7 +76,12 @@ td {
   transition: 0.3s ease;
 }
 
-.carat {
+.caret-cell {
+  min-width: 8px;
+  padding: 0.25em;
+}
+
+.caret {
   min-width: 8px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -83,11 +89,11 @@ td {
   opacity: 0;
 }
 
-.sort-asc .carat {
+.sort-asc .caret, .caret-rotated .caret {
   transform: rotateX(180deg);
 }
 
-.sorted .carat {
+.sorted .caret, .caret-cell .caret {
   opacity: 1;
 }
 
@@ -155,4 +161,12 @@ td {
 
 .negative-diff {
   color: #C14EF8;
+}
+
+tr.collapsible {
+  cursor: pointer;
+}
+
+tr.expanded {
+  background-color: #131313;
 }

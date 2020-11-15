@@ -6,7 +6,8 @@ import {
   BAIL_RACE_AMOUNT_DATA,
   BAIL_POSTING_DATA,
   BAIL_RETENTION_FEE_DATA,
-  PRETRIAL_SPENDING_DATA } from "./data.js";
+  PRETRIAL_SPENDING_DATA,
+  MDJ_DATA } from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -325,6 +326,50 @@ const createPretrialSpendingTable = () => {
   return new Table(PRETRIAL_SPENDING_DATA, columnConfigs, initSort, tableContainer);
 };
 
+const createMdjTable = () => {
+  const columnConfigs = [
+    {
+      class: "caret-cell",
+      header: "",
+      sortable: false,
+      searchable: false,
+    },
+    {
+      class: "county-name-cell",
+      header: "",
+      sortable: false,
+      searchable: true
+    },
+    {
+      class: "bail-rate-cell number-cell",
+      header: "Cash Bail Rate",
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-black-cell number-cell",
+      header: "Black",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "bail-white-cell number-cell",
+      header: "White",
+      sortable: false,
+      searchable: false
+    },
+    {
+      class: "viz-cell bail-dist-cell",
+      header: "Bail Type Dist",
+      sortable: false,
+      searchable: false
+    },
+  ];
+  const initSort = 2;
+  const tableContainer = document.getElementById("mdj-container");
+  return new Table(MDJ_DATA, columnConfigs, initSort, tableContainer);
+};
+
 /* RENDER PAGE */
 const bailRateTable = createBailRateTable();
 const rorRateTable = createRorRateTable();
@@ -338,6 +383,7 @@ const bailRaceAmountTable = createBailRaceAmountTable();
 const raceContainer = document.getElementById("race-container");
 new SwitchableTable(bailRaceRateTable, bailRaceAmountTable, raceContainer);
 
-const bailPostingTable = createBailPostingTable();
-const bailRetentionTable = createBailRetentionFeeTable();
-const pretrialSpendingTable = createPretrialSpendingTable();
+createBailPostingTable();
+createBailRetentionFeeTable();
+createPretrialSpendingTable();
+createMdjTable();

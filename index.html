@@ -137,6 +137,22 @@
         </table>
         <div class="view-all-btn"></div>
       </div>
+      <div class="table-container" id="mdj-container">
+        <div class="search-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select counties or judges</div>
+            <div class="menu"></div>
+          </div>
+          <div class="outliers-btn">Show Outliers</div>
+        </div>
+        <table id="mdj-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+        <div class="view-all-btn"></div>
+      </div>
     </div>
   </body>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script>
@@ -146,8 +162,8 @@
     <script>
       $(document).ready(() => {
         $('.dropdown').dropdown({
-          fullTextSearch: true,
           ignoreCase: true,
+          delimiter: ';',
           label: {
             transition: undefined,
             duration: 0,
