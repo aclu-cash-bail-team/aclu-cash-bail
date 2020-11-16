@@ -5,15 +5,19 @@
 
 .ui.fluid.dropdown {
   width: auto;
-  min-height: unset;
+  min-height: 33px;
   flex-grow: 1;
-  background-color: #000;
-  border: 0.5px #333 transparent;
+  background-color: #333;
+  border: 0.5px rgba(255, 255, 255, 0) solid;
 }
 
-.ui.fluid.dropdown:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  transition: 0.2s, ease;
+.ui.multiple.dropdown {
+  padding: 0;
+}
+
+.ui.fluid.dropdown:hover, .ui.fluid.dropdown:focus {
+  border: 0.5px rgba(255, 255, 255, 0.4) solid;
+  transition: border 0.2s ease;
 }
 
 .ui.fluid.dropdown > .dropdown.icon {
@@ -24,26 +28,35 @@
   color: #fff;
 }
 
+.ui.multiple.dropdown > .text,
+.ui.multiple.search.dropdown > .text {
+  margin: 0;
+  padding: 9px 20px;
+}
+
 /* Selection Label */
 .ui.multiple.dropdown > .label {
   background-color: #222;
   color: #fff;
   vertical-align: middle;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  border-radius: 10px;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.ui.multiple.dropdown > .label:first-of-type {
+  margin-left: 10px;
 }
 
 i.icon.delete {
-  margin-left: 0.25em;
-  border-left: 0.1em rgba(255, 255, 255, 0.1) solid;
+  margin-left: 10px;
 }
 
 i.icon.delete:before {
   content: "X";
   color: #5c5c5c;
   font-style: normal;
-  padding-left: 0.25em;
 }
 
 i.icon.delete:hover {
@@ -72,6 +85,7 @@ i.icon.delete:hover {
 }
 
 .ui.selection.dropdown .menu > .item {
+  padding-left: 20px;
   border-top: 0;
   color: #fff;
   font-size: 13px;
