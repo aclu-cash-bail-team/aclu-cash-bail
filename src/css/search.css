@@ -25,7 +25,10 @@
 }
 
 .ui.multiple.search.dropdown > input.search {
+  margin: 0;
+  padding: 9px 20px;
   color: #fff;
+  font-size: 13px;
 }
 
 .ui.multiple.dropdown > .text,
@@ -39,7 +42,7 @@
   background-color: #222;
   color: #fff;
   vertical-align: middle;
-  margin-top: 5px;
+  margin-top: 0;
   margin-left: 5px;
   padding: 5px 10px;
   border-radius: 15px;
@@ -47,6 +50,10 @@
 
 .ui.multiple.dropdown > .label:first-of-type {
   margin-left: 10px;
+}
+
+.ui.multiple.dropdown > .label:last-of-type {
+  margin-right: -10px;
 }
 
 i.icon.delete {
@@ -70,6 +77,10 @@ i.icon.delete:hover {
 
 .ui.selection.active.dropdown:hover {
   border-color: rgba(255, 255, 255, 0.4);
+}
+
+.ui.dropdown .menu {
+  background: #000;
 }
 
 .ui.selection.active.dropdown .menu {
