@@ -220,8 +220,14 @@ const createBailPostingTable = () => {
     },
     {
       class: "bail-amount-cell number-cell",
-      header: "Average Bail Set",
+      header: "Bail Set",
       sortable: false,
+      searchable: false
+    },
+    {
+      class: "nonposting-rate-cell number-cell",
+      header: "Non-Posting Rate",
+      sortable: true,
       searchable: false
     },
     {
@@ -240,20 +246,8 @@ const createBailPostingTable = () => {
       sortable: false,
       searchable: false
     },
-    {
-      class: "nonposting-rate-cell number-cell",
-      header: "Non-Posting Rate (%)",
-      sortable: true,
-      searchable: false
-    },
-    {
-      class: "num-incarcerated-cell number-cell",
-      header: "Number Incarcerated",
-      sortable: true,
-      searchable: false
-    },
   ];
-  const initSort = 3;
+  const initSort = 2;
   const tableContainer = document.getElementById("bail-posting-container");
   return new Table(BAIL_POSTING_DATA, columnConfigs, initSort, tableContainer);
 };
