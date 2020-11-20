@@ -262,7 +262,7 @@ class VizHeaderCell extends HeaderCell {
     averageWrapper.className = "average-wrapper";
     // offset the average elements by the value/end ratio (and subtract padding)
     averageElements.forEach((element, i) => {
-      element.style.left = `calc(${(averages[i]["value"] - start) / end * 100}%)`;
+      element.style.left = `calc(${(averages[i]["value"] - start) / end * 100}% + 6px)`;
       averageWrapper.appendChild(element);
     });
     // add all the elements to the cell
@@ -281,7 +281,9 @@ class VizHeaderCell extends HeaderCell {
     wrapper.appendChild(text);
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
-      wrapper.style.paddingLeft = `${4}px`;
+      wrapper.style.paddingLeft = `${10}px`;
+    } else if (className === "end-num" && content.toString().length <= 3) {
+      wrapper.style.paddingRight = `${8 - content.toString().length}px`;
     }
 
     // create the vertical tick underneath the number

@@ -1,6 +1,6 @@
 th.viz-cell {
   width: 120px;
-  padding: 13px 6px;
+  padding: 13px 0;
   font-family: "GT America";
   font-size: 11px;
   line-height: 13px;
@@ -32,11 +32,11 @@ th.bail-dist-cell {
 }
 
 .start-num .viz-line {
-  left: 7px;
+  left: 13px;
 }
 
 .end-num .viz-line {
-  right: 7px;
+  right: 13px;
 }
 
 .average-wrapper {
