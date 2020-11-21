@@ -1,6 +1,7 @@
 /* Search Bar */
 .search-container {
   display: flex;
+  align-items: center;
 }
 
 .ui.fluid.dropdown {
