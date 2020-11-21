@@ -234,10 +234,8 @@ class VizHeaderCell extends HeaderCell {
   }
 
   render() {
-    const vizColors = ["green", "purple"];
     const start = this.content["start"];
     const end = this.content["end"];
-    const averages = this.content["averages"];
     const unit = this.content["unit"];
 
     const cell = document.createElement("th");
@@ -247,26 +245,8 @@ class VizHeaderCell extends HeaderCell {
     const endText = unit === "dollars" ? `$${Math.round(end / 1000)}K` : end;
     const startElement = this.createTickElement(startText, "start-num");
     const endElement = this.createTickElement(endText, "end-num");
-    const averageElements = averages.map((average, i) => {
-      let text = "";
-      if (unit === "percent") {
-        text = `${average["name"]}<br>${average["value"].toFixed(1)}%`;
-      } else if (unit === "dollars") {
-        text =`${average["name"]}<br>$${Math.round(average["value"] / 1000)}K`;
-      }
-      const className = `average ${average["name"].toLowerCase()}`;
-      return this.createTickElement(text, className, vizColors[i]);
-    });
-    // create wrapper around averages for positioning
-    const averageWrapper = document.createElement("div");
-    averageWrapper.className = "average-wrapper";
-    // offset the average elements by the value/end ratio (and subtract padding)
-    averageElements.forEach((element, i) => {
-      element.style.left = `calc(${(averages[i]["value"] - start) / end * 100}% + 6px)`;
-      averageWrapper.appendChild(element);
-    });
     // add all the elements to the cell
-    [startElement, endElement, averageWrapper].forEach(element => {
+    [startElement, endElement].forEach(element => {
       cell.appendChild(element);
     });
     this.element = cell;
