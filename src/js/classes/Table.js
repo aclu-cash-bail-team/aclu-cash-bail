@@ -176,6 +176,8 @@ class HeaderCell extends Cell {
     // add event listener for sorting
     if (this.sortCol) {
       this.element.addEventListener("click", () => {
+        // always default to descending sort
+        if (this.table.sortCol !== this.id) this.sortDir = -1;
         const classNameWithSort = this.getClassName();
         this.table.setSortColumn(this.id);
         this.table.setSortDirection(this.sortDir);

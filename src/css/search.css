@@ -28,12 +28,12 @@
 .ui.multiple.dropdown > .text,
 .ui.multiple.search.dropdown > .text {
   margin: 0;
-  padding: 9px 20px;
+  padding: 10px 20px;
  }
 
 .ui.multiple.search.dropdown > input.search {
   margin: 0;
-  padding: 9px 20px;
+  padding: 10px 20px;
   color: #fff;
   font-size: 13px;
 }

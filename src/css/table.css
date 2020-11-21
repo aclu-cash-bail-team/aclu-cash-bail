@@ -54,6 +54,7 @@ td {
 
 .county-name-cell {
   min-width: 170px;
+  color: rgba(255, 255, 255, 1);
 }
 
 .th-wrapper {
@@ -124,7 +125,7 @@ td {
 
 .outliers-btn {
   margin-left: 1em;
-  padding: 9px 25px;
+  padding: 10px 15px;
   border: 1px #333 solid;
   cursor: pointer;
   user-select: none;
@@ -143,8 +144,9 @@ td {
 }
 
 .switch-container .switch {
+  width: 140px;
+  padding: 10px;
   border: 1px #333 solid;
-  padding: 9px 25px;
 }
 
 .switch.left {
