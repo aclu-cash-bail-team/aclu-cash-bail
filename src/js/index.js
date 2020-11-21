@@ -54,8 +54,21 @@ const createBailRateTable = () => {
     },
   ];
   const initSort = 2; // initially sort by cash bail rate
+  const stateData = [
+    "Pennsylvania",
+    {
+      "type": "bar",
+      "values": [
+        42.5966697900
+      ]
+    },
+    42.5966697900,
+    0,
+    0
+  ];
+
   const tableContainer = document.getElementById("bail-rate-container");
-  return new Table(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer, stateData, false);
 };
 
 const createRorRateTable = () => {
@@ -103,7 +116,7 @@ const createRorRateTable = () => {
   ];
   const initSort = 2; // initially sort by ror bail rate
   const tableContainer = document.getElementById("ror-rate-container");
-  return new Table(ROR_RATE_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(ROR_RATE_DATA, columnConfigs, initSort, tableContainer, [], false);
 };
 
 const createBailRaceRateTable = () => {
@@ -155,7 +168,7 @@ const createBailRaceRateTable = () => {
   ];
   const initSort = 4; // initially sort by difference
   const tableContainer = document.getElementById("bail-race-rate-container");
-  return new Table(BAIL_RACE_RATE_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(BAIL_RACE_RATE_DATA, columnConfigs, initSort, tableContainer, [], false);
 };
 
 const createBailRaceAmountTable = () => {
@@ -207,7 +220,7 @@ const createBailRaceAmountTable = () => {
   ];
   const initSort = 4; // initially sort by difference
   const tableContainer = document.getElementById("bail-race-amount-container");
-  return new Table(BAIL_RACE_AMOUNT_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(BAIL_RACE_AMOUNT_DATA, columnConfigs, initSort, tableContainer, [], false);
 };
 
 const createBailPostingTable = () => {

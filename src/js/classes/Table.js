@@ -320,10 +320,11 @@ class HeaderRow {
 
 
 class BodyRow {
-  constructor(cells, outlier, isHidden) {
+  constructor(cells, outlier, isHidden, isBold = false) {
     this.cells = cells;
     this.outlier = outlier;
     this.isHidden = isHidden;
+    this.isBold = isBold;
   }
 
   setIsHidden(isHidden) {
@@ -340,9 +341,8 @@ class BodyRow {
 
     row.className = "";
     this.cells.forEach((cell, i) => {
-      cell.setElementClass(
-        i === sorted ? `${cell.className} sorted` : cell.className
-      );
+      const classNames = `${cell.className} ${i === sorted ? "sorted" : ""} ${this.isBold ? "bold-cell" : ""}`;
+      cell.setElementClass(classNames);
       row.appendChild(cell.element);
     });
     return [this.element];
@@ -376,13 +376,14 @@ class CollapsibleBodyRow extends BodyRow {
 }
 
 export class Table {
-  constructor(data, columnConfigs, initSort, tableContainer, isVisible = true) {
+  constructor(data, columnConfigs, initSort, tableContainer, averageRowData = [], isVisible = true) {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
     this.container = tableContainer;
     this.element = tableContainer.getElementsByTagName("table")[0];
     this.showOutliers = false;
+    this.averageRowData = averageRowData;
 
     this.validate();
     this.searchCols = columnConfigs.map((config) => config.searchable);
@@ -509,7 +510,7 @@ export class Table {
 
   getRows() {
     let numVisibleRows = 0;
-    return this.data.map(row => {
+    const rows = this.data.map(row => {
       // Specify how data will be rendered
       const cells = this.getCells(row.data, row.outlier);
       const isRowSearched = this.searchTerms.some(searchTerm =>
@@ -539,6 +540,11 @@ export class Table {
         return new BodyRow(cells, row.outlier, !isRowVisible);
       }
     });
+    if (this.averageRowData.length > 0) {
+      const cells = this.getCells(this.averageRowData);
+      rows.unshift(new BodyRow(cells, false, false, true));
+    }
+    return rows;
   }
 
   setSortColumn(i) {
