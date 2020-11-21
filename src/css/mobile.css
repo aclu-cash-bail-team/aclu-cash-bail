@@ -58,7 +58,7 @@
 
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 425px) {
   th.viz-cell {
     width: 80px;
   }
@@ -71,7 +71,7 @@
     width: 80px;
   }
 
-  .diff-cell, .total-cases-cell, .total-budget-cell {
+  .diff-cell, .total-cases-cell {
     display: none;
   }
 }
