@@ -376,14 +376,14 @@ class CollapsibleBodyRow extends BodyRow {
 }
 
 export class Table {
-  constructor(data, columnConfigs, initSort, tableContainer, averageRowData = [], isVisible = true) {
+  constructor(data, columnConfigs, initSort, tableContainer, summaryRowData = [], isVisible = true) {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
     this.container = tableContainer;
     this.element = tableContainer.getElementsByTagName("table")[0];
     this.showOutliers = false;
-    this.averageRowData = averageRowData;
+    this.summaryRowData = summaryRowData;
 
     this.validate();
     this.searchCols = columnConfigs.map((config) => config.searchable);
@@ -540,8 +540,8 @@ export class Table {
         return new BodyRow(cells, row.outlier, !isRowVisible);
       }
     });
-    if (this.averageRowData.length > 0) {
-      const cells = this.getCells(this.averageRowData);
+    if (this.summaryRowData.length > 0) {
+      const cells = this.getCells(this.summaryRowData);
       rows.unshift(new BodyRow(cells, false, false, true));
     }
     return rows;
