@@ -63,8 +63,8 @@ const createBailRateTable = () => {
       ]
     },
     42.5966697900,
-    0,
-    0
+    2470,
+    5681
   ];
 
   const tableContainer = document.getElementById("bail-rate-container");
@@ -124,8 +124,8 @@ const createRorRateTable = () => {
       ]
     },
     22.73,
-    0,
-    0
+    1294,
+    5681
   ];
 
   const tableContainer = document.getElementById("ror-rate-container");
@@ -189,8 +189,8 @@ const createBailRaceRateTable = () => {
         37.0
       ]
     },
-    0,
-    0,
+    54.7,
+    37.0,
     0
   ];
 
@@ -248,7 +248,7 @@ const createBailRaceAmountTable = () => {
   ];
   const initSort = 4; // initially sort by difference
   const stateData = [
-    "Adams",
+    "Pennsylvania",
     {
       "type": "line",
       "values": [
@@ -256,8 +256,8 @@ const createBailRaceAmountTable = () => {
         27572.55514
       ]
     },
-    "$0",
-    "$0",
+    "$36,202",
+    "$26,868",
     0
   ];
 
@@ -305,8 +305,8 @@ const createBailPostingTable = () => {
   const initSort = 2;
   const stateData = [
     "Pennsylvania",
-    "0",
-    0,
+    "$31.8K",
+    58.5211725,
     {
       "type": "line",
       "values": [
@@ -384,9 +384,9 @@ const createPretrialSpendingTable = () => {
   ];
   const initSort = 1;
   const stateData = [
-    "Average",
-    "$0",
-    "$0",
+    "Pennsylvania",
+    "$10.1M",
+    "$16.1M",
     62.4,
     {
       "type": "bar",
