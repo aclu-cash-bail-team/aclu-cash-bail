@@ -13,7 +13,6 @@
 
   th.viz-cell {
     width: 100px;
-    padding: 1em 0.5em;
   }
 
   td.viz-cell {
@@ -32,9 +31,31 @@
     min-width: 100px;
   }
 
+  .total-bail-rate-cell {
+    min-width: unset;
+    padding-left: 0;
+  }
+
+  .bail-black-cell {
+    min-width: unset;
+  }
+
+  .bail-white-cell {
+    min-width: unset;
+  }
+
+  .caret-cell {
+    padding: 0;
+  }
+
   .bar-label {
     left: calc(100% + 0.5em);
   }
+
+.total-budget-cell {
+    display: none;
+}
+
 }
 
 @media only screen and (max-width: 400px) {
@@ -50,7 +71,7 @@
     width: 80px;
   }
 
-  .diff-cell, .total-cases-cell {
+  .diff-cell, .total-cases-cell, .total-budget-cell {
     display: none;
   }
 }

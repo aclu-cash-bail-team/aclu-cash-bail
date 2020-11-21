@@ -415,7 +415,7 @@ const createMdjTable = () => {
       searchable: true
     },
     {
-      class: "bail-rate-cell number-cell",
+      class: "total-bail-rate-cell number-cell",
       header: "Cash Bail Rate",
       sortable: true,
       searchable: false
@@ -434,7 +434,7 @@ const createMdjTable = () => {
     },
     {
       class: "viz-cell bail-dist-cell",
-      header: "Bail Type Dist",
+      header: "Bail Types",
       sortable: false,
       searchable: false
     },
