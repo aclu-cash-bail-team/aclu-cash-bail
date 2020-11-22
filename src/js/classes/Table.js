@@ -54,9 +54,10 @@ class StyledTextCell extends Cell {
 
 
 class NumberCell extends Cell {
-  constructor(content, className) {
+  constructor(content, className, data) {
     super(className);
-    this.content = content % 1 === 0 ? content.toLocaleString() : content.toFixed(1);
+    const isPercent = data["unit"] === "percent";
+    this.content = isPercent ? content.toFixed(1) : content.toLocaleString();
     this.render();
   }
 
@@ -285,6 +286,10 @@ class VizHeaderCell extends HeaderCell {
     if (className === "start-num" && content.toString().length === 1) {
       wrapper.style.paddingLeft = `${4}px`;
     }
+    // adjust padding based on number of digits
+    if (className === "end-num" && content.toString().length === 2) {
+      wrapper.style.paddingRight = `${1}px`;
+    }
 
     // create the vertical tick underneath the number
     const line = document.createElement("div");
@@ -469,9 +474,9 @@ export class Table {
 
   getHeaderRow() {
     const headerCells = this.headers.map((header, i) => {
-      const CellType = typeof(header) == "string" ? HeaderCell : VizHeaderCell;
+      const CellType = "text" in header ? HeaderCell : VizHeaderCell;
       return new CellType(
-        header,
+        CellType === HeaderCell ? header["text"] : header,
         this.classNames[i],
         this.sortCols[i],
         // 1 designates ascending; -1, descending (default); 0, not sortable

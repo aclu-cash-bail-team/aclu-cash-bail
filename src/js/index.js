@@ -14,7 +14,10 @@ const createBailRateTable = () => {
   const columnConfigs = [
     {
       class: "county-name-cell",
-      header: "County",
+      header: {
+        "text": "County",
+        "unit": ""
+      },
       sortable: false,
       searchable: true
     },
@@ -36,19 +39,28 @@ const createBailRateTable = () => {
     },
     {
       class: "bail-rate-cell number-cell",
-      header: "Cash\xa0Bail Rate\xa0(%)",
+      header: {
+        "text": "Rate\xa0(%)",
+        "unit": "percent"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "bail-cases-cell number-cell",
-      header: "Cash\xa0Bail Cases",
+      header: {
+        "text": "Cases",
+        "unit": "number"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "total-cases-cell number-cell",
-      header: "Total Cases",
+      header: {
+        "text": "Total",
+        "unit": "number"
+      },
       sortable: true,
       searchable: false
     },
@@ -62,7 +74,10 @@ const createRorRateTable = () => {
   const columnConfigs = [
     {
       class: "county-name-cell",
-      header: "County",
+      header: {
+        "text": "County",
+        "unit": ""
+      },
       sortable: false,
       searchable: true
     },
@@ -84,19 +99,28 @@ const createRorRateTable = () => {
     },
     {
       class: "ror-rate-cell number-cell",
-      header: "ROR\xa0Bail Rate\xa0(%)",
+      header: {
+        "text": "Rate\xa0(%)",
+        "unit": "percent"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "ror-cases-cell number-cell",
-      header: "ROR Cases",
+      header: {
+        "text": "Cases",
+        "unit": "number"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "total-cases-cell number-cell",
-      header: "Total Cases",
+      header: {
+        "text": "Cases",
+        "unit": "number"
+      },
       sortable: true,
       searchable: false
     },
@@ -110,7 +134,10 @@ const createBailRaceRateTable = () => {
   const columnConfigs = [
     {
       class: "county-name-cell",
-      header: "County",
+      header: {
+        "text": "County",
+        "unit": ""
+      },
       sortable: false,
       searchable: true
     },
@@ -136,19 +163,28 @@ const createBailRaceRateTable = () => {
     },
     {
       class: "bail-black-cell number-cell",
-      header: "Black\xa0(%)",
+      header: {
+        "text": "Black",
+        "unit": "percent"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "bail-white-cell number-cell",
-      header: "White\xa0(%)",
+      header: {
+        "text": "White",
+        "unit": "percent"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "diff-cell number-cell",
-      header: "Diff",
+      header: {
+        "text": "Gap",
+        "unit": "percent"
+      },
       sortable: true,
       searchable: false
     },
@@ -162,7 +198,10 @@ const createBailRaceAmountTable = () => {
   const columnConfigs = [
     {
       class: "county-name-cell",
-      header: "County",
+      header: {
+        "text": "County",
+        "unit": ""
+      },
       sortable: false,
       searchable: true
     },
@@ -188,19 +227,28 @@ const createBailRaceAmountTable = () => {
     },
     {
       class: "bail-black-cell number-cell",
-      header: "Black",
+      header: {
+        "text": "Black",
+        "unit": "dollars"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "bail-white-cell number-cell",
-      header: "White",
+      header: {
+        "text": "White",
+        "unit": "dollars"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "diff-cell number-cell",
-      header: "Diff",
+      header: {
+        "text": "Gap",
+        "unit": "dollars"
+      },
       sortable: true,
       searchable: false
     },
@@ -214,14 +262,20 @@ const createBailPostingTable = () => {
   const columnConfigs = [
     {
       class: "county-name-cell",
-      header: "County",
+      header: {
+        "text": "County",
+        "unit": ""
+      },
       sortable: false,
       searchable: true
     },
     {
       class: "bail-amount-cell number-cell",
-      header: "Average Bail Set",
-      sortable: false,
+      header: {
+        "text": "Bail Set",
+        "unit": "dollars"
+      },
+      sortable: true,
       searchable: false
     },
     {
@@ -242,13 +296,19 @@ const createBailPostingTable = () => {
     },
     {
       class: "nonposting-rate-cell number-cell",
-      header: "Non-Posting Rate (%)",
+      header: {
+        "text": "Non-Posting Rate (%)",
+        "unit": "percent"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "num-incarcerated-cell number-cell",
-      header: "Number Incarcerated",
+      header: {
+        "text": "Number Incarcerated",
+        "unit": "number"
+      },
       sortable: true,
       searchable: false
     },
@@ -262,13 +322,19 @@ const createBailRetentionFeeTable = () => {
   const columnConfigs = [
     {
       class: "county-name-cell",
-      header: "County",
+      header: {
+        "text": "County",
+        "unit": ""
+      },
       sortable: false,
       searchable: true
     },
     {
       class: "retention-fee-cell",
-      header: "Retention Fee",
+      header: {
+        "text": "Retention Fee",
+        "unit": "dollars"
+      },
       sortable: false,
       searchable: false
     },
@@ -282,25 +348,37 @@ const createPretrialSpendingTable = () => {
   const columnConfigs = [
     {
       class: "county-name-cell",
-      header: "",
+      header: {
+        "text": "",
+        "unit": ""
+      },
       sortable: false,
       searchable: true
     },
     {
       class: "spending-cell",
-      header: "Cost",
+      header: {
+        "text": "Cost",
+        "unit": "dollars"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "total-budget-cell",
-      header: "Total Budget",
+      header: {
+        "text": "Total Budget",
+        "unit": "dollars"
+      },
       sortable: false,
       searchable: false
     },
     {
       class: "fraction-budget-cell number-cell",
-      header: "% of Budget",
+      header: {
+        "text": "% of Budget",
+        "unit": "percent"
+      },
       sortable: false,
       searchable: false
     },
@@ -330,37 +408,56 @@ const createMdjTable = () => {
   const columnConfigs = [
     {
       class: "caret-cell",
-      header: "",
+      header: {
+        "text": "",
+        "unit": ""
+      },
       sortable: false,
       searchable: false,
     },
     {
       class: "county-name-cell",
-      header: "",
+      header: {
+        "text": "",
+        "unit": ""
+      },
       sortable: false,
       searchable: true
     },
     {
       class: "bail-rate-cell number-cell",
-      header: "Cash Bail Rate",
+      header: {
+        "text": "Cash Bail Rate",
+        "unit": "percent"
+      },
       sortable: true,
       searchable: false
     },
     {
       class: "bail-black-cell number-cell",
-      header: "Black",
+      header: {
+        "text": "Black",
+        "unit": "number"
+      },
       sortable: false,
       searchable: false
     },
     {
       class: "bail-white-cell number-cell",
-      header: "White",
+      header: {
+        "text": "White",
+        "unit": "number"
+      },
       sortable: false,
       searchable: false
     },
     {
       class: "viz-cell bail-dist-cell",
       header: "Bail Type Dist",
+      header: {
+        "text": "Total Cases",
+        "unit": "number"
+      },
       sortable: false,
       searchable: false
     },
