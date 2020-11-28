@@ -7181,21 +7181,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 55.68060922
+            "value": 55.68060922,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 43.554700000000004
+            "value": 43.554700000000004,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.0056
+            "value": 0.0056,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0.10640000000000001
+            "value": 0.10640000000000001,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Delaware"
       }
     ],
     "outlier": false,
@@ -7212,21 +7217,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 75.87
+                "value": 75.87,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 23.7
+                "value": 23.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Davis, Wilden H."
           }
         ],
         "outlier": false
@@ -7243,21 +7253,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 74.28
+                "value": 74.28,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 25.72
+                "value": 25.72,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Tenaglia, Leonard V."
           }
         ],
         "outlier": false
@@ -7274,21 +7289,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 74.02
+                "value": 74.02,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 25.08
+                "value": 25.08,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Seaton, Spencer B. Jr."
           }
         ],
         "outlier": false
@@ -7305,21 +7325,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 71.73
+                "value": 71.73,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 28.27
+                "value": 28.27,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gallagher, Vincent D. Jr."
           }
         ],
         "outlier": false
@@ -7336,21 +7361,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 71.53
+                "value": 71.53,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 28.47
+                "value": 28.47,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Berardocco, Ann"
           }
         ],
         "outlier": false
@@ -7367,21 +7397,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 71.18
+                "value": 71.18,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 28.6
+                "value": 28.6,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Sandone, Steven A."
           }
         ],
         "outlier": false
@@ -7398,21 +7433,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 69.26
+                "value": 69.26,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 30.57
+                "value": 30.57,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Loftus, Greg J."
           }
         ],
         "outlier": false
@@ -7429,21 +7469,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 62.88
+                "value": 62.88,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.12
+                "value": 37.12,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Radano, Robert J."
           }
         ],
         "outlier": false
@@ -7460,21 +7505,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 61.84
+                "value": 61.84,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.81
+                "value": 37.81,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Merkins, James"
           }
         ],
         "outlier": false
@@ -7491,21 +7541,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 61.05
+                "value": 61.05,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 38.67
+                "value": 38.67,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Turner, Phillip S."
           }
         ],
         "outlier": false
@@ -7522,21 +7577,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 60.52
+                "value": 60.52,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 39.48
+                "value": 39.48,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lippincott, Nicholas S."
           }
         ],
         "outlier": false
@@ -7553,21 +7613,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 60.36
+                "value": 60.36,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 39.49
+                "value": 39.49,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.15
+                "value": 0.15,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mattox, Christopher R."
           }
         ],
         "outlier": false
@@ -7584,21 +7649,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 59.06
+                "value": 59.06,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 40.94
+                "value": 40.94,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Tozer, Peter P."
           }
         ],
         "outlier": false
@@ -7615,21 +7685,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 57.44
+                "value": 57.44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 41.75
+                "value": 41.75,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Puppio, Andrea B."
           }
         ],
         "outlier": false
@@ -7646,21 +7721,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 57.36
+                "value": 57.36,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 41.98
+                "value": 41.98,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Karapalides, Harry J. Jr."
           }
         ],
         "outlier": false
@@ -7677,21 +7757,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 56.54
+                "value": 56.54,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 43.09
+                "value": 43.09,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.18
+                "value": 0.18,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Williams, W Keith II"
           }
         ],
         "outlier": false
@@ -7708,21 +7793,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.29
+                "value": 53.29,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 46.55
+                "value": 46.55,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Vann, Dawn L."
           }
         ],
         "outlier": false
@@ -7739,21 +7829,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 52.2
+                "value": 52.2,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 44.4
+                "value": 44.4,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.8
+                "value": 2.8,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hunter, Leon"
           }
         ],
         "outlier": false
@@ -7770,21 +7865,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 51.46
+                "value": 51.46,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 47.96
+                "value": 47.96,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Holefelder, Diane M."
           }
         ],
         "outlier": false
@@ -7801,21 +7901,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 51.33
+                "value": 51.33,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 48.67
+                "value": 48.67,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Griffin, David"
           }
         ],
         "outlier": false
@@ -7832,21 +7937,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.66
+                "value": 50.66,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 49.34
+                "value": 49.34,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Burke, Robert R."
           }
         ],
         "outlier": false
@@ -7863,21 +7973,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.21
+                "value": 50.21,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 49.16
+                "value": 49.16,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Strohl, Walter A."
           }
         ],
         "outlier": false
@@ -7894,21 +8009,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50
+                "value": 50,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 49.32
+                "value": 49.32,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Micozzie-Aguirre, Kelly A."
           }
         ],
         "outlier": false
@@ -7925,21 +8045,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 48.54
+                "value": 48.54,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 51.46
+                "value": 51.46,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Krull, Deborah A."
           }
         ],
         "outlier": false
@@ -7956,21 +8081,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.14
+                "value": 44.14,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 54.3
+                "value": 54.3,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Nistico, Charles"
           }
         ],
         "outlier": false
@@ -7987,21 +8117,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.49
+                "value": 43.49,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 53.65
+                "value": 53.65,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lacey, Thomas J."
           }
         ],
         "outlier": false
@@ -8018,21 +8153,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.1
+                "value": 43.1,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 56.8
+                "value": 56.8,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lippart, Jack D."
           }
         ],
         "outlier": false
@@ -8049,21 +8189,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.76
+                "value": 41.76,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 57.95
+                "value": 57.95,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.28
+                "value": 0.28,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lacianca, Elisa C."
           }
         ],
         "outlier": false
@@ -8080,21 +8225,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.43
+                "value": 34.43,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 60.45
+                "value": 60.45,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lang, David H."
           }
         ],
         "outlier": false
@@ -8111,21 +8261,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.33
+                "value": 33.33,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 54.61
+                "value": 54.61,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.71
+                "value": 0.71,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McCray, C. Walter III"
           }
         ],
         "outlier": false
@@ -8142,21 +8297,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 28.41
+                "value": 28.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 70.85
+                "value": 70.85,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "D'Agostino, Robert M."
           }
         ],
         "outlier": false
@@ -8173,21 +8333,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.98
+                "value": 27.98,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 71.76
+                "value": 71.76,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Roberts, Wendy B."
           }
         ],
         "outlier": false
@@ -8207,21 +8372,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 54.88215488
+            "value": 54.88215488,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 36.5018
+            "value": 36.5018,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.030699999999999998
+            "value": 0.030699999999999998,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 8.1388
+            "value": 8.1388,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Lehigh"
       }
     ],
     "outlier": false,
@@ -8238,21 +8408,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 68.18
+                "value": 68.18,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 31.55
+                "value": 31.55,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Manescu, Ronald S."
           }
         ],
         "outlier": false
@@ -8269,21 +8444,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 64.84
+                "value": 64.84,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 35.16
+                "value": 35.16,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Maura, Wayne"
           }
         ],
         "outlier": false
@@ -8300,21 +8480,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 63.99
+                "value": 63.99,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 36.01
+                "value": 36.01,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Pochron, Michael Joseph"
           }
         ],
         "outlier": false
@@ -8331,21 +8516,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 61.95
+                "value": 61.95,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.73
+                "value": 12.73,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 25.04
+                "value": 25.04,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Trexler, Daniel C."
           }
         ],
         "outlier": false
@@ -8362,21 +8552,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 60.72
+                "value": 60.72,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 33
+                "value": 33,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 5.95
+                "value": 5.95,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Santiago, Rashid"
           }
         ],
         "outlier": false
@@ -8393,21 +8588,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 59.62
+                "value": 59.62,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 38.79
+                "value": 38.79,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.27
+                "value": 1.27,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Butler, Donna R."
           }
         ],
         "outlier": false
@@ -8424,21 +8624,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 58.02
+                "value": 58.02,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 41.56
+                "value": 41.56,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Engler, Patricia M."
           }
         ],
         "outlier": false
@@ -8455,21 +8660,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 57.78
+                "value": 57.78,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 42.11
+                "value": 42.11,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Devine, Karen C."
           }
         ],
         "outlier": false
@@ -8486,21 +8696,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 57.1
+                "value": 57.1,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 42.9
+                "value": 42.9,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Howells, David M. Jr."
           }
         ],
         "outlier": false
@@ -8517,21 +8732,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.89
+                "value": 53.89,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 26.01
+                "value": 26.01,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 20.11
+                "value": 20.11,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Beck, Rod"
           }
         ],
         "outlier": false
@@ -8548,21 +8768,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.25
+                "value": 53.25,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 46.59
+                "value": 46.59,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Halal, Robert C."
           }
         ],
         "outlier": false
@@ -8579,21 +8804,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.37
+                "value": 50.37,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 49.63
+                "value": 49.63,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Crawford, Charles H."
           }
         ],
         "outlier": true
@@ -8610,21 +8840,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.1
+                "value": 50.1,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 21.83
+                "value": 21.83,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 27.98
+                "value": 27.98,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hammond, Jacob E."
           }
         ],
         "outlier": false
@@ -8641,21 +8876,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.59
+                "value": 42.59,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 19.3
+                "value": 19.3,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 36.84
+                "value": 36.84,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "D'Amore, Michael D."
           }
         ],
         "outlier": false
@@ -8672,21 +8912,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.49
+                "value": 41.49,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 58.24
+                "value": 58.24,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Faulkner, Michael J."
           }
         ],
         "outlier": false
@@ -8703,21 +8948,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.43
+                "value": 31.43,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 65
+                "value": 65,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.71
+                "value": 0.71,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Anthony, James T."
           }
         ],
         "outlier": true
@@ -8734,21 +8984,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.81
+                "value": 30.81,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 64.86
+                "value": 64.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dantos, Maria L."
           }
         ],
         "outlier": false
@@ -8768,21 +9023,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 52.635003250000004
+            "value": 52.635003250000004,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 37.931
+            "value": 37.931,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 7.563400000000001
+            "value": 7.563400000000001,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 1.8055
+            "value": 1.8055,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Lackawanna"
       }
     ],
     "outlier": false,
@@ -8799,21 +9059,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 67.94
+                "value": 67.94,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 19.77
+                "value": 19.77,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 8.97
+                "value": 8.97,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 3.32
+                "value": 3.32,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Giglio, Theodore J."
           }
         ],
         "outlier": false
@@ -8830,21 +9095,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 58.27
+                "value": 58.27,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 31.22
+                "value": 31.22,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 10.05
+                "value": 10.05,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.31
+                "value": 0.31,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Corbett, Joanne Price"
           }
         ],
         "outlier": false
@@ -8861,21 +9131,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 55.44
+                "value": 55.44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 35.38
+                "value": 35.38,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 7.81
+                "value": 7.81,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.38
+                "value": 1.38,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ware, Paul J."
           }
         ],
         "outlier": false
@@ -8892,21 +9167,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 55.3
+                "value": 55.3,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 42.52
+                "value": 42.52,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.71
+                "value": 1.71,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.31
+                "value": 0.31,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McGraw, Sean P."
           }
         ],
         "outlier": false
@@ -8923,21 +9203,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.91
+                "value": 53.91,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 27.33
+                "value": 27.33,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 14.77
+                "value": 14.77,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 3.99
+                "value": 3.99,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Pesota, John P."
           }
         ],
         "outlier": false
@@ -8954,21 +9239,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 52.27
+                "value": 52.27,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 39.94
+                "value": 39.94,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 4.25
+                "value": 4.25,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 3.4
+                "value": 3.4,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Keeler, Paul"
           }
         ],
         "outlier": false
@@ -8985,21 +9275,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 49.92
+                "value": 49.92,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 42.83
+                "value": 42.83,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 6.43
+                "value": 6.43,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.82
+                "value": 0.82,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Farrell, Alyce Hailstone"
           }
         ],
         "outlier": false
@@ -9016,21 +9311,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.17
+                "value": 46.17,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 50.71
+                "value": 50.71,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 2.98
+                "value": 2.98,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.13
+                "value": 0.13,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Turlip-Murphy, Laura"
           }
         ],
         "outlier": false
@@ -9047,21 +9347,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.52
+                "value": 38.52,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 47.7
+                "value": 47.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 12.59
+                "value": 12.59,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.19
+                "value": 1.19,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gallagher, Terrence V."
           }
         ],
         "outlier": false
@@ -9081,21 +9386,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 50.92425977
+            "value": 50.92425977,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 32.9706
+            "value": 32.9706,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.8427
+            "value": 0.8427,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 15.2172
+            "value": 15.2172,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Berks"
       }
     ],
     "outlier": false,
@@ -9112,21 +9422,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 95.81
+                "value": 95.81,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 4.03
+                "value": 4.03,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hall, William N. Jr."
           }
         ],
         "outlier": false
@@ -9143,21 +9458,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 82.72
+                "value": 82.72,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 16.82
+                "value": 16.82,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.46
+                "value": 0.46,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hadzick, Paul J."
           }
         ],
         "outlier": false
@@ -9174,21 +9494,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 67.48
+                "value": 67.48,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 32.19
+                "value": 32.19,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.33
+                "value": 0.33,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Robinson, Alvin B."
           }
         ],
         "outlier": false
@@ -9205,21 +9530,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 62.97
+                "value": 62.97,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 20.99
+                "value": 20.99,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 16.04
+                "value": 16.04,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kennedy, Stuart D."
           }
         ],
         "outlier": false
@@ -9236,21 +9566,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 57.02
+                "value": 57.02,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 42.98
+                "value": 42.98,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Glass, David E."
           }
         ],
         "outlier": false
@@ -9267,21 +9602,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 55.56
+                "value": 55.56,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 43.89
+                "value": 43.89,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.56
+                "value": 0.56,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kowalski, Phyllis J."
           }
         ],
         "outlier": false
@@ -9298,21 +9638,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 54.71
+                "value": 54.71,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 43.5
+                "value": 43.5,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.79
+                "value": 1.79,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Xavios, Thomas H."
           }
         ],
         "outlier": false
@@ -9329,21 +9674,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 51.4
+                "value": 51.4,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 20.73
+                "value": 20.73,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 27.86
+                "value": 27.86,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Scott, Kyley L."
           }
         ],
         "outlier": false
@@ -9360,21 +9710,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 45.8
+                "value": 45.8,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 54.08
+                "value": 54.08,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Patton, Dean R."
           }
         ],
         "outlier": false
@@ -9391,21 +9746,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.48
+                "value": 43.48,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 32.05
+                "value": 32.05,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 24.48
+                "value": 24.48,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Yoch, David L."
           }
         ],
         "outlier": false
@@ -9422,21 +9782,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.38
+                "value": 43.38,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 38.77
+                "value": 38.77,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 17.54
+                "value": 17.54,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Book, Andrea J."
           }
         ],
         "outlier": false
@@ -9453,21 +9818,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.23
+                "value": 43.23,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 32.3
+                "value": 32.3,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 24.47
+                "value": 24.47,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gauby, Thomas M. Sr."
           }
         ],
         "outlier": false
@@ -9484,21 +9854,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.58
+                "value": 37.58,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 27.11
+                "value": 27.11,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 35.31
+                "value": 35.31,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bentz, Nicholas M. Jr."
           }
         ],
         "outlier": false
@@ -9515,21 +9890,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.2
+                "value": 37.2,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 16.3
+                "value": 16.3,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 46.38
+                "value": 46.38,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Young, Ann L."
           }
         ],
         "outlier": false
@@ -9546,21 +9926,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.03
+                "value": 37.03,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.97
+                "value": 62.97,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Frederick, Victor M. IV"
           }
         ],
         "outlier": false
@@ -9577,21 +9962,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.95
+                "value": 34.95,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 65.05
+                "value": 65.05,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Greth, Gail M."
           }
         ],
         "outlier": false
@@ -9608,21 +9998,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.33
+                "value": 33.33,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 66.67
+                "value": 66.67,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hartman, Michael G."
           }
         ],
         "outlier": false
@@ -9639,21 +10034,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.79
+                "value": 31.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 29.71
+                "value": 29.71,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 38.27
+                "value": 38.27,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Fegley, Sandra L."
           }
         ],
         "outlier": false
@@ -9670,21 +10070,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.05
+                "value": 31.05,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 31.58
+                "value": 31.58,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.37
+                "value": 37.37,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bagenstose, Kim L."
           }
         ],
         "outlier": false
@@ -9701,21 +10106,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.9
+                "value": 29.9,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 6.7
+                "value": 6.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 63.4
+                "value": 63.4,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dougherty, Timothy M."
           }
         ],
         "outlier": false
@@ -9735,21 +10145,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 50.122163519999994
+            "value": 50.122163519999994,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 7.017900000000001
+            "value": 7.017900000000001,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 6.6315
+            "value": 6.6315,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 36.207699999999996
+            "value": 36.207699999999996,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Philadelphia"
       }
     ],
     "outlier": false,
@@ -9766,21 +10181,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 51.31
+                "value": 51.31,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 5.21
+                "value": 5.21,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.79
+                "value": 0.79,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 42.68
+                "value": 42.68,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Rebstock, Francis J."
           }
         ],
         "outlier": false
@@ -9797,21 +10217,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 51.06
+                "value": 51.06,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 16.32
+                "value": 16.32,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.83
+                "value": 1.83,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 30.77
+                "value": 30.77,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Rice, Jane M."
           }
         ],
         "outlier": false
@@ -9828,21 +10253,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.56
+                "value": 50.56,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 9.03
+                "value": 9.03,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 6.41
+                "value": 6.41,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34
+                "value": 34,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "O'Brien, James"
           }
         ],
         "outlier": false
@@ -9859,21 +10289,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.24
+                "value": 50.24,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.16
+                "value": 0.16,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.62
+                "value": 0.62,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 48.97
+                "value": 48.97,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Stack, Patrick"
           }
         ],
         "outlier": false
@@ -9890,21 +10325,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 49.04
+                "value": 49.04,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 3.47
+                "value": 3.47,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 12.8
+                "value": 12.8,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34.69
+                "value": 34.69,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bedford, Sheila M."
           }
         ],
         "outlier": false
@@ -9921,21 +10361,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47.39
+                "value": 47.39,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.03
+                "value": 2.03,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 13.4
+                "value": 13.4,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.17
+                "value": 37.17,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Devlin, Kevin R."
           }
         ],
         "outlier": false
@@ -9955,21 +10400,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 49.051792830000004
+            "value": 49.051792830000004,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 12.6554
+            "value": 12.6554,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 1.833
+            "value": 1.833,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 35.8145
+            "value": 35.8145,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Beaver"
       }
     ],
     "outlier": false,
@@ -9986,21 +10436,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 67.48
+                "value": 67.48,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 5.13
+                "value": 5.13,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 27.14
+                "value": 27.14,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Livingston, William R. II"
           }
         ],
         "outlier": false
@@ -10017,21 +10472,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 59.03
+                "value": 59.03,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.87
+                "value": 13.87,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.05
+                "value": 1.05,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.05
+                "value": 26.05,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hladio, Andrew M."
           }
         ],
         "outlier": false
@@ -10048,21 +10508,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.84
+                "value": 53.84,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.49
+                "value": 13.49,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.28
+                "value": 1.28,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 31.4
+                "value": 31.4,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Howe, Edward"
           }
         ],
         "outlier": false
@@ -10079,21 +10544,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.66
+                "value": 53.66,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.09
+                "value": 2.09,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 6.62
+                "value": 6.62,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.63
+                "value": 37.63,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Armour, John W."
           }
         ],
         "outlier": false
@@ -10110,21 +10580,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 52.62
+                "value": 52.62,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 3.39
+                "value": 3.39,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.7
+                "value": 1.7,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 42.15
+                "value": 42.15,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Loughner, C. Douglas."
           }
         ],
         "outlier": false
@@ -10141,21 +10616,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 51.94
+                "value": 51.94,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 14.4
+                "value": 14.4,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.11
+                "value": 1.11,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.41
+                "value": 32.41,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Swihart, Janet"
           }
         ],
         "outlier": false
@@ -10172,21 +10652,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47.45
+                "value": 47.45,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 17.96
+                "value": 17.96,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.46
+                "value": 1.46,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.13
+                "value": 33.13,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Nicholson, Dale"
           }
         ],
         "outlier": false
@@ -10203,21 +10688,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.12
+                "value": 42.12,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 17
+                "value": 17,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.25
+                "value": 1.25,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 39.62
+                "value": 39.62,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Schafer, Joseph"
           }
         ],
         "outlier": false
@@ -10234,21 +10724,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.84
+                "value": 31.84,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 23.2
+                "value": 23.2,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.59
+                "value": 1.59,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 43.37
+                "value": 43.37,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Finn, Timothy"
           }
         ],
         "outlier": false
@@ -10268,21 +10763,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 48.92407633
+            "value": 48.92407633,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 2.233
+            "value": 2.233,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 23.3455
+            "value": 23.3455,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 24.685299999999998
+            "value": 24.685299999999998,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Lawrence"
       }
     ],
     "outlier": false,
@@ -10299,21 +10799,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 65.79
+                "value": 65.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 1.7
+                "value": 1.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 20.71
+                "value": 20.71,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 11.66
+                "value": 11.66,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Amodie, Melissa Ann"
           }
         ],
         "outlier": false
@@ -10330,21 +10835,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 48.46
+                "value": 48.46,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 32.82
+                "value": 32.82,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 18.73
+                "value": 18.73,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Nicholson, Jennifer L."
           }
         ],
         "outlier": false
@@ -10361,21 +10871,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47.88
+                "value": 47.88,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 7.94
+                "value": 7.94,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 20.9
+                "value": 20.9,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 23.28
+                "value": 23.28,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McGrath, Scott"
           }
         ],
         "outlier": false
@@ -10392,21 +10907,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.13
+                "value": 40.13,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 1.64
+                "value": 1.64,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 20.72
+                "value": 20.72,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.5
+                "value": 37.5,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Rishel, David B."
           }
         ],
         "outlier": false
@@ -10423,21 +10943,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.82
+                "value": 27.82,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.11
+                "value": 2.11,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 28.17
+                "value": 28.17,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 41.9
+                "value": 41.9,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cartwright, Jerry G. Jr."
           }
         ],
         "outlier": false
@@ -10457,21 +10982,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 48.49498328
+            "value": 48.49498328,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 50.6355
+            "value": 50.6355,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.33440000000000003
+            "value": 0.33440000000000003,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0.46820000000000006
+            "value": 0.46820000000000006,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Mifflin"
       }
     ],
     "outlier": false,
@@ -10488,21 +11018,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 55.1
+                "value": 55.1,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 43.73
+                "value": 43.73,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.39
+                "value": 0.39,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.59
+                "value": 0.59,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Miller, Jack E."
           }
         ],
         "outlier": false
@@ -10519,21 +11054,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.95
+                "value": 50.95,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 48.63
+                "value": 48.63,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.42
+                "value": 0.42,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Reed, Jonathan W."
           }
         ],
         "outlier": true
@@ -10550,21 +11090,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.71
+                "value": 38.71,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 60.86
+                "value": 60.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.43
+                "value": 0.43,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Smith, Kent A."
           }
         ],
         "outlier": true
@@ -10584,21 +11129,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 45.835299670000005
+            "value": 45.835299670000005,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 36.5278
+            "value": 36.5278,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 1.9356000000000002
+            "value": 1.9356000000000002,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 15.213
+            "value": 15.213,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Northampton"
       }
     ],
     "outlier": false,
@@ -10615,21 +11165,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 63.3
+                "value": 63.3,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 30.64
+                "value": 30.64,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 5.87
+                "value": 5.87,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Matos-Gonzalez, Nancy"
           }
         ],
         "outlier": false
@@ -10646,21 +11201,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 57.62
+                "value": 57.62,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.47
+                "value": 37.47,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 4.91
+                "value": 4.91,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Corpora, Daniel G."
           }
         ],
         "outlier": false
@@ -10677,21 +11237,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 56.91
+                "value": 56.91,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 34.99
+                "value": 34.99,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 7.37
+                "value": 7.37,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Yetter, Richard H. III"
           }
         ],
         "outlier": false
@@ -10708,21 +11273,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 55.76
+                "value": 55.76,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 25.65
+                "value": 25.65,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 18.35
+                "value": 18.35,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Grifo, Antonia"
           }
         ],
         "outlier": false
@@ -10739,21 +11309,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 55.52
+                "value": 55.52,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 44.16
+                "value": 44.16,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.32
+                "value": 0.32,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Zito, Alicia Rose"
           }
         ],
         "outlier": false
@@ -10770,21 +11345,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.61
+                "value": 53.61,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 46.18
+                "value": 46.18,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.2
+                "value": 0.2,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hawke, Robert A."
           }
         ],
         "outlier": false
@@ -10801,21 +11381,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.58
+                "value": 53.58,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 26.97
+                "value": 26.97,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.18
+                "value": 0.18,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 18.9
+                "value": 18.9,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Taschner, Jacqueline M."
           }
         ],
         "outlier": false
@@ -10832,21 +11417,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 52.85
+                "value": 52.85,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 47.15
+                "value": 47.15,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Capobianco, John"
           }
         ],
         "outlier": false
@@ -10863,21 +11453,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47.81
+                "value": 47.81,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 17.19
+                "value": 17.19,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34.06
+                "value": 34.06,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Schlegel, Douglas"
           }
         ],
         "outlier": false
@@ -10894,21 +11489,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.04
+                "value": 46.04,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 48.48
+                "value": 48.48,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 5.49
+                "value": 5.49,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Manwaring, Roy A."
           }
         ],
         "outlier": false
@@ -10925,21 +11525,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.19
+                "value": 44.19,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 55.81
+                "value": 55.81,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Narlesky, James J."
           }
         ],
         "outlier": false
@@ -10956,21 +11561,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.69
+                "value": 39.69,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 60.12
+                "value": 60.12,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.2
+                "value": 0.2,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Broscius, Patricia C."
           }
         ],
         "outlier": false
@@ -10987,21 +11597,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.72
+                "value": 34.72,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.71
+                "value": 12.71,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 11.01
+                "value": 11.01,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 41.56
+                "value": 41.56,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Pendolino, Samuel V."
           }
         ],
         "outlier": false
@@ -11018,21 +11633,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.62
+                "value": 32.62,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 65.96
+                "value": 65.96,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Rapp, Anthony G. Jr."
           }
         ],
         "outlier": false
@@ -11049,21 +11669,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.2
+                "value": 30.2,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 3.88
+                "value": 3.88,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 20
+                "value": 20,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 45.51
+                "value": 45.51,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Zilhaver, Lincoln S."
           }
         ],
         "outlier": false
@@ -11080,21 +11705,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.44
+                "value": 27.44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 72.56
+                "value": 72.56,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Barner, Joseph K."
           }
         ],
         "outlier": false
@@ -11111,21 +11741,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 23.04
+                "value": 23.04,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 16.46
+                "value": 16.46,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 60.51
+                "value": 60.51,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Marwood, Rita J."
           }
         ],
         "outlier": true
@@ -11142,21 +11777,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 21.2
+                "value": 21.2,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 18.89
+                "value": 18.89,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 59.91
+                "value": 59.91,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Romig, Elizabeth A."
           }
         ],
         "outlier": false
@@ -11176,21 +11816,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 45.49865229
+            "value": 45.49865229,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 13.8544
+            "value": 13.8544,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 29.110500000000002
+            "value": 29.110500000000002,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 11.536399999999999
+            "value": 11.536399999999999,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Bradford"
       }
     ],
     "outlier": false,
@@ -11207,21 +11852,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 60.71
+                "value": 60.71,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.46
+                "value": 2.46,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 36.16
+                "value": 36.16,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.67
+                "value": 0.67,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Shaw, Michael"
           }
         ],
         "outlier": true
@@ -11238,21 +11888,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.23
+                "value": 42.23,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 49.22
+                "value": 49.22,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.55
+                "value": 1.55,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 6.99
+                "value": 6.99,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Wheaton, Fred M."
           }
         ],
         "outlier": true
@@ -11269,21 +11924,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.82
+                "value": 41.82,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 1.85
+                "value": 1.85,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 54.78
+                "value": 54.78,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.54
+                "value": 1.54,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Clark, Timothy M."
           }
         ],
         "outlier": true
@@ -11300,21 +11960,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.79
+                "value": 35.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.02
+                "value": 12.02,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 4.64
+                "value": 4.64,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 47.54
+                "value": 47.54,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Wilcox, Jonathan"
           }
         ],
         "outlier": true
@@ -11334,21 +11999,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 44.932404749999996
+            "value": 44.932404749999996,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 39.6443
+            "value": 39.6443,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.0902
+            "value": 0.0902,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 15.2283
+            "value": 15.2283,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Lancaster"
       }
     ],
     "outlier": false,
@@ -11365,21 +12035,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 64.32
+                "value": 64.32,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 35.44
+                "value": 35.44,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hamill, Nancy G."
           }
         ],
         "outlier": false
@@ -11396,21 +12071,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 63.41
+                "value": 63.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 30.46
+                "value": 30.46,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 6.13
+                "value": 6.13,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Jimenez, Janice"
           }
         ],
         "outlier": false
@@ -11427,21 +12107,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 62.44
+                "value": 62.44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 35.85
+                "value": 35.85,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.46
+                "value": 1.46,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Roth, Bruce A."
           }
         ],
         "outlier": false
@@ -11458,21 +12143,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 59.79
+                "value": 59.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 39.95
+                "value": 39.95,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Benner, William E. Jr."
           }
         ],
         "outlier": false
@@ -11489,21 +12179,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 59.6
+                "value": 59.6,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 31.82
+                "value": 31.82,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 8.59
+                "value": 8.59,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Sheller, Raymond S."
           }
         ],
         "outlier": false
@@ -11520,21 +12215,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 57.28
+                "value": 57.28,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 34.21
+                "value": 34.21,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 8.51
+                "value": 8.51,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hartman, Rodney H."
           }
         ],
         "outlier": false
@@ -11551,21 +12251,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 56.44
+                "value": 56.44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.02
+                "value": 37.02,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 6.53
+                "value": 6.53,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Russell, Tony S."
           }
         ],
         "outlier": false
@@ -11582,21 +12287,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.93
+                "value": 50.93,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 48.88
+                "value": 48.88,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mylin, Stuart J."
           }
         ],
         "outlier": false
@@ -11613,21 +12323,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.47
+                "value": 50.47,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 38.02
+                "value": 38.02,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 11.1
+                "value": 11.1,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Witkonis, Adam J."
           }
         ],
         "outlier": false
@@ -11644,21 +12359,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.11
+                "value": 50.11,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 40.7
+                "value": 40.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.97
+                "value": 1.97,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 7.22
+                "value": 7.22,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Tobin, Edward A."
           }
         ],
         "outlier": false
@@ -11675,21 +12395,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 49.06
+                "value": 49.06,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 50.94
+                "value": 50.94,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Albert, Scott E."
           }
         ],
         "outlier": false
@@ -11706,21 +12431,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47.41
+                "value": 47.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.7
+                "value": 37.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 14.89
+                "value": 14.89,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bixler, Miles K."
           }
         ],
         "outlier": false
@@ -11737,21 +12467,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.31
+                "value": 46.31,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 53.69
+                "value": 53.69,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Chudzik, Brian E."
           }
         ],
         "outlier": false
@@ -11768,21 +12503,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 45.52
+                "value": 45.52,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.11
+                "value": 37.11,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 17.38
+                "value": 17.38,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Miller, David P."
           }
         ],
         "outlier": false
@@ -11799,21 +12539,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.38
+                "value": 44.38,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 20.37
+                "value": 20.37,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34.97
+                "value": 34.97,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mongiovi-Sponaugle, Mary"
           }
         ],
         "outlier": false
@@ -11830,21 +12575,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.28
+                "value": 43.28,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 38.14
+                "value": 38.14,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 18.09
+                "value": 18.09,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Keller, Joshua R."
           }
         ],
         "outlier": false
@@ -11861,21 +12611,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.83
+                "value": 42.83,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.86
+                "value": 8.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 43.04
+                "value": 43.04,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Wilt, Richard S."
           }
         ],
         "outlier": false
@@ -11892,21 +12647,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.23
+                "value": 40.23,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 52.96
+                "value": 52.96,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 6.81
+                "value": 6.81,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Commins, B Denise"
           }
         ],
         "outlier": false
@@ -11923,21 +12683,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.06
+                "value": 40.06,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 59.94
+                "value": 59.94,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Jamison, Mary G."
           }
         ],
         "outlier": false
@@ -11954,21 +12719,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.62
+                "value": 32.62,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 63.64
+                "value": 63.64,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 3.74
+                "value": 3.74,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Duncan, Jayne F."
           }
         ],
         "outlier": false
@@ -11985,21 +12755,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.51
+                "value": 27.51,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 33.68
+                "value": 33.68,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 38.82
+                "value": 38.82,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gummo, Douglas L."
           }
         ],
         "outlier": false
@@ -12016,21 +12791,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 10.35
+                "value": 10.35,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 24.81
+                "value": 24.81,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 64.83
+                "value": 64.83,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Herman, Robert A. Jr."
           }
         ],
         "outlier": false
@@ -12047,21 +12827,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 6.41
+                "value": 6.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 46.45
+                "value": 46.45,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.23
+                "value": 0.23,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 46.91
+                "value": 46.91,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Reinaker, Dennis E."
           }
         ],
         "outlier": true
@@ -12081,21 +12866,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 44.29388101
+            "value": 44.29388101,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 33.629799999999996
+            "value": 33.629799999999996,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.0424
+            "value": 0.0424,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 21.6222
+            "value": 21.6222,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Cambria"
       }
     ],
     "outlier": false,
@@ -12112,21 +12902,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 55.29
+                "value": 55.29,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 19.62
+                "value": 19.62,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 25.09
+                "value": 25.09,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Musulin, Michael"
           }
         ],
         "outlier": false
@@ -12143,21 +12938,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 54.42
+                "value": 54.42,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 19.81
+                "value": 19.81,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 25.54
+                "value": 25.54,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Zanghi, Mary Ann"
           }
         ],
         "outlier": false
@@ -12174,21 +12974,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.68
+                "value": 53.68,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 45.92
+                "value": 45.92,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.4
+                "value": 0.4,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Varner, Rick W."
           }
         ],
         "outlier": false
@@ -12205,21 +13010,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 49.92
+                "value": 49.92,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.12
+                "value": 10.12,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 39.97
+                "value": 39.97,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Creany, Fred"
           }
         ],
         "outlier": false
@@ -12236,21 +13046,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.55
+                "value": 40.55,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 56.93
+                "value": 56.93,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.52
+                "value": 2.52,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Price, Kevin J."
           }
         ],
         "outlier": false
@@ -12267,21 +13082,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.68
+                "value": 37.68,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 40.08
+                "value": 40.08,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.2
+                "value": 0.2,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 22.04
+                "value": 22.04,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Prebish, John Jr."
           }
         ],
         "outlier": false
@@ -12298,21 +13118,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.07
+                "value": 36.07,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.54
+                "value": 37.54,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.39
+                "value": 26.39,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Barron, John W."
           }
         ],
         "outlier": false
@@ -12329,21 +13154,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.31
+                "value": 35.31,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 31.63
+                "value": 31.63,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.86
+                "value": 32.86,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Zungali, Michael"
           }
         ],
         "outlier": false
@@ -12363,21 +13193,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 44.27380952
+            "value": 44.27380952,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 15.765299999999998
+            "value": 15.765299999999998,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 5.7181999999999995
+            "value": 5.7181999999999995,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 33.3671
+            "value": 33.3671,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "York"
       }
     ],
     "outlier": false,
@@ -12394,21 +13229,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 81.79
+                "value": 81.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 17.45
+                "value": 17.45,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.11
+                "value": 0.11,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Meisenhelter, Douglas F."
           }
         ],
         "outlier": false
@@ -12425,21 +13265,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 74.9
+                "value": 74.9,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 21.84
+                "value": 21.84,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.2
+                "value": 0.2,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.65
+                "value": 2.65,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Martin, Richard E. II"
           }
         ],
         "outlier": false
@@ -12456,21 +13301,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 54.02
+                "value": 54.02,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 9.62
+                "value": 9.62,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 12.65
+                "value": 12.65,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 23.45
+                "value": 23.45,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Eshbach, David C."
           }
         ],
         "outlier": false
@@ -12487,21 +13337,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.55
+                "value": 53.55,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 19.84
+                "value": 19.84,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 2.58
+                "value": 2.58,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 23.87
+                "value": 23.87,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Clancy, Jennifer J.P."
           }
         ],
         "outlier": false
@@ -12518,21 +13373,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 51.83
+                "value": 51.83,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 15.27
+                "value": 15.27,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.51
+                "value": 1.51,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 30.75
+                "value": 30.75,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Morgan, James H."
           }
         ],
         "outlier": false
@@ -12549,21 +13409,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.99
+                "value": 50.99,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 27.23
+                "value": 27.23,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.99
+                "value": 0.99,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 20.79
+                "value": 20.79,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Groom, Walter"
           }
         ],
         "outlier": false
@@ -12580,21 +13445,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.54
+                "value": 50.54,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.78
+                "value": 2.78,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 14.37
+                "value": 14.37,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.15
+                "value": 32.15,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Williams, Linda L."
           }
         ],
         "outlier": false
@@ -12611,21 +13481,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 48.41
+                "value": 48.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 16.19
+                "value": 16.19,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 8.25
+                "value": 8.25,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 25.56
+                "value": 25.56,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Haskell, Ronald J. Jr."
           }
         ],
         "outlier": false
@@ -12642,21 +13517,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.99
+                "value": 46.99,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 5.61
+                "value": 5.61,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 14.37
+                "value": 14.37,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.75
+                "value": 32.75,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bloss, Barry L."
           }
         ],
         "outlier": false
@@ -12673,21 +13553,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.07
+                "value": 46.07,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 6.5
+                "value": 6.5,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.22
+                "value": 1.22,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 46.07
+                "value": 46.07,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Miner, James S."
           }
         ],
         "outlier": false
@@ -12704,21 +13589,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.35
+                "value": 43.35,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 16.45
+                "value": 16.45,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 5.15
+                "value": 5.15,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34.91
+                "value": 34.91,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Manifold, Laura S."
           }
         ],
         "outlier": false
@@ -12735,21 +13625,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.05
+                "value": 43.05,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 7.08
+                "value": 7.08,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 13.35
+                "value": 13.35,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 36.38
+                "value": 36.38,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Laird, Scott"
           }
         ],
         "outlier": false
@@ -12766,21 +13661,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.99
+                "value": 41.99,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 23.72
+                "value": 23.72,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.45
+                "value": 0.45,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.53
+                "value": 33.53,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Toluba, Joel N."
           }
         ],
         "outlier": false
@@ -12797,21 +13697,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.36
+                "value": 41.36,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 17.48
+                "value": 17.48,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 6.29
+                "value": 6.29,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34.54
+                "value": 34.54,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gross, Scott J."
           }
         ],
         "outlier": false
@@ -12828,21 +13733,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.73
+                "value": 40.73,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 31.53
+                "value": 31.53,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 2.65
+                "value": 2.65,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 25.09
+                "value": 25.09,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Albright, Keith L."
           }
         ],
         "outlier": false
@@ -12859,21 +13769,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.78
+                "value": 39.78,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 14.66
+                "value": 14.66,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 8.89
+                "value": 8.89,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34.32
+                "value": 34.32,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Thomas, Richard T."
           }
         ],
         "outlier": false
@@ -12890,21 +13805,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.6
+                "value": 39.6,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 28.6
+                "value": 28.6,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.2
+                "value": 1.2,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 30.6
+                "value": 30.6,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Reilly, Thomas J."
           }
         ],
         "outlier": false
@@ -12921,21 +13841,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.35
+                "value": 36.35,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 14.3
+                "value": 14.3,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.36
+                "value": 0.36,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 48.75
+                "value": 48.75,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dubs, Dwayne A."
           }
         ],
         "outlier": false
@@ -12952,21 +13877,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.2
+                "value": 33.2,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.05
+                "value": 12.05,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 2.41
+                "value": 2.41,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 52.34
+                "value": 52.34,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Eckenrode, Robert A."
           }
         ],
         "outlier": false
@@ -12983,21 +13913,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.29
+                "value": 31.29,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 7.59
+                "value": 7.59,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 7.19
+                "value": 7.19,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 50.6
+                "value": 50.6,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Fishel, John H."
           }
         ],
         "outlier": false
@@ -13014,21 +13949,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.24
+                "value": 30.24,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 21.36
+                "value": 21.36,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 2.57
+                "value": 2.57,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 45.43
+                "value": 45.43,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Oberdorf, Jeffrey L."
           }
         ],
         "outlier": false
@@ -13045,21 +13985,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 21.35
+                "value": 21.35,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 48.88
+                "value": 48.88,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.69
+                "value": 1.69,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 24.16
+                "value": 24.16,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ness, Harry M."
           }
         ],
         "outlier": false
@@ -13076,21 +14021,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 18.12
+                "value": 18.12,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.35
+                "value": 2.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.18
+                "value": 1.18,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 78.12
+                "value": 78.12,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Edie, Nancy L."
           }
         ],
         "outlier": false
@@ -13110,21 +14060,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 44.27074081
+            "value": 44.27074081,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 54.6505
+            "value": 54.6505,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0.7825000000000001
+            "value": 0.7825000000000001,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Fayette"
       }
     ],
     "outlier": false,
@@ -13141,21 +14096,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 52.58
+                "value": 52.58,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 47.25
+                "value": 47.25,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Jeffries, Jennifer L."
           }
         ],
         "outlier": false
@@ -13172,21 +14132,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.96
+                "value": 46.96,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 52.88
+                "value": 52.88,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.16
+                "value": 0.16,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dennis, Wendy D."
           }
         ],
         "outlier": false
@@ -13203,21 +14168,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 45.95
+                "value": 45.95,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 53.93
+                "value": 53.93,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Haggerty, Ronald J. Sr."
           }
         ],
         "outlier": false
@@ -13234,21 +14204,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 45.89
+                "value": 45.89,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 54.11
+                "value": 54.11,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Shimshock, Daniel C."
           }
         ],
         "outlier": false
@@ -13265,21 +14240,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 45.41
+                "value": 45.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 54.49
+                "value": 54.49,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Metros, Michael"
           }
         ],
         "outlier": false
@@ -13296,21 +14276,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.78
+                "value": 40.78,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 58.78
+                "value": 58.78,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Defino, Michael J. Jr."
           }
         ],
         "outlier": false
@@ -13327,21 +14312,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.85
+                "value": 37.85,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.15
+                "value": 62.15,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kasunic, Richard II"
           }
         ],
         "outlier": false
@@ -13361,21 +14351,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 43.95330739
+            "value": 43.95330739,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 18.932
+            "value": 18.932,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.6072
+            "value": 0.6072,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 36.493900000000004
+            "value": 36.493900000000004,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Erie"
       }
     ],
     "outlier": false,
@@ -13392,21 +14387,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 97.36
+                "value": 97.36,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.35
+                "value": 2.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.29
+                "value": 0.29,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dipaolo, Dominick"
           }
         ],
         "outlier": false
@@ -13423,21 +14423,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 91.02
+                "value": 91.02,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.38
+                "value": 8.38,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.3
+                "value": 0.3,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.3
+                "value": 0.3,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Carney, Thomas"
           }
         ],
         "outlier": false
@@ -13454,21 +14459,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 60.68
+                "value": 60.68,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.04
+                "value": 10.04,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 4.49
+                "value": 4.49,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 24.57
+                "value": 24.57,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mack, Suzanne C."
           }
         ],
         "outlier": false
@@ -13485,21 +14495,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 60.33
+                "value": 60.33,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 6.05
+                "value": 6.05,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.46
+                "value": 1.46,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.15
+                "value": 32.15,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Urbaniak, Paul G."
           }
         ],
         "outlier": false
@@ -13516,21 +14531,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 48.66
+                "value": 48.66,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.36
+                "value": 13.36,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.76
+                "value": 0.76,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.21
+                "value": 37.21,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bizzarro, Paul A."
           }
         ],
         "outlier": false
@@ -13547,21 +14567,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.32
+                "value": 43.32,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.06
+                "value": 13.06,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 43.62
+                "value": 43.62,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hammer, Scott B."
           }
         ],
         "outlier": false
@@ -13578,21 +14603,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.37
+                "value": 38.37,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 61.39
+                "value": 61.39,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mackendrick, Chris K."
           }
         ],
         "outlier": false
@@ -13609,21 +14639,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.71
+                "value": 37.71,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 7.63
+                "value": 7.63,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 2.12
+                "value": 2.12,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 52.54
+                "value": 52.54,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Fischer, Deborah"
           }
         ],
         "outlier": false
@@ -13640,21 +14675,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.25
+                "value": 35.25,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.18
+                "value": 62.18,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.57
+                "value": 2.57,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Manzi, Paul"
           }
         ],
         "outlier": false
@@ -13671,21 +14711,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.14
+                "value": 32.14,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 9.29
+                "value": 9.29,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 58.1
+                "value": 58.1,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Stuck-Lewis, Denise"
           }
         ],
         "outlier": false
@@ -13702,21 +14747,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.93
+                "value": 29.93,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.73
+                "value": 0.73,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 55.84
+                "value": 55.84,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 13.14
+                "value": 13.14,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Muir, Shannon L."
           }
         ],
         "outlier": false
@@ -13733,21 +14783,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.22
+                "value": 27.22,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 9.07
+                "value": 9.07,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.57
+                "value": 0.57,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 63.14
+                "value": 63.14,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Strohmeyer, Susan D."
           }
         ],
         "outlier": false
@@ -13764,21 +14819,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.17
+                "value": 25.17,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.2
+                "value": 10.2,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 25.85
+                "value": 25.85,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 38.1
+                "value": 38.1,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cooper, Alan B."
           }
         ],
         "outlier": true
@@ -13795,21 +14855,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 24.31
+                "value": 24.31,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.24
+                "value": 12.24,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 63.45
+                "value": 63.45,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Krahe, Mark R."
           }
         ],
         "outlier": false
@@ -13826,21 +14891,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 18.8
+                "value": 18.8,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 17.54
+                "value": 17.54,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 63.67
+                "value": 63.67,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McGowan, Brian M."
           }
         ],
         "outlier": false
@@ -13857,21 +14927,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 17.81
+                "value": 17.81,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.44
+                "value": 13.44,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 68.75
+                "value": 68.75,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Nichols, Brenda"
           }
         ],
         "outlier": true
@@ -13891,21 +14966,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 43.50802205
+            "value": 43.50802205,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 2.7704
+            "value": 2.7704,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 23.8085
+            "value": 23.8085,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 29.5724
+            "value": 29.5724,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Allegheny"
       }
     ],
     "outlier": false,
@@ -13922,21 +15002,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 85.43
+                "value": 85.43,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.64
+                "value": 0.64,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 3.72
+                "value": 3.72,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 10.21
+                "value": 10.21,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Welsh, Regis C."
           }
         ],
         "outlier": false
@@ -13953,21 +15038,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 75.62
+                "value": 75.62,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 15.89
+                "value": 15.89,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 8.39
+                "value": 8.39,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cramer, Jesse J."
           }
         ],
         "outlier": false
@@ -13984,21 +15074,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 73.89
+                "value": 73.89,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.87
+                "value": 0.87,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 8.57
+                "value": 8.57,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 16.57
+                "value": 16.57,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Brletic, Thomas S."
           }
         ],
         "outlier": false
@@ -14015,21 +15110,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 73.79
+                "value": 73.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 19.59
+                "value": 19.59,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 6.49
+                "value": 6.49,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Tibbs, Edward A."
           }
         ],
         "outlier": false
@@ -14046,21 +15146,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 71.38
+                "value": 71.38,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 18.73
+                "value": 18.73,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 9.89
+                "value": 9.89,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Barner, Robert L."
           }
         ],
         "outlier": false
@@ -14077,21 +15182,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 67.19
+                "value": 67.19,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 25.28
+                "value": 25.28,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 7.53
+                "value": 7.53,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Armour, John W."
           }
         ],
         "outlier": false
@@ -14108,21 +15218,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 58.39
+                "value": 58.39,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 18.08
+                "value": 18.08,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 23.53
+                "value": 23.53,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Costa, Ron Sr."
           }
         ],
         "outlier": false
@@ -14139,21 +15254,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.89
+                "value": 53.89,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 19.07
+                "value": 19.07,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 27.04
+                "value": 27.04,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ricciardi, Gene"
           }
         ],
         "outlier": false
@@ -14170,21 +15290,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.25
+                "value": 53.25,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 24.68
+                "value": 24.68,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 22.08
+                "value": 22.08,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Martini, Randy"
           }
         ],
         "outlier": false
@@ -14201,21 +15326,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 51.79
+                "value": 51.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 19.98
+                "value": 19.98,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 28.24
+                "value": 28.24,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Motznik, James A."
           }
         ],
         "outlier": false
@@ -14232,21 +15362,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 51.42
+                "value": 51.42,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 35.31
+                "value": 35.31,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 13.03
+                "value": 13.03,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hromyak, Leonard J."
           }
         ],
         "outlier": false
@@ -14263,21 +15398,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 49.86
+                "value": 49.86,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 6.09
+                "value": 6.09,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 44.04
+                "value": 44.04,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Miller, Thomas Jr."
           }
         ],
         "outlier": false
@@ -14294,21 +15434,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 49.29
+                "value": 49.29,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 1.42
+                "value": 1.42,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 16.27
+                "value": 16.27,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.02
+                "value": 33.02,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bengel, Carolyn S."
           }
         ],
         "outlier": false
@@ -14325,21 +15470,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 48.64
+                "value": 48.64,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 25
+                "value": 25,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.36
+                "value": 26.36,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Butler, Daniel E."
           }
         ],
         "outlier": false
@@ -14356,21 +15506,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47.09
+                "value": 47.09,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.26
+                "value": 0.26,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 14.29
+                "value": 14.29,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 38.36
+                "value": 38.36,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Larotonda, Blaise P."
           }
         ],
         "outlier": false
@@ -14387,21 +15542,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47.05
+                "value": 47.05,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.21
+                "value": 0.21,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 26.37
+                "value": 26.37,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.37
+                "value": 26.37,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Sosovicka, David J."
           }
         ],
         "outlier": false
@@ -14418,21 +15578,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.63
+                "value": 46.63,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 1.23
+                "value": 1.23,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 20.86
+                "value": 20.86,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 31.29
+                "value": 31.29,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Shaffer, Peter H."
           }
         ],
         "outlier": false
@@ -14449,21 +15614,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.46
+                "value": 46.46,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.02
+                "value": 8.02,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 19.03
+                "value": 19.03,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.49
+                "value": 26.49,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Stephens, Craig C."
           }
         ],
         "outlier": false
@@ -14480,21 +15650,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.59
+                "value": 44.59,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.55
+                "value": 10.55,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 7.21
+                "value": 7.21,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.12
+                "value": 37.12,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kovach, David T."
           }
         ],
         "outlier": false
@@ -14511,21 +15686,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.31
+                "value": 44.31,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.29
+                "value": 0.29,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 36.73
+                "value": 36.73,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 18.08
+                "value": 18.08,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Joyce, Dennis R."
           }
         ],
         "outlier": false
@@ -14542,21 +15722,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44
+                "value": 44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.46
+                "value": 2.46,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 25.08
+                "value": 25.08,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 28.46
+                "value": 28.46,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cooper, Kevin E."
           }
         ],
         "outlier": false
@@ -14573,21 +15758,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.47
+                "value": 43.47,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.25
+                "value": 2.25,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 10.28
+                "value": 10.28,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 42.29
+                "value": 42.29,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Fullerton, William T."
           }
         ],
         "outlier": false
@@ -14604,21 +15794,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.25
+                "value": 43.25,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.99
+                "value": 0.99,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 44.84
+                "value": 44.84,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 10.71
+                "value": 10.71,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Martin, Armand"
           }
         ],
         "outlier": false
@@ -14635,21 +15830,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.92
+                "value": 41.92,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.33
+                "value": 0.33,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 23.16
+                "value": 23.16,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34.42
+                "value": 34.42,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Riazzi, Eugene F. Jr."
           }
         ],
         "outlier": false
@@ -14666,21 +15866,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.74
+                "value": 40.74,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 16.52
+                "value": 16.52,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 42.74
+                "value": 42.74,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mills, Beth S."
           }
         ],
         "outlier": false
@@ -14697,21 +15902,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.35
+                "value": 40.35,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 3.31
+                "value": 3.31,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 26.37
+                "value": 26.37,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.83
+                "value": 29.83,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ceoffe, Anthony M."
           }
         ],
         "outlier": false
@@ -14728,21 +15938,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.83
+                "value": 39.83,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 15.93
+                "value": 15.93,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 41.09
+                "value": 41.09,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 3.14
+                "value": 3.14,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Arnoni, Ronald"
           }
         ],
         "outlier": false
@@ -14759,21 +15974,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.55
+                "value": 39.55,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 24.44
+                "value": 24.44,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 36.01
+                "value": 36.01,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Petite, Oscar J. Jr."
           }
         ],
         "outlier": false
@@ -14790,21 +16010,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.55
+                "value": 39.55,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.4
+                "value": 0.4,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 29.69
+                "value": 29.69,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 30.36
+                "value": 30.36,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Rushing, Derwin"
           }
         ],
         "outlier": false
@@ -14821,21 +16046,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.9
+                "value": 38.9,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.54
+                "value": 2.54,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 25.19
+                "value": 25.19,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.37
+                "value": 33.37,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hanley, James J. Jr."
           }
         ],
         "outlier": false
@@ -14852,21 +16082,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.71
+                "value": 38.71,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.59
+                "value": 0.59,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 14.37
+                "value": 14.37,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 46.33
+                "value": 46.33,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Saveikis, Anthony William"
           }
         ],
         "outlier": false
@@ -14883,21 +16118,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.51
+                "value": 38.51,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 7.14
+                "value": 7.14,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 11.8
+                "value": 11.8,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 42.55
+                "value": 42.55,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Wagner, William"
           }
         ],
         "outlier": false
@@ -14914,21 +16154,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.19
+                "value": 36.19,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 6.61
+                "value": 6.61,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 38.13
+                "value": 38.13,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 19.07
+                "value": 19.07,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Smith, Tara"
           }
         ],
         "outlier": false
@@ -14945,21 +16190,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.28
+                "value": 34.28,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 31.44
+                "value": 31.44,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34.28
+                "value": 34.28,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ravenstahl, Robert P. Jr."
           }
         ],
         "outlier": false
@@ -14976,21 +16226,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.96
+                "value": 33.96,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 4.4
+                "value": 4.4,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 15.47
+                "value": 15.47,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 45.28
+                "value": 45.28,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Stoughton, Lewis E."
           }
         ],
         "outlier": false
@@ -15007,21 +16262,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.17
+                "value": 33.17,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 21.88
+                "value": 21.88,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 44.71
+                "value": 44.71,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "DeLuca, Anthony"
           }
         ],
         "outlier": false
@@ -15038,21 +16298,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.07
+                "value": 32.07,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 8.73
+                "value": 8.73,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 59.01
+                "value": 59.01,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dzvonick, Robert Paul"
           }
         ],
         "outlier": false
@@ -15069,21 +16334,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.56
+                "value": 31.56,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.28
+                "value": 0.28,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 66.48
+                "value": 66.48,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.68
+                "value": 1.68,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ford, Robert L."
           }
         ],
         "outlier": false
@@ -15100,21 +16370,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.23
+                "value": 31.23,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 1.67
+                "value": 1.67,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 43.12
+                "value": 43.12,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 23.98
+                "value": 23.98,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Olasz, Richard D. Jr."
           }
         ],
         "outlier": false
@@ -15131,21 +16406,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.79
+                "value": 30.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.45
+                "value": 2.45,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 47.41
+                "value": 47.41,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 19.35
+                "value": 19.35,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "King, Richard G."
           }
         ],
         "outlier": false
@@ -15162,21 +16442,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.69
+                "value": 30.69,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.94
+                "value": 12.94,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 4.38
+                "value": 4.38,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 51.36
+                "value": 51.36,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Haggerty, Sue"
           }
         ],
         "outlier": false
@@ -15193,21 +16478,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30
+                "value": 30,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 30
+                "value": 30,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 39.6
+                "value": 39.6,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Zucco, Linda"
           }
         ],
         "outlier": false
@@ -15224,21 +16514,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.88
+                "value": 29.88,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.3
+                "value": 0.3,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 64.2
+                "value": 64.2,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 5.62
+                "value": 5.62,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Caulfield, Thomas"
           }
         ],
         "outlier": false
@@ -15255,21 +16550,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.03
+                "value": 29.03,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.56
+                "value": 0.56,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 4.68
+                "value": 4.68,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 65.73
+                "value": 65.73,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Schricker, Scott H."
           }
         ],
         "outlier": false
@@ -15286,21 +16586,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.58
+                "value": 27.58,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 58.18
+                "value": 58.18,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 14.24
+                "value": 14.24,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Swearingen-Batch, Carla M."
           }
         ],
         "outlier": false
@@ -15317,21 +16622,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.55
+                "value": 27.55,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 6.02
+                "value": 6.02,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 18.52
+                "value": 18.52,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 47.92
+                "value": 47.92,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Eichler, Roxanne Sakoian"
           }
         ],
         "outlier": false
@@ -15348,21 +16658,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.52
+                "value": 27.52,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 10.74
+                "value": 10.74,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 61.74
+                "value": 61.74,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Barton, David J."
           }
         ],
         "outlier": false
@@ -15379,21 +16694,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.38
+                "value": 27.38,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.86
+                "value": 0.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 19.02
+                "value": 19.02,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 52.74
+                "value": 52.74,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McGraw-Desmet, Maureen"
           }
         ],
         "outlier": false
@@ -15410,21 +16730,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.27
+                "value": 27.27,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 40.19
+                "value": 40.19,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.54
+                "value": 32.54,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lang, Elissa M."
           }
         ],
         "outlier": false
@@ -15441,21 +16766,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.22
+                "value": 25.22,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 61.74
+                "value": 61.74,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 13.04
+                "value": 13.04,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cercone, Mary A."
           }
         ],
         "outlier": false
@@ -15472,21 +16802,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 24.7
+                "value": 24.7,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 16.95
+                "value": 16.95,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 30.75
+                "value": 30.75,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 27.6
+                "value": 27.6,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Opiela, Richard J."
           }
         ],
         "outlier": false
@@ -15503,21 +16838,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 24.17
+                "value": 24.17,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.19
+                "value": 0.19,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 10.72
+                "value": 10.72,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 64.91
+                "value": 64.91,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kaiser, Ralph"
           }
         ],
         "outlier": false
@@ -15534,21 +16874,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 24.11
+                "value": 24.11,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 29.36
+                "value": 29.36,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 46.3
+                "value": 46.3,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Swan, Tom"
           }
         ],
         "outlier": false
@@ -15565,21 +16910,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 23.33
+                "value": 23.33,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.83
+                "value": 0.83,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 42.5
+                "value": 42.5,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Shaffer, William"
           }
         ],
         "outlier": true
@@ -15596,21 +16946,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 22.8
+                "value": 22.8,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.16
+                "value": 0.16,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 36.48
+                "value": 36.48,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 40.25
+                "value": 40.25,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Murray, Mary P."
           }
         ],
         "outlier": false
@@ -15627,21 +16982,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 20.58
+                "value": 20.58,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.08
+                "value": 12.08,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 18.57
+                "value": 18.57,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 48.32
+                "value": 48.32,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Seibel, Wayne D."
           }
         ],
         "outlier": true
@@ -15658,21 +17018,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 17.67
+                "value": 17.67,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 13.25
+                "value": 13.25,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 68.88
+                "value": 68.88,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Herbst, Jeffrey L."
           }
         ],
         "outlier": false
@@ -15689,21 +17054,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 7.91
+                "value": 7.91,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 1.35
+                "value": 1.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 68.69
+                "value": 68.69,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 21.72
+                "value": 21.72,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Manning, Jeffrey A."
           }
         ],
         "outlier": false
@@ -15723,21 +17093,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 42.44132779
+            "value": 42.44132779,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 37.7645
+            "value": 37.7645,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 1.0226000000000002
+            "value": 1.0226000000000002,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 18.4838
+            "value": 18.4838,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Dauphin"
       }
     ],
     "outlier": false,
@@ -15754,21 +17129,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 90.57
+                "value": 90.57,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8
+                "value": 8,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.43
+                "value": 1.43,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Shugars, Raymond F."
           }
         ],
         "outlier": false
@@ -15785,21 +17165,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 84.79
+                "value": 84.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 14.86
+                "value": 14.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.35
+                "value": 0.35,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Semic, Steven M."
           }
         ],
         "outlier": false
@@ -15816,21 +17201,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 65.83
+                "value": 65.83,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 32.5
+                "value": 32.5,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.17
+                "value": 1.17,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Zozos, George A."
           }
         ],
         "outlier": false
@@ -15847,21 +17237,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 59.16
+                "value": 59.16,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 40.7
+                "value": 40.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Pianka, Barbara"
           }
         ],
         "outlier": false
@@ -15878,21 +17273,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.32
+                "value": 50.32,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 49.04
+                "value": 49.04,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.64
+                "value": 0.64,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Zozos, Paul T."
           }
         ],
         "outlier": false
@@ -15909,21 +17309,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.95
+                "value": 46.95,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 20.58
+                "value": 20.58,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.32
+                "value": 32.32,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Witmer, Lowell A."
           }
         ],
         "outlier": false
@@ -15940,21 +17345,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.25
+                "value": 42.25,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 56.97
+                "value": 56.97,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.77
+                "value": 0.77,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lenker, James A."
           }
         ],
         "outlier": false
@@ -15971,21 +17381,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.78
+                "value": 41.78,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.12
+                "value": 12.12,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 46.1
+                "value": 46.1,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Wenner, William C."
           }
         ],
         "outlier": false
@@ -16002,21 +17417,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.08
+                "value": 40.08,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 24.7
+                "value": 24.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 35.22
+                "value": 35.22,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lenker, Kenneth A."
           }
         ],
         "outlier": false
@@ -16033,21 +17453,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.06
+                "value": 39.06,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 25.84
+                "value": 25.84,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34.51
+                "value": 34.51,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McKnight, Sonya M."
           }
         ],
         "outlier": false
@@ -16064,21 +17489,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.99
+                "value": 38.99,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 19.75
+                "value": 19.75,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 41.13
+                "value": 41.13,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Judy, David H."
           }
         ],
         "outlier": false
@@ -16095,21 +17525,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.03
+                "value": 35.03,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 61.86
+                "value": 61.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.22
+                "value": 2.22,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "O'Leary, David"
           }
         ],
         "outlier": false
@@ -16126,21 +17561,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.87
+                "value": 33.87,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 29.77
+                "value": 29.77,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 36.36
+                "value": 36.36,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Margerum, Rebecca J."
           }
         ],
         "outlier": false
@@ -16157,21 +17597,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.86
+                "value": 33.86,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 66.14
+                "value": 66.14,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lindsey, Joseph S."
           }
         ],
         "outlier": false
@@ -16188,21 +17633,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.43
+                "value": 31.43,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 68.34
+                "value": 68.34,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.23
+                "value": 0.23,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Smith, Michael J."
           }
         ],
         "outlier": false
@@ -16219,21 +17669,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.92
+                "value": 30.92,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.22
+                "value": 12.22,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 56.56
+                "value": 56.56,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Johnson, Gregory D."
           }
         ],
         "outlier": false
@@ -16250,21 +17705,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 24.61
+                "value": 24.61,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.62
+                "value": 10.62,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 15.25
+                "value": 15.25,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 49.42
+                "value": 49.42,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Pelino, Dominic"
           }
         ],
         "outlier": false
@@ -16284,21 +17744,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 42.381348880000004
+            "value": 42.381348880000004,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 52.5042
+            "value": 52.5042,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.0835
+            "value": 0.0835,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 4.9249
+            "value": 4.9249,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "McKean"
       }
     ],
     "outlier": false,
@@ -16315,21 +17780,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.85
+                "value": 46.85,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 50.45
+                "value": 50.45,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.7
+                "value": 2.7,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Engman, David Richard"
           }
         ],
         "outlier": true
@@ -16346,21 +17816,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.11
+                "value": 42.11,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 49.86
+                "value": 49.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 7.48
+                "value": 7.48,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cercone, Dominic Jr."
           }
         ],
         "outlier": false
@@ -16377,21 +17852,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.07
+                "value": 42.07,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 54.37
+                "value": 54.37,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.32
+                "value": 0.32,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.91
+                "value": 2.91,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Todd, William K."
           }
         ],
         "outlier": true
@@ -16408,21 +17888,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.74
+                "value": 39.74,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 55.05
+                "value": 55.05,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 5.21
+                "value": 5.21,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Luther, Richard W."
           }
         ],
         "outlier": true
@@ -16442,21 +17927,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 41.05888709
+            "value": 41.05888709,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 12.371699999999999
+            "value": 12.371699999999999,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 3.2954999999999997
+            "value": 3.2954999999999997,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 43.2739
+            "value": 43.2739,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Armstrong"
       }
     ],
     "outlier": false,
@@ -16473,21 +17963,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 60.57
+                "value": 60.57,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 38.57
+                "value": 38.57,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.86
+                "value": 0.86,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Andring, James"
           }
         ],
         "outlier": true
@@ -16504,21 +17999,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.05
+                "value": 40.05,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.74
+                "value": 10.74,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.06
+                "value": 1.06,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 48.14
+                "value": 48.14,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Owen, James H."
           }
         ],
         "outlier": false
@@ -16535,21 +18035,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.65
+                "value": 35.65,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 1.19
+                "value": 1.19,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 8.15
+                "value": 8.15,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 55.01
+                "value": 55.01,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Decomo, J. Gary"
           }
         ],
         "outlier": false
@@ -16569,21 +18074,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 40.61393152
+            "value": 40.61393152,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 15.112200000000001
+            "value": 15.112200000000001,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 2.2432
+            "value": 2.2432,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 42.030699999999996
+            "value": 42.030699999999996,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Warren"
       }
     ],
     "outlier": true,
@@ -16600,21 +18110,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 45.68
+                "value": 45.68,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 20.37
+                "value": 20.37,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.31
+                "value": 0.31,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.64
+                "value": 33.64,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Carlson, Glenn S."
           }
         ],
         "outlier": true
@@ -16631,21 +18146,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.16
+                "value": 35.16,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 6.39
+                "value": 6.39,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 8.22
+                "value": 8.22,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 50.23
+                "value": 50.23,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bauer, Laura"
           }
         ],
         "outlier": true
@@ -16662,21 +18182,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.83
+                "value": 32.83,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 16.23
+                "value": 16.23,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 50.94
+                "value": 50.94,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Woodin, Todd A."
           }
         ],
         "outlier": true
@@ -16696,21 +18221,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 40.32663317
+            "value": 40.32663317,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 33.2075
+            "value": 33.2075,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.8805000000000001
+            "value": 0.8805000000000001,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 25.5346
+            "value": 25.5346,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Susquehanna"
       }
     ],
     "outlier": true,
@@ -16727,21 +18257,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.19
+                "value": 53.19,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.59
+                "value": 37.59,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 9.22
+                "value": 9.22,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hollister, Jeffrey L."
           }
         ],
         "outlier": true
@@ -16758,21 +18293,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.69
+                "value": 35.69,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 24.92
+                "value": 24.92,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 39.06
+                "value": 39.06,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cordner, Jodi L."
           }
         ],
         "outlier": true
@@ -16789,21 +18329,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.09
+                "value": 30.09,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 38.89
+                "value": 38.89,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 3.24
+                "value": 3.24,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 27.78
+                "value": 27.78,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Brainard, Suzanne M."
           }
         ],
         "outlier": true
@@ -16823,21 +18368,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 40
+            "value": 40,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 34.2169
+            "value": 34.2169,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.0803
+            "value": 0.0803,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 25.702799999999996
+            "value": 25.702799999999996,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Clarion"
       }
     ],
     "outlier": false,
@@ -16854,21 +18404,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.41
+                "value": 44.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 52.35
+                "value": 52.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 3.24
+                "value": 3.24,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Miller, Jeffrey C."
           }
         ],
         "outlier": true
@@ -16885,21 +18440,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.53
+                "value": 43.53,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 18.82
+                "value": 18.82,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.65
+                "value": 37.65,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Schill, Timothy P."
           }
         ],
         "outlier": true
@@ -16916,21 +18476,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.9
+                "value": 37.9,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 29.03
+                "value": 29.03,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.27
+                "value": 0.27,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.8
+                "value": 32.8,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Quinn, Duane L."
           }
         ],
         "outlier": false
@@ -16947,21 +18512,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.21
+                "value": 29.21,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.64
+                "value": 37.64,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.15
+                "value": 33.15,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Long Turk, Amy L."
           }
         ],
         "outlier": true
@@ -16981,21 +18551,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 38.96907216
+            "value": 38.96907216,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 30.3158
+            "value": 30.3158,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 29.6842
+            "value": 29.6842,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Huntingdon"
       }
     ],
     "outlier": false,
@@ -17012,21 +18587,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.54
+                "value": 43.54,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.14
+                "value": 8.14,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 43.01
+                "value": 43.01,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Wilt, Richard"
           }
         ],
         "outlier": false
@@ -17043,21 +18623,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.78
+                "value": 41.78,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 58.22
+                "value": 58.22,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Jamison, Mary"
           }
         ],
         "outlier": false
@@ -17074,21 +18659,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 26.93
+                "value": 26.93,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 34.66
+                "value": 34.66,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 38.41
+                "value": 38.41,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gummo, Douglas L."
           }
         ],
         "outlier": false
@@ -17108,21 +18698,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 38.93688681
+            "value": 38.93688681,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 34.2627
+            "value": 34.2627,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.9538
+            "value": 0.9538,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 25.663999999999998
+            "value": 25.663999999999998,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Washington"
       }
     ],
     "outlier": false,
@@ -17139,21 +18734,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.38
+                "value": 53.38,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 46.17
+                "value": 46.17,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.3
+                "value": 0.3,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hopkins, Larry W."
           }
         ],
         "outlier": false
@@ -17170,21 +18770,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.38
+                "value": 53.38,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 22.84
+                "value": 22.84,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 23.78
+                "value": 23.78,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Wilson, Mark"
           }
         ],
         "outlier": false
@@ -17201,21 +18806,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50
+                "value": 50,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.66
+                "value": 12.66,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.34
+                "value": 37.34,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Havelka, Gary H."
           }
         ],
         "outlier": false
@@ -17232,21 +18842,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 49.1
+                "value": 49.1,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 50.45
+                "value": 50.45,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.23
+                "value": 0.23,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ward, Ethan T."
           }
         ],
         "outlier": false
@@ -17263,21 +18878,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.93
+                "value": 43.93,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 38.54
+                "value": 38.54,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 17.42
+                "value": 17.42,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Redlinger, Robert W."
           }
         ],
         "outlier": false
@@ -17294,21 +18914,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.65
+                "value": 40.65,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 7.31
+                "value": 7.31,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 4.22
+                "value": 4.22,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 47.54
+                "value": 47.54,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mark, David W."
           }
         ],
         "outlier": false
@@ -17325,21 +18950,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.55
+                "value": 34.55,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 65.21
+                "value": 65.21,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Thompson, Curtis"
           }
         ],
         "outlier": false
@@ -17356,21 +18986,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.19
+                "value": 31.19,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 11.93
+                "value": 11.93,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 56.88
+                "value": 56.88,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ellis, James C."
           }
         ],
         "outlier": false
@@ -17387,21 +19022,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.04
+                "value": 29.04,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 70.03
+                "value": 70.03,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kanalis, Joshua P."
           }
         ],
         "outlier": false
@@ -17418,21 +19058,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29
+                "value": 29,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 3
+                "value": 3,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 3.2
+                "value": 3.2,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 64.5
+                "value": 64.5,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Weller, Jay"
           }
         ],
         "outlier": false
@@ -17449,21 +19094,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 28.08
+                "value": 28.08,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 52.36
+                "value": 52.36,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 19.38
+                "value": 19.38,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McDonald, Traci L."
           }
         ],
         "outlier": false
@@ -17483,21 +19133,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 38.70437956
+            "value": 38.70437956,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 56.2432
+            "value": 56.2432,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.6207
+            "value": 0.6207,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 3.5232
+            "value": 3.5232,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Lebanon"
       }
     ],
     "outlier": false,
@@ -17514,21 +19169,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 48.29
+                "value": 48.29,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 51.71
+                "value": 51.71,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Capello, Thomas M."
           }
         ],
         "outlier": false
@@ -17545,21 +19205,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.51
+                "value": 42.51,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 57.35
+                "value": 57.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Garver, Carl Russell"
           }
         ],
         "outlier": false
@@ -17576,21 +19241,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.89
+                "value": 40.89,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 59.11
+                "value": 59.11,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Wolfe, Kim R."
           }
         ],
         "outlier": false
@@ -17607,21 +19277,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.43
+                "value": 40.43,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.53
+                "value": 0.53,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 2.13
+                "value": 2.13,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 43.09
+                "value": 43.09,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kline, Samuel A."
           }
         ],
         "outlier": true
@@ -17638,21 +19313,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.21
+                "value": 38.21,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 61.79
+                "value": 61.79,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Jones, Charles T. Jr."
           }
         ],
         "outlier": true
@@ -17669,21 +19349,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.64
+                "value": 35.64,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 64.25
+                "value": 64.25,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Verna, Anthony J."
           }
         ],
         "outlier": false
@@ -17700,21 +19385,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.26
+                "value": 35.26,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 64.62
+                "value": 64.62,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.12
+                "value": 0.12,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dissinger, Maria M."
           }
         ],
         "outlier": false
@@ -17731,21 +19421,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.14
+                "value": 29.14,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.66
+                "value": 0.66,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 55.63
+                "value": 55.63,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Charles, Bradford H."
           }
         ],
         "outlier": true
@@ -17762,21 +19457,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.04
+                "value": 29.04,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 69.1
+                "value": 69.1,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.86
+                "value": 1.86,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ditzler, John W."
           }
         ],
         "outlier": false
@@ -17796,21 +19496,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 38.63636364
+            "value": 38.63636364,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 59.5588
+            "value": 59.5588,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 1.8048000000000002
+            "value": 1.8048000000000002,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Bedford"
       }
     ],
     "outlier": false,
@@ -17827,21 +19532,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.85
+                "value": 44.85,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 55.15
+                "value": 55.15,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bingham, H. Cyril Jr."
           }
         ],
         "outlier": false
@@ -17858,21 +19568,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.85
+                "value": 37.85,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 58.84
+                "value": 58.84,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 3.31
+                "value": 3.31,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Baker, Brian K."
           }
         ],
         "outlier": true
@@ -17889,21 +19604,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.06
+                "value": 37.06,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 60.14
+                "value": 60.14,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.8
+                "value": 2.8,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Calhoun, Kathy S."
           }
         ],
         "outlier": true
@@ -17920,21 +19640,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.8
+                "value": 30.8,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 68.06
+                "value": 68.06,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.14
+                "value": 1.14,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Osman, Tonya M."
           }
         ],
         "outlier": true
@@ -17954,21 +19679,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 38.55721393
+            "value": 38.55721393,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 61.2769
+            "value": 61.2769,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.0829
+            "value": 0.0829,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0.0829
+            "value": 0.0829,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Jefferson"
       }
     ],
     "outlier": false,
@@ -17985,21 +19715,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.07
+                "value": 43.07,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 56.93
+                "value": 56.93,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Inzana, David B."
           }
         ],
         "outlier": true
@@ -18016,21 +19751,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.91
+                "value": 37.91,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.09
+                "value": 62.09,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Chambers, Douglas R."
           }
         ],
         "outlier": true
@@ -18047,21 +19787,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.71
+                "value": 34.71,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 65.05
+                "value": 65.05,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bazylak, Gregory M."
           }
         ],
         "outlier": true
@@ -18081,21 +19826,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 38.5278224
+            "value": 38.5278224,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 19.132099999999998
+            "value": 19.132099999999998,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.4985
+            "value": 0.4985,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 41.5188
+            "value": 41.5188,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Cumberland"
       }
     ],
     "outlier": false,
@@ -18112,21 +19862,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.98
+                "value": 50.98,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 48.7
+                "value": 48.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Beckley, Elizabeth S."
           }
         ],
         "outlier": false
@@ -18143,21 +19898,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.11
+                "value": 46.11,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 26.14
+                "value": 26.14,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.29
+                "value": 0.29,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 27.31
+                "value": 27.31,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Silcox, Kathryn H."
           }
         ],
         "outlier": false
@@ -18174,21 +19934,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.14
+                "value": 43.14,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 11.13
+                "value": 11.13,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 44.82
+                "value": 44.82,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Clement, Charles A."
           }
         ],
         "outlier": false
@@ -18205,21 +19970,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.02
+                "value": 43.02,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 6.33
+                "value": 6.33,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 2.23
+                "value": 2.23,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 47.3
+                "value": 47.3,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Birbeck, Jonathan R."
           }
         ],
         "outlier": false
@@ -18236,21 +20006,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.93
+                "value": 40.93,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.7
+                "value": 13.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 43.42
+                "value": 43.42,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Fegley, Paul M."
           }
         ],
         "outlier": false
@@ -18267,21 +20042,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.72
+                "value": 40.72,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 11.24
+                "value": 11.24,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.16
+                "value": 0.16,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 47.88
+                "value": 47.88,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Day, Susan K."
           }
         ],
         "outlier": false
@@ -18298,21 +20078,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.14
+                "value": 40.14,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 11.93
+                "value": 11.93,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 47.2
+                "value": 47.2,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dougherty, Richard S. Jr."
           }
         ],
         "outlier": false
@@ -18329,21 +20114,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.52
+                "value": 39.52,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 14.34
+                "value": 14.34,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.84
+                "value": 1.84,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 44.3
+                "value": 44.3,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cohick, Vivian J."
           }
         ],
         "outlier": false
@@ -18360,21 +20150,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.06
+                "value": 35.06,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 23.13
+                "value": 23.13,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 41.81
+                "value": 41.81,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Martin, Mark W."
           }
         ],
         "outlier": false
@@ -18391,21 +20186,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.31
+                "value": 25.31,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 15.36
+                "value": 15.36,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 59.21
+                "value": 59.21,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Adams, H. Anthony"
           }
         ],
         "outlier": false
@@ -18425,21 +20225,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 38.288852490000004
+            "value": 38.288852490000004,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 31.285600000000002
+            "value": 31.285600000000002,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 1.0030000000000001
+            "value": 1.0030000000000001,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 29.3085
+            "value": 29.3085,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Luzerne"
       }
     ],
     "outlier": false,
@@ -18456,21 +20261,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 60.13
+                "value": 60.13,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 7.31
+                "value": 7.31,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.33
+                "value": 0.33,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.06
+                "value": 32.06,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Whittaker, Donald L."
           }
         ],
         "outlier": false
@@ -18487,21 +20297,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 53.37
+                "value": 53.37,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.51
+                "value": 10.51,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 6.74
+                "value": 6.74,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.38
+                "value": 29.38,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hasay, John E."
           }
         ],
         "outlier": false
@@ -18518,21 +20333,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 52.26
+                "value": 52.26,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 22.37
+                "value": 22.37,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.38
+                "value": 0.38,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 25
+                "value": 25,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Halesey, Joseph A."
           }
         ],
         "outlier": false
@@ -18549,21 +20369,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.81
+                "value": 46.81,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 39.35
+                "value": 39.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.27
+                "value": 0.27,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 13.57
+                "value": 13.57,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dixon, James M."
           }
         ],
         "outlier": false
@@ -18580,21 +20405,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.64
+                "value": 46.64,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 19.96
+                "value": 19.96,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 3.45
+                "value": 3.45,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.95
+                "value": 29.95,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "O'Donnell, Daniel"
           }
         ],
         "outlier": false
@@ -18611,21 +20441,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.44
+                "value": 44.44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 32.22
+                "value": 32.22,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 23.02
+                "value": 23.02,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Spagnuolo, Joseph D. Jr."
           }
         ],
         "outlier": false
@@ -18642,21 +20477,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.77
+                "value": 43.77,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 56.23
+                "value": 56.23,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Roberts, Paul J."
           }
         ],
         "outlier": false
@@ -18673,21 +20513,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.61
+                "value": 43.61,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 32.37
+                "value": 32.37,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.17
+                "value": 0.17,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 23.85
+                "value": 23.85,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Barilla, David A."
           }
         ],
         "outlier": false
@@ -18704,21 +20549,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.47
+                "value": 41.47,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 20.17
+                "value": 20.17,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.28
+                "value": 0.28,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 38.08
+                "value": 38.08,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Zola, Joseph D."
           }
         ],
         "outlier": false
@@ -18735,21 +20585,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.42
+                "value": 40.42,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 29.94
+                "value": 29.94,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.45
+                "value": 0.45,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 28.59
+                "value": 28.59,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kravitz, Alexandra Kokura"
           }
         ],
         "outlier": false
@@ -18766,21 +20621,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.76
+                "value": 38.76,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 44.95
+                "value": 44.95,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.62
+                "value": 0.62,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 15.46
+                "value": 15.46,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Carmody, Joseph J."
           }
         ],
         "outlier": false
@@ -18797,21 +20657,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.59
+                "value": 36.59,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 29.42
+                "value": 29.42,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.74
+                "value": 0.74,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.13
+                "value": 33.13,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cronauer, Rick"
           }
         ],
         "outlier": false
@@ -18828,21 +20693,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.99
+                "value": 31.99,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 34
+                "value": 34,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.11
+                "value": 0.11,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.79
+                "value": 33.79,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Malloy, Thomas F. Sr."
           }
         ],
         "outlier": false
@@ -18859,21 +20729,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 28.88
+                "value": 28.88,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.57
+                "value": 12.57,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 5.3
+                "value": 5.3,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 52.85
+                "value": 52.85,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dotzel, Michael G."
           }
         ],
         "outlier": false
@@ -18890,21 +20765,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.47
+                "value": 27.47,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 14.31
+                "value": 14.31,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.16
+                "value": 0.16,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 57.89
+                "value": 57.89,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Tupper, Brian James"
           }
         ],
         "outlier": false
@@ -18921,21 +20801,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 15.29
+                "value": 15.29,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.28
+                "value": 8.28,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 76.43
+                "value": 76.43,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Sharkey, Thomas"
           }
         ],
         "outlier": true
@@ -18952,21 +20837,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 14.73
+                "value": 14.73,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 85.27
+                "value": 85.27,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lupas, David W."
           }
         ],
         "outlier": true
@@ -18983,21 +20873,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 10.53
+                "value": 10.53,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 89.47
+                "value": 89.47,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Sklarosky, Joseph F. Jr."
           }
         ],
         "outlier": true
@@ -19017,21 +20912,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 38.18897638
+            "value": 38.18897638,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 42.0697
+            "value": 42.0697,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.11249999999999999
+            "value": 0.11249999999999999,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 19.6288
+            "value": 19.6288,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Columbia"
       }
     ],
     "outlier": false,
@@ -19048,21 +20948,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 50.33
+                "value": 50.33,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 22.37
+                "value": 22.37,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.33
+                "value": 0.33,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.97
+                "value": 26.97,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Brewer, Doug D."
           }
         ],
         "outlier": true
@@ -19079,21 +20984,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.72
+                "value": 46.72,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.27
+                "value": 8.27,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.24
+                "value": 0.24,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 44.77
+                "value": 44.77,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Knecht, Richard W."
           }
         ],
         "outlier": false
@@ -19110,21 +21020,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.73
+                "value": 42.73,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 20
+                "value": 20,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.27
+                "value": 37.27,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Long, Craig W."
           }
         ],
         "outlier": true
@@ -19141,21 +21056,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.35
+                "value": 27.35,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 72.65
+                "value": 72.65,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lawton, Russell L."
           }
         ],
         "outlier": false
@@ -19175,21 +21095,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 38.0970325
+            "value": 38.0970325,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 40.0132
+            "value": 40.0132,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.009399999999999999
+            "value": 0.009399999999999999,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 20.7273
+            "value": 20.7273,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Chester"
       }
     ],
     "outlier": false,
@@ -19206,21 +21131,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 60.94
+                "value": 60.94,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 33.4
+                "value": 33.4,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 5.28
+                "value": 5.28,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hines, Gregory V."
           }
         ],
         "outlier": false
@@ -19237,21 +21167,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 52.15
+                "value": 52.15,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 39.08
+                "value": 39.08,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 8.17
+                "value": 8.17,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Koon, Grover E."
           }
         ],
         "outlier": false
@@ -19268,21 +21203,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.41
+                "value": 46.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 33.01
+                "value": 33.01,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 19.86
+                "value": 19.86,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Vito, Marian T."
           }
         ],
         "outlier": false
@@ -19299,21 +21239,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.86
+                "value": 42.86,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 47.41
+                "value": 47.41,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 9.32
+                "value": 9.32,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gill, Nancy"
           }
         ],
         "outlier": false
@@ -19330,21 +21275,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.77
+                "value": 42.77,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 36.17
+                "value": 36.17,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 20.43
+                "value": 20.43,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Donatelli, Lori Novak"
           }
         ],
         "outlier": false
@@ -19361,21 +21311,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.36
+                "value": 42.36,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 38.88
+                "value": 38.88,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 18.01
+                "value": 18.01,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Massey, Scott A."
           }
         ],
         "outlier": false
@@ -19392,21 +21347,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.83
+                "value": 40.83,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 38.23
+                "value": 38.23,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 20.03
+                "value": 20.03,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cabry, Michael J. III"
           }
         ],
         "outlier": false
@@ -19423,21 +21383,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.69
+                "value": 38.69,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 41.72
+                "value": 41.72,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 19.11
+                "value": 19.11,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bailey, John R."
           }
         ],
         "outlier": false
@@ -19454,21 +21419,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.13
+                "value": 38.13,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.55
+                "value": 37.55,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 22.57
+                "value": 22.57,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Tartaglio, Thomas W."
           }
         ],
         "outlier": false
@@ -19485,21 +21455,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.74
+                "value": 36.74,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 31.83
+                "value": 31.83,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.67
+                "value": 29.67,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bruno, Mark A."
           }
         ],
         "outlier": false
@@ -19516,21 +21491,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.73
+                "value": 35.73,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 35.19
+                "value": 35.19,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.5
+                "value": 26.5,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Seavey, Matthew"
           }
         ],
         "outlier": false
@@ -19547,21 +21527,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.98
+                "value": 34.98,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 43.21
+                "value": 43.21,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 21.6
+                "value": 21.6,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Michaels, Theodore Peter Jr."
           }
         ],
         "outlier": false
@@ -19578,21 +21563,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.14
+                "value": 32.14,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.27
+                "value": 37.27,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 28.73
+                "value": 28.73,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Sondergaard, Analisa"
           }
         ],
         "outlier": false
@@ -19609,21 +21599,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.3
+                "value": 31.3,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 41.81
+                "value": 41.81,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 25.84
+                "value": 25.84,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kraut, William D."
           }
         ],
         "outlier": false
@@ -19640,21 +21635,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.3
+                "value": 31.3,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 48.03
+                "value": 48.03,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.12
+                "value": 0.12,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 18.52
+                "value": 18.52,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Valocchi, Jeffrey J."
           }
         ],
         "outlier": false
@@ -19671,21 +21671,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.89
+                "value": 25.89,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 44.35
+                "value": 44.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.76
+                "value": 29.76,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Brown, Leonard J."
           }
         ],
         "outlier": false
@@ -19702,21 +21707,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 23.93
+                "value": 23.93,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 34.36
+                "value": 34.36,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 41.72
+                "value": 41.72,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Nistico, Charles"
           }
         ],
         "outlier": false
@@ -19733,21 +21743,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 20.91
+                "value": 20.91,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 47.27
+                "value": 47.27,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 30.91
+                "value": 30.91,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Knapp, Gwenn S."
           }
         ],
         "outlier": false
@@ -19767,21 +21782,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 37.84477229
+            "value": 37.84477229,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 61.7818
+            "value": 61.7818,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0.1291
+            "value": 0.1291,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Venango"
       }
     ],
     "outlier": false,
@@ -19798,21 +21818,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.95
+                "value": 42.95,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 56.54
+                "value": 56.54,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.17
+                "value": 0.17,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Fish, Andrew F."
           }
         ],
         "outlier": false
@@ -19829,21 +21854,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.47
+                "value": 41.47,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 57.26
+                "value": 57.26,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.21
+                "value": 0.21,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lowrey, Patrick E."
           }
         ],
         "outlier": false
@@ -19860,21 +21890,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 28.12
+                "value": 28.12,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 71.43
+                "value": 71.43,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kirtland, Matthew T."
           }
         ],
         "outlier": false
@@ -19894,21 +21929,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 37.741878220000004
+            "value": 37.741878220000004,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 51.349900000000005
+            "value": 51.349900000000005,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 10.692699999999999
+            "value": 10.692699999999999,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Schuylkill"
       }
     ],
     "outlier": false,
@@ -19925,21 +21965,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47.99
+                "value": 47.99,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 52.01
+                "value": 52.01,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Rossi, David J."
           }
         ],
         "outlier": true
@@ -19956,21 +22001,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47.6
+                "value": 47.6,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 51.94
+                "value": 51.94,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.47
+                "value": 0.47,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Plachko, David A."
           }
         ],
         "outlier": false
@@ -19987,21 +22037,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.88
+                "value": 42.88,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 23.65
+                "value": 23.65,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.46
+                "value": 33.46,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hale, Christina E."
           }
         ],
         "outlier": false
@@ -20018,21 +22073,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.96
+                "value": 40.96,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 58.95
+                "value": 58.95,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Reiley, James"
           }
         ],
         "outlier": false
@@ -20049,21 +22109,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.28
+                "value": 37.28,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.45
+                "value": 62.45,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.13
+                "value": 0.13,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kilker, Anthony J."
           }
         ],
         "outlier": false
@@ -20080,21 +22145,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.99
+                "value": 33.99,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 14.55
+                "value": 14.55,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 50.61
+                "value": 50.61,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bayer, Stephen J."
           }
         ],
         "outlier": false
@@ -20111,21 +22181,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.59
+                "value": 31.59,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 68.41
+                "value": 68.41,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ferrier, James R."
           }
         ],
         "outlier": false
@@ -20142,21 +22217,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 22.41
+                "value": 22.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 77.59
+                "value": 77.59,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Domalakes, John E."
           }
         ],
         "outlier": true
@@ -20173,21 +22253,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 17.43
+                "value": 17.43,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 82.57
+                "value": 82.57,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dolbin, Cyrus P."
           }
         ],
         "outlier": true
@@ -20207,21 +22292,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 37.479026850000004
+            "value": 37.479026850000004,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 11.6548
+            "value": 11.6548,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.567
+            "value": 0.567,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 50.083999999999996
+            "value": 50.083999999999996,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Franklin"
       }
     ],
     "outlier": false,
@@ -20238,21 +22328,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 52.94
+                "value": 52.94,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 7.51
+                "value": 7.51,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.61
+                "value": 0.61,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 38.74
+                "value": 38.74,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cunningham, Duane K."
           }
         ],
         "outlier": false
@@ -20269,21 +22364,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 48
+                "value": 48,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 15.73
+                "value": 15.73,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 36.27
+                "value": 36.27,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Plum, David L."
           }
         ],
         "outlier": false
@@ -20300,21 +22400,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.06
+                "value": 41.06,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 22.52
+                "value": 22.52,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.1
+                "value": 1.1,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 34.66
+                "value": 34.66,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Eyer, Jody C."
           }
         ],
         "outlier": false
@@ -20331,21 +22436,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.93
+                "value": 38.93,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.57
+                "value": 8.57,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.17
+                "value": 0.17,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 52.06
+                "value": 52.06,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Manns, Glenn Kenneth"
           }
         ],
         "outlier": false
@@ -20362,21 +22472,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.31
+                "value": 35.31,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.7
+                "value": 10.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.39
+                "value": 0.39,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 53.61
+                "value": 53.61,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Rock, Kelly L."
           }
         ],
         "outlier": false
@@ -20393,21 +22508,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 28.95
+                "value": 28.95,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 15.81
+                "value": 15.81,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.71
+                "value": 0.71,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 54.53
+                "value": 54.53,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Williams, Todd R."
           }
         ],
         "outlier": false
@@ -20424,21 +22544,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.51
+                "value": 25.51,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 7.13
+                "value": 7.13,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.21
+                "value": 1.21,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 66.14
+                "value": 66.14,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Pentz, Larry G."
           }
         ],
         "outlier": false
@@ -20458,21 +22583,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 37.44343891
+            "value": 37.44343891,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 34.6546
+            "value": 34.6546,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.3398
+            "value": 0.3398,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 26.613799999999998
+            "value": 26.613799999999998,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Greene"
       }
     ],
     "outlier": false,
@@ -20489,21 +22619,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 51.13
+                "value": 51.13,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 18.8
+                "value": 18.8,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.75
+                "value": 0.75,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.32
+                "value": 29.32,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Watson, Lee"
           }
         ],
         "outlier": true
@@ -20520,21 +22655,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.37
+                "value": 32.37,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 21.22
+                "value": 21.22,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 46.04
+                "value": 46.04,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cramer, Jesse J."
           }
         ],
         "outlier": false
@@ -20551,21 +22691,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.06
+                "value": 32.06,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 67.94
+                "value": 67.94,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bates, D Glenn"
           }
         ],
         "outlier": true
@@ -20585,21 +22730,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 37.20349563
+            "value": 37.20349563,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 28.214699999999997
+            "value": 28.214699999999997,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 34.5818
+            "value": 34.5818,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Wayne"
       }
     ],
     "outlier": false,
@@ -20616,21 +22766,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.25
+                "value": 39.25,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 7.01
+                "value": 7.01,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 53.74
+                "value": 53.74,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Edwards, Ronald"
           }
         ],
         "outlier": true
@@ -20647,21 +22802,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.95
+                "value": 38.95,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 49.06
+                "value": 49.06,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 11.99
+                "value": 11.99,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Carney, Bonnie L."
           }
         ],
         "outlier": true
@@ -20678,21 +22838,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.87
+                "value": 34.87,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 23.36
+                "value": 23.36,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 41.78
+                "value": 41.78,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Myers, Linus H."
           }
         ],
         "outlier": true
@@ -20712,21 +22877,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 36.92628651
+            "value": 36.92628651,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 51.078599999999994
+            "value": 51.078599999999994,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.1392
+            "value": 0.1392,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 11.412700000000001
+            "value": 11.412700000000001,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Clinton"
       }
     ],
     "outlier": false,
@@ -20743,21 +22913,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 68.98
+                "value": 68.98,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 29.92
+                "value": 29.92,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.55
+                "value": 0.55,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.28
+                "value": 0.28,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Sanders, Joseph L."
           }
         ],
         "outlier": false
@@ -20774,21 +22949,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 59.44
+                "value": 59.44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 40.56
+                "value": 40.56,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Maggs, John W."
           }
         ],
         "outlier": true
@@ -20805,21 +22985,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 12.34
+                "value": 12.34,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 66.14
+                "value": 66.14,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 21.39
+                "value": 21.39,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mills, Frank P."
           }
         ],
         "outlier": false
@@ -20839,21 +23024,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 36.44859813
+            "value": 36.44859813,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 61.682199999999995
+            "value": 61.682199999999995,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 1.8692
+            "value": 1.8692,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Sullivan"
       }
     ],
     "outlier": true,
@@ -20872,21 +23062,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 36.38603696
+            "value": 36.38603696,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 48.5597
+            "value": 48.5597,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 13.086400000000001
+            "value": 13.086400000000001,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Tioga"
       }
     ],
     "outlier": false,
@@ -20903,21 +23098,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.76
+                "value": 41.76,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 18.49
+                "value": 18.49,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 39.6
+                "value": 39.6,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Steffee, Susanne V."
           }
         ],
         "outlier": false
@@ -20934,21 +23134,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.52
+                "value": 38.52,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 61.21
+                "value": 61.21,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.26
+                "value": 0.26,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Thachik, George M."
           }
         ],
         "outlier": false
@@ -20965,21 +23170,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.31
+                "value": 38.31,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 61.69
+                "value": 61.69,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Edgcomb, James R."
           }
         ],
         "outlier": true
@@ -20996,21 +23206,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.96
+                "value": 37.96,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 47.2
+                "value": 47.2,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 14.36
+                "value": 14.36,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Rega, Jennifer J."
           }
         ],
         "outlier": false
@@ -21027,21 +23242,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.5
+                "value": 29.5,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 69.88
+                "value": 69.88,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Carlson, James Edgar"
           }
         ],
         "outlier": true
@@ -21058,21 +23278,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 23.15
+                "value": 23.15,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 76.35
+                "value": 76.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Repard, Robert L."
           }
         ],
         "outlier": true
@@ -21089,21 +23314,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 13.91
+                "value": 13.91,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 47.83
+                "value": 47.83,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Martin, William J."
           }
         ],
         "outlier": false
@@ -21123,21 +23353,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 36.28318584
+            "value": 36.28318584,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 63.6185
+            "value": 63.6185,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0.0983
+            "value": 0.0983,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Clearfield"
       }
     ],
     "outlier": false,
@@ -21154,21 +23389,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.04
+                "value": 42.04,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 57.96
+                "value": 57.96,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ireland, Richard Allen"
           }
         ],
         "outlier": true
@@ -21185,21 +23425,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.13
+                "value": 39.13,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 60.87
+                "value": 60.87,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hawkins, James L."
           }
         ],
         "outlier": true
@@ -21216,21 +23461,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.42
+                "value": 34.42,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 65.58
+                "value": 65.58,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ford, Patrick N."
           }
         ],
         "outlier": true
@@ -21247,21 +23497,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.03
+                "value": 30.03,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 69.42
+                "value": 69.42,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.55
+                "value": 0.55,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Nevling, Jerome M."
           }
         ],
         "outlier": true
@@ -21281,21 +23536,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 36.12542955
+            "value": 36.12542955,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 39.6907
+            "value": 39.6907,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 12.070400000000001
+            "value": 12.070400000000001,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 11.855699999999999
+            "value": 11.855699999999999,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Mercer"
       }
     ],
     "outlier": false,
@@ -21312,21 +23572,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 45.28
+                "value": 45.28,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 53.83
+                "value": 53.83,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.89
+                "value": 0.89,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Arthur, Brian R."
           }
         ],
         "outlier": false
@@ -21343,21 +23608,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.1
+                "value": 44.1,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 28.76
+                "value": 28.76,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 12.67
+                "value": 12.67,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 14.48
+                "value": 14.48,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Songer, Dennis M."
           }
         ],
         "outlier": false
@@ -21374,21 +23644,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.69
+                "value": 41.69,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 55.65
+                "value": 55.65,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.66
+                "value": 2.66,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McEwen, D. Neil"
           }
         ],
         "outlier": false
@@ -21405,21 +23680,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.37
+                "value": 37.37,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 46.72
+                "value": 46.72,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.25
+                "value": 0.25,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 15.66
+                "value": 15.66,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hinch, Lorinda L."
           }
         ],
         "outlier": false
@@ -21436,21 +23716,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 26.72
+                "value": 26.72,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 24.88
+                "value": 24.88,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 29.04
+                "value": 29.04,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 19.36
+                "value": 19.36,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Antos, Ronald E."
           }
         ],
         "outlier": false
@@ -21467,21 +23752,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 17.69
+                "value": 17.69,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 82.31
+                "value": 82.31,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Fagley, William L."
           }
         ],
         "outlier": true
@@ -21501,21 +23791,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 36
+            "value": 36,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 51.91909999999999
+            "value": 51.91909999999999,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.0825
+            "value": 0.0825,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 11.886099999999999
+            "value": 11.886099999999999,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Northumberland"
       }
     ],
     "outlier": false,
@@ -21532,21 +23827,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.67
+                "value": 41.67,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 57.2
+                "value": 57.2,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.13
+                "value": 0.13,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.01
+                "value": 1.01,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gembic, John"
           }
         ],
         "outlier": false
@@ -21563,21 +23863,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.57
+                "value": 40.57,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 56.14
+                "value": 56.14,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 3.07
+                "value": 3.07,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Diehl, Michael I."
           }
         ],
         "outlier": false
@@ -21594,21 +23899,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.14
+                "value": 35.14,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 64.86
+                "value": 64.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cashman, Richard P."
           }
         ],
         "outlier": true
@@ -21625,21 +23935,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 28.29
+                "value": 28.29,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 30.24
+                "value": 30.24,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.16
+                "value": 0.16,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 40.81
+                "value": 40.81,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Apfelbaum, Benjamin"
           }
         ],
         "outlier": false
@@ -21659,21 +23974,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 35.92870544
+            "value": 35.92870544,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 54.1276
+            "value": 54.1276,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 2.9081
+            "value": 2.9081,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 6.472799999999999
+            "value": 6.472799999999999,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Snyder"
       }
     ],
     "outlier": false,
@@ -21690,21 +24010,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.96
+                "value": 36.96,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 60.28
+                "value": 60.28,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.77
+                "value": 0.77,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.99
+                "value": 1.99,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Reed, John H."
           }
         ],
         "outlier": false
@@ -21721,21 +24046,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.79
+                "value": 36.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 52.17
+                "value": 52.17,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 5.69
+                "value": 5.69,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 5.35
+                "value": 5.35,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hackenberg, Lori R."
           }
         ],
         "outlier": true
@@ -21755,21 +24085,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 35.68118628
+            "value": 35.68118628,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 63.974
+            "value": 63.974,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.0929
+            "value": 0.0929,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0.1857
+            "value": 0.1857,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Wyoming"
       }
     ],
     "outlier": true,
@@ -21786,21 +24121,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.65
+                "value": 43.65,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 55.89
+                "value": 55.89,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.23
+                "value": 0.23,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.23
+                "value": 0.23,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Smith, Carl W. Jr."
           }
         ],
         "outlier": true
@@ -21817,21 +24157,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.21
+                "value": 29.21,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 70.3
+                "value": 70.3,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.17
+                "value": 0.17,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Plummer, David K."
           }
         ],
         "outlier": true
@@ -21851,21 +24196,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 35.19163763
+            "value": 35.19163763,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 24.738699999999998
+            "value": 24.738699999999998,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.6969000000000001
+            "value": 0.6969000000000001,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 39.0244
+            "value": 39.0244,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Montour"
       }
     ],
     "outlier": true,
@@ -21882,21 +24232,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 22.44
+                "value": 22.44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 22.44
+                "value": 22.44,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.98
+                "value": 0.98,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 53.66
+                "value": 53.66,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Shrawder, Marvin K."
           }
         ],
         "outlier": true
@@ -21916,21 +24271,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 35.01070664
+            "value": 35.01070664,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 33.3333
+            "value": 33.3333,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 30.761
+            "value": 30.761,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Indiana"
       }
     ],
     "outlier": false,
@@ -21947,21 +24307,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.02
+                "value": 41.02,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 18.36
+                "value": 18.36,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 40.48
+                "value": 40.48,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Steffee, Susanne V."
           }
         ],
         "outlier": false
@@ -21978,21 +24343,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40
+                "value": 40,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 30.08
+                "value": 30.08,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.75
+                "value": 29.75,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Haberl, Guy B."
           }
         ],
         "outlier": false
@@ -22009,21 +24379,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.66
+                "value": 38.66,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 46.35
+                "value": 46.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 14.6
+                "value": 14.6,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Rega, Jennifer J."
           }
         ],
         "outlier": false
@@ -22040,21 +24415,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.22
+                "value": 38.22,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 61.56
+                "value": 61.56,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.22
+                "value": 0.22,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Thachik, George M."
           }
         ],
         "outlier": false
@@ -22071,21 +24451,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 10.9
+                "value": 10.9,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 41.71
+                "value": 41.71,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.91
+                "value": 37.91,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Martin, William J."
           }
         ],
         "outlier": false
@@ -22105,21 +24490,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 34.75609756
+            "value": 34.75609756,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 52.439
+            "value": 52.439,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 12.8049
+            "value": 12.8049,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Forest"
       }
     ],
     "outlier": true,
@@ -22136,21 +24526,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.2
+                "value": 30.2,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 55.7
+                "value": 55.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 14.09
+                "value": 14.09,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Miller, Daniel L."
           }
         ],
         "outlier": true
@@ -22170,21 +24565,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 34.68169761
+            "value": 34.68169761,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 64.91029999999999
+            "value": 64.91029999999999,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0.3321
+            "value": 0.3321,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Lycoming"
       }
     ],
     "outlier": false,
@@ -22201,21 +24601,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.91
+                "value": 41.91,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 57.87
+                "value": 57.87,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Solomon, William C."
           }
         ],
         "outlier": false
@@ -22232,21 +24637,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.3
+                "value": 38.3,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 61.7
+                "value": 61.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Page, Allen P. III"
           }
         ],
         "outlier": false
@@ -22263,21 +24673,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.55
+                "value": 36.55,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 63.25
+                "value": 63.25,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lepley, Jerry C."
           }
         ],
         "outlier": false
@@ -22294,21 +24709,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.52
+                "value": 32.52,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 66.7
+                "value": 66.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.78
+                "value": 0.78,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Frey, Christian David"
           }
         ],
         "outlier": false
@@ -22325,21 +24745,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.51
+                "value": 30.51,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 68.95
+                "value": 68.95,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.18
+                "value": 0.18,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kemp, Jon Edward"
           }
         ],
         "outlier": false
@@ -22356,21 +24781,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.37
+                "value": 29.37,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 70.63
+                "value": 70.63,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Whiteman, Gary A."
           }
         ],
         "outlier": false
@@ -22390,21 +24820,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 34.46215139
+            "value": 34.46215139,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 39.243
+            "value": 39.243,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 7.370500000000001
+            "value": 7.370500000000001,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 18.9243
+            "value": 18.9243,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Juniata"
       }
     ],
     "outlier": true,
@@ -22421,21 +24856,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.47
+                "value": 31.47,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.93
+                "value": 12.93,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 15.95
+                "value": 15.95,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 39.66
+                "value": 39.66,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Leister, Jacqueline T."
           }
         ],
         "outlier": true
@@ -22452,21 +24892,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.3
+                "value": 31.3,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 68.7
+                "value": 68.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lyter, Barbara M."
           }
         ],
         "outlier": true
@@ -22486,21 +24931,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 34.16738568
+            "value": 34.16738568,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 5.6228
+            "value": 5.6228,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 28.0277
+            "value": 28.0277,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 31.1419
+            "value": 31.1419,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Pike"
       }
     ],
     "outlier": false,
@@ -22517,21 +24967,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47
+                "value": 47,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 5
+                "value": 5,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 39
+                "value": 39,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Chelak, Gregory H."
           }
         ],
         "outlier": false
@@ -22548,21 +25003,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 39.33
+                "value": 39.33,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 6.67
+                "value": 6.67,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 2.67
+                "value": 2.67,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 51
+                "value": 51,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Fischer, Deborah"
           }
         ],
         "outlier": false
@@ -22579,21 +25039,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.84
+                "value": 32.84,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.59
+                "value": 0.59,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 53.25
+                "value": 53.25,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 13.02
+                "value": 13.02,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Muir, Shannon L."
           }
         ],
         "outlier": false
@@ -22610,21 +25075,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.03
+                "value": 29.03,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 9.22
+                "value": 9.22,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 40.09
+                "value": 40.09,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 21.2
+                "value": 21.2,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Menditto, Paul D. Sr."
           }
         ],
         "outlier": false
@@ -22641,21 +25111,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 28.12
+                "value": 28.12,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.85
+                "value": 8.85,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 25.52
+                "value": 25.52,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 36.98
+                "value": 36.98,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cooper, Alan B."
           }
         ],
         "outlier": true
@@ -22675,21 +25150,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 34.04638145
+            "value": 34.04638145,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 65.5338
+            "value": 65.5338,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.06
+            "value": 0.06,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0.3599
+            "value": 0.3599,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Blair"
       }
     ],
     "outlier": false,
@@ -22706,21 +25186,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 52.64
+                "value": 52.64,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 47.36
+                "value": 47.36,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Aigner, Paula M."
           }
         ],
         "outlier": false
@@ -22737,21 +25222,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.81
+                "value": 43.81,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 55.58
+                "value": 55.58,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.61
+                "value": 0.61,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Miller, Fred B."
           }
         ],
         "outlier": false
@@ -22768,21 +25258,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.34
+                "value": 35.34,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 64.66
+                "value": 64.66,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Ormsby, Craig E."
           }
         ],
         "outlier": false
@@ -22799,21 +25294,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.92
+                "value": 29.92,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 70.08
+                "value": 70.08,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kelly, Todd F."
           }
         ],
         "outlier": false
@@ -22830,21 +25330,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 28.26
+                "value": 28.26,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 69.98
+                "value": 69.98,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.33
+                "value": 0.33,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.43
+                "value": 1.43,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Auker, Jeffrey P."
           }
         ],
         "outlier": false
@@ -22861,21 +25366,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 18.59
+                "value": 18.59,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 81.41
+                "value": 81.41,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Jackson, Steven D."
           }
         ],
         "outlier": false
@@ -22895,21 +25405,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 33.63556165
+            "value": 33.63556165,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 46.1889
+            "value": 46.1889,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.466
+            "value": 0.466,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 14.7096
+            "value": 14.7096,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Montgomery"
       }
     ],
     "outlier": false,
@@ -22926,21 +25441,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 60.12
+                "value": 60.12,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 15.72
+                "value": 15.72,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 20.04
+                "value": 20.04,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lawrence, Francis J. Jr."
           }
         ],
         "outlier": false
@@ -22957,21 +25477,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 58.68
+                "value": 58.68,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 32.54
+                "value": 32.54,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.18
+                "value": 0.18,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 4.94
+                "value": 4.94,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Scott, Gregory L."
           }
         ],
         "outlier": false
@@ -22988,21 +25513,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 47.93
+                "value": 47.93,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 44.12
+                "value": 44.12,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.88
+                "value": 2.88,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Palladino, Scott T."
           }
         ],
         "outlier": false
@@ -23019,21 +25549,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.5
+                "value": 44.5,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 51.5
+                "value": 51.5,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.75
+                "value": 0.75,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cerski, Christopher"
           }
         ],
         "outlier": false
@@ -23050,21 +25585,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.48
+                "value": 44.48,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 27.91
+                "value": 27.91,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 24.78
+                "value": 24.78,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hunsicker, Margaret A."
           }
         ],
         "outlier": false
@@ -23081,21 +25621,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.39
+                "value": 43.39,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 54.02
+                "value": 54.02,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.19
+                "value": 0.19,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kropp, Edward C. Sr."
           }
         ],
         "outlier": false
@@ -23112,21 +25657,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.42
+                "value": 41.42,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 55.39
+                "value": 55.39,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McHugh Casey, Elizabeth A."
           }
         ],
         "outlier": false
@@ -23143,21 +25693,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.5
+                "value": 36.5,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.58
+                "value": 62.58,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.13
+                "value": 0.13,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kelly Rebar, Cathleen"
           }
         ],
         "outlier": false
@@ -23174,21 +25729,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.18
+                "value": 36.18,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 57.26
+                "value": 57.26,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Nesbitt, Harry J. III"
           }
         ],
         "outlier": false
@@ -23205,21 +25765,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.01
+                "value": 36.01,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.5
+                "value": 62.5,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.14
+                "value": 0.14,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Augustine, Albert J."
           }
         ],
         "outlier": false
@@ -23236,21 +25801,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.87
+                "value": 35.87,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 30.71
+                "value": 30.71,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.61
+                "value": 29.61,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bernhardt, Francis J. III"
           }
         ],
         "outlier": false
@@ -23267,21 +25837,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.65
+                "value": 35.65,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 29.03
+                "value": 29.03,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.28
+                "value": 33.28,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Sobeck, Robert M."
           }
         ],
         "outlier": false
@@ -23298,21 +25873,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.62
+                "value": 35.62,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 58.47
+                "value": 58.47,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Saylor, Maurice H."
           }
         ],
         "outlier": false
@@ -23329,21 +25909,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.37
+                "value": 35.37,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.72
+                "value": 62.72,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.15
+                "value": 1.15,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Zaffarano, Patricia Ann"
           }
         ],
         "outlier": false
@@ -23360,21 +25945,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.33
+                "value": 35.33,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 24.42
+                "value": 24.42,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 12.28
+                "value": 12.28,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 21.56
+                "value": 21.56,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Price, Juanita Ann"
           }
         ],
         "outlier": false
@@ -23391,21 +25981,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.03
+                "value": 35.03,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 47.77
+                "value": 47.77,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Rebar, Cathleen Kelly"
           }
         ],
         "outlier": false
@@ -23422,21 +26017,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.92
+                "value": 34.92,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 23.54
+                "value": 23.54,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 39.68
+                "value": 39.68,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lukens, Deborah"
           }
         ],
         "outlier": false
@@ -23453,21 +26053,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.38
+                "value": 34.38,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.83
+                "value": 62.83,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Casillo, Ester J."
           }
         ],
         "outlier": false
@@ -23484,21 +26089,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.74
+                "value": 32.74,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 29.37
+                "value": 29.37,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.14
+                "value": 32.14,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gallagher, James"
           }
         ],
         "outlier": false
@@ -23515,21 +26125,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.77
+                "value": 31.77,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.24
+                "value": 62.24,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.26
+                "value": 0.26,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McGill, Katherine E."
           }
         ],
         "outlier": false
@@ -23546,21 +26161,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.73
+                "value": 31.73,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 63.84
+                "value": 63.84,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.55
+                "value": 0.55,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Leo, Paul N."
           }
         ],
         "outlier": false
@@ -23577,21 +26197,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.21
+                "value": 30.21,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.03
+                "value": 62.03,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.53
+                "value": 0.53,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.53
+                "value": 0.53,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Quinn, Michael P."
           }
         ],
         "outlier": false
@@ -23608,21 +26233,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.01
+                "value": 30.01,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 31.46
+                "value": 31.46,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.96
+                "value": 33.96,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gadzicki, Walter F. Jr."
           }
         ],
         "outlier": false
@@ -23639,21 +26269,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.42
+                "value": 27.42,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 46.91
+                "value": 46.91,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 24.12
+                "value": 24.12,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hudak Duffy, Andrea"
           }
         ],
         "outlier": false
@@ -23670,21 +26305,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.41
+                "value": 27.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 67.36
+                "value": 67.36,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Schireson, Henry J."
           }
         ],
         "outlier": false
@@ -23701,21 +26341,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.34
+                "value": 27.34,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 70.56
+                "value": 70.56,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Eisner Zucker, Karen"
           }
         ],
         "outlier": false
@@ -23732,21 +26377,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.24
+                "value": 27.24,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 68.79
+                "value": 68.79,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.17
+                "value": 0.17,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Hummel Fried, Catherine M."
           }
         ],
         "outlier": false
@@ -23763,21 +26413,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 26.84
+                "value": 26.84,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 69.56
+                "value": 69.56,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.27
+                "value": 0.27,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Maruszczak, William I."
           }
         ],
         "outlier": false
@@ -23794,21 +26449,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.51
+                "value": 25.51,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 22.04
+                "value": 22.04,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.12
+                "value": 0.12,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 48.38
+                "value": 48.38,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Levine, Edward"
           }
         ],
         "outlier": false
@@ -23825,21 +26485,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 23.6
+                "value": 23.6,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 23.49
+                "value": 23.49,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 50.93
+                "value": 50.93,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Friedenberg, Jay S."
           }
         ],
         "outlier": false
@@ -23856,21 +26521,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 22.17
+                "value": 22.17,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 32.69
+                "value": 32.69,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 35.76
+                "value": 35.76,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kessler, John D."
           }
         ],
         "outlier": false
@@ -23887,21 +26557,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 9.66
+                "value": 9.66,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 57.56
+                "value": 57.56,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.42
+                "value": 0.42,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Smyth, Joseph A."
           }
         ],
         "outlier": false
@@ -23918,21 +26593,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 7.82
+                "value": 7.82,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 60.38
+                "value": 60.38,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.43
+                "value": 2.43,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Corso, S. Gerald"
           }
         ],
         "outlier": false
@@ -23949,21 +26629,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 6.73
+                "value": 6.73,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 57.4
+                "value": 57.4,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 17.49
+                "value": 17.49,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Nicholas, William T."
           }
         ],
         "outlier": false
@@ -23983,21 +26668,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 32.99299883
+            "value": 32.99299883,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 53.85060000000001
+            "value": 53.85060000000001,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 13.1272
+            "value": 13.1272,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Carbon"
       }
     ],
     "outlier": false,
@@ -24014,21 +26704,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.44
+                "value": 37.44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 46.57
+                "value": 46.57,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 15.99
+                "value": 15.99,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kosciolek, Casimir T."
           }
         ],
         "outlier": false
@@ -24045,21 +26740,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.13
+                "value": 37.13,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 56.16
+                "value": 56.16,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 6.71
+                "value": 6.71,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Homanko, Joseph D. Sr."
           }
         ],
         "outlier": false
@@ -24076,21 +26776,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.71
+                "value": 32.71,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 50.31
+                "value": 50.31,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 16.98
+                "value": 16.98,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Schrantz, Eric M."
           }
         ],
         "outlier": false
@@ -24107,21 +26812,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.97
+                "value": 27.97,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 71.19
+                "value": 71.19,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.85
+                "value": 0.85,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Serfass, Steven R."
           }
         ],
         "outlier": true
@@ -24138,21 +26848,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.41
+                "value": 27.41,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 71.11
+                "value": 71.11,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.48
+                "value": 1.48,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Matika, Joseph J."
           }
         ],
         "outlier": true
@@ -24169,21 +26884,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.02
+                "value": 27.02,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 56.93
+                "value": 56.93,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 16.05
+                "value": 16.05,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kissner, William J."
           }
         ],
         "outlier": false
@@ -24200,21 +26920,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 20.52
+                "value": 20.52,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 60.7
+                "value": 60.7,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 18.78
+                "value": 18.78,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lewis, Edward M."
           }
         ],
         "outlier": true
@@ -24234,21 +26959,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 32.79661017
+            "value": 32.79661017,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 49.6091
+            "value": 49.6091,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.4249
+            "value": 0.4249,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 17.063200000000002
+            "value": 17.063200000000002,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Monroe"
       }
     ],
     "outlier": false,
@@ -24265,21 +26995,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 45.39
+                "value": 45.39,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 30.26
+                "value": 30.26,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 23.46
+                "value": 23.46,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Fluegel, Anthony D."
           }
         ],
         "outlier": false
@@ -24296,21 +27031,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.07
+                "value": 38.07,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 60.61
+                "value": 60.61,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Muth, Michael R."
           }
         ],
         "outlier": false
@@ -24327,21 +27067,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.88
+                "value": 37.88,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 61.65
+                "value": 61.65,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.32
+                "value": 0.32,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Anzini, Kristina"
           }
         ],
         "outlier": false
@@ -24358,21 +27103,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.18
+                "value": 37.18,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 15.44
+                "value": 15.44,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 47.38
+                "value": 47.38,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Riley, Phillip R."
           }
         ],
         "outlier": false
@@ -24389,21 +27139,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.01
+                "value": 37.01,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.71
+                "value": 62.71,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.28
+                "value": 0.28,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mancuso, Colleen"
           }
         ],
         "outlier": false
@@ -24420,21 +27175,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.63
+                "value": 34.63,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.78
+                "value": 8.78,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 3.9
+                "value": 3.9,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 52.52
+                "value": 52.52,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Krawitz, Jolana"
           }
         ],
         "outlier": false
@@ -24451,21 +27211,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.32
+                "value": 29.32,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 70.28
+                "value": 70.28,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Claypool, Richard"
           }
         ],
         "outlier": false
@@ -24482,21 +27247,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.33
+                "value": 27.33,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 69.42
+                "value": 69.42,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 3.1
+                "value": 3.1,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Germano, Brian"
           }
         ],
         "outlier": false
@@ -24513,21 +27283,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 26.43
+                "value": 26.43,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 73.43
+                "value": 73.43,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.14
+                "value": 0.14,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Olsen, Thomas E."
           }
         ],
         "outlier": false
@@ -24544,21 +27319,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 23.4
+                "value": 23.4,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 32.64
+                "value": 32.64,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 43.77
+                "value": 43.77,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Higgins, C. Daniel"
           }
         ],
         "outlier": false
@@ -24578,21 +27358,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 32.41325938
+            "value": 32.41325938,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 49.297000000000004
+            "value": 49.297000000000004,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.5676
+            "value": 0.5676,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 17.705099999999998
+            "value": 17.705099999999998,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Bucks"
       }
     ],
     "outlier": false,
@@ -24609,21 +27394,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.82
+                "value": 46.82,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 34.1
+                "value": 34.1,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 19.08
+                "value": 19.08,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Waltman, John I."
           }
         ],
         "outlier": false
@@ -24640,21 +27430,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.98
+                "value": 44.98,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 18.28
+                "value": 18.28,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.16
+                "value": 0.16,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 36.57
+                "value": 36.57,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Wagner, Robert"
           }
         ],
         "outlier": false
@@ -24671,21 +27466,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.86
+                "value": 43.86,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 52.98
+                "value": 52.98,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.35
+                "value": 0.35,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 2.81
+                "value": 2.81,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Peranteau, Frank W. Sr."
           }
         ],
         "outlier": false
@@ -24702,21 +27502,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 42.64
+                "value": 42.64,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 6.98
+                "value": 6.98,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 2.08
+                "value": 2.08,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 48.29
+                "value": 48.29,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kline, Joanne V."
           }
         ],
         "outlier": false
@@ -24733,21 +27538,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.26
+                "value": 41.26,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 58.74
+                "value": 58.74,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Douple, Mark D."
           }
         ],
         "outlier": false
@@ -24764,21 +27574,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 41.03
+                "value": 41.03,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 22.22
+                "value": 22.22,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 36.75
+                "value": 36.75,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Schnell, Robert A. Jr."
           }
         ],
         "outlier": true
@@ -24795,21 +27610,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40
+                "value": 40,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 60
+                "value": 60,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Petrucci, Michael W."
           }
         ],
         "outlier": false
@@ -24826,21 +27646,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.7
+                "value": 37.7,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 50
+                "value": 50,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 12.3
+                "value": 12.3,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Burns, Michael J."
           }
         ],
         "outlier": false
@@ -24857,21 +27682,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.11
+                "value": 37.11,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 62.11
+                "value": 62.11,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.78
+                "value": 0.78,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Finello, Daniel J. Jr."
           }
         ],
         "outlier": false
@@ -24888,21 +27718,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.25
+                "value": 35.25,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 63.93
+                "value": 63.93,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Durkin, John J."
           }
         ],
         "outlier": false
@@ -24919,21 +27754,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.92
+                "value": 33.92,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 28.07
+                "value": 28.07,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 38.01
+                "value": 38.01,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Snow, Maggie"
           }
         ],
         "outlier": false
@@ -24950,21 +27790,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.58
+                "value": 33.58,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 64.35
+                "value": 64.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.05
+                "value": 0.05,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.96
+                "value": 1.96,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Falcone, Joseph P."
           }
         ],
         "outlier": false
@@ -24981,21 +27826,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.33
+                "value": 33.33,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 24.59
+                "value": 24.59,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 41.93
+                "value": 41.93,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Baranoski, Daniel"
           }
         ],
         "outlier": false
@@ -25012,21 +27862,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.79
+                "value": 32.79,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.11
+                "value": 13.11,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 54.1
+                "value": 54.1,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Deatelhauser, Kenneth E."
           }
         ],
         "outlier": false
@@ -25043,21 +27898,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.78
+                "value": 32.78,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 66.82
+                "value": 66.82,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.07
+                "value": 0.07,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.33
+                "value": 0.33,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gallagher, Michael W."
           }
         ],
         "outlier": false
@@ -25074,21 +27934,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.6
+                "value": 32.6,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 66.74
+                "value": 66.74,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.22
+                "value": 0.22,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.44
+                "value": 0.44,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Vislosky, Jan"
           }
         ],
         "outlier": false
@@ -25105,21 +27970,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.3
+                "value": 32.3,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 67.43
+                "value": 67.43,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.27
+                "value": 0.27,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kelly, John J. Jr."
           }
         ],
         "outlier": false
@@ -25136,21 +28006,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.86
+                "value": 31.86,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 34.65
+                "value": 34.65,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.15
+                "value": 0.15,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 33.33
+                "value": 33.33,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gambardella, Gary"
           }
         ],
         "outlier": false
@@ -25167,21 +28042,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.31
+                "value": 31.31,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 17.91
+                "value": 17.91,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.23
+                "value": 0.23,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 50.56
+                "value": 50.56,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Seaman, Jean"
           }
         ],
         "outlier": false
@@ -25198,21 +28078,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.84
+                "value": 30.84,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 43.82
+                "value": 43.82,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 25.34
+                "value": 25.34,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Armitage, Regina"
           }
         ],
         "outlier": false
@@ -25229,21 +28114,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.7
+                "value": 30.7,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 69
+                "value": 69,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.15
+                "value": 0.15,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Baum, Charles W."
           }
         ],
         "outlier": false
@@ -25260,21 +28150,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 28.64
+                "value": 28.64,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 21
+                "value": 21,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 50.36
+                "value": 50.36,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Roth, Robert"
           }
         ],
         "outlier": false
@@ -25291,21 +28186,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.21
+                "value": 27.21,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 32.35
+                "value": 32.35,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 40.44
+                "value": 40.44,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Daly, Philip J."
           }
         ],
         "outlier": false
@@ -25322,21 +28222,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.75
+                "value": 25.75,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 19.76
+                "value": 19.76,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 3.59
+                "value": 3.59,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 50.9
+                "value": 50.9,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Cepparulo, Albert J."
           }
         ],
         "outlier": false
@@ -25353,21 +28258,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 17.92
+                "value": 17.92,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 81.48
+                "value": 81.48,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.3
+                "value": 0.3,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.3
+                "value": 0.3,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Benz, William J."
           }
         ],
         "outlier": false
@@ -25384,21 +28294,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 10
+                "value": 10,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 64.44
+                "value": 64.44,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.11
+                "value": 1.11,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 24.44
+                "value": 24.44,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Waite, Clyde W."
           }
         ],
         "outlier": false
@@ -25418,21 +28333,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 31.716625590000003
+            "value": 31.716625590000003,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 30.687900000000003
+            "value": 30.687900000000003,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 4.66
+            "value": 4.66,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 32.9304
+            "value": 32.9304,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Westmoreland"
       }
     ],
     "outlier": false,
@@ -25449,21 +28369,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 45.75
+                "value": 45.75,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 24.49
+                "value": 24.49,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.08
+                "value": 0.08,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.69
+                "value": 29.69,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Pallone, Frank J. Jr."
           }
         ],
         "outlier": false
@@ -25480,21 +28405,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 45.22
+                "value": 45.22,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 51.01
+                "value": 51.01,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 3.77
+                "value": 3.77,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "DeMarchis, Joseph R."
           }
         ],
         "outlier": false
@@ -25511,21 +28441,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 36.73
+                "value": 36.73,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 14.18
+                "value": 14.18,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 49.09
+                "value": 49.09,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bilik, Mark"
           }
         ],
         "outlier": false
@@ -25542,21 +28477,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.51
+                "value": 35.51,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.51
+                "value": 13.51,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 21.9
+                "value": 21.9,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.08
+                "value": 29.08,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Dalfonso, Joseph A."
           }
         ],
         "outlier": false
@@ -25573,21 +28513,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.17
+                "value": 34.17,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 29.17
+                "value": 29.17,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.21
+                "value": 0.21,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 36.46
+                "value": 36.46,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Eckels, Roger"
           }
         ],
         "outlier": false
@@ -25604,21 +28549,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 34.01
+                "value": 34.01,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.73
+                "value": 13.73,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 25.44
+                "value": 25.44,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.83
+                "value": 26.83,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mansour, Mark Stephen"
           }
         ],
         "outlier": false
@@ -25635,21 +28585,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.97
+                "value": 31.97,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.3
+                "value": 10.3,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 17.58
+                "value": 17.58,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 40.15
+                "value": 40.15,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Christner, Charles M."
           }
         ],
         "outlier": false
@@ -25666,21 +28621,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.55
+                "value": 31.55,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 26.48
+                "value": 26.48,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 41.97
+                "value": 41.97,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Thiel, Denise S."
           }
         ],
         "outlier": true
@@ -25697,21 +28657,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.77
+                "value": 30.77,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 3.27
+                "value": 3.27,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 4.58
+                "value": 4.58,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 61.37
+                "value": 61.37,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Moore, Charles D."
           }
         ],
         "outlier": false
@@ -25728,21 +28693,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.55
+                "value": 30.55,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 68.69
+                "value": 68.69,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.76
+                "value": 0.76,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kistler, Helen M."
           }
         ],
         "outlier": false
@@ -25759,21 +28729,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.77
+                "value": 29.77,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 26.74
+                "value": 26.74,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.18
+                "value": 0.18,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 43.32
+                "value": 43.32,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Buczak, Jason"
           }
         ],
         "outlier": false
@@ -25790,21 +28765,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.28
+                "value": 29.28,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 50.87
+                "value": 50.87,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.29
+                "value": 0.29,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 19.57
+                "value": 19.57,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Albert, James"
           }
         ],
         "outlier": false
@@ -25821,21 +28801,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 28.3
+                "value": 28.3,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 71.46
+                "value": 71.46,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.12
+                "value": 0.12,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.12
+                "value": 0.12,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Peck, Yackopec Cheryl J."
           }
         ],
         "outlier": false
@@ -25852,21 +28837,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.37
+                "value": 27.37,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 68.42
+                "value": 68.42,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 4.21
+                "value": 4.21,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Weimer, Douglas Reid"
           }
         ],
         "outlier": true
@@ -25883,21 +28873,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.1
+                "value": 27.1,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 44.99
+                "value": 44.99,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.9
+                "value": 1.9,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.02
+                "value": 26.02,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Falcon, James N."
           }
         ],
         "outlier": false
@@ -25914,21 +28909,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.36
+                "value": 25.36,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 6.73
+                "value": 6.73,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 67.92
+                "value": 67.92,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mahady, Michael"
           }
         ],
         "outlier": false
@@ -25945,21 +28945,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 24.78
+                "value": 24.78,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 25.82
+                "value": 25.82,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.45
+                "value": 0.45,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 48.81
+                "value": 48.81,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bompiani, L. Anthony"
           }
         ],
         "outlier": false
@@ -25976,21 +28981,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 18.59
+                "value": 18.59,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 50.14
+                "value": 50.14,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.7
+                "value": 0.7,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 30.56
+                "value": 30.56,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gongaware, Wayne"
           }
         ],
         "outlier": false
@@ -26007,21 +29017,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 15.7
+                "value": 15.7,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 24.73
+                "value": 24.73,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.54
+                "value": 0.54,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 58.84
+                "value": 58.84,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Conway, Charles"
           }
         ],
         "outlier": false
@@ -26041,21 +29056,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 31.15234375
+            "value": 31.15234375,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 5.0806
+            "value": 5.0806,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 5.8134
+            "value": 5.8134,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 57.3034
+            "value": 57.3034,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Butler"
       }
     ],
     "outlier": false,
@@ -26072,21 +29092,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 55.34
+                "value": 55.34,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0
+                "value": 0,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 4.85
+                "value": 4.85,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.04
+                "value": 32.04,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McCune, Timothy F."
           }
         ],
         "outlier": true
@@ -26103,21 +29128,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44.82
+                "value": 44.82,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.05
+                "value": 2.05,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 11.16
+                "value": 11.16,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 40.18
+                "value": 40.18,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Fullerton, William T."
           }
         ],
         "outlier": false
@@ -26134,21 +29164,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 44
+                "value": 44,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.86
+                "value": 10.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 7.09
+                "value": 7.09,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 37.14
+                "value": 37.14,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Kovach, David T."
           }
         ],
         "outlier": false
@@ -26165,21 +29200,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.74
+                "value": 35.74,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 4.24
+                "value": 4.24,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 15.06
+                "value": 15.06,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 44.22
+                "value": 44.22,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Stoughton, Lewis E."
           }
         ],
         "outlier": false
@@ -26196,21 +29236,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.74
+                "value": 32.74,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 2.65
+                "value": 2.65,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 3.54
+                "value": 3.54,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 61.06
+                "value": 61.06,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "O'donnell, Kevin P."
           }
         ],
         "outlier": true
@@ -26227,21 +29272,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 32.66
+                "value": 32.66,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.18
+                "value": 12.18,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 4.23
+                "value": 4.23,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 50.42
+                "value": 50.42,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Haggerty, Sue"
           }
         ],
         "outlier": false
@@ -26258,21 +29308,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.98
+                "value": 30.98,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.16
+                "value": 8.16,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.3
+                "value": 1.3,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 59.55
+                "value": 59.55,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "O'Donnell, William S."
           }
         ],
         "outlier": false
@@ -26289,21 +29344,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.69
+                "value": 25.69,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.76
+                "value": 0.76,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.38
+                "value": 1.38,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 71.87
+                "value": 71.87,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "O'Donnell, Kevin P."
           }
         ],
         "outlier": false
@@ -26320,21 +29380,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 22.69
+                "value": 22.69,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.79
+                "value": 13.79,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 18.15
+                "value": 18.15,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 44.65
+                "value": 44.65,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Seibel, Wayne D."
           }
         ],
         "outlier": true
@@ -26351,21 +29416,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 15.72
+                "value": 15.72,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.63
+                "value": 0.63,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 48.43
+                "value": 48.43,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 25.79
+                "value": 25.79,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Shaffer, William"
           }
         ],
         "outlier": true
@@ -26385,21 +29455,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 30.18867925
+            "value": 30.18867925,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 30.431399999999996
+            "value": 30.431399999999996,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 14.3297
+            "value": 14.3297,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 24.8844
+            "value": 24.8844,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Adams"
       }
     ],
     "outlier": false,
@@ -26416,21 +29491,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 35.2
+                "value": 35.2,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 44.22
+                "value": 44.22,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 3.06
+                "value": 3.06,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 17.52
+                "value": 17.52,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Harvey, Matthew Robert"
           }
         ],
         "outlier": false
@@ -26447,21 +29527,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.72
+                "value": 33.72,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.39
+                "value": 12.39,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 26.51
+                "value": 26.51,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 27.38
+                "value": 27.38,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bowman, Daniel S."
           }
         ],
         "outlier": false
@@ -26478,21 +29563,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 29.13
+                "value": 29.13,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 10.12
+                "value": 10.12,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 28.24
+                "value": 28.24,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 32.33
+                "value": 32.33,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Beauchat, Mark D."
           }
         ],
         "outlier": false
@@ -26509,21 +29599,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.48
+                "value": 25.48,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 46.79
+                "value": 46.79,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.28
+                "value": 1.28,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.44
+                "value": 26.44,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Little, Tony J."
           }
         ],
         "outlier": false
@@ -26543,21 +29638,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 28.98148148
+            "value": 28.98148148,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 26.2963
+            "value": 26.2963,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 1.0185
+            "value": 1.0185,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 41.4815
+            "value": 41.4815,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Perry"
       }
     ],
     "outlier": false,
@@ -26574,21 +29674,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46.2
+                "value": 46.2,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 4.09
+                "value": 4.09,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 49.71
+                "value": 49.71,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McGuire, Daniel R."
           }
         ],
         "outlier": true
@@ -26605,21 +29710,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 46
+                "value": 46,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8
+                "value": 8,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.5
+                "value": 0.5,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 45.5
+                "value": 45.5,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Frownfelter, Elizabeth R."
           }
         ],
         "outlier": true
@@ -26636,21 +29746,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 16.36
+                "value": 16.36,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 37.9
+                "value": 37.9,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 1.67
+                "value": 1.67,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 41.57
+                "value": 41.57,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Schechterly, Michael E."
           }
         ],
         "outlier": false
@@ -26670,21 +29785,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 28.8973384
+            "value": 28.8973384,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 13.054499999999999
+            "value": 13.054499999999999,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 3.5488
+            "value": 3.5488,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 53.992399999999996
+            "value": 53.992399999999996,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Crawford"
       }
     ],
     "outlier": false,
@@ -26701,21 +29821,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 37.42
+                "value": 37.42,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 11.96
+                "value": 11.96,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 9.63
+                "value": 9.63,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 40.99
+                "value": 40.99,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Pendolino, Samuel V."
           }
         ],
         "outlier": false
@@ -26732,21 +29857,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 33.96
+                "value": 33.96,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 14.37
+                "value": 14.37,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.37
+                "value": 0.37,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 51.31
+                "value": 51.31,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Nicols, Amy L."
           }
         ],
         "outlier": true
@@ -26763,21 +29893,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 30.8
+                "value": 30.8,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 3.63
+                "value": 3.63,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 20.07
+                "value": 20.07,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 45.16
+                "value": 45.16,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Zilhaver, Lincoln S."
           }
         ],
         "outlier": false
@@ -26794,21 +29929,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 24.54
+                "value": 24.54,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 16.97
+                "value": 16.97,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 58.49
+                "value": 58.49,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Marwood, Rita J."
           }
         ],
         "outlier": true
@@ -26828,21 +29968,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 28.672985779999998
+            "value": 28.672985779999998,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 14.691899999999999
+            "value": 14.691899999999999,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 5.2133
+            "value": 5.2133,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 51.4218
+            "value": 51.4218,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Fulton"
       }
     ],
     "outlier": false,
@@ -26859,21 +30004,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 31.36
+                "value": 31.36,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 25.42
+                "value": 25.42,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 16.95
+                "value": 16.95,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 26.27
+                "value": 26.27,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Heming, Tamela M."
           }
         ],
         "outlier": true
@@ -26890,21 +30040,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 23.74
+                "value": 23.74,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.08
+                "value": 8.08,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.51
+                "value": 0.51,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 67.68
+                "value": 67.68,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mellott, Wendy"
           }
         ],
         "outlier": true
@@ -26924,21 +30079,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 28.62318841
+            "value": 28.62318841,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 71.3768
+            "value": 71.3768,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0
+            "value": 0,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Elk"
       }
     ],
     "outlier": true,
@@ -26955,21 +30115,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 26.69
+                "value": 26.69,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 73.31
+                "value": 73.31,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Martin, James L."
           }
         ],
         "outlier": true
@@ -26986,21 +30151,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.67
+                "value": 25.67,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 74.33
+                "value": 74.33,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Jacob, Mark S."
           }
         ],
         "outlier": true
@@ -27020,21 +30190,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 26.083333330000002
+            "value": 26.083333330000002,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 12.062299999999999
+            "value": 12.062299999999999,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0.0278
+            "value": 0.0278,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 61.5898
+            "value": 61.5898,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Centre"
       }
     ],
     "outlier": false,
@@ -27051,21 +30226,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 43.8
+                "value": 43.8,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 8.55
+                "value": 8.55,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 47.44
+                "value": 47.44,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Gillette-Walker, Kelley"
           }
         ],
         "outlier": false
@@ -27082,21 +30262,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 40.16
+                "value": 40.16,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 12.86
+                "value": 12.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 46.98
+                "value": 46.98,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Jordan, Thomas N."
           }
         ],
         "outlier": false
@@ -27113,21 +30298,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 26.59
+                "value": 26.59,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.57
+                "value": 13.57,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.28
+                "value": 0.28,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 59.56
+                "value": 59.56,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Sinclair, Allen W."
           }
         ],
         "outlier": false
@@ -27144,21 +30334,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 20
+                "value": 20,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 15.29
+                "value": 15.29,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 64.71
+                "value": 64.71,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Prestia, Carmine W. Jr."
           }
         ],
         "outlier": false
@@ -27175,21 +30370,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 16.34
+                "value": 16.34,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 13.43
+                "value": 13.43,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 70.06
+                "value": 70.06,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Lachman, Steven Frederic"
           }
         ],
         "outlier": false
@@ -27206,21 +30406,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 5.93
+                "value": 5.93,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 3.95
+                "value": 3.95,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 90.11
+                "value": 90.11,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Horner, Ronald J."
           }
         ],
         "outlier": false
@@ -27237,21 +30442,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 0.74
+                "value": 0.74,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 0.74
+                "value": 0.74,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 98.52
+                "value": 98.52,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Nileski, Charity L."
           }
         ],
         "outlier": true
@@ -27271,21 +30481,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 25.36136662
+            "value": 25.36136662,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 11.958
+            "value": 11.958,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 14.4547
+            "value": 14.4547,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 47.7004
+            "value": 47.7004,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Union"
       }
     ],
     "outlier": false,
@@ -27302,21 +30517,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 26.3
+                "value": 26.3,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 18.89
+                "value": 18.89,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 34.07
+                "value": 34.07,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 20.74
+                "value": 20.74,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mensch, Jeffrey L."
           }
         ],
         "outlier": true
@@ -27333,21 +30553,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 16.58
+                "value": 16.58,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 5.87
+                "value": 5.87,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 3.32
+                "value": 3.32,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 74.23
+                "value": 74.23,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Armbruster, Leo S."
           }
         ],
         "outlier": false
@@ -27367,21 +30592,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 25
+            "value": 25,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 23.6146
+            "value": 23.6146,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 46.0809
+            "value": 46.0809,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 4.643
+            "value": 4.643,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Somerset"
       }
     ],
     "outlier": false,
@@ -27398,21 +30628,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 38.11
+                "value": 38.11,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 26.79
+                "value": 26.79,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 33.96
+                "value": 33.96,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 1.13
+                "value": 1.13,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Stevanus, Sandra L."
           }
         ],
         "outlier": true
@@ -27429,21 +30664,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 25.35
+                "value": 25.35,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 14.48
+                "value": 14.48,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 55.71
+                "value": 55.71,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 4.46
+                "value": 4.46,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Mankamyer, Susan"
           }
         ],
         "outlier": true
@@ -27460,21 +30700,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 24.46
+                "value": 24.46,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 25.54
+                "value": 25.54,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 49.64
+                "value": 49.64,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0.36
+                "value": 0.36,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Seger, William E."
           }
         ],
         "outlier": true
@@ -27491,21 +30736,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 22.53
+                "value": 22.53,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 27.34
+                "value": 27.34,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 50.14
+                "value": 50.14,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Johnson, Kenneth W."
           }
         ],
         "outlier": false
@@ -27522,21 +30772,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 21.9
+                "value": 21.9,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 22.86
+                "value": 22.86,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0.95
+                "value": 0.95,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 41.9
+                "value": 41.9,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Geary, D Gregory"
           }
         ],
         "outlier": true
@@ -27553,21 +30808,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 19.92
+                "value": 19.92,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 20.31
+                "value": 20.31,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 49.43
+                "value": 49.43,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 9.96
+                "value": 9.96,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Bell, Douglas McCall"
           }
         ],
         "outlier": true
@@ -27587,21 +30847,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 23.36601307
+            "value": 23.36601307,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 57.7741
+            "value": 57.7741,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 1.9640000000000002
+            "value": 1.9640000000000002,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 16.5303
+            "value": 16.5303,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Potter"
       }
     ],
     "outlier": true,
@@ -27618,21 +30883,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 27.71
+                "value": 27.71,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 71.69
+                "value": 71.69,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "McCleaft, Kari A."
           }
         ],
         "outlier": true
@@ -27649,21 +30919,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 24.06
+                "value": 24.06,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 61.5
+                "value": 61.5,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 14.44
+                "value": 14.44,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Weiss, Delores G."
           }
         ],
         "outlier": true
@@ -27680,21 +30955,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 19.26
+                "value": 19.26,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 45.9
+                "value": 45.9,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 4.92
+                "value": 4.92,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 29.92
+                "value": 29.92,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Easton, Annette L."
           }
         ],
         "outlier": true
@@ -27714,21 +30994,26 @@ export const MDJ_DATA = [
         "values": [
           {
             "className": "cash-bar",
-            "value": 21.67832168
+            "value": 21.67832168,
+            "name": "Cash bail"
           },
           {
             "className": "unsecured-bar",
-            "value": 78.3217
+            "value": 78.3217,
+            "name": "Unsecured"
           },
           {
             "className": "nonmonetary-bar",
-            "value": 0
+            "value": 0,
+            "name": "Nonmonetary"
           },
           {
             "className": "ror-bar",
-            "value": 0
+            "value": 0,
+            "name": "ROR"
           }
-        ]
+        ],
+        "name": "Cameron"
       }
     ],
     "outlier": true,
@@ -27745,21 +31030,26 @@ export const MDJ_DATA = [
             "values": [
               {
                 "className": "cash-bar",
-                "value": 21.28
+                "value": 21.28,
+                "name": "Cash bail"
               },
               {
                 "className": "unsecured-bar",
-                "value": 78.72
+                "value": 78.72,
+                "name": "Unsecured"
               },
               {
                 "className": "nonmonetary-bar",
-                "value": 0
+                "value": 0,
+                "name": "Nonmonetary"
               },
               {
                 "className": "ror-bar",
-                "value": 0
+                "value": 0,
+                "name": "ROR"
               }
-            ]
+            ],
+            "name": "Brown, Barry D."
           }
         ],
         "outlier": true
