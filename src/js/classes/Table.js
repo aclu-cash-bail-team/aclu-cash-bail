@@ -102,28 +102,77 @@ class BarGraphCell extends Cell {
 class DistributionBarCell extends Cell {
   constructor(content, className) {
     super(className);
-    this.content = content["values"];
+    this.values = content["values"].filter(dist => dist["value"] !== 0);
+    this.tooltipName = content["name"];
     this.render();
+  }
+
+  createDistributionTable() {
+    const table = document.createElement("table");
+    const tbody = document.createElement("tbody");
+    this.values.forEach(dist => {
+      if (dist["value"] === 0) {
+        return;
+      }
+      const tr = document.createElement("tr");
+      const colorCell = document.createElement("td");
+      const color = document.createElement("div");
+      color.className = dist["className"];
+      color.style.width = "10px";
+      color.style.height = "10px";
+      color.style.verticalAlign = "middle";
+      color.style.padding = "0";
+      colorCell.appendChild(color);
+      const category = document.createElement("td");
+      const value = document.createElement("td");
+      category.innerText = dist["name"];
+      value.style.textAlign = "right";
+      value.innerText = `${Math.round(dist["value"] * 100) / 100}%`;
+      tr.appendChild(colorCell);
+      tr.appendChild(category);
+      tr.appendChild(value);
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    return table;
+  }
+
+  createTooltip() {
+    const tooltip = document.createElement("div");
+    tooltip.className = "dist-tooltip";
+    const name = document.createElement("h3");
+    name.className = "dist-tooltip-name";
+    name.innerText = this.tooltipName;
+    const table = this.createDistributionTable();
+    tooltip.appendChild(name);
+    tooltip.appendChild(table);
+    return tooltip;
   }
 
   render() {
     super.render();
+    const container = document.createElement("div");
+    container.className = "dist-bar-container";
     // create bars for each distribution
-    this.content.forEach(dist => {
+    this.values.forEach(dist => {
       const bar = document.createElement("div");
       bar.className = `viz-bar ${dist["className"]}`;
-      this.element.appendChild(bar);
+      container.appendChild(bar);
     });
     // configure sizes of distribution bars
-    const numDists = this.content.length;
+    const numDists = this.values.length;
     const [gapSize, gapUnits] = [2, "px"];
     const gapCorrection = Math.round(((numDists - 1) * gapSize) / numDists);
-    const distWidths = this.content.map((dist) =>
+    const distWidths = this.values.map(dist =>
       `calc(${dist["value"]}% - ${gapCorrection}${gapUnits})`
     );
-    this.element.style.display = "inline-grid";
-    this.element.style.columnGap = `${gapSize}${gapUnits}`;
-    this.element.style.gridTemplateColumns = distWidths.join(" ");
+    container.style.display = "inline-grid";
+    container.style.columnGap = `${gapSize}${gapUnits}`;
+    container.style.gridTemplateColumns = distWidths.join(" ");
+    // configure tooltip
+    const tooltip = this.createTooltip();
+    container.appendChild(tooltip);
+    this.element.appendChild(container);
   }
 }
 
