@@ -563,8 +563,11 @@ export class Table {
     if (!initialSort) this.header.clearedSortedCells();
 
     this.data.sort((a, b) => {
-      const i = this.toNumber(a.data[this.sortCol]);
-      const j = this.toNumber(b.data[this.sortCol]);
+      const val1 = a.data[this.sortCol];
+      const val2 = b.data[this.sortCol];
+      // Determine if value is treated as a number or a string
+      const i = /\d/.test(val1) ? this.toNumber(val1) : val1;
+      const j = /\d/.test(val2) ? this.toNumber(val2) : val2;
       if (i < j) {
         return this.sortDir * -1;
       } else if (i > j) {
