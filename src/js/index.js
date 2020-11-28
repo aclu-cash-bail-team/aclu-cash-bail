@@ -326,7 +326,7 @@ const createBailRetentionFeeTable = () => {
         "text": "County",
         "unit": ""
       },
-      sortable: false,
+      sortable: true,
       searchable: true
     },
     {
@@ -370,23 +370,23 @@ const createPretrialSpendingTable = () => {
         "text": "Total Budget",
         "unit": "dollars"
       },
-      sortable: false,
+      sortable: true,
       searchable: false
     },
     {
       class: "fraction-budget-cell number-cell",
       header: {
-        "text": "% of Budget",
+        "text": "% Budget",
         "unit": "percent"
       },
-      sortable: false,
+      sortable: true,
       searchable: false
     },
     {
       class: "viz-cell",
       header: {
         "start": 0,
-        "end": 140,
+        "end": 100,
         "averages": [
           {
             "name": "",
@@ -437,25 +437,24 @@ const createMdjTable = () => {
       class: "bail-black-cell number-cell",
       header: {
         "text": "Black",
-        "unit": "number"
+        "unit": "percent"
       },
-      sortable: false,
+      sortable: true,
       searchable: false
     },
     {
       class: "bail-white-cell number-cell",
       header: {
         "text": "White",
-        "unit": "number"
+        "unit": "percent"
       },
-      sortable: false,
+      sortable: true,
       searchable: false
     },
     {
       class: "viz-cell bail-dist-cell",
-      header: "Bail Type Dist",
       header: {
-        "text": "Total Cases",
+        "text": "Bail Types",
         "unit": "number"
       },
       sortable: false,

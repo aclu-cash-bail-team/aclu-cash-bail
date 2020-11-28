@@ -6541,11 +6541,11 @@ export const PRETRIAL_SPENDING_DATA = [
       "Fayette",
       "$9.3M",
       "$7.6M",
-      121.3963915,
+      100,
       {
         "type": "bar",
         "values": [
-          121.3963915
+          100
         ]
       }
     ],
@@ -6991,11 +6991,11 @@ export const PRETRIAL_SPENDING_DATA = [
       "Somerset",
       "$3.8M",
       "$2.9M",
-      130.5309721,
+      100,
       {
         "type": "bar",
         "values": [
-          130.5309721
+          100
         ]
       }
     ],
