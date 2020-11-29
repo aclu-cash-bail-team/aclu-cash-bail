@@ -17,7 +17,7 @@ const MAP_TRANSFORM = {
   ]
 };
 
-export class Map {
+class Map {
   constructor() {
     this.svg = d3.select("body").append("svg")
       .attr("width", MAP_WIDTH)
@@ -47,5 +47,28 @@ export class Map {
     const features = feature(countyTopoJson, countyTopoJson.objects["cb_2015_pennsylvania_county_20m"]).features;
 
     this.renderMap(features, path);
+  }
+}
+
+export class BailRateMap extends Map {
+  constructor(data) {
+    super();
+    this.data = data;
+    this.colorDomain = [10, 20, 30, 40, 50, 60];
+    this.color = d3.scaleThreshold().domain(this.colorDomain).range([
+      "#182935", "#215f5d", "#1b9b88", "#0fc59b", "0fda92", "00ed89"
+    ]);
+    this.render();
+  }
+
+  renderMap(features, path) {
+    this.data.forEach(row => {
+      const countyName = row.data[0];
+      const cashBailRate = row.data[2];
+      const feature = features.find(f => f.properties["NAME"] === countyName);
+      feature.properties.color = this.color(cashBailRate);
+    });
+    const paths = super.renderMap(features, path);
+    paths.style("fill", feature => feature.properties.color);
   }
 }
