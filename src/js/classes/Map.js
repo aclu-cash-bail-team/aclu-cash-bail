@@ -61,6 +61,14 @@ export class BailRateMap extends Map {
     this.render();
   }
 
+  onMouseOver(event) {
+    d3.select(event.srcElement).style("stroke-width", "2px");
+  }
+
+  onMouseOut(event) {
+    d3.select(event.srcElement).style("stroke-width", "0.5px");
+  }
+
   renderMap(features, path) {
     this.data.forEach(row => {
       const countyName = row.data[0];
