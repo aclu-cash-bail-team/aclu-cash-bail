@@ -2,3 +2,8 @@ path {
     stroke:#eee;
     stroke-width: 0.5px;
 }
+
+.legend-text {
+    fill: rgba(255, 255, 255, 0.75);
+    font-size: 10px;
+}
