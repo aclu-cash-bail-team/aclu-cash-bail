@@ -86,9 +86,15 @@ export class BailRateMap extends Map {
     this.svg.selectAll(`text:not([data-bucket*="${bucket}"])`).style("opacity", "0.4");
   }
 
+  highlightMap(event) {
+    const bucket = event.srcElement.getAttribute("data-bucket");
+    this.svg.selectAll(`path:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
+  }
+
   resetHighlight() {
     this.svg.selectAll("rect").style("opacity", "1");
     this.svg.selectAll("text").style("opacity", "1");
+    this.svg.selectAll("path").style("opacity", "1");
   }
 
   renderMap(features, path) {
@@ -115,7 +121,14 @@ export class BailRateMap extends Map {
       .attr("width", LEGEND_SECTION_WIDTH)
       .attr("height", LEGEND_SECTION_HEIGHT)
       .attr("data-bucket", d => d)
-      .style("fill", d => this.color(d - 0.01));
+      .style("fill", d => this.color(d - 0.01))
+      .on("mouseover", event => {
+        this.highlightBar(event);
+        this.highlightMap(event);
+      })
+      .on("mouseout", () => {
+        this.resetHighlight();
+      });
     legend.append("text")
       .attr("x", (_, i) => LEGEND_LABEL_OFFSET_X + (i-1)*LEGEND_SECTION_WIDTH)
       .attr("y", LEGEND_LABEL_OFFSET_Y)
