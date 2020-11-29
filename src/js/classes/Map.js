@@ -16,6 +16,12 @@ const MAP_TRANSFORM = {
     -50
   ]
 };
+const LEGEND_SECTION_WIDTH = 35;
+const LEGEND_SECTION_HEIGHT = 10;
+const LEGEND_OFFSET_X = 300;
+const LEGEND_OFFSET_Y = 55;
+const LEGEND_LABEL_OFFSET_X = LEGEND_OFFSET_X - 4;
+const LEGEND_LABEL_OFFSET_Y = LEGEND_OFFSET_Y + 22;
 
 class Map {
   constructor() {
@@ -55,6 +61,7 @@ export class BailRateMap extends Map {
     super();
     this.data = data;
     this.colorDomain = [10, 20, 30, 40, 50, 60];
+    this.labels = [0, 10, 20, 30, 40, 50, 60];
     this.color = d3.scaleThreshold().domain(this.colorDomain).range([
       "#182935", "#215f5d", "#1b9b88", "#0fc59b", "0fda92", "00ed89"
     ]);
@@ -78,5 +85,22 @@ export class BailRateMap extends Map {
     });
     const paths = super.renderMap(features, path);
     paths.style("fill", feature => feature.properties.color);
+
+    // set up map legend
+    const legend = this.svg.selectAll("g")
+      .data(this.labels)
+      .enter().append("g")
+      .attr("class", "legend");
+    legend.append("rect")
+      .attr("x", (_, i) => LEGEND_OFFSET_X + (i-1)*LEGEND_SECTION_WIDTH) // i is 1-indexed
+      .attr("y", LEGEND_OFFSET_Y)
+      .attr("width", LEGEND_SECTION_WIDTH)
+      .attr("height", LEGEND_SECTION_HEIGHT)
+      .style("fill", d => this.color(d - 0.01));
+    legend.append("text")
+      .attr("x", (_, i) => LEGEND_LABEL_OFFSET_X + (i-1)*LEGEND_SECTION_WIDTH)
+      .attr("y", LEGEND_LABEL_OFFSET_Y)
+      .attr("class", "legend-text")
+      .text((_, i) => `${this.labels[i-1]}`);
   }
 }
