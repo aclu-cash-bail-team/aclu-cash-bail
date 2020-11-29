@@ -70,10 +70,25 @@ export class BailRateMap extends Map {
 
   onMouseOver(event) {
     d3.select(event.srcElement).style("stroke-width", "2px");
+    this.highlightBar(event);
   }
 
   onMouseOut(event) {
     d3.select(event.srcElement).style("stroke-width", "0.5px");
+    this.resetHighlight();
+  }
+
+  highlightBar(event) {
+    const bucket = Number(event.srcElement.getAttribute("data-bucket"));
+    // darken other legend bars
+    this.svg.selectAll(`rect:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
+    // darken other legend labels, except for the start & end of highlighted bar
+    this.svg.selectAll(`text:not([data-bucket*="${bucket}"])`).style("opacity", "0.4");
+  }
+
+  resetHighlight() {
+    this.svg.selectAll("rect").style("opacity", "1");
+    this.svg.selectAll("text").style("opacity", "1");
   }
 
   renderMap(features, path) {
@@ -82,9 +97,11 @@ export class BailRateMap extends Map {
       const cashBailRate = row.data[2];
       const feature = features.find(f => f.properties["NAME"] === countyName);
       feature.properties.color = this.color(cashBailRate);
+      feature.properties.bucket = this.color.invertExtent(feature.properties.color)[1];
     });
     const paths = super.renderMap(features, path);
-    paths.style("fill", feature => feature.properties.color);
+    paths.style("fill", feature => feature.properties.color)
+      .attr("data-bucket", feature => feature.properties.bucket);
 
     // set up map legend
     const legend = this.svg.selectAll("g")
@@ -97,11 +114,17 @@ export class BailRateMap extends Map {
       .attr("y", LEGEND_OFFSET_Y)
       .attr("width", LEGEND_SECTION_WIDTH)
       .attr("height", LEGEND_SECTION_HEIGHT)
+      .attr("data-bucket", d => d)
       .style("fill", d => this.color(d - 0.01));
     legend.append("text")
       .attr("x", (_, i) => LEGEND_LABEL_OFFSET_X + (i-1)*LEGEND_SECTION_WIDTH)
       .attr("y", LEGEND_LABEL_OFFSET_Y)
       .attr("class", "legend-text")
+      .attr("data-bucket", d => {
+        const color = this.color(d - 0.01);
+        const [start, end] = this.color.invertExtent(color);
+        return `${start}-${end}`;
+      })
       .text((_, i) => `${this.labels[i-1]}`);
     // set up legend max label
     this.svg.select(`g[data-label="${this.labels[this.labels.length - 1]}"]`)
@@ -109,6 +132,7 @@ export class BailRateMap extends Map {
       .attr("x", LEGEND_LABEL_OFFSET_X  + (this.labels.length-1)*LEGEND_SECTION_WIDTH)
       .attr("y", LEGEND_LABEL_OFFSET_Y)
       .attr("class", "legend-text")
+      .attr("data-bucket", this.labels[this.labels.length - 1])
       .text(this.labels[this.labels.length - 1]);
   }
 }
