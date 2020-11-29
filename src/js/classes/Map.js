@@ -90,7 +90,8 @@ export class BailRateMap extends Map {
     const legend = this.svg.selectAll("g")
       .data(this.labels)
       .enter().append("g")
-      .attr("class", "legend");
+      .attr("class", "legend")
+      .attr("data-label", d => d);
     legend.append("rect")
       .attr("x", (_, i) => LEGEND_OFFSET_X + (i-1)*LEGEND_SECTION_WIDTH) // i is 1-indexed
       .attr("y", LEGEND_OFFSET_Y)
@@ -102,5 +103,12 @@ export class BailRateMap extends Map {
       .attr("y", LEGEND_LABEL_OFFSET_Y)
       .attr("class", "legend-text")
       .text((_, i) => `${this.labels[i-1]}`);
+    // set up legend max label
+    this.svg.select(`g[data-label="${this.labels[this.labels.length - 1]}"]`)
+      .append("text")
+      .attr("x", LEGEND_LABEL_OFFSET_X  + (this.labels.length-1)*LEGEND_SECTION_WIDTH)
+      .attr("y", LEGEND_LABEL_OFFSET_Y)
+      .attr("class", "legend-text")
+      .text(this.labels[this.labels.length - 1]);
   }
 }
