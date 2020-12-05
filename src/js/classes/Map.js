@@ -66,9 +66,10 @@ class Map {
 }
 
 export class BailRateMap extends Map {
-  constructor(data) {
+  constructor(data, average) {
     super();
     this.data = data;
+    this.average = average;
     this.colorDomain = [10, 20, 30, 40, 50, 60];
     this.labels = [0, 10, 20, 30, 40, 50, 60];
     this.color = d3.scaleThreshold().domain(this.colorDomain).range([
@@ -144,6 +145,21 @@ export class BailRateMap extends Map {
       .attr("class", "legend-text")
       .attr("data-bucket", this.labels[this.labels.length - 1])
       .text(this.labels[this.labels.length - 1]);
+    // set up average label
+    const legendWidth = LEGEND_SECTION_WIDTH * this.colorDomain.length;
+    const maxValue = this.colorDomain[this.colorDomain.length - 1];
+    const avgOffsetX = LEGEND_OFFSET_X + legendWidth * this.average / maxValue;
+    this.svg.append("line")
+      .attr("x1", avgOffsetX)
+      .attr("x2", avgOffsetX)
+      .attr("y1", LEGEND_OFFSET_Y + 10)
+      .attr("y2", LEGEND_OFFSET_Y - 5)
+      .attr("class", "legend-avg-line");
+    this.svg.append("text")
+      .attr("x", avgOffsetX - 20)
+      .attr("y", LEGEND_OFFSET_Y - 10)
+      .attr("class", "legend-avg-label")
+      .text(`Avg: ${this.average}%`);
   }
 
   renderCities() {

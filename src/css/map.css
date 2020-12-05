@@ -8,6 +8,17 @@ path {
     font-size: 10px;
 }
 
+.legend-avg-line {
+    stroke-dasharray: 2, 2;
+    stroke: #eee;
+    stroke-width: 2px;
+}
+
+.legend-avg-label {
+    fill: #eee;
+    font-size: 9px;
+}
+
 .city-label {
     font-size: 12px;
     text-shadow: 1px 0 0 #eee, -1px 0 0 #eee, 0 1px 0 #eee, 0 -1px 0 #eee, 1px 1px #eee, -1px -1px 0 #eee, 1px -1px 0 #eee, -1px 1px 0 #eee;
