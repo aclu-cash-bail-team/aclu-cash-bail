@@ -3,6 +3,7 @@ import { feature } from "topojson";
 import { COUNTY_MAP_DATA } from "../data.js";
 
 // These values were manually configured to render the map centered and scaled
+// TODO: Allow these to scale for mobile
 const MAP_WIDTH = 800;
 const MAP_HEIGHT = 500;
 const MAP_SCALE_FACTOR = 40;
@@ -22,6 +23,14 @@ const LEGEND_OFFSET_X = 300;
 const LEGEND_OFFSET_Y = 55;
 const LEGEND_LABEL_OFFSET_X = LEGEND_OFFSET_X - 4;
 const LEGEND_LABEL_OFFSET_Y = LEGEND_OFFSET_Y + 22;
+
+const PHILADELPHIA_X = 643;
+const PHILADELPHIA_Y = 359;
+const HARRISBURG_X = 477;
+const HARRISBURG_Y = 319;
+const PITTSBURGH_X = 170;
+const PITTSBURGH_Y = 310;
+const CITY_LABEL_OFFSET_Y = 15;
 
 class Map {
   constructor() {
@@ -83,7 +92,7 @@ export class BailRateMap extends Map {
     // darken other legend bars
     this.svg.selectAll(`rect:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
     // darken other legend labels, except for the start & end of highlighted bar
-    this.svg.selectAll(`text:not([data-bucket*="${bucket}"])`).style("opacity", "0.4");
+    this.svg.selectAll(`.legend-text:not([data-bucket*="${bucket}"])`).style("opacity", "0.4");
   }
 
   highlightMap(event) {
@@ -137,6 +146,45 @@ export class BailRateMap extends Map {
       .text(this.labels[this.labels.length - 1]);
   }
 
+  renderCities() {
+    // Philadelphia
+    this.svg.append("circle")
+      .attr("cx", PHILADELPHIA_X)
+      .attr("cy", PHILADELPHIA_Y)
+      .attr("r", 4)
+      .attr("fill", "white");
+    this.svg.append("text")
+      .attr("x", PHILADELPHIA_X - 43)
+      .attr("y", PHILADELPHIA_Y - CITY_LABEL_OFFSET_Y)
+      .attr("class", "city-label")
+      .text("Philadelphia");
+
+    // Harrisburg
+    this.svg.append("circle")
+      .attr("cx", HARRISBURG_X)
+      .attr("cy", HARRISBURG_Y)
+      .attr("r", 4)
+      .attr("fill", "white");
+    this.svg.append("text")
+      .attr("x", HARRISBURG_X - 29)
+      .attr("y", HARRISBURG_Y - CITY_LABEL_OFFSET_Y)
+      .attr("class", "city-label")
+      .text("Harrisburg");
+
+    // Pittsburgh
+    this.svg.append("circle")
+      .attr("cx", PITTSBURGH_X)
+      .attr("cy", PITTSBURGH_Y)
+      .attr("r", 4)
+      .attr("fill", "white");
+    this.svg.append("text")
+      .attr("x", PITTSBURGH_X - 27)
+      .attr("y", PITTSBURGH_Y - CITY_LABEL_OFFSET_Y)
+      .attr("class", "city-label")
+      .text("Pittsburgh");
+
+  }
+
   renderPA(features, path) {
     this.data.forEach(row => {
       const countyName = row.data[0];
@@ -150,5 +198,7 @@ export class BailRateMap extends Map {
       .attr("data-bucket", feature => feature.properties.bucket);
 
     this.renderLegend();
+
+    this.renderCities();
   }
 }

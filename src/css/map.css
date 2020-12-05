@@ -7,3 +7,8 @@ path {
     fill: rgba(255, 255, 255, 0.75);
     font-size: 10px;
 }
+
+.city-label {
+    font-size: 12px;
+    text-shadow: 1px 0 0 #eee, -1px 0 0 #eee, 0 1px 0 #eee, 0 -1px 0 #eee, 1px 1px #eee, -1px -1px 0 #eee, 1px -1px 0 #eee, -1px 1px 0 #eee;
+}
