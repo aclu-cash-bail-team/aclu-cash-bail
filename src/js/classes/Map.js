@@ -30,7 +30,7 @@ class Map {
       .attr("height", MAP_HEIGHT);
   }
 
-  renderMap(features, path) {
+  renderPA(features, path) {
     return this.svg.append("g")
       .attr("class", "county")
       .selectAll("path")
@@ -52,7 +52,7 @@ class Map {
     countyTopoJson.transform = MAP_TRANSFORM;
     const features = feature(countyTopoJson, countyTopoJson.objects["cb_2015_pennsylvania_county_20m"]).features;
 
-    this.renderMap(features, path);
+    this.renderPA(features, path);
   }
 }
 
@@ -97,19 +97,7 @@ export class BailRateMap extends Map {
     this.svg.selectAll("path").style("opacity", "1");
   }
 
-  renderMap(features, path) {
-    this.data.forEach(row => {
-      const countyName = row.data[0];
-      const cashBailRate = row.data[2];
-      const feature = features.find(f => f.properties["NAME"] === countyName);
-      feature.properties.color = this.color(cashBailRate);
-      feature.properties.bucket = this.color.invertExtent(feature.properties.color)[1];
-    });
-    const paths = super.renderMap(features, path);
-    paths.style("fill", feature => feature.properties.color)
-      .attr("data-bucket", feature => feature.properties.bucket);
-
-    // set up map legend
+  renderLegend() {
     const legend = this.svg.selectAll("g")
       .data(this.labels)
       .enter().append("g")
@@ -147,5 +135,20 @@ export class BailRateMap extends Map {
       .attr("class", "legend-text")
       .attr("data-bucket", this.labels[this.labels.length - 1])
       .text(this.labels[this.labels.length - 1]);
+  }
+
+  renderPA(features, path) {
+    this.data.forEach(row => {
+      const countyName = row.data[0];
+      const cashBailRate = row.data[2];
+      const feature = features.find(f => f.properties["NAME"] === countyName);
+      feature.properties.color = this.color(cashBailRate);
+      feature.properties.bucket = this.color.invertExtent(feature.properties.color)[1];
+    });
+    const paths = super.renderPA(features, path);
+    paths.style("fill", feature => feature.properties.color)
+      .attr("data-bucket", feature => feature.properties.bucket);
+
+    this.renderLegend();
   }
 }
