@@ -50,8 +50,24 @@ class Map {
       .on("mouseout", this.onMouseOut.bind(this));
   }
 
-  onMouseOver() {}
-  onMouseOut() {}
+  onMouseOver(event) {
+    this.showTooltip(event);
+  }
+
+  onMouseOut() {
+    this.hideTooltip();
+  }
+
+  showTooltip(event) {
+    this.tooltip.style("opacity", 1);
+    this.tooltip
+      .style("left", `${event.pageX - 100}px`)
+      .style("top", `${event.pageY - 70}px`);
+  }
+
+  hideTooltip() {
+    this.tooltip.style("opacity", 0);
+  }
 
   render() {
     const projection = d3.geoMercator();
@@ -60,6 +76,11 @@ class Map {
     const countyTopoJson = JSON.parse(JSON.stringify(COUNTY_MAP_DATA));
     countyTopoJson.transform = MAP_TRANSFORM;
     const features = feature(countyTopoJson, countyTopoJson.objects["cb_2015_pennsylvania_county_20m"]).features;
+
+    this.tooltip = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
+
 
     this.renderPA(features, path);
   }
@@ -79,14 +100,38 @@ export class BailRateMap extends Map {
   }
 
   onMouseOver(event) {
+    super.onMouseOver(event);
     d3.select(event.srcElement).style("stroke-width", "2px");
     this.highlightBar(event);
   }
 
   onMouseOut(event) {
+    super.onMouseOut();
     d3.select(event.srcElement).style("stroke-width", "0.5px");
     this.resetHighlight();
   }
+
+  showTooltip(event) {
+    super.showTooltip(event);
+    const countyElement = event.srcElement;
+    const countyName = countyElement.getAttribute("data-county-name");
+    const countyRate = countyElement.getAttribute("data-rate");
+    this.tooltip
+      .style("left", `${event.pageX - 100}px`)
+      .style("top", `${event.pageY - 70}px`)
+      .html(`
+        <h3 class="tooltip-name">${countyName}</h3>
+        <table>
+          <tbody>
+            <tr>
+              <td>Cash Bail Rate</td>
+              <td style="text-align: right; font-weight: 700;">${`${Math.round(countyRate * 100) / 100}%`}</td>
+            </tr>
+          </tbody>
+        </table>
+      `);
+  }
+
 
   highlightBar(event) {
     const bucket = Number(event.srcElement.getAttribute("data-bucket"));
@@ -206,12 +251,15 @@ export class BailRateMap extends Map {
       const countyName = row.data[0];
       const cashBailRate = row.data[2];
       const feature = features.find(f => f.properties["NAME"] === countyName);
+      feature.properties.rate = cashBailRate;
       feature.properties.color = this.color(cashBailRate);
       feature.properties.bucket = this.color.invertExtent(feature.properties.color)[1];
     });
     const paths = super.renderPA(features, path);
     paths.style("fill", feature => feature.properties.color)
-      .attr("data-bucket", feature => feature.properties.bucket);
+      .attr("data-bucket", feature => feature.properties.bucket)
+      .attr("data-county-name", feature => feature.properties["NAME"])
+      .attr("data-rate", feature => feature.properties.rate);
 
     this.renderLegend();
 
