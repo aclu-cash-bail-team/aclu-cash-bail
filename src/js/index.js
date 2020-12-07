@@ -302,16 +302,7 @@ const createBailPostingTable = () => {
       },
       sortable: true,
       searchable: false
-    },
-    {
-      class: "num-incarcerated-cell number-cell",
-      header: {
-        "text": "Number Incarcerated",
-        "unit": "number"
-      },
-      sortable: true,
-      searchable: false
-    },
+    }
   ];
   const initSort = 3;
   const tableContainer = document.getElementById("bail-posting-container");
@@ -356,7 +347,7 @@ const createPretrialSpendingTable = () => {
       searchable: true
     },
     {
-      class: "spending-cell",
+      class: "spending-cell number-cell",
       header: {
         "text": "Cost",
         "unit": "dollars"
@@ -365,7 +356,7 @@ const createPretrialSpendingTable = () => {
       searchable: false
     },
     {
-      class: "total-budget-cell",
+      class: "total-budget-cell number-cell",
       header: {
         "text": "Total Budget",
         "unit": "dollars"

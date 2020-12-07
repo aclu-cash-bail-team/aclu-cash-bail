@@ -40,7 +40,7 @@ th {
 }
 
 th.number-cell {
-  text-align: center;
+  text-align: right;
 }
 
 th.retention-fee-cell {
@@ -67,11 +67,11 @@ td {
 
 .th-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.county-name-cell .th-wrapper {
-  justify-content: flex-start;
+.number-cell .th-wrapper {
+  justify-content: flex-end;
 }
 
 .retention-fee-cell {
@@ -85,6 +85,10 @@ td {
 
 .bail-rate-cell {
   min-width: 90px;
+}
+
+.total-budget-cell {
+  min-width: 84px;
 }
 
 .bail-black-cell, .bail-white-cell {

@@ -4743,8 +4743,7 @@ export const BAIL_POSTING_DATA = [
           43.62244898
         ]
       },
-      43.62244898,
-      342
+      43.62244898
     ],
     "outlier": false
   },
@@ -4758,8 +4757,7 @@ export const BAIL_POSTING_DATA = [
           61.27998861
         ]
       },
-      61.27998861,
-      8608
+      61.27998861
     ],
     "outlier": false
   },
@@ -4773,8 +4771,7 @@ export const BAIL_POSTING_DATA = [
           56.05263158
         ]
       },
-      56.05263158,
-      426
+      56.05263158
     ],
     "outlier": false
   },
@@ -4788,8 +4785,7 @@ export const BAIL_POSTING_DATA = [
           67.60883691
         ]
       },
-      67.60883691,
-      2081
+      67.60883691
     ],
     "outlier": false
   },
@@ -4803,8 +4799,7 @@ export const BAIL_POSTING_DATA = [
           72.3183391
         ]
       },
-      72.3183391,
-      418
+      72.3183391
     ],
     "outlier": false
   },
@@ -4818,8 +4813,7 @@ export const BAIL_POSTING_DATA = [
           56.45679409
         ]
       },
-      56.45679409,
-      3515
+      56.45679409
     ],
     "outlier": false
   },
@@ -4833,8 +4827,7 @@ export const BAIL_POSTING_DATA = [
           68.23253083
         ]
       },
-      68.23253083,
-      1162
+      68.23253083
     ],
     "outlier": false
   },
@@ -4848,8 +4841,7 @@ export const BAIL_POSTING_DATA = [
           89.21800948
         ]
       },
-      89.21800948,
-      753
+      89.21800948
     ],
     "outlier": false
   },
@@ -4863,8 +4855,7 @@ export const BAIL_POSTING_DATA = [
           48.80620772
         ]
       },
-      48.80620772,
-      2453
+      48.80620772
     ],
     "outlier": false
   },
@@ -4878,8 +4869,7 @@ export const BAIL_POSTING_DATA = [
           66.14420063
         ]
       },
-      66.14420063,
-      422
+      66.14420063
     ],
     "outlier": false
   },
@@ -4893,8 +4883,7 @@ export const BAIL_POSTING_DATA = [
           41.87380497
         ]
       },
-      41.87380497,
-      876
+      41.87380497
     ],
     "outlier": false
   },
@@ -4908,8 +4897,7 @@ export const BAIL_POSTING_DATA = [
           51.61290323
         ]
       },
-      51.61290323,
-      16
+      51.61290323
     ],
     "outlier": false
   },
@@ -4923,8 +4911,7 @@ export const BAIL_POSTING_DATA = [
           49.51370469
         ]
       },
-      49.51370469,
-      560
+      49.51370469
     ],
     "outlier": false
   },
@@ -4938,8 +4925,7 @@ export const BAIL_POSTING_DATA = [
           65.17571885
         ]
       },
-      65.17571885,
-      612
+      65.17571885
     ],
     "outlier": false
   },
@@ -4953,8 +4939,7 @@ export const BAIL_POSTING_DATA = [
           51.38476756
         ]
       },
-      51.38476756,
-      2078
+      51.38476756
     ],
     "outlier": false
   },
@@ -4968,8 +4953,7 @@ export const BAIL_POSTING_DATA = [
           72.08835341
         ]
       },
-      72.08835341,
-      359
+      72.08835341
     ],
     "outlier": false
   },
@@ -4983,8 +4967,7 @@ export const BAIL_POSTING_DATA = [
           82.5203252
         ]
       },
-      82.5203252,
-      609
+      82.5203252
     ],
     "outlier": false
   },
@@ -4998,8 +4981,7 @@ export const BAIL_POSTING_DATA = [
           74.19962335
         ]
       },
-      74.19962335,
-      394
+      74.19962335
     ],
     "outlier": false
   },
@@ -5013,8 +4995,7 @@ export const BAIL_POSTING_DATA = [
           27.68777614
         ]
       },
-      27.68777614,
-      188
+      27.68777614
     ],
     "outlier": false
   },
@@ -5028,8 +5009,7 @@ export const BAIL_POSTING_DATA = [
           55.26315789
         ]
       },
-      55.26315789,
-      126
+      55.26315789
     ],
     "outlier": false
   },
@@ -5043,8 +5023,7 @@ export const BAIL_POSTING_DATA = [
           57.75502465
         ]
       },
-      57.75502465,
-      1523
+      57.75502465
     ],
     "outlier": false
   },
@@ -5058,8 +5037,7 @@ export const BAIL_POSTING_DATA = [
           67.51909665
         ]
       },
-      67.51909665,
-      4066
+      67.51909665
     ],
     "outlier": false
   },
@@ -5073,8 +5051,7 @@ export const BAIL_POSTING_DATA = [
           61.44408689
         ]
       },
-      61.44408689,
-      6110
+      61.44408689
     ],
     "outlier": false
   },
@@ -5088,8 +5065,7 @@ export const BAIL_POSTING_DATA = [
           79.74683544
         ]
       },
-      79.74683544,
-      189
+      79.74683544
     ],
     "outlier": false
   },
@@ -5103,8 +5079,7 @@ export const BAIL_POSTING_DATA = [
           60.4815864
         ]
       },
-      60.4815864,
-      1708
+      60.4815864
     ],
     "outlier": false
   },
@@ -5118,8 +5093,7 @@ export const BAIL_POSTING_DATA = [
           39.92776886
         ]
       },
-      39.92776886,
-      995
+      39.92776886
     ],
     "outlier": false
   },
@@ -5133,8 +5107,7 @@ export const BAIL_POSTING_DATA = [
           80.70175439
         ]
       },
-      80.70175439,
-      46
+      80.70175439
     ],
     "outlier": false
   },
@@ -5148,8 +5121,7 @@ export const BAIL_POSTING_DATA = [
           76.32904309
         ]
       },
-      76.32904309,
-      1364
+      76.32904309
     ],
     "outlier": false
   },
@@ -5163,8 +5135,7 @@ export const BAIL_POSTING_DATA = [
           78.51239669
         ]
       },
-      78.51239669,
-      95
+      78.51239669
     ],
     "outlier": false
   },
@@ -5178,8 +5149,7 @@ export const BAIL_POSTING_DATA = [
           55.89123867
         ]
       },
-      55.89123867,
-      185
+      55.89123867
     ],
     "outlier": false
   },
@@ -5193,8 +5163,7 @@ export const BAIL_POSTING_DATA = [
           76.89594356
         ]
       },
-      76.89594356,
-      436
+      76.89594356
     ],
     "outlier": false
   },
@@ -5208,8 +5177,7 @@ export const BAIL_POSTING_DATA = [
           42.81345566
         ]
       },
-      42.81345566,
-      140
+      42.81345566
     ],
     "outlier": false
   },
@@ -5223,8 +5191,7 @@ export const BAIL_POSTING_DATA = [
           85.16129032
         ]
       },
-      85.16129032,
-      396
+      85.16129032
     ],
     "outlier": false
   },
@@ -5238,8 +5205,7 @@ export const BAIL_POSTING_DATA = [
           73.98843931
         ]
       },
-      73.98843931,
-      128
+      73.98843931
     ],
     "outlier": false
   },
@@ -5253,8 +5219,7 @@ export const BAIL_POSTING_DATA = [
           72.46600742
         ]
       },
-      72.46600742,
-      2345
+      72.46600742
     ],
     "outlier": false
   },
@@ -5268,8 +5233,7 @@ export const BAIL_POSTING_DATA = [
           64.47848286
         ]
       },
-      64.47848286,
-      3536
+      64.47848286
     ],
     "outlier": false
   },
@@ -5283,8 +5247,7 @@ export const BAIL_POSTING_DATA = [
           43.81742739
         ]
       },
-      43.81742739,
-      528
+      43.81742739
     ],
     "outlier": false
   },
@@ -5298,8 +5261,7 @@ export const BAIL_POSTING_DATA = [
           43.23432343
         ]
       },
-      43.23432343,
-      917
+      43.23432343
     ],
     "outlier": false
   },
@@ -5313,8 +5275,7 @@ export const BAIL_POSTING_DATA = [
           57.91968767
         ]
       },
-      57.91968767,
-      4154
+      57.91968767
     ],
     "outlier": false
   },
@@ -5328,8 +5289,7 @@ export const BAIL_POSTING_DATA = [
           66.80926019
         ]
       },
-      66.80926019,
-      2655
+      66.80926019
     ],
     "outlier": false
   },
@@ -5343,8 +5303,7 @@ export const BAIL_POSTING_DATA = [
           71.89292543
         ]
       },
-      71.89292543,
-      1128
+      71.89292543
     ],
     "outlier": false
   },
@@ -5358,8 +5317,7 @@ export const BAIL_POSTING_DATA = [
           70.13752456
         ]
       },
-      70.13752456,
-      357
+      70.13752456
     ],
     "outlier": false
   },
@@ -5373,8 +5331,7 @@ export const BAIL_POSTING_DATA = [
           49.10820452
         ]
       },
-      49.10820452,
-      826
+      49.10820452
     ],
     "outlier": false
   },
@@ -5388,8 +5345,7 @@ export const BAIL_POSTING_DATA = [
           82.62068966
         ]
       },
-      82.62068966,
-      599
+      82.62068966
     ],
     "outlier": false
   },
@@ -5403,8 +5359,7 @@ export const BAIL_POSTING_DATA = [
           38.39793282
         ]
       },
-      38.39793282,
-      743
+      38.39793282
     ],
     "outlier": false
   },
@@ -5418,8 +5373,7 @@ export const BAIL_POSTING_DATA = [
           64.50531837
         ]
       },
-      64.50531837,
-      4427
+      64.50531837
     ],
     "outlier": false
   },
@@ -5433,8 +5387,7 @@ export const BAIL_POSTING_DATA = [
           65.34653465
         ]
       },
-      65.34653465,
-      66
+      65.34653465
     ],
     "outlier": false
   },
@@ -5448,8 +5401,7 @@ export const BAIL_POSTING_DATA = [
           54.74903475
         ]
       },
-      54.74903475,
-      2127
+      54.74903475
     ],
     "outlier": false
   },
@@ -5463,8 +5415,7 @@ export const BAIL_POSTING_DATA = [
           57.73195876
         ]
       },
-      57.73195876,
-      504
+      57.73195876
     ],
     "outlier": false
   },
@@ -5478,8 +5429,7 @@ export const BAIL_POSTING_DATA = [
           76.99680511
         ]
       },
-      76.99680511,
-      241
+      76.99680511
     ],
     "outlier": false
   },
@@ -5493,8 +5443,7 @@ export const BAIL_POSTING_DATA = [
           50.7113914
         ]
       },
-      50.7113914,
-      16645
+      50.7113914
     ],
     "outlier": false
   },
@@ -5508,8 +5457,7 @@ export const BAIL_POSTING_DATA = [
           63.88888889
         ]
       },
-      63.88888889,
-      253
+      63.88888889
     ],
     "outlier": false
   },
@@ -5523,8 +5471,7 @@ export const BAIL_POSTING_DATA = [
           67.83216783
         ]
       },
-      67.83216783,
-      97
+      67.83216783
     ],
     "outlier": false
   },
@@ -5538,8 +5485,7 @@ export const BAIL_POSTING_DATA = [
           59.0780809
         ]
       },
-      59.0780809,
-      1256
+      59.0780809
     ],
     "outlier": false
   },
@@ -5553,8 +5499,7 @@ export const BAIL_POSTING_DATA = [
           45.69190601
         ]
       },
-      45.69190601,
-      175
+      45.69190601
     ],
     "outlier": false
   },
@@ -5568,8 +5513,7 @@ export const BAIL_POSTING_DATA = [
           55.08982036
         ]
       },
-      55.08982036,
-      276
+      55.08982036
     ],
     "outlier": false
   },
@@ -5583,8 +5527,7 @@ export const BAIL_POSTING_DATA = [
           69.23076923
         ]
       },
-      69.23076923,
-      27
+      69.23076923
     ],
     "outlier": false
   },
@@ -5598,8 +5541,7 @@ export const BAIL_POSTING_DATA = [
           75.07788162
         ]
       },
-      75.07788162,
-      241
+      75.07788162
     ],
     "outlier": false
   },
@@ -5613,8 +5555,7 @@ export const BAIL_POSTING_DATA = [
           60.72234763
         ]
       },
-      60.72234763,
-      538
+      60.72234763
     ],
     "outlier": false
   },
@@ -5628,8 +5569,7 @@ export const BAIL_POSTING_DATA = [
           74.61139896
         ]
       },
-      74.61139896,
-      144
+      74.61139896
     ],
     "outlier": false
   },
@@ -5643,8 +5583,7 @@ export const BAIL_POSTING_DATA = [
           72.88135593
         ]
       },
-      72.88135593,
-      430
+      72.88135593
     ],
     "outlier": false
   },
@@ -5658,8 +5597,7 @@ export const BAIL_POSTING_DATA = [
           75.87209302
         ]
       },
-      75.87209302,
-      261
+      75.87209302
     ],
     "outlier": false
   },
@@ -5673,8 +5611,7 @@ export const BAIL_POSTING_DATA = [
           63.82098533
         ]
       },
-      63.82098533,
-      1697
+      63.82098533
     ],
     "outlier": false
   },
@@ -5688,8 +5625,7 @@ export const BAIL_POSTING_DATA = [
           46.6442953
         ]
       },
-      46.6442953,
-      139
+      46.6442953
     ],
     "outlier": false
   },
@@ -5703,8 +5639,7 @@ export const BAIL_POSTING_DATA = [
           71.47154675
         ]
       },
-      71.47154675,
-      2851
+      71.47154675
     ],
     "outlier": false
   },
@@ -5718,8 +5653,7 @@ export const BAIL_POSTING_DATA = [
           67.53246753
         ]
       },
-      67.53246753,
-      260
+      67.53246753
     ],
     "outlier": false
   },
@@ -5733,8 +5667,7 @@ export const BAIL_POSTING_DATA = [
           58.36246303
         ]
       },
-      58.36246303,
-      4341
+      58.36246303
     ],
     "outlier": false
   }

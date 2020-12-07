@@ -8,7 +8,9 @@ body {
   font-size: 13px;
   color: #eee;
   background-color: #000;
+  -font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
