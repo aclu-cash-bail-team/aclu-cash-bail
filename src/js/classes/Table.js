@@ -42,7 +42,8 @@ class TextCell extends Cell {
 class StyledTextCell extends Cell {
   constructor(content, className) {
     super(`${className} ${content["className"]}`);
-    this.content = content["value"].toLocaleString();
+    // styled cells, which display differences, should always show positive
+    this.content = content["value"].replace("-", "+");
     this.render();
   }
 
@@ -554,9 +555,12 @@ export class Table {
     this.sortDir = sortDir;
   }
 
-  toNumber(data) {
-    const value = typeof(data) === "object" ? data["value"] : data;
-    return Number(value.replace ? value.replace(/[^\d.-]/g, "") : value);
+  getSortable(data) {
+    if (typeof(data) === "object" || /\d/.test(data)) {
+      const value = typeof(data) === "object" ? data["value"] : data;
+      return Number(value.replace ? value.replace(/[^\d.-]/g, "") : value);
+    }
+    return data;
   }
 
   sort(initialSort) {
@@ -566,8 +570,8 @@ export class Table {
       const val1 = a.data[this.sortCol];
       const val2 = b.data[this.sortCol];
       // Determine if value is treated as a number or a string
-      const i = /\d/.test(val1) ? this.toNumber(val1) : val1;
-      const j = /\d/.test(val2) ? this.toNumber(val2) : val2;
+      const i = this.getSortable(val1);
+      const j = this.getSortable(val2);
       if (i < j) {
         return this.sortDir * -1;
       } else if (i > j) {
