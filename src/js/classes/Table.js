@@ -22,6 +22,10 @@ class Cell {
   setElementClass(className) {
     this.element.className = className;
   }
+
+  addElementClass(className) {
+    this.element.classList.add(className);
+  }
 }
 
 
@@ -88,7 +92,8 @@ class BarGraphCell extends Cell {
     // label the bar with the difference between value and average
     const label = document.createElement("div");
     const diff = this.content - this.average;
-    label.textContent = `${diff > 0 ? "+" : ""}${diff.toFixed(1)}`;
+    if (diff > 0) { label.textContent = `+${diff.toFixed(1)}`; }
+    if (diff < 0) { label.textContent = `${diff.toFixed(1)}`; }
     label.className = "bar-label";
     bar.appendChild(label);
     this.element.appendChild(bar);
@@ -285,10 +290,8 @@ class VizHeaderCell extends HeaderCell {
   }
 
   render() {
-    const vizColors = ["green", "purple"];
     const start = this.content["start"];
     const end = this.content["end"];
-    const averages = this.content["averages"];
     const unit = this.content["unit"];
 
     const cell = document.createElement("th");
@@ -298,26 +301,8 @@ class VizHeaderCell extends HeaderCell {
     const endText = unit === "dollars" ? `$${Math.round(end / 1000)}K` : end;
     const startElement = this.createTickElement(startText, "start-num");
     const endElement = this.createTickElement(endText, "end-num");
-    const averageElements = averages.map((average, i) => {
-      let text = "";
-      if (unit === "percent") {
-        text = `${average["name"]}<br>${average["value"].toFixed(1)}%`;
-      } else if (unit === "dollars") {
-        text =`${average["name"]}<br>$${Math.round(average["value"] / 1000)}K`;
-      }
-      const className = `average ${average["name"].toLowerCase()}`;
-      return this.createTickElement(text, className, vizColors[i]);
-    });
-    // create wrapper around averages for positioning
-    const averageWrapper = document.createElement("div");
-    averageWrapper.className = "average-wrapper";
-    // offset the average elements by the value/end ratio (and subtract padding)
-    averageElements.forEach((element, i) => {
-      element.style.left = `calc(${(averages[i]["value"] - start) / end * 100}%)`;
-      averageWrapper.appendChild(element);
-    });
     // add all the elements to the cell
-    [startElement, endElement, averageWrapper].forEach(element => {
+    [startElement, endElement].forEach(element => {
       cell.appendChild(element);
     });
     this.element = cell;
@@ -332,7 +317,9 @@ class VizHeaderCell extends HeaderCell {
     wrapper.appendChild(text);
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
-      wrapper.style.paddingLeft = `${4}px`;
+      wrapper.style.paddingLeft = "10px";
+    } else if (className === "end-num" && content.toString().length <= 3) {
+      wrapper.style.paddingRight = `${8 - content.toString().length}px`;
     }
     // adjust padding based on number of digits
     if (className === "end-num" && content.toString().length === 2) {
@@ -373,10 +360,11 @@ class HeaderRow {
 
 
 class BodyRow {
-  constructor(cells, outlier, isHidden) {
+  constructor(cells, outlier, isHidden, isBold = false) {
     this.cells = cells;
     this.outlier = outlier;
     this.isHidden = isHidden;
+    this.isBold = isBold;
   }
 
   setIsHidden(isHidden) {
@@ -393,9 +381,9 @@ class BodyRow {
 
     row.className = "";
     this.cells.forEach((cell, i) => {
-      cell.setElementClass(
-        i === sorted ? `${cell.className} sorted` : cell.className
-      );
+      cell.setElementClass(cell.className);
+      if (i === sorted) cell.addElementClass("sorted");
+      if (this.isBold) cell.addElementClass("bold-cell");
       row.appendChild(cell.element);
     });
     return [this.element];
@@ -429,13 +417,14 @@ class CollapsibleBodyRow extends BodyRow {
 }
 
 export class Table {
-  constructor(data, columnConfigs, initSort, tableContainer, isVisible = true) {
+  constructor(data, columnConfigs, initSort, tableContainer, summaryRowData = [], isVisible = true) {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
     this.container = tableContainer;
     this.element = tableContainer.getElementsByTagName("table")[0];
     this.showOutliers = false;
+    this.summaryRowData = summaryRowData;
 
     this.validate();
     this.searchCols = columnConfigs.map((config) => config.searchable);
@@ -562,7 +551,7 @@ export class Table {
 
   getRows() {
     let numVisibleRows = 0;
-    return this.data.map(row => {
+    const rows = this.data.map(row => {
       // Specify how data will be rendered
       const cells = this.getCells(row.data, row.outlier);
       const isRowSearched = this.searchTerms.some(searchTerm =>
@@ -592,6 +581,11 @@ export class Table {
         return new BodyRow(cells, row.outlier, !isRowVisible);
       }
     });
+    if (this.summaryRowData.length > 0) {
+      const cells = this.getCells(this.summaryRowData);
+      rows.unshift(new BodyRow(cells, false, false, true));
+    }
+    return rows;
   }
 
   setSortColumn(i) {

@@ -52,6 +52,10 @@ td {
   padding: 13px 6px;
 }
 
+td.bold-cell {
+  font-weight: 700;
+}
+
 .number-cell {
   width: 60px;
   min-width: 60px;

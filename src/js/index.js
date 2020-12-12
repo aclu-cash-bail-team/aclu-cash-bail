@@ -15,7 +15,7 @@ const createBailRateTable = () => {
     {
       class: "county-name-cell",
       header: {
-        "text": "County",
+        "text": "",
         "unit": ""
       },
       sortable: false,
@@ -66,8 +66,21 @@ const createBailRateTable = () => {
     },
   ];
   const initSort = 2; // initially sort by cash bail rate
+  const stateData = [
+    "Pennsylvania",
+    {
+      "type": "bar",
+      "values": [
+        42.5966697900
+      ]
+    },
+    42.5966697900,
+    2470,
+    5681
+  ];
+
   const tableContainer = document.getElementById("bail-rate-container");
-  return new Table(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer, stateData, false);
 };
 
 const createRorRateTable = () => {
@@ -75,7 +88,7 @@ const createRorRateTable = () => {
     {
       class: "county-name-cell",
       header: {
-        "text": "County",
+        "text": "",
         "unit": ""
       },
       sortable: false,
@@ -126,8 +139,21 @@ const createRorRateTable = () => {
     },
   ];
   const initSort = 2; // initially sort by ror bail rate
+  const stateData = [
+    "Pennsylvania",
+    {
+      "type": "bar",
+      "values": [
+        22.73
+      ]
+    },
+    22.73,
+    1294,
+    5681
+  ];
+
   const tableContainer = document.getElementById("ror-rate-container");
-  return new Table(ROR_RATE_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(ROR_RATE_DATA, columnConfigs, initSort, tableContainer, stateData, false);
 };
 
 const createBailRaceRateTable = () => {
@@ -135,7 +161,7 @@ const createBailRaceRateTable = () => {
     {
       class: "county-name-cell",
       header: {
-        "text": "County",
+        "text": "",
         "unit": ""
       },
       sortable: false,
@@ -190,8 +216,23 @@ const createBailRaceRateTable = () => {
     },
   ];
   const initSort = 4; // initially sort by difference
+  const stateData = [
+    "Pennsylvania",
+    {
+      "type": "line",
+      "values": [
+        54.7,
+        37.0
+      ]
+    },
+    54.7,
+    37.0,
+    0
+  ];
+
+
   const tableContainer = document.getElementById("bail-race-rate-container");
-  return new Table(BAIL_RACE_RATE_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(BAIL_RACE_RATE_DATA, columnConfigs, initSort, tableContainer, stateData, false);
 };
 
 const createBailRaceAmountTable = () => {
@@ -199,7 +240,7 @@ const createBailRaceAmountTable = () => {
     {
       class: "county-name-cell",
       header: {
-        "text": "County",
+        "text": "",
         "unit": ""
       },
       sortable: false,
@@ -254,8 +295,22 @@ const createBailRaceAmountTable = () => {
     },
   ];
   const initSort = 4; // initially sort by difference
+  const stateData = [
+    "Pennsylvania",
+    {
+      "type": "line",
+      "values": [
+        38700.61968,
+        27572.55514
+      ]
+    },
+    "$36,202",
+    "$26,868",
+    0
+  ];
+
   const tableContainer = document.getElementById("bail-race-amount-container");
-  return new Table(BAIL_RACE_AMOUNT_DATA, columnConfigs, initSort, tableContainer, false);
+  return new Table(BAIL_RACE_AMOUNT_DATA, columnConfigs, initSort, tableContainer, stateData, false);
 };
 
 const createBailPostingTable = () => {
@@ -263,7 +318,7 @@ const createBailPostingTable = () => {
     {
       class: "county-name-cell",
       header: {
-        "text": "County",
+        "text": "",
         "unit": ""
       },
       sortable: false,
@@ -274,6 +329,15 @@ const createBailPostingTable = () => {
       header: {
         "text": "Bail Set",
         "unit": "dollars"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "nonposting-rate-cell number-cell",
+      header: {
+        "text": "Non-Posting Rate",
+        "unit": "percent"
       },
       sortable: true,
       searchable: false
@@ -294,19 +358,22 @@ const createBailPostingTable = () => {
       sortable: false,
       searchable: false
     },
+  ];
+  const initSort = 2;
+  const stateData = [
+    "Pennsylvania",
+    "$31.8K",
+    58.5211725,
     {
-      class: "nonposting-rate-cell number-cell",
-      header: {
-        "text": "Non-Posting Rate (%)",
-        "unit": "percent"
-      },
-      sortable: true,
-      searchable: false
+      "type": "line",
+      "values": [
+        58.5211725
+      ]
     }
   ];
-  const initSort = 3;
+
   const tableContainer = document.getElementById("bail-posting-container");
-  return new Table(BAIL_POSTING_DATA, columnConfigs, initSort, tableContainer);
+  return new Table(BAIL_POSTING_DATA, columnConfigs, initSort, tableContainer, stateData);
 };
 
 const createBailRetentionFeeTable = () => {
@@ -391,8 +458,21 @@ const createPretrialSpendingTable = () => {
     }
   ];
   const initSort = 1;
+  const stateData = [
+    "Pennsylvania",
+    "$10.1M",
+    "$16.1M",
+    62.4,
+    {
+      "type": "bar",
+      "values": [
+        62.4
+      ]
+    }
+  ];
+
   const tableContainer = document.getElementById("pretrial-spending-container");
-  return new Table(PRETRIAL_SPENDING_DATA, columnConfigs, initSort, tableContainer);
+  return new Table(PRETRIAL_SPENDING_DATA, columnConfigs, initSort, tableContainer, stateData);
 };
 
 const createMdjTable = () => {
@@ -416,7 +496,7 @@ const createMdjTable = () => {
       searchable: true
     },
     {
-      class: "bail-rate-cell number-cell",
+      class: "total-bail-rate-cell  number-cell",
       header: {
         "text": "Cash Bail Rate",
         "unit": "percent"
