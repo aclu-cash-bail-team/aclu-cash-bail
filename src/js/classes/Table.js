@@ -108,11 +108,11 @@ class DistributionBarCell extends Cell {
   }
 
   createDistributionTable() {
-    const table = document.createElement("div");
-    table.className = "tooltip-table";
+    const tooltipTable = document.createElement("div");
+    tooltipTable.className = "tooltip-table";
     this.values.forEach(dist => {
-      const tr = document.createElement("div");
-      tr.className = "tooltip-row";
+      const tooltipRow = document.createElement("div");
+      tooltipRow.className = "tooltip-row";
       const colorCell = document.createElement("div");
       colorCell.className = "tooltip-cell";
       colorCell.style.marginRight = "10px";
@@ -128,12 +128,12 @@ class DistributionBarCell extends Cell {
       category.innerText = dist["name"];
       value.style.textAlign = "right";
       value.innerText = `${Math.round(dist["value"] * 100) / 100}%`;
-      tr.appendChild(colorCell);
-      tr.appendChild(category);
-      tr.appendChild(value);
-      table.appendChild(tr);
+      tooltipRow.appendChild(colorCell);
+      tooltipRow.appendChild(category);
+      tooltipRow.appendChild(value);
+      tooltipTable.appendChild(tooltipRow);
     });
-    return table;
+    return tooltipTable;
   }
 
   createTooltip() {
