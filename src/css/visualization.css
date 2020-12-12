@@ -160,6 +160,7 @@ td.bail-dist-cell {
 }
 
 .dist-bar-container {
+  display: inline-grid;
   width: 100%;
   border: 1px #000 solid;
 }
@@ -189,18 +190,26 @@ td.bail-dist-cell {
   margin-bottom: 0.5em;
 }
 
-.dist-tooltip table {
+.dist-tooltip .tooltip-table {
   color: #000;
   width: 250px;
 }
 
-.dist-tooltip tr {
+.dist-tooltip .tooltip-row {
   border-top: 0.5px #d6d6d6 solid;
   border-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
-.dist-tooltip td {
+.dist-tooltip .tooltip-cell {
   padding: 0.5em 0;
+}
+
+.color-box {
+  width: 10px;
+  height: 10px;
+  padding: 0;
 }
 
 .cash-bar {

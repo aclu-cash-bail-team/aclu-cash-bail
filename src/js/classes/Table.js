@@ -108,32 +108,31 @@ class DistributionBarCell extends Cell {
   }
 
   createDistributionTable() {
-    const table = document.createElement("table");
-    const tbody = document.createElement("tbody");
+    const table = document.createElement("div");
+    table.className = "tooltip-table";
     this.values.forEach(dist => {
-      if (dist["value"] === 0) {
-        return;
-      }
-      const tr = document.createElement("tr");
-      const colorCell = document.createElement("td");
+      const tr = document.createElement("div");
+      tr.className = "tooltip-row";
+      const colorCell = document.createElement("div");
+      colorCell.className = "tooltip-cell";
+      colorCell.style.marginRight = "10px";
       const color = document.createElement("div");
       color.className = dist["className"];
-      color.style.width = "10px";
-      color.style.height = "10px";
-      color.style.verticalAlign = "middle";
-      color.style.padding = "0";
+      color.classList.add("color-box");
       colorCell.appendChild(color);
-      const category = document.createElement("td");
-      const value = document.createElement("td");
+      const category = document.createElement("div");
+      category.className = "tooltip-cell";
+      category.style.flexGrow = 2;
+      const value = document.createElement("div");
+      value.className = "tooltip-cell";
       category.innerText = dist["name"];
       value.style.textAlign = "right";
       value.innerText = `${Math.round(dist["value"] * 100) / 100}%`;
       tr.appendChild(colorCell);
       tr.appendChild(category);
       tr.appendChild(value);
-      tbody.appendChild(tr);
+      table.appendChild(tr);
     });
-    table.appendChild(tbody);
     return table;
   }
 
@@ -166,7 +165,6 @@ class DistributionBarCell extends Cell {
     const distWidths = this.values.map(dist =>
       `calc(${dist["value"]}% - ${gapCorrection}${gapUnits})`
     );
-    container.style.display = "inline-grid";
     container.style.columnGap = `${gapSize}${gapUnits}`;
     container.style.gridTemplateColumns = distWidths.join(" ");
     // configure tooltip
