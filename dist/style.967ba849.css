@@ -1,6 +1,6 @@
 @font-face {
   font-family: "GT America";
-  src: url("./GT-America-Standard-Regular.otf") format("opentype");
+  src: url("/GT-America-Standard-Regular.08b93adf.otf") format("opentype");
 }
 
 body {
@@ -35,3 +35,6 @@ body {
 .mobile-only {
   display: none;
 }
+
+
+/*# sourceMappingURL=/style.967ba849.css.map */

@@ -1,11 +1,11 @@
 @font-face {
   font-family: "GT America Condensed";
-  src: url("./GT-America-Condensed-Regular.otf") format("opentype");
+  src: url("/GT-America-Condensed-Regular.d6dbbdf1.otf") format("opentype");
 }
 
 @font-face {
   font-family: "GT America Bold";
-  src: url("./GT-America-Standard-Bold.otf") format("opentype");
+  src: url("/GT-America-Standard-Bold.9213a45b.otf") format("opentype");
 }
 
 table {
@@ -231,3 +231,6 @@ td.bold-cell {
 #mdj-table .county-name-cell {
   padding-left: 0;
 }
+
+
+/*# sourceMappingURL=/table.233cc489.css.map */

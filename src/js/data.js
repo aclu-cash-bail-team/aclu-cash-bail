@@ -1039,6 +1039,1014 @@ export const BAIL_RATE_DATA = [
     "outlier": false
   }
 ];
+export const ROR_RATE_DATA = [
+  {
+    "data": [
+      "Adams",
+      {
+        "type": "bar",
+        "values": [
+          24.8748556
+        ]
+      },
+      24.8748556,
+      631,
+      2537
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Allegheny",
+      {
+        "type": "bar",
+        "values": [
+          29.55770303
+        ]
+      },
+      29.55770303,
+      9377,
+      31723
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Armstrong",
+      {
+        "type": "bar",
+        "values": [
+          43.273906
+        ]
+      },
+      43.273906,
+      782,
+      1808
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Beaver",
+      {
+        "type": "bar",
+        "values": [
+          35.80876494
+        ]
+      },
+      35.80876494,
+      2137,
+      5967
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bedford",
+      {
+        "type": "bar",
+        "values": [
+          1.804812834
+        ]
+      },
+      1.804812834,
+      26,
+      1460
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Berks",
+      {
+        "type": "bar",
+        "values": [
+          15.21347947
+        ]
+      },
+      15.21347947,
+      1778,
+      11688
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Blair",
+      {
+        "type": "bar",
+        "values": [
+          0.3598560576
+        ]
+      },
+      0.3598560576,
+      17,
+      4826
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bradford",
+      {
+        "type": "bar",
+        "values": [
+          11.53638814
+        ]
+      },
+      11.53638814,
+      208,
+      1805
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Bucks",
+      {
+        "type": "bar",
+        "values": [
+          17.70282471
+        ]
+      },
+      17.70282471,
+      2688,
+      15185
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Butler",
+      {
+        "type": "bar",
+        "values": [
+          57.27539063
+        ]
+      },
+      57.27539063,
+      1155,
+      2017
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cambria",
+      {
+        "type": "bar",
+        "values": [
+          21.61761592
+        ]
+      },
+      21.61761592,
+      997,
+      4613
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cameron",
+      {
+        "type": "bar",
+        "values": [
+          0
+        ]
+      },
+      0,
+      0,
+      112
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Carbon",
+      {
+        "type": "bar",
+        "values": [
+          13.12718786
+        ]
+      },
+      13.12718786,
+      434,
+      3307
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Centre",
+      {
+        "type": "bar",
+        "values": [
+          61.55555556
+        ]
+      },
+      61.55555556,
+      2074,
+      3370
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Chester",
+      {
+        "type": "bar",
+        "values": [
+          20.7253886
+        ]
+      },
+      20.7253886,
+      2145,
+      10351
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clarion",
+      {
+        "type": "bar",
+        "values": [
+          25.70281124
+        ]
+      },
+      25.70281124,
+      307,
+      1193
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clearfield",
+      {
+        "type": "bar",
+        "values": [
+          0.09832841691
+        ]
+      },
+      0.09832841691,
+      2,
+      2002
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Clinton",
+      {
+        "type": "bar",
+        "values": [
+          11.40472879
+        ]
+      },
+      11.40472879,
+      162,
+      1421
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Columbia",
+      {
+        "type": "bar",
+        "values": [
+          19.6287964
+        ]
+      },
+      19.6287964,
+      338,
+      1722
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Crawford",
+      {
+        "type": "bar",
+        "values": [
+          53.99239544
+        ]
+      },
+      53.99239544,
+      415,
+      768
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Cumberland",
+      {
+        "type": "bar",
+        "values": [
+          41.36118008
+        ]
+      },
+      41.36118008,
+      2784,
+      6732
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Dauphin",
+      {
+        "type": "bar",
+        "values": [
+          18.47205582
+        ]
+      },
+      18.47205582,
+      2509,
+      13585
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Delaware",
+      {
+        "type": "bar",
+        "values": [
+          0.1063889356
+        ]
+      },
+      0.1063889356,
+      18,
+      16808
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Elk",
+      {
+        "type": "bar",
+        "values": [
+          0
+        ]
+      },
+      0,
+      0,
+      799
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Erie",
+      {
+        "type": "bar",
+        "values": [
+          36.48249027
+        ]
+      },
+      36.48249027,
+      2261,
+      6198
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fayette",
+      {
+        "type": "bar",
+        "values": [
+          0.7816663706
+        ]
+      },
+      0.7816663706,
+      43,
+      5546
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Forest",
+      {
+        "type": "bar",
+        "values": [
+          12.80487805
+        ]
+      },
+      12.80487805,
+      16,
+      123
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Franklin",
+      {
+        "type": "bar",
+        "values": [
+          50.02097315
+        ]
+      },
+      50.02097315,
+      2341,
+      4681
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Fulton",
+      {
+        "type": "bar",
+        "values": [
+          51.42180095
+        ]
+      },
+      51.42180095,
+      197,
+      383
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Greene",
+      {
+        "type": "bar",
+        "values": [
+          26.58371041
+        ]
+      },
+      26.58371041,
+      222,
+      834
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Huntingdon",
+      {
+        "type": "bar",
+        "values": [
+          29.07216495
+        ]
+      },
+      29.07216495,
+      393,
+      1353
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Indiana",
+      {
+        "type": "bar",
+        "values": [
+          30.72805139
+        ]
+      },
+      30.72805139,
+      283,
+      922
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Jefferson",
+      {
+        "type": "bar",
+        "values": [
+          0.08291873964
+        ]
+      },
+      0.08291873964,
+      1,
+      1166
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Juniata",
+      {
+        "type": "bar",
+        "values": [
+          18.92430279
+        ]
+      },
+      18.92430279,
+      86,
+      455
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Lackawanna",
+      {
+        "type": "bar",
+        "values": [
+          1.805465192
+        ]
+      },
+      1.805465192,
+      104,
+      5783
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lancaster",
+      {
+        "type": "bar",
+        "values": [
+          15.22326915
+        ]
+      },
+      15.22326915,
+      1823,
+      11977
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lawrence",
+      {
+        "type": "bar",
+        "values": [
+          24.68534308
+        ]
+      },
+      24.68534308,
+      592,
+      2398
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lebanon",
+      {
+        "type": "bar",
+        "values": [
+          3.52189781
+        ]
+      },
+      3.52189781,
+      188,
+      5329
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lehigh",
+      {
+        "type": "bar",
+        "values": [
+          8.111417202
+        ]
+      },
+      8.111417202,
+      961,
+      11845
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Luzerne",
+      {
+        "type": "bar",
+        "values": [
+          29.28027748
+        ]
+      },
+      29.28027748,
+      2913,
+      9950
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Lycoming",
+      {
+        "type": "bar",
+        "values": [
+          0.3315649867
+        ]
+      },
+      0.3315649867,
+      15,
+      4475
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "McKean",
+      {
+        "type": "bar",
+        "values": [
+          4.912572856
+        ]
+      },
+      4.912572856,
+      56,
+      1147
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mercer",
+      {
+        "type": "bar",
+        "values": [
+          11.8556701
+        ]
+      },
+      11.8556701,
+      542,
+      4571
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Mifflin",
+      {
+        "type": "bar",
+        "values": [
+          0.4682274247
+        ]
+      },
+      0.4682274247,
+      7,
+      1477
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Monroe",
+      {
+        "type": "bar",
+        "values": [
+          17.01694915
+        ]
+      },
+      17.01694915,
+      980,
+      5757
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montgomery",
+      {
+        "type": "bar",
+        "values": [
+          14.69809841
+        ]
+      },
+      14.69809841,
+      2896,
+      19702
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Montour",
+      {
+        "type": "bar",
+        "values": [
+          39.02439024
+        ]
+      },
+      39.02439024,
+      107,
+      275
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Northampton",
+      {
+        "type": "bar",
+        "values": [
+          15.20764512
+        ]
+      },
+      15.20764512,
+      1252,
+      8234
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Northumberland",
+      {
+        "type": "bar",
+        "values": [
+          11.87628866
+        ]
+      },
+      11.87628866,
+      287,
+      2414
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Perry",
+      {
+        "type": "bar",
+        "values": [
+          41.48148148
+        ]
+      },
+      41.48148148,
+      441,
+      1064
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Philadelphia",
+      {
+        "type": "bar",
+        "values": [
+          36.20163088
+        ]
+      },
+      36.20163088,
+      22872,
+      63180
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Pike",
+      {
+        "type": "bar",
+        "values": [
+          31.06125971
+        ]
+      },
+      31.06125971,
+      344,
+      1109
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Potter",
+      {
+        "type": "bar",
+        "values": [
+          16.50326797
+        ]
+      },
+      16.50326797,
+      98,
+      593
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Schuylkill",
+      {
+        "type": "bar",
+        "values": [
+          10.6870229
+        ]
+      },
+      10.6870229,
+      591,
+      5531
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Snyder",
+      {
+        "type": "bar",
+        "values": [
+          6.472795497
+        ]
+      },
+      6.472795497,
+      69,
+      1060
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Somerset",
+      {
+        "type": "bar",
+        "values": [
+          4.640718563
+        ]
+      },
+      4.640718563,
+      91,
+      1962
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Sullivan",
+      {
+        "type": "bar",
+        "values": [
+          1.869158879
+        ]
+      },
+      1.869158879,
+      2,
+      103
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Susquehanna",
+      {
+        "type": "bar",
+        "values": [
+          25.50251256
+        ]
+      },
+      25.50251256,
+      200,
+      783
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Tioga",
+      {
+        "type": "bar",
+        "values": [
+          13.05954825
+        ]
+      },
+      13.05954825,
+      311,
+      2385
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Union",
+      {
+        "type": "bar",
+        "values": [
+          47.70039422
+        ]
+      },
+      47.70039422,
+      354,
+      743
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Venango",
+      {
+        "type": "bar",
+        "values": [
+          0.1282873637
+        ]
+      },
+      0.1282873637,
+      2,
+      1549
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Warren",
+      {
+        "type": "bar",
+        "values": [
+          42.03069658
+        ]
+      },
+      42.03069658,
+      349,
+      831
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "Washington",
+      {
+        "type": "bar",
+        "values": [
+          25.6113633
+        ]
+      },
+      25.6113633,
+      1694,
+      6615
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wayne",
+      {
+        "type": "bar",
+        "values": [
+          34.58177278
+        ]
+      },
+      34.58177278,
+      269,
+      779
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Westmoreland",
+      {
+        "type": "bar",
+        "values": [
+          32.92518089
+        ]
+      },
+      32.92518089,
+      3929,
+      11934
+    ],
+    "outlier": false
+  },
+  {
+    "data": [
+      "Wyoming",
+      {
+        "type": "bar",
+        "values": [
+          0.1853568119
+        ]
+      },
+      0.1853568119,
+      2,
+      1056
+    ],
+    "outlier": true
+  },
+  {
+    "data": [
+      "York",
+      {
+        "type": "bar",
+        "values": [
+          33.30952381
+        ]
+      },
+      33.30952381,
+      5509,
+      16539
+    ],
+    "outlier": false
+  }
+];
+
 export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
@@ -2377,1014 +3385,6 @@ export const BAIL_RACE_RATE_DATA = [
         "className": "negative-diff",
         "value": "-5.8"
       }
-    ],
-    "outlier": false
-  }
-];
-
-export const ROR_RATE_DATA = [
-  {
-    "data": [
-      "Adams",
-      {
-        "type": "bar",
-        "values": [
-          24.8748556
-        ]
-      },
-      24.8748556,
-      631,
-      2537
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      {
-        "type": "bar",
-        "values": [
-          29.55770303
-        ]
-      },
-      29.55770303,
-      9377,
-      31723
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      {
-        "type": "bar",
-        "values": [
-          43.273906
-        ]
-      },
-      43.273906,
-      782,
-      1808
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      {
-        "type": "bar",
-        "values": [
-          35.80876494
-        ]
-      },
-      35.80876494,
-      2137,
-      5967
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      {
-        "type": "bar",
-        "values": [
-          1.804812834
-        ]
-      },
-      1.804812834,
-      26,
-      1460
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Berks",
-      {
-        "type": "bar",
-        "values": [
-          15.21347947
-        ]
-      },
-      15.21347947,
-      1778,
-      11688
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      {
-        "type": "bar",
-        "values": [
-          0.3598560576
-        ]
-      },
-      0.3598560576,
-      17,
-      4826
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      {
-        "type": "bar",
-        "values": [
-          11.53638814
-        ]
-      },
-      11.53638814,
-      208,
-      1805
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bucks",
-      {
-        "type": "bar",
-        "values": [
-          17.70282471
-        ]
-      },
-      17.70282471,
-      2688,
-      15185
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      {
-        "type": "bar",
-        "values": [
-          57.27539063
-        ]
-      },
-      57.27539063,
-      1155,
-      2017
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      {
-        "type": "bar",
-        "values": [
-          21.61761592
-        ]
-      },
-      21.61761592,
-      997,
-      4613
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      {
-        "type": "bar",
-        "values": [
-          0
-        ]
-      },
-      0,
-      0,
-      112
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Carbon",
-      {
-        "type": "bar",
-        "values": [
-          13.12718786
-        ]
-      },
-      13.12718786,
-      434,
-      3307
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      {
-        "type": "bar",
-        "values": [
-          61.55555556
-        ]
-      },
-      61.55555556,
-      2074,
-      3370
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      {
-        "type": "bar",
-        "values": [
-          20.7253886
-        ]
-      },
-      20.7253886,
-      2145,
-      10351
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      {
-        "type": "bar",
-        "values": [
-          25.70281124
-        ]
-      },
-      25.70281124,
-      307,
-      1193
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clearfield",
-      {
-        "type": "bar",
-        "values": [
-          0.09832841691
-        ]
-      },
-      0.09832841691,
-      2,
-      2002
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clinton",
-      {
-        "type": "bar",
-        "values": [
-          11.40472879
-        ]
-      },
-      11.40472879,
-      162,
-      1421
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Columbia",
-      {
-        "type": "bar",
-        "values": [
-          19.6287964
-        ]
-      },
-      19.6287964,
-      338,
-      1722
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      {
-        "type": "bar",
-        "values": [
-          53.99239544
-        ]
-      },
-      53.99239544,
-      415,
-      768
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      {
-        "type": "bar",
-        "values": [
-          41.36118008
-        ]
-      },
-      41.36118008,
-      2784,
-      6732
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      {
-        "type": "bar",
-        "values": [
-          18.47205582
-        ]
-      },
-      18.47205582,
-      2509,
-      13585
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      {
-        "type": "bar",
-        "values": [
-          0.1063889356
-        ]
-      },
-      0.1063889356,
-      18,
-      16808
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      {
-        "type": "bar",
-        "values": [
-          0
-        ]
-      },
-      0,
-      0,
-      799
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Erie",
-      {
-        "type": "bar",
-        "values": [
-          36.48249027
-        ]
-      },
-      36.48249027,
-      2261,
-      6198
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      {
-        "type": "bar",
-        "values": [
-          0.7816663706
-        ]
-      },
-      0.7816663706,
-      43,
-      5546
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      {
-        "type": "bar",
-        "values": [
-          12.80487805
-        ]
-      },
-      12.80487805,
-      16,
-      123
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Franklin",
-      {
-        "type": "bar",
-        "values": [
-          50.02097315
-        ]
-      },
-      50.02097315,
-      2341,
-      4681
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      {
-        "type": "bar",
-        "values": [
-          51.42180095
-        ]
-      },
-      51.42180095,
-      197,
-      383
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Greene",
-      {
-        "type": "bar",
-        "values": [
-          26.58371041
-        ]
-      },
-      26.58371041,
-      222,
-      834
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Huntingdon",
-      {
-        "type": "bar",
-        "values": [
-          29.07216495
-        ]
-      },
-      29.07216495,
-      393,
-      1353
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      {
-        "type": "bar",
-        "values": [
-          30.72805139
-        ]
-      },
-      30.72805139,
-      283,
-      922
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      {
-        "type": "bar",
-        "values": [
-          0.08291873964
-        ]
-      },
-      0.08291873964,
-      1,
-      1166
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Juniata",
-      {
-        "type": "bar",
-        "values": [
-          18.92430279
-        ]
-      },
-      18.92430279,
-      86,
-      455
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Lackawanna",
-      {
-        "type": "bar",
-        "values": [
-          1.805465192
-        ]
-      },
-      1.805465192,
-      104,
-      5783
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      {
-        "type": "bar",
-        "values": [
-          15.22326915
-        ]
-      },
-      15.22326915,
-      1823,
-      11977
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      {
-        "type": "bar",
-        "values": [
-          24.68534308
-        ]
-      },
-      24.68534308,
-      592,
-      2398
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      {
-        "type": "bar",
-        "values": [
-          3.52189781
-        ]
-      },
-      3.52189781,
-      188,
-      5329
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      {
-        "type": "bar",
-        "values": [
-          8.111417202
-        ]
-      },
-      8.111417202,
-      961,
-      11845
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      {
-        "type": "bar",
-        "values": [
-          29.28027748
-        ]
-      },
-      29.28027748,
-      2913,
-      9950
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      {
-        "type": "bar",
-        "values": [
-          0.3315649867
-        ]
-      },
-      0.3315649867,
-      15,
-      4475
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      {
-        "type": "bar",
-        "values": [
-          4.912572856
-        ]
-      },
-      4.912572856,
-      56,
-      1147
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mercer",
-      {
-        "type": "bar",
-        "values": [
-          11.8556701
-        ]
-      },
-      11.8556701,
-      542,
-      4571
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      {
-        "type": "bar",
-        "values": [
-          0.4682274247
-        ]
-      },
-      0.4682274247,
-      7,
-      1477
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      {
-        "type": "bar",
-        "values": [
-          17.01694915
-        ]
-      },
-      17.01694915,
-      980,
-      5757
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      {
-        "type": "bar",
-        "values": [
-          14.69809841
-        ]
-      },
-      14.69809841,
-      2896,
-      19702
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      {
-        "type": "bar",
-        "values": [
-          39.02439024
-        ]
-      },
-      39.02439024,
-      107,
-      275
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Northampton",
-      {
-        "type": "bar",
-        "values": [
-          15.20764512
-        ]
-      },
-      15.20764512,
-      1252,
-      8234
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      {
-        "type": "bar",
-        "values": [
-          11.87628866
-        ]
-      },
-      11.87628866,
-      287,
-      2414
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      {
-        "type": "bar",
-        "values": [
-          41.48148148
-        ]
-      },
-      41.48148148,
-      441,
-      1064
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Philadelphia",
-      {
-        "type": "bar",
-        "values": [
-          36.20163088
-        ]
-      },
-      36.20163088,
-      22872,
-      63180
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      {
-        "type": "bar",
-        "values": [
-          31.06125971
-        ]
-      },
-      31.06125971,
-      344,
-      1109
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Potter",
-      {
-        "type": "bar",
-        "values": [
-          16.50326797
-        ]
-      },
-      16.50326797,
-      98,
-      593
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Schuylkill",
-      {
-        "type": "bar",
-        "values": [
-          10.6870229
-        ]
-      },
-      10.6870229,
-      591,
-      5531
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      {
-        "type": "bar",
-        "values": [
-          6.472795497
-        ]
-      },
-      6.472795497,
-      69,
-      1060
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Somerset",
-      {
-        "type": "bar",
-        "values": [
-          4.640718563
-        ]
-      },
-      4.640718563,
-      91,
-      1962
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      {
-        "type": "bar",
-        "values": [
-          1.869158879
-        ]
-      },
-      1.869158879,
-      2,
-      103
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Susquehanna",
-      {
-        "type": "bar",
-        "values": [
-          25.50251256
-        ]
-      },
-      25.50251256,
-      200,
-      783
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Tioga",
-      {
-        "type": "bar",
-        "values": [
-          13.05954825
-        ]
-      },
-      13.05954825,
-      311,
-      2385
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Union",
-      {
-        "type": "bar",
-        "values": [
-          47.70039422
-        ]
-      },
-      47.70039422,
-      354,
-      743
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Venango",
-      {
-        "type": "bar",
-        "values": [
-          0.1282873637
-        ]
-      },
-      0.1282873637,
-      2,
-      1549
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      {
-        "type": "bar",
-        "values": [
-          42.03069658
-        ]
-      },
-      42.03069658,
-      349,
-      831
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Washington",
-      {
-        "type": "bar",
-        "values": [
-          25.6113633
-        ]
-      },
-      25.6113633,
-      1694,
-      6615
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      {
-        "type": "bar",
-        "values": [
-          34.58177278
-        ]
-      },
-      34.58177278,
-      269,
-      779
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Westmoreland",
-      {
-        "type": "bar",
-        "values": [
-          32.92518089
-        ]
-      },
-      32.92518089,
-      3929,
-      11934
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      {
-        "type": "bar",
-        "values": [
-          0.1853568119
-        ]
-      },
-      0.1853568119,
-      2,
-      1056
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "York",
-      {
-        "type": "bar",
-        "values": [
-          33.30952381
-        ]
-      },
-      33.30952381,
-      5509,
-      16539
     ],
     "outlier": false
   }
@@ -4739,7 +4739,7 @@ export const BAIL_POSTING_DATA = [
       "$27.0K",
       43.62244898,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           43.62244898
         ]
@@ -4753,7 +4753,7 @@ export const BAIL_POSTING_DATA = [
       "$18.6K",
       61.27998861,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           61.27998861
         ]
@@ -4767,7 +4767,7 @@ export const BAIL_POSTING_DATA = [
       "$13.9K",
       56.05263158,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           56.05263158
         ]
@@ -4781,7 +4781,7 @@ export const BAIL_POSTING_DATA = [
       "$17.6K",
       67.60883691,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           67.60883691
         ]
@@ -4795,7 +4795,7 @@ export const BAIL_POSTING_DATA = [
       "$50.1K",
       72.3183391,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           72.3183391
         ]
@@ -4809,7 +4809,7 @@ export const BAIL_POSTING_DATA = [
       "$28.3K",
       56.45679409,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           56.45679409
         ]
@@ -4823,7 +4823,7 @@ export const BAIL_POSTING_DATA = [
       "$33.1K",
       68.23253083,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           68.23253083
         ]
@@ -4837,7 +4837,7 @@ export const BAIL_POSTING_DATA = [
       "$32.7K",
       89.21800948,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           89.21800948
         ]
@@ -4851,7 +4851,7 @@ export const BAIL_POSTING_DATA = [
       "$62.6K",
       48.80620772,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           48.80620772
         ]
@@ -4865,7 +4865,7 @@ export const BAIL_POSTING_DATA = [
       "$17.6K",
       66.14420063,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           66.14420063
         ]
@@ -4879,7 +4879,7 @@ export const BAIL_POSTING_DATA = [
       "$37.0K",
       41.87380497,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           41.87380497
         ]
@@ -4893,7 +4893,7 @@ export const BAIL_POSTING_DATA = [
       "$26.8K",
       51.61290323,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           51.61290323
         ]
@@ -4907,7 +4907,7 @@ export const BAIL_POSTING_DATA = [
       "$26.8K",
       49.51370469,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           49.51370469
         ]
@@ -4921,7 +4921,7 @@ export const BAIL_POSTING_DATA = [
       "$44.3K",
       65.17571885,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           65.17571885
         ]
@@ -4935,7 +4935,7 @@ export const BAIL_POSTING_DATA = [
       "$26.4K",
       51.38476756,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           51.38476756
         ]
@@ -4949,7 +4949,7 @@ export const BAIL_POSTING_DATA = [
       "$20.0K",
       72.08835341,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           72.08835341
         ]
@@ -4963,7 +4963,7 @@ export const BAIL_POSTING_DATA = [
       "$24.3K",
       82.5203252,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           82.5203252
         ]
@@ -4977,7 +4977,7 @@ export const BAIL_POSTING_DATA = [
       "$21.0K",
       74.19962335,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           74.19962335
         ]
@@ -4991,7 +4991,7 @@ export const BAIL_POSTING_DATA = [
       "$35.8K",
       27.68777614,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           27.68777614
         ]
@@ -5005,7 +5005,7 @@ export const BAIL_POSTING_DATA = [
       "$22.6K",
       55.26315789,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           55.26315789
         ]
@@ -5019,7 +5019,7 @@ export const BAIL_POSTING_DATA = [
       "$25.0K",
       57.75502465,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           57.75502465
         ]
@@ -5033,7 +5033,7 @@ export const BAIL_POSTING_DATA = [
       "$36.6K",
       67.51909665,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           67.51909665
         ]
@@ -5047,7 +5047,7 @@ export const BAIL_POSTING_DATA = [
       "$38.5K",
       61.44408689,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           61.44408689
         ]
@@ -5061,7 +5061,7 @@ export const BAIL_POSTING_DATA = [
       "$21.3K",
       79.74683544,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           79.74683544
         ]
@@ -5075,7 +5075,7 @@ export const BAIL_POSTING_DATA = [
       "$27.8K",
       60.4815864,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           60.4815864
         ]
@@ -5089,7 +5089,7 @@ export const BAIL_POSTING_DATA = [
       "$19.5K",
       39.92776886,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           39.92776886
         ]
@@ -5103,7 +5103,7 @@ export const BAIL_POSTING_DATA = [
       "$22.7K",
       80.70175439,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           80.70175439
         ]
@@ -5117,7 +5117,7 @@ export const BAIL_POSTING_DATA = [
       "$53.5K",
       76.32904309,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           76.32904309
         ]
@@ -5131,7 +5131,7 @@ export const BAIL_POSTING_DATA = [
       "$54.7K",
       78.51239669,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           78.51239669
         ]
@@ -5145,7 +5145,7 @@ export const BAIL_POSTING_DATA = [
       "$15.6K",
       55.89123867,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           55.89123867
         ]
@@ -5159,7 +5159,7 @@ export const BAIL_POSTING_DATA = [
       "$18.3K",
       76.89594356,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           76.89594356
         ]
@@ -5173,7 +5173,7 @@ export const BAIL_POSTING_DATA = [
       "$16.6K",
       42.81345566,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           42.81345566
         ]
@@ -5187,7 +5187,7 @@ export const BAIL_POSTING_DATA = [
       "$45.0K",
       85.16129032,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           85.16129032
         ]
@@ -5201,7 +5201,7 @@ export const BAIL_POSTING_DATA = [
       "$22.4K",
       73.98843931,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           73.98843931
         ]
@@ -5215,7 +5215,7 @@ export const BAIL_POSTING_DATA = [
       "$31.1K",
       72.46600742,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           72.46600742
         ]
@@ -5229,7 +5229,7 @@ export const BAIL_POSTING_DATA = [
       "$52.6K",
       64.47848286,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           64.47848286
         ]
@@ -5243,7 +5243,7 @@ export const BAIL_POSTING_DATA = [
       "$19.2K",
       43.81742739,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           43.81742739
         ]
@@ -5257,7 +5257,7 @@ export const BAIL_POSTING_DATA = [
       "$24.5K",
       43.23432343,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           43.23432343
         ]
@@ -5271,7 +5271,7 @@ export const BAIL_POSTING_DATA = [
       "$20.1K",
       57.91968767,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           57.91968767
         ]
@@ -5285,7 +5285,7 @@ export const BAIL_POSTING_DATA = [
       "$37.0K",
       66.80926019,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           66.80926019
         ]
@@ -5299,7 +5299,7 @@ export const BAIL_POSTING_DATA = [
       "$52.7K",
       71.89292543,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           71.89292543
         ]
@@ -5313,7 +5313,7 @@ export const BAIL_POSTING_DATA = [
       "$23.7K",
       70.13752456,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           70.13752456
         ]
@@ -5327,7 +5327,7 @@ export const BAIL_POSTING_DATA = [
       "$25.0K",
       49.10820452,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           49.10820452
         ]
@@ -5341,7 +5341,7 @@ export const BAIL_POSTING_DATA = [
       "$39.8K",
       82.62068966,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           82.62068966
         ]
@@ -5355,7 +5355,7 @@ export const BAIL_POSTING_DATA = [
       "$27.4K",
       38.39793282,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           38.39793282
         ]
@@ -5369,7 +5369,7 @@ export const BAIL_POSTING_DATA = [
       "$25.3K",
       64.50531837,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           64.50531837
         ]
@@ -5383,7 +5383,7 @@ export const BAIL_POSTING_DATA = [
       "$28.6K",
       65.34653465,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           65.34653465
         ]
@@ -5397,7 +5397,7 @@ export const BAIL_POSTING_DATA = [
       "$27.5K",
       54.74903475,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           54.74903475
         ]
@@ -5411,7 +5411,7 @@ export const BAIL_POSTING_DATA = [
       "$41.8K",
       57.73195876,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           57.73195876
         ]
@@ -5425,7 +5425,7 @@ export const BAIL_POSTING_DATA = [
       "$25.6K",
       76.99680511,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           76.99680511
         ]
@@ -5439,7 +5439,7 @@ export const BAIL_POSTING_DATA = [
       "$54.0K",
       50.7113914,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           50.7113914
         ]
@@ -5453,7 +5453,7 @@ export const BAIL_POSTING_DATA = [
       "$22.2K",
       63.88888889,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           63.88888889
         ]
@@ -5467,7 +5467,7 @@ export const BAIL_POSTING_DATA = [
       "$19.4K",
       67.83216783,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           67.83216783
         ]
@@ -5481,7 +5481,7 @@ export const BAIL_POSTING_DATA = [
       "$20.6K",
       59.0780809,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           59.0780809
         ]
@@ -5495,7 +5495,7 @@ export const BAIL_POSTING_DATA = [
       "$28.0K",
       45.69190601,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           45.69190601
         ]
@@ -5509,7 +5509,7 @@ export const BAIL_POSTING_DATA = [
       "$37.9K",
       55.08982036,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           55.08982036
         ]
@@ -5523,7 +5523,7 @@ export const BAIL_POSTING_DATA = [
       "$16.9K",
       69.23076923,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           69.23076923
         ]
@@ -5537,7 +5537,7 @@ export const BAIL_POSTING_DATA = [
       "$27.6K",
       75.07788162,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           75.07788162
         ]
@@ -5551,7 +5551,7 @@ export const BAIL_POSTING_DATA = [
       "$20.6K",
       60.72234763,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           60.72234763
         ]
@@ -5565,7 +5565,7 @@ export const BAIL_POSTING_DATA = [
       "$27.5K",
       74.61139896,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           74.61139896
         ]
@@ -5579,7 +5579,7 @@ export const BAIL_POSTING_DATA = [
       "$37.5K",
       72.88135593,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           72.88135593
         ]
@@ -5593,7 +5593,7 @@ export const BAIL_POSTING_DATA = [
       "$25.4K",
       75.87209302,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           75.87209302
         ]
@@ -5607,7 +5607,7 @@ export const BAIL_POSTING_DATA = [
       "$25.1K",
       63.82098533,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           63.82098533
         ]
@@ -5621,7 +5621,7 @@ export const BAIL_POSTING_DATA = [
       "$34.1K",
       46.6442953,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           46.6442953
         ]
@@ -5635,7 +5635,7 @@ export const BAIL_POSTING_DATA = [
       "$21.0K",
       71.47154675,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           71.47154675
         ]
@@ -5649,7 +5649,7 @@ export const BAIL_POSTING_DATA = [
       "$25.1K",
       67.53246753,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           67.53246753
         ]
@@ -5663,7 +5663,7 @@ export const BAIL_POSTING_DATA = [
       "$20.8K",
       58.36246303,
       {
-        "type": "line",
+        "type": "bar",
         "values": [
           58.36246303
         ]
@@ -6474,11 +6474,11 @@ export const PRETRIAL_SPENDING_DATA = [
       "Fayette",
       "$9.3M",
       "$7.6M",
-      121.3963915,
+      100,
       {
         "type": "bar",
         "values": [
-          121.3963915
+          100
         ]
       }
     ],
@@ -6924,11 +6924,11 @@ export const PRETRIAL_SPENDING_DATA = [
       "Somerset",
       "$3.8M",
       "$2.9M",
-      130.5309721,
+      100,
       {
         "type": "bar",
         "values": [
-          130.5309721
+          100
         ]
       }
     ],
