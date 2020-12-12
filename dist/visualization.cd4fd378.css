@@ -7,26 +7,8 @@ th.viz-cell {
 }
 
 th.bail-dist-cell {
-  padding-left: 26px;
-  font-family: "GT America Condensed";
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  text-align: left;
-}
-
-td.viz-cell {
-  position: relative;
-  display: block;
-  width: 120px;
-  margin: 0 1em;
-  padding: 1.5em 0;
-  border-left: 1px dotted #333;
-  border-right: 1px dotted #333;
-}
-
-td.bail-dist-cell {
-  padding: 1.5em 1em;
+  text-align: center;
+  padding-left: 1em;
 }
 
 .start-num {
@@ -106,6 +88,16 @@ td.bail-dist-cell {
 
 .average-line.purple {
   background: #C14EF8;
+}
+
+td.viz-cell {
+  position: relative;
+  display: block;
+  width: 120px;
+  margin: 0 1em;
+  padding: 1.5em 0;
+  border-left: 1px dotted #333;
+  border-right: 1px dotted #333;
 }
 
 .viz-bar {

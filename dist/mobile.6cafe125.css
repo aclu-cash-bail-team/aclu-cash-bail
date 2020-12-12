@@ -52,28 +52,10 @@
     left: calc(100% + 0.5em);
   }
 
-  .total-budget-cell {
-      display: none;
-  }
-
-  .switch-container {
-    width: 100%;
-  }
-
-  .switch-container .switch {
-    flex-grow: 1;
-    padding: 10px;
-  }
-
-  .outliers-btn {
+.total-budget-cell {
     display: none;
-  }
+}
 
-  .outliers-btn.mobile-only {
-    display: block;
-    padding: 10px;
-    flex-basis: 161px;
-  }
 }
 
 @media only screen and (max-width: 425px) {
