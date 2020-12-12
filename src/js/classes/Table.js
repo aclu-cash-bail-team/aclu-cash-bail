@@ -22,6 +22,10 @@ class Cell {
   setElementClass(className) {
     this.element.className = className;
   }
+
+  addElementClass(className) {
+    this.element.classList.add(className);
+  }
 }
 
 
@@ -86,7 +90,8 @@ class BarGraphCell extends Cell {
     // label the bar with the difference between value and average
     const label = document.createElement("div");
     const diff = this.content - this.average;
-    label.textContent = `${diff > 0 ? "+" : ""}${diff.toFixed(1)}`;
+    if (diff > 0) { label.textContent = `+${diff.toFixed(1)}`; }
+    if (diff < 0) { label.textContent = `${diff.toFixed(1)}`; }
     label.className = "bar-label";
     bar.appendChild(label);
     this.element.appendChild(bar);
@@ -261,7 +266,7 @@ class VizHeaderCell extends HeaderCell {
     wrapper.appendChild(text);
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
-      wrapper.style.paddingLeft = `${10}px`;
+      wrapper.style.paddingLeft = "10px";
     } else if (className === "end-num" && content.toString().length <= 3) {
       wrapper.style.paddingRight = `${8 - content.toString().length}px`;
     }
@@ -321,8 +326,9 @@ class BodyRow {
 
     row.className = "";
     this.cells.forEach((cell, i) => {
-      const classNames = `${cell.className} ${i === sorted ? "sorted" : ""} ${this.isBold ? "bold-cell" : ""}`;
-      cell.setElementClass(classNames);
+      cell.setElementClass(cell.className);
+      if (i === sorted) cell.addElementClass("sorted");
+      if (this.isBold) cell.addElementClass("bold-cell");
       row.appendChild(cell.element);
     });
     return [this.element];
