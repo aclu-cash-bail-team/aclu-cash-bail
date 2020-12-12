@@ -42,7 +42,8 @@ class TextCell extends Cell {
 class StyledTextCell extends Cell {
   constructor(content, className) {
     super(`${className} ${content["className"]}`);
-    this.content = content["value"].toLocaleString();
+    // styled cells, which display differences, should always show positive
+    this.content = content["value"].replace("-", "+");
     this.render();
   }
 
@@ -54,9 +55,10 @@ class StyledTextCell extends Cell {
 
 
 class NumberCell extends Cell {
-  constructor(content, className) {
+  constructor(content, className, data) {
     super(className);
-    this.content = content % 1 === 0 ? content.toLocaleString() : content.toFixed(1);
+    const isPercent = data["unit"] === "percent";
+    this.content = isPercent ? content.toFixed(1) : content.toLocaleString();
     this.render();
   }
 
@@ -176,6 +178,8 @@ class HeaderCell extends Cell {
     // add event listener for sorting
     if (this.sortCol) {
       this.element.addEventListener("click", () => {
+        // always default to descending sort
+        if (this.table.sortCol !== this.id) this.sortDir = -1;
         const classNameWithSort = this.getClassName();
         this.table.setSortColumn(this.id);
         this.table.setSortDirection(this.sortDir);
@@ -282,6 +286,10 @@ class VizHeaderCell extends HeaderCell {
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
       wrapper.style.paddingLeft = `${4}px`;
+    }
+    // adjust padding based on number of digits
+    if (className === "end-num" && content.toString().length === 2) {
+      wrapper.style.paddingRight = `${1}px`;
     }
 
     // create the vertical tick underneath the number
@@ -467,9 +475,9 @@ export class Table {
 
   getHeaderRow() {
     const headerCells = this.headers.map((header, i) => {
-      const CellType = typeof(header) == "string" ? HeaderCell : VizHeaderCell;
+      const CellType = "text" in header ? HeaderCell : VizHeaderCell;
       return new CellType(
-        header,
+        CellType === HeaderCell ? header["text"] : header,
         this.classNames[i],
         this.sortCols[i],
         // 1 designates ascending; -1, descending (default); 0, not sortable
@@ -547,17 +555,23 @@ export class Table {
     this.sortDir = sortDir;
   }
 
-  toNumber(data) {
-    const value = typeof(data) === "object" ? data["value"] : data;
-    return Number(value.replace ? value.replace(/[^\d.-]/g, "") : value);
+  getSortable(data) {
+    if (typeof(data) === "object" || /\d/.test(data)) {
+      const value = typeof(data) === "object" ? data["value"] : data;
+      return Number(value.replace ? value.replace(/[^\d.-]/g, "") : value);
+    }
+    return data;
   }
 
   sort(initialSort) {
     if (!initialSort) this.header.clearedSortedCells();
 
     this.data.sort((a, b) => {
-      const i = this.toNumber(a.data[this.sortCol]);
-      const j = this.toNumber(b.data[this.sortCol]);
+      const val1 = a.data[this.sortCol];
+      const val2 = b.data[this.sortCol];
+      // Determine if value is treated as a number or a string
+      const i = this.getSortable(val1);
+      const j = this.getSortable(val2);
       if (i < j) {
         return this.sortDir * -1;
       } else if (i > j) {

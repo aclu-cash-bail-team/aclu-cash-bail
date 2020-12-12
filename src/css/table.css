@@ -19,8 +19,16 @@ thead tr, tbody tr {
   border-bottom: 1px #333 solid;
 }
 
+tr.collapsible {
+  cursor: pointer;
+}
+
+tr.expanded {
+  background-color: #131313;
+}
+
 th {
-  padding: 1em 0.5em;
+  padding: 13px 6px;
   color: #fff;
   font-family: "GT America Condensed";
   font-weight: 400;
@@ -32,7 +40,7 @@ th {
 }
 
 th.number-cell {
-  text-align: center;
+  text-align: right;
 }
 
 th.retention-fee-cell {
@@ -41,7 +49,7 @@ th.retention-fee-cell {
 
 td {
   text-align: left;
-  padding: 1em 0.5em;
+  padding: 13px 6px;
 }
 
 .number-cell {
@@ -54,16 +62,38 @@ td {
 
 .county-name-cell {
   min-width: 170px;
+  color: rgba(255, 255, 255, 1);
 }
 
 .th-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.number-cell .th-wrapper {
+  justify-content: flex-end;
 }
 
 .retention-fee-cell {
-  text-align: right;
-  min-width: 95px;
+  text-align: left;
+  min-width: 120px;
+}
+
+.fraction-budget-cell {
+  min-width: 62px;
+}
+
+.bail-rate-cell {
+  min-width: 90px;
+}
+
+.total-budget-cell {
+  min-width: 84px;
+}
+
+.bail-black-cell, .bail-white-cell {
+  min-width: 0;
+  width: auto;
 }
 
 .sort-desc, .sort-asc {
@@ -78,18 +108,29 @@ td {
 
 .caret {
   min-width: 8px;
-  padding-top: 7px;
-  padding-bottom: 7px;
   padding-right: 5px;
   opacity: 0;
+}
+
+.sort-desc .caret {
+  padding-top: 6px;
+}
+
+.sort-asc .caret {
+  padding-bottom: 6px;
 }
 
 .sorted .caret, .caret-cell .caret {
   opacity: 1;
 }
 
+.caret-cell {
+  width: 10px;
+  padding-left: 0;
+}
+
 .caret-cell .caret {
-  padding-left: 7px;
+  padding-left: 6px;
   padding-top: 2px;
   padding-bottom: 1px;
 }
@@ -124,7 +165,7 @@ td {
 
 .outliers-btn {
   margin-left: 1em;
-  padding: 9px 25px;
+  padding: 10px 15px;
   border: 1px #333 solid;
   cursor: pointer;
   user-select: none;
@@ -143,8 +184,9 @@ td {
 }
 
 .switch-container .switch {
+  width: 140px;
+  padding: 10px;
   border: 1px #333 solid;
-  padding: 9px 25px;
 }
 
 .switch.left {
@@ -168,10 +210,20 @@ td {
   color: #C14EF8;
 }
 
-tr.collapsible {
-  cursor: pointer;
+/* Table-specific styling. */
+
+#pretrail-spending-table th.viz-cell {
+  padding-right: 0;
 }
 
-tr.expanded {
-  background-color: #131313;
+#pretrail-spending-table td.viz-cell {
+  margin-right: 0;
+}
+
+#pretrail-spending-table .end-num {
+  margin-right: -6px;
+}
+
+#mdj-table .county-name-cell {
+  padding-left: 0;
 }

@@ -24,7 +24,7 @@
             <div class="menu"></div>
           </div>
           <div class="switch-container">
-            <div class="btn-text switch left showing">Cash Bail Rate</div>
+            <div class="btn-text switch left showing">% Cash Bail</div>
             <div class="btn-text switch right">ROR Rate</div>
           </div>
           <table id="bail-rate-table">
@@ -42,7 +42,7 @@
             <div class="menu"></div>
           </div>
           <div class="switch-container">
-            <div class="btn-text switch left">Cash Bail Rate</div>
+            <div class="btn-text switch left">% Cash Bail</div>
             <div class="btn-text switch right showing">ROR Rate</div>
           </div>
           <table id="ror-rate-table">
@@ -65,8 +65,9 @@
             <div class="btn-text outliers-btn">Show Outliers</div>
           </div>
           <div class="switch-container">
-            <div class="btn-text switch left showing">Cash Bail Rate</div>
-            <div class="btn-text switch right">Cash Bail Amount</div>
+            <div class="btn-text switch left showing">% Cash Bail</div>
+            <div class="btn-text switch right">Bail Amount</div>
+            <div class="btn-text outliers-btn mobile-only">Show Outliers</div>
           </div>
           <table id="bail-race-rate-table">
             <thead></thead>
@@ -86,8 +87,9 @@
             <div class="btn-text outliers-btn">Show Outliers</div>
           </div>
           <div class="switch-container">
-            <div class="btn-text switch left">Cash Bail Rate</div>
-            <div class="btn-text switch right showing">Cash Bail Amount</div>
+            <div class="btn-text switch left">% Cash Bail</div>
+            <div class="btn-text switch right showing">Bail Amount</div>
+            <div class="btn-text outliers-btn mobile-only">Show Outliers</div>
           </div>
           <table id="bail-race-amount-table">
             <thead></thead>
@@ -161,6 +163,7 @@
     <script>
       $(document).ready(() => {
         $('.dropdown').dropdown({
+          fullTextSearch: true,
           ignoreCase: true,
           delimiter: ';',
           label: {

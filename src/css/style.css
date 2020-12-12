@@ -8,7 +8,9 @@ body {
   font-size: 13px;
   color: #eee;
   background-color: #000;
+  -font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -25,7 +27,11 @@ body {
 }
 
 .footnote {
-  color: #4f4f4f;
+  color: rgba(255, 255, 255, 0.75);
   font-family: "GT America";
-  font-size: 11px;
+  font-size: 12px;
+}
+
+.mobile-only {
+  display: none;
 }

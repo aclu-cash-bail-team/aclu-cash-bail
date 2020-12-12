@@ -35,6 +35,25 @@
   .bar-label {
     left: calc(100% + 0.5em);
   }
+
+  .switch-container {
+    width: 100%;
+  }
+
+  .switch-container .switch {
+    flex-grow: 1;
+    padding: 10px;
+  }
+
+  .outliers-btn {
+    display: none;
+  }
+
+  .outliers-btn.mobile-only {
+    display: block;
+    padding: 10px;
+    flex-basis: 161px;
+  }
 }
 
 @media only screen and (max-width: 400px) {
