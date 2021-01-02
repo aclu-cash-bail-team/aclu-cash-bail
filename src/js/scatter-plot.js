@@ -18,8 +18,5 @@ const createRaceScatterPlot = () => {
   return new ScatterPlot(RACE_SCATTER_PLOT, xAxis, yAxis, container);
 };
 
-// for converting dollar strings to numbers:
-// Number(value.replace(/[^\d.-]/g, ""))
-
 /* RENDER PAGE */
 createRaceScatterPlot();

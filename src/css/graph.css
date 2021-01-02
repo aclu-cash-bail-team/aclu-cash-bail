@@ -9,9 +9,11 @@
 }
 
 .scatter-plot {
+  position: relative;
   width: 100%;
   height: 500px;
   background: rgba(255, 255, 255, 0.05);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
 }
 
 .scatter-plot-subhead {
@@ -38,9 +40,7 @@
   display: inline-block;
   width: 8px;
   height: 8px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 50%;
   margin-right: 8px;
 }
 
@@ -56,4 +56,20 @@
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.scatter-point {
+  position: absolute;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+
+.scatter-point.green {
+  background-color: #00ED89;
+}
+
+.scatter-point.purple {
+  background-color: #C14EF8;
 }
