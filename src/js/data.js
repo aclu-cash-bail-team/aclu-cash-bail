@@ -4732,6 +4732,746 @@ export const BAIL_RACE_AMOUNT_DATA = [
   }
 ];
 
+export const RACE_SCATTER_PLOT = {
+  "Cameron": {
+    "outlier": true,
+    "bailRate": {
+      "black": 100,
+      "white": 25.45454545
+    },
+    "bailAmount": {
+      "black": "$10,000",
+      "white": "$26,481"
+    }
+  },
+  "Forest": {
+    "outlier": true,
+    "bailRate": {
+      "black": 85,
+      "white": 32.03883495
+    },
+    "bailAmount": {
+      "black": "$21,438",
+      "white": "$22,344"
+    }
+  },
+  "Potter": {
+    "outlier": true,
+    "bailRate": {
+      "black": 75,
+      "white": 23.24786325
+    },
+    "bailAmount": {
+      "black": "$15,700",
+      "white": "$19,338"
+    }
+  },
+  "Somerset": {
+    "outlier": false,
+    "bailRate": {
+      "black": 69.56521739,
+      "white": 23.20855615
+    },
+    "bailAmount": {
+      "black": "$78,071",
+      "white": "$33,896"
+    }
+  },
+  "Jefferson": {
+    "outlier": false,
+    "bailRate": {
+      "black": 72.97297297,
+      "white": 38.35252436
+    },
+    "bailAmount": {
+      "black": "$35,040",
+      "white": "$45,707"
+    }
+  },
+  "Warren": {
+    "outlier": true,
+    "bailRate": {
+      "black": 70,
+      "white": 39.95067818
+    },
+    "bailAmount": {
+      "black": "$32,692",
+      "white": "$25,369"
+    }
+  },
+  "Sullivan": {
+    "outlier": true,
+    "bailRate": {
+      "black": 62.5,
+      "white": 32.63157895
+    },
+    "bailAmount": {
+      "black": "$5,000",
+      "white": "$18,667"
+    }
+  },
+  "Wayne": {
+    "outlier": false,
+    "bailRate": {
+      "black": 64.86486486,
+      "white": 35.30997305
+    },
+    "bailAmount": {
+      "black": "$28,682",
+      "white": "$32,101"
+    }
+  },
+  "Blair": {
+    "outlier": false,
+    "bailRate": {
+      "black": 58.6998088,
+      "white": 31.76853358
+    },
+    "bailAmount": {
+      "black": "$43,726",
+      "white": "$29,256"
+    }
+  },
+  "Lycoming": {
+    "outlier": false,
+    "bailRate": {
+      "black": 55.01355014,
+      "white": 28.14726841
+    },
+    "bailAmount": {
+      "black": "$77,030",
+      "white": "$37,028"
+    }
+  },
+  "Susquehanna": {
+    "outlier": true,
+    "bailRate": {
+      "black": 66.66666667,
+      "white": 39.76377953
+    },
+    "bailAmount": {
+      "black": "$29,808",
+      "white": "$27,138"
+    }
+  },
+  "Erie": {
+    "outlier": false,
+    "bailRate": {
+      "black": 63.73239437,
+      "white": 37.02714731
+    },
+    "bailAmount": {
+      "black": "$38,881",
+      "white": "$23,611"
+    }
+  },
+  "Cambria": {
+    "outlier": false,
+    "bailRate": {
+      "black": 65.52083333,
+      "white": 39.14590747
+    },
+    "bailAmount": {
+      "black": "$51,483",
+      "white": "$28,879"
+    }
+  },
+  "Huntingdon": {
+    "outlier": false,
+    "bailRate": {
+      "black": 64.05228758,
+      "white": 37.83333333
+    },
+    "bailAmount": {
+      "black": "$22,010",
+      "white": "$18,028"
+    }
+  },
+  "Crawford": {
+    "outlier": false,
+    "bailRate": {
+      "black": 53.33333333,
+      "white": 28.3197832
+    },
+    "bailAmount": {
+      "black": "$32,600",
+      "white": "$21,505"
+    }
+  },
+  "Centre": {
+    "outlier": false,
+    "bailRate": {
+      "black": 46.74115456,
+      "white": 21.88492764
+    },
+    "bailAmount": {
+      "black": "$45,976",
+      "white": "$34,614"
+    }
+  },
+  "Venango": {
+    "outlier": false,
+    "bailRate": {
+      "black": 60.13986014,
+      "white": 35.56187767
+    },
+    "bailAmount": {
+      "black": "$48,712",
+      "white": "$35,510"
+    }
+  },
+  "Clearfield": {
+    "outlier": false,
+    "bailRate": {
+      "black": 59.30232558,
+      "white": 35.64718163
+    },
+    "bailAmount": {
+      "black": "$43,890",
+      "white": "$23,215"
+    }
+  },
+  "Armstrong": {
+    "outlier": false,
+    "bailRate": {
+      "black": 62.71186441,
+      "white": 39.52662722
+    },
+    "bailAmount": {
+      "black": "$18,541",
+      "white": "$13,560"
+    }
+  },
+  "Northumberland": {
+    "outlier": false,
+    "bailRate": {
+      "black": 56.81818182,
+      "white": 33.91066545
+    },
+    "bailAmount": {
+      "black": "$63,255",
+      "white": "$38,641"
+    }
+  },
+  "Lawrence": {
+    "outlier": false,
+    "bailRate": {
+      "black": 66.28477905,
+      "white": 43.4806939
+    },
+    "bailAmount": {
+      "black": "$25,778",
+      "white": "$15,192"
+    }
+  },
+  "Mifflin": {
+    "outlier": false,
+    "bailRate": {
+      "black": 70.11494253,
+      "white": 47.48201439
+    },
+    "bailAmount": {
+      "black": "$52,219",
+      "white": "$35,331"
+    }
+  },
+  "Tioga": {
+    "outlier": false,
+    "bailRate": {
+      "black": 57,
+      "white": 34.50800915
+    },
+    "bailAmount": {
+      "black": "$30,455",
+      "white": "$18,916"
+    }
+  },
+  "Allegheny": {
+    "outlier": false,
+    "bailRate": {
+      "black": 57.06645057,
+      "white": 35.29897333
+    },
+    "bailAmount": {
+      "black": "$21,080",
+      "white": "$15,881"
+    }
+  },
+  "Westmoreland": {
+    "outlier": false,
+    "bailRate": {
+      "black": 50.05045409,
+      "white": 28.61736334
+    },
+    "bailAmount": {
+      "black": "$30,920",
+      "white": "$17,072"
+    }
+  },
+  "Greene": {
+    "outlier": false,
+    "bailRate": {
+      "black": 58.97435897,
+      "white": 37.86163522
+    },
+    "bailAmount": {
+      "black": "$20,977",
+      "white": "$15,107"
+    }
+  },
+  "Beaver": {
+    "outlier": false,
+    "bailRate": {
+      "black": 64.33048433,
+      "white": 43.92212726
+    },
+    "bailAmount": {
+      "black": "$26,145",
+      "white": "$13,733"
+    }
+  },
+  "McKean": {
+    "outlier": false,
+    "bailRate": {
+      "black": 61.33333333,
+      "white": 41.23134328
+    },
+    "bailAmount": {
+      "black": "$34,911",
+      "white": "$23,475"
+    }
+  },
+  "Washington": {
+    "outlier": false,
+    "bailRate": {
+      "black": 55.77092511,
+      "white": 35.82116788
+    },
+    "bailAmount": {
+      "black": "$33,527",
+      "white": "$19,878"
+    }
+  },
+  "Luzerne": {
+    "outlier": false,
+    "bailRate": {
+      "black": 53.5892323,
+      "white": 34.6550856
+    },
+    "bailAmount": {
+      "black": "$47,113",
+      "white": "$32,968"
+    }
+  },
+  "Lackawanna": {
+    "outlier": false,
+    "bailRate": {
+      "black": 67.1345995,
+      "white": 48.9720035
+    },
+    "bailAmount": {
+      "black": "$41,104",
+      "white": "$26,940"
+    }
+  },
+  "Snyder": {
+    "outlier": false,
+    "bailRate": {
+      "black": 52.5,
+      "white": 34.59183673
+    },
+    "bailAmount": {
+      "black": "$29,659",
+      "white": "$27,551"
+    }
+  },
+  "Bradford": {
+    "outlier": false,
+    "bailRate": {
+      "black": 62.26415094,
+      "white": 45.14840183
+    },
+    "bailAmount": {
+      "black": "$63,125",
+      "white": "$32,077"
+    }
+  },
+  "Cumberland": {
+    "outlier": false,
+    "bailRate": {
+      "black": 51.61744023,
+      "white": 35.0094162
+    },
+    "bailAmount": {
+      "black": "$34,037",
+      "white": "$23,281"
+    }
+  },
+  "Butler": {
+    "outlier": false,
+    "bailRate": {
+      "black": 44.7761194,
+      "white": 29.5154185
+    },
+    "bailAmount": {
+      "black": "$42,155",
+      "white": "$12,248"
+    }
+  },
+  "Delaware": {
+    "outlier": false,
+    "bailRate": {
+      "black": 63.75237882,
+      "white": 48.4952381
+    },
+    "bailAmount": {
+      "black": "$43,250",
+      "white": "$31,974"
+    }
+  },
+  "Bedford": {
+    "outlier": false,
+    "bailRate": {
+      "black": 52.57731959,
+      "white": 37.56419663
+    },
+    "bailAmount": {
+      "black": "$65,010",
+      "white": "$49,176"
+    }
+  },
+  "Union": {
+    "outlier": false,
+    "bailRate": {
+      "black": 38.20224719,
+      "white": 23.24159021
+    },
+    "bailAmount": {
+      "black": "$34,667",
+      "white": "$25,807"
+    }
+  },
+  "Dauphin": {
+    "outlier": false,
+    "bailRate": {
+      "black": 51.21710526,
+      "white": 36.4556962
+    },
+    "bailAmount": {
+      "black": "$40,031",
+      "white": "$32,313"
+    }
+  },
+  "Montgomery": {
+    "outlier": false,
+    "bailRate": {
+      "black": 43.27198364,
+      "white": 28.69733969
+    },
+    "bailAmount": {
+      "black": "$29,169",
+      "white": "$21,885"
+    }
+  },
+  "Adams": {
+    "outlier": false,
+    "bailRate": {
+      "black": 43.56060606,
+      "white": 29.03651562
+    },
+    "bailAmount": {
+      "black": "$29,479",
+      "white": "$26,077"
+    }
+  },
+  "Chester": {
+    "outlier": false,
+    "bailRate": {
+      "black": 48.47354138,
+      "white": 34.29690666
+    },
+    "bailAmount": {
+      "black": "$32,205",
+      "white": "$22,836"
+    }
+  },
+  "Franklin": {
+    "outlier": false,
+    "bailRate": {
+      "black": 49.26553672,
+      "white": 35.19494204
+    },
+    "bailAmount": {
+      "black": "$61,407",
+      "white": "$50,242"
+    }
+  },
+  "York": {
+    "outlier": false,
+    "bailRate": {
+      "black": 54.11985019,
+      "white": 41.11844787
+    },
+    "bailAmount": {
+      "black": "$30,258",
+      "white": "$18,416"
+    }
+  },
+  "Philadelphia": {
+    "outlier": false,
+    "bailRate": {
+      "black": 56.02170568,
+      "white": 43.3107617
+    },
+    "bailAmount": {
+      "black": "$54,302",
+      "white": "$43,459"
+    }
+  },
+  "Lancaster": {
+    "outlier": false,
+    "bailRate": {
+      "black": 55.54532904,
+      "white": 43.07425541
+    },
+    "bailAmount": {
+      "black": "$57,668",
+      "white": "$48,383"
+    }
+  },
+  "Perry": {
+    "outlier": false,
+    "bailRate": {
+      "black": 40,
+      "white": 27.68130746
+    },
+    "bailAmount": {
+      "black": "$41,126",
+      "white": "$24,007"
+    }
+  },
+  "Mercer": {
+    "outlier": false,
+    "bailRate": {
+      "black": 45.40337711,
+      "white": 33.35235378
+    },
+    "bailAmount": {
+      "black": "$29,504",
+      "white": "$23,005"
+    }
+  },
+  "Northampton": {
+    "outlier": false,
+    "bailRate": {
+      "black": 55.7063541,
+      "white": 43.86813852
+    },
+    "bailAmount": {
+      "black": "$34,972",
+      "white": "$24,095"
+    }
+  },
+  "Fayette": {
+    "outlier": false,
+    "bailRate": {
+      "black": 54,
+      "white": 42.30092389
+    },
+    "bailAmount": {
+      "black": "$25,444",
+      "white": "$17,203"
+    }
+  },
+  "Carbon": {
+    "outlier": false,
+    "bailRate": {
+      "black": 43.7751004,
+      "white": 32.34139961
+    },
+    "bailAmount": {
+      "black": "$35,236",
+      "white": "$24,452"
+    }
+  },
+  "Clinton": {
+    "outlier": false,
+    "bailRate": {
+      "black": 47.14285714,
+      "white": 35.98750976
+    },
+    "bailAmount": {
+      "black": "$29,609",
+      "white": "$19,817"
+    }
+  },
+  "Lebanon": {
+    "outlier": false,
+    "bailRate": {
+      "black": 48.84547069,
+      "white": 37.97733949
+    },
+    "bailAmount": {
+      "black": "$36,343",
+      "white": "$23,902"
+    }
+  },
+  "Montour": {
+    "outlier": true,
+    "bailRate": {
+      "black": 46.15384615,
+      "white": 35.34136546
+    },
+    "bailAmount": {
+      "black": "$25,556",
+      "white": "$27,449"
+    }
+  },
+  "Bucks": {
+    "outlier": false,
+    "bailRate": {
+      "black": 41.06901218,
+      "white": 30.62392673
+    },
+    "bailAmount": {
+      "black": "$73,635",
+      "white": "$58,683"
+    }
+  },
+  "Schuylkill": {
+    "outlier": false,
+    "bailRate": {
+      "black": 46.5060241,
+      "white": 37.27521501
+    },
+    "bailAmount": {
+      "black": "$28,947",
+      "white": "$19,996"
+    }
+  },
+  "Lehigh": {
+    "outlier": false,
+    "bailRate": {
+      "black": 61.81634031,
+      "white": 52.85376562
+    },
+    "bailAmount": {
+      "black": "$25,138",
+      "white": "$16,341"
+    }
+  },
+  "Berks": {
+    "outlier": false,
+    "bailRate": {
+      "black": 58.42078961,
+      "white": 50.24259317
+    },
+    "bailAmount": {
+      "black": "$35,039",
+      "white": "$27,399"
+    }
+  },
+  "Juniata": {
+    "outlier": true,
+    "bailRate": {
+      "black": 43.75,
+      "white": 36.67425968
+    },
+    "bailAmount": {
+      "black": "$29,167",
+      "white": "$22,330"
+    }
+  },
+  "Wyoming": {
+    "outlier": true,
+    "bailRate": {
+      "black": 40,
+      "white": 35.59650824
+    },
+    "bailAmount": {
+      "black": "$22,611",
+      "white": "$25,042"
+    }
+  },
+  "Pike": {
+    "outlier": false,
+    "bailRate": {
+      "black": 37.41007194,
+      "white": 34.02061856
+    },
+    "bailAmount": {
+      "black": "$34,755",
+      "white": "$21,534"
+    }
+  },
+  "Monroe": {
+    "outlier": false,
+    "bailRate": {
+      "black": 35.13011152,
+      "white": 32.41612358
+    },
+    "bailAmount": {
+      "black": "$34,085",
+      "white": "$21,495"
+    }
+  },
+  "Columbia": {
+    "outlier": false,
+    "bailRate": {
+      "black": 40.7960199,
+      "white": 38.46153846
+    },
+    "bailAmount": {
+      "black": "$57,747",
+      "white": "$33,130"
+    }
+  },
+  "Fulton": {
+    "outlier": false,
+    "bailRate": {
+      "black": 31.57894737,
+      "white": 29.27536232
+    },
+    "bailAmount": {
+      "black": "$24,000",
+      "white": "$57,879"
+    }
+  },
+  "Clarion": {
+    "outlier": false,
+    "bailRate": {
+      "black": 40.625,
+      "white": 40.83259522
+    },
+    "bailAmount": {
+      "black": "$14,200",
+      "white": "$20,698"
+    }
+  },
+  "Elk": {
+    "outlier": true,
+    "bailRate": {
+      "black": 27.77777778,
+      "white": 28.68117798
+    },
+    "bailAmount": {
+      "black": "$14,375",
+      "white": "$21,093"
+    }
+  },
+  "Indiana": {
+    "outlier": false,
+    "bailRate": {
+      "black": 30.39215686,
+      "white": 36.21169916
+    },
+    "bailAmount": {
+      "black": "$20,861",
+      "white": "$15,479"
+    }
+  }
+};
+
 export const BAIL_POSTING_DATA = [
   {
     "data": [
