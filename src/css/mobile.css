@@ -65,8 +65,14 @@
     padding: 10px;
   }
 
-  .outliers-btn {
+  .outliers-btn:not(.always-show) {
     display: none;
+  }
+
+  .outliers-btn.always-show {
+    max-width: 161px;
+    position: relative;
+    margin: auto;
   }
 
   .outliers-btn.mobile-only {
