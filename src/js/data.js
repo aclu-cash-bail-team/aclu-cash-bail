@@ -4770,7 +4770,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Somerset": {
-    "showName": true,
+    "showName": false,
     "outlier": false,
     "x": {
       "black": 69.56521739,
@@ -4806,7 +4806,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Sullivan": {
-    "showName": true,
+    "showName": false,
     "outlier": true,
     "x": {
       "black": 62.5,
@@ -4818,7 +4818,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Wayne": {
-    "showName": true,
+    "showName": false,
     "outlier": false,
     "x": {
       "black": 64.86486486,
@@ -4830,7 +4830,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Blair": {
-    "showName": false,
+    "showName": true,
     "outlier": false,
     "x": {
       "black": 58.6998088,
@@ -4950,7 +4950,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Armstrong": {
-    "showName": true,
+    "showName": false,
     "outlier": false,
     "x": {
       "black": 62.71186441,
@@ -5010,7 +5010,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Allegheny": {
-    "showName": false,
+    "showName": true,
     "outlier": false,
     "x": {
       "black": 57.06645057,
@@ -5022,7 +5022,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Westmoreland": {
-    "showName": false,
+    "showName": true,
     "outlier": false,
     "x": {
       "black": 50.05045409,
@@ -5094,7 +5094,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Lackawanna": {
-    "showName": false,
+    "showName": true,
     "outlier": false,
     "x": {
       "black": 67.1345995,
@@ -5178,7 +5178,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Union": {
-    "showName": false,
+    "showName": true,
     "outlier": false,
     "x": {
       "black": 38.20224719,
@@ -5190,7 +5190,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Dauphin": {
-    "showName": false,
+    "showName": true,
     "outlier": false,
     "x": {
       "black": 51.21710526,
@@ -5202,7 +5202,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Montgomery": {
-    "showName": false,
+    "showName": true,
     "outlier": false,
     "x": {
       "black": 43.27198364,
@@ -5346,7 +5346,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Clinton": {
-    "showName": false,
+    "showName": true,
     "outlier": false,
     "x": {
       "black": 47.14285714,
@@ -5382,7 +5382,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Bucks": {
-    "showName": true,
+    "showName": false,
     "outlier": false,
     "x": {
       "black": 41.06901218,
@@ -5418,7 +5418,7 @@ export const RACE_SCATTER_PLOT = {
     }
   },
   "Berks": {
-    "showName": false,
+    "showName": true,
     "outlier": false,
     "x": {
       "black": 58.42078961,

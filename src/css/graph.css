@@ -87,6 +87,7 @@
 .scatter-line.outlier,
 .scatter-text.outlier {
   display: none;
+  opacity: 50%;
 }
 
 .scatter-plot.show-outliers .scatter-line.outlier,
@@ -109,7 +110,6 @@
 }
 
 .scatter-line.hovering, .scatter-point.hovering {
-  /* TODO: what transition to use here? */
   stroke: #FFF;
   stroke-width: 0.5px;
 }
