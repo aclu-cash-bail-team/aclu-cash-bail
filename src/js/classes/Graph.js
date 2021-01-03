@@ -1,7 +1,7 @@
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 class CountyPoint {
-  constructor(county, data, xAxis, yAxis, outlier, showName, plot) {
+  constructor(county, data, xAxis, yAxis, outlier, showName, plot, container) {
     this.county = county;
     this.data = data;
     this.xAxis = xAxis;
@@ -9,7 +9,9 @@ class CountyPoint {
     this.outlier = outlier;
     this.showName = showName;
     this.plot = plot;
+    this.container = container;
     [this.xs, this.ys] = this.getPositions();
+    this.elements = [];
   }
 
   isOutlier() {
@@ -41,13 +43,12 @@ class CountyPoint {
     text.appendChild(document.createTextNode(this.county));
     this.plot.appendChild(text);
 
-    this.text = text;
+    this.elements.push(text);
     text.addEventListener("mouseenter", () => this.onMouseEnter());
     text.addEventListener("mouseleave", () => this.onMouseLeave());
   }
 
   renderPoints() {
-    this.points = [];
     this.data.forEach((data, i) => {
       const className = `${data.class} scatter-point${this.outlier ? " outlier" : ""}`;
       const point = document.createElementNS(SVG_NS, "circle");
@@ -57,7 +58,7 @@ class CountyPoint {
       point.setAttributeNS(null, "r", 4);
       this.plot.appendChild(point);
 
-      this.points.push(point);
+      this.elements.push(point);
       point.addEventListener("mouseenter", () => this.onMouseEnter());
       point.addEventListener("mouseleave", () => this.onMouseLeave());
     });
@@ -76,36 +77,83 @@ class CountyPoint {
     line.setAttributeNS(null, "y2", this.ys[1]);
     this.plot.appendChild(line);
 
-    this.line = line;
+    this.elements.push(line);
     line.addEventListener("mouseenter", () => this.onMouseEnter());
     line.addEventListener("mouseleave", () => this.onMouseLeave());
   }
 
   onMouseEnter() {
-    console.log(this.county);
-    this.points.forEach(point => {
-      point.classList.add("hovering");
+    this.renderTooltip();
+    this.elements.forEach(element => {
+      element.classList.add("hovering");
     });
-    this.line.classList.add("hovering");
-    if (this.text) this.text.classList.add("hovering");
   }
 
   onMouseLeave() {
-    this.points.forEach(point => {
-      point.classList.remove("hovering");
+    this.tooltip.remove();
+    this.elements.forEach(element => {
+      element.classList.remove("hovering");
     });
-    this.line.classList.remove("hovering");
-    if (this.text) this.text.classList.remove("hovering");
+  }
+
+  renderTooltip() {
+    const tooltip = document.createElement("div");
+    tooltip.className = "scatter-tooltip";
+    const countyName = document.createElement("h4");
+    countyName.appendChild(document.createTextNode(this.county));
+    tooltip.appendChild(countyName);
+
+    // render data in a table
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+    const filler = document.createElement("th");
+    const xHeader = document.createElement("th");
+    xHeader.appendChild(document.createTextNode(this.data[0].xHeader));
+    const yHeader = document.createElement("th");
+    yHeader.appendChild(document.createTextNode(this.data[0].yHeader));
+    headerRow.appendChild(filler);
+    headerRow.appendChild(xHeader);
+    headerRow.appendChild(yHeader);
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // render cells from data
+    const tbody = document.createElement("tbody");
+    this.data.forEach(data => {
+      const row = document.createElement("tr");
+      const name = document.createElement("td");
+      name.className = "scatter-tooltip-name";
+      name.appendChild(document.createTextNode(data.name));
+      const xText = document.createElement("td");
+      xText.appendChild(document.createTextNode(data.xText));
+      const yText = document.createElement("td");
+      yText.appendChild(document.createTextNode(data.yText));
+      row.appendChild(name);
+      row.appendChild(xText);
+      row.appendChild(yText);
+      tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+    tooltip.appendChild(table);
+
+    // set tooltip placement based on first point
+    tooltip.style.top = this.ys[0];
+    tooltip.style.left = this.xs[0];
+    this.container.appendChild(tooltip);
+    this.tooltip = tooltip;
   }
 }
 
 
 export class ScatterPlot {
-  constructor(data, xAxis, yAxis, container) {
+  constructor(data, xAxis, yAxis, toText, container) {
     this.data = data;
     this.xAxis = xAxis;
     this.yAxis = yAxis;
+    this.toText = toText;
     this.container = container;
+    this.plotContainer = this.container.getElementsByClassName("plot-container")[0];
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
     this.showOutliers = false;
@@ -135,13 +183,25 @@ export class ScatterPlot {
       const amount = this.data[county]["bailAmount"];
       const data = ["black", "white"].map(key => {
         return {
+          name: key,
           class: key == "black" ? "green" : "purple",
           x: rate[key],
-          y: Number(amount[key].replace(/[^\d.-]/g, ""))
+          y: Number(amount[key].replace(/[^\d.-]/g, "")),
+          xText: this.toText.x(rate[key]),
+          yText: this.toText.y(amount[key]),
+          xHeader: this.toText.xHeader,
+          yHeader: this.toText.yHeader
         };
       });
       points.push(new CountyPoint(
-        county, data, this.xAxis, this.yAxis, outlier, showName, this.plot
+        county,
+        data,
+        this.xAxis,
+        this.yAxis,
+        outlier,
+        showName,
+        this.plot,
+        this.plotContainer
       ));
     }
     return points;
