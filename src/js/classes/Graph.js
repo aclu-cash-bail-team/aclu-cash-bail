@@ -1,22 +1,28 @@
 const POINT_RADIUS = 4;
 
 class CountyPoint {
-  constructor(county, data, xAxis, yAxis, outlier, container) {
+  constructor(county, data, xAxis, yAxis, outlier, plot) {
     this.county = county;
     this.data = data;
     this.xAxis = xAxis;
     this.yAxis = yAxis;
     this.outlier = outlier;
-    this.container = container;
+    this.plot = plot;
+  }
+
+  isOutlier() {
+    return this.outlier;
   }
 
   render() {
     for (const data of this.data) {
       const point = document.createElement("div");
-      point.className = `${data.class} scatter-point`;
+      let className = `${data.class} scatter-point`;
+      if (this.outlier) className += " outlier";
+      point.className = className;
       point.style.left = `calc(${data.x / this.xAxis.max * 100}% - ${POINT_RADIUS}px`;
       point.style.bottom = `calc(${data.y / this.yAxis.max * 100}% - ${POINT_RADIUS}px`;
-      this.container.appendChild(point);
+      this.plot.appendChild(point);
     }
   }
 }
@@ -27,9 +33,24 @@ export class ScatterPlot {
     this.xAxis = xAxis;
     this.yAxis = yAxis;
     this.container = container;
+    this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
-    console.log(this.points);
+    this.showOutliers = false;
+    this.setUpOutlierButton();
     this.render();
+  }
+
+  setUpOutlierButton() {
+    const button = this.container.getElementsByClassName("outliers-btn")[0];
+    button.addEventListener("click", (e) => {
+      if (this.toggleOutliers()) {
+        e.target.classList.add("showing");
+        this.plot.classList.add("show-outliers");
+      } else {
+        e.target.classList.remove("showing");
+        this.plot.classList.remove("show-outliers");
+      }
+    });
   }
 
   createPoints() {
@@ -45,11 +66,16 @@ export class ScatterPlot {
           y: Number(amount[key].replace(/[^\d.-]/g, ""))
         };
       });
-      points.push(new CountyPoint(
-        county, data, this.xAxis, this.yAxis, outlier, this.container
+      points.push(
+        new CountyPoint(county, data, this.xAxis, this.yAxis, outlier, this.plot
       ));
     }
     return points;
+  }
+
+  toggleOutliers() {
+    this.showOutliers = !this.showOutliers;
+    return this.showOutliers;
   }
 
   render() {

@@ -73,3 +73,11 @@
 .scatter-point.purple {
   background-color: #C14EF8;
 }
+
+.scatter-point.outlier {
+  display: none;
+}
+
+.scatter-plot.show-outliers .scatter-point.outlier {
+  display: inline-block;
+}
