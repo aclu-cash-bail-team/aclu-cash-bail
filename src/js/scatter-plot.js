@@ -8,7 +8,8 @@ const createRaceScatterPlot = () => {
     min: 20,
     max: 100,
     numTicks: 8,
-    convert: num => `${num}%`
+    convert: num => `${num}%`,
+    unit: "%"
   };
   const yAxis = {
     name: "Bail Amount",

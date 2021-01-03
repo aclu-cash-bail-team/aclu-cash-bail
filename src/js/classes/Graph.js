@@ -1,4 +1,3 @@
-const POINT_RADIUS = 4;
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 class CountyPoint {
@@ -19,13 +18,13 @@ class CountyPoint {
 
   getPositions() {
     const xs = [], ys = [];
-    for (const data of this.data) {
+    this.data.forEach(data => {
       const xDiff = this.xAxis.max - this.xAxis.min;
       const yDiff = this.yAxis.max - this.yAxis.min;
       xs.push(`${(data.x - this.xAxis.min) / xDiff * 100}%`);
       // svgs start Y from the top, so subtract the percentage from 100
       ys.push(`${100 - ((data.y - this.yAxis.min) / yDiff * 100)}%`);
-    }
+    });
     return [xs, ys];
   }
 
@@ -55,7 +54,7 @@ class CountyPoint {
       point.setAttributeNS(null, "class", className);
       point.setAttributeNS(null, "cx", this.xs[i]);
       point.setAttributeNS(null, "cy", this.ys[i]);
-      point.setAttributeNS(null, "r", POINT_RADIUS);
+      point.setAttributeNS(null, "r", 4);
       this.plot.appendChild(point);
 
       this.points.push(point);
@@ -98,15 +97,8 @@ class CountyPoint {
     this.line.classList.remove("hovering");
     if (this.text) this.text.classList.remove("hovering");
   }
-
-  rerenderPoints() {
-    this.data.forEach(data => {
-      const use = document.createElementNS(SVG_NS, "use");
-      use.setAttributeNS(null, "href", `#${this.county}-${data.class}`);
-      this.plot.appendChild(use);
-    });
-  }
 }
+
 
 export class ScatterPlot {
   constructor(data, xAxis, yAxis, container) {
@@ -149,7 +141,7 @@ export class ScatterPlot {
         };
       });
       points.push(new CountyPoint(
-          county, data, this.xAxis, this.yAxis, outlier, showName, this.plot
+        county, data, this.xAxis, this.yAxis, outlier, showName, this.plot
       ));
     }
     return points;
