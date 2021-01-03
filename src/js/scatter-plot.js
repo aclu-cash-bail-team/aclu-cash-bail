@@ -5,13 +5,18 @@ import { RACE_SCATTER_PLOT } from "./data.js";
 const createRaceScatterPlot = () => {
   const xAxis = {
     name: "Cash Bail Rate",
-    min: 0,
-    max: 100
+    min: 20,
+    max: 100,
+    numTicks: 8,
+    unit: "%"
   };
   const yAxis = {
     name: "Bail Amount",
     min: 0,
-    max: 80000
+    max: 80000,
+    numTicks: 8,
+    transformFunc: num => num / 1000,
+    unit: "K"
   };
 
   const container = document.getElementById("race-scatter-plot");

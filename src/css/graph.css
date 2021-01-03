@@ -8,6 +8,12 @@
   color: #FFF;
 }
 
+.graph .outliers-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 .scatter-plot {
   width: 100%;
   height: 500px;
@@ -53,10 +59,10 @@
   background-color: #C14EF8;
 }
 
-.graph .outliers-btn {
-  position: absolute;
-  right: 0;
-  top: 0;
+.scatter-axis {
+  fill: rgba(255, 255, 255, 0.75);
+  font-size: 11px;
+  line-height: 16px;
 }
 
 .scatter-point.outlier, .scatter-line.outlier, .scatter-text.outlier {
@@ -91,6 +97,5 @@
   fill: #FFF;
   font-size: 11px;
   line-height: 16px;
-  margin-top: 4px;
   cursor: default;
 }

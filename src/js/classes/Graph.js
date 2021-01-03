@@ -20,9 +20,11 @@ class CountyPoint {
   getPositions() {
     const xs = [], ys = [];
     for (const data of this.data) {
-      xs.push(`${data.x / this.xAxis.max * 100}%`);
+      const xDiff = this.xAxis.max - this.xAxis.min;
+      const yDiff = this.yAxis.max - this.yAxis.min;
+      xs.push(`${(data.x - this.xAxis.min) / xDiff * 100}%`);
       // svgs start Y from the top, so subtract the percentage from 100
-      ys.push(`${100 - (data.y / this.yAxis.max * 100)}%`);
+      ys.push(`${100 - ((data.y - this.yAxis.min) / yDiff * 100)}%`);
     }
     return [xs, ys];
   }
@@ -159,8 +161,47 @@ export class ScatterPlot {
   }
 
   render() {
+    // render axes and graph lines
+    this.renderAxis(this.xAxis, false);
+    this.renderAxis(this.yAxis, true);
+    
+    // order: lines in background, then points, then names on top
     this.points.forEach(point => point.renderLine());
     this.points.forEach(point => point.renderPoints());
     this.points.forEach(point => point.renderCountyName());
+  }
+
+  renderAxis(axis, isYAxis) {
+    const xAxis = document.createElementNS(SVG_NS, "g");
+    xAxis.setAttributeNS(null, "class", "scatter-axis");
+
+    const tickSize = (axis.max - axis.min) / axis.numTicks;
+    for (let i = 0; i < axis.numTicks + 1; i++) {
+      // create value string per axis transform and unit
+      let tickValue = axis.min + i * tickSize;
+      if (axis.transformFunc) tickValue = axis.transformFunc(tickValue);
+      tickValue = `${String(tickValue)}${axis.unit}`;
+
+      // calculate spacing value depending on axis
+      let spacingValue = i / axis.numTicks * 100;
+      if (isYAxis) spacingValue = 100 - spacingValue;
+      spacingValue = `${spacingValue}%`;
+
+      // adjust for the coordinate system starting at the top left
+      const axisPlacement = isYAxis ? 0 : "100%";
+      const offset = isYAxis ? -26 : 26;
+
+      const tick = document.createElementNS(SVG_NS, "text");
+      tick.setAttributeNS(null, "text-anchor", "middle");
+      tick.setAttributeNS(null, "x", isYAxis ? axisPlacement : spacingValue);
+      tick.setAttributeNS(null, "y", isYAxis ? spacingValue : axisPlacement);
+      tick.setAttributeNS(null, isYAxis ? "dx" : "dy", offset);
+      // vertically center y-axis ticks
+      if (isYAxis) tick.setAttributeNS(null, "dy", 4);
+
+      tick.appendChild(document.createTextNode(tickValue));
+      xAxis.appendChild(tick);
+    }
+    this.plot.appendChild(xAxis);
   }
 }
