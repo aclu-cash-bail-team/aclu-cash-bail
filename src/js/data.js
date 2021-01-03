@@ -4736,11 +4736,11 @@ export const RACE_SCATTER_PLOT = {
   "Cameron": {
     "showName": false,
     "outlier": true,
-    "bailRate": {
+    "x": {
       "black": 100,
       "white": 25.45454545
     },
-    "bailAmount": {
+    "y": {
       "black": "$10,000",
       "white": "$26,481"
     }
@@ -4748,11 +4748,11 @@ export const RACE_SCATTER_PLOT = {
   "Forest": {
     "showName": false,
     "outlier": true,
-    "bailRate": {
+    "x": {
       "black": 85,
       "white": 32.03883495
     },
-    "bailAmount": {
+    "y": {
       "black": "$21,438",
       "white": "$22,344"
     }
@@ -4760,11 +4760,11 @@ export const RACE_SCATTER_PLOT = {
   "Potter": {
     "showName": false,
     "outlier": true,
-    "bailRate": {
+    "x": {
       "black": 75,
       "white": 23.24786325
     },
-    "bailAmount": {
+    "y": {
       "black": "$15,700",
       "white": "$19,338"
     }
@@ -4772,11 +4772,11 @@ export const RACE_SCATTER_PLOT = {
   "Somerset": {
     "showName": true,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 69.56521739,
       "white": 23.20855615
     },
-    "bailAmount": {
+    "y": {
       "black": "$78,071",
       "white": "$33,896"
     }
@@ -4784,11 +4784,11 @@ export const RACE_SCATTER_PLOT = {
   "Jefferson": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 72.97297297,
       "white": 38.35252436
     },
-    "bailAmount": {
+    "y": {
       "black": "$35,040",
       "white": "$45,707"
     }
@@ -4796,11 +4796,11 @@ export const RACE_SCATTER_PLOT = {
   "Warren": {
     "showName": false,
     "outlier": true,
-    "bailRate": {
+    "x": {
       "black": 70,
       "white": 39.95067818
     },
-    "bailAmount": {
+    "y": {
       "black": "$32,692",
       "white": "$25,369"
     }
@@ -4808,11 +4808,11 @@ export const RACE_SCATTER_PLOT = {
   "Sullivan": {
     "showName": true,
     "outlier": true,
-    "bailRate": {
+    "x": {
       "black": 62.5,
       "white": 32.63157895
     },
-    "bailAmount": {
+    "y": {
       "black": "$5,000",
       "white": "$18,667"
     }
@@ -4820,11 +4820,11 @@ export const RACE_SCATTER_PLOT = {
   "Wayne": {
     "showName": true,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 64.86486486,
       "white": 35.30997305
     },
-    "bailAmount": {
+    "y": {
       "black": "$28,682",
       "white": "$32,101"
     }
@@ -4832,11 +4832,11 @@ export const RACE_SCATTER_PLOT = {
   "Blair": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 58.6998088,
       "white": 31.76853358
     },
-    "bailAmount": {
+    "y": {
       "black": "$43,726",
       "white": "$29,256"
     }
@@ -4844,11 +4844,11 @@ export const RACE_SCATTER_PLOT = {
   "Lycoming": {
     "showName": true,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 55.01355014,
       "white": 28.14726841
     },
-    "bailAmount": {
+    "y": {
       "black": "$77,030",
       "white": "$37,028"
     }
@@ -4856,11 +4856,11 @@ export const RACE_SCATTER_PLOT = {
   "Susquehanna": {
     "showName": false,
     "outlier": true,
-    "bailRate": {
+    "x": {
       "black": 66.66666667,
       "white": 39.76377953
     },
-    "bailAmount": {
+    "y": {
       "black": "$29,808",
       "white": "$27,138"
     }
@@ -4868,11 +4868,11 @@ export const RACE_SCATTER_PLOT = {
   "Erie": {
     "showName": true,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 63.73239437,
       "white": 37.02714731
     },
-    "bailAmount": {
+    "y": {
       "black": "$38,881",
       "white": "$23,611"
     }
@@ -4880,11 +4880,11 @@ export const RACE_SCATTER_PLOT = {
   "Cambria": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 65.52083333,
       "white": 39.14590747
     },
-    "bailAmount": {
+    "y": {
       "black": "$51,483",
       "white": "$28,879"
     }
@@ -4892,11 +4892,11 @@ export const RACE_SCATTER_PLOT = {
   "Huntingdon": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 64.05228758,
       "white": 37.83333333
     },
-    "bailAmount": {
+    "y": {
       "black": "$22,010",
       "white": "$18,028"
     }
@@ -4904,11 +4904,11 @@ export const RACE_SCATTER_PLOT = {
   "Crawford": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 53.33333333,
       "white": 28.3197832
     },
-    "bailAmount": {
+    "y": {
       "black": "$32,600",
       "white": "$21,505"
     }
@@ -4916,11 +4916,11 @@ export const RACE_SCATTER_PLOT = {
   "Centre": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 46.74115456,
       "white": 21.88492764
     },
-    "bailAmount": {
+    "y": {
       "black": "$45,976",
       "white": "$34,614"
     }
@@ -4928,11 +4928,11 @@ export const RACE_SCATTER_PLOT = {
   "Venango": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 60.13986014,
       "white": 35.56187767
     },
-    "bailAmount": {
+    "y": {
       "black": "$48,712",
       "white": "$35,510"
     }
@@ -4940,11 +4940,11 @@ export const RACE_SCATTER_PLOT = {
   "Clearfield": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 59.30232558,
       "white": 35.64718163
     },
-    "bailAmount": {
+    "y": {
       "black": "$43,890",
       "white": "$23,215"
     }
@@ -4952,11 +4952,11 @@ export const RACE_SCATTER_PLOT = {
   "Armstrong": {
     "showName": true,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 62.71186441,
       "white": 39.52662722
     },
-    "bailAmount": {
+    "y": {
       "black": "$18,541",
       "white": "$13,560"
     }
@@ -4964,11 +4964,11 @@ export const RACE_SCATTER_PLOT = {
   "Northumberland": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 56.81818182,
       "white": 33.91066545
     },
-    "bailAmount": {
+    "y": {
       "black": "$63,255",
       "white": "$38,641"
     }
@@ -4976,11 +4976,11 @@ export const RACE_SCATTER_PLOT = {
   "Lawrence": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 66.28477905,
       "white": 43.4806939
     },
-    "bailAmount": {
+    "y": {
       "black": "$25,778",
       "white": "$15,192"
     }
@@ -4988,11 +4988,11 @@ export const RACE_SCATTER_PLOT = {
   "Mifflin": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 70.11494253,
       "white": 47.48201439
     },
-    "bailAmount": {
+    "y": {
       "black": "$52,219",
       "white": "$35,331"
     }
@@ -5000,11 +5000,11 @@ export const RACE_SCATTER_PLOT = {
   "Tioga": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 57,
       "white": 34.50800915
     },
-    "bailAmount": {
+    "y": {
       "black": "$30,455",
       "white": "$18,916"
     }
@@ -5012,11 +5012,11 @@ export const RACE_SCATTER_PLOT = {
   "Allegheny": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 57.06645057,
       "white": 35.29897333
     },
-    "bailAmount": {
+    "y": {
       "black": "$21,080",
       "white": "$15,881"
     }
@@ -5024,11 +5024,11 @@ export const RACE_SCATTER_PLOT = {
   "Westmoreland": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 50.05045409,
       "white": 28.61736334
     },
-    "bailAmount": {
+    "y": {
       "black": "$30,920",
       "white": "$17,072"
     }
@@ -5036,11 +5036,11 @@ export const RACE_SCATTER_PLOT = {
   "Greene": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 58.97435897,
       "white": 37.86163522
     },
-    "bailAmount": {
+    "y": {
       "black": "$20,977",
       "white": "$15,107"
     }
@@ -5048,11 +5048,11 @@ export const RACE_SCATTER_PLOT = {
   "Beaver": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 64.33048433,
       "white": 43.92212726
     },
-    "bailAmount": {
+    "y": {
       "black": "$26,145",
       "white": "$13,733"
     }
@@ -5060,11 +5060,11 @@ export const RACE_SCATTER_PLOT = {
   "McKean": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 61.33333333,
       "white": 41.23134328
     },
-    "bailAmount": {
+    "y": {
       "black": "$34,911",
       "white": "$23,475"
     }
@@ -5072,11 +5072,11 @@ export const RACE_SCATTER_PLOT = {
   "Washington": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 55.77092511,
       "white": 35.82116788
     },
-    "bailAmount": {
+    "y": {
       "black": "$33,527",
       "white": "$19,878"
     }
@@ -5084,11 +5084,11 @@ export const RACE_SCATTER_PLOT = {
   "Luzerne": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 53.5892323,
       "white": 34.6550856
     },
-    "bailAmount": {
+    "y": {
       "black": "$47,113",
       "white": "$32,968"
     }
@@ -5096,11 +5096,11 @@ export const RACE_SCATTER_PLOT = {
   "Lackawanna": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 67.1345995,
       "white": 48.9720035
     },
-    "bailAmount": {
+    "y": {
       "black": "$41,104",
       "white": "$26,940"
     }
@@ -5108,11 +5108,11 @@ export const RACE_SCATTER_PLOT = {
   "Snyder": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 52.5,
       "white": 34.59183673
     },
-    "bailAmount": {
+    "y": {
       "black": "$29,659",
       "white": "$27,551"
     }
@@ -5120,11 +5120,11 @@ export const RACE_SCATTER_PLOT = {
   "Bradford": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 62.26415094,
       "white": 45.14840183
     },
-    "bailAmount": {
+    "y": {
       "black": "$63,125",
       "white": "$32,077"
     }
@@ -5132,11 +5132,11 @@ export const RACE_SCATTER_PLOT = {
   "Cumberland": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 51.61744023,
       "white": 35.0094162
     },
-    "bailAmount": {
+    "y": {
       "black": "$34,037",
       "white": "$23,281"
     }
@@ -5144,11 +5144,11 @@ export const RACE_SCATTER_PLOT = {
   "Butler": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 44.7761194,
       "white": 29.5154185
     },
-    "bailAmount": {
+    "y": {
       "black": "$42,155",
       "white": "$12,248"
     }
@@ -5156,11 +5156,11 @@ export const RACE_SCATTER_PLOT = {
   "Delaware": {
     "showName": true,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 63.75237882,
       "white": 48.4952381
     },
-    "bailAmount": {
+    "y": {
       "black": "$43,250",
       "white": "$31,974"
     }
@@ -5168,11 +5168,11 @@ export const RACE_SCATTER_PLOT = {
   "Bedford": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 52.57731959,
       "white": 37.56419663
     },
-    "bailAmount": {
+    "y": {
       "black": "$65,010",
       "white": "$49,176"
     }
@@ -5180,11 +5180,11 @@ export const RACE_SCATTER_PLOT = {
   "Union": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 38.20224719,
       "white": 23.24159021
     },
-    "bailAmount": {
+    "y": {
       "black": "$34,667",
       "white": "$25,807"
     }
@@ -5192,11 +5192,11 @@ export const RACE_SCATTER_PLOT = {
   "Dauphin": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 51.21710526,
       "white": 36.4556962
     },
-    "bailAmount": {
+    "y": {
       "black": "$40,031",
       "white": "$32,313"
     }
@@ -5204,11 +5204,11 @@ export const RACE_SCATTER_PLOT = {
   "Montgomery": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 43.27198364,
       "white": 28.69733969
     },
-    "bailAmount": {
+    "y": {
       "black": "$29,169",
       "white": "$21,885"
     }
@@ -5216,11 +5216,11 @@ export const RACE_SCATTER_PLOT = {
   "Adams": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 43.56060606,
       "white": 29.03651562
     },
-    "bailAmount": {
+    "y": {
       "black": "$29,479",
       "white": "$26,077"
     }
@@ -5228,11 +5228,11 @@ export const RACE_SCATTER_PLOT = {
   "Chester": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 48.47354138,
       "white": 34.29690666
     },
-    "bailAmount": {
+    "y": {
       "black": "$32,205",
       "white": "$22,836"
     }
@@ -5240,11 +5240,11 @@ export const RACE_SCATTER_PLOT = {
   "Franklin": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 49.26553672,
       "white": 35.19494204
     },
-    "bailAmount": {
+    "y": {
       "black": "$61,407",
       "white": "$50,242"
     }
@@ -5252,11 +5252,11 @@ export const RACE_SCATTER_PLOT = {
   "York": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 54.11985019,
       "white": 41.11844787
     },
-    "bailAmount": {
+    "y": {
       "black": "$30,258",
       "white": "$18,416"
     }
@@ -5264,11 +5264,11 @@ export const RACE_SCATTER_PLOT = {
   "Philadelphia": {
     "showName": true,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 56.02170568,
       "white": 43.3107617
     },
-    "bailAmount": {
+    "y": {
       "black": "$54,302",
       "white": "$43,459"
     }
@@ -5276,11 +5276,11 @@ export const RACE_SCATTER_PLOT = {
   "Lancaster": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 55.54532904,
       "white": 43.07425541
     },
-    "bailAmount": {
+    "y": {
       "black": "$57,668",
       "white": "$48,383"
     }
@@ -5288,11 +5288,11 @@ export const RACE_SCATTER_PLOT = {
   "Perry": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 40,
       "white": 27.68130746
     },
-    "bailAmount": {
+    "y": {
       "black": "$41,126",
       "white": "$24,007"
     }
@@ -5300,11 +5300,11 @@ export const RACE_SCATTER_PLOT = {
   "Mercer": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 45.40337711,
       "white": 33.35235378
     },
-    "bailAmount": {
+    "y": {
       "black": "$29,504",
       "white": "$23,005"
     }
@@ -5312,11 +5312,11 @@ export const RACE_SCATTER_PLOT = {
   "Northampton": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 55.7063541,
       "white": 43.86813852
     },
-    "bailAmount": {
+    "y": {
       "black": "$34,972",
       "white": "$24,095"
     }
@@ -5324,11 +5324,11 @@ export const RACE_SCATTER_PLOT = {
   "Fayette": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 54,
       "white": 42.30092389
     },
-    "bailAmount": {
+    "y": {
       "black": "$25,444",
       "white": "$17,203"
     }
@@ -5336,11 +5336,11 @@ export const RACE_SCATTER_PLOT = {
   "Carbon": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 43.7751004,
       "white": 32.34139961
     },
-    "bailAmount": {
+    "y": {
       "black": "$35,236",
       "white": "$24,452"
     }
@@ -5348,11 +5348,11 @@ export const RACE_SCATTER_PLOT = {
   "Clinton": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 47.14285714,
       "white": 35.98750976
     },
-    "bailAmount": {
+    "y": {
       "black": "$29,609",
       "white": "$19,817"
     }
@@ -5360,11 +5360,11 @@ export const RACE_SCATTER_PLOT = {
   "Lebanon": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 48.84547069,
       "white": 37.97733949
     },
-    "bailAmount": {
+    "y": {
       "black": "$36,343",
       "white": "$23,902"
     }
@@ -5372,11 +5372,11 @@ export const RACE_SCATTER_PLOT = {
   "Montour": {
     "showName": false,
     "outlier": true,
-    "bailRate": {
+    "x": {
       "black": 46.15384615,
       "white": 35.34136546
     },
-    "bailAmount": {
+    "y": {
       "black": "$25,556",
       "white": "$27,449"
     }
@@ -5384,11 +5384,11 @@ export const RACE_SCATTER_PLOT = {
   "Bucks": {
     "showName": true,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 41.06901218,
       "white": 30.62392673
     },
-    "bailAmount": {
+    "y": {
       "black": "$73,635",
       "white": "$58,683"
     }
@@ -5396,11 +5396,11 @@ export const RACE_SCATTER_PLOT = {
   "Schuylkill": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 46.5060241,
       "white": 37.27521501
     },
-    "bailAmount": {
+    "y": {
       "black": "$28,947",
       "white": "$19,996"
     }
@@ -5408,11 +5408,11 @@ export const RACE_SCATTER_PLOT = {
   "Lehigh": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 61.81634031,
       "white": 52.85376562
     },
-    "bailAmount": {
+    "y": {
       "black": "$25,138",
       "white": "$16,341"
     }
@@ -5420,11 +5420,11 @@ export const RACE_SCATTER_PLOT = {
   "Berks": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 58.42078961,
       "white": 50.24259317
     },
-    "bailAmount": {
+    "y": {
       "black": "$35,039",
       "white": "$27,399"
     }
@@ -5432,11 +5432,11 @@ export const RACE_SCATTER_PLOT = {
   "Juniata": {
     "showName": false,
     "outlier": true,
-    "bailRate": {
+    "x": {
       "black": 43.75,
       "white": 36.67425968
     },
-    "bailAmount": {
+    "y": {
       "black": "$29,167",
       "white": "$22,330"
     }
@@ -5444,11 +5444,11 @@ export const RACE_SCATTER_PLOT = {
   "Wyoming": {
     "showName": false,
     "outlier": true,
-    "bailRate": {
+    "x": {
       "black": 40,
       "white": 35.59650824
     },
-    "bailAmount": {
+    "y": {
       "black": "$22,611",
       "white": "$25,042"
     }
@@ -5456,11 +5456,11 @@ export const RACE_SCATTER_PLOT = {
   "Pike": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 37.41007194,
       "white": 34.02061856
     },
-    "bailAmount": {
+    "y": {
       "black": "$34,755",
       "white": "$21,534"
     }
@@ -5468,11 +5468,11 @@ export const RACE_SCATTER_PLOT = {
   "Monroe": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 35.13011152,
       "white": 32.41612358
     },
-    "bailAmount": {
+    "y": {
       "black": "$34,085",
       "white": "$21,495"
     }
@@ -5480,11 +5480,11 @@ export const RACE_SCATTER_PLOT = {
   "Columbia": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 40.7960199,
       "white": 38.46153846
     },
-    "bailAmount": {
+    "y": {
       "black": "$57,747",
       "white": "$33,130"
     }
@@ -5492,11 +5492,11 @@ export const RACE_SCATTER_PLOT = {
   "Fulton": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 31.57894737,
       "white": 29.27536232
     },
-    "bailAmount": {
+    "y": {
       "black": "$24,000",
       "white": "$57,879"
     }
@@ -5504,11 +5504,11 @@ export const RACE_SCATTER_PLOT = {
   "Clarion": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 40.625,
       "white": 40.83259522
     },
-    "bailAmount": {
+    "y": {
       "black": "$14,200",
       "white": "$20,698"
     }
@@ -5516,11 +5516,11 @@ export const RACE_SCATTER_PLOT = {
   "Elk": {
     "showName": false,
     "outlier": true,
-    "bailRate": {
+    "x": {
       "black": 27.77777778,
       "white": 28.68117798
     },
-    "bailAmount": {
+    "y": {
       "black": "$14,375",
       "white": "$21,093"
     }
@@ -5528,11 +5528,11 @@ export const RACE_SCATTER_PLOT = {
   "Indiana": {
     "showName": false,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 30.39215686,
       "white": 36.21169916
     },
-    "bailAmount": {
+    "y": {
       "black": "$20,861",
       "white": "$15,479"
     }
@@ -5540,11 +5540,11 @@ export const RACE_SCATTER_PLOT = {
   "State Average": {
     "showName": true,
     "outlier": false,
-    "bailRate": {
+    "x": {
       "black": 54.7,
       "white": 37
     },
-    "bailAmount": {
+    "y": {
       "black": "$36,202",
       "white": "$26,868"
     }

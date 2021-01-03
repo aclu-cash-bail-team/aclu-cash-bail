@@ -50,7 +50,7 @@ class CountyPoint {
 
   renderPoints() {
     this.data.forEach((data, i) => {
-      const className = `${data.class} scatter-point${this.outlier ? " outlier" : ""}`;
+      const className = `${data.name} scatter-point${this.outlier ? " outlier" : ""}`;
       const point = document.createElementNS(SVG_NS, "circle");
       point.setAttributeNS(null, "class", className);
       point.setAttributeNS(null, "cx", this.xs[i]);
@@ -179,16 +179,15 @@ export class ScatterPlot {
     for (const county in this.data) {
       const outlier = this.data[county]["outlier"];
       const showName = this.data[county]["showName"];
-      const rate = this.data[county]["bailRate"];
-      const amount = this.data[county]["bailAmount"];
-      const data = ["black", "white"].map(key => {
+      const x = this.data[county]["x"];
+      const y = this.data[county]["y"];
+      const data = Object.keys(x).map(key => {
         return {
           name: key,
-          class: key == "black" ? "green" : "purple",
-          x: rate[key],
-          y: Number(amount[key].replace(/[^\d.-]/g, "")),
-          xText: this.toText.x(rate[key]),
-          yText: this.toText.y(amount[key]),
+          x: x[key],
+          y: Number(y[key].replace(/[^\d.-]/g, "")),
+          xText: this.toText.x(x[key]),
+          yText: this.toText.y(y[key]),
           xHeader: this.toText.xHeader,
           yHeader: this.toText.yHeader
         };

@@ -100,11 +100,11 @@
   stroke-width: 0.5px;
 }
 
-.scatter-point.green {
+.scatter-point.black {
   fill: #00ED89;
 }
 
-.scatter-point.purple {
+.scatter-point.white {
   fill: #C14EF8;
 }
 
