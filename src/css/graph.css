@@ -1,15 +1,3 @@
-line.scatter {
-  stroke: rgba(255, 255, 255, 0.18);
-}
-
-circle.scatter.green {
-  fill: #00ED89;
-}
-
-circle.scatter.purple {
-  fill: #C14EF8;
-}
-
 .graph h3 {
   margin-bottom: 20px;
   font-family: "GT America Bold";
@@ -71,10 +59,38 @@ circle.scatter.purple {
   top: 0;
 }
 
-.scatter.outlier {
+.scatter-point.outlier, .scatter-line.outlier, .scatter-text.outlier {
   display: none;
 }
 
-.scatter-plot.show-outliers .scatter.outlier {
+.scatter-plot.show-outliers .scatter-line.outlier,
+.scatter-plot.show-outliers .scatter-point.outlier,
+.scatter-plot.show-outliers .scatter-text.outlier {
   display: inline-block;
+}
+
+.scatter-line {
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 0.5px;
+}
+
+.scatter-point.green {
+  fill: #00ED89;
+}
+
+.scatter-point.purple {
+  fill: #C14EF8;
+}
+
+.scatter-line.hovering, .scatter-point.hovering {
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 0.5px;
+}
+
+.scatter-text {
+  fill: #FFF;
+  font-size: 11px;
+  line-height: 16px;
+  margin-top: 4px;
+  cursor: default;
 }
