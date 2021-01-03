@@ -8,15 +8,14 @@ const createRaceScatterPlot = () => {
     min: 20,
     max: 100,
     numTicks: 8,
-    unit: "%"
+    convert: num => `${num}%`
   };
   const yAxis = {
     name: "Bail Amount",
     min: 0,
     max: 80000,
     numTicks: 8,
-    transformFunc: num => num / 1000,
-    unit: "K"
+    convert: num => num === 0 ? "0" : `${num / 1000}K`
   };
 
   const container = document.getElementById("race-scatter-plot");

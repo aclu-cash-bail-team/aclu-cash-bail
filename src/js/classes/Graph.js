@@ -164,7 +164,7 @@ export class ScatterPlot {
     // render axes and graph lines
     this.renderAxis(this.xAxis, false);
     this.renderAxis(this.yAxis, true);
-    
+
     // order: lines in background, then points, then names on top
     this.points.forEach(point => point.renderLine());
     this.points.forEach(point => point.renderPoints());
@@ -172,15 +172,9 @@ export class ScatterPlot {
   }
 
   renderAxis(axis, isYAxis) {
-    const xAxis = document.createElementNS(SVG_NS, "g");
-    xAxis.setAttributeNS(null, "class", "scatter-axis");
-
     const tickSize = (axis.max - axis.min) / axis.numTicks;
     for (let i = 0; i < axis.numTicks + 1; i++) {
-      // create value string per axis transform and unit
-      let tickValue = axis.min + i * tickSize;
-      if (axis.transformFunc) tickValue = axis.transformFunc(tickValue);
-      tickValue = `${String(tickValue)}${axis.unit}`;
+      const tickValue = axis.convert(axis.min + i * tickSize);
 
       // calculate spacing value depending on axis
       let spacingValue = i / axis.numTicks * 100;
@@ -192,16 +186,53 @@ export class ScatterPlot {
       const offset = isYAxis ? -26 : 26;
 
       const tick = document.createElementNS(SVG_NS, "text");
+      tick.setAttributeNS(null, "class", "axis-tick");
       tick.setAttributeNS(null, "text-anchor", "middle");
       tick.setAttributeNS(null, "x", isYAxis ? axisPlacement : spacingValue);
       tick.setAttributeNS(null, "y", isYAxis ? spacingValue : axisPlacement);
       tick.setAttributeNS(null, isYAxis ? "dx" : "dy", offset);
       // vertically center y-axis ticks
       if (isYAxis) tick.setAttributeNS(null, "dy", 4);
-
       tick.appendChild(document.createTextNode(tickValue));
-      xAxis.appendChild(tick);
+      this.plot.appendChild(tick);
+
+      // render the line for each axis tick
+      const line = document.createElementNS(SVG_NS, "line");
+      line.setAttributeNS(null, "class", "axis-line");
+      line.setAttributeNS(null, "x1", isYAxis ? spacingValue : 0);
+      line.setAttributeNS(null, "y1", isYAxis ? 0 : spacingValue);
+      line.setAttributeNS(null, "x2", isYAxis ? spacingValue : "100%");
+      line.setAttributeNS(null, "y2", isYAxis ? "100%" : spacingValue);
+      this.plot.appendChild(line);
     }
-    this.plot.appendChild(xAxis);
+
+    // wrap axis labels in svgs to do local rotation
+    const wrapperLower = document.createElementNS(SVG_NS, "svg");
+    wrapperLower.setAttributeNS(null, "class", "label-wrapper");
+    wrapperLower.setAttributeNS(null, "x", 0);
+    wrapperLower.setAttributeNS(null, "y", "100%");
+
+    const labelLower = document.createElementNS(SVG_NS, "text");
+    labelLower.setAttributeNS(null, "class", "axis-label");
+    labelLower.setAttributeNS(null, "text-anchor", "start");
+    labelLower.setAttributeNS(null, "dy", isYAxis ? -60 : 60);
+    if (isYAxis) labelLower.setAttributeNS(null, "transform", "rotate(-90)");
+    labelLower.appendChild(document.createTextNode(`← Lower ${axis.name}`));
+    wrapperLower.appendChild(labelLower);
+    this.plot.appendChild(wrapperLower);
+
+    const wrapperHigher = document.createElementNS(SVG_NS, "svg");
+    wrapperHigher.setAttributeNS(null, "class", "label-wrapper");
+    wrapperHigher.setAttributeNS(null, "x", isYAxis ? 0 : "100%");
+    wrapperHigher.setAttributeNS(null, "y", isYAxis ? 0 : "100%");
+
+    const labelHigher = document.createElementNS(SVG_NS, "text");
+    labelHigher.setAttributeNS(null, "class", "axis-label");
+    labelHigher.setAttributeNS(null, "text-anchor", "end");
+    labelHigher.setAttributeNS(null, "dy", isYAxis ? -60 : 60);
+    if (isYAxis) labelHigher.setAttributeNS(null, "transform", "rotate(-90)");
+    labelHigher.appendChild(document.createTextNode(`Higher ${axis.name} →`));
+    wrapperHigher.appendChild(labelHigher);
+    this.plot.appendChild(wrapperHigher);
   }
 }
