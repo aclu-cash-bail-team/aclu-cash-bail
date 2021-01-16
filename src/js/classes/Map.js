@@ -94,7 +94,7 @@ export class BailRateMap extends Map {
     this.colorDomain = [10, 20, 30, 40, 50, 60];
     this.labels = [0, 10, 20, 30, 40, 50, 60];
     this.color = d3.scaleThreshold().domain(this.colorDomain).range([
-      "#182935", "#215f5d", "#1b9b88", "#0fc59b", "0fda92", "00ed89"
+      "#182935", "#215f5d", "#1b9b88", "#0fc59b", "#0fda92", "#00ed89"
     ]);
     this.render();
   }
