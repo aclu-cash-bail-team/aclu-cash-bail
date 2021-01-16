@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "GT America Condensed";
+  src: url("/GT-America-Condensed-Regular.d6dbbdf1.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "GT America Bold";
+  src: url("/GT-America-Standard-Bold.9213a45b.otf") format("opentype");
+}
+
+table {
+  border-collapse: collapse;
+  max-width: 600px;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+thead tr, tbody tr {
+  border-bottom: 1px #333 solid;
+}
+
+tr.collapsible {
+  cursor: pointer;
+}
+
+tr.expanded {
+  background-color: #131313;
+}
+
+th {
+  padding: 13px 6px;
+  color: #fff;
+  font-family: "GT America Condensed";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+
+th.number-cell {
+  text-align: right;
+}
+
+th.retention-fee-cell {
+  text-align: left;
+}
+
+td {
+  text-align: left;
+  padding: 13px 6px;
+}
+
+td.bold-cell {
+  font-weight: 700;
+}
+
+.number-cell {
+  width: 60px;
+  min-width: 60px;
+  max-width: 60px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.county-name-cell {
+  min-width: 170px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.th-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.number-cell .th-wrapper {
+  justify-content: flex-end;
+}
+
+.retention-fee-cell {
+  text-align: left;
+  min-width: 120px;
+}
+
+.fraction-budget-cell {
+  min-width: 62px;
+}
+
+.bail-rate-cell {
+  min-width: 90px;
+}
+
+.total-budget-cell {
+  min-width: 84px;
+}
+
+.bail-black-cell, .bail-white-cell {
+  min-width: 0;
+  width: auto;
+}
+
+.sort-desc, .sort-asc {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sort-desc:hover, .sort-asc:hover {
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.caret {
+  min-width: 8px;
+  padding-right: 5px;
+  opacity: 0;
+}
+
+.sort-desc .caret {
+  padding-top: 6px;
+}
+
+.sort-asc .caret {
+  padding-bottom: 6px;
+}
+
+.sorted .caret, .caret-cell .caret {
+  opacity: 1;
+}
+
+.caret-cell {
+  width: 10px;
+  padding-left: 0;
+}
+
+.caret-cell .caret {
+  padding-left: 6px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+
+.caret-rotated .caret {
+  transform: rotateZ(-90deg);
+}
+
+.sort-asc .caret {
+  transform: rotateX(180deg);
+}
+
+.sorted {
+  color: #fff;
+}
+
+.btn-text {
+  color: #fff;
+  font-family: "GT America Bold";
+  font-weight: 600;
+  font-size: 11px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.view-all-btn {
+  margin: 1.5em 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.outliers-btn {
+  margin-left: 1em;
+  padding: 10px 15px;
+  border: 1px #333 solid;
+  cursor: pointer;
+  user-select: none;
+}
+
+.outliers-btn.showing {
+  color: #fff;
+  background-color: #1D1D1D;
+}
+
+.switch-container {
+  display: flex;
+  margin: 1.5em 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch-container .switch {
+  width: 140px;
+  padding: 10px;
+  border: 1px #333 solid;
+}
+
+.switch.left {
+  border-radius: 3px 0 0 3px;
+}
+
+.switch.right {
+  border-radius: 0 3px 3px 0;
+  border-left: 0;
+}
+
+.switch-container .switch.showing, .switch-container .switch:hover {
+  background-color: #1D1D1D;
+}
+
+.positive-diff {
+  color: #00ED89;
+}
+
+.negative-diff {
+  color: #C14EF8;
+}
+
+/* Table-specific styling. */
+
+#pretrail-spending-table th.viz-cell {
+  padding-right: 0;
+}
+
+#pretrail-spending-table td.viz-cell {
+  margin-right: 0;
+}
+
+#pretrail-spending-table .end-num {
+  margin-right: -6px;
+}
+
+#mdj-table .county-name-cell {
+  padding-left: 0;
+}
+
+
+/*# sourceMappingURL=/table.233cc489.css.map */

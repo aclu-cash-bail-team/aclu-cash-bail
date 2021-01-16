@@ -1,1 +1,175 @@
-<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ACLU Cash Bail</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css"><link rel="stylesheet" href="/aclu-cash-bail/style.4f9dcc9a.css"><link rel="stylesheet" href="/aclu-cash-bail/table.ffccaab6.css"><link rel="stylesheet" href="/aclu-cash-bail/search.e88e47b6.css"><link rel="stylesheet" href="/aclu-cash-bail/visualization.4ccc012b.css"><link rel="stylesheet" href="/aclu-cash-bail/mobile.e28344d9.css"></head><body> <div class="container"> <div id="rate-container"> <div class="table-container" id="bail-rate-container"> <div class="dropdown fluid multiple search selection ui"> <input type="hidden" name="county"> <i class="dropdown icon"></i> <div class="default text">Search counties</div> <div class="menu"></div> </div> <div class="switch-container"> <div class="btn-text left showing switch">% Cash Bail</div> <div class="btn-text right switch">ROR Rate</div> </div> <table id="bail-rate-table"> <thead></thead> <tbody></tbody> </table> <div class="btn-text view-all-btn"></div> <p class="footnote">Outliers exceeding the 99th percentile were removed in calculating bail rate averages.</p> </div> <div class="table-container" id="ror-rate-container"> <div class="dropdown fluid multiple search selection ui"> <input type="hidden" name="county"> <i class="dropdown icon"></i> <div class="default text">Search counties</div> <div class="menu"></div> </div> <div class="switch-container"> <div class="btn-text left switch">% Cash Bail</div> <div class="btn-text right showing switch">ROR Rate</div> </div> <table id="ror-rate-table"> <thead></thead> <tbody></tbody> </table> <div class="btn-text view-all-btn"></div> <p class="footnote">Outliers exceeding the 99th percentile were removed in calculating bail rate averages.</p> </div> </div> <div id="race-container"> <div class="table-container" id="bail-race-rate-container"> <div class="search-container"> <div class="dropdown fluid multiple search selection ui"> <input type="hidden" name="county"> <i class="dropdown icon"></i> <div class="default text">Search counties</div> <div class="menu"></div> </div> <div class="btn-text outliers-btn">Show Outliers</div> </div> <div class="switch-container"> <div class="btn-text left showing switch">% Cash Bail</div> <div class="btn-text right switch">Bail Amount</div> <div class="btn-text mobile-only outliers-btn">Show Outliers</div> </div> <table id="bail-race-rate-table"> <thead></thead> <tbody></tbody> </table> <div class="btn-text view-all-btn"></div> <p class="footnote">*Outlier for low number of cases with black defendants.</p> </div> <div class="table-container" id="bail-race-amount-container"> <div class="search-container"> <div class="dropdown fluid multiple search selection ui"> <input type="hidden" name="county"> <i class="dropdown icon"></i> <div class="default text">Search counties</div> <div class="menu"></div> </div> <div class="btn-text outliers-btn">Show Outliers</div> </div> <div class="switch-container"> <div class="btn-text left switch">% Cash Bail</div> <div class="btn-text right showing switch">Bail Amount</div> <div class="btn-text mobile-only outliers-btn">Show Outliers</div> </div> <table id="bail-race-amount-table"> <thead></thead> <tbody></tbody> </table> <div class="btn-text view-all-btn"></div> <p class="footnote">*Outlier for low number of cases with black defendants.</p> </div> </div> <div class="table-container" id="bail-posting-container"> <div class="dropdown fluid multiple search selection ui"> <input type="hidden" name="county"> <i class="dropdown icon"></i> <div class="default text">Select counties</div> <div class="menu"></div> </div> <table id="bail-posting-table"> <thead></thead> <tbody></tbody> </table> <div class="btn-text view-all-btn"></div> </div> <div class="table-container" id="bail-retention-fee-container"> <div class="dropdown fluid multiple search selection ui"> <input type="hidden" name="county"> <i class="dropdown icon"></i> <div class="default text">Search counties</div> <div class="menu"></div> </div> <table id="bail-retention-fee-table"> <thead></thead> <tbody></tbody> </table> <div class="btn-text view-all-btn"></div> </div> <div class="table-container" id="pretrial-spending-container"> <div class="dropdown fluid multiple search selection ui"> <input type="hidden" name="county"> <i class="dropdown icon"></i> <div class="default text">Search counties</div> <div class="menu"></div> </div> <table id="pretrail-spending-table"> <thead></thead> <tbody></tbody> </table> <div class="btn-text view-all-btn"></div> </div> <div class="table-container" id="mdj-container"> <div class="search-container"> <div class="dropdown fluid multiple search selection ui"> <input type="hidden" name="county"> <i class="dropdown icon"></i> <div class="default text">Select counties or judges</div> <div class="menu"></div> </div> <div class="btn-text outliers-btn">Show Outliers</div> </div> <table id="mdj-table"> <thead></thead> <tbody></tbody> </table> <div class="btn-text view-all-btn"></div> </div> </div> </body><script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script><script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script><script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.js"></script><script src="/aclu-cash-bail/js.24042319.js" charset="utf-8"></script><script>$(document).ready(function(){$(".dropdown").dropdown({fullTextSearch:!0,ignoreCase:!0,delimiter:";",label:{transition:void 0,duration:0,variation:!1}})});</script></html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ACLU Cash Bail</title>
+    <!-- TODO: Extract the styles we use from these and remove the imports -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css">
+    <link rel="stylesheet" href="/style.967ba849.css">
+    <link rel="stylesheet" href="/table.233cc489.css">
+    <link rel="stylesheet" href="/search.4e3d1be0.css">
+    <link rel="stylesheet" href="/visualization.cd4fd378.css">
+    <link rel="stylesheet" href="/mobile.6cafe125.css">
+  <script src="/style.967ba849.js"></script><script src="/table.233cc489.js"></script><script src="/search.4e3d1be0.js"></script><script src="/visualization.cd4fd378.js"></script><script src="/mobile.6cafe125.js"></script></head>
+  <body>
+    <div class="container">
+      <div id="rate-container">
+        <div class="table-container" id="bail-rate-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Search counties</div>
+            <div class="menu"></div>
+          </div>
+          <div class="switch-container">
+            <div class="btn-text switch left showing">% Cash Bail</div>
+            <div class="btn-text switch right">ROR Rate</div>
+          </div>
+          <table id="bail-rate-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="btn-text view-all-btn"></div>
+          <p class="footnote">Outliers exceeding the 99th percentile were removed in calculating bail rate averages.</p>
+        </div>
+        <div class="table-container" id="ror-rate-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Search counties</div>
+            <div class="menu"></div>
+          </div>
+          <div class="switch-container">
+            <div class="btn-text switch left">% Cash Bail</div>
+            <div class="btn-text switch right showing">ROR Rate</div>
+          </div>
+          <table id="ror-rate-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="btn-text view-all-btn"></div>
+          <p class="footnote">Outliers exceeding the 99th percentile were removed in calculating bail rate averages.</p>
+        </div>
+      </div>
+      <div id="race-container">
+        <div class="table-container" id="bail-race-rate-container">
+          <div class="search-container">
+            <div class="ui fluid multiple search selection dropdown">
+              <input type="hidden" name="county">
+              <i class="dropdown icon"></i>
+              <div class="default text">Search counties</div>
+              <div class="menu"></div>
+            </div>
+            <div class="btn-text outliers-btn">Show Outliers</div>
+          </div>
+          <div class="switch-container">
+            <div class="btn-text switch left showing">% Cash Bail</div>
+            <div class="btn-text switch right">Bail Amount</div>
+            <div class="btn-text outliers-btn mobile-only">Show Outliers</div>
+          </div>
+          <table id="bail-race-rate-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="btn-text view-all-btn"></div>
+          <p class="footnote">*Outlier for low number of cases with black defendants.</p>
+        </div>
+        <div class="table-container" id="bail-race-amount-container">
+          <div class="search-container">
+            <div class="ui fluid multiple search selection dropdown">
+              <input type="hidden" name="county">
+              <i class="dropdown icon"></i>
+              <div class="default text">Search counties</div>
+              <div class="menu"></div>
+            </div>
+            <div class="btn-text outliers-btn">Show Outliers</div>
+          </div>
+          <div class="switch-container">
+            <div class="btn-text switch left">% Cash Bail</div>
+            <div class="btn-text switch right showing">Bail Amount</div>
+            <div class="btn-text outliers-btn mobile-only">Show Outliers</div>
+          </div>
+          <table id="bail-race-amount-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="btn-text view-all-btn"></div>
+          <p class="footnote">*Outlier for low number of cases with black defendants.</p>
+        </div>
+      </div>
+      <div class="table-container" id="bail-posting-container">
+        <div class="ui fluid multiple search selection dropdown">
+          <input type="hidden" name="county">
+          <i class="dropdown icon"></i>
+          <div class="default text">Select counties</div>
+          <div class="menu"></div>
+        </div>
+        <table id="bail-posting-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+        <div class="btn-text view-all-btn"></div>
+      </div>
+      <div class="table-container" id="bail-retention-fee-container">
+        <div class="ui fluid multiple search selection dropdown">
+          <input type="hidden" name="county">
+          <i class="dropdown icon"></i>
+          <div class="default text">Search counties</div>
+          <div class="menu"></div>
+        </div>
+        <table id="bail-retention-fee-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+        <div class="btn-text view-all-btn"></div>
+      </div>
+      <div class="table-container" id="pretrial-spending-container">
+        <div class="ui fluid multiple search selection dropdown">
+          <input type="hidden" name="county">
+          <i class="dropdown icon"></i>
+          <div class="default text">Search counties</div>
+          <div class="menu"></div>
+        </div>
+        <table id="pretrail-spending-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+        <div class="btn-text view-all-btn"></div>
+      </div>
+      <div class="table-container" id="mdj-container">
+        <div class="search-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select counties or judges</div>
+            <div class="menu"></div>
+          </div>
+          <div class="btn-text outliers-btn">Show Outliers</div>
+        </div>
+        <table id="mdj-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+        <div class="btn-text view-all-btn"></div>
+      </div>
+    </div>
+  </body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.js"></script>
+    <script src="/js.d818e0ef.js" charset="utf-8"></script>
+    <script>$(document).ready(function () {
+  $('.dropdown').dropdown({
+    fullTextSearch: true,
+    ignoreCase: true,
+    delimiter: ';',
+    label: {
+      transition: undefined,
+      duration: 0,
+      variation: false
+    }
+  });
+});</script>
+</html>
