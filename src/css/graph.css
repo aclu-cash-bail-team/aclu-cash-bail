@@ -41,6 +41,8 @@
 
 .scatter-plot-key {
   padding: 9px 15px;
+  align-items: center;
+  display: inline-flex;
 }
 
 .scatter-plot-key span {
@@ -58,11 +60,32 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
+}
+
+.key-circle:not(:empty)::before {
   margin-right: 8px;
+}
+
+.key-circle.large::before {
+  width: 60px;
+  height: 60px;
+}
+
+.key-circle.mid::before {
+  width: 30px;
+  height: 30px;
 }
 
 .key-circle.green::before {
   background-color: #00ED89;
+}
+
+.key-circle.green-with-opacity::before {
+  /* background-color: rgba(0,237,137,0.4);
+  border: 1px solid #00ED89; */
+  background-color: #55EAAC66;
+  border: 1px solid #55EAAC;
+  mix-blend-mode: hard-light;
 }
 
 .key-circle.purple::before {
