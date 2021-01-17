@@ -1,3 +1,7 @@
+.graph {
+  margin: 3em 0;
+}
+
 .graph h3 {
   margin-bottom: 20px;
   font-family: "GT America Bold";
@@ -16,6 +20,10 @@
 
 .plot-container {
   position: relative;
+}
+
+.plot-container.has-x-axis {
+  padding-bottom: 70px;
 }
 
 .scatter-plot {
@@ -79,7 +87,7 @@
 }
 
 .axis-line {
-  stroke: rgba(255, 255, 255, 0.1);
+  stroke: rgba(255, 255, 255, 0.2);
   stroke-width: 0.5px;
 }
 
@@ -101,6 +109,20 @@
   stroke-width: 0.5px;
 }
 
+.scatter-point.total {
+  /* fill: #00ed8a66;
+  stroke: #00ED89; */
+  fill: #55EAAC66;
+  stroke: #55EAAC;
+  mix-blend-mode: hard-light;
+}
+
+.scatter-point.hovering.total {
+  fill: #55EAACab;
+  stroke: #FFF;
+  stroke-width: 2px;
+}
+
 .scatter-point.black {
   fill: #00ED89;
 }
@@ -110,6 +132,7 @@
 }
 
 .scatter-line.hovering, .scatter-point.hovering {
+  cursor: pointer;
   stroke: #FFF;
   stroke-width: 0.5px;
 }

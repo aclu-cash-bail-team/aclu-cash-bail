@@ -5962,7 +5962,7 @@ export const BAIL_CASES_SCATTER_PLOT = {
     "r": 7356,
     "y": "$20.8K"
   }
-}
+};
 
 export const BAIL_POSTING_DATA = [
   {
