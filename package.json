@@ -4,7 +4,7 @@
   "description": "This repository hosts the visualization code for the ACLU PA Cash Bail Report.",
   "main": "index.js",
   "scripts": {
-    "dev": "rm -rf dist/ && parcel watch index.html",
+    "dev": "rm -rf dist/ && parcel serve *.html --open",
     "build": "rm -rf dist/ && parcel build index.html --public-url='/aclu-cash-bail'",
     "deploy": "git subtree push --prefix dist origin gh-pages",
     "deploy-test": "git subtree push --prefix dist origin gh-pages-test",
