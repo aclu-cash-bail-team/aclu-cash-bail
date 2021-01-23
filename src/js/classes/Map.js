@@ -22,9 +22,100 @@ const PITTSBURGH_X = 170;
 const PITTSBURGH_Y = 310;
 const CITY_LABEL_OFFSET_Y = 15;
 
+export class Legend {
+  constructor(id, colorDomain, labels, color, average, onMouseOver, onMouseOut) {
+    this.colorDomain = colorDomain;
+    this.labels = labels;
+    this.color = color;
+    this.average = average;
+    this.onMouseOver = onMouseOver;
+    this.onMouseOut = onMouseOut;
+
+    this.legendSectionWidth = 35;
+    this.legendSectionHeight = 10;
+    this.legendOffsetX = 5;
+    this.legendOffsetY = 20;
+    this.legendLabelOffsetX = this.legendOffsetX - 4;
+    this.legendLabelOffsetY = this.legendOffsetY + 22;
+
+    this.svg = d3.select(`#${id} .legend`).append("svg")
+      .attr("width", this.legendSectionWidth * this.colorDomain.length + 20)
+      .attr("height", 50);
+  }
+
+  highlightBar(bucket) {
+    // darken other legend bars
+    this.svg.selectAll(`rect:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
+    // darken other legend labels, except for the start & end of highlighted bar
+    this.svg.selectAll(`.legend-text:not([data-bucket*="${bucket}"])`).style("opacity", "0.4");
+  }
+
+  resetHighlight() {
+    this.svg.selectAll("rect").style("opacity", "1");
+    this.svg.selectAll("text").style("opacity", "1");
+  }
+
+  render() {
+    const legend = this.svg.selectAll("g")
+      .data(this.labels.slice(0, this.labels.length - 1))
+      .enter().append("g")
+      .attr("class", "legend")
+      .attr("data-label", d => d);
+    // Add colored bars
+    legend.append("rect")
+      .attr("x", (_, i) => this.legendOffsetX + i*this.legendSectionWidth)
+      .attr("y", this.legendOffsetY)
+      .attr("width", this.legendSectionWidth)
+      .attr("height", this.legendSectionHeight)
+      .attr("data-bucket", (_, i) => this.labels[i + 1])
+      .style("fill", d => this.color(d))
+      .on("mouseover", event => {
+        this.onMouseOver(event);
+      })
+      .on("mouseout", () => {
+        this.onMouseOut();
+      });
+    // Add labels
+    legend.append("text")
+      .attr("x", (_, i) => this.legendLabelOffsetX + i*this.legendSectionWidth)
+      .attr("y", this.legendLabelOffsetY)
+      .attr("class", "legend-text")
+      .attr("data-bucket", d => {
+        const color = this.color(d);
+        const [start, end] = this.color.invertExtent(color);
+        return `${start}-${end}`;
+      })
+      .text((_, i) => `${this.labels[i]}`);
+    // Set up legend max label
+    this.svg.select(`g[data-label="${this.labels[this.labels.length - 2]}"]`)
+      .append("text")
+      .attr("x", this.legendLabelOffsetX  + (this.labels.length-1)*this.legendSectionWidth)
+      .attr("y", this.legendLabelOffsetY)
+      .attr("class", "legend-text")
+      .attr("data-bucket", this.labels[this.labels.length - 1])
+      .text(this.labels[this.labels.length - 1]);
+    // Set up average label
+    const legendWidth = this.legendSectionWidth * this.colorDomain.length;
+    const maxValue = this.colorDomain[this.colorDomain.length - 1];
+    const avgOffsetX = this.legendOffsetX + legendWidth * this.average / maxValue;
+    this.svg.append("line")
+      .attr("x1", avgOffsetX)
+      .attr("x2", avgOffsetX)
+      .attr("y1", this.legendOffsetY + 10)
+      .attr("y2", this.legendOffsetY - 5)
+      .attr("class", "legend-avg-line");
+    this.svg.append("text")
+      .attr("x", avgOffsetX - 20)
+      .attr("y", this.legendOffsetY - 10)
+      .attr("class", "legend-avg-label")
+      .text(`Avg: ${this.average}%`);
+  }
+
+}
+
 class Map {
-  constructor(width, height) {
-    this.svg = d3.select("body").append("svg")
+  constructor(id, width, height) {
+    this.svg = d3.select(`#${id} .map`).append("svg")
       .attr("width", width)
       .attr("height", height);
   }
@@ -77,22 +168,31 @@ class Map {
 }
 
 export class BailRateMap extends Map {
-  constructor(data, average) {
-    super(800, 500);
+  constructor(id, data, average) {
+    super(id, 800, 500);
     this.data = data;
-    this.average = average;
-    this.colorDomain = [10, 20, 30, 40, 50, 60];
-    this.labels = [0, 10, 20, 30, 40, 50, 60];
-    this.color = d3.scaleThreshold().domain(this.colorDomain).range([
+
+    const colorDomain = [10, 20, 30, 40, 50, 60];
+    this.color = d3.scaleThreshold().domain(colorDomain).range([
       "#182935", "#215f5d", "#1b9b88", "#0fc59b", "#0fda92", "#00ed89"
     ]);
 
-    this.legendSectionWidth = 35;
-    this.legendSectionHeight = 10;
-    this.legendOffsetX = 300;
-    this.legendOffsetY = 55;
-    this.legendLabelOffsetX = this.legendOffsetX - 4;
-    this.legendLabelOffsetY = this.legendOffsetY + 22;
+    const onLegendMouseOver = (event) => {
+      this.highlightBar(event);
+      this.highlightMap(event);
+    };
+    const onLegendMouseOut = () => this.resetHighlight();
+    onLegendMouseOver.bind(this);
+    onLegendMouseOut.bind(this);
+
+    this.legend = new Legend(id,
+      colorDomain,
+      [0, 10, 20, 30, 40, 50, 60],
+      this.color,
+      average,
+      onLegendMouseOver,
+      onLegendMouseOut
+    );
 
     this.render();
   }
@@ -133,10 +233,7 @@ export class BailRateMap extends Map {
 
   highlightBar(event) {
     const bucket = Number(event.srcElement.getAttribute("data-bucket"));
-    // darken other legend bars
-    this.svg.selectAll(`rect:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
-    // darken other legend labels, except for the start & end of highlighted bar
-    this.svg.selectAll(`.legend-text:not([data-bucket*="${bucket}"])`).style("opacity", "0.4");
+    this.legend.highlightBar(bucket);
   }
 
   highlightMap(event) {
@@ -145,64 +242,8 @@ export class BailRateMap extends Map {
   }
 
   resetHighlight() {
-    this.svg.selectAll("rect").style("opacity", "1");
-    this.svg.selectAll("text").style("opacity", "1");
+    this.legend.resetHighlight();
     this.svg.selectAll("path").style("opacity", "1");
-  }
-
-  renderLegend() {
-    const legend = this.svg.selectAll("g")
-      .data(this.labels)
-      .enter().append("g")
-      .attr("class", "legend")
-      .attr("data-label", d => d);
-    legend.append("rect")
-      .attr("x", (_, i) => this.legendOffsetX + (i-1)*this.legendSectionWidth) // i is 1-indexed
-      .attr("y", this.legendOffsetY)
-      .attr("width", this.legendSectionWidth)
-      .attr("height", this.legendSectionHeight)
-      .attr("data-bucket", d => d)
-      .style("fill", d => this.color(d - 0.01))
-      .on("mouseover", event => {
-        this.highlightBar(event);
-        this.highlightMap(event);
-      })
-      .on("mouseout", () => {
-        this.resetHighlight();
-      });
-    legend.append("text")
-      .attr("x", (_, i) => this.legendLabelOffsetX + (i-1)*this.legendSectionWidth)
-      .attr("y", this.legendLabelOffsetY)
-      .attr("class", "legend-text")
-      .attr("data-bucket", d => {
-        const color = this.color(d - 0.01);
-        const [start, end] = this.color.invertExtent(color);
-        return `${start}-${end}`;
-      })
-      .text((_, i) => `${this.labels[i-1]}`);
-    // set up legend max label
-    this.svg.select(`g[data-label="${this.labels[this.labels.length - 1]}"]`)
-      .append("text")
-      .attr("x", this.legendLabelOffsetX  + (this.labels.length-1)*this.legendSectionWidth)
-      .attr("y", this.legendLabelOffsetY)
-      .attr("class", "legend-text")
-      .attr("data-bucket", this.labels[this.labels.length - 1])
-      .text(this.labels[this.labels.length - 1]);
-    // set up average label
-    const legendWidth = this.legendSectionWidth * this.colorDomain.length;
-    const maxValue = this.colorDomain[this.colorDomain.length - 1];
-    const avgOffsetX = this.legendOffsetX + legendWidth * this.average / maxValue;
-    this.svg.append("line")
-      .attr("x1", avgOffsetX)
-      .attr("x2", avgOffsetX)
-      .attr("y1", this.legendOffsetY + 10)
-      .attr("y2", this.legendOffsetY - 5)
-      .attr("class", "legend-avg-line");
-    this.svg.append("text")
-      .attr("x", avgOffsetX - 20)
-      .attr("y", this.legendOffsetY - 10)
-      .attr("class", "legend-avg-label")
-      .text(`Avg: ${this.average}%`);
   }
 
   renderCities() {
@@ -259,7 +300,7 @@ export class BailRateMap extends Map {
       .attr("data-county-name", feature => feature.properties["NAME"])
       .attr("data-rate", feature => feature.properties.rate);
 
-    this.renderLegend();
+    this.legend.render();
 
     this.renderCities();
   }
