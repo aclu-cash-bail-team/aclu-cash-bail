@@ -22,16 +22,16 @@ const PITTSBURGH_X = 170;
 const PITTSBURGH_Y = 310;
 const CITY_LABEL_OFFSET_Y = 15;
 
-export class Legend {
-  constructor(id, colorDomain, labels, color, average, onMouseOver, onMouseOut) {
+class Legend {
+  constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut) {
     this.colorDomain = colorDomain;
     this.labels = labels;
     this.color = color;
-    this.average = average;
+    this.averages = averages;
     this.onMouseOver = onMouseOver;
     this.onMouseOut = onMouseOut;
 
-    this.legendSectionWidth = 35;
+    this.legendSectionWidth = 50;
     this.legendSectionHeight = 10;
     this.legendOffsetX = 5;
     this.legendOffsetY = 20;
@@ -97,27 +97,67 @@ export class Legend {
     // Set up average label
     const legendWidth = this.legendSectionWidth * this.colorDomain.length;
     const maxValue = this.colorDomain[this.colorDomain.length - 1];
-    const avgOffsetX = this.legendOffsetX + legendWidth * this.average / maxValue;
-    this.svg.append("line")
-      .attr("x1", avgOffsetX)
-      .attr("x2", avgOffsetX)
-      .attr("y1", this.legendOffsetY + 10)
-      .attr("y2", this.legendOffsetY - 5)
-      .attr("class", "legend-avg-line");
-    this.svg.append("text")
-      .attr("x", avgOffsetX - 20)
-      .attr("y", this.legendOffsetY - 10)
-      .attr("class", "legend-avg-label")
-      .text(`Avg: ${this.average}%`);
+    this.averages.forEach(avg => {
+      const avgOffsetX = this.legendOffsetX + legendWidth * avg.value / maxValue;
+      this.svg.append("line")
+        .attr("x1", avgOffsetX)
+        .attr("x2", avgOffsetX)
+        .attr("y1", this.legendOffsetY + 10)
+        .attr("y2", this.legendOffsetY - 5)
+        .attr("class", "legend-avg-line");
+      this.svg.append("text")
+        .attr("x", avgOffsetX - 20)
+        .attr("y", this.legendOffsetY - 10)
+        .attr("class", "legend-avg-label")
+        .text(avg.label);
+    });
   }
 
 }
 
 class Map {
-  constructor(id, width, height) {
-    this.svg = d3.select(`#${id} .map`).append("svg")
+  constructor(selector, width, height) {
+    this.svg = d3.select(selector).append("svg")
       .attr("width", width)
       .attr("height", height);
+  }
+
+  renderCities() {
+    // Philadelphia
+    this.svg.append("circle")
+      .attr("cx", PHILADELPHIA_X)
+      .attr("cy", PHILADELPHIA_Y)
+      .attr("r", 4)
+      .attr("fill", "white");
+    this.svg.append("text")
+      .attr("x", PHILADELPHIA_X - 43)
+      .attr("y", PHILADELPHIA_Y - CITY_LABEL_OFFSET_Y)
+      .attr("class", "city-label")
+      .text("Philadelphia");
+
+    // Harrisburg
+    this.svg.append("circle")
+      .attr("cx", HARRISBURG_X)
+      .attr("cy", HARRISBURG_Y)
+      .attr("r", 4)
+      .attr("fill", "white");
+    this.svg.append("text")
+      .attr("x", HARRISBURG_X - 29)
+      .attr("y", HARRISBURG_Y - CITY_LABEL_OFFSET_Y)
+      .attr("class", "city-label")
+      .text("Harrisburg");
+
+    // Pittsburgh
+    this.svg.append("circle")
+      .attr("cx", PITTSBURGH_X)
+      .attr("cy", PITTSBURGH_Y)
+      .attr("r", 4)
+      .attr("fill", "white");
+    this.svg.append("text")
+      .attr("x", PITTSBURGH_X - 27)
+      .attr("y", PITTSBURGH_Y - CITY_LABEL_OFFSET_Y)
+      .attr("class", "city-label")
+      .text("Pittsburgh");
   }
 
   renderPA(features, path) {
@@ -169,7 +209,7 @@ class Map {
 
 export class BailRateMap extends Map {
   constructor(id, data, average) {
-    super(id, 800, 500);
+    super(`#${id} .map`, 800, 500);
     this.data = data;
 
     const colorDomain = [10, 20, 30, 40, 50, 60];
@@ -189,7 +229,10 @@ export class BailRateMap extends Map {
       colorDomain,
       [0, 10, 20, 30, 40, 50, 60],
       this.color,
-      average,
+      [{
+        value: average,
+        label: `Avg: ${average}%`
+      }],
       onLegendMouseOver,
       onLegendMouseOut
     );
@@ -246,45 +289,6 @@ export class BailRateMap extends Map {
     this.svg.selectAll("path").style("opacity", "1");
   }
 
-  renderCities() {
-    // Philadelphia
-    this.svg.append("circle")
-      .attr("cx", PHILADELPHIA_X)
-      .attr("cy", PHILADELPHIA_Y)
-      .attr("r", 4)
-      .attr("fill", "white");
-    this.svg.append("text")
-      .attr("x", PHILADELPHIA_X - 43)
-      .attr("y", PHILADELPHIA_Y - CITY_LABEL_OFFSET_Y)
-      .attr("class", "city-label")
-      .text("Philadelphia");
-
-    // Harrisburg
-    this.svg.append("circle")
-      .attr("cx", HARRISBURG_X)
-      .attr("cy", HARRISBURG_Y)
-      .attr("r", 4)
-      .attr("fill", "white");
-    this.svg.append("text")
-      .attr("x", HARRISBURG_X - 29)
-      .attr("y", HARRISBURG_Y - CITY_LABEL_OFFSET_Y)
-      .attr("class", "city-label")
-      .text("Harrisburg");
-
-    // Pittsburgh
-    this.svg.append("circle")
-      .attr("cx", PITTSBURGH_X)
-      .attr("cy", PITTSBURGH_Y)
-      .attr("r", 4)
-      .attr("fill", "white");
-    this.svg.append("text")
-      .attr("x", PITTSBURGH_X - 27)
-      .attr("y", PITTSBURGH_Y - CITY_LABEL_OFFSET_Y)
-      .attr("class", "city-label")
-      .text("Pittsburgh");
-
-  }
-
   renderPA(features, path) {
     this.data.forEach(row => {
       const countyName = row.data[0];
@@ -306,27 +310,14 @@ export class BailRateMap extends Map {
   }
 }
 
-export class BailRaceMap extends Map {
-  constructor(data, dataIdx, race, parent) {
-    super(800, 500);
+class BailRaceMap extends Map {
+  constructor(selector, width, height, data, color, dataIdx, race, parent) {
+    super(selector, width, height);
     this.data = data;
     this.dataIdx = dataIdx;
     this.race = race;
     this.parent = parent;
-    this.colorDomain = [20, 40, 60, 80, 100];
-    this.labels = [0, 20, 40, 60, 80, 100];
-    this.color = d3.scaleThreshold().domain(this.colorDomain).range([
-      "#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"
-    ]);
-
-    this.LEGEND_SECTION_WIDTH = 75;
-    this.LEGEND_SECTION_HEIGHT = 10;
-    this.LEGEND_OFFSET_X = 400;
-    this.LEGEND_OFFSET_Y = 55;
-    this.LEGEND_LABEL_OFFSET_X = this.LEGEND_OFFSET_X - 4;
-    this.LEGEND_LABEL_OFFSET_Y = this.LEGEND_OFFSET_Y + 22;
-
-    this.render();
+    this.color = color;
   }
 
   // Called by parent
@@ -374,52 +365,11 @@ export class BailRaceMap extends Map {
   }
 
   onMouseOver(event) {
-    this.parent.onMouseOver(event, this.race);
-    this.parent.highlightBar(event);
+    this.parent.onChildMouseOver(event, this.race);
   }
 
   onMouseOut(event) {
-    this.parent.onMouseOut(event);
-    this.parent.resetHighlight(event);
-  }
-
-  renderCities() {
-    // Philadelphia
-    this.svg.append("circle")
-      .attr("cx", PHILADELPHIA_X)
-      .attr("cy", PHILADELPHIA_Y)
-      .attr("r", 4)
-      .attr("fill", "white");
-    this.svg.append("text")
-      .attr("x", PHILADELPHIA_X - 43)
-      .attr("y", PHILADELPHIA_Y - CITY_LABEL_OFFSET_Y)
-      .attr("class", "city-label")
-      .text("Philadelphia");
-
-    // Harrisburg
-    this.svg.append("circle")
-      .attr("cx", HARRISBURG_X)
-      .attr("cy", HARRISBURG_Y)
-      .attr("r", 4)
-      .attr("fill", "white");
-    this.svg.append("text")
-      .attr("x", HARRISBURG_X - 29)
-      .attr("y", HARRISBURG_Y - CITY_LABEL_OFFSET_Y)
-      .attr("class", "city-label")
-      .text("Harrisburg");
-
-    // Pittsburgh
-    this.svg.append("circle")
-      .attr("cx", PITTSBURGH_X)
-      .attr("cy", PITTSBURGH_Y)
-      .attr("r", 4)
-      .attr("fill", "white");
-    this.svg.append("text")
-      .attr("x", PITTSBURGH_X - 27)
-      .attr("y", PITTSBURGH_Y - CITY_LABEL_OFFSET_Y)
-      .attr("class", "city-label")
-      .text("Pittsburgh");
-
+    this.parent.onChildMouseOut(event);
   }
 
   renderPA(features, path) {
@@ -447,115 +397,87 @@ export class BailRaceMap extends Map {
 
 
 export class RaceMapContainer {
-  registerBlack(map) {
-    this.black = map;
+  constructor(id, data, whiteAverage, blackAverage) {
+    this.width = 800;
+    this.height = 500;
+
+    const colorDomain = [20, 40, 60, 80, 100];
+    const color = d3.scaleThreshold().domain(colorDomain).range([
+      "#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"
+    ]);
+
+    this.black = new BailRaceMap(`#${id} #black.map`, this.width, this.height, data, color, 2, "black", this);
+    this.white = new BailRaceMap(`#${id} #white.map`, this.width, this.height, data, color, 3, "white", this);
+
+    const onLegendMouseOver = (event) => {
+      this.highlightBar(event);
+      this.highlightMap(event);
+    };
+    const onLegendMouseOut = () => this.resetHighlight();
+    onLegendMouseOver.bind(this);
+    onLegendMouseOut.bind(this);
+
+    this.legend = new Legend(id,
+      colorDomain,
+      [0, 20, 40, 60, 80, 100],
+      color,
+      [{
+        value: whiteAverage,
+        label: `White: ${whiteAverage}%`
+      },
+      {
+        value: blackAverage,
+        label: `Black: ${blackAverage}%`
+      }
+      ],
+      onLegendMouseOver,
+      onLegendMouseOut
+    );
+
+    this.render();
   }
 
-  registerWhite(map) {
-    this.white = map;
-  }
-
-  onMouseOver(event, race) {
+  onChildMouseOver(event, race) {
     const countyName = event.srcElement.getAttribute("data-county-name");
+    // TODO: Fix this awful hack
     if (race == "black") {
       this.black._onMouseOver(countyName, event.pageX, event.pageY);
-      this.white._onMouseOver(countyName, event.pageX + 800, event.pageY);
+      this.white._onMouseOver(countyName, event.pageX + this.width, event.pageY);
     } else if (race == "white") {
-      this.black._onMouseOver(countyName, event.pageX - 800, event.pageY)
+      this.black._onMouseOver(countyName, event.pageX - this.width, event.pageY);
       this.white._onMouseOver(countyName, event.pageX, event.pageY);
     }
+    this.highlightBar(event);
   }
 
-  onMouseOut(event) {
+  onChildMouseOut(event) {
     const countyName = event.srcElement.getAttribute("data-county-name");
     this.black._onMouseOut(countyName);
     this.white._onMouseOut(countyName);
+    this.resetHighlight();
   }
 
 
   highlightBar(event) {
-    // const bucket = Number(event.srcElement.getAttribute("data-bucket"));
-    // // darken other legend bars
-    // this.svg.selectAll(`rect:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
-    // // darken other legend labels, except for the start & end of highlighted bar
-    // this.svg.selectAll(`.legend-text:not([data-bucket*="${bucket}"])`).style("opacity", "0.4");
+    const bucket = Number(event.srcElement.getAttribute("data-bucket"));
+    this.legend.highlightBar(bucket);
   }
 
-  // highlightMap(event) {
-  //   const bucket = event.srcElement.getAttribute("data-bucket");
-  //   this.svg.selectAll(`path:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
-  // }
+  highlightMap(event) {
+    const bucket = event.srcElement.getAttribute("data-bucket");
+    this.black.highlightMap(bucket);
+    this.white.highlightMap(bucket);
+  }
 
   resetHighlight() {
     this.black.resetHighlight();
     this.white.resetHighlight();
+    this.legend.resetHighlight();
   }
 
-  renderLegend() {
-  //   const legend = this.svg.selectAll("g")
-  //     .data(this.labels)
-  //     .enter().append("g")
-  //     .attr("class", "legend")
-  //     .attr("data-label", d => d);
-  //   legend.append("rect")
-  //     .attr("x", (_, i) => this.LEGEND_OFFSET_X + (i-1)*this.LEGEND_SECTION_WIDTH) // i is 1-indexed
-  //     .attr("y", this.LEGEND_OFFSET_Y)
-  //     .attr("width", this.LEGEND_SECTION_WIDTH)
-  //     .attr("height", this.LEGEND_SECTION_HEIGHT)
-  //     .attr("data-bucket", d => d)
-  //     .style("fill", d => this.color(d - 0.01))
-  //     .on("mouseover", event => {
-  //       this.highlightBar(event);
-  //       this.highlightMap(event);
-  //     })
-  //     .on("mouseout", () => {
-  //       this.resetHighlight();
-  //     });
-  //   legend.append("text")
-  //     .attr("x", (_, i) => this.LEGEND_LABEL_OFFSET_X + (i-1)*this.LEGEND_SECTION_WIDTH)
-  //     .attr("y", this.LEGEND_LABEL_OFFSET_Y)
-  //     .attr("class", "legend-text")
-  //     .attr("data-bucket", d => {
-  //       const color = this.color(d - 0.01);
-  //       const [start, end] = this.color.invertExtent(color);
-  //       return `${start}-${end}`;
-  //     })
-  //     .text((_, i) => `${this.labels[i-1]}`);
-  //   // set up legend max label
-  //   this.svg.select(`g[data-label="${this.labels[this.labels.length - 1]}"]`)
-  //     .append("text")
-  //     .attr("x", this.LEGEND_LABEL_OFFSET_X  + (this.labels.length-1)*this.LEGEND_SECTION_WIDTH)
-  //     .attr("y", this.LEGEND_LABEL_OFFSET_Y)
-  //     .attr("class", "legend-text")
-  //     .attr("data-bucket", this.labels[this.labels.length - 1])
-  //     .text(this.labels[this.labels.length - 1]);
-  //   // set up average label
-  //   const legendWidth = this.LEGEND_SECTION_WIDTH * this.colorDomain.length;
-  //   const maxValue = this.colorDomain[this.colorDomain.length - 1];
-  //   const blackAvgOffsetX = this.LEGEND_OFFSET_X + legendWidth * this.blackAverage / maxValue;
-  //   const whiteAvgOffsetX = this.LEGEND_OFFSET_X + legendWidth * this.whiteAverage / maxValue;
-  //   this.svg.append("line")
-  //     .attr("x1", blackAvgOffsetX)
-  //     .attr("x2", blackAvgOffsetX)
-  //     .attr("y1", this.LEGEND_OFFSET_Y + 10)
-  //     .attr("y2", this.LEGEND_OFFSET_Y - 5)
-  //     .attr("class", "legend-avg-line");
-  //   this.svg.append("text")
-  //     .attr("x", blackAvgOffsetX - 20)
-  //     .attr("y", this.LEGEND_OFFSET_Y - 10)
-  //     .attr("class", "legend-avg-label")
-  //     .text(`Black: ${this.blackAverage}%`);
-  //   this.svg.append("line")
-  //     .attr("x1", whiteAvgOffsetX)
-  //     .attr("x2", whiteAvgOffsetX)
-  //     .attr("y1", this.LEGEND_OFFSET_Y + 10)
-  //     .attr("y2", this.LEGEND_OFFSET_Y - 5)
-  //     .attr("class", "legend-avg-line");
-  //   this.svg.append("text")
-  //     .attr("x", whiteAvgOffsetX - 20)
-  //     .attr("y", this.LEGEND_OFFSET_Y - 10)
-  //     .attr("class", "legend-avg-label")
-  //     .text(`White: ${this.whiteAverage}%`);
+  render() {
+    this.legend.render();
+    this.black.render();
+    this.white.render();
   }
-
 }

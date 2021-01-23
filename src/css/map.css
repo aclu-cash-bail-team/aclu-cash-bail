@@ -1,3 +1,11 @@
+.map-container {
+    text-align: center;
+}
+
+.map-row {
+    display: flex;
+}
+
 path {
     stroke:#eee;
     stroke-width: 0.5px;
