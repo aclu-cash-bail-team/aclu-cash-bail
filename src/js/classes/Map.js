@@ -481,3 +481,107 @@ export class RaceMapContainer {
     this.white.render();
   }
 }
+
+export class BailPostingMap extends Map {
+  constructor(id, data, average) {
+    super(`#${id} .map`, 800, 500);
+    this.data = data;
+
+    const colorDomain = [20, 40, 60, 80, 100];
+    this.color = d3.scaleThreshold().domain(colorDomain).range([
+      "#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"
+    ]);
+
+    const onLegendMouseOver = (event) => {
+      this.highlightBar(event);
+      this.highlightMap(event);
+    };
+    const onLegendMouseOut = () => this.resetHighlight();
+    onLegendMouseOver.bind(this);
+    onLegendMouseOut.bind(this);
+
+    this.legend = new Legend(id,
+      colorDomain,
+      [0, 20, 40, 60, 80, 100],
+      this.color,
+      [{
+        value: average,
+        label: `Avg: ${average}%`
+      }],
+      onLegendMouseOver,
+      onLegendMouseOut
+    );
+
+    this.render();
+  }
+
+  onMouseOver(event) {
+    super.onMouseOver(event);
+    d3.select(event.srcElement).style("stroke-width", "2px");
+    this.highlightBar(event);
+  }
+
+  onMouseOut(event) {
+    super.onMouseOut();
+    d3.select(event.srcElement).style("stroke-width", "0.5px");
+    this.resetHighlight();
+  }
+
+  showTooltip(event) {
+    super.showTooltip(event);
+    const countyElement = event.srcElement;
+    const countyName = countyElement.getAttribute("data-county-name");
+    const countyAmount = countyElement.getAttribute("data-amount");
+    this.tooltip
+      .style("left", `${event.pageX - 100}px`)
+      .style("top", `${event.pageY - 70}px`)
+      .html(`
+        <h3 class="tooltip-name">${countyName}</h3>
+        <table>
+          <tbody>
+            <tr>
+              <td>Bail Amount</td>
+              <td style="text-align: right; font-weight: 700;">$${countyAmount}</td>
+            </tr>
+          </tbody>
+        </table>
+      `);
+  }
+
+
+  highlightBar(event) {
+    const bucket = Number(event.srcElement.getAttribute("data-bucket"));
+    this.legend.highlightBar(bucket);
+  }
+
+  highlightMap(event) {
+    const bucket = event.srcElement.getAttribute("data-bucket");
+    this.svg.selectAll(`path:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
+  }
+
+  resetHighlight() {
+    this.legend.resetHighlight();
+    this.svg.selectAll("path").style("opacity", "1");
+  }
+
+  renderPA(features, path) {
+    this.data.forEach(row => {
+      const countyName = row.data[0];
+      const nonPostingRate = row.data[2];
+      const feature = features.find(f => f.properties["NAME"] === countyName);
+      feature.properties.rate = nonPostingRate;
+      feature.properties.color = this.color(nonPostingRate);
+      feature.properties.bucket = this.color.invertExtent(feature.properties.color)[1];
+    });
+
+    const paths = super.renderPA(features, path);
+    paths.style("fill", "#1a1a1a")
+      .attr("data-bucket", feature => feature.properties.bucket)
+      .attr("data-county-name", feature => feature.properties["NAME"])
+      .attr("data-rate", feature => feature.properties.rate);
+
+    this.legend.render();
+
+    this.renderCities();
+  }
+}
