@@ -1,13 +1,14 @@
 .graph {
   margin: 3em 0;
+  position: relative;
 }
 
 .graph h3 {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-family: "GT America Bold";
   font-size: 13px;
   font-weight: normal;
-  line-height: 28px;
+  /* line-height: 28px; */
   text-align: center;
   color: #FFF;
 }
@@ -39,8 +40,14 @@
   text-align: center;
 }
 
+.scatter-plot-subhead h5 {
+  margin: 0;
+  color:rgba(255, 255, 255, 0.75);
+  font-weight: normal;
+}
+
 .scatter-plot-key {
-  padding: 9px 15px;
+  padding: 8px 15px;
   align-items: center;
   display: inline-flex;
 }
@@ -48,10 +55,11 @@
 .scatter-plot-key span {
   font-size: 11px;
   line-height: 16px;
+  color:rgba(255, 255, 255, 0.75);
 }
 
 .scatter-plot-key span:not(:last-of-type) {
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .key-circle::before {
@@ -72,8 +80,8 @@
 }
 
 .key-circle.mid::before {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
 }
 
 .key-circle.green::before {
@@ -121,6 +129,10 @@
   opacity: 50%;
 }
 
+.scatter-text.hovering {
+  text-shadow: 1px 0px;
+}
+
 .scatter-plot.show-outliers .scatter-line.outlier,
 .scatter-plot.show-outliers .scatter-point.outlier,
 .scatter-plot.show-outliers .scatter-text.outlier {
@@ -130,6 +142,15 @@
 .scatter-line {
   stroke: rgba(255, 255, 255, 0.2);
   stroke-width: 0.5px;
+}
+
+.hover-line {
+  stroke: rgba(255, 255, 255, 0);
+  stroke-width: 12px;
+  
+}
+.hover-line:hover {
+  cursor: pointer;
 }
 
 .scatter-point.total {
@@ -181,15 +202,18 @@
   font-size: 12px;
   line-height: 13px;
   color: #000;
+  pointer-events: none;
 }
 
 .scatter-tooltip h4 {
   margin: 0;
+  margin-bottom: 5px;
   font-family: "GT America Bold";
   font-weight: 400;
 }
 
 .scatter-tooltip table {
+  width: 100%;
   border-collapse: collapse;
 }
 
@@ -199,6 +223,7 @@
 
 .scatter-tooltip th {
   padding: 5px;
+  padding-top: 0px;
   font-family: "GT America Condensed";
   font-weight: 400;
   text-align: right;
@@ -214,7 +239,15 @@
   font-variant-numeric: tabular-nums;
 }
 
-.scatter-tooltip .scatter-tooltip-name {
+.scatter-tooltip td:first-child {
+  padding-left: 0;
+}
+
+.scatter-tooltip td:last-child {
+  padding-right: 0;
+}
+
+.scatter-tooltip .scatter-tooltip-col-header {
   width: 80px;
   text-align: left;
 }

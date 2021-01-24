@@ -1,8 +1,7 @@
-/* eslint-disable no-console */
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 class CountyPoint {
-  constructor(county, data, xAxis, yAxis, radiusScale, outlier, showName, plot, container) {
+  constructor(data, county, xAxis, yAxis, radiusScale, outlier, showName, tooltipConfig, container) {
     this.county = county;
     this.data = data;
     this.xAxis = xAxis;
@@ -10,8 +9,8 @@ class CountyPoint {
     this.radiusScale = radiusScale;
     this.outlier = outlier;
     this.showName = showName;
-    this.plot = plot;
     this.container = container;
+    this.tooltipConfig = tooltipConfig;
     [this.xs, this.ys] = this.getPositions();
     this.rs = this.getRadiis();
     this.elements = [];
@@ -48,60 +47,6 @@ class CountyPoint {
     return rs;
   }
 
-  renderCountyName() {
-    if (!this.showName) return;
-
-    const className = `scatter-text${this.outlier ? " outlier" : ""}`;
-    const text = document.createElementNS(SVG_NS, "text");
-    text.setAttributeNS(null, "class", className);
-    text.setAttributeNS(null, "x", this.xs[0]);
-    text.setAttributeNS(null, "y", this.ys[0]);
-    text.setAttributeNS(null, "dx", 11);
-    text.setAttributeNS(null, "dy", 3);
-    text.appendChild(document.createTextNode(this.county));
-    this.plot.appendChild(text);
-
-    this.elements.push(text);
-    text.addEventListener("mouseenter", () => this.onMouseEnter());
-    text.addEventListener("mouseleave", () => this.onMouseLeave());
-  }
-
-  renderPoints() {
-    this.data.forEach((data, i) => {
-      const className = `${data.name} scatter-point${
-        this.outlier ? " outlier" : ""
-      }`;
-      const point = document.createElementNS(SVG_NS, "circle");
-      point.setAttributeNS(null, "class", className);
-      point.setAttributeNS(null, "cx", this.xs[i]);
-      point.setAttributeNS(null, "cy", this.ys[i]);
-      point.setAttributeNS(null, "r", this.rs[i]);
-      this.plot.appendChild(point);
-
-      this.elements.push(point);
-      point.addEventListener("mouseenter", () => this.onMouseEnter());
-      point.addEventListener("mouseleave", () => this.onMouseLeave());
-    });
-  }
-
-  renderLine() {
-    // only draw line if we have two data points
-    if (this.data.length != 2) return;
-
-    const className = `scatter-line${this.outlier ? " outlier" : ""}`;
-    const line = document.createElementNS(SVG_NS, "line");
-    line.setAttributeNS(null, "class", className);
-    line.setAttributeNS(null, "x1", this.xs[0]);
-    line.setAttributeNS(null, "y1", this.ys[0]);
-    line.setAttributeNS(null, "x2", this.xs[1]);
-    line.setAttributeNS(null, "y2", this.ys[1]);
-    this.plot.appendChild(line);
-
-    this.elements.push(line);
-    line.addEventListener("mouseenter", () => this.onMouseEnter());
-    line.addEventListener("mouseleave", () => this.onMouseLeave());
-  }
-
   onMouseEnter() {
     this.renderTooltip();
     this.elements.forEach((element) => {
@@ -126,34 +71,52 @@ class CountyPoint {
     // render data in a table
     const table = document.createElement("table");
     const thead = document.createElement("thead");
-    const headerRow = document.createElement("tr");
-    const filler = document.createElement("th");
-    const xHeader = document.createElement("th");
-    xHeader.appendChild(document.createTextNode(this.data[0].xHeader));
-    const yHeader = document.createElement("th");
-    yHeader.appendChild(document.createTextNode(this.data[0].yHeader));
-    headerRow.appendChild(filler);
-    headerRow.appendChild(xHeader);
-    headerRow.appendChild(yHeader);
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-
-    // render cells from data
     const tbody = document.createElement("tbody");
-    this.data.forEach((data) => {
-      const row = document.createElement("tr");
-      const name = document.createElement("td");
-      name.className = "scatter-tooltip-name";
-      name.appendChild(document.createTextNode(data.name));
-      const xText = document.createElement("td");
-      xText.appendChild(document.createTextNode(data.xText));
-      const yText = document.createElement("td");
-      yText.appendChild(document.createTextNode(data.yText));
-      row.appendChild(name);
-      row.appendChild(xText);
-      row.appendChild(yText);
-      tbody.appendChild(row);
-    });
+
+    if ("rows" in this.tooltipConfig) {
+      this.tooltipConfig.rows.forEach(rowData => {
+        const row = document.createElement("tr");
+        const rowHeaderCell = document.createElement(rowData.isHeader ? "th" : "td");
+        rowHeaderCell.className = "scatter-tooltip-col-header";
+        rowHeaderCell.appendChild(document.createTextNode(rowData.header || ""));
+        row.appendChild(rowHeaderCell);
+
+        this.data.forEach(data => {
+          const cell = document.createElement(rowData.isHeader ? "th" : "td");
+          const dataKeyValue = data[rowData.dataKey];
+          cell.appendChild(document.createTextNode(rowData.toText ? rowData.toText(dataKeyValue, data) : dataKeyValue));
+          row.appendChild(cell);
+        });
+
+        if (rowData.isHeader) {
+          thead.appendChild(row);
+        } else {
+          tbody.appendChild(row);
+        }
+      });
+    } else if ("columns" in this.tooltipConfig) {
+      const headerRow = document.createElement("tr");
+      this.tooltipConfig.columns.forEach(({header}) => {
+        const headerCell = document.createElement("th");
+        headerCell.appendChild(document.createTextNode(header || ""));
+        headerRow.appendChild(headerCell);
+      });
+      thead.appendChild(headerRow);
+      
+      this.data.forEach(data => {
+        const row = document.createElement("tr");
+        this.tooltipConfig.columns.forEach(columnData => {
+          const cell = document.createElement("td");
+          if (columnData.isHeader) cell.className = "scatter-tooltip-col-header";
+          const dataKeyValue = data[columnData.dataKey];
+          cell.appendChild(document.createTextNode(columnData.toText ? columnData.toText(dataKeyValue, data) : dataKeyValue));
+          row.appendChild(cell);
+        });
+        tbody.appendChild(row);
+      });
+    }
+
+    table.appendChild(thead);
     table.appendChild(tbody);
     tooltip.appendChild(table);
 
@@ -166,11 +129,11 @@ class CountyPoint {
 }
 
 export class ScatterPlot {
-  constructor(data, xAxis, yAxis, toText, radiusScale, container) {
+  constructor(data, xAxis, yAxis, radiusScale, tooltipConfig, container) {
     this.data = data;
     this.xAxis = xAxis;
     this.yAxis = yAxis;
-    this.toText = toText;
+    this.tooltipConfig = tooltipConfig;
     this.container = container;
     this.radiusScale = radiusScale;
     this.plotContainer = this.container.getElementsByClassName(
@@ -206,6 +169,7 @@ export class ScatterPlot {
 
   createPoints() {
     const points = [];
+
     for (const county in this.data) {
       const outlier = this.data[county]["outlier"];
       const showName = this.data[county]["showName"];
@@ -215,34 +179,18 @@ export class ScatterPlot {
       x = typeof x !== "object" ? { total: x } : x;
       y = typeof y !== "object" ? { total: y } : y;
       r = typeof r !== "object" ? { total: r } : r;
-
+      
+      const countyInfo = [county, this.xAxis, this.yAxis, this.radiusScale, outlier, showName, this.tooltipConfig, this.container];
       const data = Object.keys(x).map((key) => ({
         name: key,
         x: this.getNumber(x[key]),
         y: this.getNumber(y[key]),
         r: this.getNumber(r[key]),
-        xText: this.toText.x(x[key]),
-        yText: this.toText.y(y[key]),
-        xHeader: this.toText.xHeader,
-        yHeader: this.toText.yHeader,
       }));
 
-      points.push(
-        new CountyPoint(
-          county,
-          data,
-          this.xAxis,
-          this.yAxis,
-          this.radiusScale,
-          outlier,
-          showName,
-          this.plot,
-          this.plotContainer
-        )
-      );
+      points.push(new CountyPoint(data, ...countyInfo));
     }
-    // eslint-disable-next-line no-console
-    console.log(points);
+
     return points;
   }
 
@@ -256,10 +204,85 @@ export class ScatterPlot {
     this.renderAxis(this.xAxis, false);
     this.renderAxis(this.yAxis, true);
 
-    // order: lines in background, then points, then names on top
-    this.points.forEach((point) => point.renderLine());
-    this.points.forEach((point) => point.renderPoints());
-    this.points.forEach((point) => point.renderCountyName());
+    // order: lines in background, then points sorted by radius, then names on top
+    this.renderLines();
+    this.renderPointsInOrder();
+    this.renderCountyNames();
+  }
+
+  renderLines() {
+    this.points.forEach((point) => {
+      // only draw line if we have two data points
+      if (point.data.length != 2) return;
+
+      const className = `scatter-line${point.outlier ? " outlier" : ""}`;
+      const line = document.createElementNS(SVG_NS, "line");
+      line.setAttributeNS(null, "class", className);
+      line.setAttributeNS(null, "x1", point.xs[0]);
+      line.setAttributeNS(null, "y1", point.ys[0]);
+      line.setAttributeNS(null, "x2", point.xs[1]);
+      line.setAttributeNS(null, "y2", point.ys[1]);
+      this.plot.appendChild(line);
+      point.elements.push(line);
+
+      const hoverLine = document.createElementNS(SVG_NS, "line");
+      hoverLine.setAttributeNS(null, "class", `${className} hover-line`);
+      hoverLine.setAttributeNS(null, "x1", point.xs[0]);
+      hoverLine.setAttributeNS(null, "y1", point.ys[0]);
+      hoverLine.setAttributeNS(null, "x2", point.xs[1]);
+      hoverLine.setAttributeNS(null, "y2", point.ys[1]);
+      hoverLine.setAttributeNS(null, "y2", point.ys[1]);
+      this.plot.appendChild(hoverLine);
+
+      hoverLine.addEventListener("mouseenter", () => point.onMouseEnter());
+      hoverLine.addEventListener("mouseleave", () => point.onMouseLeave());
+    });
+  }
+
+  renderCountyNames() {
+    this.points.forEach((point) => {
+      if (!point.showName) return;
+      
+      const className = `scatter-text${point.outlier ? " outlier" : ""}`;
+      const text = document.createElementNS(SVG_NS, "text");
+      const namePos = Math.sqrt(point.rs[0]);
+      text.setAttributeNS(null, "class", className);
+      text.setAttributeNS(null, "x", point.xs[0]);
+      text.setAttributeNS(null, "y", point.ys[0]);
+      text.setAttributeNS(null, "dx", namePos < 8 ? namePos + 2 : 0);
+      text.setAttributeNS(null, "dy", namePos < 8 ? -namePos - 2 : 0);
+      text.setAttributeNS(null, "text-anchor", namePos < 8 ? "start" : "middle");
+      text.appendChild(document.createTextNode(point.county));
+      this.plot.appendChild(text);
+
+      point.elements.push(text);
+      text.addEventListener("mouseenter", () => point.onMouseEnter());
+      text.addEventListener("mouseleave", () => point.onMouseLeave());
+    });
+  }
+
+  renderPointsInOrder() {
+    const ungroupedPoints = this.points.reduce((arr, point) => {
+      const newPoints = point.data.map((data, i) => ({originalPoint: point, data, x: point.xs[i], y: point.ys[i], r: point.rs[i]}));
+      return arr.concat(newPoints);
+    }, []);
+
+    ungroupedPoints.sort((a, b) => b.r - a.r).forEach(ungroupedPoint => {
+      const className = `${ungroupedPoint.data.name} scatter-point${
+        this.outlier ? " outlier" : ""
+      }`;
+
+      const point = document.createElementNS(SVG_NS, "circle");
+      point.setAttributeNS(null, "class", className);
+      point.setAttributeNS(null, "cx", ungroupedPoint.x);
+      point.setAttributeNS(null, "cy", ungroupedPoint.y);
+      point.setAttributeNS(null, "r", ungroupedPoint.r);
+      this.plot.appendChild(point);
+
+      ungroupedPoint.originalPoint.elements.push(point);
+      point.addEventListener("mouseenter", () => ungroupedPoint.originalPoint.onMouseEnter());
+      point.addEventListener("mouseleave", () => ungroupedPoint.originalPoint.onMouseLeave());
+    });
   }
 
   renderAxis(axis, isYAxis) {

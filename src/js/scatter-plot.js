@@ -17,47 +17,70 @@ const createRaceScatterPlot = () => {
     numTicks: 8,
     convert: num => num === 0 ? "0" : `${num / 1000}K`
   };
-  const toText = {
-    xHeader: "% Cash Bail",
-    yHeader: "Avg. Bail Amount",
-    x: value => `${value.toFixed(1)}%`,
-    y: value => value
+
+  const tooltipConfig = {
+    columns: [
+      { dataKey: "name", isHeader: true },
+      { header: "% Cash Bail", dataKey: "x", toText: value => `${value.toFixed(1)}%` },
+      { header: "Avg. Bail Amount", dataKey: "y", toText: value => value.toLocaleString("en", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      })}
+    ]
   };
 
   const container = document.getElementById("race-scatter-plot");
-  return new ScatterPlot(RACE_SCATTER_PLOT, xAxis, yAxis, toText, null, container);
+  return new ScatterPlot(RACE_SCATTER_PLOT, xAxis, yAxis, null, tooltipConfig, container);
 };
 
 const createCasesScatterPlot = () => {
+  const cashBailRateToText = num => `${num}%`;
+  const bailAmountToText = num => num === 0 ? "0" : `${num}K`;
+  const totalBailCasesToText = num => num.toLocaleString();
+
   const xAxis = {
     name: "Cash Bail Rate",
     min: 20,
     max: 60,
     numTicks: 8,
-    convert: num => `${num}%`
+    convert: cashBailRateToText
   };
   const yAxis = {
     name: "Bail Amount",
     min: 0,
     max: 70,
     numTicks: 7,
-    convert: num => num === 0 ? "0" : `${num}K`
+    convert: bailAmountToText
   };
-  const toText = {
-    xHeader: "% Cash Bail",
-    yHeader: "Avg. Bail Amount",
-    x: value => `${value.toFixed(1)}%`,
-    y: value => value
+
+  const tooltipConfig = {
+    rows: [
+      { header: "Cash Bail Rate", dataKey: "x", toText: num => `${num.toFixed(1)}%`},
+      { header: "Average Bail Amount", dataKey: "y", toText: value => (value * 1000).toLocaleString("en", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      }) },
+      { header: "Total Cases", dataKey: "r", toText: totalBailCasesToText }
+    ]
   };
+
+  // 4px radius - 100;
+  // 30px radius - 10000;
+  // 120px radius - 40000;
+
   const radiusScale = {
     min: 4,
-    max: 60,
+    max: 120,
     minValue: 100,
-    maxValue: 30000
+    maxValue: 42000
   };
 
   const container = document.getElementById("cases-scatter-plot");
-  return new ScatterPlot(BAIL_CASES_SCATTER_PLOT, xAxis, yAxis, toText, radiusScale, container);
+  return new ScatterPlot(BAIL_CASES_SCATTER_PLOT, xAxis, yAxis, radiusScale, tooltipConfig, container);
 };
 
 /* RENDER PAGE */
