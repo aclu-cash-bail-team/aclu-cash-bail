@@ -331,7 +331,7 @@ export class ScatterPlot {
     labelLower.setAttributeNS(null, "text-anchor", "start");
     labelLower.setAttributeNS(null, "dy", isYAxis ? -60 : 60);
     if (isYAxis) labelLower.setAttributeNS(null, "transform", "rotate(-90)");
-    labelLower.appendChild(document.createTextNode(`← Lower ${axis.name}`));
+    labelLower.appendChild(document.createTextNode(`⟵ Lower ${axis.name}`));
     wrapperLower.appendChild(labelLower);
     this.plot.appendChild(wrapperLower);
 
@@ -345,7 +345,7 @@ export class ScatterPlot {
     labelHigher.setAttributeNS(null, "text-anchor", "end");
     labelHigher.setAttributeNS(null, "dy", isYAxis ? -60 : 60);
     if (isYAxis) labelHigher.setAttributeNS(null, "transform", "rotate(-90)");
-    labelHigher.appendChild(document.createTextNode(`Higher ${axis.name} →`));
+    labelHigher.appendChild(document.createTextNode(`Higher ${axis.name} ⟶`));
     wrapperHigher.appendChild(labelHigher);
     this.plot.appendChild(wrapperHigher);
   }
