@@ -16,14 +16,15 @@
     "url": "git+https://github.com/apothuku/aclu-cash-bail.git"
   },
   "keywords": [],
-  "author": "Alex Graves and Arjun Pothukuchi",
+  "author": "Alex Graves, Arjun Pothukuchi, and Mario Aksiyote",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^5.16.0",
-    "parcel-bundler": "^1.12.4"
+    "parcel": "^2.0.0-beta.1"
   },
   "bugs": {
     "url": "https://github.com/apothuku/aclu-cash-bail/issues"
   },
-  "homepage": "https://github.com/apothuku/aclu-cash-bail#readme"
+  "homepage": "https://github.com/apothuku/aclu-cash-bail#readme",
+  "dependencies": {}
 }

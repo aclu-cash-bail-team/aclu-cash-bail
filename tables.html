@@ -7,12 +7,12 @@
     <!-- TODO: Extract the styles we use from these and remove the imports -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css">
-    <link rel="stylesheet" href="/style.967ba849.css">
-    <link rel="stylesheet" href="/table.233cc489.css">
-    <link rel="stylesheet" href="/search.4e3d1be0.css">
-    <link rel="stylesheet" href="/visualization.cd4fd378.css">
-    <link rel="stylesheet" href="/mobile.6cafe125.css">
-  <script src="/style.967ba849.js"></script><script src="/table.233cc489.js"></script><script src="/search.4e3d1be0.js"></script><script src="/visualization.cd4fd378.js"></script><script src="/mobile.6cafe125.js"></script></head>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/table.css">
+    <link rel="stylesheet" href="src/css/search.css">
+    <link rel="stylesheet" href="src/css/visualization.css">
+    <link rel="stylesheet" href="src/css/mobile.css">
+  </head>
   <body>
     <div class="container">
       <div id="rate-container">
@@ -156,20 +156,22 @@
       </div>
     </div>
   </body>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.js"></script>
-    <script src="/js.d818e0ef.js" charset="utf-8"></script>
-    <script>$(document).ready(function () {
-  $('.dropdown').dropdown({
-    fullTextSearch: true,
-    ignoreCase: true,
-    delimiter: ';',
-    label: {
-      transition: undefined,
-      duration: 0,
-      variation: false
-    }
-  });
-});</script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.js"></script>
+  <script src="src/js/index.js" charset="utf-8"></script>
+  <script>
+    $(document).ready(() => {
+      $('.dropdown').dropdown({
+        fullTextSearch: true,
+        ignoreCase: true,
+        delimiter: ';',
+        label: {
+          transition: undefined,
+          duration: 0,
+          variation: false
+        }
+      });
+    });
+  </script>
 </html>
