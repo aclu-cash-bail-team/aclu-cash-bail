@@ -269,7 +269,7 @@ export class ScatterPlot {
 
     ungroupedPoints.sort((a, b) => b.r - a.r).forEach(ungroupedPoint => {
       const className = `${ungroupedPoint.data.name} scatter-point${
-        this.outlier ? " outlier" : ""
+        ungroupedPoint.originalPoint.outlier ? " outlier" : ""
       }`;
 
       const point = document.createElementNS(SVG_NS, "circle");
