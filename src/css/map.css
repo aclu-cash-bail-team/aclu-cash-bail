@@ -27,6 +27,10 @@ path {
     font-size: 9px;
 }
 
+.spike-legend {
+    margin-left: 2em;
+}
+
 .city-label {
     font-size: 12px;
     text-shadow: 1px 0 0 #eee, -1px 0 0 #eee, 0 1px 0 #eee, 0 -1px 0 #eee, 1px 1px #eee, -1px -1px 0 #eee, 1px -1px 0 #eee, -1px 1px 0 #eee;
