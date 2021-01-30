@@ -593,7 +593,8 @@ export class BailPostingMap extends Map {
     paths.style("fill", "#1a1a1a")
       .attr("data-county-name", feature => feature.properties["NAME"])
       .attr("data-rate", feature => feature.properties.rate)
-      .attr("data-bail-amount", feature => feature.properties.amount);
+      .attr("data-bail-amount", feature => feature.properties.amount)
+      .attr("data-bucket", feature => feature.properties.bucket);
 
 
     const spike = (length, width = 5) => `M${-width / 2},0L0,${-length}L${width / 2},0`;
@@ -609,7 +610,7 @@ export class BailPostingMap extends Map {
       .attr("d", feature => spike(this.spikeScale(Number(feature.properties.amount.replace(/[^\d.-]/g, "")))))
       .attr("fill", feature => feature.properties.color)
       .attr("stroke", feature => feature.properties.color)
-      .attr("data-bucket", feature => feature.properties.bucket)
+      .attr("data-bucket", feature => feature.properties.bucket);
 
     this.legend.render();
 
