@@ -23,11 +23,12 @@ const PITTSBURGH_Y = 310;
 const CITY_LABEL_OFFSET_Y = 15;
 
 class Legend {
-  constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut) {
+  constructor(id, colorDomain, labels, color, averages, title, onMouseOver, onMouseOut) {
     this.colorDomain = colorDomain;
     this.labels = labels;
     this.color = color;
     this.averages = averages;
+    this.title = title;
     this.onMouseOver = onMouseOver;
     this.onMouseOut = onMouseOut;
 
@@ -40,7 +41,7 @@ class Legend {
 
     this.svg = d3.select(`#${id} .legend`).append("svg")
       .attr("width", this.legendSectionWidth * this.colorDomain.length + 20)
-      .attr("height", 50);
+      .attr("height", 70);
   }
 
   highlightBar(bucket) {
@@ -110,6 +111,12 @@ class Legend {
         .attr("y", this.legendOffsetY - 10)
         .attr("class", "legend-avg-label")
         .text(avg.label);
+      // Add title, if any
+      this.svg.append("text")
+        .attr("x", legendWidth/2 - 25)
+        .attr("y", this.legendOffsetY + 40)
+        .attr("class", "legend-text")
+        .text(this.title);
     });
   }
 
@@ -233,6 +240,7 @@ export class BailRateMap extends Map {
         value: average,
         label: `Avg: ${average}%`
       }],
+      "",
       onLegendMouseOver,
       onLegendMouseOut
     );
@@ -430,6 +438,7 @@ export class RaceMapContainer {
         label: `Black: ${blackAverage}%`
       }
       ],
+      "",
       onLegendMouseOver,
       onLegendMouseOut
     );
@@ -510,6 +519,7 @@ export class BailPostingMap extends Map {
         value: average,
         label: `Avg: ${average}%`
       }],
+      "Non-Posting Rate",
       onLegendMouseOver,
       onLegendMouseOut
     );
