@@ -22,7 +22,7 @@ const PITTSBURGH_X = 170;
 const PITTSBURGH_Y = 310;
 const CITY_LABEL_OFFSET_Y = 15;
 
-class Legend {
+class ColorScaleLegend {
   constructor(id, colorDomain, labels, color, averages, title, onMouseOver, onMouseOut) {
     this.colorDomain = colorDomain;
     this.labels = labels;
@@ -35,13 +35,13 @@ class Legend {
     this.legendSectionWidth = 50;
     this.legendSectionHeight = 10;
     this.legendOffsetX = 5;
-    this.legendOffsetY = 20;
+    this.legendOffsetY = 85;
     this.legendLabelOffsetX = this.legendOffsetX - 4;
     this.legendLabelOffsetY = this.legendOffsetY + 22;
 
     this.svg = d3.select(`#${id} .legend`).append("svg")
       .attr("width", this.legendSectionWidth * this.colorDomain.length + 20)
-      .attr("height", 70);
+      .attr("height", 130);
   }
 
   highlightBar(bucket) {
@@ -119,7 +119,51 @@ class Legend {
         .text(this.title);
     });
   }
+}
 
+class SpikeLegend {
+  constructor(id, title, values, getSpike) {
+    this.title = title;
+    this.values = values;
+    this.getSpike = getSpike;
+
+    this.spikeOffsetY = 110;
+    this.spikeOffsetX = 25;
+    this.spikeSpacingX = 30;
+
+    this.svg = d3.select(`#${id} .spike-legend`).append("svg")
+      .attr("width", 125)
+      .attr("height", this.spikeOffsetY + 25);
+  }
+
+  render() {
+    this.svg.append("g")
+      .selectAll("path")
+      .data(this.values).enter()
+      .append("path")
+      .attr("d", this.getSpike)
+      .attr("transform", (_, i) => {
+        return `translate(${i * this.spikeSpacingX + this.spikeOffsetX}, ${this.spikeOffsetY})`;
+      })
+      .attr("fill", "#1a1a1a")
+      .attr("stroke", "#1a1a1a")
+      .attr("opacity", 1);
+    // Add spike labels
+    this.svg.append("g")
+      .selectAll("path")
+      .data(this.values)
+      .join("text")
+      .attr("x", (_, i) => i * this.spikeSpacingX + this.spikeOffsetX/2)
+      .attr("y", (_, i) => (this.values.length - i - 1) * 30 + 15)
+      .attr("class", "legend-text")
+      .text(d => d);
+    // Add title
+    this.svg.append("text")
+      .attr("x", 10)
+      .attr("y", this.spikeOffsetY + 20)
+      .attr("class", "legend-text")
+      .text(this.title);
+  }
 }
 
 class Map {
@@ -232,7 +276,7 @@ export class BailRateMap extends Map {
     onLegendMouseOver.bind(this);
     onLegendMouseOut.bind(this);
 
-    this.legend = new Legend(id,
+    this.legend = new ColorScaleLegend(id,
       colorDomain,
       [0, 10, 20, 30, 40, 50, 60],
       this.color,
@@ -403,7 +447,6 @@ class BailRaceMap extends Map {
   }
 }
 
-
 export class RaceMapContainer {
   constructor(id, data, whiteAverage, blackAverage) {
     this.width = 800;
@@ -425,7 +468,7 @@ export class RaceMapContainer {
     onLegendMouseOver.bind(this);
     onLegendMouseOut.bind(this);
 
-    this.legend = new Legend(id,
+    this.legend = new ColorScaleLegend(id,
       colorDomain,
       [0, 20, 40, 60, 80, 100],
       color,
@@ -492,7 +535,7 @@ export class RaceMapContainer {
 }
 
 export class BailPostingMap extends Map {
-  constructor(id, data, average) {
+  constructor(id, data, average, upperBound) {
     super(`#${id} .map`, 800, 500);
     this.data = data;
 
@@ -501,7 +544,7 @@ export class BailPostingMap extends Map {
       "#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"
     ]);
 
-    this.spikeScale = d3.scaleLinear([0, 70], [0, 100]);
+    this.spikeScale = d3.scaleLinear([0, upperBound], [0, 100]);
 
     const onLegendMouseOver = (event) => {
       this.highlightBar(event);
@@ -511,7 +554,7 @@ export class BailPostingMap extends Map {
     onLegendMouseOver.bind(this);
     onLegendMouseOut.bind(this);
 
-    this.legend = new Legend(id,
+    this.legend = new ColorScaleLegend(id,
       colorDomain,
       [0, 20, 40, 60, 80, 100],
       this.color,
@@ -523,6 +566,10 @@ export class BailPostingMap extends Map {
       onLegendMouseOver,
       onLegendMouseOut
     );
+
+    const spike = this.spike.bind(this);
+    this.spikeLegend = new SpikeLegend(id, "Average Bail Amount", ["$20K", "$40K", "$60K"], spike);
+    this.spikeLegend.render();
 
     this.render();
   }
@@ -576,6 +623,12 @@ export class BailPostingMap extends Map {
     this.svg.selectAll("path").style("opacity", "1");
   }
 
+  spike(bailAmount) {
+    const length = this.spikeScale(Number(bailAmount.replace(/[^\d.-]/g, "")));
+    const width = 5;
+    return `M${-width / 2},0L0,${-length}L${width / 2},0`;
+  }
+
   renderPA(features, path) {
     this.data.forEach(row => {
       const countyName = row.data[0];
@@ -596,8 +649,7 @@ export class BailPostingMap extends Map {
       .attr("data-bail-amount", feature => feature.properties.amount)
       .attr("data-bucket", feature => feature.properties.bucket);
 
-
-    const spike = (length, width = 5) => `M${-width / 2},0L0,${-length}L${width / 2},0`;
+    // Render spikes
     this.svg.append("g")
       .selectAll("path")
       .data(features
@@ -607,7 +659,7 @@ export class BailPostingMap extends Map {
       .attr("transform", feature => {
         return `translate(${feature.properties.position})`;
       })
-      .attr("d", feature => spike(this.spikeScale(Number(feature.properties.amount.replace(/[^\d.-]/g, "")))))
+      .attr("d", feature => this.spike(feature.properties.amount))
       .attr("fill", feature => feature.properties.color)
       .attr("stroke", feature => feature.properties.color)
       .attr("data-bucket", feature => feature.properties.bucket);
