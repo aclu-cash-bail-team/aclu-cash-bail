@@ -492,6 +492,8 @@ export class BailPostingMap extends Map {
       "#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"
     ]);
 
+    this.spikeScale = d3.scaleLinear([0, 70], [0, 100]);
+
     const onLegendMouseOver = (event) => {
       this.highlightBar(event);
       this.highlightMap(event);
@@ -531,7 +533,7 @@ export class BailPostingMap extends Map {
     super.showTooltip(event);
     const countyElement = event.srcElement;
     const countyName = countyElement.getAttribute("data-county-name");
-    const countyAmount = countyElement.getAttribute("data-amount");
+    const countyAmount = countyElement.getAttribute("data-bail-amount");
     this.tooltip
       .style("left", `${event.pageX - 100}px`)
       .style("top", `${event.pageY - 70}px`)
@@ -541,7 +543,7 @@ export class BailPostingMap extends Map {
           <tbody>
             <tr>
               <td>Bail Amount</td>
-              <td style="text-align: right; font-weight: 700;">$${countyAmount}</td>
+              <td style="text-align: right; font-weight: 700;">${countyAmount}</td>
             </tr>
           </tbody>
         </table>
@@ -567,18 +569,37 @@ export class BailPostingMap extends Map {
   renderPA(features, path) {
     this.data.forEach(row => {
       const countyName = row.data[0];
+      const bailAmount = row.data[1];
       const nonPostingRate = row.data[2];
       const feature = features.find(f => f.properties["NAME"] === countyName);
       feature.properties.rate = nonPostingRate;
+      feature.properties.amount = bailAmount;
       feature.properties.color = this.color(nonPostingRate);
       feature.properties.bucket = this.color.invertExtent(feature.properties.color)[1];
+      feature.properties.position = path.centroid(feature);
     });
 
     const paths = super.renderPA(features, path);
     paths.style("fill", "#1a1a1a")
-      .attr("data-bucket", feature => feature.properties.bucket)
       .attr("data-county-name", feature => feature.properties["NAME"])
-      .attr("data-rate", feature => feature.properties.rate);
+      .attr("data-rate", feature => feature.properties.rate)
+      .attr("data-bail-amount", feature => feature.properties.amount);
+
+
+    const spike = (length, width = 5) => `M${-width / 2},0L0,${-length}L${width / 2},0`;
+    this.svg.append("g")
+      .selectAll("path")
+      .data(features
+        .sort((a, b) => d3.ascending(a.properties.position[1], b.properties.position[1])
+            || d3.ascending(a.properties.position[0], b.properties.position[0])))
+      .join("path")
+      .attr("transform", feature => {
+        return `translate(${feature.properties.position})`;
+      })
+      .attr("d", feature => spike(this.spikeScale(Number(feature.properties.amount.replace(/[^\d.-]/g, "")))))
+      .attr("fill", feature => feature.properties.color)
+      .attr("stroke", feature => feature.properties.color)
+      .attr("data-bucket", feature => feature.properties.bucket)
 
     this.legend.render();
 
