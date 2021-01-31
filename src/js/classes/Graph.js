@@ -1,7 +1,9 @@
+import { followCursor } from "tippy.js";
+import { configureTooltip } from "./Tooltip";
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 class CountyPoint {
-  constructor(data, county, xAxis, yAxis, radiusScale, outlier, showName, tooltipConfig, container) {
+  constructor(data, county, xAxis, yAxis, radiusScale, outlier, showName, renderTooltip, container) {
     this.county = county;
     this.data = data;
     this.xAxis = xAxis;
@@ -10,10 +12,11 @@ class CountyPoint {
     this.outlier = outlier;
     this.showName = showName;
     this.container = container;
-    this.tooltipConfig = tooltipConfig;
+    this.renderTooltip = (elements, config) => renderTooltip(elements, this.data, this.county, config);
     [this.xs, this.ys] = this.getPositions();
     this.rs = this.getRadiis();
     this.elements = [];
+    this.triggerTargets = [];
   }
 
   isOutlier() {
@@ -48,83 +51,15 @@ class CountyPoint {
   }
 
   onMouseEnter() {
-    this.renderTooltip();
     this.elements.forEach((element) => {
       element.classList.add("hovering");
     });
   }
 
   onMouseLeave() {
-    this.tooltip.remove();
     this.elements.forEach((element) => {
       element.classList.remove("hovering");
     });
-  }
-
-  renderTooltip() {
-    const tooltip = document.createElement("div");
-    tooltip.className = "scatter-tooltip";
-    const countyName = document.createElement("h4");
-    countyName.appendChild(document.createTextNode(this.county));
-    tooltip.appendChild(countyName);
-
-    // render data in a table
-    const table = document.createElement("table");
-    const thead = document.createElement("thead");
-    const tbody = document.createElement("tbody");
-
-    if ("rows" in this.tooltipConfig) {
-      this.tooltipConfig.rows.forEach(rowData => {
-        const row = document.createElement("tr");
-        const rowHeaderCell = document.createElement(rowData.isHeader ? "th" : "td");
-        rowHeaderCell.className = "scatter-tooltip-col-header";
-        rowHeaderCell.appendChild(document.createTextNode(rowData.header || ""));
-        row.appendChild(rowHeaderCell);
-
-        this.data.forEach(data => {
-          const cell = document.createElement(rowData.isHeader ? "th" : "td");
-          const dataKeyValue = data[rowData.dataKey];
-          cell.appendChild(document.createTextNode(rowData.toText ? rowData.toText(dataKeyValue, data) : dataKeyValue));
-          row.appendChild(cell);
-        });
-
-        if (rowData.isHeader) {
-          thead.appendChild(row);
-        } else {
-          tbody.appendChild(row);
-        }
-      });
-    } else if ("columns" in this.tooltipConfig) {
-      const headerRow = document.createElement("tr");
-      this.tooltipConfig.columns.forEach(({header}) => {
-        const headerCell = document.createElement("th");
-        headerCell.appendChild(document.createTextNode(header || ""));
-        headerRow.appendChild(headerCell);
-      });
-      thead.appendChild(headerRow);
-      
-      this.data.forEach(data => {
-        const row = document.createElement("tr");
-        this.tooltipConfig.columns.forEach(columnData => {
-          const cell = document.createElement("td");
-          if (columnData.isHeader) cell.className = "scatter-tooltip-col-header";
-          const dataKeyValue = data[columnData.dataKey];
-          cell.appendChild(document.createTextNode(columnData.toText ? columnData.toText(dataKeyValue, data) : dataKeyValue));
-          row.appendChild(cell);
-        });
-        tbody.appendChild(row);
-      });
-    }
-
-    table.appendChild(thead);
-    table.appendChild(tbody);
-    tooltip.appendChild(table);
-
-    // set tooltip placement based on first point
-    tooltip.style.top = this.ys[0];
-    tooltip.style.left = this.xs[0];
-    this.container.appendChild(tooltip);
-    this.tooltip = tooltip;
   }
 }
 
@@ -133,12 +68,13 @@ export class ScatterPlot {
     this.data = data;
     this.xAxis = xAxis;
     this.yAxis = yAxis;
-    this.tooltipConfig = tooltipConfig;
+    
     this.container = container;
     this.radiusScale = radiusScale;
     this.plotContainer = this.container.getElementsByClassName(
       "plot-container"
     )[0];
+    this.renderTooltip = configureTooltip(tooltipConfig);
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
     this.showOutliers = false;
@@ -180,7 +116,7 @@ export class ScatterPlot {
       y = typeof y !== "object" ? { total: y } : y;
       r = typeof r !== "object" ? { total: r } : r;
       
-      const countyInfo = [county, this.xAxis, this.yAxis, this.radiusScale, outlier, showName, this.tooltipConfig, this.container];
+      const countyInfo = [county, this.xAxis, this.yAxis, this.radiusScale, outlier, showName, this.renderTooltip, this.container];
       const data = Object.keys(x).map((key) => ({
         name: key,
         x: this.getNumber(x[key]),
@@ -208,6 +144,13 @@ export class ScatterPlot {
     this.renderLines();
     this.renderPointsInOrder();
     this.renderCountyNames();
+    this.points.forEach(point => {
+      point.renderTooltip(point.triggerTargets.find(val => val instanceof SVGCircleElement), {
+        triggerTarget: point.triggerTargets,
+        followCursor: true,
+        plugins: [followCursor],
+      });
+    });
   }
 
   renderLines() {
@@ -234,6 +177,7 @@ export class ScatterPlot {
       hoverLine.setAttributeNS(null, "y2", point.ys[1]);
       this.plot.appendChild(hoverLine);
 
+      point.triggerTargets.push(hoverLine);
       hoverLine.addEventListener("mouseenter", () => point.onMouseEnter());
       hoverLine.addEventListener("mouseleave", () => point.onMouseLeave());
     });
@@ -249,13 +193,15 @@ export class ScatterPlot {
       text.setAttributeNS(null, "class", className);
       text.setAttributeNS(null, "x", point.xs[0]);
       text.setAttributeNS(null, "y", point.ys[0]);
-      text.setAttributeNS(null, "dx", namePos < 8 ? namePos + 2 : 0);
+      text.setAttributeNS(null, "dx", 0);
       text.setAttributeNS(null, "dy", namePos < 8 ? -namePos - 2 : 0);
       text.setAttributeNS(null, "text-anchor", namePos < 8 ? "start" : "middle");
       text.appendChild(document.createTextNode(point.county));
       this.plot.appendChild(text);
 
       point.elements.push(text);
+      point.triggerTargets.push(text);
+
       text.addEventListener("mouseenter", () => point.onMouseEnter());
       text.addEventListener("mouseleave", () => point.onMouseLeave());
     });
@@ -280,6 +226,7 @@ export class ScatterPlot {
       this.plot.appendChild(point);
 
       ungroupedPoint.originalPoint.elements.push(point);
+      ungroupedPoint.originalPoint.triggerTargets.push(point);
       point.addEventListener("mouseenter", () => ungroupedPoint.originalPoint.onMouseEnter());
       point.addEventListener("mouseleave", () => ungroupedPoint.originalPoint.onMouseLeave());
     });

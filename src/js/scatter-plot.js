@@ -20,9 +20,9 @@ const createRaceScatterPlot = () => {
 
   const tooltipConfig = {
     columns: [
-      { dataKey: "name", isHeader: true },
-      { header: "% Cash Bail", dataKey: "x", toText: value => `${value.toFixed(1)}%` },
-      { header: "Avg. Bail Amount", dataKey: "y", toText: value => value.toLocaleString("en", {
+      { dataKey: "name", isRowHeader: true },
+      { columnHeader: "% Cash Bail", dataKey: "x", render: value => `${value.toFixed(1)}%` },
+      { columnHeader: "Avg. Bail Amount", dataKey: "y", render: value => value.toLocaleString("en", {
         style: "currency",
         currency: "USD",
         minimumFractionDigits: 0,
@@ -57,14 +57,14 @@ const createCasesScatterPlot = () => {
 
   const tooltipConfig = {
     rows: [
-      { header: "Cash Bail Rate", dataKey: "x", toText: num => `${num.toFixed(1)}%`},
-      { header: "Average Bail Amount", dataKey: "y", toText: value => (value * 1000).toLocaleString("en", {
+      { rowHeader: "Cash Bail Rate", dataKey: "x", render: num => `${num.toFixed(1)}%`},
+      { rowHeader: "Average Bail Amount", dataKey: "y", render: value => (value * 1000).toLocaleString("en", {
         style: "currency",
         currency: "USD",
         minimumFractionDigits: 0,
         maximumFractionDigits: 0,
       }) },
-      { header: "Total Cases", dataKey: "r", toText: totalBailCasesToText }
+      { rowHeader: "Total Cases", dataKey: "r", render: totalBailCasesToText }
     ]
   };
 

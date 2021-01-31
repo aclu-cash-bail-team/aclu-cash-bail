@@ -1,0 +1,72 @@
+.tippy-box {
+    width: 260px;
+    /* margin: 20px 0 0 20px; */
+    padding: 4px 6px;
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    font-size: 12px;
+    line-height: 13px;
+    color: #000;
+}
+
+.tooltip-content .tooltip-title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-family: "GT America Bold";
+  font-weight: 400;
+}
+
+.tooltip-content .tooltip-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tooltip-content .tooltip-table tbody tr {
+  border-top: 0.5px solid #d6d6d6;
+}
+
+.tooltip-content .tooltip-table th {
+  padding: 5px;
+  padding-top: 0px;
+  font-family: "GT America Condensed";
+  font-weight: 400;
+  text-align: right;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+.tooltip-content .tooltip-table td {
+  width: 60px;
+  padding: 5px;
+  text-align: right;
+  text-transform: capitalize;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.tooltip-content .tooltip-table td:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.tooltip-content .tooltip-table td:last-child {
+  padding-right: 0;
+}
+
+.tooltip-content .tooltip-table th:first-child {
+    padding-left: 0;
+    text-align: left;
+  }
+  
+  .tooltip-content .tooltip-table th:last-child {
+    padding-right: 0;
+  }
+
+.tooltip-content .tooltip-table .row-header {
+  width: 80px;
+  /* text-align: left; */
+}

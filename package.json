@@ -26,5 +26,7 @@
     "url": "https://github.com/apothuku/aclu-cash-bail/issues"
   },
   "homepage": "https://github.com/apothuku/aclu-cash-bail#readme",
-  "dependencies": {}
+  "dependencies": {
+    "tippy.js": "^6.2.7"
+  }
 }
