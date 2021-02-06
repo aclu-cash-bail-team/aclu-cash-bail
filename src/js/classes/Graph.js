@@ -151,6 +151,8 @@ export class ScatterPlot {
     this.data = data;
     this.xAxis = xAxis;
     this.yAxis = yAxis;
+    this.ticks = {"x": [], "y": []};
+    this.axisLabels = {"x": [], "y": []};
     this.toText = toText;
     this.container = container;
     this.plotContainer = this.container.getElementsByClassName("plot-container")[0];
@@ -243,10 +245,31 @@ export class ScatterPlot {
     return this.showOutliers;
   }
 
-  render() {
-    // render axes and graph lines
+  updateViewBox() {
+    this.mobileSizing = window.innerWidth < 640;
+    // rerender axes with new mobile sizing value
     this.renderAxis(this.xAxis, false);
     this.renderAxis(this.yAxis, true);
+
+    // set viewbox based on window size
+    const innerWidth = window.innerWidth;
+    const width = innerWidth < 425 ? 280 : innerWidth < 640 ? 300 : 600;
+    const height = window.innerWidth < 640 ? 400 : 500;
+    this.plot.setAttributeNS(null, "viewBox", `0 0 ${width} ${height}`);
+  }
+
+  render() {
+    // set up svg to resize on window resize
+    this.updateViewBox();
+    window.addEventListener("resize", e => this.updateViewBox());
+
+    // render axes
+    this.renderAxis(this.xAxis, false);
+    this.renderAxis(this.yAxis, true);
+
+    // render plot lines before points so they don't cover them
+    this.renderPlotLines(this.xAxis, false);
+    this.renderPlotLines(this.yAxis, true);
 
     // order: lines in background, then points, then names on top
     this.points.forEach(point => point.renderLine());
@@ -255,6 +278,9 @@ export class ScatterPlot {
   }
 
   renderAxis(axis, isYAxis) {
+    // remove ticks from previous render
+    this.ticks[isYAxis ? "y" : "x"].forEach(tick => tick.remove());
+
     const tickSize = (axis.max - axis.min) / axis.numTicks;
     for (let i = 0; i < axis.numTicks + 1; i++) {
       const tickValue = axis.convert(axis.min + i * tickSize);
@@ -266,18 +292,58 @@ export class ScatterPlot {
 
       // adjust for the coordinate system starting at the top left
       const axisPlacement = isYAxis ? 0 : "100%";
-      const offset = isYAxis ? -26 : 26;
+      // get offset based on window size
+      const dxy = this.mobileSizing ? 18 : 26;
 
       const tick = document.createElementNS(SVG_NS, "text");
       tick.setAttributeNS(null, "class", "axis-tick");
       tick.setAttributeNS(null, "text-anchor", "middle");
       tick.setAttributeNS(null, "x", isYAxis ? axisPlacement : spacingValue);
       tick.setAttributeNS(null, "y", isYAxis ? spacingValue : axisPlacement);
-      tick.setAttributeNS(null, isYAxis ? "dx" : "dy", offset);
+      tick.setAttributeNS(null, isYAxis ? "dx" : "dy", isYAxis ? -dxy : dxy);
       // vertically center y-axis ticks
       if (isYAxis) tick.setAttributeNS(null, "dy", 4);
       tick.appendChild(document.createTextNode(tickValue));
+      this.ticks[isYAxis ? "y" : "x"].push(tick);
       this.plot.appendChild(tick);
+    }
+
+    // remove axis labels from previous render
+    this.axisLabels[isYAxis ? "y" : "x"].forEach(label => label.remove());
+
+    // render lower and higher labels
+    this.renderAxisLabels(axis, isYAxis, true);
+    this.renderAxisLabels(axis, isYAxis, false);
+  }
+
+  renderAxisLabels(axis, isYAxis, isLower) {
+    // wrap axis labels in svgs to do local rotation
+    const wrapper = document.createElementNS(SVG_NS, "svg");
+    wrapper.setAttributeNS(null, "class", "label-wrapper");
+    wrapper.setAttributeNS(null, "x", isLower ? 0 : isYAxis ? 0 : "100%");
+    wrapper.setAttributeNS(null, "y", isLower ? "100%" : isYAxis ? 0 : "100%");
+
+    // get offset based on window size
+    const dy = this.mobileSizing ? 40 : 60;
+
+    const label = document.createElementNS(SVG_NS, "text");
+    label.setAttributeNS(null, "class", "axis-label");
+    label.setAttributeNS(null, "text-anchor", isLower ? "start" : "end");
+    label.setAttributeNS(null, "dy", isYAxis ? -dy : dy);
+    if (isYAxis) label.setAttributeNS(null, "transform", "rotate(-90)");
+    const text = isLower ? `← Lower ${axis.name}` : `Higher ${axis.name} →`;
+    label.appendChild(document.createTextNode(text));
+    wrapper.appendChild(label);
+    this.axisLabels[isYAxis ? "y" : "x"].push(wrapper);
+    this.plot.appendChild(wrapper);
+  }
+
+  renderPlotLines(axis, isYAxis) {
+    for (let i = 0; i < axis.numTicks + 1; i++) {
+      // calculate spacing value depending on axis
+      let spacingValue = i / axis.numTicks * 100;
+      if (isYAxis) spacingValue = 100 - spacingValue;
+      spacingValue = `${spacingValue}%`;
 
       // render the line for each axis tick
       const line = document.createElementNS(SVG_NS, "line");
@@ -288,34 +354,5 @@ export class ScatterPlot {
       line.setAttributeNS(null, "y2", isYAxis ? "100%" : spacingValue);
       this.plot.appendChild(line);
     }
-
-    // wrap axis labels in svgs to do local rotation
-    const wrapperLower = document.createElementNS(SVG_NS, "svg");
-    wrapperLower.setAttributeNS(null, "class", "label-wrapper");
-    wrapperLower.setAttributeNS(null, "x", 0);
-    wrapperLower.setAttributeNS(null, "y", "100%");
-
-    const labelLower = document.createElementNS(SVG_NS, "text");
-    labelLower.setAttributeNS(null, "class", "axis-label");
-    labelLower.setAttributeNS(null, "text-anchor", "start");
-    labelLower.setAttributeNS(null, "dy", isYAxis ? -60 : 60);
-    if (isYAxis) labelLower.setAttributeNS(null, "transform", "rotate(-90)");
-    labelLower.appendChild(document.createTextNode(`← Lower ${axis.name}`));
-    wrapperLower.appendChild(labelLower);
-    this.plot.appendChild(wrapperLower);
-
-    const wrapperHigher = document.createElementNS(SVG_NS, "svg");
-    wrapperHigher.setAttributeNS(null, "class", "label-wrapper");
-    wrapperHigher.setAttributeNS(null, "x", isYAxis ? 0 : "100%");
-    wrapperHigher.setAttributeNS(null, "y", isYAxis ? 0 : "100%");
-
-    const labelHigher = document.createElementNS(SVG_NS, "text");
-    labelHigher.setAttributeNS(null, "class", "axis-label");
-    labelHigher.setAttributeNS(null, "text-anchor", "end");
-    labelHigher.setAttributeNS(null, "dy", isYAxis ? -60 : 60);
-    if (isYAxis) labelHigher.setAttributeNS(null, "transform", "rotate(-90)");
-    labelHigher.appendChild(document.createTextNode(`Higher ${axis.name} →`));
-    wrapperHigher.appendChild(labelHigher);
-    this.plot.appendChild(wrapperHigher);
   }
 }

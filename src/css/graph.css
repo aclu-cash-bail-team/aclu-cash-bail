@@ -16,10 +16,13 @@
 
 .plot-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .scatter-plot {
-  width: 100%;
+  width: 600px;
   height: 500px;
   background: rgba(255, 255, 255, 0.05);
   overflow: visible;
@@ -27,7 +30,7 @@
 
 .scatter-plot-subhead {
   position: relative;
-  margin-bottom: 30px 0;
+  margin: 30px 0;
   text-align: center;
 }
 
@@ -171,4 +174,23 @@
 .scatter-tooltip .scatter-tooltip-name {
   width: 80px;
   text-align: left;
+}
+
+@media only screen and (max-width: 640px) {
+  .scatter-plot {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .plot-container {
+    padding: 20px;
+    justify-content: flex-end;
+  }
+
+  .scatter-plot {
+    width: 280px;
+    height: 400px;
+  }
 }
