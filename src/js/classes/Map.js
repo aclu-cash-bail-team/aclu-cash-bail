@@ -582,7 +582,8 @@ export class BailPostingMap extends Map {
 
   highlightMap(event) {
     const bucket = event.srcElement.getAttribute("data-bucket");
-    this.svg.selectAll(`path:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
+    this.svg.selectAll("path").style("opacity", "0.2");
+    this.svg.selectAll(`path.spike[data-bucket="${bucket}"`).style("opacity", "1");
   }
 
   resetHighlight() {
@@ -629,6 +630,7 @@ export class BailPostingMap extends Map {
       .attr("d", feature => this.spikeShape(feature.properties.amount))
       .attr("fill", feature => feature.properties.color)
       .attr("stroke", feature => feature.properties.color)
+      .attr("class", "spike")
       .attr("data-bucket", feature => feature.properties.bucket);
 
     this.legend.render();
