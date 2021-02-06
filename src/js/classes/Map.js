@@ -204,18 +204,18 @@ class Map {
   }
 
   onMouseOver(event) {
-    this.showTooltip(event);
+    this.showTooltip(event.pageX, event.pageY);
   }
 
   onMouseOut() {
     this.hideTooltip();
   }
 
-  showTooltip(event) {
+  showTooltip(pageX, pageY) {
     this.tooltip.style("opacity", 1);
     this.tooltip
-      .style("left", `${event.pageX - 100}px`)
-      .style("top", `${event.pageY - 70}px`);
+      .style("left", `${pageX - 100}px`)
+      .style("top", `${pageY - 70}px`);
   }
 
   hideTooltip() {
@@ -272,7 +272,7 @@ export class BailRateMap extends Map {
   }
 
   onMouseOver(event) {
-    super.onMouseOver(event);
+    this.showTooltip(event.pageX, event.pageY, event.srcElement);
     d3.select(event.srcElement).style("stroke-width", "2px");
     this.highlightBar(event);
   }
@@ -283,14 +283,14 @@ export class BailRateMap extends Map {
     this.resetHighlight();
   }
 
-  showTooltip(event) {
-    super.showTooltip(event);
-    const countyElement = event.srcElement;
+  showTooltip(pageX, pageY, srcElement) {
+    super.showTooltip(pageX, pageY);
+    const countyElement = srcElement;
     const countyName = countyElement.getAttribute("data-county-name");
     const countyRate = countyElement.getAttribute("data-rate");
     this.tooltip
-      .style("left", `${event.pageX - 100}px`)
-      .style("top", `${event.pageY - 70}px`)
+      .style("left", `${pageX - 100}px`)
+      .style("top", `${pageY - 70}px`)
       .html(`
         <h3 class="tooltip-name">${countyName}</h3>
         <table>
@@ -362,16 +362,11 @@ class BailRaceMap extends Map {
     this.svg.selectAll(`path[data-county-name="${countyName}"]`).style("stroke-width", "0.5px");
   }
 
-  showTooltip(countyName, countyRate, x, y) {
-    // Requires subclass to know about superclass, making superclass harder to change
-    // TODO: See if this can be done better
-    super.showTooltip({
-      pageX: x,
-      pageY: y
-    });
+  showTooltip(countyName, countyRate, pageX, pageY) {
+    super.showTooltip(pageX, pageY);
     this.tooltip
-      .style("left", `${x - 100}px`)
-      .style("top", `${y - 70}px`)
+      .style("left", `${pageX - 100}px`)
+      .style("top", `${pageY - 70}px`)
       .html(`
         <h3 class="tooltip-name">${countyName}</h3>
         <table>
@@ -552,7 +547,7 @@ export class BailPostingMap extends Map {
   }
 
   onMouseOver(event) {
-    super.onMouseOver(event);
+    this.showTooltip(event.pageX, event.pageY, event.srcElement);
     d3.select(event.srcElement).style("stroke-width", "2px");
     this.highlightBar(event);
   }
@@ -563,14 +558,14 @@ export class BailPostingMap extends Map {
     this.resetHighlight();
   }
 
-  showTooltip(event) {
-    super.showTooltip(event);
-    const countyElement = event.srcElement;
+  showTooltip(pageX, pageY, srcElement) {
+    super.showTooltip(pageX, pageY);
+    const countyElement = srcElement;
     const countyName = countyElement.getAttribute("data-county-name");
     const countyAmount = countyElement.getAttribute("data-bail-amount");
     this.tooltip
-      .style("left", `${event.pageX - 100}px`)
-      .style("top", `${event.pageY - 70}px`)
+      .style("left", `${pageX - 100}px`)
+      .style("top", `${pageY - 70}px`)
       .html(`
         <h3 class="tooltip-name">${countyName}</h3>
         <table>
