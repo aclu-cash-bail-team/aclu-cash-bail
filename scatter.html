@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ACLU Cash Bail: Scatter Plot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css">
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/search.css">
     <link rel="stylesheet" href="src/css/graph.css">
     <link rel="stylesheet" href="src/css/mobile.css">
   </head>
@@ -12,6 +15,12 @@
     <div class="container">
       <div class="graph" id="race-scatter-plot">
         <h3>Racial Disparities in Cash Bail Across Counties</h3>
+        <div class="ui fluid multiple search selection dropdown">
+          <input type="hidden" name="county">
+          <i class="dropdown icon"></i>
+          <div class="default text">Search counties</div>
+          <div class="menu"></div>
+        </div>
         <div class="scatter-plot-subhead">
           <div class="scatter-plot-key">
             <span class="key-circle green">Black Defendents</span>
@@ -25,5 +34,22 @@
       </div>
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.js"></script>
   <script src="src/js/scatter-plot.js" charset="utf-8"></script>
+  <script>
+    $(document).ready(() => {
+      $('.dropdown').dropdown({
+        fullTextSearch: true,
+        ignoreCase: true,
+        delimiter: ';',
+        label: {
+          transition: undefined,
+          duration: 0,
+          variation: false
+        }
+      });
+    });
+  </script>
 </html>

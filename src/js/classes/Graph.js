@@ -157,8 +157,40 @@ export class ScatterPlot {
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
     this.showOutliers = false;
+    this.setUpSearchBar();
     this.setUpOutlierButton();
     this.render();
+  }
+
+  setUpSearchBar() {
+    const stateAvg = "State Average";
+    const searchMenu = this.container.getElementsByClassName("menu")[0];
+    const counties = Object.keys(this.data).filter(c => c !== stateAvg).sort();
+    // make sure state average appears at the beginning of the search
+    counties.unshift(stateAvg);
+    counties.forEach(county => {
+      const element = document.createElement("div");
+      // state average should be bolded
+      element.className = county === stateAvg ? "item bold" : "item";
+      element.innerText = county;
+      searchMenu.appendChild(element);
+    });
+
+    const searchInput = this.container.getElementsByTagName("input")[0];
+    searchInput.addEventListener("change", e => {
+      const searchValue = e.target.value;
+      this.searchTerms = searchValue.split(";").filter(s => s !== "");
+      this.points.forEach(point => {
+        point.elements.forEach(element => {
+          // add or remove hovering class based on if county is selected
+          if (this.searchTerms.includes(point.county.toLowerCase())) {
+            element.classList.add("hovering");
+          } else {
+            element.classList.remove("hovering");
+          }
+        });
+      });
+    });
   }
 
   setUpOutlierButton() {

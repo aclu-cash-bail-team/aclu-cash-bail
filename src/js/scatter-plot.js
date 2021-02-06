@@ -6,8 +6,8 @@ const createRaceScatterPlot = () => {
   const xAxis = {
     name: "Cash Bail Rate",
     min: 20,
-    max: 100,
-    numTicks: 8,
+    max: 80,
+    numTicks: 6,
     convert: num => `${num}%`
   };
   const yAxis = {
