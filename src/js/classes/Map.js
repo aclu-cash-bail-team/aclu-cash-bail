@@ -634,7 +634,5 @@ export class BailPostingMap extends Map {
       .attr("data-bucket", feature => feature.properties.bucket);
 
     this.legend.render();
-
-    this.renderCities();
   }
 }
