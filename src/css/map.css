@@ -4,6 +4,7 @@
 
 .map-row {
     display: flex;
+    justify-content: center;
 }
 
 path {

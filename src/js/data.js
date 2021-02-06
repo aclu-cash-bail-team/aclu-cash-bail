@@ -32225,6 +32225,16 @@ export const MDJ_DATA = [
 // https://github.com/deldersveld/topojson/blob/master/countries/us-states/PA-42-pennsylvania-counties.json
 export const COUNTY_MAP_DATA = {
   "type": "Topology",
+  "transform": {
+    "scale": [
+      0.0017670448167643974,
+      0.0012458904739165544
+    ],
+    "translate": [
+      -80.51993641973256,
+      39.71990436019388
+    ]
+  },
   "arcs": [
     [
       [
