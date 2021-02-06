@@ -145,7 +145,7 @@ class SpikeLegend {
       .attr("transform", (_, i) => {
         return `translate(${i * this.spikeSpacingX + this.spikeOffsetX}, ${this.spikeOffsetY})`;
       })
-      .attr("fill", "#1a1a1a")
+      .attr("fill", "#404040")
       .attr("stroke", "#1a1a1a")
       .attr("opacity", 1);
     // Add spike labels
@@ -218,6 +218,7 @@ class Map {
       .data(features)
       .enter().append("path")
       .attr("d", path)
+      .attr("class", "county-path")
       .on("mouseover", this.onMouseOver.bind(this))
       .on("mouseout", this.onMouseOut.bind(this));
   }

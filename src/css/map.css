@@ -7,8 +7,11 @@
 }
 
 path {
-    stroke:#eee;
     stroke-width: 0.5px;
+}
+
+.county-path {
+    stroke:#eee;
 }
 
 .legend-text {
