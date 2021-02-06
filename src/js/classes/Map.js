@@ -2,12 +2,15 @@ import * as d3 from "d3";
 import { feature } from "topojson";
 import { COUNTY_MAP_DATA } from "../data.js";
 
-// TODO: Support mobile sizings (SVG viewbox?)
+// TODO: Support mobile sizings
 const MAP_WIDTH = 600;
 const MAP_HEIGHT = 400;
 
+const TOOLTIP_WIDTH = 100;
+const TOOLTIP_HEIGHT = 70;
+
 class ColorScaleLegend {
-  constructor(id, colorDomain, labels, color, averages, title, onMouseOver, onMouseOut) {
+  constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut, title = "") {
     this.colorDomain = colorDomain;
     this.labels = labels;
     this.color = color;
@@ -65,10 +68,11 @@ class ColorScaleLegend {
         this.onMouseOut();
       });
     // Add labels
+    const legendTextClassName = "legend-text";
     legend.append("text")
       .attr("x", (_, i) => this.labelOffsetX + i*this.sectionWidth)
       .attr("y", this.labelOffsetY)
-      .attr("class", "legend-text")
+      .attr("class", legendTextClassName)
       .attr("data-bucket", d => {
         const color = this.color(d);
         const [start, end] = this.color.invertExtent(color);
@@ -80,38 +84,35 @@ class ColorScaleLegend {
       .append("text")
       .attr("x", this.labelOffsetX  + (this.labels.length-1)*this.sectionWidth)
       .attr("y", this.labelOffsetY)
-      .attr("class", "legend-text")
+      .attr("class", legendTextClassName)
       .attr("data-bucket", this.labels[this.labels.length - 1])
       .text(this.labels[this.labels.length - 1]);
     // Set up average label
-    const legendWidth = this.sectionWidth * this.colorDomain.length;
     const maxValue = this.colorDomain[this.colorDomain.length - 1];
-    // TODO: Fix spacing
     this.averages.forEach(avg => {
-      const avgOffsetX = this.offsetX + legendWidth * avg.value / maxValue;
+      const avgOffsetX = this.offsetX + this.legendWidth * avg.value / maxValue;
+      const legendLineClassName ="legend-avg-line";
       this.svg.append("line")
         .attr("x1", avgOffsetX)
         .attr("x2", avgOffsetX)
         .attr("y1", this.offsetY + 10)
         .attr("y2", this.offsetY - 5)
-        .attr("class", "legend-avg-line");
+        .attr("class", legendLineClassName);
       this.svg.append("text")
         .attr("x", avgOffsetX - 10)
         .attr("y", this.offsetY - 20)
-        .attr("width", 10)
-        .attr("class", "legend-avg-label")
+        .attr("class", legendTextClassName)
         .text(avg.label);
       this.svg.append("text")
         .attr("x", avgOffsetX - 10)
         .attr("y", this.offsetY - 10)
-        .attr("width", 10)
-        .attr("class", "legend-avg-label")
+        .attr("class", legendTextClassName)
         .text(`${avg.value}%`);
       // Add title, if any
       this.svg.append("text")
-        .attr("x", legendWidth/2 - 25)
+        .attr("x", this.legendWidth/2 - 25)
         .attr("y", this.offsetY + 40)
-        .attr("class", "legend-text")
+        .attr("class", legendTextClassName)
         .text(this.title);
     });
   }
@@ -171,36 +172,21 @@ class Map {
     this.projection = d3.geoMercator().scale(5500).center([-75.75, 40.5]);
   }
 
+  renderCity(name, coords, labelCoords) {
+    this.svg.append("circle")
+      .attr("transform", `translate(${this.projection(coords)})`)
+      .attr("r", 4)
+      .attr("fill", "white");
+    this.svg.append("text")
+      .attr("transform", `translate(${this.projection(labelCoords)})`)
+      .attr("class", "city-label")
+      .text(name);
+  }
+
   renderCities() {
-    // Philadelphia
-    this.svg.append("circle")
-      .attr("transform", `translate(${this.projection([-75.4, 39.9])})`)
-      .attr("r", 4)
-      .attr("fill", "white");
-    this.svg.append("text")
-      .attr("transform", `translate(${this.projection([-75.75, 40])})`)
-      .attr("class", "city-label")
-      .text("Philadelphia");
-
-    // Harrisburg
-    this.svg.append("circle")
-      .attr("transform", `translate(${this.projection([-76.9, 40.3])})`)
-      .attr("r", 4)
-      .attr("fill", "white");
-    this.svg.append("text")
-      .attr("transform", `translate(${this.projection([-77.15, 40.375])})`)
-      .attr("class", "city-label")
-      .text("Harrisburg");
-
-    // Pittsburgh
-    this.svg.append("circle")
-      .attr("transform", `translate(${this.projection([-80, 40.44])})`)
-      .attr("r", 4)
-      .attr("fill", "white");
-    this.svg.append("text")
-      .attr("transform", `translate(${this.projection([-80.25, 40.3])})`)
-      .attr("class", "city-label")
-      .text("Pittsburgh");
+    this.renderCity("Philadelphia", [-75.4, 39.9], [-75.75, 40]);
+    this.renderCity("Harrisburg", [-76.9, 40.3], [-77.15, 40.375]);
+    this.renderCity("Pittsburgh", [-80, 40.44], [-80.25, 40.3]);
   }
 
   renderPA(features, path) {
@@ -275,7 +261,6 @@ export class BailRateMap extends Map {
         value: average,
         label: "Avg:"
       }],
-      "",
       onLegendMouseOver,
       onLegendMouseOut
     );
@@ -301,8 +286,8 @@ export class BailRateMap extends Map {
     const countyName = countyElement.getAttribute("data-county-name");
     const countyRate = countyElement.getAttribute("data-rate");
     this.tooltip
-      .style("left", `${pageX - 100}px`)
-      .style("top", `${pageY - 70}px`)
+      .style("left", `${pageX - TOOLTIP_WIDTH}px`)
+      .style("top", `${pageY - TOOLTIP_HEIGHT}px`)
       .html(`
         <h3 class="tooltip-name">${countyName}</h3>
         <table>
@@ -377,8 +362,8 @@ class BailRaceMap extends Map {
   showTooltip(countyName, countyRate, pageX, pageY) {
     super.showTooltip(pageX, pageY);
     this.tooltip
-      .style("left", `${pageX - 100}px`)
-      .style("top", `${pageY - 70}px`)
+      .style("left", `${pageX - TOOLTIP_WIDTH}px`)
+      .style("top", `${pageY - TOOLTIP_HEIGHT}px`)
       .html(`
         <h3 class="tooltip-name">${countyName}</h3>
         <table>
@@ -435,7 +420,6 @@ class BailRaceMap extends Map {
 
 export class RaceMapContainer {
   constructor(id, data, whiteAverage, blackAverage) {
-
     const colorDomain = [20, 40, 60, 80, 100];
     const color = d3.scaleThreshold().domain(colorDomain).range([
       "#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"
@@ -465,7 +449,6 @@ export class RaceMapContainer {
         label: "Black:"
       }
       ],
-      "",
       onLegendMouseOver,
       onLegendMouseOut
     );
@@ -546,12 +529,12 @@ export class BailPostingMap extends Map {
         value: average,
         label: "Avg:"
       }],
-      "Non-Posting Rate",
       onLegendMouseOver,
-      onLegendMouseOut
+      onLegendMouseOut,
+      "Non-Posting Rate"
     );
 
-    const spike = this.spike.bind(this);
+    const spike = this.spikeShape.bind(this);
     this.spikeLegend = new SpikeLegend(id, "Average Bail Amount", ["$20K", "$40K", "$60K"], spike);
     this.spikeLegend.render();
 
@@ -576,8 +559,8 @@ export class BailPostingMap extends Map {
     const countyName = countyElement.getAttribute("data-county-name");
     const countyAmount = countyElement.getAttribute("data-bail-amount");
     this.tooltip
-      .style("left", `${pageX - 100}px`)
-      .style("top", `${pageY - 70}px`)
+      .style("left", `${pageX - TOOLTIP_WIDTH}px`)
+      .style("top", `${pageY - TOOLTIP_HEIGHT}px`)
       .html(`
         <h3 class="tooltip-name">${countyName}</h3>
         <table>
@@ -607,7 +590,7 @@ export class BailPostingMap extends Map {
     this.svg.selectAll("path").style("opacity", "1");
   }
 
-  spike(bailAmount) {
+  spikeShape(bailAmount) {
     const length = this.spikeScale(Number(bailAmount.replace(/[^\d.-]/g, "")));
     const width = 5;
     return `M${-width / 2},0L0,${-length}L${width / 2},0`;
@@ -643,7 +626,7 @@ export class BailPostingMap extends Map {
       .attr("transform", feature => {
         return `translate(${feature.properties.position})`;
       })
-      .attr("d", feature => this.spike(feature.properties.amount))
+      .attr("d", feature => this.spikeShape(feature.properties.amount))
       .attr("fill", feature => feature.properties.color)
       .attr("stroke", feature => feature.properties.color)
       .attr("data-bucket", feature => feature.properties.bucket);
