@@ -12,6 +12,11 @@ class CountyPoint {
     this.container = container;
     [this.xs, this.ys] = this.getPositions();
     this.elements = [];
+    this.tooltipFixed = true;
+  }
+
+  setTooltipFixed(isFixed) {
+    this.tooltipFixed = isFixed;
   }
 
   isOutlier() {
@@ -83,14 +88,15 @@ class CountyPoint {
   }
 
   onMouseEnter() {
-    this.renderTooltip();
+    if (!this.tooltip) this.renderTooltip();
     this.elements.forEach(element => {
       element.classList.add("hovering");
     });
   }
 
   onMouseLeave() {
-    this.tooltip.remove();
+    if (this.tooltip) this.tooltip.remove();
+    this.tooltip = undefined;
     this.elements.forEach(element => {
       element.classList.remove("hovering");
     });
@@ -138,10 +144,12 @@ class CountyPoint {
     tooltip.appendChild(table);
 
     // set tooltip placement based on first point
-    tooltip.style.top = this.ys[0];
-    tooltip.style.left = this.xs[0];
-    this.container.appendChild(tooltip);
+    if (!this.tooltipFixed) {
+      tooltip.style.top = this.ys[0];
+      tooltip.style.left = this.xs[0];
+    }
     this.tooltip = tooltip;
+    this.container.appendChild(this.tooltip);
   }
 }
 
@@ -183,14 +191,8 @@ export class ScatterPlot {
       const searchValue = e.target.value;
       this.searchTerms = searchValue.split(";").filter(s => s !== "");
       this.points.forEach(point => {
-        point.elements.forEach(element => {
-          // add or remove hovering class based on if county is selected
-          if (this.searchTerms.includes(point.county.toLowerCase())) {
-            element.classList.add("hovering");
-          } else {
-            element.classList.remove("hovering");
-          }
-        });
+        const searched = this.searchTerms.includes(point.county.toLowerCase());
+        searched ? point.onMouseEnter() : point.onMouseLeave();
       });
     });
   }
@@ -250,6 +252,9 @@ export class ScatterPlot {
     // rerender axes with new mobile sizing value
     this.renderAxis(this.xAxis, false);
     this.renderAxis(this.yAxis, true);
+
+    // set points to use fixed positioning for mobile or on point for not
+    this.points.forEach(point => point.setTooltipFixed(this.mobileSizing));
 
     // set viewbox based on window size
     const innerWidth = window.innerWidth;

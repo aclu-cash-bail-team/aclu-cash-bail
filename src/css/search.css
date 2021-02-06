@@ -115,7 +115,7 @@ i.icon.delete:hover {
 }
 
 .ui.selection.dropdown .menu > .item.bold {
-  font-weight: 700;
+  font-family: "GT America Bold";
 }
 
 .ui.dropdown.selected, .ui.dropdown .menu .selected.item,

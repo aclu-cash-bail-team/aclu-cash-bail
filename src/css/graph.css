@@ -125,7 +125,6 @@
 }
 
 .scatter-tooltip {
-  display: inline-block;
   position: absolute;
   width: 260px;
   margin: 20px 0 0 20px;
@@ -147,6 +146,8 @@
 }
 
 .scatter-tooltip table {
+  width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
 }
 
@@ -155,7 +156,7 @@
 }
 
 .scatter-tooltip th {
-  padding: 5px;
+  padding: 5px 0;
   font-family: "GT America Condensed";
   font-weight: 400;
   text-align: right;
@@ -164,15 +165,18 @@
 }
 
 .scatter-tooltip td {
-  width: 60px;
-  padding: 5px;
+  padding: 5px 0;
   text-align: right;
   text-transform: capitalize;
   font-variant-numeric: tabular-nums;
 }
 
+.scatter-tooltip td:not(.scatter-tooltip-name) {
+  width: 60px;
+  font-family: "GT America Bold";
+}
+
 .scatter-tooltip .scatter-tooltip-name {
-  width: 80px;
   text-align: left;
 }
 
@@ -180,6 +184,37 @@
   .scatter-plot {
     width: 300px;
     height: 400px;
+  }
+
+  .plot-container {
+    position: static;
+  }
+
+  .scatter-tooltip {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background-color: #000;
+    border: none;
+    border-top: 1px solid #FFF;
+    border-radius: 0;
+    box-shadow: none;
+    color: #FFF;
+  }
+
+  .scatter-tooltip tbody tr {
+    border-top: none;
+  }
+
+  .scatter-tooltip td {
+    width: 100px;
+  }
+
+  .scatter-tooltip .scatter-tooltip-name {
+    width: calc(100% - 200px);
   }
 }
 
