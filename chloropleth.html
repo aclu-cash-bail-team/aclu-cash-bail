@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="src/css/map.css">
 </head>
 <body>
-  <div style="margin: auto">
-    <div id="cash-bail-rate" class="map-container">
-      <div class="legend"></div>
-      <div class="map"></div>
-    </div>
-    <div id="ror-rate" class="map-container">
+  <div class="container">
+    <div id="rate-container">
+      <div class="switch-container">
+        <div class="btn-text switch left showing">Cash Bail</div>
+        <div class="btn-text switch right">ROR</div>
+      </div>
+      <div id="cash-bail-rate" class="map-container">
         <div class="legend"></div>
         <div class="map"></div>
+      </div>
+      <div id="ror-rate" class="map-container">
+          <div class="legend"></div>
+          <div class="map"></div>
+      </div>
     </div>
     <div id="race-rate" class="map-container">
       <div class="legend"></div>

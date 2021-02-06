@@ -10,7 +10,7 @@ const TOOLTIP_WIDTH = 100;
 const TOOLTIP_HEIGHT = 70;
 
 class ColorScaleLegend {
-  constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut, title = "") {
+  constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut, title = "", offsetY = 30) {
     this.colorDomain = colorDomain;
     this.labels = labels;
     this.color = color;
@@ -22,7 +22,7 @@ class ColorScaleLegend {
     this.sectionWidth = 50;
     this.sectionHeight = 10;
     this.offsetX = 5;
-    this.offsetY = 85;
+    this.offsetY = offsetY;
     this.labelOffsetX = this.offsetX - 4;
     this.labelOffsetY = this.offsetY + 22;
     this.legendWidth = this.sectionWidth * this.colorDomain.length;
@@ -238,6 +238,7 @@ class Map {
 export class BailRateMap extends Map {
   constructor(id, data, average) {
     super(`#${id} .map`);
+    this.id = id;
     this.data = data;
 
     const colorDomain = [10, 20, 30, 40, 50, 60];
@@ -531,7 +532,8 @@ export class BailPostingMap extends Map {
       }],
       onLegendMouseOver,
       onLegendMouseOut,
-      "Non-Posting Rate"
+      "Non-Posting Rate",
+      85
     );
 
     const spike = this.spikeShape.bind(this);
@@ -634,5 +636,45 @@ export class BailPostingMap extends Map {
       .attr("data-bucket", feature => feature.properties.bucket);
 
     this.legend.render();
+  }
+}
+
+export class SwitchableMap {
+  constructor(leftMap, rightMap, container) {
+    this.leftMap = leftMap;
+    this.rightMap = rightMap;
+    this.container = container;
+
+    // set up switch buttons
+    this.rightSwitch = container
+      .getElementsByClassName("switch-container")[0]
+      .getElementsByClassName("right")[0];
+    this.rightSwitch.addEventListener("click", this.showRightTable.bind(this));
+
+    this.leftSwitch = container
+      .getElementsByClassName("switch-container")[0]
+      .getElementsByClassName("left")[0];
+    this.leftSwitch.addEventListener("click", this.showLeftTable.bind(this));
+
+    // show left table by default
+    this.showLeftTable();
+  }
+
+  showLeftTable() {
+    const leftContainer = document.getElementById(this.leftMap.id);
+    const rightContainer = document.getElementById(this.rightMap.id);
+    leftContainer.style.display = "block";
+    rightContainer.style.display = "none";
+    this.leftSwitch.classList.add("showing");
+    this.rightSwitch.classList.remove("showing");
+  }
+
+  showRightTable() {
+    const leftContainer = document.getElementById(this.leftMap.id);
+    const rightContainer = document.getElementById(this.rightMap.id);
+    leftContainer.style.display = "none";
+    rightContainer.style.display = "block";
+    this.leftSwitch.classList.remove("showing");
+    this.rightSwitch.classList.add("showing");
   }
 }
