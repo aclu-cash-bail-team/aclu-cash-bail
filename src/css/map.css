@@ -15,6 +15,12 @@ path {
     stroke:#eee;
 }
 
+.legend-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
 .legend-text {
     fill: rgba(255, 255, 255, 0.75);
     font-size: 10px;
