@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import { feature } from "topojson";
 import { COUNTY_MAP_DATA } from "../data.js";
 
-// TODO: Support mobile sizings
+// TODO: Support mobile sizings (SVG viewbox?)
 const MAP_WIDTH = 600;
 const MAP_HEIGHT = 400;
 
@@ -16,16 +16,20 @@ class ColorScaleLegend {
     this.onMouseOver = onMouseOver;
     this.onMouseOut = onMouseOut;
 
-    this.legendSectionWidth = 50;
-    this.legendSectionHeight = 10;
-    this.legendOffsetX = 5;
-    this.legendOffsetY = 85;
-    this.legendLabelOffsetX = this.legendOffsetX - 4;
-    this.legendLabelOffsetY = this.legendOffsetY + 22;
+    this.sectionWidth = 50;
+    this.sectionHeight = 10;
+    this.offsetX = 5;
+    this.offsetY = 85;
+    this.labelOffsetX = this.offsetX - 4;
+    this.labelOffsetY = this.offsetY + 22;
+    this.legendWidth = this.sectionWidth * this.colorDomain.length;
 
+    // TODO: Support mobile sizings
+    const svgWidth = this.legendWidth + 20;
+    const svgHeight = this.sectionHeight + this.labelOffsetY + 10;
     this.svg = d3.select(`#${id} .legend`).append("svg")
-      .attr("width", this.legendSectionWidth * this.colorDomain.length + 20)
-      .attr("height", 130);
+      .attr("width", svgWidth)
+      .attr("height", svgHeight);
   }
 
   highlightBar(bucket) {
@@ -48,10 +52,10 @@ class ColorScaleLegend {
       .attr("data-label", d => d);
     // Add colored bars
     legend.append("rect")
-      .attr("x", (_, i) => this.legendOffsetX + i*this.legendSectionWidth)
-      .attr("y", this.legendOffsetY)
-      .attr("width", this.legendSectionWidth)
-      .attr("height", this.legendSectionHeight)
+      .attr("x", (_, i) => this.offsetX + i*this.sectionWidth)
+      .attr("y", this.offsetY)
+      .attr("width", this.sectionWidth)
+      .attr("height", this.sectionHeight)
       .attr("data-bucket", (_, i) => this.labels[i + 1])
       .style("fill", d => this.color(d))
       .on("mouseover", event => {
@@ -62,8 +66,8 @@ class ColorScaleLegend {
       });
     // Add labels
     legend.append("text")
-      .attr("x", (_, i) => this.legendLabelOffsetX + i*this.legendSectionWidth)
-      .attr("y", this.legendLabelOffsetY)
+      .attr("x", (_, i) => this.labelOffsetX + i*this.sectionWidth)
+      .attr("y", this.labelOffsetY)
       .attr("class", "legend-text")
       .attr("data-bucket", d => {
         const color = this.color(d);
@@ -74,31 +78,39 @@ class ColorScaleLegend {
     // Set up legend max label
     this.svg.select(`g[data-label="${this.labels[this.labels.length - 2]}"]`)
       .append("text")
-      .attr("x", this.legendLabelOffsetX  + (this.labels.length-1)*this.legendSectionWidth)
-      .attr("y", this.legendLabelOffsetY)
+      .attr("x", this.labelOffsetX  + (this.labels.length-1)*this.sectionWidth)
+      .attr("y", this.labelOffsetY)
       .attr("class", "legend-text")
       .attr("data-bucket", this.labels[this.labels.length - 1])
       .text(this.labels[this.labels.length - 1]);
     // Set up average label
-    const legendWidth = this.legendSectionWidth * this.colorDomain.length;
+    const legendWidth = this.sectionWidth * this.colorDomain.length;
     const maxValue = this.colorDomain[this.colorDomain.length - 1];
+    // TODO: Fix spacing
     this.averages.forEach(avg => {
-      const avgOffsetX = this.legendOffsetX + legendWidth * avg.value / maxValue;
+      const avgOffsetX = this.offsetX + legendWidth * avg.value / maxValue;
       this.svg.append("line")
         .attr("x1", avgOffsetX)
         .attr("x2", avgOffsetX)
-        .attr("y1", this.legendOffsetY + 10)
-        .attr("y2", this.legendOffsetY - 5)
+        .attr("y1", this.offsetY + 10)
+        .attr("y2", this.offsetY - 5)
         .attr("class", "legend-avg-line");
       this.svg.append("text")
-        .attr("x", avgOffsetX - 20)
-        .attr("y", this.legendOffsetY - 10)
+        .attr("x", avgOffsetX - 10)
+        .attr("y", this.offsetY - 20)
+        .attr("width", 10)
         .attr("class", "legend-avg-label")
         .text(avg.label);
+      this.svg.append("text")
+        .attr("x", avgOffsetX - 10)
+        .attr("y", this.offsetY - 10)
+        .attr("width", 10)
+        .attr("class", "legend-avg-label")
+        .text(`${avg.value}%`);
       // Add title, if any
       this.svg.append("text")
         .attr("x", legendWidth/2 - 25)
-        .attr("y", this.legendOffsetY + 40)
+        .attr("y", this.offsetY + 40)
         .attr("class", "legend-text")
         .text(this.title);
     });
@@ -261,7 +273,7 @@ export class BailRateMap extends Map {
       this.color,
       [{
         value: average,
-        label: `Avg: ${average}%`
+        label: "Avg:"
       }],
       "",
       onLegendMouseOver,
@@ -446,11 +458,11 @@ export class RaceMapContainer {
       color,
       [{
         value: whiteAverage,
-        label: `White: ${whiteAverage}%`
+        label: "White:"
       },
       {
         value: blackAverage,
-        label: `Black: ${blackAverage}%`
+        label: "Black:"
       }
       ],
       "",
@@ -532,7 +544,7 @@ export class BailPostingMap extends Map {
       this.color,
       [{
         value: average,
-        label: `Avg: ${average}%`
+        label: "Avg:"
       }],
       "Non-Posting Rate",
       onLegendMouseOver,
