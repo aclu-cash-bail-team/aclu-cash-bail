@@ -2,25 +2,9 @@ import * as d3 from "d3";
 import { feature } from "topojson";
 import { COUNTY_MAP_DATA } from "../data.js";
 
-const MAP_SCALE_FACTOR = 40;
-const MAP_TRANSFORM = {
-  "scale":[
-    0.0016 * MAP_SCALE_FACTOR,
-    0.0013 * MAP_SCALE_FACTOR
-  ],
-  "translate":[
-    -135,
-    -50
-  ]
-};
-
-const PHILADELPHIA_X = 643;
-const PHILADELPHIA_Y = 359;
-const HARRISBURG_X = 477;
-const HARRISBURG_Y = 319;
-const PITTSBURGH_X = 170;
-const PITTSBURGH_Y = 310;
-const CITY_LABEL_OFFSET_Y = 15;
+// TODO: Support mobile sizings
+const MAP_WIDTH = 600;
+const MAP_HEIGHT = 400;
 
 class ColorScaleLegend {
   constructor(id, colorDomain, labels, color, averages, title, onMouseOver, onMouseOut) {
@@ -167,46 +151,42 @@ class SpikeLegend {
 }
 
 class Map {
-  constructor(selector, width, height) {
+  constructor(selector) {
     this.svg = d3.select(selector).append("svg")
-      .attr("width", width)
-      .attr("height", height);
+      .attr("width", MAP_WIDTH)
+      .attr("height", MAP_HEIGHT);
+
+    this.projection = d3.geoMercator().scale(5500).center([-75.75, 40.5]);
   }
 
   renderCities() {
     // Philadelphia
     this.svg.append("circle")
-      .attr("cx", PHILADELPHIA_X)
-      .attr("cy", PHILADELPHIA_Y)
+      .attr("transform", `translate(${this.projection([-75.4, 39.9])})`)
       .attr("r", 4)
       .attr("fill", "white");
     this.svg.append("text")
-      .attr("x", PHILADELPHIA_X - 43)
-      .attr("y", PHILADELPHIA_Y - CITY_LABEL_OFFSET_Y)
+      .attr("transform", `translate(${this.projection([-75.75, 40])})`)
       .attr("class", "city-label")
       .text("Philadelphia");
 
     // Harrisburg
     this.svg.append("circle")
-      .attr("cx", HARRISBURG_X)
-      .attr("cy", HARRISBURG_Y)
+      .attr("transform", `translate(${this.projection([-76.9, 40.3])})`)
       .attr("r", 4)
       .attr("fill", "white");
     this.svg.append("text")
-      .attr("x", HARRISBURG_X - 29)
-      .attr("y", HARRISBURG_Y - CITY_LABEL_OFFSET_Y)
+      .attr("transform", `translate(${this.projection([-77.15, 40.375])})`)
       .attr("class", "city-label")
       .text("Harrisburg");
 
     // Pittsburgh
     this.svg.append("circle")
-      .attr("cx", PITTSBURGH_X)
-      .attr("cy", PITTSBURGH_Y)
+      .attr("transform", `translate(${this.projection([-80, 40.44])})`)
       .attr("r", 4)
       .attr("fill", "white");
     this.svg.append("text")
-      .attr("x", PITTSBURGH_X - 27)
-      .attr("y", PITTSBURGH_Y - CITY_LABEL_OFFSET_Y)
+      .attr("transform", `translate(${this.projection([-80.25, 40.3])})`)
       .attr("class", "city-label")
       .text("Pittsburgh");
   }
@@ -243,11 +223,9 @@ class Map {
   }
 
   render() {
-    const projection = d3.geoMercator();
-    const path = d3.geoPath().projection(projection);
+    const path = d3.geoPath().projection(this.projection);
 
     const countyTopoJson = JSON.parse(JSON.stringify(COUNTY_MAP_DATA));
-    countyTopoJson.transform = MAP_TRANSFORM;
     const features = feature(countyTopoJson, countyTopoJson.objects["cb_2015_pennsylvania_county_20m"]).features;
 
     this.tooltip = d3.select("body").append("div")
@@ -261,7 +239,7 @@ class Map {
 
 export class BailRateMap extends Map {
   constructor(id, data, average) {
-    super(`#${id} .map`, 800, 500);
+    super(`#${id} .map`);
     this.data = data;
 
     const colorDomain = [10, 20, 30, 40, 50, 60];
@@ -364,8 +342,8 @@ export class BailRateMap extends Map {
 }
 
 class BailRaceMap extends Map {
-  constructor(selector, width, height, data, color, dataIdx, race, parent) {
-    super(selector, width, height);
+  constructor(selector, data, color, dataIdx, race, parent) {
+    super(selector);
     this.data = data;
     this.dataIdx = dataIdx;
     this.race = race;
@@ -450,16 +428,14 @@ class BailRaceMap extends Map {
 
 export class RaceMapContainer {
   constructor(id, data, whiteAverage, blackAverage) {
-    this.width = 800;
-    this.height = 500;
 
     const colorDomain = [20, 40, 60, 80, 100];
     const color = d3.scaleThreshold().domain(colorDomain).range([
       "#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"
     ]);
 
-    this.black = new BailRaceMap(`#${id} #black.map`, this.width, this.height, data, color, 2, "black", this);
-    this.white = new BailRaceMap(`#${id} #white.map`, this.width, this.height, data, color, 3, "white", this);
+    this.black = new BailRaceMap(`#${id} #black.map`, data, color, 2, "black", this);
+    this.white = new BailRaceMap(`#${id} #white.map`, data, color, 3, "white", this);
 
     const onLegendMouseOver = (event) => {
       this.highlightBar(event);
@@ -495,9 +471,9 @@ export class RaceMapContainer {
     // TODO: Fix this awful hack
     if (race == "black") {
       this.black._onMouseOver(countyName, event.pageX, event.pageY);
-      this.white._onMouseOver(countyName, event.pageX + this.width, event.pageY);
+      this.white._onMouseOver(countyName, event.pageX + MAP_WIDTH, event.pageY);
     } else if (race == "white") {
-      this.black._onMouseOver(countyName, event.pageX - this.width, event.pageY);
+      this.black._onMouseOver(countyName, event.pageX - MAP_WIDTH, event.pageY);
       this.white._onMouseOver(countyName, event.pageX, event.pageY);
     }
     this.highlightBar(event);
@@ -537,7 +513,7 @@ export class RaceMapContainer {
 
 export class BailPostingMap extends Map {
   constructor(id, data, average, upperBound) {
-    super(`#${id} .map`, 800, 500);
+    super(`#${id} .map`);
     this.data = data;
 
     const colorDomain = [20, 40, 60, 80, 100];
