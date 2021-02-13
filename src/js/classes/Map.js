@@ -198,11 +198,11 @@ class Map {
       .attr("d", path)
       .attr("class", "county-path")
       .attr(COUNTY_NAME_ATTRIBUTE, feature => feature.properties["NAME"])
-      .on("mouseover", this.onMouseOver.bind(this))
+      .on("mousemove", this.onMouseMove.bind(this))
       .on("mouseout", this.onMouseOut.bind(this));
   }
 
-  onMouseOver(event) {
+  onMouseMove(event) {
     this.showTooltip(event.pageX, event.pageY, "", "", 0);
   }
 
@@ -281,7 +281,7 @@ export class BailRateMap extends Map {
     this.render();
   }
 
-  onMouseOver(event) {
+  onMouseMove(event) {
     this.showTooltip(event.pageX, event.pageY, event.srcElement);
     d3.select(event.srcElement).style("stroke-width", "2px");
     this.highlightBar(event);
@@ -346,7 +346,7 @@ class BailRaceMap extends Map {
   }
 
   // Called by parent
-  _onMouseOver(x, y, countyName) {
+  _onMouseMove(x, y, countyName) {
     const element = document.querySelector(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${this.race}"]`);
     this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "2px");
     this.showTooltip(x, y, countyName, element.getAttribute("data-rate"));
@@ -370,8 +370,8 @@ class BailRaceMap extends Map {
     this.svg.selectAll("path").style("opacity", "1");
   }
 
-  onMouseOver(event) {
-    this.parent.onChildMouseOver(event, this.race);
+  onMouseMove(event) {
+    this.parent.onChildMouseMove(event, this.race);
   }
 
   onMouseOut(event) {
@@ -438,15 +438,15 @@ export class RaceMapContainer {
     this.render();
   }
 
-  onChildMouseOver(event, race) {
+  onChildMouseMove(event, race) {
     const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
     // TODO: Fix this awful hack
     if (race == "black") {
-      this.black._onMouseOver(event.pageX, event.pageY, countyName);
-      this.white._onMouseOver(event.pageX + MAP_WIDTH, event.pageY, countyName);
+      this.black._onMouseMove(event.pageX, event.pageY, countyName);
+      this.white._onMouseMove(event.pageX + MAP_WIDTH, event.pageY, countyName);
     } else if (race == "white") {
-      this.black._onMouseOver(event.pageX - MAP_WIDTH, event.pageY, countyName);
-      this.white._onMouseOver(event.pageX, event.pageY, countyName);
+      this.black._onMouseMove(event.pageX - MAP_WIDTH, event.pageY, countyName);
+      this.white._onMouseMove(event.pageX, event.pageY, countyName);
     }
     this.highlightBar(event);
   }
@@ -524,7 +524,7 @@ export class BailPostingMap extends Map {
     this.render();
   }
 
-  onMouseOver(event) {
+  onMouseMove(event) {
     this.showTooltip(event.pageX, event.pageY, event.srcElement);
     d3.select(event.srcElement).style("stroke-width", "2px");
     this.highlightBar(event);
