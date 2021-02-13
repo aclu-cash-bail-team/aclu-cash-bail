@@ -4,11 +4,11 @@
 }
 
 .graph h3 {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   font-family: "GT America Bold";
   font-size: 13px;
   font-weight: normal;
-  /* line-height: 28px; */
+  line-height: 28px;
   text-align: center;
   color: #FFF;
 }
