@@ -6,6 +6,9 @@ import { COUNTY_MAP_DATA } from "../data.js";
 const MAP_WIDTH = 600;
 const MAP_HEIGHT = 400;
 
+const COUNTY_NAME_ATTRIBUTE = "data-county-name";
+const BUCKET_ATTRIBUTE = "data-bucket";
+
 class ColorScaleLegend {
   constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut, title = "", offsetY = 30) {
     this.colorDomain = colorDomain;
@@ -34,9 +37,9 @@ class ColorScaleLegend {
 
   highlightBar(bucket) {
     // darken other legend bars
-    this.svg.selectAll(`rect:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
+    this.svg.selectAll(`rect:not([${BUCKET_ATTRIBUTE}="${bucket}"])`).style("opacity", "0.2");
     // darken other legend labels, except for the start & end of highlighted bar
-    this.svg.selectAll(`.legend-text:not([data-bucket*="${bucket}"])`).style("opacity", "0.4");
+    this.svg.selectAll(`.legend-text:not([${BUCKET_ATTRIBUTE}*="${bucket}"])`).style("opacity", "0.4");
   }
 
   resetHighlight() {
@@ -56,7 +59,7 @@ class ColorScaleLegend {
       .attr("y", this.offsetY)
       .attr("width", this.sectionWidth)
       .attr("height", this.sectionHeight)
-      .attr("data-bucket", (_, i) => this.labels[i + 1])
+      .attr(BUCKET_ATTRIBUTE, (_, i) => this.labels[i + 1])
       .style("fill", d => this.color(d))
       .on("mouseover", event => {
         this.onMouseOver(event);
@@ -70,7 +73,7 @@ class ColorScaleLegend {
       .attr("x", (_, i) => this.labelOffsetX + i*this.sectionWidth)
       .attr("y", this.labelOffsetY)
       .attr("class", legendTextClassName)
-      .attr("data-bucket", d => {
+      .attr(BUCKET_ATTRIBUTE, d => {
         const color = this.color(d);
         const [start, end] = this.color.invertExtent(color);
         return `${start}-${end}`;
@@ -82,7 +85,7 @@ class ColorScaleLegend {
       .attr("x", this.labelOffsetX  + (this.labels.length-1)*this.sectionWidth)
       .attr("y", this.labelOffsetY)
       .attr("class", legendTextClassName)
-      .attr("data-bucket", this.labels[this.labels.length - 1])
+      .attr(BUCKET_ATTRIBUTE, this.labels[this.labels.length - 1])
       .text(this.labels[this.labels.length - 1]);
     // Set up average label
     const maxValue = this.colorDomain[this.colorDomain.length - 1];
@@ -194,7 +197,7 @@ class Map {
       .enter().append("path")
       .attr("d", path)
       .attr("class", "county-path")
-      .attr("data-county-name", feature => feature.properties["NAME"])
+      .attr(COUNTY_NAME_ATTRIBUTE, feature => feature.properties["NAME"])
       .on("mouseover", this.onMouseOver.bind(this))
       .on("mouseout", this.onMouseOut.bind(this));
   }
@@ -223,7 +226,6 @@ class Map {
           </tbody>
         </table>
       `);
-
   }
 
   hideTooltip() {
@@ -292,20 +294,20 @@ export class BailRateMap extends Map {
   }
 
   showTooltip(pageX, pageY, srcElement) {
-    const countyName = srcElement.getAttribute("data-county-name");
+    const countyName = srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const countyRate = srcElement.getAttribute("data-rate");
     super.showTooltip(pageX, pageY, countyName, "Cash Bail Rate", `${Math.round(countyRate * 100) / 100}%`);
   }
 
 
   highlightBar(event) {
-    const bucket = Number(event.srcElement.getAttribute("data-bucket"));
+    const bucket = Number(event.srcElement.getAttribute(BUCKET_ATTRIBUTE));
     this.legend.highlightBar(bucket);
   }
 
   highlightMap(event) {
-    const bucket = event.srcElement.getAttribute("data-bucket");
-    this.svg.selectAll(`path:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
+    const bucket = event.srcElement.getAttribute(BUCKET_ATTRIBUTE);
+    this.svg.selectAll(`path:not([${BUCKET_ATTRIBUTE}="${bucket}"])`).style("opacity", "0.2");
   }
 
   resetHighlight() {
@@ -324,7 +326,7 @@ export class BailRateMap extends Map {
     });
     const paths = super.renderPA(features, path);
     paths.style("fill", feature => feature.properties.color)
-      .attr("data-bucket", feature => feature.properties.bucket)
+      .attr(BUCKET_ATTRIBUTE, feature => feature.properties.bucket)
       .attr("data-rate", feature => feature.properties.rate);
 
     this.legend.render();
@@ -345,13 +347,13 @@ class BailRaceMap extends Map {
 
   // Called by parent
   _onMouseOver(x, y, countyName) {
-    const element = document.querySelector(`path[data-county-name="${countyName}"][data-race="${this.race}"]`);
-    this.svg.selectAll(`path[data-county-name="${countyName}"]`).style("stroke-width", "2px");
+    const element = document.querySelector(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${this.race}"]`);
+    this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "2px");
     this.showTooltip(x, y, countyName, element.getAttribute("data-rate"));
   }
   _onMouseOut(countyName) {
     super.onMouseOut();
-    this.svg.selectAll(`path[data-county-name="${countyName}"]`).style("stroke-width", "0.5px");
+    this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "0.5px");
   }
 
   showTooltip(pageX, pageY, countyName, countyRate) {
@@ -359,7 +361,7 @@ class BailRaceMap extends Map {
   }
 
   highlightMap(bucket) {
-    this.svg.selectAll(`path:not([data-bucket="${bucket}"])`).style("opacity", "0.2");
+    this.svg.selectAll(`path:not([${BUCKET_ATTRIBUTE}="${bucket}"])`).style("opacity", "0.2");
   }
 
   resetHighlight() {
@@ -390,7 +392,7 @@ class BailRaceMap extends Map {
     });
     const paths = super.renderPA(features, path);
     paths.style("fill", feature => feature.properties.color)
-      .attr("data-bucket", feature => feature.properties.bucket)
+      .attr(BUCKET_ATTRIBUTE, feature => feature.properties.bucket)
       .attr("data-rate", feature => feature.properties.rate)
       .attr("data-race", () => this.race);
 
@@ -437,7 +439,7 @@ export class RaceMapContainer {
   }
 
   onChildMouseOver(event, race) {
-    const countyName = event.srcElement.getAttribute("data-county-name");
+    const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
     // TODO: Fix this awful hack
     if (race == "black") {
       this.black._onMouseOver(event.pageX, event.pageY, countyName);
@@ -450,7 +452,7 @@ export class RaceMapContainer {
   }
 
   onChildMouseOut(event) {
-    const countyName = event.srcElement.getAttribute("data-county-name");
+    const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
     this.black._onMouseOut(countyName);
     this.white._onMouseOut(countyName);
     this.resetHighlight();
@@ -458,12 +460,12 @@ export class RaceMapContainer {
 
 
   highlightBar(event) {
-    const bucket = Number(event.srcElement.getAttribute("data-bucket"));
+    const bucket = Number(event.srcElement.getAttribute(BUCKET_ATTRIBUTE));
     this.legend.highlightBar(bucket);
   }
 
   highlightMap(event) {
-    const bucket = event.srcElement.getAttribute("data-bucket");
+    const bucket = event.srcElement.getAttribute(BUCKET_ATTRIBUTE);
     this.black.highlightMap(bucket);
     this.white.highlightMap(bucket);
   }
@@ -535,20 +537,20 @@ export class BailPostingMap extends Map {
   }
 
   showTooltip(pageX, pageY, srcElement) {
-    const countyName = srcElement.getAttribute("data-county-name");
+    const countyName = srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const countyAmount = srcElement.getAttribute("data-bail-amount");
     super.showTooltip(pageX, pageY, countyName, "Bail Amount", countyAmount);
   }
 
   highlightBar(event) {
-    const bucket = Number(event.srcElement.getAttribute("data-bucket"));
+    const bucket = Number(event.srcElement.getAttribute(BUCKET_ATTRIBUTE));
     this.legend.highlightBar(bucket);
   }
 
   highlightMap(event) {
-    const bucket = event.srcElement.getAttribute("data-bucket");
+    const bucket = event.srcElement.getAttribute(BUCKET_ATTRIBUTE);
     this.svg.selectAll("path").style("opacity", "0.2");
-    this.svg.selectAll(`path.spike[data-bucket="${bucket}"`).style("opacity", "1");
+    this.svg.selectAll(`path.spike[${BUCKET_ATTRIBUTE}="${bucket}"`).style("opacity", "1");
   }
 
   resetHighlight() {
@@ -579,7 +581,7 @@ export class BailPostingMap extends Map {
     paths.style("fill", "#1a1a1a")
       .attr("data-rate", feature => feature.properties.rate)
       .attr("data-bail-amount", feature => feature.properties.amount)
-      .attr("data-bucket", feature => feature.properties.bucket);
+      .attr(BUCKET_ATTRIBUTE, feature => feature.properties.bucket);
 
     // Render spikes
     this.svg.append("g")
@@ -595,7 +597,7 @@ export class BailPostingMap extends Map {
       .attr("fill", feature => feature.properties.color)
       .attr("stroke", feature => feature.properties.color)
       .attr("class", "spike")
-      .attr("data-bucket", feature => feature.properties.bucket);
+      .attr(BUCKET_ATTRIBUTE, feature => feature.properties.bucket);
 
     this.legend.render();
   }
