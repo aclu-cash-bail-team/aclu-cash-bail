@@ -148,8 +148,6 @@
 }
 
 .scatter-point.total {
-  /* fill: #00ed8a66;
-  stroke: #00ED89; */
   fill: #55EAAC66;
   stroke: #55EAAC;
   mix-blend-mode: hard-light;
