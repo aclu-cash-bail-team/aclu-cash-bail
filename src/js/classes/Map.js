@@ -200,14 +200,14 @@ class Map {
   }
 
   onMouseOver(event) {
-    this.showTooltip(event.pageX, event.pageY, "", 0);
+    this.showTooltip(event.pageX, event.pageY, "", "", 0);
   }
 
   onMouseOut() {
     this.hideTooltip();
   }
 
-  showTooltip(pageX, pageY, countyName, value) {
+  showTooltip(pageX, pageY, countyName, header, value) {
     this.tooltip.style("opacity", 1);
     this.tooltip
       .style("left", `${pageX - 100}px`)
@@ -217,7 +217,7 @@ class Map {
         <table>
           <tbody>
             <tr>
-              <td>Cash Bail Rate</td>
+              <td>${header}</td>
               <td style="text-align: right; font-weight: 700;">${value}</td>
             </tr>
           </tbody>
@@ -294,7 +294,7 @@ export class BailRateMap extends Map {
   showTooltip(pageX, pageY, srcElement) {
     const countyName = srcElement.getAttribute("data-county-name");
     const countyRate = srcElement.getAttribute("data-rate");
-    super.showTooltip(pageX, pageY, countyName, countyRate);
+    super.showTooltip(pageX, pageY, countyName, "Cash Bail Rate", `${Math.round(countyRate * 100) / 100}%`);
   }
 
 
@@ -355,7 +355,7 @@ class BailRaceMap extends Map {
   }
 
   showTooltip(pageX, pageY, countyName, countyRate) {
-    super.showTooltip(pageX, pageY, countyName, `${Math.round(countyRate * 100) / 100}%`);
+    super.showTooltip(pageX, pageY, countyName, "Cash Bail Rate", `${Math.round(countyRate * 100) / 100}%`);
   }
 
   highlightMap(bucket) {
@@ -537,9 +537,8 @@ export class BailPostingMap extends Map {
   showTooltip(pageX, pageY, srcElement) {
     const countyName = srcElement.getAttribute("data-county-name");
     const countyAmount = srcElement.getAttribute("data-bail-amount");
-    super.showTooltip(pageX, pageY, countyName, countyAmount);
+    super.showTooltip(pageX, pageY, countyName, "Bail Amount", countyAmount);
   }
-
 
   highlightBar(event) {
     const bucket = Number(event.srcElement.getAttribute("data-bucket"));
