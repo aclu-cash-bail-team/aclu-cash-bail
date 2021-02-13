@@ -194,23 +194,36 @@ class Map {
       .enter().append("path")
       .attr("d", path)
       .attr("class", "county-path")
+      .attr("data-county-name", feature => feature.properties["NAME"])
       .on("mouseover", this.onMouseOver.bind(this))
       .on("mouseout", this.onMouseOut.bind(this));
   }
 
   onMouseOver(event) {
-    this.showTooltip(event.pageX, event.pageY);
+    this.showTooltip(event.pageX, event.pageY, "", 0);
   }
 
   onMouseOut() {
     this.hideTooltip();
   }
 
-  showTooltip(pageX, pageY) {
+  showTooltip(pageX, pageY, countyName, value) {
     this.tooltip.style("opacity", 1);
     this.tooltip
       .style("left", `${pageX - 100}px`)
-      .style("top", `${pageY - 70}px`);
+      .style("top", `${pageY - 70}px`)
+      .html(`
+        <h3 class="tooltip-name">${countyName}</h3>
+        <table>
+          <tbody>
+            <tr>
+              <td>Cash Bail Rate</td>
+              <td style="text-align: right; font-weight: 700;">${value}</td>
+            </tr>
+          </tbody>
+        </table>
+      `);
+
   }
 
   hideTooltip() {
@@ -279,22 +292,9 @@ export class BailRateMap extends Map {
   }
 
   showTooltip(pageX, pageY, srcElement) {
-    super.showTooltip(pageX, pageY);
-    const countyElement = srcElement;
-    const countyName = countyElement.getAttribute("data-county-name");
-    const countyRate = countyElement.getAttribute("data-rate");
-    this.tooltip
-      .html(`
-        <h3 class="tooltip-name">${countyName}</h3>
-        <table>
-          <tbody>
-            <tr>
-              <td>Cash Bail Rate</td>
-              <td style="text-align: right; font-weight: 700;">${`${Math.round(countyRate * 100) / 100}%`}</td>
-            </tr>
-          </tbody>
-        </table>
-      `);
+    const countyName = srcElement.getAttribute("data-county-name");
+    const countyRate = srcElement.getAttribute("data-rate");
+    super.showTooltip(pageX, pageY, countyName, countyRate);
   }
 
 
@@ -325,7 +325,6 @@ export class BailRateMap extends Map {
     const paths = super.renderPA(features, path);
     paths.style("fill", feature => feature.properties.color)
       .attr("data-bucket", feature => feature.properties.bucket)
-      .attr("data-county-name", feature => feature.properties["NAME"])
       .attr("data-rate", feature => feature.properties.rate);
 
     this.legend.render();
@@ -345,30 +344,18 @@ class BailRaceMap extends Map {
   }
 
   // Called by parent
-  _onMouseOver(countyName, x, y) {
+  _onMouseOver(x, y, countyName) {
     const element = document.querySelector(`path[data-county-name="${countyName}"][data-race="${this.race}"]`);
     this.svg.selectAll(`path[data-county-name="${countyName}"]`).style("stroke-width", "2px");
-    this.showTooltip(countyName, element.getAttribute("data-rate"), x, y);
+    this.showTooltip(x, y, countyName, element.getAttribute("data-rate"));
   }
   _onMouseOut(countyName) {
     super.onMouseOut();
     this.svg.selectAll(`path[data-county-name="${countyName}"]`).style("stroke-width", "0.5px");
   }
 
-  showTooltip(countyName, countyRate, pageX, pageY) {
-    super.showTooltip(pageX, pageY);
-    this.tooltip
-      .html(`
-        <h3 class="tooltip-name">${countyName}</h3>
-        <table>
-          <tbody>
-            <tr>
-              <td>Cash Bail Race</td>
-              <td style="text-align: right; font-weight: 700;">${`${Math.round(countyRate * 100) / 100}%`}</td>
-            </tr>
-          </tbody>
-        </table>
-      `);
+  showTooltip(pageX, pageY, countyName, countyRate) {
+    super.showTooltip(pageX, pageY, countyName, `${Math.round(countyRate * 100) / 100}%`);
   }
 
   highlightMap(bucket) {
@@ -404,7 +391,6 @@ class BailRaceMap extends Map {
     const paths = super.renderPA(features, path);
     paths.style("fill", feature => feature.properties.color)
       .attr("data-bucket", feature => feature.properties.bucket)
-      .attr("data-county-name", feature => feature.properties["NAME"])
       .attr("data-rate", feature => feature.properties.rate)
       .attr("data-race", () => this.race);
 
@@ -454,11 +440,11 @@ export class RaceMapContainer {
     const countyName = event.srcElement.getAttribute("data-county-name");
     // TODO: Fix this awful hack
     if (race == "black") {
-      this.black._onMouseOver(countyName, event.pageX, event.pageY);
-      this.white._onMouseOver(countyName, event.pageX + MAP_WIDTH, event.pageY);
+      this.black._onMouseOver(event.pageX, event.pageY, countyName);
+      this.white._onMouseOver(event.pageX + MAP_WIDTH, event.pageY, countyName);
     } else if (race == "white") {
-      this.black._onMouseOver(countyName, event.pageX - MAP_WIDTH, event.pageY);
-      this.white._onMouseOver(countyName, event.pageX, event.pageY);
+      this.black._onMouseOver(event.pageX - MAP_WIDTH, event.pageY, countyName);
+      this.white._onMouseOver(event.pageX, event.pageY, countyName);
     }
     this.highlightBar(event);
   }
@@ -549,22 +535,9 @@ export class BailPostingMap extends Map {
   }
 
   showTooltip(pageX, pageY, srcElement) {
-    super.showTooltip(pageX, pageY);
-    const countyElement = srcElement;
-    const countyName = countyElement.getAttribute("data-county-name");
-    const countyAmount = countyElement.getAttribute("data-bail-amount");
-    this.tooltip
-      .html(`
-        <h3 class="tooltip-name">${countyName}</h3>
-        <table>
-          <tbody>
-            <tr>
-              <td>Bail Amount</td>
-              <td style="text-align: right; font-weight: 700;">${countyAmount}</td>
-            </tr>
-          </tbody>
-        </table>
-      `);
+    const countyName = srcElement.getAttribute("data-county-name");
+    const countyAmount = srcElement.getAttribute("data-bail-amount");
+    super.showTooltip(pageX, pageY, countyName, countyAmount);
   }
 
 
@@ -605,7 +578,6 @@ export class BailPostingMap extends Map {
 
     const paths = super.renderPA(features, path);
     paths.style("fill", "#1a1a1a")
-      .attr("data-county-name", feature => feature.properties["NAME"])
       .attr("data-rate", feature => feature.properties.rate)
       .attr("data-bail-amount", feature => feature.properties.amount)
       .attr("data-bucket", feature => feature.properties.bucket);
