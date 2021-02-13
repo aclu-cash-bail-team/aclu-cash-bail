@@ -6,9 +6,6 @@ import { COUNTY_MAP_DATA } from "../data.js";
 const MAP_WIDTH = 600;
 const MAP_HEIGHT = 400;
 
-const TOOLTIP_WIDTH = 100;
-const TOOLTIP_HEIGHT = 70;
-
 class ColorScaleLegend {
   constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut, title = "", offsetY = 30) {
     this.colorDomain = colorDomain;
@@ -287,8 +284,6 @@ export class BailRateMap extends Map {
     const countyName = countyElement.getAttribute("data-county-name");
     const countyRate = countyElement.getAttribute("data-rate");
     this.tooltip
-      .style("left", `${pageX - TOOLTIP_WIDTH}px`)
-      .style("top", `${pageY - TOOLTIP_HEIGHT}px`)
       .html(`
         <h3 class="tooltip-name">${countyName}</h3>
         <table>
@@ -363,8 +358,6 @@ class BailRaceMap extends Map {
   showTooltip(countyName, countyRate, pageX, pageY) {
     super.showTooltip(pageX, pageY);
     this.tooltip
-      .style("left", `${pageX - TOOLTIP_WIDTH}px`)
-      .style("top", `${pageY - TOOLTIP_HEIGHT}px`)
       .html(`
         <h3 class="tooltip-name">${countyName}</h3>
         <table>
@@ -561,8 +554,6 @@ export class BailPostingMap extends Map {
     const countyName = countyElement.getAttribute("data-county-name");
     const countyAmount = countyElement.getAttribute("data-bail-amount");
     this.tooltip
-      .style("left", `${pageX - TOOLTIP_WIDTH}px`)
-      .style("top", `${pageY - TOOLTIP_HEIGHT}px`)
       .html(`
         <h3 class="tooltip-name">${countyName}</h3>
         <table>
