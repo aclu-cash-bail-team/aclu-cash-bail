@@ -85,8 +85,6 @@
 }
 
 .key-circle.green-with-opacity::before {
-  /* background-color: rgba(0,237,137,0.4);
-  border: 1px solid #00ED89; */
   background-color: #55EAAC66;
   border: 1px solid #55EAAC;
   mix-blend-mode: hard-light;
