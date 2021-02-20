@@ -172,7 +172,7 @@
 }
 
 .scatter-tooltip td:not(.scatter-tooltip-name) {
-  width: 60px;
+  width: 80px;
   font-family: "GT America Bold";
 }
 

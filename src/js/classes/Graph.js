@@ -166,6 +166,7 @@ export class ScatterPlot {
     this.plotContainer = this.container.getElementsByClassName("plot-container")[0];
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
+    this.mobileSizing = window.innerWidth < 640;
     this.showOutliers = false;
     this.setUpSearchBar();
     this.setUpOutlierButton();
@@ -199,6 +200,7 @@ export class ScatterPlot {
 
   setUpOutlierButton() {
     const button = this.container.getElementsByClassName("outliers-btn")[0];
+    if (this.mobileSizing) this.plot.classList.add("show-outliers");
     button.addEventListener("click", (e) => {
       if (this.toggleOutliers()) {
         e.target.classList.add("showing");
@@ -244,7 +246,7 @@ export class ScatterPlot {
 
   toggleOutliers() {
     this.showOutliers = !this.showOutliers;
-    return this.showOutliers;
+    return this.showOutliers || this.mobileSizing;
   }
 
   updateViewBox() {
