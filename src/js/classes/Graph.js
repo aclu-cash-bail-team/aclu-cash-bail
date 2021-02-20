@@ -325,22 +325,31 @@ export class ScatterPlot {
   }
 
   renderAxisLabels(axis, isYAxis, isLower) {
+    // for mobile we only need one label
+    if (this.mobileSizing && !isLower) return;
+
     // wrap axis labels in svgs to do local rotation
     const wrapper = document.createElementNS(SVG_NS, "svg");
     wrapper.setAttributeNS(null, "class", "label-wrapper");
-    wrapper.setAttributeNS(null, "x", isLower ? 0 : isYAxis ? 0 : "100%");
-    wrapper.setAttributeNS(null, "y", isLower ? "100%" : isYAxis ? 0 : "100%");
+    if (this.mobileSizing) {
+      wrapper.setAttributeNS(null, "x", isYAxis ? 0 : "50%");
+      wrapper.setAttributeNS(null, "y", isYAxis ? "50%" : "100%");
+    } else {
+      wrapper.setAttributeNS(null, "x", isLower ? 0 : isYAxis ? 0 : "100%");
+      wrapper.setAttributeNS(null, "y", isLower ? "100%" : isYAxis ? 0 : "100%");
+    }
 
     // get offset based on window size
     const dy = this.mobileSizing ? 40 : 60;
 
     const label = document.createElementNS(SVG_NS, "text");
+    const textAnchor = this.mobileSizing ? "middle" : isLower ? "start" : "end";
     label.setAttributeNS(null, "class", "axis-label");
-    label.setAttributeNS(null, "text-anchor", isLower ? "start" : "end");
+    label.setAttributeNS(null, "text-anchor", textAnchor);
     label.setAttributeNS(null, "dy", isYAxis ? -dy : dy);
     if (isYAxis) label.setAttributeNS(null, "transform", "rotate(-90)");
     const text = isLower ? `← Lower ${axis.name}` : `Higher ${axis.name} →`;
-    label.appendChild(document.createTextNode(text));
+    label.appendChild(document.createTextNode(this.mobileSizing ? axis.name : text));
     wrapper.appendChild(label);
     this.axisLabels[isYAxis ? "y" : "x"].push(wrapper);
     this.plot.appendChild(wrapper);
