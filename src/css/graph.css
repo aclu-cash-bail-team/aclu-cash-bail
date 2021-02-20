@@ -180,7 +180,8 @@
   text-align: left;
 }
 
-@media only screen and (max-width: 640px) {
+/* these are custom breakpoints to make the svg work well on phones */
+@media only screen and (max-width: 670px) {
   .scatter-plot {
     width: 300px;
     height: 400px;
@@ -218,7 +219,7 @@
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 400px) {
   .plot-container {
     padding: 20px;
     justify-content: flex-end;

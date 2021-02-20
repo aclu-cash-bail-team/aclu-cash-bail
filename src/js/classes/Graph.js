@@ -166,7 +166,7 @@ export class ScatterPlot {
     this.plotContainer = this.container.getElementsByClassName("plot-container")[0];
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
-    this.mobileSizing = window.innerWidth < 640;
+    this.mobileSizing = window.innerWidth < 670;
     this.showOutliers = false;
     this.setUpSearchBar();
     this.setUpOutlierButton();
@@ -250,7 +250,7 @@ export class ScatterPlot {
   }
 
   updateViewBox() {
-    this.mobileSizing = window.innerWidth < 640;
+    this.mobileSizing = window.innerWidth < 670;
     // rerender axes with new mobile sizing value
     this.renderAxis(this.xAxis, false);
     this.renderAxis(this.yAxis, true);
@@ -258,10 +258,11 @@ export class ScatterPlot {
     // set points to use fixed positioning for mobile or on point for not
     this.points.forEach(point => point.setTooltipFixed(this.mobileSizing));
 
-    // set viewbox based on window size
-    const innerWidth = window.innerWidth;
-    const width = innerWidth < 425 ? 280 : innerWidth < 640 ? 300 : 600;
-    const height = window.innerWidth < 640 ? 400 : 500;
+    // set viewbox based on window size (customized for specific phones)
+    const iPhoneSE = window.innerWidth < 350;
+    const iPhone8 = window.innerWidth < 400;
+    const width = iPhoneSE ? 180 : iPhone8 ? 280 : this.mobileSizing ? 300 : 600;
+    const height = this.mobileSizing ? 400 : 500;
     this.plot.setAttributeNS(null, "viewBox", `0 0 ${width} ${height}`);
   }
 
