@@ -1,0 +1,179 @@
+.tippy-box {
+    width: 260px;
+    /* margin: 20px 0 0 20px; */
+    padding: 4px 6px;
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    font-size: 12px;
+    line-height: 13px;
+    color: #000;
+}
+
+.tooltip-content .tooltip-title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-family: "GT America Bold";
+  font-weight: 400;
+}
+
+.tooltip-content .tooltip-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tooltip-content .tooltip-table tbody tr {
+  border-top: 0.5px solid #d6d6d6;
+}
+
+.tooltip-content .tooltip-table th {
+  padding: 5px;
+  padding-top: 0px;
+  font-family: "GT America Condensed";
+  font-weight: 400;
+  text-align: right;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+.tooltip-content .tooltip-table td {
+  width: 60px;
+  padding: 5px;
+  text-align: right;
+  text-transform: capitalize;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.tooltip-content .tooltip-table td:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.tooltip-content .tooltip-table td:last-child {
+  padding-right: 0;
+}
+
+.tooltip-content .tooltip-table th:first-child {
+    padding-left: 0;
+    text-align: left;
+  }
+  
+  .tooltip-content .tooltip-table th:last-child {
+    padding-right: 0;
+  }
+
+.tooltip-content .tooltip-table .row-header {
+  width: 80px;
+}
+
+/* .scatter-tooltip {
+    position: absolute;
+    width: 260px;
+    margin: 20px 0 0 20px;
+    padding: 11px;
+    background-color: #FFF;
+    border: 1px solid #DCDCDC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    font-size: 12px;
+    line-height: 13px;
+    color: #000;
+  }
+  
+  .scatter-tooltip h4 {
+    margin: 0;
+    font-family: "GT America Bold";
+    font-weight: 400;
+  }
+  
+  .scatter-tooltip table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  
+  .scatter-tooltip tbody tr {
+    border-top: 0.5px solid #D6D6D6;
+  }
+  
+  .scatter-tooltip th {
+    padding: 5px 0;
+    font-family: "GT America Condensed";
+    font-weight: 400;
+    text-align: right;
+    text-transform: uppercase;
+    vertical-align: bottom;
+  }
+  
+  .scatter-tooltip td {
+    padding: 5px 0;
+    text-align: right;
+    text-transform: capitalize;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .scatter-tooltip td:not(.scatter-tooltip-name) {
+    width: 80px;
+    font-family: "GT America Bold";
+  }
+  
+  .scatter-tooltip .scatter-tooltip-name {
+    text-align: left;
+  }
+  
+  /* these are custom breakpoints to make the svg work well on phones */
+  @media only screen and (max-width: 670px) {
+    .scatter-plot {
+      width: 300px;
+      height: 400px;
+    }
+  
+    .plot-container {
+      position: static;
+    }
+  
+    .scatter-tooltip {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+      padding: 20px;
+      background-color: #000;
+      border: none;
+      border-top: 1px solid #FFF;
+      border-radius: 0;
+      box-shadow: none;
+      color: #FFF;
+    }
+  
+    .scatter-tooltip tbody tr {
+      border-top: none;
+    }
+  
+    .scatter-tooltip td {
+      width: 100px;
+    }
+  
+    .scatter-tooltip .scatter-tooltip-name {
+      width: calc(100% - 200px);
+    }
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .plot-container {
+      padding: 20px;
+      justify-content: flex-end;
+    }
+  
+    .scatter-plot {
+      width: 280px;
+      height: 400px;
+    }
+  }
+   */

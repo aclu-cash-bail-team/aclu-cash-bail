@@ -269,7 +269,7 @@ export class ScatterPlot {
   render() {
     // set up svg to resize on window resize
     this.updateViewBox();
-    window.addEventListener("resize", e => this.updateViewBox());
+    window.addEventListener("resize", () => this.updateViewBox());
 
     // render axes
     this.renderAxis(this.xAxis, false);

@@ -1,3 +1,13 @@
+/* Add something instead of * */
+*:focus { 
+  outline: none;
+}
+
+/* Do we need this */
+.graph {
+  margin: 3em 0;
+  position: relative;
+}
 .graph h3 {
   margin-bottom: 20px;
   font-family: "GT America Bold";
@@ -21,6 +31,7 @@
   margin-bottom: 50px;
 }
 
+/* Should width be 100%? */
 .scatter-plot {
   width: 600px;
   height: 500px;
@@ -28,23 +39,36 @@
   overflow: visible;
 }
 
+/* should margin-top be 0 */
 .scatter-plot-subhead {
   position: relative;
   margin: 30px 0;
   text-align: center;
 }
 
+/* Do we need this */
+.scatter-plot-subhead h5 {
+  margin: 0;
+  color:rgba(255, 255, 255, 0.75);
+  font-weight: normal;
+}
+
+/* Should padding be 9px 15px (alex had it at 9 15) */
 .scatter-plot-key {
-  padding: 9px 15px;
+  padding: 8px 15px;
+  align-items: center;
+  display: inline-flex;
 }
 
 .scatter-plot-key span {
   font-size: 11px;
   line-height: 16px;
+  color:rgba(255, 255, 255, 0.75);
 }
 
+/* Should margin-right be 20px Alex had at 20*/
 .scatter-plot-key span:not(:last-of-type) {
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .key-circle::before {
@@ -53,11 +77,29 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
+}
+.key-circle:not(:empty)::before {
   margin-right: 8px;
+}
+
+.key-circle.large::before {
+  width: 60px;
+  height: 60px;
+}
+
+.key-circle.mid::before {
+  width: 32px;
+  height: 32px;
 }
 
 .key-circle.green::before {
   background-color: #00ED89;
+}
+
+.key-circle.green-with-opacity::before {
+  background-color: #55EAAC66;
+  border: 1px solid #55EAAC;
+  mix-blend-mode: hard-light;
 }
 
 .key-circle.purple::before {
@@ -81,6 +123,7 @@
   line-height: 16px;
 }
 
+/* Should this be opacity .2 */
 .axis-line {
   stroke: rgba(255, 255, 255, 0.1);
   stroke-width: 0.5px;
@@ -91,6 +134,10 @@
 .scatter-text.outlier {
   display: none;
   opacity: 50%;
+}
+
+.scatter-text.hovering {
+  text-shadow: 1px 0px;
 }
 
 .scatter-plot.show-outliers .scatter-line.outlier,
@@ -104,6 +151,23 @@
   stroke-width: 0.5px;
 }
 
+.hover-line {
+  stroke: rgba(255, 255, 255, 0);
+  stroke-width: 12px;
+  
+}
+
+.scatter-point.total {
+  fill: #55EAAC66;
+  stroke: #55EAAC;
+  mix-blend-mode: hard-light;
+}
+
+.scatter-point.hovering.total {
+  fill: #55EAACab;
+  stroke: #FFF;
+  stroke-width: 2px;
+}
 .scatter-point.black {
   fill: #00ED89;
 }
@@ -124,62 +188,6 @@
   cursor: default;
 }
 
-.scatter-tooltip {
-  position: absolute;
-  width: 260px;
-  margin: 20px 0 0 20px;
-  padding: 11px;
-  background-color: #FFF;
-  border: 1px solid #DCDCDC;
-  border-radius: 4px;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-  font-size: 12px;
-  line-height: 13px;
-  color: #000;
-}
-
-.scatter-tooltip h4 {
-  margin: 0;
-  font-family: "GT America Bold";
-  font-weight: 400;
-}
-
-.scatter-tooltip table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-}
-
-.scatter-tooltip tbody tr {
-  border-top: 0.5px solid #D6D6D6;
-}
-
-.scatter-tooltip th {
-  padding: 5px 0;
-  font-family: "GT America Condensed";
-  font-weight: 400;
-  text-align: right;
-  text-transform: uppercase;
-  vertical-align: bottom;
-}
-
-.scatter-tooltip td {
-  padding: 5px 0;
-  text-align: right;
-  text-transform: capitalize;
-  font-variant-numeric: tabular-nums;
-}
-
-.scatter-tooltip td:not(.scatter-tooltip-name) {
-  width: 80px;
-  font-family: "GT America Bold";
-}
-
-.scatter-tooltip .scatter-tooltip-name {
-  text-align: left;
-}
-
 /* these are custom breakpoints to make the svg work well on phones */
 @media only screen and (max-width: 670px) {
   .scatter-plot {
@@ -189,33 +197,6 @@
 
   .plot-container {
     position: static;
-  }
-
-  .scatter-tooltip {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    background-color: #000;
-    border: none;
-    border-top: 1px solid #FFF;
-    border-radius: 0;
-    box-shadow: none;
-    color: #FFF;
-  }
-
-  .scatter-tooltip tbody tr {
-    border-top: none;
-  }
-
-  .scatter-tooltip td {
-    width: 100px;
-  }
-
-  .scatter-tooltip .scatter-tooltip-name {
-    width: calc(100% - 200px);
   }
 }
 
