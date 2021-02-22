@@ -1,12 +1,10 @@
-/* Add something instead of * */
-*:focus { 
-  outline: none;
+.graph {
+  margin: 0 0 5em;
+  position: relative;
 }
 
-/* Do we need this */
-.graph {
-  margin: 3em 0;
-  position: relative;
+.graph *:focus { 
+  outline: none;
 }
 
 .graph h3 {
@@ -32,7 +30,6 @@
   margin-bottom: 50px;
 }
 
-/* Should width be 100%? */
 .scatter-plot {
   width: 600px;
   height: 500px;
@@ -40,23 +37,20 @@
   overflow: visible;
 }
 
-/* should margin-top be 0 */
 .scatter-plot-subhead {
   position: relative;
   margin: 30px 0;
   text-align: center;
 }
 
-/* Do we need this */
 .scatter-plot-subhead h5 {
   margin: 0;
   color:rgba(255, 255, 255, 0.75);
   font-weight: normal;
 }
 
-/* Should padding be 9px 15px (alex had it at 9 15) */
 .scatter-plot-key {
-  padding: 8px 15px;
+  padding: 9px 15px;
   align-items: center;
   display: inline-flex;
 }
@@ -67,7 +61,6 @@
   color:rgba(255, 255, 255, 0.75);
 }
 
-/* Should margin-right be 20px Alex had at 20*/
 .scatter-plot-key span:not(:last-of-type) {
   margin-right: 15px;
 }
@@ -124,7 +117,6 @@
   line-height: 16px;
 }
 
-/* Should this be opacity .2 */
 .axis-line {
   stroke: rgba(255, 255, 255, 0.1);
   stroke-width: 0.5px;
