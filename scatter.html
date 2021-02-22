@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="src/css/search.css">
     <link rel="stylesheet" href="src/css/graph.css">
     <link rel="stylesheet" href="src/css/mobile.css">
+    <link rel="stylesheet" href="src/css/tooltip.css">
+
   </head>
   <body>
     <div class="container">
@@ -35,6 +37,12 @@
 
       <div class="graph" id="cases-scatter-plot">
         <h3>Cash Bail Rates and Assigned Amounts Across Counties</h3>
+        <div class="ui fluid multiple search selection dropdown">
+          <input type="hidden" name="county">
+          <i class="dropdown icon"></i>
+          <div class="default text">Search counties</div>
+          <div class="menu"></div>
+        </div>
         <div class="scatter-plot-subhead">
           <div class="scatter-plot-key">
             <span class="key-text">100</span>
@@ -50,11 +58,12 @@
         </div>
     </div>
   </body>
+  <script src="https://unpkg.com/popper.js@1"></script>
+  <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.js"></script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
+  
   <script src="src/js/scatter-plot.js" charset="utf-8"></script>
   <script>
     $(document).ready(() => {

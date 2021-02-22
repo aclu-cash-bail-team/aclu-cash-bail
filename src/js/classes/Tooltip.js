@@ -1,6 +1,3 @@
-import tippy from "tippy.js";
-import "tippy.js/dist/tippy.css";
-
 /********************
   configureTooltip ({rows, columns, ...options}) => renderTooltip
   =========================================================
@@ -35,7 +32,7 @@ import "tippy.js/dist/tippy.css";
   - dataKey: keyof data; 
   - render: ((dataKeyValue: data[i][dataKey], data[i], i) => Element | string) | Element | string
 *********************/
-
+const tippy = window.tippy;
 
 function isElement(element) {
   return element instanceof Element || element instanceof HTMLDocument || element && [1, 3].includes(element.nodeType);
@@ -153,20 +150,16 @@ function createTooltipContent(title, rows, columns, data) {
 tippy.setDefaultProps({
   arrow: false,
   placement: "right",
-  delay: [200, 0],
-  duration: 400,
+  delay: 0,
+  duration: 0,
+  flip: false,
   popperOptions: {
-    modifiers: [
-      {name: "flip", enabled: false},
-      {
-        name: "preventOverflow",
-        options: {
-          mainAxis: true,
-          altAxis: true,
-          padding: 4
-        },
+    modifiers: {
+      preventOverflow: {
+        enabled: true,
+        padding: 4
       },
-    ],
+    }
   }
 });
 
