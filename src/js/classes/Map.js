@@ -35,16 +35,21 @@ class ColorScaleLegend {
       .attr("height", svgHeight);
   }
 
-  highlightBar(bucket) {
-    // darken other legend bars
-    this.svg.selectAll(`rect:not([${BUCKET_ATTRIBUTE}="${bucket}"])`).style("opacity", "0.2");
-    // darken other legend labels, except for the start & end of highlighted bar
-    this.svg.selectAll(`.legend-text:not([${BUCKET_ATTRIBUTE}*="${bucket}"])`).style("opacity", "0.4");
+  highlightBars(buckets) {
+    // darken all legend bars
+    this.svg.selectAll(".legend-bar").style("opacity", "0.2");
+    // darken all legend labels
+    this.svg.selectAll(".legend-text").style("opacity", "0.4");
+    // highlight desired legend bars
+    buckets.forEach(bucket => {
+      this.svg.selectAll(`.legend-bar[${BUCKET_ATTRIBUTE}="${bucket}"]`).style("opacity", "1");
+      this.svg.selectAll(`.legend-text[${BUCKET_ATTRIBUTE}*="${bucket}"]`).style("opacity", "1");
+    });
   }
 
   resetHighlight() {
-    this.svg.selectAll("rect").style("opacity", "1");
-    this.svg.selectAll("text").style("opacity", "1");
+    this.svg.selectAll(".legend-bar").style("opacity", "1");
+    this.svg.selectAll(".legend-text").style("opacity", "1");
   }
 
   render() {
@@ -55,6 +60,7 @@ class ColorScaleLegend {
       .attr("data-label", d => d);
     // Add colored bars
     legend.append("rect")
+      .attr("class", "legend-bar")
       .attr("x", (_, i) => this.offsetX + i*this.sectionWidth)
       .attr("y", this.offsetY)
       .attr("width", this.sectionWidth)
@@ -302,7 +308,7 @@ export class BailRateMap extends Map {
 
   highlightBar(event) {
     const bucket = Number(event.srcElement.getAttribute(BUCKET_ATTRIBUTE));
-    this.legend.highlightBar(bucket);
+    this.legend.highlightBars([bucket]);
   }
 
   highlightMap(event) {
@@ -343,6 +349,7 @@ class BailRaceMap extends Map {
     this.race = race;
     this.parent = parent;
     this.color = color;
+    this.countyNameToBucket = {};
   }
 
   // Called by parent
@@ -378,6 +385,10 @@ class BailRaceMap extends Map {
     this.parent.onChildMouseOut(event);
   }
 
+  getBucket(countyName) {
+    return Number(this.countyNameToBucket[countyName]);
+  }
+
   renderPA(features, path) {
     this.data.forEach(row => {
       const countyName = row.data[0];
@@ -389,6 +400,7 @@ class BailRaceMap extends Map {
         feature.properties.color = "#303030";
       }
       feature.properties.bucket = this.color.invertExtent(feature.properties.color)[1];
+      this.countyNameToBucket[countyName] = feature.properties.bucket;
     });
     const paths = super.renderPA(features, path);
     paths.style("fill", feature => feature.properties.color)
@@ -460,8 +472,9 @@ export class RaceMapContainer {
 
 
   highlightBar(event) {
-    const bucket = Number(event.srcElement.getAttribute(BUCKET_ATTRIBUTE));
-    this.legend.highlightBar(bucket);
+    const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    const buckets = [this.black.getBucket(countyName), this.white.getBucket(countyName)];
+    this.legend.highlightBars(buckets);
   }
 
   highlightMap(event) {
@@ -544,7 +557,7 @@ export class BailPostingMap extends Map {
 
   highlightBar(event) {
     const bucket = Number(event.srcElement.getAttribute(BUCKET_ATTRIBUTE));
-    this.legend.highlightBar(bucket);
+    this.legend.highlightBars([bucket]);
   }
 
   highlightMap(event) {
