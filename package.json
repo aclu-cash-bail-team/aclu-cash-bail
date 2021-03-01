@@ -2,7 +2,6 @@
   "name": "aclu-cash-bail",
   "version": "1.0.0",
   "description": "This repository hosts the visualization code for the ACLU PA Cash Bail Report.",
-  "main": "index.js",
   "scripts": {
     "dev": "rm -rf local_dist/ && parcel serve *.html --dist-dir local_dist --open",
     "build": "rm -rf dist/ && parcel build *.html --public-url='/aclu-cash-bail'",
@@ -19,8 +18,17 @@
   "author": "Alex Graves, Arjun Pothukuchi, and Mario Aksiyote",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/optimizer-cssnano": "^2.0.0-nightly.612",
+    "@parcel/optimizer-htmlnano": "^2.0.0-nightly.612",
+    "@parcel/packager-css": "^2.0.0-nightly.612",
+    "@parcel/packager-html": "^2.0.0-nightly.612",
+    "@parcel/transformer-css": "^2.0.0-nightly.612",
+    "@parcel/transformer-html": "^2.0.0-nightly.612",
+    "@parcel/transformer-postcss": "^2.0.0-nightly.612",
+    "@parcel/transformer-posthtml": "^2.0.0-nightly.612",
     "eslint": "^5.16.0",
-    "parcel": "^2.0.0-beta.1"
+    "parcel": "^2.0.0-beta.1",
+    "postcss": "^8.2.6"
   },
   "bugs": {
     "url": "https://github.com/apothuku/aclu-cash-bail/issues"
