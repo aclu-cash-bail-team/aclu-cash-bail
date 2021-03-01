@@ -5,6 +5,7 @@
     <title>Maps</title>
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/map.css">
+    <link rel="stylesheet" href="src/css/mobile.css">
 </head>
 <body>
   <div class="container">
@@ -14,24 +15,31 @@
         <div class="btn-text switch right">ROR</div>
       </div>
       <div id="cash-bail-rate" class="map-container">
-        <div class="legend"></div>
+        <div class="legend-container">
+          <div class="color-scale-legend"></div>
+        </div>
         <div class="map"></div>
       </div>
       <div id="ror-rate" class="map-container">
-          <div class="legend"></div>
+        <div class="legend-container">
+          <div class="color-scale-legend"></div>
+        </div>
           <div class="map"></div>
       </div>
     </div>
     <div id="race-rate" class="map-container">
+      <div class="legend-container">
+        <div class="color-scale-legend"></div>
+      </div>
       <div class="legend"></div>
       <div class="map-row">
-        <div id="black" class="map"></div>
-        <div id="white" class="map"></div>
+        <div id="black" class="map race-map"></div>
+        <div id="white" class="map race-map"></div>
       </div>
     </div>
     <div id="bail-posting" class="map-container">
       <div class="legend-container">
-        <div class="legend"></div>
+        <div class="color-scale-legend"></div>
         <div class="spike-legend"></div>
       </div>
       <div class="map"></div>

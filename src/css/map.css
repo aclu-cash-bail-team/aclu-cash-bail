@@ -2,6 +2,14 @@
     text-align: center;
 }
 
+.map {
+    min-width: 200px;
+}
+
+.race-map {
+    width: 100%; /* Needed, otherwise svg w/ viewBox in flexbox in Chrome will have 0 width/height */
+}
+
 .map-row {
     display: flex;
     justify-content: center;
@@ -16,9 +24,15 @@ path {
 }
 
 .legend-container {
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: stretch;
+}
+
+.color-scale-legend {
+    min-width: 300px;
+    max-width: 325px;
 }
 
 .legend-text {
@@ -38,7 +52,7 @@ path {
 }
 
 .spike-legend {
-    margin-left: 2em;
+    min-width: 135px;
 }
 
 .city-label {

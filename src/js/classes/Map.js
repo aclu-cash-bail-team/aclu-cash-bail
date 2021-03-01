@@ -2,9 +2,8 @@ import * as d3 from "d3";
 import { feature } from "topojson";
 import { COUNTY_MAP_DATA } from "../data.js";
 
-// TODO: Support mobile sizings
-const MAP_WIDTH = 600;
-const MAP_HEIGHT = 400;
+const DEFAULT_MAP_WIDTH = 600;
+const DEFAULT_MAP_HEIGHT = 400;
 
 const COUNTY_NAME_ATTRIBUTE = "data-county-name";
 const BUCKET_ATTRIBUTE = "data-bucket";
@@ -27,12 +26,10 @@ class ColorScaleLegend {
     this.labelOffsetY = this.offsetY + 22;
     this.legendWidth = this.sectionWidth * this.colorDomain.length;
 
-    // TODO: Support mobile sizings
     const svgWidth = this.legendWidth + 20;
     const svgHeight = this.sectionHeight + this.labelOffsetY + 10;
-    this.svg = d3.select(`#${id} .legend`).append("svg")
-      .attr("width", svgWidth)
-      .attr("height", svgHeight);
+    this.svg = d3.select(`#${id} .color-scale-legend`).append("svg")
+      .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
   }
 
   highlightBars(buckets) {
@@ -56,7 +53,6 @@ class ColorScaleLegend {
     const legend = this.svg.selectAll("g")
       .data(this.labels.slice(0, this.labels.length - 1))
       .enter().append("g")
-      .attr("class", "legend")
       .attr("data-label", d => d);
     // Add colored bars
     legend.append("rect")
@@ -134,9 +130,10 @@ class SpikeLegend {
     this.spikeOffsetX = 25;
     this.spikeSpacingX = 30;
 
+    const svgWidth = 125;
+    const svgHeight = this.spikeOffsetY + 25;
     this.svg = d3.select(`#${id} .spike-legend`).append("svg")
-      .attr("width", 125)
-      .attr("height", this.spikeOffsetY + 25);
+      .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
   }
 
   render() {
@@ -171,9 +168,9 @@ class SpikeLegend {
 
 class Map {
   constructor(selector) {
-    this.svg = d3.select(selector).append("svg")
-      .attr("width", MAP_WIDTH)
-      .attr("height", MAP_HEIGHT);
+    this.svg = d3.select(selector)
+      .append("svg")
+      .attr("viewBox", `0 0 ${DEFAULT_MAP_WIDTH} ${DEFAULT_MAP_HEIGHT}`);
 
     this.projection = d3.geoMercator().scale(5500).center([-75.75, 40.5]);
   }
@@ -455,9 +452,9 @@ export class RaceMapContainer {
     // TODO: Fix this awful hack
     if (race == "black") {
       this.black._onMouseMove(event.pageX, event.pageY, countyName);
-      this.white._onMouseMove(event.pageX + MAP_WIDTH, event.pageY, countyName);
+      this.white._onMouseMove(event.pageX + DEFAULT_MAP_WIDTH, event.pageY, countyName);
     } else if (race == "white") {
-      this.black._onMouseMove(event.pageX - MAP_WIDTH, event.pageY, countyName);
+      this.black._onMouseMove(event.pageX - DEFAULT_MAP_WIDTH, event.pageY, countyName);
       this.white._onMouseMove(event.pageX, event.pageY, countyName);
     }
     this.highlightBar(event);
