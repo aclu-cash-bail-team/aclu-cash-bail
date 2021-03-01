@@ -1,0 +1,208 @@
+.graph {
+  margin: 0 0 5em;
+  position: relative;
+}
+
+.graph *:focus { 
+  outline: none;
+}
+
+.graph h3 {
+  margin-bottom: 20px;
+  font-family: "GT America Bold";
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 28px;
+  text-align: center;
+  color: #FFF;
+}
+
+.graph .outliers-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.plot-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.scatter-plot {
+  width: 600px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: visible;
+}
+
+.scatter-plot-subhead {
+  position: relative;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.scatter-plot-subhead h5 {
+  margin: 0;
+  color:rgba(255, 255, 255, 0.75);
+  font-weight: normal;
+}
+
+.scatter-plot-key {
+  padding: 9px 15px;
+  align-items: center;
+  display: inline-flex;
+}
+
+.scatter-plot-key span {
+  font-size: 11px;
+  line-height: 16px;
+  color:rgba(255, 255, 255, 0.75);
+}
+
+.scatter-plot-key span:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+.key-circle::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.key-circle:not(:empty)::before {
+  margin-right: 8px;
+}
+
+.key-circle.large::before {
+  width: 60px;
+  height: 60px;
+}
+
+.key-circle.mid::before {
+  width: 32px;
+  height: 32px;
+}
+
+.key-circle.green::before {
+  background-color: #00ED89;
+}
+
+.key-circle.green-with-opacity::before {
+  background-color: #55EAAC66;
+  border: 1px solid #55EAAC;
+  mix-blend-mode: hard-light;
+}
+
+.key-circle.purple::before {
+  background-color: #C14EF8;
+}
+
+.axis-label {
+  fill: #FFF;
+  font-size: 11px;
+  line-height: 13px;
+  text-transform: uppercase;
+}
+
+.label-wrapper {
+  overflow: visible;
+}
+
+.axis-tick {
+  fill: rgba(255, 255, 255, 0.75);
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.axis-line {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 0.5px;
+}
+
+.scatter-point.outlier,
+.scatter-line.outlier,
+.scatter-text.outlier {
+  display: none;
+  opacity: 50%;
+}
+
+.scatter-text.hovering {
+  text-shadow: 1px 0px;
+}
+
+.scatter-plot.show-outliers .scatter-line.outlier,
+.scatter-plot.show-outliers .scatter-point.outlier,
+.scatter-plot.show-outliers .scatter-text.outlier {
+  display: inline-block;
+}
+
+.scatter-line {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 0.5px;
+}
+
+.hover-line {
+  stroke: rgba(255, 255, 255, 0);
+  stroke-width: 12px;
+  
+}
+
+.scatter-point.total {
+  fill: #55EAAC66;
+  stroke: #55EAAC;
+  mix-blend-mode: hard-light;
+}
+
+.scatter-point.hovering.total {
+  fill: #55EAACab;
+  stroke: #FFF;
+  stroke-width: 2px;
+}
+
+.scatter-point.black {
+  fill: #00ED89;
+}
+
+.scatter-point.white {
+  fill: #C14EF8;
+}
+
+.scatter-line.hovering, .scatter-point.hovering {
+  stroke: #FFF;
+  stroke-width: 0.5px;
+}
+
+.scatter-text {
+  fill: #FFF;
+  font-size: 11px;
+  line-height: 16px;
+  cursor: default;
+}
+
+/* these are custom breakpoints to make the svg work well on phones */
+@media only screen and (max-width: 670px) {
+  .scatter-plot {
+    width: 300px;
+    height: 400px;
+  }
+
+  .plot-container {
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .plot-container {
+    padding: 20px;
+    justify-content: flex-end;
+  }
+
+  .scatter-plot {
+    width: 280px;
+    height: 400px;
+  }
+}

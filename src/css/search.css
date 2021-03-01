@@ -114,6 +114,10 @@ i.icon.delete:hover {
   font-size: 13px;
 }
 
+.ui.selection.dropdown .menu > .item.bold {
+  font-family: "GT America Bold";
+}
+
 .ui.dropdown.selected, .ui.dropdown .menu .selected.item,
 .ui.dropdown .menu > .item:hover {
   background-color: #222;

@@ -3,6 +3,16 @@
   src: url("./GT-America-Standard-Regular.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "GT America Bold";
+  src: url("./GT-America-Standard-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "GT America Condensed";
+  src: url("./GT-America-Condensed-Regular.otf") format("opentype");
+}
+
 body {
   font-family: "GT America";
   font-size: 13px;
@@ -34,4 +44,27 @@ body {
 
 .mobile-only {
   display: none;
+}
+
+.btn-text {
+  color: #fff;
+  font-family: "GT America Bold";
+  font-weight: 600;
+  font-size: 11px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.outliers-btn {
+  margin-left: 1em;
+  padding: 10px 15px;
+  border: 1px #333 solid;
+  cursor: pointer;
+  user-select: none;
+}
+
+.outliers-btn.showing {
+  color: #fff;
+  background-color: #1D1D1D;
 }
