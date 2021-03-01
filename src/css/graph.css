@@ -72,6 +72,7 @@
   height: 8px;
   border-radius: 50%;
 }
+
 .key-circle:not(:empty)::before {
   margin-right: 8px;
 }
@@ -161,6 +162,7 @@
   stroke: #FFF;
   stroke-width: 2px;
 }
+
 .scatter-point.black {
   fill: #00ED89;
 }
