@@ -89,7 +89,7 @@ class CountyPoint {
   }
 
   renderLine() {
-    // // only draw line if we have two data points
+    // only draw line if we have two data points
 
     if (this.data.length != 2) return;
     const className = `scatter-line${this.outlier ? " outlier" : ""}`;
