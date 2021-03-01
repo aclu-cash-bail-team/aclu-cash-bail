@@ -5551,6 +5551,417 @@ export const RACE_SCATTER_PLOT = {
   },
 };
 
+export const BAIL_CASES_SCATTER_PLOT = {
+  "State Average": {
+    "showName": true,
+    "x": 42.59666979,
+    "y": "$31.8K",
+    "r": 2470
+  },
+  "Adams": {
+    "showName": false,
+    "x": 30.18867925,
+    "r": 775,
+    "y": "$27.0K"
+  },
+  "Allegheny": {
+    "showName": true,
+    "x": 43.50802205,
+    "r": 13884,
+    "y": "$18.6K"
+  },
+  "Armstrong": {
+    "showName": false,
+    "x": 41.05888709,
+    "r": 742,
+    "y": "$13.9K"
+  },
+  "Beaver": {
+    "showName": false,
+    "x": 49.05179283,
+    "r": 4959,
+    "y": "$17.6K"
+  },
+  "Bedford": {
+    "showName": false,
+    "x": 38.63636364,
+    "r": 563,
+    "y": "$50.1K"
+  },
+  "Berks": {
+    "showName": true,
+    "x": 50.92425977,
+    "r": 6036,
+    "y": "$28.3K"
+  },
+  "Blair": {
+    "showName": true,
+    "x": 34.04638145,
+    "r": 1674,
+    "y": "$33.1K"
+  },
+  "Bradford": {
+    "showName": false,
+    "x": 45.49865229,
+    "r": 824,
+    "y": "$32.7K"
+  },
+  "Bucks": {
+    "showName": false,
+    "x": 32.41325938,
+    "r": 4959,
+    "y": "$62.6K"
+  },
+  "Butler": {
+    "showName": false,
+    "x": 31.15234375,
+    "r": 626,
+    "y": "$17.6K"
+  },
+  "Cambria": {
+    "showName": false,
+    "x": 44.29388101,
+    "r": 2059,
+    "y": "$37.0K"
+  },
+  "Cameron": {
+    "showName": false,
+    "x": 21.67832168,
+    "r": 30,
+    "y": "$26.8K"
+  },
+  "Carbon": {
+    "showName": false,
+    "x": 32.99299883,
+    "r": 1098,
+    "y": "$26.8K"
+  },
+  "Centre": {
+    "showName": false,
+    "x": 26.08333333,
+    "r": 871,
+    "y": "$44.3K"
+  },
+  "Chester": {
+    "showName": false,
+    "x": 38.0970325,
+    "r": 3968,
+    "y": "$26.4K"
+  },
+  "Clarion": {
+    "showName": false,
+    "x": 40,
+    "r": 487,
+    "y": "$20.0K"
+  },
+  "Clearfield": {
+    "showName": false,
+    "x": 36.28318584,
+    "r": 734,
+    "y": "$24.3K"
+  },
+  "Clinton": {
+    "showName": true,
+    "x": 36.92628651,
+    "r": 527,
+    "y": "$21.0K"
+  },
+  "Columbia": {
+    "showName": false,
+    "x": 38.18897638,
+    "r": 667,
+    "y": "$35.8K"
+  },
+  "Crawford": {
+    "showName": false,
+    "x": 28.8973384,
+    "r": 225,
+    "y": "$22.6K"
+  },
+  "Cumberland": {
+    "showName": false,
+    "x": 38.5278224,
+    "r": 2593,
+    "y": "$25.0K"
+  },
+  "Dauphin": {
+    "showName": true,
+    "x": 42.44132779,
+    "r": 5850,
+    "y": "$36.6K"
+  },
+  "Delaware": {
+    "showName": true,
+    "x": 55.68060922,
+    "r": 9514,
+    "y": "$38.5K"
+  },
+  "Elk": {
+    "showName": false,
+    "x": 28.62318841,
+    "r": 229,
+    "y": "$21.3K"
+  },
+  "Erie": {
+    "showName": true,
+    "x": 43.95330739,
+    "r": 2750,
+    "y": "$27.8K"
+  },
+  "Fayette": {
+    "showName": false,
+    "x": 44.27074081,
+    "r": 2463,
+    "y": "$19.5K"
+  },
+  "Forest": {
+    "showName": false,
+    "x": 34.75609756,
+    "r": 50,
+    "y": "$22.7K"
+  },
+  "Franklin": {
+    "showName": false,
+    "x": 37.47902685,
+    "r": 1772,
+    "y": "$53.5K"
+  },
+  "Fulton": {
+    "showName": false,
+    "x": 28.67298578,
+    "r": 113,
+    "y": "$54.7K"
+  },
+  "Greene": {
+    "showName": false,
+    "x": 37.44343891,
+    "r": 324,
+    "y": "$15.6K"
+  },
+  "Huntingdon": {
+    "showName": false,
+    "x": 38.96907216,
+    "r": 552,
+    "y": "$18.3K"
+  },
+  "Indiana": {
+    "showName": false,
+    "x": 35.01070664,
+    "r": 322,
+    "y": "$16.6K"
+  },
+  "Jefferson": {
+    "showName": false,
+    "x": 38.55721393,
+    "r": 460,
+    "y": "$45.0K"
+  },
+  "Juniata": {
+    "showName": false,
+    "x": 34.46215139,
+    "r": 168,
+    "y": "$22.4K"
+  },
+  "Lackawanna": {
+    "showName": true,
+    "x": 52.63500325,
+    "r": 3052,
+    "y": "$31.1K"
+  },
+  "Lancaster": {
+    "showName": false,
+    "x": 44.93240475,
+    "r": 5430,
+    "y": "$52.6K"
+  },
+  "Lawrence": {
+    "showName": false,
+    "x": 48.92407633,
+    "r": 1182,
+    "y": "$19.2K"
+  },
+  "Lebanon": {
+    "showName": false,
+    "x": 38.70437956,
+    "r": 2085,
+    "y": "$24.5K"
+  },
+  "Lehigh": {
+    "showName": false,
+    "x": 54.88215488,
+    "r": 6526,
+    "y": "$20.1K"
+  },
+  "Luzerne": {
+    "showName": false,
+    "x": 38.28885249,
+    "r": 3828,
+    "y": "$37.0K"
+  },
+  "Lycoming": {
+    "showName": true,
+    "x": 34.68169761,
+    "r": 1557,
+    "y": "$52.7K"
+  },
+  "McKean": {
+    "showName": false,
+    "x": 42.38134888,
+    "r": 488,
+    "y": "$23.7K"
+  },
+  "Mercer": {
+    "showName": false,
+    "x": 36.12542955,
+    "r": 1653,
+    "y": "$25.0K"
+  },
+  "Mifflin": {
+    "showName": false,
+    "x": 48.49498328,
+    "r": 721,
+    "y": "$39.8K"
+  },
+  "Monroe": {
+    "showName": false,
+    "x": 32.79661017,
+    "r": 1910,
+    "y": "$27.4K"
+  },
+  "Montgomery": {
+    "showName": false,
+    "x": 33.63556165,
+    "r": 6723,
+    "y": "$25.3K"
+  },
+  "Montour": {
+    "showName": false,
+    "x": 35.19163763,
+    "r": 100,
+    "y": "$28.6K"
+  },
+  "Northampton": {
+    "showName": false,
+    "x": 45.83529967,
+    "r": 3804,
+    "y": "$27.5K"
+  },
+  "Northumberland": {
+    "showName": false,
+    "x": 36,
+    "r": 869,
+    "y": "$41.8K"
+  },
+  "Perry": {
+    "showName": false,
+    "x": 28.98148148,
+    "r": 305,
+    "y": "$25.6K"
+  },
+  "Philadelphia": {
+    "showName": true,
+    "x": 50.12216352,
+    "r": 32072,
+    "y": "$54.0K"
+  },
+  "Pike": {
+    "showName": false,
+    "x": 34.16738568,
+    "r": 382,
+    "y": "$22.2K"
+  },
+  "Potter": {
+    "showName": false,
+    "x": 23.36601307,
+    "r": 142,
+    "y": "$19.4K"
+  },
+  "Schuylkill": {
+    "showName": false,
+    "x": 37.74187822,
+    "r": 2100,
+    "y": "$20.6K"
+  },
+  "Snyder": {
+    "showName": false,
+    "x": 35.92870544,
+    "r": 381,
+    "y": "$28.0K"
+  },
+  "Somerset": {
+    "showName": false,
+    "x": 25,
+    "r": 498,
+    "y": "$37.9K"
+  },
+  "Sullivan": {
+    "showName": false,
+    "x": 36.44859813,
+    "r": 36,
+    "y": "$16.9K"
+  },
+  "Susquehanna": {
+    "showName": false,
+    "x": 40.32663317,
+    "r": 317,
+    "y": "$27.6K"
+  },
+  "Tioga": {
+    "showName": false,
+    "x": 36.38603696,
+    "r": 868,
+    "y": "$20.6K"
+  },
+  "Union": {
+    "showName": true,
+    "x": 25.36136662,
+    "r": 186,
+    "y": "$27.5K"
+  },
+  "Venango": {
+    "showName": false,
+    "x": 37.84477229,
+    "r": 586,
+    "y": "$37.5K"
+  },
+  "Warren": {
+    "showName": false,
+    "x": 40.61393152,
+    "r": 338,
+    "y": "$25.4K"
+  },
+  "Washington": {
+    "showName": false,
+    "x": 38.93688681,
+    "r": 2596,
+    "y": "$25.1K"
+  },
+  "Wayne": {
+    "showName": false,
+    "x": 37.20349563,
+    "r": 286,
+    "y": "$34.1K"
+  },
+  "Westmoreland": {
+    "showName": true,
+    "x": 31.71662559,
+    "r": 3840,
+    "y": "$21.0K"
+  },
+  "Wyoming": {
+    "showName": false,
+    "x": 35.68118628,
+    "r": 377,
+    "y": "$25.1K"
+  },
+  "York": {
+    "showName": false,
+    "x": 44.27380952,
+    "r": 7356,
+    "y": "$20.8K"
+  }
+};
+
 export const BAIL_POSTING_DATA = [
   {
     "data": [

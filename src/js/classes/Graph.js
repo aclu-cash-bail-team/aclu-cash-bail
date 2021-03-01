@@ -1,22 +1,23 @@
+import { configureTooltip } from "./Tooltip";
+
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 class CountyPoint {
-  constructor(county, data, xAxis, yAxis, outlier, showName, plot, container) {
+  constructor(data, county, xAxis, yAxis, radiusScale, outlier, showName, plot, renderTooltip, container) {
     this.county = county;
     this.data = data;
     this.xAxis = xAxis;
     this.yAxis = yAxis;
+    this.radiusScale = radiusScale;
     this.outlier = outlier;
     this.showName = showName;
     this.plot = plot;
     this.container = container;
+    this.renderTooltip = (elements, config) => renderTooltip(elements, this.data, this.county, config);
     [this.xs, this.ys] = this.getPositions();
+    this.rs = this.getRadiis();
     this.elements = [];
-    this.tooltipFixed = true;
-  }
-
-  setTooltipFixed(isFixed) {
-    this.tooltipFixed = isFixed;
+    this.tooltipTriggerTargets = [];
   }
 
   isOutlier() {
@@ -35,6 +36,21 @@ class CountyPoint {
     return [xs, ys];
   }
 
+  getRadiis() {
+    const rs = [];
+    this.data.forEach((data) => {
+      if (!this.radiusScale) return rs.push(4);
+      if (this.radiusScale.min === this.radiusScale.max) return rs.push(this.radiusScale.min);
+      const rValueDiff = this.radiusScale.maxValue - this.radiusScale.minValue;
+      const rCircleSizeDiff = this.radiusScale.max - this.radiusScale.min;
+      const scaledR = Math.min(((data.r - this.radiusScale.minValue) * rCircleSizeDiff / rValueDiff) + this.radiusScale.min, this.radiusScale.max);
+
+      rs.push(Math.min(Math.max(scaledR, this.radiusScale.min), this.radiusScale.max));
+    });
+    return rs;
+  }
+
+
   renderCountyName() {
     if (!this.showName) return;
 
@@ -49,6 +65,8 @@ class CountyPoint {
     this.plot.appendChild(text);
 
     this.elements.push(text);
+    this.tooltipTriggerTargets.push(text);
+
     text.addEventListener("mouseenter", () => this.onMouseEnter());
     text.addEventListener("mouseleave", () => this.onMouseLeave());
   }
@@ -60,10 +78,11 @@ class CountyPoint {
       point.setAttributeNS(null, "class", className);
       point.setAttributeNS(null, "cx", this.xs[i]);
       point.setAttributeNS(null, "cy", this.ys[i]);
-      point.setAttributeNS(null, "r", 4);
+      point.setAttributeNS(null, "r", this.rs[i]);
       this.plot.appendChild(point);
 
       this.elements.push(point);
+      this.tooltipTriggerTargets.push(point);
       point.addEventListener("mouseenter", () => this.onMouseEnter());
       point.addEventListener("mouseleave", () => this.onMouseLeave());
     });
@@ -71,8 +90,8 @@ class CountyPoint {
 
   renderLine() {
     // only draw line if we have two data points
-    if (this.data.length != 2) return;
 
+    if (this.data.length != 2) return;
     const className = `scatter-line${this.outlier ? " outlier" : ""}`;
     const line = document.createElementNS(SVG_NS, "line");
     line.setAttributeNS(null, "class", className);
@@ -81,89 +100,46 @@ class CountyPoint {
     line.setAttributeNS(null, "x2", this.xs[1]);
     line.setAttributeNS(null, "y2", this.ys[1]);
     this.plot.appendChild(line);
-
     this.elements.push(line);
-    line.addEventListener("mouseenter", () => this.onMouseEnter());
-    line.addEventListener("mouseleave", () => this.onMouseLeave());
+
+    const hoverLine = document.createElementNS(SVG_NS, "line");
+    hoverLine.setAttributeNS(null, "class", `${className} hover-line`);
+    hoverLine.setAttributeNS(null, "x1", this.xs[0]);
+    hoverLine.setAttributeNS(null, "y1", this.ys[0]);
+    hoverLine.setAttributeNS(null, "x2", this.xs[1]);
+    hoverLine.setAttributeNS(null, "y2", this.ys[1]);
+    this.plot.appendChild(hoverLine);
+
+    this.tooltipTriggerTargets.push(hoverLine);
+    hoverLine.addEventListener("mouseenter", () => this.onMouseEnter());
+    hoverLine.addEventListener("mouseleave", () => this.onMouseLeave());
   }
 
   onMouseEnter() {
-    if (!this.tooltip) this.renderTooltip();
     this.elements.forEach(element => {
       element.classList.add("hovering");
     });
   }
 
   onMouseLeave() {
-    if (this.tooltip) this.tooltip.remove();
-    this.tooltip = undefined;
     this.elements.forEach(element => {
       element.classList.remove("hovering");
     });
-  }
-
-  renderTooltip() {
-    const tooltip = document.createElement("div");
-    tooltip.className = "scatter-tooltip";
-    const countyName = document.createElement("h4");
-    countyName.appendChild(document.createTextNode(this.county));
-    tooltip.appendChild(countyName);
-
-    // render data in a table
-    const table = document.createElement("table");
-    const thead = document.createElement("thead");
-    const headerRow = document.createElement("tr");
-    const filler = document.createElement("th");
-    const xHeader = document.createElement("th");
-    xHeader.appendChild(document.createTextNode(this.data[0].xHeader));
-    const yHeader = document.createElement("th");
-    yHeader.appendChild(document.createTextNode(this.data[0].yHeader));
-    headerRow.appendChild(filler);
-    headerRow.appendChild(xHeader);
-    headerRow.appendChild(yHeader);
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-
-    // render cells from data
-    const tbody = document.createElement("tbody");
-    this.data.forEach(data => {
-      const row = document.createElement("tr");
-      const name = document.createElement("td");
-      name.className = "scatter-tooltip-name";
-      name.appendChild(document.createTextNode(data.name));
-      const xText = document.createElement("td");
-      xText.appendChild(document.createTextNode(data.xText));
-      const yText = document.createElement("td");
-      yText.appendChild(document.createTextNode(data.yText));
-      row.appendChild(name);
-      row.appendChild(xText);
-      row.appendChild(yText);
-      tbody.appendChild(row);
-    });
-    table.appendChild(tbody);
-    tooltip.appendChild(table);
-
-    // set tooltip placement based on first point
-    if (!this.tooltipFixed) {
-      tooltip.style.top = this.ys[0];
-      tooltip.style.left = this.xs[0];
-    }
-    this.tooltip = tooltip;
-    this.container.appendChild(this.tooltip);
   }
 }
 
 
 export class ScatterPlot {
-  constructor(data, xAxis, yAxis, toText, container) {
+  constructor(data, xAxis, yAxis, radiusScale, tooltipConfig, container) {
     this.data = data;
     this.xAxis = xAxis;
     this.yAxis = yAxis;
     this.ticks = {"x": [], "y": []};
     this.axisLabels = {"x": [], "y": []};
-    this.toText = toText;
+    this.radiusScale = radiusScale;
     this.container = container;
     this.plotContainer = this.container.getElementsByClassName("plot-container")[0];
+    this.renderTooltip = configureTooltip(tooltipConfig);
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
     this.mobileSizing = window.innerWidth < 670;
@@ -201,15 +177,23 @@ export class ScatterPlot {
   setUpOutlierButton() {
     const button = this.container.getElementsByClassName("outliers-btn")[0];
     if (this.mobileSizing) this.plot.classList.add("show-outliers");
-    button.addEventListener("click", (e) => {
-      if (this.toggleOutliers()) {
-        e.target.classList.add("showing");
-        this.plot.classList.add("show-outliers");
-      } else {
-        e.target.classList.remove("showing");
-        this.plot.classList.remove("show-outliers");
-      }
-    });
+    if (button) {
+      button.addEventListener("click", (e) => {
+        if (this.toggleOutliers()) {
+          e.target.classList.add("showing");
+          this.plot.classList.add("show-outliers");
+        } else {
+          e.target.classList.remove("showing");
+          this.plot.classList.remove("show-outliers");
+        }
+      });      
+    }
+  }
+
+  getNumber(val) {
+    return typeof val === "string"
+      ? Number(val.replace(/[^\d.-]/g, ""))
+      : val;
   }
 
   createPoints() {
@@ -217,31 +201,28 @@ export class ScatterPlot {
     for (const county in this.data) {
       const outlier = this.data[county]["outlier"];
       const showName = this.data[county]["showName"];
-      const x = this.data[county]["x"];
-      const y = this.data[county]["y"];
+      let x = this.data[county]["x"];
+      let y = this.data[county]["y"];
+      let r = this.data[county]["r"];
+      x = typeof x !== "object" ? { total: x } : x;
+      y = typeof y !== "object" ? { total: y } : y;
+      r = typeof r !== "object" ? { total: r } : r;
+      const countyInfo = [county, this.xAxis, this.yAxis, this.radiusScale, outlier, showName, this.plot, this.renderTooltip, this.container];
+
       const data = Object.keys(x).map(key => {
         return {
           name: key,
-          x: x[key],
-          y: Number(y[key].replace(/[^\d.-]/g, "")),
-          xText: this.toText.x(x[key]),
-          yText: this.toText.y(y[key]),
-          xHeader: this.toText.xHeader,
-          yHeader: this.toText.yHeader
+          x: this.getNumber(x[key]),
+          y: this.getNumber(y[key]),
+          r: this.getNumber(r[key]),
         };
       });
-      points.push(new CountyPoint(
-        county,
-        data,
-        this.xAxis,
-        this.yAxis,
-        outlier,
-        showName,
-        this.plot,
-        this.plotContainer
-      ));
+      points.push(new CountyPoint(data, ...countyInfo));
     }
-    return points;
+
+    
+    const sortedPoints = points.sort((a, b) => b.data[0].r - a.data[0].r);
+    return sortedPoints;
   }
 
   toggleOutliers() {
@@ -255,8 +236,6 @@ export class ScatterPlot {
     this.renderAxis(this.xAxis, false);
     this.renderAxis(this.yAxis, true);
 
-    // set points to use fixed positioning for mobile or on point for not
-    this.points.forEach(point => point.setTooltipFixed(this.mobileSizing));
 
     // set viewbox based on window size (customized for specific phones)
     const iPhoneSE = window.innerWidth < 350;
@@ -269,7 +248,7 @@ export class ScatterPlot {
   render() {
     // set up svg to resize on window resize
     this.updateViewBox();
-    window.addEventListener("resize", e => this.updateViewBox());
+    window.addEventListener("resize", () => this.updateViewBox());
 
     // render axes
     this.renderAxis(this.xAxis, false);
@@ -283,6 +262,13 @@ export class ScatterPlot {
     this.points.forEach(point => point.renderLine());
     this.points.forEach(point => point.renderPoints());
     this.points.forEach(point => point.renderCountyName());
+
+    this.points.forEach(point => {
+      point.renderTooltip(point.tooltipTriggerTargets[0], {
+        triggerTarget: point.tooltipTriggerTargets,
+        followCursor: true,
+      });
+    });
   }
 
   renderAxis(axis, isYAxis) {
