@@ -410,7 +410,7 @@ export class RaceMapContainer {
     this.white = new BailRaceMap(`#${id} #white.map`, data, color, 3, "white", this);
 
     const onLegendMouseOver = (event) => {
-      this.highlightBar(event);
+      this.highlightBarFromLegend(event);
       this.highlightMap(event);
     };
     const onLegendMouseOut = () => this.resetHighlight();
@@ -441,7 +441,7 @@ export class RaceMapContainer {
     const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
     this.black._onMouseEnter(countyName);
     this.white._onMouseEnter(countyName);
-    this.highlightBar(event);
+    this.highlightBarFromMap(event);
   }
 
   onChildMouseOut(event) {
@@ -451,8 +451,12 @@ export class RaceMapContainer {
     this.resetHighlight();
   }
 
+  highlightBarFromLegend(event) {
+    const bucket = event.srcElement.getAttribute(BUCKET_ATTRIBUTE);
+    this.legend.highlightBars([bucket]);
+  }
 
-  highlightBar(event) {
+  highlightBarFromMap(event) {
     const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const buckets = [this.black.getBucket(countyName), this.white.getBucket(countyName)];
     this.legend.highlightBars(buckets);
