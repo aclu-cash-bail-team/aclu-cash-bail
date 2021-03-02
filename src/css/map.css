@@ -3,7 +3,7 @@
 }
 
 .map {
-    min-width: 200px;
+    min-width: 400px;
 }
 
 .race-map {
@@ -15,7 +15,7 @@
     justify-content: center;
 }
 
-path {
+.map-container path {
     stroke-width: 0.5px;
 }
 
