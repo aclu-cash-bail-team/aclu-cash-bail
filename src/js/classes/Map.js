@@ -253,8 +253,8 @@ export class BailRateMap extends Map {
     ]);
 
     const onLegendMouseOver = (event) => {
-      this.highlightBar(event);
-      this.highlightMap(event);
+      this.highlightBar(event.srcElement);
+      this.highlightMap(event.srcElement);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -278,7 +278,7 @@ export class BailRateMap extends Map {
   onMouseEnter(event) {
     super.onMouseEnter(event);
     d3.select(event.srcElement).style("stroke-width", "2px");
-    this.highlightBar(event);
+    this.highlightBar(event.srcElement);
   }
 
   onMouseOut(event) {
@@ -293,13 +293,13 @@ export class BailRateMap extends Map {
     super.showTooltip(element, [{name: countyName, x: countyRate}])
   }
 
-  highlightBar(event) {
-    const bucket = Number(event.srcElement.getAttribute(BUCKET_ATTRIBUTE));
+  highlightBar(element) {
+    const bucket = Number(element.getAttribute(BUCKET_ATTRIBUTE));
     this.legend.highlightBars([bucket]);
   }
 
-  highlightMap(event) {
-    const bucket = event.srcElement.getAttribute(BUCKET_ATTRIBUTE);
+  highlightMap(element) {
+    const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
     this.svg.selectAll(`path:not([${BUCKET_ATTRIBUTE}="${bucket}"])`).style("opacity", "0.2");
   }
 
@@ -410,8 +410,8 @@ export class RaceMapContainer {
     this.white = new BailRaceMap(`#${id} #white.map`, data, color, 3, "white", this);
 
     const onLegendMouseOver = (event) => {
-      this.highlightBarFromLegend(event);
-      this.highlightMap(event);
+      this.highlightBarFromLegend(event.srcElement);
+      this.highlightMap(event.srcElement);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -441,7 +441,7 @@ export class RaceMapContainer {
     const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
     this.black._onMouseEnter(countyName);
     this.white._onMouseEnter(countyName);
-    this.highlightBarFromMap(event);
+    this.highlightBarFromMap(event.srcElement);
   }
 
   onChildMouseOut(event) {
@@ -451,19 +451,19 @@ export class RaceMapContainer {
     this.resetHighlight();
   }
 
-  highlightBarFromLegend(event) {
-    const bucket = event.srcElement.getAttribute(BUCKET_ATTRIBUTE);
+  highlightBarFromLegend(element) {
+    const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
     this.legend.highlightBars([bucket]);
   }
 
-  highlightBarFromMap(event) {
-    const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
+  highlightBarFromMap(element) {
+    const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const buckets = [this.black.getBucket(countyName), this.white.getBucket(countyName)];
     this.legend.highlightBars(buckets);
   }
 
-  highlightMap(event) {
-    const bucket = event.srcElement.getAttribute(BUCKET_ATTRIBUTE);
+  highlightMap(element) {
+    const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
     this.black.highlightMap(bucket);
     this.white.highlightMap(bucket);
   }
@@ -503,8 +503,8 @@ export class BailPostingMap extends Map {
     this.spikeScale = d3.scaleLinear([0, upperBound], [0, 100]);
 
     const onLegendMouseOver = (event) => {
-      this.highlightBar(event);
-      this.highlightMap(event);
+      this.highlightBar(event.srcElement);
+      this.highlightMap(event.srcElement);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -534,7 +534,7 @@ export class BailPostingMap extends Map {
   onMouseEnter(event) {
     super.onMouseEnter(event);
     d3.select(event.srcElement).style("stroke-width", "2px");
-    this.highlightBar(event);
+    this.highlightBar(event.srcElement);
   }
 
   onMouseOut(event) {
@@ -550,13 +550,13 @@ export class BailPostingMap extends Map {
     super.showTooltip(element, [{name: countyName, x: countyRate, y: countyAmount}]);
   }
 
-  highlightBar(event) {
-    const bucket = Number(event.srcElement.getAttribute(BUCKET_ATTRIBUTE));
+  highlightBar(element) {
+    const bucket = Number(element.getAttribute(BUCKET_ATTRIBUTE));
     this.legend.highlightBars([bucket]);
   }
 
-  highlightMap(event) {
-    const bucket = event.srcElement.getAttribute(BUCKET_ATTRIBUTE);
+  highlightMap(element) {
+    const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
     this.svg.selectAll("path").style("opacity", "0.2");
     this.svg.selectAll(`path.spike[${BUCKET_ATTRIBUTE}="${bucket}"`).style("opacity", "1");
   }
