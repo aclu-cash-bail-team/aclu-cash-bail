@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import { feature } from "topojson";
 import { COUNTY_MAP_DATA } from "../data.js";
+import { configureTooltip } from "./Tooltip";
 
 const DEFAULT_MAP_WIDTH = 600;
 const DEFAULT_MAP_HEIGHT = 400;
@@ -167,12 +168,14 @@ class SpikeLegend {
 }
 
 class Map {
-  constructor(selector) {
+  constructor(selector, tooltipSchema = {}) {
     this.svg = d3.select(selector)
       .append("svg")
       .attr("viewBox", `0 0 ${DEFAULT_MAP_WIDTH} ${DEFAULT_MAP_HEIGHT}`);
 
     this.projection = d3.geoMercator().scale(5500).center([-75.75, 40.5]);
+
+    this.renderTooltip = configureTooltip({...tooltipSchema, trigger: "manual", placement: "top"})
   }
 
   renderCity(name, coords, labelCoords) {
@@ -201,38 +204,28 @@ class Map {
       .attr("d", path)
       .attr("class", "county-path")
       .attr(COUNTY_NAME_ATTRIBUTE, feature => feature.properties["NAME"])
-      .on("mousemove", this.onMouseMove.bind(this))
+      .on("mouseenter focus", this.onMouseEnter.bind(this))
       .on("mouseout", this.onMouseOut.bind(this));
   }
 
-  onMouseMove(event) {
-    this.showTooltip(event.pageX, event.pageY, "", "", 0);
+  onMouseEnter(event) {
+    this.showTooltip(event.srcElement, {});
   }
 
   onMouseOut() {
     this.hideTooltip();
   }
 
-  showTooltip(pageX, pageY, countyName, header, value) {
-    this.tooltip.style("opacity", 1);
-    this.tooltip
-      .style("left", `${pageX - 100}px`)
-      .style("top", `${pageY - 70}px`)
-      .html(`
-        <h3 class="tooltip-name">${countyName}</h3>
-        <table>
-          <tbody>
-            <tr>
-              <td>${header}</td>
-              <td style="text-align: right; font-weight: 700;">${value}</td>
-            </tr>
-          </tbody>
-        </table>
-      `);
+  showTooltip(element, data) {
+    this.tooltip = this.renderTooltip(element, data);
+    this.tooltip.show();
   }
 
   hideTooltip() {
-    this.tooltip.style("opacity", 0);
+    if(this.tooltip) {
+      this.tooltip.hide();
+      this.tooltip.destroy();
+    }
   }
 
   render() {
@@ -241,18 +234,16 @@ class Map {
     const countyTopoJson = JSON.parse(JSON.stringify(COUNTY_MAP_DATA));
     const features = feature(countyTopoJson, countyTopoJson.objects["cb_2015_pennsylvania_county_20m"]).features;
 
-    this.tooltip = d3.select("body").append("div")
-      .attr("class", "tooltip")
-      .style("opacity", 0);
-
-
     this.renderPA(features, path);
   }
 }
 
 export class BailRateMap extends Map {
   constructor(id, data, average) {
-    super(`#${id} .map`);
+    super(`#${id} .map`, {rows: [
+      { rowHeader: "" , isColumnHeader: true, dataKey: "name" },
+      { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
+    ]});
     this.id = id;
     this.data = data;
 
@@ -284,8 +275,8 @@ export class BailRateMap extends Map {
     this.render();
   }
 
-  onMouseMove(event) {
-    this.showTooltip(event.pageX, event.pageY, event.srcElement);
+  onMouseEnter(event) {
+    super.onMouseEnter(event);
     d3.select(event.srcElement).style("stroke-width", "2px");
     this.highlightBar(event);
   }
@@ -296,12 +287,11 @@ export class BailRateMap extends Map {
     this.resetHighlight();
   }
 
-  showTooltip(pageX, pageY, srcElement) {
-    const countyName = srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
-    const countyRate = srcElement.getAttribute("data-rate");
-    super.showTooltip(pageX, pageY, countyName, "Cash Bail Rate", `${Math.round(countyRate * 100) / 100}%`);
+  showTooltip(element) {
+    const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    const countyRate = Number(element.getAttribute("data-rate"));
+    super.showTooltip(element, [{name: countyName, x: countyRate}])
   }
-
 
   highlightBar(event) {
     const bucket = Number(event.srcElement.getAttribute(BUCKET_ATTRIBUTE));
@@ -340,7 +330,10 @@ export class BailRateMap extends Map {
 
 class BailRaceMap extends Map {
   constructor(selector, data, color, dataIdx, race, parent) {
-    super(selector);
+    super(selector, {rows: [
+      { rowHeader: "" , isColumnHeader: true, dataKey: "name" },
+      { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
+    ]});
     this.data = data;
     this.dataIdx = dataIdx;
     this.race = race;
@@ -350,18 +343,15 @@ class BailRaceMap extends Map {
   }
 
   // Called by parent
-  _onMouseMove(x, y, countyName) {
+  _onMouseEnter(countyName) {
     const element = document.querySelector(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${this.race}"]`);
+    const countyRate = Number(element.getAttribute("data-rate"));
     this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "2px");
-    this.showTooltip(x, y, countyName, element.getAttribute("data-rate"));
+    super.showTooltip(element, [{name: countyName, x: countyRate}]);
   }
   _onMouseOut(countyName) {
     super.onMouseOut();
     this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "0.5px");
-  }
-
-  showTooltip(pageX, pageY, countyName, countyRate) {
-    super.showTooltip(pageX, pageY, countyName, "Cash Bail Rate", `${Math.round(countyRate * 100) / 100}%`);
   }
 
   highlightMap(bucket) {
@@ -374,8 +364,8 @@ class BailRaceMap extends Map {
     this.svg.selectAll("path").style("opacity", "1");
   }
 
-  onMouseMove(event) {
-    this.parent.onChildMouseMove(event, this.race);
+  onMouseEnter(event) {
+    this.parent.onChildMouseEnter(event);
   }
 
   onMouseOut(event) {
@@ -447,16 +437,10 @@ export class RaceMapContainer {
     this.render();
   }
 
-  onChildMouseMove(event, race) {
+  onChildMouseEnter(event) {
     const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
-    // TODO: Fix this awful hack
-    if (race == "black") {
-      this.black._onMouseMove(event.pageX, event.pageY, countyName);
-      this.white._onMouseMove(event.pageX + DEFAULT_MAP_WIDTH, event.pageY, countyName);
-    } else if (race == "white") {
-      this.black._onMouseMove(event.pageX - DEFAULT_MAP_WIDTH, event.pageY, countyName);
-      this.white._onMouseMove(event.pageX, event.pageY, countyName);
-    }
+    this.black._onMouseEnter(countyName);
+    this.white._onMouseEnter(countyName);
     this.highlightBar(event);
   }
 
@@ -495,7 +479,16 @@ export class RaceMapContainer {
 
 export class BailPostingMap extends Map {
   constructor(id, data, average, upperBound) {
-    super(`#${id} .map`);
+    super(`#${id} .map`, {rows: [
+      { rowHeader: "" , isColumnHeader: true, dataKey: "name" },
+      { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
+      { rowHeader: "Avg. Bail Amount", dataKey: "y", render: value => value.toLocaleString("en", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      })}
+    ]});
     this.data = data;
 
     const colorDomain = [20, 40, 60, 80, 100];
@@ -534,8 +527,8 @@ export class BailPostingMap extends Map {
     this.render();
   }
 
-  onMouseMove(event) {
-    this.showTooltip(event.pageX, event.pageY, event.srcElement);
+  onMouseEnter(event) {
+    super.onMouseEnter(event);
     d3.select(event.srcElement).style("stroke-width", "2px");
     this.highlightBar(event);
   }
@@ -546,10 +539,11 @@ export class BailPostingMap extends Map {
     this.resetHighlight();
   }
 
-  showTooltip(pageX, pageY, srcElement) {
-    const countyName = srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
-    const countyAmount = srcElement.getAttribute("data-bail-amount");
-    super.showTooltip(pageX, pageY, countyName, "Bail Amount", countyAmount);
+  showTooltip(element) {
+    const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    const countyRate = Number(element.getAttribute("data-rate"));
+    const countyAmount = element.getAttribute("data-bail-amount");
+    super.showTooltip(element, [{name: countyName, x: countyRate, y: countyAmount}]);
   }
 
   highlightBar(event) {
@@ -607,7 +601,12 @@ export class BailPostingMap extends Map {
       .attr("fill", feature => feature.properties.color)
       .attr("stroke", feature => feature.properties.color)
       .attr("class", "spike")
-      .attr(BUCKET_ATTRIBUTE, feature => feature.properties.bucket);
+      .attr("data-rate", feature => feature.properties.rate)
+      .attr("data-bail-amount", feature => feature.properties.amount)
+      .on("mouseenter focus", this.onMouseEnter.bind(this))
+      .on("mouseout", this.onMouseOut.bind(this))
+      .attr(BUCKET_ATTRIBUTE, feature => feature.properties.bucket)
+      .attr(COUNTY_NAME_ATTRIBUTE, feature => feature.properties["NAME"]);
 
     this.legend.render();
   }

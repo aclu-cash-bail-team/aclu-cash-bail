@@ -60,35 +60,6 @@ path {
     text-shadow: 1px 0 0 #eee, -1px 0 0 #eee, 0 1px 0 #eee, 0 -1px 0 #eee, 1px 1px #eee, -1px -1px 0 #eee, 1px -1px 0 #eee, -1px 1px 0 #eee;
 }
 
-/* Tooltip */
-.tooltip {
-    border-radius: 3px;
-    padding: 0.5em 1em;
-    position: absolute;
-    background-color: #eee;
-    color: #000;
-    font-size: 10px;
-}
-
-path:hover .tooltip {
-    display: block;
-}
-
-.tooltip .tooltip-name {
-    margin-top: 0;
-    margin-bottom: 0.5em;
-}
-
-.tooltip table {
-    border-top: 1px #d6d6d6 solid;
-    color: #000;
-    width: 200px;
-}
-
-.tooltip td {
-    padding-top: 0.5em;
-}
-
 /* Map Switches */
 .btn-text {
   color: #fff;
