@@ -74,6 +74,10 @@
     padding: 10px;
     flex-basis: 161px;
   }
+
+  .map-row {
+    flex-wrap: wrap;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -91,5 +95,13 @@
 
   .diff-cell, .total-cases-cell {
     display: none;
+  }
+
+  .color-scale-legend {
+    min-width: 200px;
+  }
+
+  .spike-legend {
+    min-width: 100px;
   }
 }
