@@ -160,6 +160,7 @@ td.bail-dist-cell {
   background-color: #C14EF8;
 }
 
+/* Distribution viz */
 td.bail-dist-cell {
   vertical-align: bottom;
   margin-right: 0;
@@ -226,7 +227,7 @@ td.bail-dist-cell {
 }
 
 .unsecured-bar {
-  background-color: #75CBD6;
+  background-color: #215F5D;
 }
 
 .nonmonetary-bar {
@@ -234,5 +235,20 @@ td.bail-dist-cell {
 }
 
 .ror-bar {
-  background-color: #C14EF8;
+  background-color: #B08CF0;
+}
+
+#dist-graph-header {
+  text-align: center;
+}
+
+#dist-graph-container {
+  display: grid;
+  grid-template-columns: 100px auto;
+  row-gap: 5px;
+  width: 100%;
+}
+
+.dist-section {
+  display: inline-grid;
 }

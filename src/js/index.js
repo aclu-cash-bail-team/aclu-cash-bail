@@ -1,3 +1,4 @@
+import { DistributionGraph } from "./classes/Graph.js";
 import { Table, SwitchableTable } from "./classes/Table.js";
 import {
   BAIL_RATE_DATA,
@@ -554,3 +555,5 @@ createBailPostingTable();
 createBailRetentionFeeTable();
 createPretrialSpendingTable();
 createMdjTable();
+
+new DistributionGraph(document.getElementById("dist-graph-container"), MDJ_DATA);

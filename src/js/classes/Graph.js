@@ -186,7 +186,7 @@ export class ScatterPlot {
           e.target.classList.remove("showing");
           this.plot.classList.remove("show-outliers");
         }
-      });      
+      });
     }
   }
 
@@ -220,7 +220,7 @@ export class ScatterPlot {
       points.push(new CountyPoint(data, ...countyInfo));
     }
 
-    
+
     const sortedPoints = points.sort((a, b) => b.data[0].r - a.data[0].r);
     return sortedPoints;
   }
@@ -357,5 +357,50 @@ export class ScatterPlot {
       line.setAttributeNS(null, "y2", isYAxis ? "100%" : spacingValue);
       this.plot.appendChild(line);
     }
+  }
+}
+
+
+// TODO: Tooltip + Legend
+export class DistributionGraph {
+  constructor(container, data) {
+    this.container = container;
+    this.data = data;
+    this.nameIdx = 1;
+    this.distributionIdx = 5;
+    // Sort data by county name
+    this.data.sort((a, b) =>
+      a["data"][this.nameIdx] > b["data"][1] ? 1 : a["data"][this.nameIdx] < b["data"][this.nameIdx] ? -1 : 0
+    );
+
+    this.render();
+  }
+
+  render() {
+    this.container.textContent = "";
+
+    this.container.style.gridTemplateRows = `repeat(${this.data.length}, auto)`;
+    this.data.forEach(countyData => {
+      const countyName = countyData["data"][1];
+      const distributions = countyData["data"][this.distributionIdx]["values"];
+      // Add county name
+      const nameElement = document.createElement("div");
+      nameElement.className = "dist-county-name";
+      nameElement.innerText = countyName;
+      this.container.appendChild(nameElement);
+      // Add each distribution with appropriate width
+      const distSection = document.createElement("div");
+      distSection.className = "dist-section";
+      const colWidths = distributions.map(dist => {
+        const distElement = document.createElement("div");
+        distElement.classList.add("dist-column");
+        distElement.classList.add(dist["className"]);
+        distSection.appendChild(distElement);
+        return `${dist["value"]}%`;
+      });
+      distSection.style.gridTemplateColumns = colWidths.join(" ");
+      // Add width of county name
+      this.container.appendChild(distSection);
+    });
   }
 }
