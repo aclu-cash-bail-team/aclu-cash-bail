@@ -3,7 +3,7 @@
   position: relative;
 }
 
-.graph *:focus { 
+.graph *:focus {
   outline: none;
 }
 
@@ -127,7 +127,7 @@
 .scatter-line.outlier,
 .scatter-text.outlier {
   display: none;
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .scatter-text.hovering {
@@ -148,7 +148,7 @@
 .hover-line {
   stroke: rgba(255, 255, 255, 0);
   stroke-width: 12px;
-  
+
 }
 
 .scatter-point.total {

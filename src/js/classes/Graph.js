@@ -177,8 +177,7 @@ export class ScatterPlot {
     if (this.mobileSizing) this.plot.classList.add("show-outliers");
     if (button) {
       button.addEventListener("click", (e) => {
-        this.toggleOutliers();
-        if (this.showingOutliers()) {
+        if (this.toggleOutliers()) {
           e.target.classList.add("showing");
           this.plot.classList.add("show-outliers");
         } else {
@@ -223,12 +222,9 @@ export class ScatterPlot {
     return sortedPoints;
   }
 
-  showingOutliers() {
-    return this.showOutliers || this.mobileSizing;
-  }
-
   toggleOutliers() {
     this.showOutliers = !this.showOutliers;
+    return this.showOutliers || this.mobileSizing;
   }
 
   updateViewBox() {
