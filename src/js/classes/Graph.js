@@ -361,7 +361,53 @@ export class ScatterPlot {
 }
 
 
-// TODO: Tooltip + Legend
+const COUNTY_NAME_ATTRIBUTE = "data-county-name";
+
+class DistributionRow {
+  constructor(county, cashBailRate, unsecuredRate, nonmonetaryRate, rorRate, renderTooltip) {
+    this.county = county;
+    this.cashBailRate = cashBailRate;
+    this.unsecuredRate = unsecuredRate;
+    this.nonmonetaryRate = nonmonetaryRate;
+    this.rorRate = rorRate;
+
+    this.renderTooltip = elements => renderTooltip(elements, [{
+      cashBailRate: cashBailRate["value"],
+      unsecuredRate: unsecuredRate["value"],
+      nonmonetaryRate: nonmonetaryRate["value"],
+      rorRate: rorRate["value"]
+    }], county);
+  }
+
+  createSegment(classNames) {
+    const segment = document.createElement("div");
+    segment.classList.add("dist-row-segment");
+    classNames.forEach(className => segment.classList.add(className));
+    segment.setAttribute(COUNTY_NAME_ATTRIBUTE, this.county);
+    return segment;
+  }
+
+  render() {
+    // Add county name
+    const nameElement = this.createSegment(["dist-county-name"]);
+    nameElement.innerText = this.county;
+    // Add distribution bars
+    const distBarsSegment = this.createSegment(["dist-bars-segment"]);
+    [this.cashBailRate, this.unsecuredRate, this.nonmonetaryRate, this.rorRate].map(dist  => {
+      const distBarElement = this.createSegment(["dist-column-segment", dist["className"]]);
+      distBarsSegment.appendChild(distBarElement);
+    });
+    // Set width of bar based on distribution
+    const colWidths =
+      `${this.cashBailRate["value"]}% ${this.unsecuredRate["value"]}% ${this.nonmonetaryRate["value"]}% ${this.rorRate["value"]}%`;
+    distBarsSegment.style.gridTemplateColumns = colWidths;
+
+    this.renderTooltip(distBarsSegment);
+
+    return [nameElement, distBarsSegment];
+  }
+}
+
 export class DistributionGraph {
   constructor(container, data) {
     this.container = container;
@@ -373,34 +419,76 @@ export class DistributionGraph {
       a["data"][this.nameIdx] > b["data"][1] ? 1 : a["data"][this.nameIdx] < b["data"][this.nameIdx] ? -1 : 0
     );
 
+    const createHeader = (hdr, colorClassName) => {
+      const container = document.createElement("div");
+      container.style.display = "flex";
+      container.style.alignItems = "center";
+      const colorBox = document.createElement("div");
+      colorBox.classList.add("color-box");
+      colorBox.classList.add(colorClassName);
+      colorBox.style.marginRight = "10px";
+      const text = document.createElement("div");
+      text.innerText = hdr;
+      container.appendChild(colorBox);
+      container.appendChild(text);
+      return container;
+    };
+    const renderValue = value => `${value.toFixed(1)}%`;
+    this.renderTooltip = configureTooltip({rows: [
+      { rowHeader: createHeader("Cash Bail", "cash-bar"), dataKey: "cashBailRate", render: renderValue },
+      { rowHeader: createHeader("Unsecured", "unsecured-bar"), dataKey: "unsecuredRate", render: renderValue },
+      { rowHeader: createHeader("Nonmonetary", "nonmonetary-bar"), dataKey: "nonmonetaryRate", render: renderValue },
+      { rowHeader: createHeader("ROR", "ror-bar"), dataKey: "rorRate", render: renderValue },
+    ],
+    placement: "top",
+    followCursor: true
+    });
+
+    this.countyNameToDistributionRow = {};
     this.render();
+
+    this.onHover = this.onHover.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.container.addEventListener("mouseover", this.onHover);
+    this.container.addEventListener("mouseout", this.onMouseLeave);
+  }
+
+  getRowSegments() {
+    return document.querySelectorAll(".dist-row-segment");
+  }
+
+  clearTooltip() {
+    if (this.tooltip) {
+      this.tooltip.hide();
+    }
+  }
+
+  onHover(event) {
+    // Darken everything
+    this.getRowSegments().forEach(element => element.classList.add("darkened"));
+
+    const hoverElement = event.srcElement;
+    const countyName = hoverElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    if (!countyName) { return; }
+    const highlightRow = document.querySelectorAll(`[${COUNTY_NAME_ATTRIBUTE}="${countyName}"`);
+    // Highlight selected row
+    highlightRow.forEach(element => element.classList.remove("darkened"));
+  }
+
+  onMouseLeave() {
+    this.getRowSegments().forEach(element => element.classList.remove("darkened"));
   }
 
   render() {
-    this.container.textContent = "";
-
     this.container.style.gridTemplateRows = `repeat(${this.data.length}, auto)`;
-    this.data.forEach(countyData => {
-      const countyName = countyData["data"][1];
-      const distributions = countyData["data"][this.distributionIdx]["values"];
-      // Add county name
-      const nameElement = document.createElement("div");
-      nameElement.className = "dist-county-name";
-      nameElement.innerText = countyName;
-      this.container.appendChild(nameElement);
-      // Add each distribution with appropriate width
-      const distSection = document.createElement("div");
-      distSection.className = "dist-section";
-      const colWidths = distributions.map(dist => {
-        const distElement = document.createElement("div");
-        distElement.classList.add("dist-column");
-        distElement.classList.add(dist["className"]);
-        distSection.appendChild(distElement);
-        return `${dist["value"]}%`;
-      });
-      distSection.style.gridTemplateColumns = colWidths.join(" ");
-      // Add width of county name
-      this.container.appendChild(distSection);
+    this.data.forEach(county => {
+      const countyName = county["data"][1];
+      const distributions = county["data"][this.distributionIdx]["values"];
+      const distributionRow =  new DistributionRow(countyName, distributions[0],
+        distributions[1], distributions[2], distributions[3], this.renderTooltip);
+      this.countyNameToDistributionRow[countyName] = distributionRow;
+      const elements = distributionRow.render();
+      elements.forEach(el => this.container.appendChild(el));
     });
   }
 }

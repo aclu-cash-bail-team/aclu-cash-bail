@@ -245,10 +245,43 @@ td.bail-dist-cell {
 #dist-graph-container {
   display: grid;
   grid-template-columns: 100px auto;
-  row-gap: 5px;
   width: 100%;
 }
 
-.dist-section {
+.dist-row-segment {
+  /* Not using grid row-gap because it messes with the hover behavior */
+  padding-bottom: 4px;
+}
+
+.dist-bars-segment {
   display: inline-grid;
+}
+
+.darkened {
+  opacity: 0.4;
+}
+
+#dist-graph-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legend-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  margin: 25px 0 50px;
+}
+
+.color-bar {
+  width: 100px;
+  height: 1em;
+  padding: 0;
+}
+
+.legend-header {
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 15px;
 }
