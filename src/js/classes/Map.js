@@ -175,7 +175,7 @@ class Map {
 
     this.projection = d3.geoMercator().scale(5500).center([-75.75, 40.5]);
 
-    this.renderTooltip = configureTooltip({...tooltipSchema, trigger: "manual", placement: "top"})
+    this.renderTooltip = configureTooltip({...tooltipSchema, trigger: "manual", placement: "top"});
   }
 
   renderCity(name, coords, labelCoords) {
@@ -216,8 +216,8 @@ class Map {
     this.hideTooltip();
   }
 
-  showTooltip(element, data) {
-    this.tooltip = this.renderTooltip(element, data);
+  showTooltip(element, data, title) {
+    this.tooltip = this.renderTooltip(element, data, title);
     this.tooltip.show();
   }
 
@@ -290,7 +290,7 @@ export class BailRateMap extends Map {
   showTooltip(element) {
     const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const countyRate = Number(element.getAttribute("data-rate"));
-    super.showTooltip(element, [{name: countyName, x: countyRate}])
+    super.showTooltip(element, [{name: "", x: countyRate}], countyName);
   }
 
   highlightBar(element) {
@@ -347,7 +347,7 @@ class BailRaceMap extends Map {
     const element = document.querySelector(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${this.race}"]`);
     const countyRate = Number(element.getAttribute("data-rate"));
     this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "2px");
-    super.showTooltip(element, [{name: countyName, x: countyRate}]);
+    super.showTooltip(element, [{name: "", x: countyRate}], countyName);
   }
   _onMouseOut(countyName) {
     super.onMouseOut();
@@ -547,7 +547,7 @@ export class BailPostingMap extends Map {
     const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const countyRate = Number(element.getAttribute("data-rate"));
     const countyAmount = element.getAttribute("data-bail-amount");
-    super.showTooltip(element, [{name: countyName, x: countyRate, y: countyAmount}]);
+    super.showTooltip(element, [{name: "", x: countyRate, y: countyAmount}], countyName);
   }
 
   highlightBar(element) {

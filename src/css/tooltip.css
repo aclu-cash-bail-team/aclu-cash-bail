@@ -41,6 +41,10 @@
   vertical-align: bottom;
 }
 
+.tooltip-content .tooltip-table th:empty {
+  padding: 0;
+}
+
 .tooltip-content .tooltip-table td {
   width: 60px;
   padding: 5px;
