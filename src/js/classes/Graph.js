@@ -361,8 +361,6 @@ export class ScatterPlot {
 }
 
 
-const COUNTY_NAME_ATTRIBUTE = "data-county-name";
-
 class DistributionRow {
   constructor(county, cashBailRate, unsecuredRate, nonmonetaryRate, rorRate, renderTooltip) {
     this.county = county;
@@ -379,22 +377,18 @@ class DistributionRow {
     }], county);
   }
 
-  createSegment(classNames) {
-    const segment = document.createElement("div");
-    segment.classList.add("dist-row-segment");
-    classNames.forEach(className => segment.classList.add(className));
-    segment.setAttribute(COUNTY_NAME_ATTRIBUTE, this.county);
-    return segment;
-  }
-
   render() {
     // Add county name
-    const nameElement = this.createSegment(["dist-county-name"]);
+    const nameElement = document.createElement("div");
+    nameElement.className = "dist-county-name";
     nameElement.innerText = this.county;
     // Add distribution bars
-    const distBarsSegment = this.createSegment(["dist-bars-segment"]);
-    [this.cashBailRate, this.unsecuredRate, this.nonmonetaryRate, this.rorRate].map(dist  => {
-      const distBarElement = this.createSegment(["dist-column-segment", dist["className"]]);
+    const distBarsSegment = document.createElement("div");
+    distBarsSegment.className = "dist-bars-segment";
+    [this.cashBailRate, this.unsecuredRate, this.nonmonetaryRate, this.rorRate].forEach(dist  => {
+      const distBarElement = document.createElement("div");
+      distBarElement.classList.add("dist-column-segment");
+      distBarElement.classList.add(dist["className"]);
       distBarsSegment.appendChild(distBarElement);
     });
     // Set width of bar based on distribution
@@ -404,7 +398,12 @@ class DistributionRow {
 
     this.renderTooltip(distBarsSegment);
 
-    return [nameElement, distBarsSegment];
+    const rowElement = document.createElement("div");
+    rowElement.className = "dist-row";
+    rowElement.appendChild(nameElement);
+    rowElement.appendChild(distBarsSegment);
+
+    return rowElement;
   }
 }
 
@@ -444,51 +443,16 @@ export class DistributionGraph {
     followCursor: true
     });
 
-    this.countyNameToDistributionRow = {};
     this.render();
-
-    this.onHover = this.onHover.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
-    this.container.addEventListener("mouseover", this.onHover);
-    this.container.addEventListener("mouseout", this.onMouseLeave);
-  }
-
-  getRowSegments() {
-    return document.querySelectorAll(".dist-row-segment");
-  }
-
-  clearTooltip() {
-    if (this.tooltip) {
-      this.tooltip.hide();
-    }
-  }
-
-  onHover(event) {
-    // Darken everything
-    this.getRowSegments().forEach(element => element.classList.add("darkened"));
-
-    const hoverElement = event.srcElement;
-    const countyName = hoverElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
-    if (!countyName) { return; }
-    const highlightRow = document.querySelectorAll(`[${COUNTY_NAME_ATTRIBUTE}="${countyName}"`);
-    // Highlight selected row
-    highlightRow.forEach(element => element.classList.remove("darkened"));
-  }
-
-  onMouseLeave() {
-    this.getRowSegments().forEach(element => element.classList.remove("darkened"));
   }
 
   render() {
-    this.container.style.gridTemplateRows = `repeat(${this.data.length}, auto)`;
     this.data.forEach(county => {
       const countyName = county["data"][1];
       const distributions = county["data"][this.distributionIdx]["values"];
       const distributionRow =  new DistributionRow(countyName, distributions[0],
         distributions[1], distributions[2], distributions[3], this.renderTooltip);
-      this.countyNameToDistributionRow[countyName] = distributionRow;
-      const elements = distributionRow.render();
-      elements.forEach(el => this.container.appendChild(el));
+      this.container.appendChild(distributionRow.render());
     });
   }
 }
