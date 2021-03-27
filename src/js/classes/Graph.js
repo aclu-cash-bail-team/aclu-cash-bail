@@ -50,7 +50,6 @@ class CountyPoint {
     return rs;
   }
 
-
   renderCountyName() {
     if (!this.showName) return;
 
@@ -90,7 +89,6 @@ class CountyPoint {
 
   renderLine() {
     // only draw line if we have two data points
-
     if (this.data.length != 2) return;
     const className = `scatter-line${this.outlier ? " outlier" : ""}`;
     const line = document.createElementNS(SVG_NS, "line");
@@ -220,7 +218,6 @@ export class ScatterPlot {
       points.push(new CountyPoint(data, ...countyInfo));
     }
 
-
     const sortedPoints = points.sort((a, b) => b.data[0].r - a.data[0].r);
     return sortedPoints;
   }
@@ -235,7 +232,6 @@ export class ScatterPlot {
     // rerender axes with new mobile sizing value
     this.renderAxis(this.xAxis, false);
     this.renderAxis(this.yAxis, true);
-
 
     // set viewbox based on window size (customized for specific phones)
     const iPhoneSE = window.innerWidth < 350;
