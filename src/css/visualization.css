@@ -246,52 +246,51 @@ td.bail-dist-cell {
 
 /*
   Darken everything on hover
-  Using dist-graph-container class to avoid high id specificity and allow children to override
   Oh how I wish I could just slap opacity on here, but opacity can't be overriden by children!
 */
-.dist-graph-container:hover .dist-county-name {
+#dist-graph-container:hover .dist-county-name {
   color: rgba(238, 238, 238, 0.4)
 }
 
-.dist-graph-container:hover .cash-bar {
+#dist-graph-container:hover .cash-bar {
   background-color: rgba(0, 237, 137, 0.4);
 }
 
-.dist-graph-container:hover .unsecured-bar {
+#dist-graph-container:hover .unsecured-bar {
   background-color: rgba(33, 95, 93, 0.4);
 }
 
-.dist-graph-container:hover .nonmonetary-bar {
+#dist-graph-container:hover .nonmonetary-bar {
   background-color: rgba(48, 48, 48, 0.4);
 }
 
-.dist-graph-container:hover .ror-bar {
+#dist-graph-container:hover .ror-bar {
   background-color: rgba(176, 140, 240, 0.4);
 }
 
-.dist-row {
+#dist-graph-container .dist-row {
   display: flex;
   margin-bottom: 4px;
 }
 
 /* Allow specific row to remain highlighted on hover */
-.dist-row:hover .dist-county-name {
+#dist-graph-container .dist-row:hover .dist-county-name {
   color: rgba(238, 238, 238, 1)
 }
 
-.dist-row:hover .cash-bar {
+#dist-graph-container .dist-row:hover .cash-bar {
   background-color: rgba(0, 237, 137, 1);
 }
 
-.dist-row:hover .unsecured-bar {
+#dist-graph-container .dist-row:hover .unsecured-bar {
   background-color: rgba(33, 95, 93, 1);
 }
 
-.dist-row:hover .nonmonetary-bar {
+#dist-graph-container .dist-row:hover .nonmonetary-bar {
   background-color: rgba(48, 48, 48, 1);
 }
 
-.dist-row:hover .ror-bar {
+#dist-graph-container .dist-row:hover .ror-bar {
   background-color: rgba(176, 140, 240, 1);
 }
 
