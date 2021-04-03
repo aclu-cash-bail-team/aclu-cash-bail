@@ -252,10 +252,18 @@ const createCasesScatterPlot = () => {
   // 120px radius - 40000;
 
   const radiusScale = {
-    min: 4,
-    max: 120,
-    minValue: 100,
-    maxValue: 42000
+    desktop: {
+      min: 4,
+      max: 120,
+      minValue: 100,
+      maxValue: 42000
+    },
+    mobile: {
+      min: 4,
+      max: 60,
+      minValue: 100,
+      maxValue: 42000
+    },
   };
 
   const container = document.getElementById("cases-scatter-plot");
