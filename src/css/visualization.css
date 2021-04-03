@@ -160,6 +160,7 @@ td.bail-dist-cell {
   background-color: #C14EF8;
 }
 
+/* Distribution viz */
 td.bail-dist-cell {
   vertical-align: bottom;
   margin-right: 0;
@@ -222,17 +223,116 @@ td.bail-dist-cell {
 }
 
 .cash-bar {
-  background-color: #00ED89;
+  background-color: rgba(0, 237, 137, 1);
 }
 
 .unsecured-bar {
-  background-color: #75CBD6;
+  background-color: rgba(33, 95, 93, 1);
 }
 
 .nonmonetary-bar {
-  background-color: #303030;
+  background-color: rgba(48, 48, 48, 1);
 }
 
 .ror-bar {
-  background-color: #C14EF8;
+  background-color: rgba(176, 140, 240, 1);
+}
+
+/* Bail Distribution Visualization */
+
+#dist-graph-container {
+  width: 100%;
+}
+
+/*
+  Darken everything on hover
+  Oh how I wish I could just slap opacity on here, but opacity can't be overriden by children!
+*/
+#dist-graph-container:hover .dist-county-name {
+  color: rgba(238, 238, 238, 0.4)
+}
+
+#dist-graph-container:hover .cash-bar {
+  background-color: rgba(0, 237, 137, 0.4);
+}
+
+#dist-graph-container:hover .unsecured-bar {
+  background-color: rgba(33, 95, 93, 0.4);
+}
+
+#dist-graph-container:hover .nonmonetary-bar {
+  background-color: rgba(48, 48, 48, 0.4);
+}
+
+#dist-graph-container:hover .ror-bar {
+  background-color: rgba(176, 140, 240, 0.4);
+}
+
+#dist-graph-container .dist-row {
+  display: flex;
+  margin-bottom: 4px;
+}
+
+/* Allow specific row to remain highlighted on hover */
+#dist-graph-container .dist-row:hover .dist-county-name {
+  color: rgba(238, 238, 238, 1)
+}
+
+#dist-graph-container .dist-row:hover .cash-bar {
+  background-color: rgba(0, 237, 137, 1);
+}
+
+#dist-graph-container .dist-row:hover .unsecured-bar {
+  background-color: rgba(33, 95, 93, 1);
+}
+
+#dist-graph-container .dist-row:hover .nonmonetary-bar {
+  background-color: rgba(48, 48, 48, 1);
+}
+
+#dist-graph-container .dist-row:hover .ror-bar {
+  background-color: rgba(176, 140, 240, 1);
+}
+
+.dist-county-name {
+  width: 125px;
+}
+
+.dist-bars-segment {
+  display: inline-grid;
+  width: 100%;
+  margin-bottom: -4px; /* Hack to allow tooltips to show in margins between bars */
+  padding-bottom: 4px; /* which prevents tooltip from flashing on hover */
+}
+
+/* Bail Distribution Visualization Header & Legend */
+
+#dist-graph-header {
+  font-family: 'GT America Bold';
+  text-align: center;
+}
+
+#dist-graph-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legend-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  margin: 25px 0 50px;
+}
+
+.legend-color-bar {
+  width: 100px;
+  height: 1em;
+  padding: 0;
+}
+
+.legend-header {
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 15px;
 }

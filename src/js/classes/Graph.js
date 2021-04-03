@@ -355,3 +355,100 @@ export class ScatterPlot {
     }
   }
 }
+
+
+class DistributionRow {
+  constructor(county, cashBailRate, unsecuredRate, nonmonetaryRate, rorRate, renderTooltip) {
+    this.county = county;
+    this.cashBailRate = cashBailRate;
+    this.unsecuredRate = unsecuredRate;
+    this.nonmonetaryRate = nonmonetaryRate;
+    this.rorRate = rorRate;
+
+    this.renderTooltip = elements => renderTooltip(elements, [{
+      cashBailRate: cashBailRate["value"],
+      unsecuredRate: unsecuredRate["value"],
+      nonmonetaryRate: nonmonetaryRate["value"],
+      rorRate: rorRate["value"]
+    }], county);
+  }
+
+  render() {
+    // Add county name
+    const nameElement = document.createElement("div");
+    nameElement.className = "dist-county-name";
+    nameElement.innerText = this.county;
+    // Add distribution bars
+    const distBarsSegment = document.createElement("div");
+    distBarsSegment.className = "dist-bars-segment";
+    [this.cashBailRate, this.unsecuredRate, this.nonmonetaryRate, this.rorRate].forEach(dist  => {
+      const distBarElement = document.createElement("div");
+      distBarElement.classList.add("dist-column-segment");
+      distBarElement.classList.add(dist["className"]);
+      distBarsSegment.appendChild(distBarElement);
+    });
+    // Set width of bar based on distribution
+    const colWidths =
+      `${this.cashBailRate["value"]}% ${this.unsecuredRate["value"]}% ${this.nonmonetaryRate["value"]}% ${this.rorRate["value"]}%`;
+    distBarsSegment.style.gridTemplateColumns = colWidths;
+
+    this.renderTooltip(distBarsSegment);
+
+    const rowElement = document.createElement("div");
+    rowElement.className = "dist-row";
+    rowElement.appendChild(nameElement);
+    rowElement.appendChild(distBarsSegment);
+
+    return rowElement;
+  }
+}
+
+export class DistributionGraph {
+  constructor(container, data) {
+    this.container = container;
+    this.data = data;
+    this.nameIdx = 1;
+    this.distributionIdx = 5;
+    // Sort data by county name
+    this.data.sort((a, b) =>
+      a["data"][this.nameIdx] > b["data"][1] ? 1 : a["data"][this.nameIdx] < b["data"][this.nameIdx] ? -1 : 0
+    );
+
+    const createHeader = (hdr, colorClassName) => {
+      const container = document.createElement("div");
+      container.style.display = "flex";
+      container.style.alignItems = "center";
+      const colorBox = document.createElement("div");
+      colorBox.classList.add("color-box");
+      colorBox.classList.add(colorClassName);
+      colorBox.style.marginRight = "10px";
+      const text = document.createElement("div");
+      text.innerText = hdr;
+      container.appendChild(colorBox);
+      container.appendChild(text);
+      return container;
+    };
+    const renderValue = value => `${value.toFixed(1)}%`;
+    this.renderTooltip = configureTooltip({rows: [
+      { rowHeader: createHeader("Cash Bail", "cash-bar"), dataKey: "cashBailRate", render: renderValue },
+      { rowHeader: createHeader("Unsecured", "unsecured-bar"), dataKey: "unsecuredRate", render: renderValue },
+      { rowHeader: createHeader("Nonmonetary", "nonmonetary-bar"), dataKey: "nonmonetaryRate", render: renderValue },
+      { rowHeader: createHeader("ROR", "ror-bar"), dataKey: "rorRate", render: renderValue },
+    ],
+    placement: "top",
+    followCursor: true
+    });
+
+    this.render();
+  }
+
+  render() {
+    this.data.forEach(county => {
+      const countyName = county["data"][1];
+      const distributions = county["data"][this.distributionIdx]["values"];
+      const distributionRow =  new DistributionRow(countyName, distributions[0],
+        distributions[1], distributions[2], distributions[3], this.renderTooltip);
+      this.container.appendChild(distributionRow.render());
+    });
+  }
+}
