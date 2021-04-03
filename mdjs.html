@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ACLU Cash Bail</title>
+    <!-- TODO: Extract the styles we use from these and remove the imports -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/table.css">
+    <link rel="stylesheet" href="src/css/search.css">
+    <link rel="stylesheet" href="src/css/visualization.css">
+    <link rel="stylesheet" href="src/css/mobile.css">
+    <link rel="stylesheet" href="src/css/tooltip.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="table-container" id="mdj-container">
+        <div class="search-container">
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="county">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select counties or judges</div>
+            <div class="menu"></div>
+          </div>
+          <div class="btn-text outliers-btn">Show Outliers</div>
+        </div>
+        <table id="mdj-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+        <div class="btn-text view-all-btn"></div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.js"></script>
+  <script src="https://unpkg.com/popper.js@1"></script>
+  <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+  <script src="src/js/mdjs.js" charset="utf-8"></script>
+  <script>
+    $(document).ready(() => {
+      $('.dropdown').dropdown({
+        fullTextSearch: true,
+        ignoreCase: true,
+        delimiter: ';',
+        label: {
+          transition: undefined,
+          duration: 0,
+          variation: false
+        }
+      });
+    });
+  </script>
+</html>
