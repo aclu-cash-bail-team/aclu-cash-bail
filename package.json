@@ -37,6 +37,6 @@
   "homepage": "https://github.com/apothuku/aclu-cash-bail#readme",
   "dependencies": {
     "d3": "^6.2.0",
-    "topojson": "^3.0.2"
+    "topojson-client": "^3.1.0"
   }
 }
