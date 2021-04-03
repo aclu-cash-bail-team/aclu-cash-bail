@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ACLU Cash Bail</title>
+    <!-- TODO: Extract the styles we use from these and remove the imports -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/table.css">
+    <link rel="stylesheet" href="src/css/search.css">
+    <link rel="stylesheet" href="src/css/visualization.css">
+    <link rel="stylesheet" href="src/css/graph.css">
+    <link rel="stylesheet" href="src/css/map.css">
+    <link rel="stylesheet" href="src/css/mobile.css">
+  </head>
+  <body>
+    <div class="container">
+      <div id="race-rate" class="map-container">
+        <div class="legend-container">
+          <div class="color-scale-legend"></div>
+        </div>
+        <div class="legend"></div>
+        <div class="map-row">
+          <div id="black" class="map race-map"></div>
+          <div id="white" class="map race-map"></div>
+        </div>
+      </div>
+      <div id="race-container">
+        <div class="table-container" id="bail-race-rate-container">
+          <div class="search-container">
+            <div class="ui fluid multiple search selection dropdown">
+              <input type="hidden" name="county">
+              <i class="dropdown icon"></i>
+              <div class="default text">Search counties</div>
+              <div class="menu"></div>
+            </div>
+            <div class="btn-text outliers-btn">Show Outliers</div>
+          </div>
+          <div class="switch-container">
+            <div class="btn-text switch left showing">% Cash Bail</div>
+            <div class="btn-text switch right">Bail Amount</div>
+            <div class="btn-text outliers-btn mobile-only">Show Outliers</div>
+          </div>
+          <table id="bail-race-rate-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="btn-text view-all-btn"></div>
+          <p class="footnote">*Outlier for low number of cases with black defendants.</p>
+        </div>
+        <div class="table-container" id="bail-race-amount-container">
+          <div class="search-container">
+            <div class="ui fluid multiple search selection dropdown">
+              <input type="hidden" name="county">
+              <i class="dropdown icon"></i>
+              <div class="default text">Search counties</div>
+              <div class="menu"></div>
+            </div>
+            <div class="btn-text outliers-btn">Show Outliers</div>
+          </div>
+          <div class="switch-container">
+            <div class="btn-text switch left">% Cash Bail</div>
+            <div class="btn-text switch right showing">Bail Amount</div>
+            <div class="btn-text outliers-btn mobile-only">Show Outliers</div>
+          </div>
+          <table id="bail-race-amount-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="btn-text view-all-btn"></div>
+          <p class="footnote">*Outlier for low number of cases with black defendants.</p>
+        </div>
+      </div>
+      <div class="graph" id="race-scatter-plot">
+        <h3>Racial Disparities in Cash Bail Across Counties</h3>
+        <div class="ui fluid multiple search selection dropdown">
+          <input type="hidden" name="county">
+          <i class="dropdown icon"></i>
+          <div class="default text">Search counties</div>
+          <div class="menu"></div>
+        </div>
+        <div class="scatter-plot-subhead">
+          <div class="scatter-plot-key">
+            <span class="key-circle green">Black Defendants</span>
+            <span class="key-circle purple">White Defendants</span>
+          </div>
+          <div class="btn-text outliers-btn">Show Outliers</div>
+        </div>
+        <div class="plot-container">
+          <svg class="scatter-plot" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.js"></script>
+  <script src="https://unpkg.com/popper.js@1"></script>
+  <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+  <script src="src/js/cash-bail-and-race.js" charset="utf-8"></script>
+  <script>
+    $(document).ready(() => {
+      $('.dropdown').dropdown({
+        fullTextSearch: true,
+        ignoreCase: true,
+        delimiter: ';',
+        label: {
+          transition: undefined,
+          duration: 0,
+          variation: false
+        }
+      });
+    });
+  </script>
+</html>
