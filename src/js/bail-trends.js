@@ -1,7 +1,7 @@
 import { Table, SwitchableTable } from "./classes/Table.js";
 import { BailRateMap, BailPostingMap, SwitchableMap } from "./classes/Map.js";
-import { ScatterPlot } from "./classes/Graph.js";
-import { BAIL_RATE_DATA, ROR_RATE_DATA, BAIL_POSTING_DATA, BAIL_CASES_SCATTER_PLOT } from "./data.js";
+import { ScatterPlot, DistributionGraph } from "./classes/Graph.js";
+import { BAIL_RATE_DATA, ROR_RATE_DATA, BAIL_POSTING_DATA, BAIL_CASES_SCATTER_PLOT, MDJ_DATA } from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -278,3 +278,4 @@ new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
 new BailPostingMap("bail-posting", BAIL_POSTING_DATA, 58.5, 70);
 
 createCasesScatterPlot();
+new DistributionGraph(document.getElementById("dist-graph-container"), MDJ_DATA);
