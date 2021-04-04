@@ -1,9 +1,7 @@
 .map-container {
+    max-width: 1200px;
     text-align: center;
-}
-
-.map {
-    min-width: 400px;
+    margin: auto;
 }
 
 .race-map {
