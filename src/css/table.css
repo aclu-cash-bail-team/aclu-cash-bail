@@ -1,23 +1,23 @@
-table {
+.table-container > table {
   border-collapse: collapse;
   max-width: 600px;
   width: 100%;
   color: rgba(255, 255, 255, 0.75);
 }
 
-thead tr, tbody tr {
+.table-container > table > thead tr, .table-container > table > tbody tr {
   border-bottom: 1px #333 solid;
 }
 
-tr.collapsible {
+.table-container > table tr.collapsible {
   cursor: pointer;
 }
 
-tr.expanded {
+.table-container > table tr.expanded {
   background-color: #131313;
 }
 
-th {
+.table-container > table th {
   padding: 13px 6px;
   color: #fff;
   font-family: "GT America Condensed";
@@ -29,20 +29,20 @@ th {
   vertical-align: bottom;
 }
 
-th.number-cell {
+.table-container > table th.number-cell {
   text-align: right;
 }
 
-th.retention-fee-cell {
+.table-container > table th.retention-fee-cell {
   text-align: left;
 }
 
-td {
+.table-container > table td {
   text-align: left;
   padding: 13px 6px;
 }
 
-td.bold-cell {
+.table-container > table td.bold-cell {
   font-weight: 700;
 }
 
