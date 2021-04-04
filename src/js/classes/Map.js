@@ -232,7 +232,7 @@ class Map {
     const path = d3.geoPath().projection(this.projection);
 
     const countyTopoJson = JSON.parse(JSON.stringify(COUNTY_MAP_DATA));
-    const features = feature(countyTopoJson, countyTopoJson.objects["cb_2015_pennsylvania_county_20m"]).features;
+    const features = feature(countyTopoJson, countyTopoJson.objects["pa_counties"]).features;
 
     this.renderPA(features, path);
   }
