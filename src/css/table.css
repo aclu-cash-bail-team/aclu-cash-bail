@@ -46,7 +46,7 @@
   font-weight: 700;
 }
 
-.number-cell {
+.table-container > table .number-cell {
   width: 60px;
   min-width: 60px;
   max-width: 60px;
@@ -54,90 +54,90 @@
   font-variant-numeric: tabular-nums;
 }
 
-.county-name-cell {
+.table-container > table .county-name-cell {
   min-width: 170px;
   color: rgba(255, 255, 255, 1);
 }
 
-.th-wrapper {
+.table-container > table .th-wrapper {
   display: flex;
   justify-content: flex-start;
 }
 
-.number-cell .th-wrapper {
+.table-container > table .number-cell .th-wrapper {
   justify-content: flex-end;
 }
 
-.retention-fee-cell {
+.table-container > table .retention-fee-cell {
   text-align: left;
   min-width: 120px;
 }
 
-.fraction-budget-cell {
+.table-container > table .fraction-budget-cell {
   min-width: 62px;
 }
 
-.bail-rate-cell {
+.table-container > table .bail-rate-cell {
   min-width: 90px;
 }
 
-.total-budget-cell {
+.table-container > table .total-budget-cell {
   min-width: 84px;
 }
 
-.bail-black-cell, .bail-white-cell {
+.table-container > table .bail-black-cell, .bail-white-cell {
   min-width: 0;
   width: auto;
 }
 
-.sort-desc, .sort-asc {
+.table-container > table .sort-desc, .sort-asc {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.75);
 }
 
-.sort-desc:hover, .sort-asc:hover {
+.table-container > table .sort-desc:hover, .sort-asc:hover {
   color: #fff;
   transition: 0.3s ease;
 }
 
-.caret {
+.table-container > table .caret {
   min-width: 8px;
   padding-right: 5px;
   opacity: 0;
 }
 
-.sort-desc .caret {
+.table-container > table .sort-desc .caret {
   padding-top: 6px;
 }
 
-.sort-asc .caret {
+.table-container > table .sort-asc .caret {
   padding-bottom: 6px;
 }
 
-.sorted .caret, .caret-cell .caret {
+.table-container > table .sorted .caret, .caret-cell .caret {
   opacity: 1;
 }
 
-.caret-cell {
+.table-container > table .caret-cell {
   width: 10px;
   padding-left: 0;
 }
 
-.caret-cell .caret {
+.table-container > table .caret-cell .caret {
   padding-left: 6px;
   padding-top: 2px;
   padding-bottom: 1px;
 }
 
-.caret-rotated .caret {
+.table-container > table .caret-rotated .caret {
   transform: rotateZ(-90deg);
 }
 
-.sort-asc .caret {
+.table-container > table .sort-asc .caret {
   transform: rotateX(180deg);
 }
 
-.sorted {
+.table-container > table .sorted {
   color: #fff;
 }
 
@@ -147,37 +147,37 @@
   user-select: none;
 }
 
-.switch-container {
+.table-container > table .switch-container {
   display: flex;
   margin: 1.5em 0;
   cursor: pointer;
   user-select: none;
 }
 
-.switch-container .switch {
+.table-container > table .switch-container .switch {
   width: 140px;
   padding: 10px;
   border: 1px #333 solid;
 }
 
-.switch.left {
+.table-container > table .switch.left {
   border-radius: 3px 0 0 3px;
 }
 
-.switch.right {
+.table-container > table .switch.right {
   border-radius: 0 3px 3px 0;
   border-left: 0;
 }
 
-.switch-container .switch.showing, .switch-container .switch:hover {
+.table-container > table .switch-container .switch.showing, .switch-container .switch:hover {
   background-color: #1D1D1D;
 }
 
-.positive-diff {
+.table-container > table .positive-diff {
   color: #00ED89;
 }
 
-.negative-diff {
+.table-container > table .negative-diff {
   color: #C14EF8;
 }
 

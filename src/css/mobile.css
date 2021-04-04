@@ -23,36 +23,36 @@
     border-right: 1px dotted #333;
   }
 
-  .average-wrapper {
+  .table-container > table .average-wrapper {
     width: 100px;
   }
 
-  .county-name-cell {
+  .table-container > table .county-name-cell {
     min-width: 100px;
   }
 
-  .total-bail-rate-cell {
+  .table-container > table .total-bail-rate-cell {
     min-width: unset;
     padding-left: 0;
   }
 
-  .bail-black-cell {
+  .table-container > table .bail-black-cell {
     min-width: unset;
   }
 
-  .bail-white-cell {
+  .table-container > table .bail-white-cell {
     min-width: unset;
   }
 
-  .caret-cell {
+  .table-container > table .caret-cell {
     padding: 0;
   }
 
-  .bar-label {
+  .table-container > table .bar-label {
     left: calc(100% + 0.5em);
   }
 
-  .total-budget-cell {
+  .table-container > table .total-budget-cell {
       display: none;
   }
 
@@ -85,7 +85,7 @@
     width: 80px;
   }
 
-  .average-wrapper {
+  .table-container > table .average-wrapper {
     width: 80px;
   }
 
@@ -93,7 +93,7 @@
     width: 80px;
   }
 
-  .diff-cell, .total-cases-cell {
+  .table-container > table .diff-cell, .table-container > table .total-cases-cell {
     display: none;
   }
 
