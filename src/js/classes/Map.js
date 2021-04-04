@@ -10,7 +10,7 @@ const COUNTY_NAME_ATTRIBUTE = "data-county-name";
 const BUCKET_ATTRIBUTE = "data-bucket";
 
 class ColorScaleLegend {
-  constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut, title = "", offsetY = 30) {
+  constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut, title = "", offsetY = 35) {
     this.colorDomain = colorDomain;
     this.labels = labels;
     this.color = color;
@@ -21,13 +21,13 @@ class ColorScaleLegend {
 
     this.sectionWidth = 50;
     this.sectionHeight = 10;
-    this.offsetX = 5;
+    this.offsetX = 7;
     this.offsetY = offsetY;
-    this.labelOffsetX = this.offsetX - 4;
-    this.labelOffsetY = this.offsetY + 22;
+    this.labelOffsetX = this.offsetX - 9;
+    this.labelOffsetY = this.offsetY + 28;
     this.legendWidth = this.sectionWidth * this.colorDomain.length;
 
-    const svgWidth = this.legendWidth + 20;
+    const svgWidth = this.legendWidth + 30;
     const svgHeight = this.sectionHeight + this.labelOffsetY + 10;
     this.svg = d3.select(`#${id} .color-scale-legend`).append("svg")
       .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
@@ -72,8 +72,9 @@ class ColorScaleLegend {
       });
     // Add labels
     const legendTextClassName = "legend-text";
+    const smallLabelOffset = i => this.labels[i].toString().length < 2 ? 2 : 0;
     legend.append("text")
-      .attr("x", (_, i) => this.labelOffsetX + i*this.sectionWidth)
+      .attr("x", (_, i) => this.labelOffsetX + i*this.sectionWidth + smallLabelOffset(i))
       .attr("y", this.labelOffsetY)
       .attr("class", legendTextClassName)
       .attr(BUCKET_ATTRIBUTE, d => {
@@ -89,7 +90,7 @@ class ColorScaleLegend {
       .attr("y", this.labelOffsetY)
       .attr("class", legendTextClassName)
       .attr(BUCKET_ATTRIBUTE, this.labels[this.labels.length - 1])
-      .text(this.labels[this.labels.length - 1]);
+      .text(this.labels[this.labels.length - 1] + "%");
     // Set up average label
     const maxValue = this.colorDomain[this.colorDomain.length - 1];
     this.averages.forEach(avg => {
@@ -102,19 +103,19 @@ class ColorScaleLegend {
         .attr("y2", this.offsetY - 5)
         .attr("class", legendLineClassName);
       this.svg.append("text")
-        .attr("x", avgOffsetX - 10)
-        .attr("y", this.offsetY - 20)
+        .attr("x", avgOffsetX - 13)
+        .attr("y", this.offsetY - 25)
         .attr("class", legendTextClassName)
         .text(avg.label);
       this.svg.append("text")
-        .attr("x", avgOffsetX - 10)
+        .attr("x", avgOffsetX - 15)
         .attr("y", this.offsetY - 10)
         .attr("class", legendTextClassName)
         .text(`${avg.value}%`);
       // Add title, if any
       this.svg.append("text")
-        .attr("x", this.legendWidth/2 - 25)
-        .attr("y", this.offsetY + 40)
+        .attr("x", this.legendWidth/2 - 45)
+        .attr("y", this.offsetY + 45)
         .attr("class", legendTextClassName)
         .text(this.title);
     });
@@ -128,10 +129,10 @@ class SpikeLegend {
     this.getSpike = getSpike;
 
     this.spikeOffsetY = 110;
-    this.spikeOffsetX = 25;
+    this.spikeOffsetX = 40;
     this.spikeSpacingX = 30;
 
-    const svgWidth = 125;
+    const svgWidth = 140;
     const svgHeight = this.spikeOffsetY + 25;
     this.svg = d3.select(`#${id} .spike-legend`).append("svg")
       .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
@@ -266,7 +267,7 @@ export class BailRateMap extends Map {
       this.color,
       [{
         value: average,
-        label: "Avg:"
+        label: "Avg"
       }],
       onLegendMouseOver,
       onLegendMouseOut
@@ -423,11 +424,11 @@ export class RaceMapContainer {
       color,
       [{
         value: whiteAverage,
-        label: "White:"
+        label: "White"
       },
       {
         value: blackAverage,
-        label: "Black:"
+        label: "Black"
       }
       ],
       onLegendMouseOver,
@@ -516,7 +517,7 @@ export class BailPostingMap extends Map {
       this.color,
       [{
         value: average,
-        label: "Avg:"
+        label: "Avg"
       }],
       onLegendMouseOver,
       onLegendMouseOut,
