@@ -247,22 +247,27 @@ const createCasesScatterPlot = () => {
     ]
   };
 
-  // 4px radius - 100;
-  // 30px radius - 10000;
-  // 120px radius - 40000;
+  const radius_desktop_min = 4, radius_desktop_10k = 35;
+  const radius_mobile_min = 4, radius_mobile_10k = 21;
+
+  const maxRadiusValue = Math.max(...Object.values(BAIL_CASES_SCATTER_PLOT).map(county => county.r));
+  const minRadiusValue = 100;
+
+  const radius_desktop_max = ((radius_desktop_10k * (minRadiusValue - maxRadiusValue) + radius_desktop_min * (maxRadiusValue - 10000)) / (minRadiusValue - 10000));
+  const radius_mobile_max = ((radius_mobile_10k * (minRadiusValue - maxRadiusValue) + radius_mobile_min * (maxRadiusValue - 10000)) / (minRadiusValue - 10000));
 
   const radiusScale = {
     desktop: {
-      min: 4,
-      max: 120,
-      minValue: 100,
-      maxValue: 42000
+      min: radius_desktop_min,
+      max: radius_desktop_max,
+      minValue: minRadiusValue,
+      maxValue: maxRadiusValue
     },
     mobile: {
-      min: 4,
-      max: 60,
-      minValue: 100,
-      maxValue: 42000
+      min: radius_mobile_min,
+      max: radius_mobile_max,
+      minValue: minRadiusValue,
+      maxValue: maxRadiusValue
     },
   };
 
