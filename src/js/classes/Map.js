@@ -531,13 +531,17 @@ export class BailPostingMap extends Map {
 
   onMouseEnter(event) {
     super.onMouseEnter(event);
-    d3.select(event.srcElement).style("stroke-width", "2px");
-    this.highlightBar(event.srcElement);
+    if (event.target.classList.contains("county-path")) {
+      d3.select(event.target).style("fill", "#181818");
+    }
+    this.highlightBar(event.target);
   }
 
   onMouseOut(event) {
     super.onMouseOut();
-    d3.select(event.srcElement).style("stroke-width", "0.5px");
+    if (event.target.classList.contains("county-path")) {
+      d3.select(event.target).style("fill", "#1a1a1a");
+    }
     this.resetHighlight();
   }
 
@@ -611,6 +615,8 @@ export class BailPostingMap extends Map {
       .attr(COUNTY_NAME_ATTRIBUTE, feature => feature.properties["NAME"]);
 
     this.legend.render();
+
+    this.renderCities();
   }
 }
 
