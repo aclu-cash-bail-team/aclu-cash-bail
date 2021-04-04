@@ -218,7 +218,7 @@ class Map {
   }
 
   showTooltip(element, data) {
-    this.tooltip = this.renderTooltip(element, data);
+    this.tooltip = this.renderTooltip(element, [data], data["name"]);
     this.tooltip.show();
   }
 
@@ -242,7 +242,6 @@ class Map {
 export class BailRateMap extends Map {
   constructor(id, data, average) {
     super(`#${id} .map`, {rows: [
-      { rowHeader: "" , isColumnHeader: true, dataKey: "name" },
       { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
     ]});
     this.id = id;
@@ -291,7 +290,7 @@ export class BailRateMap extends Map {
   showTooltip(element) {
     const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const countyRate = Number(element.getAttribute("data-rate"));
-    super.showTooltip(element, [{name: countyName, x: countyRate}])
+    super.showTooltip(element, {name: countyName, x: countyRate});
   }
 
   highlightBar(element) {
@@ -332,7 +331,6 @@ export class BailRateMap extends Map {
 class BailRaceMap extends Map {
   constructor(selector, data, color, dataIdx, race, parent) {
     super(selector, {rows: [
-      { rowHeader: "" , isColumnHeader: true, dataKey: "name" },
       { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
     ]});
     this.data = data;
@@ -348,7 +346,7 @@ class BailRaceMap extends Map {
     const element = document.querySelector(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${this.race}"]`);
     const countyRate = Number(element.getAttribute("data-rate"));
     this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "2px");
-    super.showTooltip(element, [{name: countyName, x: countyRate}]);
+    super.showTooltip(element, {name: countyName, x: countyRate});
   }
   _onMouseOut(countyName) {
     super.onMouseOut();
@@ -485,7 +483,6 @@ export class RaceMapContainer {
 export class BailPostingMap extends Map {
   constructor(id, data, average, upperBound) {
     super(`#${id} .map`, {rows: [
-      { rowHeader: "" , isColumnHeader: true, dataKey: "name" },
       { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
       { rowHeader: "Avg. Bail Amount", dataKey: "y", render: value => value.toLocaleString("en", {
         style: "currency",
@@ -548,7 +545,7 @@ export class BailPostingMap extends Map {
     const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const countyRate = Number(element.getAttribute("data-rate"));
     const countyAmount = element.getAttribute("data-bail-amount");
-    super.showTooltip(element, [{name: countyName, x: countyRate, y: countyAmount}]);
+    super.showTooltip(element, {name: countyName, x: countyRate, y: countyAmount});
   }
 
   highlightBar(element) {
