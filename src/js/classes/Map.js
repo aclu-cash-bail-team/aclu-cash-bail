@@ -210,7 +210,7 @@ class Map {
   }
 
   onMouseEnter(event) {
-    this.showTooltip(event.srcElement, {});
+    this.showTooltip(event.target, {});
   }
 
   onMouseOut() {
@@ -254,8 +254,8 @@ export class BailRateMap extends Map {
     ]);
 
     const onLegendMouseOver = (event) => {
-      this.highlightBar(event.srcElement);
-      this.highlightMap(event.srcElement);
+      this.highlightBar(event.target);
+      this.highlightMap(event.target);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -278,13 +278,13 @@ export class BailRateMap extends Map {
 
   onMouseEnter(event) {
     super.onMouseEnter(event);
-    d3.select(event.srcElement).style("stroke-width", "2px");
-    this.highlightBar(event.srcElement);
+    d3.select(event.target).style("stroke-width", "2px");
+    this.highlightBar(event.target);
   }
 
   onMouseOut(event) {
     super.onMouseOut();
-    d3.select(event.srcElement).style("stroke-width", "0.5px");
+    d3.select(event.target).style("stroke-width", "1px");
     this.resetHighlight();
   }
 
@@ -411,8 +411,8 @@ export class RaceMapContainer {
     this.white = new BailRaceMap(`#${id} #white.map`, data, color, 3, "white", this);
 
     const onLegendMouseOver = (event) => {
-      this.highlightBarFromLegend(event.srcElement);
-      this.highlightMap(event.srcElement);
+      this.highlightBarFromLegend(event.target);
+      this.highlightMap(event.target);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -439,14 +439,14 @@ export class RaceMapContainer {
   }
 
   onChildMouseEnter(event) {
-    const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
     this.black._onMouseEnter(countyName);
     this.white._onMouseEnter(countyName);
-    this.highlightBarFromMap(event.srcElement);
+    this.highlightBarFromMap(event.target);
   }
 
   onChildMouseOut(event) {
-    const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
     this.black._onMouseOut(countyName);
     this.white._onMouseOut(countyName);
     this.resetHighlight();
@@ -504,8 +504,8 @@ export class BailPostingMap extends Map {
     this.spikeScale = d3.scaleLinear([0, upperBound], [0, 100]);
 
     const onLegendMouseOver = (event) => {
-      this.highlightBar(event.srcElement);
-      this.highlightMap(event.srcElement);
+      this.highlightBar(event.target);
+      this.highlightMap(event.target);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
