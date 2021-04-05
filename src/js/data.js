@@ -8356,7 +8356,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Davis, Wilden H.",
+          "Davis, W.",
           75.87,
           75.15151515,
           81.98198198,
@@ -8392,7 +8392,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Tenaglia, Leonard V.",
+          "Tenaglia, L.",
           74.28,
           75.54786621,
           71.47651007,
@@ -8428,7 +8428,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Seaton, Spencer B. Jr.",
+          "Seaton, S.",
           74.02,
           75.9295499,
           72.8,
@@ -8464,7 +8464,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gallagher, Vincent D. Jr.",
+          "Gallagher, V.",
           71.73,
           83.72093023,
           62.75862069,
@@ -8500,7 +8500,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Berardocco, Ann",
+          "Berardocco, A.",
           71.53,
           77.06422018,
           62.87128713,
@@ -8536,7 +8536,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Sandone, Steven A.",
+          "Sandone, S.",
           71.18,
           75.53648069,
           68.96551724,
@@ -8572,7 +8572,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Loftus, Greg J.",
+          "Loftus, G.",
           69.26,
           70.99697885,
           66.53061224,
@@ -8608,7 +8608,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Radano, Robert J.",
+          "Radano, R.",
           62.88,
           65.58441558,
           62.33183857,
@@ -8644,7 +8644,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Merkins, James",
+          "Merkins, J.",
           61.84,
           80.85106383,
           53.80116959,
@@ -8680,7 +8680,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Turner, Phillip S.",
+          "Turner, P.",
           61.05,
           63.4375,
           59.33503836,
@@ -8716,7 +8716,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lippincott, Nicholas S.",
+          "Lippincott, N.",
           60.52,
           74.23076923,
           45.04132231,
@@ -8752,7 +8752,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mattox, Christopher R.",
+          "Mattox, C.",
           60.36,
           62.95336788,
           59.41422594,
@@ -8788,7 +8788,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Tozer, Peter P.",
+          "Tozer, P.",
           59.06,
           62.63736264,
           57.0977918,
@@ -8824,7 +8824,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Puppio, Andrea B.",
+          "Puppio, A.",
           57.44,
           65.96491228,
           52.13114754,
@@ -8860,7 +8860,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Karapalides, Harry J. Jr.",
+          "Karapalides, H.",
           57.36,
           58.41836735,
           55.05050505,
@@ -8896,7 +8896,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Williams, W Keith II",
+          "Williams, W.",
           56.54,
           52.56410256,
           69.56521739,
@@ -8932,7 +8932,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Vann, Dawn L.",
+          "Vann, D.",
           53.29,
           59.06735751,
           55.70469799,
@@ -8968,7 +8968,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hunter, Leon",
+          "Hunter, L.",
           52.2,
           66.03773585,
           46.22222222,
@@ -9004,7 +9004,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Holefelder, Diane M.",
+          "Holefelder, D.",
           51.46,
           71.29186603,
           37.54266212,
@@ -9040,7 +9040,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Griffin, David",
+          "Griffin, D.",
           51.33,
           57.55813953,
           45.10739857,
@@ -9076,7 +9076,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Burke, Robert R.",
+          "Burke, R.",
           50.66,
           57.77777778,
           43.91534392,
@@ -9112,7 +9112,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Strohl, Walter A.",
+          "Strohl, W.",
           50.21,
           66.47058824,
           40.89347079,
@@ -9148,7 +9148,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Micozzie-Aguirre, Kelly A.",
+          "Micozzie-Aguirre, K.",
           50,
           60.33057851,
           47.05882353,
@@ -9184,7 +9184,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Krull, Deborah A.",
+          "Krull, D.",
           48.54,
           61.21673004,
           40,
@@ -9220,7 +9220,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Nistico, Charles",
+          "Nistico, C.",
           44.14,
           48.9010989,
           27.27272727,
@@ -9256,7 +9256,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lacey, Thomas J.",
+          "Lacey, T.",
           43.49,
           47.61904762,
           28.42639594,
@@ -9292,7 +9292,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lippart, Jack D.",
+          "Lippart, J.",
           43.1,
           55.82010582,
           35.98615917,
@@ -9328,7 +9328,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lacianca, Elisa C.",
+          "Lacianca, E.",
           41.76,
           59.16666667,
           35.05154639,
@@ -9364,7 +9364,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lang, David H.",
+          "Lang, D.",
           34.43,
           37.64044944,
           32.44274809,
@@ -9400,7 +9400,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McCray, C. Walter III",
+          "McCray, C.",
           33.33,
           40.12345679,
           24.32432432,
@@ -9436,7 +9436,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "D’Agostino, Robert M.",
+          "D’Agostino, R.",
           28.41,
           36.95652174,
           28.34645669,
@@ -9472,7 +9472,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Roberts, Wendy B.",
+          "Roberts, W.",
           27.98,
           40.08438819,
           19.42740286,
@@ -9547,7 +9547,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Manescu, Ronald S.",
+          "Manescu, R.",
           68.18,
           72.63157895,
           68.11279826,
@@ -9583,7 +9583,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Maura, Wayne",
+          "Maura, W.",
           64.84,
           75.24271845,
           60.41009464,
@@ -9619,7 +9619,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Pochron, Michael Joseph",
+          "Pochron, M.",
           63.99,
           69.00584795,
           61.08786611,
@@ -9655,7 +9655,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Trexler, Daniel C.",
+          "Trexler, D.",
           61.95,
           73.04964539,
           57.55813953,
@@ -9691,7 +9691,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Santiago, Rashid",
+          "Santiago, R.",
           60.72,
           64.65517241,
           63.26530612,
@@ -9727,7 +9727,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Butler, Donna R.",
+          "Butler, D.",
           59.62,
           70.43478261,
           55.907173,
@@ -9763,7 +9763,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Engler, Patricia M.",
+          "Engler, P.",
           58.02,
           67.97385621,
           57.80189959,
@@ -9799,7 +9799,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Devine, Karen C.",
+          "Devine, K.",
           57.78,
           59.83263598,
           58.59213251,
@@ -9835,7 +9835,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Howells, David M. Jr.",
+          "Howells, D.",
           57.1,
           61.34453782,
           60.11235955,
@@ -9871,7 +9871,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Beck, Rod",
+          "Beck, R.",
           53.89,
           78.94736842,
           48.37049743,
@@ -9907,7 +9907,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Halal, Robert C.",
+          "Halal, R.",
           53.25,
           67.79661017,
           50.32258065,
@@ -9943,7 +9943,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Crawford, Charles H.",
+          "Crawford, C.",
           50.37,
           58.33333333,
           46.08695652,
@@ -9979,7 +9979,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hammond, Jacob E.",
+          "Hammond, J.",
           50.1,
           50.71090047,
           48.14340589,
@@ -10015,7 +10015,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "D’Amore, Michael D.",
+          "D’Amore, M.",
           42.59,
           46.77419355,
           40.88145897,
@@ -10051,7 +10051,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Faulkner, Michael J.",
+          "Faulkner, M.",
           41.49,
           45.92274678,
           37.84764208,
@@ -10087,7 +10087,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Anthony, James T.",
+          "Anthony, J.",
           31.43,
           17.39130435,
           36.36363636,
@@ -10123,7 +10123,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dantos, Maria L.",
+          "Dantos, M.",
           30.81,
           32.43243243,
           31.25,
@@ -10198,7 +10198,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Giglio, Theodore J.",
+          "Giglio, T.",
           67.94,
           82.48175182,
           64.90825688,
@@ -10234,7 +10234,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Corbett, Joanne Price",
+          "Corbett, J.",
           58.27,
           75.42372881,
           54.09836066,
@@ -10270,7 +10270,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ware, Paul J.",
+          "Ware, P.",
           55.44,
           59.84251969,
           54.07725322,
@@ -10306,7 +10306,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McGraw, Sean P.",
+          "McGraw, S.",
           55.3,
           75.59055118,
           50.52631579,
@@ -10342,7 +10342,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Pesota, John P.",
+          "Pesota, J.",
           53.91,
           66.1971831,
           50.6,
@@ -10378,7 +10378,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Keeler, Paul",
+          "Keeler, P.",
           52.27,
           69.93464052,
           46.8503937,
@@ -10414,7 +10414,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Farrell, Alyce Hailstone",
+          "Farrell, A.",
           49.92,
           50.40650407,
           50.21097046,
@@ -10450,7 +10450,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Turlip-Murphy, Laura",
+          "Turlip-Murphy, L.",
           46.17,
           63.04347826,
           41.89189189,
@@ -10486,7 +10486,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gallagher, Terrence V.",
+          "Gallagher, T.",
           38.52,
           62.28070175,
           32.93885602,
@@ -10561,7 +10561,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hall, William N. Jr.",
+          "Hall, W.",
           95.81,
           96.2962963,
           95.74468085,
@@ -10597,7 +10597,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hadzick, Paul J.",
+          "Hadzick, P.",
           82.72,
           86.29032258,
           82.65204387,
@@ -10633,7 +10633,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Robinson, Alvin B.",
+          "Robinson, A.",
           67.48,
           68.46153846,
           68.62302483,
@@ -10669,7 +10669,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kennedy, Stuart D.",
+          "Kennedy, S.",
           62.97,
           66.66666667,
           64.62765957,
@@ -10705,7 +10705,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Glass, David E.",
+          "Glass, D.",
           57.02,
           90.38461538,
           53.56200528,
@@ -10741,7 +10741,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kowalski, Phyllis J.",
+          "Kowalski, P.",
           55.56,
           51.89873418,
           57.08812261,
@@ -10777,7 +10777,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Xavios, Thomas H.",
+          "Xavios, T.",
           54.71,
           61.9047619,
           55.87301587,
@@ -10813,7 +10813,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Scott, Kyley L.",
+          "Scott, K.",
           51.4,
           64.28571429,
           51.61290323,
@@ -10849,7 +10849,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Patton, Dean R.",
+          "Patton, D.",
           45.8,
           57.36434109,
           43.23144105,
@@ -10885,7 +10885,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Yoch, David L.",
+          "Yoch, D.",
           43.48,
           55.68181818,
           41.81459566,
@@ -10921,7 +10921,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Book, Andrea J.",
+          "Book, A.",
           43.38,
           52.38095238,
           42.69662921,
@@ -10957,7 +10957,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gauby, Thomas M. Sr.",
+          "Gauby, T.",
           43.23,
           45.09803922,
           43.41736695,
@@ -10993,7 +10993,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bentz, Nicholas M. Jr.",
+          "Bentz, N.",
           37.58,
           41.34078212,
           40.12158055,
@@ -11029,7 +11029,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Young, Ann L.",
+          "Young, A.",
           37.2,
           45.52845528,
           35.87896254,
@@ -11065,7 +11065,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Frederick, Victor M. IV",
+          "Frederick, V.",
           37.03,
           41.86046512,
           37.42690058,
@@ -11101,7 +11101,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Greth, Gail M.",
+          "Greth, G.",
           34.95,
           31.57894737,
           35.07246377,
@@ -11137,7 +11137,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hartman, Michael G.",
+          "Hartman, M.",
           33.33,
           42.10526316,
           32.14285714,
@@ -11173,7 +11173,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Fegley, Sandra L.",
+          "Fegley, S.",
           31.79,
           29.8013245,
           32.33618234,
@@ -11209,7 +11209,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bagenstose, Kim L.",
+          "Bagenstose, K.",
           31.05,
           45,
           29.82107356,
@@ -11245,7 +11245,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dougherty, Timothy M.",
+          "Dougherty, T.",
           29.9,
           33.33333333,
           33.33333333,
@@ -11320,7 +11320,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Rebstock, Francis J.",
+          "Rebstock, F.",
           51.31,
           55.90909091,
           44.80991029,
@@ -11356,7 +11356,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Rice, Jane M.",
+          "Rice, J.",
           51.06,
           56.29431227,
           44.7446084,
@@ -11392,7 +11392,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O’Brien, James",
+          "O’Brien, J.",
           50.56,
           56.52024708,
           43.40175953,
@@ -11428,7 +11428,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Stack, Patrick",
+          "Stack, P.",
           50.24,
           56.43951744,
           42.87348433,
@@ -11464,7 +11464,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bedford, Sheila M.",
+          "Bedford, S.",
           49.04,
           54.89941596,
           42.60808926,
@@ -11500,7 +11500,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Devlin, Kevin R.",
+          "Devlin, K.",
           47.39,
           53.08736379,
           41.41494436,
@@ -11575,7 +11575,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Livingston, William R. II",
+          "Livingston, W.",
           67.48,
           81.08108108,
           61.2244898,
@@ -11611,7 +11611,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hladio, Andrew M.",
+          "Hladio, A.",
           59.03,
           72.97297297,
           54.57413249,
@@ -11647,7 +11647,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Howe, Edward",
+          "Howe, E.",
           53.84,
           70.04405286,
           49.07872697,
@@ -11683,7 +11683,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Armour, John W.",
+          "Armour, J.",
           53.66,
           69.33867735,
           56.72043011,
@@ -11719,7 +11719,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Loughner, C. Douglas.",
+          "Loughner, C.",
           52.62,
           67.17948718,
           48.1557377,
@@ -11755,7 +11755,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Swihart, Janet",
+          "Swihart, J.",
           51.94,
           62.9787234,
           48.10690423,
@@ -11791,7 +11791,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Nicholson, Dale",
+          "Nicholson, D.",
           47.45,
           59.30735931,
           41.95402299,
@@ -11827,7 +11827,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Schafer, Joseph",
+          "Schafer, J.",
           42.12,
           56.65024631,
           36.83274021,
@@ -11863,7 +11863,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Finn, Timothy",
+          "Finn, T.",
           31.84,
           53.33333333,
           25.6097561,
@@ -11938,7 +11938,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Amodie, Melissa Ann",
+          "Amodie, M.",
           65.79,
           81.85053381,
           57.64966741,
@@ -11974,7 +11974,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Nicholson, Jennifer L.",
+          "Nicholson, J.",
           48.46,
           59.45945946,
           45.25,
@@ -12010,7 +12010,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McGrath, Scott",
+          "McGrath, S.",
           47.88,
           69.76744186,
           41.66666667,
@@ -12046,7 +12046,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Rishel, David B.",
+          "Rishel, D.",
           40.13,
           50,
           38.24701195,
@@ -12082,7 +12082,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cartwright, Jerry G. Jr.",
+          "Cartwright, J.",
           27.82,
           32.60869565,
           27.82608696,
@@ -12157,7 +12157,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Miller, Jack E.",
+          "Miller, J.",
           55.1,
           75.75757576,
           54.02542373,
@@ -12193,7 +12193,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Reed, Jonathan W.",
+          "Reed, J.",
           50.95,
           74.07407407,
           49.77477477,
@@ -12229,7 +12229,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Smith, Kent A.",
+          "Smith, K.",
           38.71,
           59.25925926,
           37.90697674,
@@ -12304,7 +12304,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Matos-Gonzalez, Nancy",
+          "Matos-Gonzalez, N.",
           63.3,
           66.42335766,
           63.19796954,
@@ -12340,7 +12340,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Corpora, Daniel G.",
+          "Corpora, D.",
           57.62,
           68.65671642,
           52.03252033,
@@ -12376,7 +12376,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Yetter, Richard H. III",
+          "Yetter, R.",
           56.91,
           63.85542169,
           53.84615385,
@@ -12412,7 +12412,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Grifo, Antonia",
+          "Grifo, A.",
           55.76,
           69.60784314,
           52.25806452,
@@ -12448,7 +12448,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Zito, Alicia Rose",
+          "Zito, A.",
           55.52,
           72.72727273,
           53.7593985,
@@ -12484,7 +12484,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hawke, Robert A.",
+          "Hawke, R.",
           53.61,
           75.92592593,
           50.81585082,
@@ -12520,7 +12520,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Taschner, Jacqueline M.",
+          "Taschner, J.",
           53.58,
           58.01526718,
           52.63157895,
@@ -12556,7 +12556,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Capobianco, John",
+          "Capobianco, J.",
           52.85,
           72.04301075,
           49.90176817,
@@ -12592,7 +12592,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Schlegel, Douglas",
+          "Schlegel, D.",
           47.81,
           75,
           43.28358209,
@@ -12628,7 +12628,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Manwaring, Roy A.",
+          "Manwaring, R.",
           46.04,
           54.92957746,
           43.52941176,
@@ -12664,7 +12664,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Narlesky, James J.",
+          "Narlesky, J.",
           44.19,
           49.38271605,
           43.33333333,
@@ -12700,7 +12700,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Broscius, Patricia C.",
+          "Broscius, P.",
           39.69,
           37.79527559,
           41.73669468,
@@ -12736,7 +12736,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Pendolino, Samuel V.",
+          "Pendolino, S.",
           34.72,
           57.53424658,
           34.89208633,
@@ -12772,7 +12772,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Rapp, Anthony G. Jr.",
+          "Rapp, A.",
           32.62,
           38.63636364,
           42.38410596,
@@ -12808,7 +12808,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Zilhaver, Lincoln S.",
+          "Zilhaver, L.",
           30.2,
           44.44444444,
           30.13435701,
@@ -12844,7 +12844,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Barner, Joseph K.",
+          "Barner, J.",
           27.44,
           26.04166667,
           27.95698925,
@@ -12880,7 +12880,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Marwood, Rita J.",
+          "Marwood, R.",
           23.04,
           45.83333333,
           23.36244541,
@@ -12916,7 +12916,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Romig, Elizabeth A.",
+          "Romig, E.",
           21.2,
           34.28571429,
           18.07909605,
@@ -12991,7 +12991,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Shaw, Michael",
+          "Shaw, M.",
           60.71,
           81.81818182,
           59.8062954,
@@ -13027,7 +13027,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Wheaton, Fred M.",
+          "Wheaton, F.",
           42.23,
           50,
           42.10526316,
@@ -13063,7 +13063,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Clark, Timothy M.",
+          "Clark, T.",
           41.82,
           47.61904762,
           42.02657807,
@@ -13099,7 +13099,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Wilcox, Jonathan",
+          "Wilcox, J.",
           35.79,
           50,
           35.51136364,
@@ -13174,7 +13174,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hamill, Nancy G.",
+          "Hamill, N.",
           64.32,
           77.02702703,
           61.37724551,
@@ -13210,7 +13210,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Jimenez, Janice",
+          "Jimenez, J.",
           63.41,
           69.23076923,
           61.59793814,
@@ -13246,7 +13246,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Roth, Bruce A.",
+          "Roth, B.",
           62.44,
           66.66666667,
           63.97306397,
@@ -13282,7 +13282,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Benner, William E. Jr.",
+          "Benner, W.",
           59.79,
           71.64179104,
           57.84313725,
@@ -13318,7 +13318,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Sheller, Raymond S.",
+          "Sheller, R.",
           59.6,
           70.58823529,
           57.84615385,
@@ -13354,7 +13354,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hartman, Rodney H.",
+          "Hartman, R.",
           57.28,
           79.16666667,
           53.91791045,
@@ -13390,7 +13390,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Russell, Tony S.",
+          "Russell, T.",
           56.44,
           71.21212121,
           55.34591195,
@@ -13426,7 +13426,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mylin, Stuart J.",
+          "Mylin, S.",
           50.93,
           62.96296296,
           49.79166667,
@@ -13462,7 +13462,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Witkonis, Adam J.",
+          "Witkonis, A.",
           50.47,
           56.39534884,
           48.6437613,
@@ -13498,7 +13498,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Tobin, Edward A.",
+          "Tobin, E.",
           50.11,
           61.53846154,
           48.58611825,
@@ -13534,7 +13534,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Albert, Scott E.",
+          "Albert, S.",
           49.06,
           55.10204082,
           47.76470588,
@@ -13570,7 +13570,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bixler, Miles K.",
+          "Bixler, M.",
           47.41,
           59.3220339,
           45.15463918,
@@ -13606,7 +13606,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Chudzik, Brian E.",
+          "Chudzik, B.",
           46.31,
           57.63888889,
           43.30543933,
@@ -13642,7 +13642,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Miller, David P.",
+          "Miller, D.",
           45.52,
           49.24623116,
           44.69026549,
@@ -13678,7 +13678,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mongiovi-Sponaugle, Mary",
+          "Mongiovi-Sponaugle, M.",
           44.38,
           36.55172414,
           46.69051878,
@@ -13714,7 +13714,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Keller, Joshua R.",
+          "Keller, J.",
           43.28,
           39.53488372,
           44.40993789,
@@ -13750,7 +13750,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Wilt, Richard S.",
+          "Wilt, R.",
           42.83,
           60,
           40,
@@ -13786,7 +13786,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Commins, B Denise",
+          "Commins, B.",
           40.23,
           56.14035088,
           36.95652174,
@@ -13822,7 +13822,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Jamison, Mary G.",
+          "Jamison, M.",
           40.06,
           60,
           40,
@@ -13858,7 +13858,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Duncan, Jayne F.",
+          "Duncan, J.",
           32.62,
           47.05882353,
           32.22891566,
@@ -13894,7 +13894,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gummo, Douglas L.",
+          "Gummo, D.",
           27.51,
           37.83783784,
           27.39018088,
@@ -13930,7 +13930,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Herman, Robert A. Jr.",
+          "Herman, R.",
           10.35,
           17.14285714,
           9.725158562,
@@ -13966,7 +13966,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Reinaker, Dennis E.",
+          "Reinaker, D.",
           6.41,
           12,
           6,
@@ -14041,7 +14041,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Musulin, Michael",
+          "Musulin, M.",
           55.29,
           65.19607843,
           50.94339623,
@@ -14077,7 +14077,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Zanghi, Mary Ann",
+          "Zanghi, M.",
           54.42,
           77.52808989,
           47.8125,
@@ -14113,7 +14113,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Varner, Rick W.",
+          "Varner, R.",
           53.68,
           77.04918033,
           51.03926097,
@@ -14149,7 +14149,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Creany, Fred",
+          "Creany, F.",
           49.92,
           92.20779221,
           43.46978558,
@@ -14185,7 +14185,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Price, Kevin J.",
+          "Price, K.",
           40.55,
           52.45283019,
           34.89278752,
@@ -14221,7 +14221,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Prebish, John Jr.",
+          "Prebish, J.",
           37.68,
           68.33333333,
           33.17865429,
@@ -14257,7 +14257,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Barron, John W.",
+          "Barron, J.",
           36.07,
           62.79069767,
           30.84291188,
@@ -14293,7 +14293,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Zungali, Michael",
+          "Zungali, M.",
           35.31,
           83.33333333,
           30.90909091,
@@ -14368,7 +14368,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Meisenhelter, Douglas F.",
+          "Meisenhelter, D.",
           81.79,
           87.36462094,
           79.33227345,
@@ -14404,7 +14404,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Martin, Richard E. II",
+          "Martin, R.",
           74.9,
           86.79245283,
           69.13580247,
@@ -14440,7 +14440,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Eshbach, David C.",
+          "Eshbach, D.",
           54.02,
           65.6,
           51.9047619,
@@ -14476,7 +14476,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Clancy, Jennifer J.P.",
+          "Clancy, J.",
           53.55,
           57.22543353,
           52.38095238,
@@ -14512,7 +14512,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Morgan, James H.",
+          "Morgan, J.",
           51.83,
           52.43902439,
           52.21843003,
@@ -14548,7 +14548,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Groom, Walter",
+          "Groom, W.",
           50.99,
           62.68656716,
           46.21212121,
@@ -14584,7 +14584,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Williams, Linda L.",
+          "Williams, L.",
           50.54,
           57.73584906,
           45.57640751,
@@ -14620,7 +14620,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Haskell, Ronald J. Jr.",
+          "Haskell, R.",
           48.41,
           47.87644788,
           49.31506849,
@@ -14656,7 +14656,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bloss, Barry L.",
+          "Bloss, B.",
           46.99,
           53.28638498,
           44.73180077,
@@ -14692,7 +14692,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Miner, James S.",
+          "Miner, J.",
           46.07,
           73.17073171,
           40.75286416,
@@ -14728,7 +14728,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Manifold, Laura S.",
+          "Manifold, L.",
           43.35,
           48.61111111,
           42.09558824,
@@ -14764,7 +14764,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Laird, Scott",
+          "Laird, S.",
           43.05,
           62.8742515,
           36.69064748,
@@ -14800,7 +14800,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Toluba, Joel N.",
+          "Toluba, J.",
           41.99,
           44.56928839,
           41.40625,
@@ -14836,7 +14836,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gross, Scott J.",
+          "Gross, S.",
           41.36,
           62.28571429,
           36.18157543,
@@ -14872,7 +14872,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Albright, Keith L.",
+          "Albright, K.",
           40.73,
           44.50549451,
           40.29850746,
@@ -14908,7 +14908,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Thomas, Richard T.",
+          "Thomas, R.",
           39.78,
           52.84552846,
           37.3015873,
@@ -14944,7 +14944,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Reilly, Thomas J.",
+          "Reilly, T.",
           39.6,
           60,
           36.29807692,
@@ -14980,7 +14980,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dubs, Dwayne A.",
+          "Dubs, D.",
           36.35,
           61.14649682,
           30.81481481,
@@ -15016,7 +15016,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Eckenrode, Robert A.",
+          "Eckenrode, R.",
           33.2,
           51.04895105,
           29.22297297,
@@ -15052,7 +15052,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Fishel, John H.",
+          "Fishel, J.",
           31.29,
           51.61290323,
           28.77358491,
@@ -15088,7 +15088,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Oberdorf, Jeffrey L.",
+          "Oberdorf, J.",
           30.24,
           30.9178744,
           29.94652406,
@@ -15124,7 +15124,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ness, Harry M.",
+          "Ness, H.",
           21.35,
           15.09433962,
           24.79338843,
@@ -15160,7 +15160,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Edie, Nancy L.",
+          "Edie, N.",
           18.12,
           22.09302326,
           16.04584527,
@@ -15235,7 +15235,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Jeffries, Jennifer L.",
+          "Jeffries, J.",
           52.58,
           67.46031746,
           48.48484848,
@@ -15271,7 +15271,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dennis, Wendy D.",
+          "Dennis, W.",
           46.96,
           54.54545455,
           45.65217391,
@@ -15307,7 +15307,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Haggerty, Ronald J. Sr.",
+          "Haggerty, R.",
           45.95,
           59.40594059,
           44.37172775,
@@ -15343,7 +15343,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Shimshock, Daniel C.",
+          "Shimshock, D.",
           45.89,
           57.89473684,
           43.59861592,
@@ -15379,7 +15379,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Metros, Michael",
+          "Metros, M.",
           45.41,
           52.2556391,
           43.50132626,
@@ -15415,7 +15415,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Defino, Michael J. Jr.",
+          "Defino, M.",
           40.78,
           42.22222222,
           40.18518519,
@@ -15451,7 +15451,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kasunic, Richard II",
+          "Kasunic, R.",
           37.85,
           50.45045045,
           36.19456366,
@@ -15526,7 +15526,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dipaolo, Dominick",
+          "Dipaolo, D.",
           97.36,
           98.31460674,
           97.35099338,
@@ -15562,7 +15562,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Carney, Thomas",
+          "Carney, T.",
           91.02,
           91.07142857,
           91.09589041,
@@ -15598,7 +15598,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mack, Suzanne C.",
+          "Mack, S.",
           60.68,
           61.56862745,
           61.8556701,
@@ -15634,7 +15634,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Urbaniak, Paul G.",
+          "Urbaniak, P.",
           60.33,
           60.91954023,
           60.76555024,
@@ -15670,7 +15670,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bizzarro, Paul A.",
+          "Bizzarro, P.",
           48.66,
           63.83928571,
           38.04347826,
@@ -15706,7 +15706,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hammer, Scott B.",
+          "Hammer, S.",
           43.32,
           64.51612903,
           41.27516779,
@@ -15742,7 +15742,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mackendrick, Chris K.",
+          "Mackendrick, C.",
           38.37,
           83.33333333,
           33.60433604,
@@ -15778,7 +15778,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Fischer, Deborah",
+          "Fischer, D.",
           37.71,
           45.16129032,
           39.5256917,
@@ -15814,7 +15814,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Manzi, Paul",
+          "Manzi, P.",
           35.25,
           56.52173913,
           33.33333333,
@@ -15850,7 +15850,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Stuck-Lewis, Denise",
+          "Stuck-Lewis, D.",
           32.14,
           54.83870968,
           28.74251497,
@@ -15886,7 +15886,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Muir, Shannon L.",
+          "Muir, S.",
           29.93,
           42.42424242,
           32.01320132,
@@ -15922,7 +15922,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Strohmeyer, Susan D.",
+          "Strohmeyer, S.",
           27.22,
           41.30434783,
           25,
@@ -15958,7 +15958,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cooper, Alan B.",
+          "Cooper, A.",
           25.17,
           36.36363636,
           24.26035503,
@@ -15994,7 +15994,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Krahe, Mark R.",
+          "Krahe, M.",
           24.31,
           30.55555556,
           24.22997947,
@@ -16030,7 +16030,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McGowan, Brian M.",
+          "McGowan, B.",
           18.8,
           34.73684211,
           16.00753296,
@@ -16066,7 +16066,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Nichols, Brenda",
+          "Nichols, B.",
           17.81,
           25,
           18.39464883,
@@ -16141,7 +16141,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Welsh, Regis C.",
+          "Welsh, R.",
           85.43,
           90.43478261,
           80.69414317,
@@ -16177,7 +16177,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cramer, Jesse J.",
+          "Cramer, J.",
           75.62,
           81.08108108,
           58.88077859,
@@ -16213,7 +16213,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Brletic, Thomas S.",
+          "Brletic, T.",
           73.89,
           83.11444653,
           61.09215017,
@@ -16249,7 +16249,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Tibbs, Edward A.",
+          "Tibbs, E.",
           73.79,
           79.70660147,
           68.33333333,
@@ -16285,7 +16285,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Barner, Robert L.",
+          "Barner, R.",
           71.38,
           77.04918033,
           64.17322835,
@@ -16321,7 +16321,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Armour, John W.",
+          "Armour, J.",
           67.19,
           60,
           40,
@@ -16357,7 +16357,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Costa, Ron Sr.",
+          "Costa, R.",
           58.39,
           62.44541485,
           55.04587156,
@@ -16393,7 +16393,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ricciardi, Gene",
+          "Ricciardi, G.",
           53.89,
           63.45381526,
           45.73643411,
@@ -16429,7 +16429,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Martini, Randy",
+          "Martini, R.",
           53.25,
           63.79928315,
           43.25396825,
@@ -16465,7 +16465,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Motznik, James A.",
+          "Motznik, J.",
           51.79,
           58.31325301,
           45.47803618,
@@ -16501,7 +16501,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hromyak, Leonard J.",
+          "Hromyak, L.",
           51.42,
           55.05050505,
           49.10714286,
@@ -16537,7 +16537,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Miller, Thomas Jr.",
+          "Miller, T.",
           49.86,
           70.3125,
           38.49557522,
@@ -16573,7 +16573,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bengel, Carolyn S.",
+          "Bengel, C.",
           49.29,
           68.27956989,
           40.55944056,
@@ -16609,7 +16609,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Butler, Daniel E.",
+          "Butler, D.",
           48.64,
           56.30252101,
           42.85714286,
@@ -16645,7 +16645,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Larotonda, Blaise P.",
+          "Larotonda, B.",
           47.09,
           71.02803738,
           37.07865169,
@@ -16681,7 +16681,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Sosovicka, David J.",
+          "Sosovicka, D.",
           47.05,
           64.42307692,
           42.23433243,
@@ -16717,7 +16717,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Shaffer, Peter H.",
+          "Shaffer, P.",
           46.63,
           60,
           48.03149606,
@@ -16753,7 +16753,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Stephens, Craig C.",
+          "Stephens, C.",
           46.46,
           69.15422886,
           32.20858896,
@@ -16789,7 +16789,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kovach, David T.",
+          "Kovach, D.",
           44.59,
           62.16216216,
           41.50684932,
@@ -16825,7 +16825,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Joyce, Dennis R.",
+          "Joyce, D.",
           44.31,
           53.52112676,
           38.26530612,
@@ -16861,7 +16861,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cooper, Kevin E.",
+          "Cooper, K.",
           44,
           51.37614679,
           36.70886076,
@@ -16897,7 +16897,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Fullerton, William T.",
+          "Fullerton, W.",
           43.47,
           74.02597403,
           40.08483563,
@@ -16933,7 +16933,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Martin, Armand",
+          "Martin, A.",
           43.25,
           50.75376884,
           38.9261745,
@@ -16969,7 +16969,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Riazzi, Eugene F. Jr.",
+          "Riazzi, E.",
           41.92,
           45.73170732,
           37.59124088,
@@ -17005,7 +17005,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mills, Beth S.",
+          "Mills, B.",
           40.74,
           61.20689655,
           30.43478261,
@@ -17041,7 +17041,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ceoffe, Anthony M.",
+          "Ceoffe, A.",
           40.35,
           47.50733138,
           33.71757925,
@@ -17077,7 +17077,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Arnoni, Ronald",
+          "Arnoni, R.",
           39.83,
           71.55963303,
           29.94505495,
@@ -17113,7 +17113,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Petite, Oscar J. Jr.",
+          "Petite, O.",
           39.55,
           50.32258065,
           29.53020134,
@@ -17149,7 +17149,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Rushing, Derwin",
+          "Rushing, D.",
           39.55,
           48.55643045,
           30.72625698,
@@ -17185,7 +17185,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hanley, James J. Jr.",
+          "Hanley, J.",
           38.9,
           49.79079498,
           26.92307692,
@@ -17221,7 +17221,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Saveikis, Anthony William",
+          "Saveikis, A.",
           38.71,
           79.41176471,
           21.09704641,
@@ -17257,7 +17257,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Wagner, William",
+          "Wagner, W.",
           38.51,
           69.47368421,
           26.60550459,
@@ -17293,7 +17293,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Smith, Tara",
+          "Smith, T.",
           36.19,
           57.06214689,
           25.3776435,
@@ -17329,7 +17329,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ravenstahl, Robert P. Jr.",
+          "Ravenstahl, R.",
           34.28,
           38.30645161,
           32.08955224,
@@ -17365,7 +17365,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Stoughton, Lewis E.",
+          "Stoughton, L.",
           33.96,
           66,
           34.16856492,
@@ -17401,7 +17401,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "DeLuca, Anthony",
+          "DeLuca, A.",
           33.17,
           41.82692308,
           25.5,
@@ -17437,7 +17437,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dzvonick, Robert Paul",
+          "Dzvonick, R.",
           32.07,
           61.37931034,
           21.0106383,
@@ -17473,7 +17473,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ford, Robert L.",
+          "Ford, R.",
           31.56,
           44.68085106,
           26.53846154,
@@ -17509,7 +17509,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Olasz, Richard D. Jr.",
+          "Olasz, R.",
           31.23,
           39.73799127,
           24.42244224,
@@ -17545,7 +17545,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "King, Richard G.",
+          "King, R.",
           30.79,
           40.90909091,
           23.90243902,
@@ -17581,7 +17581,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Haggerty, Sue",
+          "Haggerty, S.",
           30.69,
           65,
           31.11111111,
@@ -17617,7 +17617,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Zucco, Linda",
+          "Zucco, L.",
           30,
           40.74074074,
           24.84848485,
@@ -17653,7 +17653,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Caulfield, Thomas",
+          "Caulfield, T.",
           29.88,
           33.33333333,
           26.14379085,
@@ -17689,7 +17689,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Schricker, Scott H.",
+          "Schricker, S.",
           29.03,
           32.28070175,
           24.79674797,
@@ -17725,7 +17725,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Swearingen-Batch, Carla M.",
+          "Swearingen-Batch, C.",
           27.58,
           51.51515152,
           19.04761905,
@@ -17761,7 +17761,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Eichler, Roxanne Sakoian",
+          "Eichler, R.",
           27.55,
           39.22651934,
           19.24686192,
@@ -17797,7 +17797,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Barton, David J.",
+          "Barton, D.",
           27.52,
           51.85185185,
           20.30769231,
@@ -17833,7 +17833,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McGraw-Desmet, Maureen",
+          "McGraw-Desmet, M.",
           27.38,
           49.51456311,
           17.94871795,
@@ -17869,7 +17869,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lang, Elissa M.",
+          "Lang, E.",
           27.27,
           46.15384615,
           16.2055336,
@@ -17905,7 +17905,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cercone, Mary A.",
+          "Cercone, M.",
           25.22,
           33.66834171,
           19.12350598,
@@ -17941,7 +17941,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Opiela, Richard J.",
+          "Opiela, R.",
           24.7,
           49.52380952,
           16.39344262,
@@ -17977,7 +17977,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kaiser, Ralph",
+          "Kaiser, R.",
           24.17,
           41.40127389,
           17.13395639,
@@ -18013,7 +18013,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Swan, Tom",
+          "Swan, T.",
           24.11,
           56.04395604,
           15.17027864,
@@ -18049,7 +18049,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Shaffer, William",
+          "Shaffer, W.",
           23.33,
           21.42857143,
           21.01910828,
@@ -18085,7 +18085,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Murray, Mary P.",
+          "Murray, M.",
           22.8,
           35.4679803,
           17.38095238,
@@ -18121,7 +18121,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Seibel, Wayne D.",
+          "Seibel, W.",
           20.58,
           50,
           21.49901381,
@@ -18157,7 +18157,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Herbst, Jeffrey L.",
+          "Herbst, J.",
           17.67,
           24.36548223,
           13.94557823,
@@ -18193,7 +18193,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Manning, Jeffrey A.",
+          "Manning, J.",
           7.91,
           13.4529148,
           7.142857143,
@@ -18268,7 +18268,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Shugars, Raymond F.",
+          "Shugars, R.",
           90.57,
           91.74757282,
           88.57142857,
@@ -18304,7 +18304,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Semic, Steven M.",
+          "Semic, S.",
           84.79,
           85.87443946,
           84.1191067,
@@ -18340,7 +18340,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Zozos, George A.",
+          "Zozos, G.",
           65.83,
           68.24512535,
           64.78873239,
@@ -18376,7 +18376,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Pianka, Barbara",
+          "Pianka, B.",
           59.16,
           63.03317536,
           53.63984674,
@@ -18412,7 +18412,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Zozos, Paul T.",
+          "Zozos, P.",
           50.32,
           54.35435435,
           45.66037736,
@@ -18448,7 +18448,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Witmer, Lowell A.",
+          "Witmer, L.",
           46.95,
           65.46391753,
           39.26829268,
@@ -18484,7 +18484,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lenker, James A.",
+          "Lenker, J.",
           42.25,
           43.58974359,
           42.19653179,
@@ -18520,7 +18520,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Wenner, William C.",
+          "Wenner, W.",
           41.78,
           48.33333333,
           37.57338552,
@@ -18556,7 +18556,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lenker, Kenneth A.",
+          "Lenker, K.",
           40.08,
           45.63953488,
           35.37234043,
@@ -18592,7 +18592,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McKnight, Sonya M.",
+          "McKnight, S.",
           39.06,
           39.04282116,
           43.55555556,
@@ -18628,7 +18628,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Judy, David H.",
+          "Judy, D.",
           38.99,
           55.73770492,
           31.30929791,
@@ -18664,7 +18664,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O’Leary, David",
+          "O’Leary, D.",
           35.03,
           41.32653061,
           38.46153846,
@@ -18700,7 +18700,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Margerum, Rebecca J.",
+          "Margerum, R.",
           33.87,
           56.41025641,
           27.44186047,
@@ -18736,7 +18736,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lindsey, Joseph S.",
+          "Lindsey, J.",
           33.86,
           43.64640884,
           26.65148064,
@@ -18772,7 +18772,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Smith, Michael J.",
+          "Smith, M.",
           31.43,
           37.90664781,
           28.18991098,
@@ -18808,7 +18808,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Johnson, Gregory D.",
+          "Johnson, G.",
           30.92,
           60.28368794,
           23.10679612,
@@ -18844,7 +18844,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Pelino, Dominic",
+          "Pelino, D.",
           24.61,
           45.94594595,
           18.29787234,
@@ -18919,7 +18919,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Engman, David Richard",
+          "Engman, D.",
           46.85,
           90.90909091,
           48.10810811,
@@ -18955,7 +18955,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cercone, Dominic Jr.",
+          "Cercone, D.",
           42.11,
           67.74193548,
           39.44954128,
@@ -18991,7 +18991,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Todd, William K.",
+          "Todd, W.",
           42.07,
           71.42857143,
           40.06968641,
@@ -19027,7 +19027,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Luther, Richard W.",
+          "Luther, R.",
           39.74,
           40.74074074,
           40.07352941,
@@ -19102,7 +19102,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Andring, James",
+          "Andring, J.",
           60.57,
           83.33333333,
           60.25236593,
@@ -19138,7 +19138,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Owen, James H.",
+          "Owen, J.",
           40.05,
           67.24137931,
           37.82991202,
@@ -19174,7 +19174,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Decomo, J. Gary",
+          "Decomo, J.",
           35.65,
           50,
           34.25925926,
@@ -19249,7 +19249,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Carlson, Glenn S.",
+          "Carlson, G.",
           45.68,
           85.71428571,
           44.93670886,
@@ -19285,7 +19285,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bauer, Laura",
+          "Bauer, L.",
           35.16,
           71.42857143,
           35.5450237,
@@ -19321,7 +19321,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Woodin, Todd A.",
+          "Woodin, T.",
           32.83,
           66.66666667,
           32.14285714,
@@ -19396,7 +19396,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hollister, Jeffrey L.",
+          "Hollister, J.",
           53.19,
           100,
           52.6119403,
@@ -19432,7 +19432,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cordner, Jodi L.",
+          "Cordner, J.",
           35.69,
           50,
           35.46099291,
@@ -19468,7 +19468,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Brainard, Suzanne M.",
+          "Brainard, S.",
           30.09,
           50,
           29.71698113,
@@ -19543,7 +19543,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Miller, Jeffrey C.",
+          "Miller, J.",
           44.41,
           50,
           44.98480243,
@@ -19579,7 +19579,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Schill, Timothy P.",
+          "Schill, T.",
           43.53,
           72.72727273,
           43.61370717,
@@ -19615,7 +19615,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Quinn, Duane L.",
+          "Quinn, D.",
           37.9,
           31.81818182,
           39.15857605,
@@ -19651,7 +19651,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Long Turk, Amy L.",
+          "Long Turk, A.",
           29.21,
           40,
           30.12820513,
@@ -19726,7 +19726,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Wilt, Richard",
+          "Wilt, R.",
           43.54,
           77.38095238,
           39.09090909,
@@ -19762,7 +19762,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Jamison, Mary",
+          "Jamison, M.",
           41.78,
           60.71428571,
           42.90123457,
@@ -19798,7 +19798,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gummo, Douglas L.",
+          "Gummo, D.",
           26.93,
           60,
           40,
@@ -19873,7 +19873,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hopkins, Larry W.",
+          "Hopkins, L.",
           53.38,
           70.76923077,
           49.90176817,
@@ -19909,7 +19909,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Wilson, Mark",
+          "Wilson, M.",
           53.38,
           66.25,
           49.70238095,
@@ -19945,7 +19945,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Havelka, Gary H.",
+          "Havelka, G.",
           50,
           86.66666667,
           48.42519685,
@@ -19981,7 +19981,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ward, Ethan T.",
+          "Ward, E.",
           49.1,
           69.23076923,
           45.55256065,
@@ -20017,7 +20017,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Redlinger, Robert W.",
+          "Redlinger, R.",
           43.93,
           55.45851528,
           40.58394161,
@@ -20053,7 +20053,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mark, David W.",
+          "Mark, D.",
           40.65,
           65.6,
           35.77661431,
@@ -20089,7 +20089,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Thompson, Curtis",
+          "Thompson, C.",
           34.55,
           58.53658537,
           32.12290503,
@@ -20125,7 +20125,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ellis, James C.",
+          "Ellis, J.",
           31.19,
           65.11627907,
           28.19148936,
@@ -20161,7 +20161,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kanalis, Joshua P.",
+          "Kanalis, J.",
           29.04,
           29.16666667,
           28.84990253,
@@ -20197,7 +20197,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Weller, Jay",
+          "Weller, J.",
           29,
           44.93670886,
           26.06060606,
@@ -20233,7 +20233,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McDonald, Traci L.",
+          "McDonald, T.",
           28.08,
           48.07692308,
           26.52631579,
@@ -20308,7 +20308,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Capello, Thomas M.",
+          "Capello, T.",
           48.29,
           58.58585859,
           47.06790123,
@@ -20344,7 +20344,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Garver, Carl Russell",
+          "Garver, C.",
           42.51,
           54.54545455,
           41.29353234,
@@ -20380,7 +20380,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Wolfe, Kim R.",
+          "Wolfe, K.",
           40.89,
           47.61904762,
           39.95006242,
@@ -20416,7 +20416,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kline, Samuel A.",
+          "Kline, S.",
           40.43,
           66.66666667,
           37.34939759,
@@ -20452,7 +20452,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Jones, Charles T. Jr.",
+          "Jones, C.",
           38.21,
           26.08695652,
           41,
@@ -20488,7 +20488,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Verna, Anthony J.",
+          "Verna, A.",
           35.64,
           55.35714286,
           35.25,
@@ -20524,7 +20524,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dissinger, Maria M.",
+          "Dissinger, M.",
           35.26,
           43.68932039,
           35.25925926,
@@ -20560,7 +20560,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Charles, Bradford H.",
+          "Charles, B.",
           29.14,
           23.52941176,
           29.54545455,
@@ -20596,7 +20596,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ditzler, John W.",
+          "Ditzler, J.",
           29.04,
           35.59322034,
           28.67132867,
@@ -20671,7 +20671,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bingham, H. Cyril Jr.",
+          "Bingham, H.",
           44.85,
           71.42857143,
           42.06896552,
@@ -20707,7 +20707,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Baker, Brian K.",
+          "Baker, B.",
           37.85,
           58.33333333,
           36.52694611,
@@ -20743,7 +20743,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Calhoun, Kathy S.",
+          "Calhoun, K.",
           37.06,
           31.57894737,
           37.59398496,
@@ -20779,7 +20779,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Osman, Tonya M.",
+          "Osman, T.",
           30.8,
           31.25,
           30.70539419,
@@ -20854,7 +20854,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Inzana, David B.",
+          "Inzana, D.",
           43.07,
           73.33333333,
           42.06349206,
@@ -20890,7 +20890,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Chambers, Douglas R.",
+          "Chambers, D.",
           37.91,
           50,
           37.93103448,
@@ -20926,7 +20926,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bazylak, Gregory M.",
+          "Bazylak, G.",
           34.71,
           81.81818182,
           34.73684211,
@@ -21001,7 +21001,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Beckley, Elizabeth S.",
+          "Beckley, E.",
           50.98,
           63.94557823,
           47.16157205,
@@ -21037,7 +21037,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Silcox, Kathryn H.",
+          "Silcox, K.",
           46.11,
           70.1754386,
           40.7678245,
@@ -21073,7 +21073,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Clement, Charles A.",
+          "Clement, C.",
           43.14,
           59.33333333,
           37.95180723,
@@ -21109,7 +21109,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Birbeck, Jonathan R.",
+          "Birbeck, J.",
           43.02,
           60.50420168,
           37.31707317,
@@ -21145,7 +21145,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Fegley, Paul M.",
+          "Fegley, P.",
           40.93,
           49.59349593,
           37.96296296,
@@ -21181,7 +21181,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Day, Susan K.",
+          "Day, S.",
           40.72,
           50.87719298,
           38.74239351,
@@ -21217,7 +21217,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dougherty, Richard S. Jr.",
+          "Dougherty, R.",
           40.14,
           55.28455285,
           35.79952267,
@@ -21253,7 +21253,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cohick, Vivian J.",
+          "Cohick, V.",
           39.52,
           63.95348837,
           35.26785714,
@@ -21289,7 +21289,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Martin, Mark W.",
+          "Martin, M.",
           35.06,
           50,
           31.68141593,
@@ -21325,7 +21325,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Adams, H. Anthony",
+          "Adams, H.",
           25.31,
           33.5443038,
           23.60248447,
@@ -21400,7 +21400,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Whittaker, Donald L.",
+          "Whittaker, D.",
           60.13,
           79.85074627,
           53.75854214,
@@ -21436,7 +21436,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hasay, John E.",
+          "Hasay, J.",
           53.37,
           77.04918033,
           48.97260274,
@@ -21472,7 +21472,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Halesey, Joseph A.",
+          "Halesey, J.",
           52.26,
           76.92307692,
           45.40540541,
@@ -21508,7 +21508,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dixon, James M.",
+          "Dixon, J.",
           46.81,
           65.48672566,
           43.69747899,
@@ -21544,7 +21544,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O’Donnell, Daniel",
+          "O’Donnell, D.",
           46.64,
           69.90291262,
           40.97222222,
@@ -21580,7 +21580,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Spagnuolo, Joseph D. Jr.",
+          "Spagnuolo, J.",
           44.44,
           53.91304348,
           42.65010352,
@@ -21616,7 +21616,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Roberts, Paul J.",
+          "Roberts, P.",
           43.77,
           66.07142857,
           38.07531381,
@@ -21652,7 +21652,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Barilla, David A.",
+          "Barilla, D.",
           43.61,
           63.30275229,
           39.21568627,
@@ -21688,7 +21688,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Zola, Joseph D.",
+          "Zola, J.",
           41.47,
           66.40625,
           36.3963964,
@@ -21724,7 +21724,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kravitz, Alexandra Kokura",
+          "Kravitz, A.",
           40.42,
           58,
           36.85185185,
@@ -21760,7 +21760,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Carmody, Joseph J.",
+          "Carmody, J.",
           38.76,
           57.2815534,
           33.69863014,
@@ -21796,7 +21796,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cronauer, Rick",
+          "Cronauer, R.",
           36.59,
           39.82300885,
           36.16236162,
@@ -21832,7 +21832,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Malloy, Thomas F. Sr.",
+          "Malloy, T.",
           31.99,
           42.62948207,
           28.16901408,
@@ -21868,7 +21868,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dotzel, Michael G.",
+          "Dotzel, M.",
           28.88,
           28.43137255,
           29.23076923,
@@ -21904,7 +21904,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Tupper, Brian James",
+          "Tupper, B.",
           27.47,
           65.75342466,
           22.09302326,
@@ -21940,7 +21940,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Sharkey, Thomas",
+          "Sharkey, T.",
           15.29,
           38.88888889,
           12.97709924,
@@ -21976,7 +21976,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lupas, David W.",
+          "Lupas, D.",
           14.73,
           9.090909091,
           16.50485437,
@@ -22012,7 +22012,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Sklarosky, Joseph F. Jr.",
+          "Sklarosky, J.",
           10.53,
           4.761904762,
           11.9266055,
@@ -22087,7 +22087,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Brewer, Doug D.",
+          "Brewer, D.",
           50.33,
           68.42105263,
           51.15511551,
@@ -22123,7 +22123,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Knecht, Richard W.",
+          "Knecht, R.",
           46.72,
           69.56521739,
           46.88346883,
@@ -22159,7 +22159,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Long, Craig W.",
+          "Long, C.",
           42.73,
           85.71428571,
           41.06280193,
@@ -22195,7 +22195,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lawton, Russell L.",
+          "Lawton, R.",
           27.35,
           22.44897959,
           30.37475345,
@@ -22270,7 +22270,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hines, Gregory V.",
+          "Hines, G.",
           60.94,
           61.76470588,
           58.85167464,
@@ -22306,7 +22306,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Koon, Grover E.",
+          "Koon, G.",
           52.15,
           55.09641873,
           49.47368421,
@@ -22342,7 +22342,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Vito, Marian T.",
+          "Vito, M.",
           46.41,
           53.57142857,
           43.65671642,
@@ -22378,7 +22378,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gill, Nancy",
+          "Gill, N.",
           42.86,
           49.62406015,
           41.36904762,
@@ -22414,7 +22414,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Donatelli, Lori Novak",
+          "Donatelli, L.",
           42.77,
           53.84615385,
           38.25301205,
@@ -22450,7 +22450,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Massey, Scott A.",
+          "Massey, S.",
           42.36,
           54.26829268,
           39.49044586,
@@ -22486,7 +22486,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cabry, Michael J. III",
+          "Cabry, M.",
           40.83,
           51.92307692,
           39.20454545,
@@ -22522,7 +22522,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bailey, John R.",
+          "Bailey, J.",
           38.69,
           51.58730159,
           33.09352518,
@@ -22558,7 +22558,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Tartaglio, Thomas W.",
+          "Tartaglio, T.",
           38.13,
           50,
           35.73264781,
@@ -22594,7 +22594,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bruno, Mark A.",
+          "Bruno, M.",
           36.74,
           41.78082192,
           34.46327684,
@@ -22630,7 +22630,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Seavey, Matthew",
+          "Seavey, M.",
           35.73,
           51.85185185,
           32.15223097,
@@ -22666,7 +22666,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Michaels, Theodore Peter Jr.",
+          "Michaels, T.",
           34.98,
           43.39622642,
           32.59052925,
@@ -22702,7 +22702,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Sondergaard, Analisa",
+          "Sondergaard, A.",
           32.14,
           42.99516908,
           26.40186916,
@@ -22738,7 +22738,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kraut, William D.",
+          "Kraut, W.",
           31.3,
           39.80582524,
           29.82954545,
@@ -22774,7 +22774,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Valocchi, Jeffrey J.",
+          "Valocchi, J.",
           31.3,
           32.62411348,
           31.77570093,
@@ -22810,7 +22810,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Brown, Leonard J.",
+          "Brown, L.",
           25.89,
           52.63157895,
           25.69659443,
@@ -22846,7 +22846,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Nistico, Charles",
+          "Nistico, C.",
           23.93,
           60,
           40,
@@ -22882,7 +22882,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Knapp, Gwenn S.",
+          "Knapp, G.",
           20.91,
           32.69230769,
           17.46987952,
@@ -22957,7 +22957,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Fish, Andrew F.",
+          "Fish, A.",
           42.95,
           64.58333333,
           40.92592593,
@@ -22993,7 +22993,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lowrey, Patrick E.",
+          "Lowrey, P.",
           41.47,
           60,
           40.31531532,
@@ -23029,7 +23029,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kirtland, Matthew T.",
+          "Kirtland, M.",
           28.12,
           61.40350877,
           23.03664921,
@@ -23104,7 +23104,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Rossi, David J.",
+          "Rossi, D.",
           47.99,
           77.27272727,
           46.65314402,
@@ -23140,7 +23140,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Plachko, David A.",
+          "Plachko, D.",
           47.6,
           56.75675676,
           48.63013699,
@@ -23176,7 +23176,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hale, Christina E.",
+          "Hale, C.",
           42.88,
           50,
           42.37288136,
@@ -23212,7 +23212,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Reiley, James",
+          "Reiley, J.",
           40.96,
           45.63758389,
           40.36885246,
@@ -23248,7 +23248,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kilker, Anthony J.",
+          "Kilker, A.",
           37.28,
           56.25,
           35.85185185,
@@ -23284,7 +23284,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bayer, Stephen J.",
+          "Bayer, S.",
           33.99,
           54.28571429,
           33.59580052,
@@ -23320,7 +23320,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ferrier, James R.",
+          "Ferrier, J.",
           31.59,
           22.22222222,
           32.01754386,
@@ -23356,7 +23356,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Domalakes, John E.",
+          "Domalakes, J.",
           22.41,
           20,
           22.52252252,
@@ -23392,7 +23392,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dolbin, Cyrus P.",
+          "Dolbin, C.",
           17.43,
           0,
           19,
@@ -23467,7 +23467,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cunningham, Duane K.",
+          "Cunningham, D.",
           52.94,
           69.23076923,
           50,
@@ -23503,7 +23503,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Plum, David L.",
+          "Plum, D.",
           48,
           66.1971831,
           43.95973154,
@@ -23539,7 +23539,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Eyer, Jody C.",
+          "Eyer, J.",
           41.06,
           65.95744681,
           38.07106599,
@@ -23575,7 +23575,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Manns, Glenn Kenneth",
+          "Manns, G.",
           38.93,
           45.27027027,
           37.42405832,
@@ -23611,7 +23611,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Rock, Kelly L.",
+          "Rock, K.",
           35.31,
           45.69536424,
           33.4431631,
@@ -23647,7 +23647,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Williams, Todd R.",
+          "Williams, T.",
           28.95,
           40.74074074,
           26.74157303,
@@ -23683,7 +23683,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Pentz, Larry G.",
+          "Pentz, L.",
           25.51,
           42,
           23.60335196,
@@ -23758,7 +23758,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Watson, Lee",
+          "Watson, L.",
           51.13,
           53.84615385,
           53.61702128,
@@ -23794,7 +23794,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cramer, Jesse J.",
+          "Cramer, J.",
           32.37,
           60,
           40,
@@ -23830,7 +23830,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bates, D Glenn",
+          "Bates, D.",
           32.06,
           64.28571429,
           31.08614232,
@@ -23905,7 +23905,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Edwards, Ronald",
+          "Edwards, R.",
           39.25,
           50,
           38.19095477,
@@ -23941,7 +23941,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Carney, Bonnie L.",
+          "Carney, B.",
           38.95,
           61.53846154,
           36.8,
@@ -23977,7 +23977,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Myers, Linus H.",
+          "Myers, L.",
           34.87,
           75,
           32.25806452,
@@ -24052,7 +24052,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Sanders, Joseph L.",
+          "Sanders, J.",
           68.98,
           63.82978723,
           69.77491961,
@@ -24088,7 +24088,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Maggs, John W.",
+          "Maggs, J.",
           59.44,
           66.66666667,
           59.2920354,
@@ -24124,7 +24124,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mills, Frank P.",
+          "Mills, F.",
           12.34,
           21.66666667,
           11.68831169,
@@ -24237,7 +24237,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Steffee, Susanne V.",
+          "Steffee, S.",
           41.76,
           50,
           40.3125,
@@ -24273,7 +24273,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Thachik, George M.",
+          "Thachik, G.",
           38.52,
           80.55555556,
           35.16209476,
@@ -24309,7 +24309,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Edgcomb, James R.",
+          "Edgcomb, J.",
           38.31,
           57.14285714,
           37.58389262,
@@ -24345,7 +24345,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Rega, Jennifer J.",
+          "Rega, J.",
           37.96,
           59.375,
           35.51401869,
@@ -24381,7 +24381,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Carlson, James Edgar",
+          "Carlson, J.",
           29.5,
           43.75,
           28.47682119,
@@ -24417,7 +24417,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Repard, Robert L.",
+          "Repard, R.",
           23.15,
           66.66666667,
           21.82741117,
@@ -24453,7 +24453,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Martin, William J.",
+          "Martin, W.",
           13.91,
           5.769230769,
           15.95092025,
@@ -24528,7 +24528,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ireland, Richard Allen",
+          "Ireland, R.",
           42.04,
           53.84615385,
           42.06642066,
@@ -24564,7 +24564,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hawkins, James L.",
+          "Hawkins, J.",
           39.13,
           82.60869565,
           36.68639053,
@@ -24600,7 +24600,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ford, Patrick N.",
+          "Ford, P.",
           34.42,
           61.11111111,
           33.83838384,
@@ -24636,7 +24636,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Nevling, Jerome M.",
+          "Nevling, J.",
           30.03,
           53.84615385,
           29.61876833,
@@ -24711,7 +24711,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Arthur, Brian R.",
+          "Arthur, B.",
           45.28,
           74.73684211,
           41.16766467,
@@ -24747,7 +24747,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Songer, Dennis M.",
+          "Songer, D.",
           44.1,
           49.09090909,
           42.11267606,
@@ -24783,7 +24783,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McEwen, D. Neil",
+          "McEwen, D.",
           41.69,
           61.33333333,
           38.74755382,
@@ -24819,7 +24819,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hinch, Lorinda L.",
+          "Hinch, L.",
           37.37,
           51.92307692,
           35.2238806,
@@ -24855,7 +24855,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Antos, Ronald E.",
+          "Antos, R.",
           26.72,
           33.96226415,
           23.21981424,
@@ -24891,7 +24891,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Fagley, William L.",
+          "Fagley, W.",
           17.69,
           45.83333333,
           14.95726496,
@@ -24966,7 +24966,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gembic, John",
+          "Gembic, J.",
           41.67,
           74.6835443,
           38.08180536,
@@ -25002,7 +25002,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Diehl, Michael I.",
+          "Diehl, M.",
           40.57,
           62.5,
           38.86255924,
@@ -25038,7 +25038,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cashman, Richard P.",
+          "Cashman, R.",
           35.14,
           40,
           35.05154639,
@@ -25074,7 +25074,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Apfelbaum, Benjamin",
+          "Apfelbaum, B.",
           28.29,
           42.5,
           25.98870056,
@@ -25149,7 +25149,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Reed, John H.",
+          "Reed, J.",
           36.96,
           55.71428571,
           37.14759536,
@@ -25185,7 +25185,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hackenberg, Lori R.",
+          "Hackenberg, L.",
           36.79,
           81.25,
           38.78205128,
@@ -25260,7 +25260,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Smith, Carl W. Jr.",
+          "Smith, C.",
           43.65,
           72.72727273,
           42.92565947,
@@ -25296,7 +25296,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Plummer, David K.",
+          "Plummer, D.",
           29.21,
           15.38461538,
           29.84562607,
@@ -25371,7 +25371,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Shrawder, Marvin K.",
+          "Shrawder, M.",
           22.44,
           46.42857143,
           38.671875,
@@ -25446,7 +25446,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Steffee, Susanne V.",
+          "Steffee, S.",
           41.02,
           60,
           40,
@@ -25482,7 +25482,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Haberl, Guy B.",
+          "Haberl, G.",
           40,
           35.97122302,
           40.9190372,
@@ -25518,7 +25518,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Rega, Jennifer J.",
+          "Rega, J.",
           38.66,
           60,
           40,
@@ -25554,7 +25554,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Thachik, George M.",
+          "Thachik, G.",
           38.22,
           60,
           40,
@@ -25590,7 +25590,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Martin, William J.",
+          "Martin, W.",
           10.9,
           60,
           40,
@@ -25665,7 +25665,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Miller, Daniel L.",
+          "Miller, D.",
           30.2,
           81.25,
           42.63565891,
@@ -25740,7 +25740,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Solomon, William C.",
+          "Solomon, W.",
           41.91,
           78.46153846,
           36,
@@ -25776,7 +25776,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Page, Allen P. III",
+          "Page, A.",
           38.3,
           54.81927711,
           29.49756888,
@@ -25812,7 +25812,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lepley, Jerry C.",
+          "Lepley, J.",
           36.55,
           70.83333333,
           33.33333333,
@@ -25848,7 +25848,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Frey, Christian David",
+          "Frey, C.",
           32.52,
           53.58166189,
           21.96969697,
@@ -25884,7 +25884,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kemp, Jon Edward",
+          "Kemp, J.",
           30.51,
           60.25641026,
           25.3164557,
@@ -25920,7 +25920,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Whiteman, Gary A.",
+          "Whiteman, G.",
           29.37,
           52.44755245,
           24.02597403,
@@ -25995,7 +25995,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Leister, Jacqueline T.",
+          "Leister, J.",
           31.47,
           62.5,
           44.09090909,
@@ -26031,7 +26031,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lyter, Barbara M.",
+          "Lyter, B.",
           31.3,
           25,
           33.33333333,
@@ -26106,7 +26106,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Chelak, Gregory H.",
+          "Chelak, G.",
           47,
           60,
           40,
@@ -26142,7 +26142,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Fischer, Deborah",
+          "Fischer, D.",
           39.33,
           60,
           40,
@@ -26178,7 +26178,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Muir, Shannon L.",
+          "Muir, S.",
           32.84,
           60,
           40,
@@ -26214,7 +26214,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Menditto, Paul D. Sr.",
+          "Menditto, P.",
           29.03,
           20.51282051,
           33.74233129,
@@ -26250,7 +26250,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cooper, Alan B.",
+          "Cooper, A.",
           28.12,
           60,
           40,
@@ -26325,7 +26325,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Aigner, Paula M.",
+          "Aigner, P.",
           52.64,
           79.46428571,
           49.1503268,
@@ -26361,7 +26361,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Miller, Fred B.",
+          "Miller, F.",
           43.81,
           78.16091954,
           40.05563282,
@@ -26397,7 +26397,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Ormsby, Craig E.",
+          "Ormsby, C.",
           35.34,
           89.47368421,
           31.41025641,
@@ -26433,7 +26433,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kelly, Todd F.",
+          "Kelly, T.",
           29.92,
           45.94594595,
           28.07486631,
@@ -26469,7 +26469,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Auker, Jeffrey P.",
+          "Auker, J.",
           28.26,
           37.20930233,
           28.34437086,
@@ -26505,7 +26505,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Jackson, Steven D.",
+          "Jackson, S.",
           18.59,
           40.74074074,
           16.68822768,
@@ -26580,7 +26580,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lawrence, Francis J. Jr.",
+          "Lawrence, F.",
           60.12,
           65.16853933,
           54.04255319,
@@ -26616,7 +26616,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Scott, Gregory L.",
+          "Scott, G.",
           58.68,
           53.46534653,
           66.23931624,
@@ -26652,7 +26652,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Palladino, Scott T.",
+          "Palladino, S.",
           47.93,
           60.65088757,
           39.84526112,
@@ -26688,7 +26688,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cerski, Christopher",
+          "Cerski, C.",
           44.5,
           44.49339207,
           45.39473684,
@@ -26724,7 +26724,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hunsicker, Margaret A.",
+          "Hunsicker, M.",
           44.48,
           50.55248619,
           38.79003559,
@@ -26760,7 +26760,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kropp, Edward C. Sr.",
+          "Kropp, E.",
           43.39,
           50.64102564,
           37.62376238,
@@ -26796,7 +26796,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McHugh Casey, Elizabeth A.",
+          "McHugh Casey, E.",
           41.42,
           44.38502674,
           39.10891089,
@@ -26832,7 +26832,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kelly Rebar, Cathleen",
+          "Kelly Rebar, C.",
           36.5,
           51.93370166,
           32.01438849,
@@ -26868,7 +26868,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Nesbitt, Harry J. III",
+          "Nesbitt, H.",
           36.18,
           46.66666667,
           33.04347826,
@@ -26904,7 +26904,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Augustine, Albert J.",
+          "Augustine, A.",
           36.01,
           62.80487805,
           29.00900901,
@@ -26940,7 +26940,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bernhardt, Francis J. III",
+          "Bernhardt, F.",
           35.87,
           43.5483871,
           31.6872428,
@@ -26976,7 +26976,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Sobeck, Robert M.",
+          "Sobeck, R.",
           35.65,
           52.07100592,
           31.07049608,
@@ -27012,7 +27012,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Saylor, Maurice H.",
+          "Saylor, M.",
           35.62,
           58.97435897,
           30.16194332,
@@ -27048,7 +27048,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Zaffarano, Patricia Ann",
+          "Zaffarano, P.",
           35.37,
           47.66839378,
           28.20512821,
@@ -27084,7 +27084,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Price, Juanita Ann",
+          "Price, J.",
           35.33,
           44.78527607,
           28.83116883,
@@ -27120,7 +27120,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Rebar, Cathleen Kelly",
+          "Rebar, C.",
           35.03,
           48.57142857,
           32.17391304,
@@ -27156,7 +27156,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lukens, Deborah",
+          "Lukens, D.",
           34.92,
           42.46575342,
           31.48148148,
@@ -27192,7 +27192,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Casillo, Ester J.",
+          "Casillo, E.",
           34.38,
           42.79279279,
           30.35230352,
@@ -27228,7 +27228,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gallagher, James",
+          "Gallagher, J.",
           32.74,
           42.10526316,
           27.12418301,
@@ -27264,7 +27264,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McGill, Katherine E.",
+          "McGill, K.",
           31.77,
           38.46153846,
           28.31050228,
@@ -27300,7 +27300,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Leo, Paul N.",
+          "Leo, P.",
           31.73,
           45.0617284,
           26.28726287,
@@ -27336,7 +27336,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Quinn, Michael P.",
+          "Quinn, M.",
           30.21,
           32.31707317,
           29.44162437,
@@ -27372,7 +27372,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gadzicki, Walter F. Jr.",
+          "Gadzicki, W.",
           30.01,
           48.0620155,
           23.55555556,
@@ -27408,7 +27408,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hudak Duffy, Andrea",
+          "Hudak Duffy, A.",
           27.42,
           36.93693694,
           25.83081571,
@@ -27444,7 +27444,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Schireson, Henry J.",
+          "Schireson, H.",
           27.41,
           39.22651934,
           20.70175439,
@@ -27480,7 +27480,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Eisner Zucker, Karen",
+          "Eisner Zucker, K.",
           27.34,
           31.70731707,
           22.94117647,
@@ -27516,7 +27516,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Hummel Fried, Catherine M.",
+          "Hummel Fried, C.",
           27.24,
           51.92307692,
           21.49122807,
@@ -27552,7 +27552,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Maruszczak, William I.",
+          "Maruszczak, W.",
           26.84,
           29.84615385,
           23.8961039,
@@ -27588,7 +27588,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Levine, Edward",
+          "Levine, E.",
           25.51,
           40.46242775,
           22.16748768,
@@ -27624,7 +27624,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Friedenberg, Jay S.",
+          "Friedenberg, J.",
           23.6,
           35.4978355,
           19.83193277,
@@ -27660,7 +27660,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kessler, John D.",
+          "Kessler, J.",
           22.17,
           26.35658915,
           19.82507289,
@@ -27696,7 +27696,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Smyth, Joseph A.",
+          "Smyth, J.",
           9.66,
           15.38461538,
           5.673758865,
@@ -27732,7 +27732,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Corso, S. Gerald",
+          "Corso, S.",
           7.82,
           5.369127517,
           8.71559633,
@@ -27768,7 +27768,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Nicholas, William T.",
+          "Nicholas, W.",
           6.73,
           6.976744186,
           6.201550388,
@@ -27843,7 +27843,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kosciolek, Casimir T.",
+          "Kosciolek, C.",
           37.44,
           53.84615385,
           36.45251397,
@@ -27879,7 +27879,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Homanko, Joseph D. Sr.",
+          "Homanko, J.",
           37.13,
           41.57303371,
           36.29343629,
@@ -27915,7 +27915,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Schrantz, Eric M.",
+          "Schrantz, E.",
           32.71,
           40.54054054,
           33.10225303,
@@ -27951,7 +27951,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Serfass, Steven R.",
+          "Serfass, S.",
           27.97,
           10,
           30.47619048,
@@ -27987,7 +27987,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Matika, Joseph J.",
+          "Matika, J.",
           27.41,
           37.5,
           27.2,
@@ -28023,7 +28023,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kissner, William J.",
+          "Kissner, W.",
           27.02,
           57.14285714,
           25.87719298,
@@ -28059,7 +28059,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lewis, Edward M.",
+          "Lewis, E.",
           20.52,
           44.44444444,
           18.59296482,
@@ -28134,7 +28134,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Fluegel, Anthony D.",
+          "Fluegel, A.",
           45.39,
           45.39473684,
           46.30872483,
@@ -28170,7 +28170,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Muth, Michael R.",
+          "Muth, M.",
           38.07,
           42.68292683,
           36.07954545,
@@ -28206,7 +28206,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Anzini, Kristina",
+          "Anzini, K.",
           37.88,
           43.08510638,
           35.71428571,
@@ -28242,7 +28242,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Riley, Phillip R.",
+          "Riley, P.",
           37.18,
           33.14917127,
           39.32346723,
@@ -28278,7 +28278,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mancuso, Colleen",
+          "Mancuso, C.",
           37.01,
           44.92753623,
           35.86956522,
@@ -28314,7 +28314,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Krawitz, Jolana",
+          "Krawitz, J.",
           34.63,
           53.84615385,
           30.14256619,
@@ -28350,7 +28350,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Claypool, Richard",
+          "Claypool, R.",
           29.32,
           28.47222222,
           30.40935673,
@@ -28386,7 +28386,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Germano, Brian",
+          "Germano, B.",
           27.33,
           25.36585366,
           28.38137472,
@@ -28422,7 +28422,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Olsen, Thomas E.",
+          "Olsen, T.",
           26.43,
           26.42487047,
           26.87140115,
@@ -28458,7 +28458,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Higgins, C. Daniel",
+          "Higgins, C.",
           23.4,
           26.31578947,
           23.70572207,
@@ -28533,7 +28533,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Waltman, John I.",
+          "Waltman, J.",
           46.82,
           61.29032258,
           44.52554745,
@@ -28569,7 +28569,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Wagner, Robert",
+          "Wagner, R.",
           44.98,
           64.88549618,
           39.79166667,
@@ -28605,7 +28605,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Peranteau, Frank W. Sr.",
+          "Peranteau, F.",
           43.86,
           59.67741935,
           39.81900452,
@@ -28641,7 +28641,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kline, Joanne V.",
+          "Kline, J.",
           42.64,
           49.45652174,
           40.37267081,
@@ -28677,7 +28677,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Douple, Mark D.",
+          "Douple, M.",
           41.26,
           69.11764706,
           37.95309168,
@@ -28713,7 +28713,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Schnell, Robert A. Jr.",
+          "Schnell, R.",
           41.03,
           42.85714286,
           42.30769231,
@@ -28749,7 +28749,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Petrucci, Michael W.",
+          "Petrucci, M.",
           40,
           59.42028986,
           36.21794872,
@@ -28785,7 +28785,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Burns, Michael J.",
+          "Burns, M.",
           37.7,
           47.19101124,
           35.92592593,
@@ -28821,7 +28821,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Finello, Daniel J. Jr.",
+          "Finello, D.",
           37.11,
           46.15384615,
           35.81730769,
@@ -28857,7 +28857,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Durkin, John J.",
+          "Durkin, J.",
           35.25,
           52.5,
           43.125,
@@ -28893,7 +28893,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Snow, Maggie",
+          "Snow, M.",
           33.92,
           61.2244898,
           30.06993007,
@@ -28929,7 +28929,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Falcone, Joseph P.",
+          "Falcone, J.",
           33.58,
           38.97338403,
           31.84230478,
@@ -28965,7 +28965,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Baranoski, Daniel",
+          "Baranoski, D.",
           33.33,
           40.13157895,
           31.56862745,
@@ -29001,7 +29001,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Deatelhauser, Kenneth E.",
+          "Deatelhauser, K.",
           32.79,
           47.22222222,
           27.40384615,
@@ -29037,7 +29037,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gallagher, Michael W.",
+          "Gallagher, M.",
           32.78,
           38.08139535,
           31.78571429,
@@ -29073,7 +29073,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Vislosky, Jan",
+          "Vislosky, J.",
           32.6,
           37.28813559,
           31.57894737,
@@ -29109,7 +29109,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kelly, John J. Jr.",
+          "Kelly, J.",
           32.3,
           38.06818182,
           30.68391867,
@@ -29145,7 +29145,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gambardella, Gary",
+          "Gambardella, G.",
           31.86,
           44.06779661,
           30.40650407,
@@ -29181,7 +29181,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Seaman, Jean",
+          "Seaman, J.",
           31.31,
           52.05479452,
           27.5242047,
@@ -29217,7 +29217,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Armitage, Regina",
+          "Armitage, R.",
           30.84,
           39.7260274,
           29.3594306,
@@ -29253,7 +29253,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Baum, Charles W.",
+          "Baum, C.",
           30.7,
           49.27536232,
           28.83959044,
@@ -29289,7 +29289,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Roth, Robert",
+          "Roth, R.",
           28.64,
           37.5,
           27.70448549,
@@ -29325,7 +29325,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Daly, Philip J.",
+          "Daly, P.",
           27.21,
           29.41176471,
           24.3902439,
@@ -29361,7 +29361,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Cepparulo, Albert J.",
+          "Cepparulo, A.",
           25.75,
           10.34482759,
           28.35820896,
@@ -29397,7 +29397,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Benz, William J.",
+          "Benz, W.",
           17.92,
           29.78723404,
           16.94078947,
@@ -29433,7 +29433,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Waite, Clyde W.",
+          "Waite, C.",
           10,
           2.702702703,
           12.14285714,
@@ -29508,7 +29508,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Pallone, Frank J. Jr.",
+          "Pallone, F.",
           45.75,
           51.83673469,
           42.59012016,
@@ -29544,7 +29544,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "DeMarchis, Joseph R.",
+          "DeMarchis, J.",
           45.22,
           59.1954023,
           39.84063745,
@@ -29580,7 +29580,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bilik, Mark",
+          "Bilik, M.",
           36.73,
           49.01960784,
           36.01694915,
@@ -29616,7 +29616,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Dalfonso, Joseph A.",
+          "Dalfonso, J.",
           35.51,
           47.56554307,
           30.32659409,
@@ -29652,7 +29652,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Eckels, Roger",
+          "Eckels, R.",
           34.17,
           65.95744681,
           30.15075377,
@@ -29688,7 +29688,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mansour, Mark Stephen",
+          "Mansour, M.",
           34.01,
           56.03448276,
           31.84165232,
@@ -29724,7 +29724,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Christner, Charles M.",
+          "Christner, C.",
           31.97,
           53.16455696,
           28.79581152,
@@ -29760,7 +29760,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Thiel, Denise S.",
+          "Thiel, D.",
           31.55,
           85.18518519,
           27.10280374,
@@ -29796,7 +29796,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Moore, Charles D.",
+          "Moore, C.",
           30.77,
           57.14285714,
           30.62381853,
@@ -29832,7 +29832,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kistler, Helen M.",
+          "Kistler, H.",
           30.55,
           38.59649123,
           29.20560748,
@@ -29868,7 +29868,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Buczak, Jason",
+          "Buczak, J.",
           29.77,
           59.64912281,
           26.69404517,
@@ -29904,7 +29904,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Albert, James",
+          "Albert, J.",
           29.28,
           42.27642276,
           28.01635992,
@@ -29940,7 +29940,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Peck, Yackopec Cheryl J.",
+          "Peck, Y.",
           28.3,
           51.04166667,
           25.98784195,
@@ -29976,7 +29976,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Weimer, Douglas Reid",
+          "Weimer, D.",
           27.37,
           55.55555556,
           24.56140351,
@@ -30012,7 +30012,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Falcon, James N.",
+          "Falcon, J.",
           27.1,
           34.375,
           27.75665399,
@@ -30048,7 +30048,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mahady, Michael",
+          "Mahady, M.",
           25.36,
           41.17647059,
           24.26035503,
@@ -30084,7 +30084,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bompiani, L. Anthony",
+          "Bompiani, L.",
           24.78,
           40.69767442,
           22.46376812,
@@ -30120,7 +30120,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gongaware, Wayne",
+          "Gongaware, W.",
           18.59,
           29.6875,
           16.93037975,
@@ -30156,7 +30156,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Conway, Charles",
+          "Conway, C.",
           15.7,
           34.88372093,
           14.07867495,
@@ -30231,7 +30231,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McCune, Timothy F.",
+          "McCune, T.",
           55.34,
           66.66666667,
           60,
@@ -30267,7 +30267,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Fullerton, William T.",
+          "Fullerton, W.",
           44.82,
           60,
           40,
@@ -30303,7 +30303,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Kovach, David T.",
+          "Kovach, D.",
           44,
           60,
           40,
@@ -30339,7 +30339,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Stoughton, Lewis E.",
+          "Stoughton, L.",
           35.74,
           60,
           40,
@@ -30375,7 +30375,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O’donnell, Kevin P.", // *Sigh* - this guy appears twice in the data set
+          "O’donnell, K.",  // *Sigh* - this guy appears twice in the data set
           32.74,
           50,
           31.06796117,
@@ -30411,7 +30411,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Haggerty, Sue",
+          "Haggerty, S.",
           32.66,
           60,
           40,
@@ -30447,7 +30447,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O’Donnell, William S.",
+          "O’Donnell, W.",
           30.98,
           33.33333333,
           30.66954644,
@@ -30483,7 +30483,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O’Donnell, Kevin P.",
+          "O’Donnell, K.",
           25.69,
           42.5,
           24.62809917,
@@ -30519,7 +30519,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Seibel, Wayne D.",
+          "Seibel, W.",
           22.69,
           60,
           40,
@@ -30555,7 +30555,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Shaffer, William",
+          "Shaffer, W.",
           15.72,
           60,
           40,
@@ -30630,7 +30630,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Harvey, Matthew Robert",
+          "Harvey, M.",
           35.2,
           49.29577465,
           33.13609467,
@@ -30666,7 +30666,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bowman, Daniel S.",
+          "Bowman, D.",
           33.72,
           44.7761194,
           32.95081967,
@@ -30702,7 +30702,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Beauchat, Mark D.",
+          "Beauchat, M.",
           29.13,
           40.6779661,
           27.85571142,
@@ -30738,7 +30738,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Little, Tony J.",
+          "Little, T.",
           25.48,
           42.30769231,
           24.63768116,
@@ -30813,7 +30813,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McGuire, Daniel R.",
+          "McGuire, D.",
           46.2,
           60,
           45.34161491,
@@ -30849,7 +30849,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Frownfelter, Elizabeth R.",
+          "Frownfelter, E.",
           46,
           87.5,
           44.21052632,
@@ -30885,7 +30885,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Schechterly, Michael E.",
+          "Schechterly, M.",
           16.36,
           25,
           17.05150977,
@@ -30960,7 +30960,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Pendolino, Samuel V.",
+          "Pendolino, S.",
           37.42,
           60,
           40,
@@ -30996,7 +30996,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Nicols, Amy L.",
+          "Nicols, A.",
           33.96,
           55.55555556,
           33.33333333,
@@ -31032,7 +31032,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Zilhaver, Lincoln S.",
+          "Zilhaver, L.",
           30.8,
           60,
           40,
@@ -31068,7 +31068,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Marwood, Rita J.",
+          "Marwood, R.",
           24.54,
           60,
           40,
@@ -31143,7 +31143,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Heming, Tamela M.",
+          "Heming, T.",
           31.36,
           33.33333333,
           32,
@@ -31179,7 +31179,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mellott, Wendy",
+          "Mellott, W.",
           23.74,
           25,
           24.4047619,
@@ -31254,7 +31254,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Martin, James L.",
+          "Martin, J.",
           26.69,
           40,
           26.99386503,
@@ -31290,7 +31290,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Jacob, Mark S.",
+          "Jacob, M.",
           25.67,
           25,
           26.29107981,
@@ -31365,7 +31365,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Gillette-Walker, Kelley",
+          "Gillette-Walker, K.",
           43.8,
           75.3164557,
           36.96808511,
@@ -31401,7 +31401,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Jordan, Thomas N.",
+          "Jordan, T.",
           40.16,
           72.54901961,
           33.8658147,
@@ -31437,7 +31437,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Sinclair, Allen W.",
+          "Sinclair, A.",
           26.59,
           42.85714286,
           20.71428571,
@@ -31473,7 +31473,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Prestia, Carmine W. Jr.",
+          "Prestia, C.",
           20,
           33.59375,
           16.22641509,
@@ -31509,7 +31509,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Lachman, Steven Frederic",
+          "Lachman, S.",
           16.34,
           29.89690722,
           14.19491525,
@@ -31545,7 +31545,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Horner, Ronald J.",
+          "Horner, R.",
           5.93,
           21.27659574,
           3.202846975,
@@ -31581,7 +31581,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Nileski, Charity L.",
+          "Nileski, C.",
           0.74,
           7.142857143,
           0.8064516129,
@@ -31656,7 +31656,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mensch, Jeffrey L.",
+          "Mensch, J.",
           26.3,
           40,
           26.50176678,
@@ -31692,7 +31692,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Armbruster, Leo S.",
+          "Armbruster, L.",
           16.58,
           23.07692308,
           16.08187135,
@@ -31767,7 +31767,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Stevanus, Sandra L.",
+          "Stevanus, S.",
           38.11,
           75,
           34.34782609,
@@ -31803,7 +31803,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Mankamyer, Susan",
+          "Mankamyer, S.",
           25.35,
           80,
           23.4421365,
@@ -31839,7 +31839,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Seger, William E.",
+          "Seger, W.",
           24.46,
           66.66666667,
           24.07407407,
@@ -31875,7 +31875,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Johnson, Kenneth W.",
+          "Johnson, K.",
           22.53,
           64.1025641,
           20.59259259,
@@ -31911,7 +31911,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Geary, D Gregory",
+          "Geary, D.",
           21.9,
           50,
           21.78217822,
@@ -31947,7 +31947,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Bell, Douglas McCall",
+          "Bell, D.",
           19.92,
           50,
           19.84126984,
@@ -32022,7 +32022,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "McCleaft, Kari A.",
+          "McCleaft, K.",
           27.71,
           50,
           27.5,
@@ -32058,7 +32058,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Weiss, Delores G.",
+          "Weiss, D.",
           24.06,
           0,
           24.72527473,
@@ -32094,7 +32094,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Easton, Annette L.",
+          "Easton, A.",
           19.26,
           100,
           18.61471861,
@@ -32169,7 +32169,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "Brown, Barry D.",
+          "Brown, B.",
           21.28,
           66.66666667,
           37.58865248,
