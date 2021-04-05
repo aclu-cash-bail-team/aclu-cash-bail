@@ -2083,7 +2083,7 @@ export const BAIL_RACE_RATE_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+53"
+        "value": "+53.0"
       }
     ],
     "outlier": true
@@ -2163,7 +2163,7 @@ export const BAIL_RACE_RATE_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+30"
+        "value": "+30.0"
       }
     ],
     "outlier": true
@@ -2343,7 +2343,7 @@ export const BAIL_RACE_RATE_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+25"
+        "value": "+25.0"
       }
     ],
     "outlier": false
@@ -2783,7 +2783,7 @@ export const BAIL_RACE_RATE_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+15"
+        "value": "+15.0"
       }
     ],
     "outlier": false
@@ -2803,7 +2803,7 @@ export const BAIL_RACE_RATE_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+15"
+        "value": "+15.0"
       }
     ],
     "outlier": false
@@ -2923,7 +2923,7 @@ export const BAIL_RACE_RATE_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+13"
+        "value": "+13.0"
       }
     ],
     "outlier": false
