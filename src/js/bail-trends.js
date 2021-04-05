@@ -16,22 +16,6 @@ const createBailRateTable = () => {
       searchable: true
     },
     {
-      class: "viz-cell",
-      header: {
-        "start": 0,
-        "end": 60,
-        "averages": [
-          {
-            "name": "Avg.",
-            "value": 42.5966697900,
-          },
-        ],
-        "unit": "percent"
-      },
-      sortable: false,
-      searchable: false
-    },
-    {
       class: "bail-rate-cell number-cell",
       header: {
         "text": "Rate\xa0(%)",
@@ -58,19 +42,35 @@ const createBailRateTable = () => {
       sortable: true,
       searchable: false
     },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 60,
+        "averages": [
+          {
+            "name": "Avg.",
+            "value": 42.5966697900,
+          },
+        ],
+        "unit": "percent"
+      },
+      sortable: false,
+      searchable: false
+    },
   ];
   const initSort = 2; // initially sort by cash bail rate
   const stateData = [
     "Pennsylvania",
+    42.5966697900,
+    2470,
+    5681,
     {
       "type": "bar",
       "values": [
         42.5966697900
       ]
     },
-    42.5966697900,
-    2470,
-    5681
   ];
 
   const tableContainer = document.getElementById("bail-rate-container");
