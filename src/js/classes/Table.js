@@ -321,10 +321,6 @@ class VizHeaderCell extends HeaderCell {
     } else if (className === "end-num" && content.toString().length <= 3) {
       wrapper.style.paddingRight = `${8 - content.toString().length}px`;
     }
-    // adjust padding based on number of digits
-    if (className === "end-num" && content.toString().length === 2) {
-      wrapper.style.paddingRight = `${1}px`;
-    }
 
     // create the vertical tick underneath the number
     const line = document.createElement("div");
