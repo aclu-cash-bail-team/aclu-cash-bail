@@ -61,16 +61,6 @@
 }
 
 /* Map Switches */
-.btn-text {
-  color: #fff;
-  font-family: "GT America";
-  font-weight: 700;
-  font-size: 11px;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 3px;
-}
-
 .switch-container {
   display: flex;
   margin: 1.5em 0;
@@ -79,21 +69,7 @@
   justify-content: center;
 }
 
-.switch-container .switch {
-  width: 100px;
-  padding: 7px;
-  border: 1px #333 solid;
-}
-
-.switch.left {
-  border-radius: 3px 0 0 3px;
-}
-
 .switch.right {
   border-radius: 0 3px 3px 0;
   border-left: 0;
-}
-
-.switch-container .switch.showing, .switch-container .switch:hover {
-  background-color: #1D1D1D;
 }
