@@ -89,22 +89,6 @@ const createRorRateTable = () => {
       searchable: true
     },
     {
-      class: "viz-cell",
-      header: {
-        "start": 0,
-        "end": 75,
-        "averages": [
-          {
-            "name": "Avg.",
-            "value": 22.73,
-          }
-        ],
-        "unit": "percent"
-      },
-      sortable: false,
-      searchable: false
-    },
-    {
       class: "ror-rate-cell number-cell",
       header: {
         "text": "Rate\xa0(%)",
@@ -131,19 +115,35 @@ const createRorRateTable = () => {
       sortable: true,
       searchable: false
     },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 75,
+        "averages": [
+          {
+            "name": "Avg.",
+            "value": 22.73,
+          }
+        ],
+        "unit": "percent"
+      },
+      sortable: false,
+      searchable: false
+    },
   ];
   const initSort = 2; // initially sort by ror bail rate
   const stateData = [
     "Pennsylvania",
+    22.73,
+    1294,
+    5681,
     {
       "type": "bar",
       "values": [
         22.73
       ]
     },
-    22.73,
-    1294,
-    5681
   ];
 
   const tableContainer = document.getElementById("ror-rate-container");
