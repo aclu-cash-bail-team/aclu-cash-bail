@@ -67,6 +67,7 @@ td {
   justify-content: flex-end;
 }
 
+
 .retention-fee-cell {
   text-align: left;
   min-width: 120px;
@@ -87,6 +88,12 @@ td {
 .bail-black-cell, .bail-white-cell {
   min-width: 0;
   width: auto;
+}
+
+.diff-cell {
+  width: 65px;
+  min-width: 65px;
+  max-width: 65px;
 }
 
 .sort-desc, .sort-asc {

@@ -75,7 +75,11 @@ const createBailRaceRateTable = () => {
         37.0
       ]
     },
-    0
+    {
+      "type": "styled",
+      "className": "positive-diff",
+      "value": "+17.7"
+    }
   ];
 
 
@@ -154,7 +158,11 @@ const createBailRaceAmountTable = () => {
         27572.55514
       ]
     },
-    0
+    {
+      "type": "styled",
+      "className": "positive-diff",
+      "value": "+$11,128"
+    }
   ];
 
   const tableContainer = document.getElementById("bail-race-amount-container");
