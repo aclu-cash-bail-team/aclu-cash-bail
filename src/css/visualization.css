@@ -161,7 +161,7 @@
 }
 
 /* Distribution viz */
-td.bail-dist-cell {
+.table-container > table td.bail-dist-cell {
   vertical-align: bottom;
   margin-right: 0;
   padding-left: 1em;

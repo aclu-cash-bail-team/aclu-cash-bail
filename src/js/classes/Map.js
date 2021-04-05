@@ -175,7 +175,7 @@ class Map {
 
     this.projection = d3.geoMercator().scale(5500).center([-75.75, 40.5]);
 
-    this.renderTooltip = configureTooltip({...tooltipSchema, placement: "top"});
+    this.renderTooltip = configureTooltip({...tooltipSchema, placement: "top", trigger: 'click'});
   }
 
   renderCity(name, coords, labelCoords) {

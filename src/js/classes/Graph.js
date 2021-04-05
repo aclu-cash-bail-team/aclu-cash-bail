@@ -448,7 +448,8 @@ export class DistributionGraph {
       { rowHeader: createHeader("ROR", "ror-bar"), dataKey: "rorRate", render: renderValue },
     ],
     placement: "top",
-    followCursor: true
+    followCursor: true,
+    trigger: 'click',
     });
 
     this.render();

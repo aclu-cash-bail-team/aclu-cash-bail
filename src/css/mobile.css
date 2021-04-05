@@ -1,21 +1,21 @@
 @media only screen and (max-width: 640px) {
-  .table-container > table {
+  table {
     max-width: 100%;
   }
 
-  .table-container > table th {
+  th {
     padding: 1em 0.5em;
   }
 
-  .table-container > table td {
+  td {
     padding: 1em 0.5em;
   }
 
-  .table-container > table th.viz-cell {
+  th.viz-cell {
     width: 100px;
   }
 
-  .table-container > table td.viz-cell {
+  td.viz-cell {
     width: 100px;
     margin: 0 1em;
     padding: 1.5em 0;
@@ -23,36 +23,36 @@
     border-right: 1px dotted #333;
   }
 
-  .table-container > table .average-wrapper {
+  .average-wrapper {
     width: 100px;
   }
 
-  .table-container > table .county-name-cell {
+  .county-name-cell {
     min-width: 100px;
   }
 
-  .table-container > table .total-bail-rate-cell {
+  .total-bail-rate-cell {
     min-width: unset;
     padding-left: 0;
   }
 
-  .table-container > table .bail-black-cell {
+  .bail-black-cell {
     min-width: unset;
   }
 
-  .table-container > table .bail-white-cell {
+  .bail-white-cell {
     min-width: unset;
   }
 
-  .table-container > table .caret-cell {
+  .caret-cell {
     padding: 0;
   }
 
-  .table-container > table .bar-label {
+  .bar-label {
     left: calc(100% + 0.5em);
   }
 
-  .table-container > table .total-budget-cell {
+  .total-budget-cell {
       display: none;
   }
 
@@ -81,19 +81,19 @@
 }
 
 @media only screen and (max-width: 425px) {
-  .table-container > table th.viz-cell {
+  th.viz-cell {
     width: 80px;
   }
 
-  .table-container > table .average-wrapper {
+  .average-wrapper {
     width: 80px;
   }
 
-  .table-container > table td.viz-cell {
+  td.viz-cell {
     width: 80px;
   }
 
-  .table-container > table .diff-cell, .table-container > table .total-cases-cell {
+  .diff-cell, .total-cases-cell {
     display: none;
   }
 
