@@ -3625,7 +3625,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$16,481"
+        "value": "−$16,481"
       }
     ],
     "outlier": true
@@ -3705,7 +3705,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$6,498"
+        "value": "−$6,498"
       }
     ],
     "outlier": false
@@ -3865,7 +3865,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$6,718"
+        "value": "−$6,718"
       }
     ],
     "outlier": true
@@ -3925,7 +3925,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$906"
+        "value": "−$906"
       }
     ],
     "outlier": true
@@ -3965,7 +3965,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$33,879"
+        "value": "−$33,879"
       }
     ],
     "outlier": false
@@ -4045,7 +4045,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$10,667"
+        "value": "−$10,667"
       }
     ],
     "outlier": false
@@ -4325,7 +4325,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$1,893"
+        "value": "−$1,893"
       }
     ],
     "outlier": true
@@ -4445,7 +4445,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$3,638"
+        "value": "−$3,638"
       }
     ],
     "outlier": true
@@ -4525,7 +4525,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$13,667"
+        "value": "−$13,667"
       }
     ],
     "outlier": true
@@ -4665,7 +4665,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$3,419"
+        "value": "−$3,419"
       }
     ],
     "outlier": false
@@ -4705,7 +4705,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "-$2,431"
+        "value": "−$2,431"
       }
     ],
     "outlier": true
