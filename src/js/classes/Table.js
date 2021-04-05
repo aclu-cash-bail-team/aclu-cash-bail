@@ -356,11 +356,11 @@ class HeaderRow {
 
 
 class BodyRow {
-  constructor(cells, outlier, isHidden, isBold = false) {
+  constructor(cells, outlier, isHidden, className = "") {
     this.cells = cells;
     this.outlier = outlier;
     this.isHidden = isHidden;
-    this.isBold = isBold;
+    this.className = className;
   }
 
   setIsHidden(isHidden) {
@@ -375,11 +375,10 @@ class BodyRow {
       return [];
     }
 
-    row.className = "";
+    row.className = this.className;
     this.cells.forEach((cell, i) => {
       cell.setElementClass(cell.className);
       if (i === sorted) cell.addElementClass("sorted");
-      if (this.isBold) cell.addElementClass("bold-cell");
       row.appendChild(cell.element);
     });
     return [this.element];
@@ -579,7 +578,7 @@ export class Table {
     });
     if (this.summaryRowData.length > 0) {
       const cells = this.getCells(this.summaryRowData);
-      rows.unshift(new BodyRow(cells, false, false, true));
+      rows.unshift(new BodyRow(cells, false, false, "summary-row"));
     }
     return rows;
   }

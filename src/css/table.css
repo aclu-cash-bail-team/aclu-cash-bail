@@ -17,6 +17,10 @@ tr.expanded {
   background-color: #131313;
 }
 
+tr.summary-row {
+  background-color: #131313;
+}
+
 th {
   padding: 13px 6px;
   color: #fff;
@@ -39,10 +43,6 @@ th.retention-fee-cell {
 td {
   text-align: left;
   padding: 13px 6px;
-}
-
-td.bold-cell {
-  font-weight: 700;
 }
 
 .number-cell {
