@@ -28,7 +28,8 @@
   }
 
   .county-name-cell {
-    min-width: 100px;
+    min-width: 50px;
+    max-width: 75px;
   }
 
   .total-bail-rate-cell {
