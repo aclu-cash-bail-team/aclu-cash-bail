@@ -2051,6 +2051,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Cameron",
+      100,
+      25.45454545,
       {
         "type": "line",
         "values": [
@@ -2058,8 +2060,6 @@ export const BAIL_RACE_RATE_DATA = [
           25.45454545
         ]
       },
-      100,
-      25.45454545,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2071,6 +2071,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Forest",
+      85,
+      32.03883495,
       {
         "type": "line",
         "values": [
@@ -2078,8 +2080,6 @@ export const BAIL_RACE_RATE_DATA = [
           32.03883495
         ]
       },
-      85,
-      32.03883495,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2091,6 +2091,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Potter",
+      75,
+      23.24786325,
       {
         "type": "line",
         "values": [
@@ -2098,8 +2100,6 @@ export const BAIL_RACE_RATE_DATA = [
           23.24786325
         ]
       },
-      75,
-      23.24786325,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2111,6 +2111,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Somerset",
+      69.56521739,
+      23.20855615,
       {
         "type": "line",
         "values": [
@@ -2118,8 +2120,6 @@ export const BAIL_RACE_RATE_DATA = [
           23.20855615
         ]
       },
-      69.56521739,
-      23.20855615,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2131,6 +2131,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Jefferson",
+      72.97297297,
+      38.35252436,
       {
         "type": "line",
         "values": [
@@ -2138,8 +2140,6 @@ export const BAIL_RACE_RATE_DATA = [
           38.35252436
         ]
       },
-      72.97297297,
-      38.35252436,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2151,6 +2151,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Warren",
+      70,
+      39.95067818,
       {
         "type": "line",
         "values": [
@@ -2158,8 +2160,6 @@ export const BAIL_RACE_RATE_DATA = [
           39.95067818
         ]
       },
-      70,
-      39.95067818,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2171,6 +2171,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Sullivan",
+      62.5,
+      32.63157895,
       {
         "type": "line",
         "values": [
@@ -2178,8 +2180,6 @@ export const BAIL_RACE_RATE_DATA = [
           32.63157895
         ]
       },
-      62.5,
-      32.63157895,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2191,6 +2191,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Wayne",
+      64.86486486,
+      35.30997305,
       {
         "type": "line",
         "values": [
@@ -2198,8 +2200,6 @@ export const BAIL_RACE_RATE_DATA = [
           35.30997305
         ]
       },
-      64.86486486,
-      35.30997305,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2211,6 +2211,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Blair",
+      58.6998088,
+      31.76853358,
       {
         "type": "line",
         "values": [
@@ -2218,8 +2220,6 @@ export const BAIL_RACE_RATE_DATA = [
           31.76853358
         ]
       },
-      58.6998088,
-      31.76853358,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2231,6 +2231,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Lycoming",
+      55.01355014,
+      28.14726841,
       {
         "type": "line",
         "values": [
@@ -2238,8 +2240,6 @@ export const BAIL_RACE_RATE_DATA = [
           28.14726841
         ]
       },
-      55.01355014,
-      28.14726841,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2251,6 +2251,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Susquehanna",
+      66.66666667,
+      39.76377953,
       {
         "type": "line",
         "values": [
@@ -2258,8 +2260,6 @@ export const BAIL_RACE_RATE_DATA = [
           39.76377953
         ]
       },
-      66.66666667,
-      39.76377953,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2271,6 +2271,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Erie",
+      63.73239437,
+      37.02714731,
       {
         "type": "line",
         "values": [
@@ -2278,8 +2280,6 @@ export const BAIL_RACE_RATE_DATA = [
           37.02714731
         ]
       },
-      63.73239437,
-      37.02714731,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2291,6 +2291,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Cambria",
+      65.52083333,
+      39.14590747,
       {
         "type": "line",
         "values": [
@@ -2298,8 +2300,6 @@ export const BAIL_RACE_RATE_DATA = [
           39.14590747
         ]
       },
-      65.52083333,
-      39.14590747,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2311,6 +2311,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Huntingdon",
+      64.05228758,
+      37.83333333,
       {
         "type": "line",
         "values": [
@@ -2318,8 +2320,6 @@ export const BAIL_RACE_RATE_DATA = [
           37.83333333
         ]
       },
-      64.05228758,
-      37.83333333,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2331,6 +2331,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Crawford",
+      53.33333333,
+      28.3197832,
       {
         "type": "line",
         "values": [
@@ -2338,8 +2340,6 @@ export const BAIL_RACE_RATE_DATA = [
           28.3197832
         ]
       },
-      53.33333333,
-      28.3197832,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2351,6 +2351,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Centre",
+      46.74115456,
+      21.88492764,
       {
         "type": "line",
         "values": [
@@ -2358,8 +2360,6 @@ export const BAIL_RACE_RATE_DATA = [
           21.88492764
         ]
       },
-      46.74115456,
-      21.88492764,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2371,6 +2371,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Venango",
+      60.13986014,
+      35.56187767,
       {
         "type": "line",
         "values": [
@@ -2378,8 +2380,6 @@ export const BAIL_RACE_RATE_DATA = [
           35.56187767
         ]
       },
-      60.13986014,
-      35.56187767,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2391,6 +2391,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Clearfield",
+      59.30232558,
+      35.64718163,
       {
         "type": "line",
         "values": [
@@ -2398,8 +2400,6 @@ export const BAIL_RACE_RATE_DATA = [
           35.64718163
         ]
       },
-      59.30232558,
-      35.64718163,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2411,6 +2411,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Armstrong",
+      62.71186441,
+      39.52662722,
       {
         "type": "line",
         "values": [
@@ -2418,8 +2420,6 @@ export const BAIL_RACE_RATE_DATA = [
           39.52662722
         ]
       },
-      62.71186441,
-      39.52662722,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2431,6 +2431,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Northumberland",
+      56.81818182,
+      33.91066545,
       {
         "type": "line",
         "values": [
@@ -2438,8 +2440,6 @@ export const BAIL_RACE_RATE_DATA = [
           33.91066545
         ]
       },
-      56.81818182,
-      33.91066545,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2451,6 +2451,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Lawrence",
+      66.28477905,
+      43.4806939,
       {
         "type": "line",
         "values": [
@@ -2458,8 +2460,6 @@ export const BAIL_RACE_RATE_DATA = [
           43.4806939
         ]
       },
-      66.28477905,
-      43.4806939,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2471,6 +2471,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Mifflin",
+      70.11494253,
+      47.48201439,
       {
         "type": "line",
         "values": [
@@ -2478,8 +2480,6 @@ export const BAIL_RACE_RATE_DATA = [
           47.48201439
         ]
       },
-      70.11494253,
-      47.48201439,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2491,6 +2491,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Tioga",
+      57,
+      34.50800915,
       {
         "type": "line",
         "values": [
@@ -2498,8 +2500,6 @@ export const BAIL_RACE_RATE_DATA = [
           34.50800915
         ]
       },
-      57,
-      34.50800915,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2511,6 +2511,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Allegheny",
+      57.06645057,
+      35.29897333,
       {
         "type": "line",
         "values": [
@@ -2518,8 +2520,6 @@ export const BAIL_RACE_RATE_DATA = [
           35.29897333
         ]
       },
-      57.06645057,
-      35.29897333,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2531,6 +2531,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Westmoreland",
+      50.05045409,
+      28.61736334,
       {
         "type": "line",
         "values": [
@@ -2538,8 +2540,6 @@ export const BAIL_RACE_RATE_DATA = [
           28.61736334
         ]
       },
-      50.05045409,
-      28.61736334,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2551,6 +2551,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Greene",
+      58.97435897,
+      37.86163522,
       {
         "type": "line",
         "values": [
@@ -2558,8 +2560,6 @@ export const BAIL_RACE_RATE_DATA = [
           37.86163522
         ]
       },
-      58.97435897,
-      37.86163522,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2571,6 +2571,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Beaver",
+      64.33048433,
+      43.92212726,
       {
         "type": "line",
         "values": [
@@ -2578,8 +2580,6 @@ export const BAIL_RACE_RATE_DATA = [
           43.92212726
         ]
       },
-      64.33048433,
-      43.92212726,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2591,6 +2591,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "McKean",
+      61.33333333,
+      41.23134328,
       {
         "type": "line",
         "values": [
@@ -2598,8 +2600,6 @@ export const BAIL_RACE_RATE_DATA = [
           41.23134328
         ]
       },
-      61.33333333,
-      41.23134328,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2611,6 +2611,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Washington",
+      55.77092511,
+      35.82116788,
       {
         "type": "line",
         "values": [
@@ -2618,8 +2620,6 @@ export const BAIL_RACE_RATE_DATA = [
           35.82116788
         ]
       },
-      55.77092511,
-      35.82116788,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2631,6 +2631,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Luzerne",
+      53.5892323,
+      34.6550856,
       {
         "type": "line",
         "values": [
@@ -2638,8 +2640,6 @@ export const BAIL_RACE_RATE_DATA = [
           34.6550856
         ]
       },
-      53.5892323,
-      34.6550856,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2651,6 +2651,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Lackawanna",
+      67.1345995,
+      48.9720035,
       {
         "type": "line",
         "values": [
@@ -2658,8 +2660,6 @@ export const BAIL_RACE_RATE_DATA = [
           48.9720035
         ]
       },
-      67.1345995,
-      48.9720035,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2671,6 +2671,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Snyder",
+      52.5,
+      34.59183673,
       {
         "type": "line",
         "values": [
@@ -2678,8 +2680,6 @@ export const BAIL_RACE_RATE_DATA = [
           34.59183673
         ]
       },
-      52.5,
-      34.59183673,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2691,6 +2691,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Bradford",
+      62.26415094,
+      45.14840183,
       {
         "type": "line",
         "values": [
@@ -2698,8 +2700,6 @@ export const BAIL_RACE_RATE_DATA = [
           45.14840183
         ]
       },
-      62.26415094,
-      45.14840183,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2711,6 +2711,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Cumberland",
+      51.61744023,
+      35.0094162,
       {
         "type": "line",
         "values": [
@@ -2718,8 +2720,6 @@ export const BAIL_RACE_RATE_DATA = [
           35.0094162
         ]
       },
-      51.61744023,
-      35.0094162,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2731,6 +2731,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Butler",
+      44.7761194,
+      29.5154185,
       {
         "type": "line",
         "values": [
@@ -2738,8 +2740,6 @@ export const BAIL_RACE_RATE_DATA = [
           29.5154185
         ]
       },
-      44.7761194,
-      29.5154185,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2751,6 +2751,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Delaware",
+      63.75237882,
+      48.4952381,
       {
         "type": "line",
         "values": [
@@ -2758,8 +2760,6 @@ export const BAIL_RACE_RATE_DATA = [
           48.4952381
         ]
       },
-      63.75237882,
-      48.4952381,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2771,6 +2771,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Bedford",
+      52.57731959,
+      37.56419663,
       {
         "type": "line",
         "values": [
@@ -2778,8 +2780,6 @@ export const BAIL_RACE_RATE_DATA = [
           37.56419663
         ]
       },
-      52.57731959,
-      37.56419663,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2791,6 +2791,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Union",
+      38.20224719,
+      23.24159021,
       {
         "type": "line",
         "values": [
@@ -2798,8 +2800,6 @@ export const BAIL_RACE_RATE_DATA = [
           23.24159021
         ]
       },
-      38.20224719,
-      23.24159021,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2811,6 +2811,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Dauphin",
+      51.21710526,
+      36.4556962,
       {
         "type": "line",
         "values": [
@@ -2818,8 +2820,6 @@ export const BAIL_RACE_RATE_DATA = [
           36.4556962
         ]
       },
-      51.21710526,
-      36.4556962,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2831,6 +2831,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Montgomery",
+      43.27198364,
+      28.69733969,
       {
         "type": "line",
         "values": [
@@ -2838,8 +2840,6 @@ export const BAIL_RACE_RATE_DATA = [
           28.69733969
         ]
       },
-      43.27198364,
-      28.69733969,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2851,6 +2851,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Adams",
+      43.56060606,
+      29.03651562,
       {
         "type": "line",
         "values": [
@@ -2858,8 +2860,6 @@ export const BAIL_RACE_RATE_DATA = [
           29.03651562
         ]
       },
-      43.56060606,
-      29.03651562,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2871,6 +2871,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Chester",
+      48.47354138,
+      34.29690666,
       {
         "type": "line",
         "values": [
@@ -2878,8 +2880,6 @@ export const BAIL_RACE_RATE_DATA = [
           34.29690666
         ]
       },
-      48.47354138,
-      34.29690666,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2891,6 +2891,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Franklin",
+      49.26553672,
+      35.19494204,
       {
         "type": "line",
         "values": [
@@ -2898,8 +2900,6 @@ export const BAIL_RACE_RATE_DATA = [
           35.19494204
         ]
       },
-      49.26553672,
-      35.19494204,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2911,6 +2911,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "York",
+      54.11985019,
+      41.11844787,
       {
         "type": "line",
         "values": [
@@ -2918,8 +2920,6 @@ export const BAIL_RACE_RATE_DATA = [
           41.11844787
         ]
       },
-      54.11985019,
-      41.11844787,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2931,6 +2931,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Philadelphia",
+      56.02170568,
+      43.3107617,
       {
         "type": "line",
         "values": [
@@ -2938,8 +2940,6 @@ export const BAIL_RACE_RATE_DATA = [
           43.3107617
         ]
       },
-      56.02170568,
-      43.3107617,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2951,6 +2951,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Lancaster",
+      55.54532904,
+      43.07425541,
       {
         "type": "line",
         "values": [
@@ -2958,8 +2960,6 @@ export const BAIL_RACE_RATE_DATA = [
           43.07425541
         ]
       },
-      55.54532904,
-      43.07425541,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2971,6 +2971,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Perry",
+      40,
+      27.68130746,
       {
         "type": "line",
         "values": [
@@ -2978,8 +2980,6 @@ export const BAIL_RACE_RATE_DATA = [
           27.68130746
         ]
       },
-      40,
-      27.68130746,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -2991,6 +2991,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Mercer",
+      45.40337711,
+      33.35235378,
       {
         "type": "line",
         "values": [
@@ -2998,8 +3000,6 @@ export const BAIL_RACE_RATE_DATA = [
           33.35235378
         ]
       },
-      45.40337711,
-      33.35235378,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3011,6 +3011,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Northampton",
+      55.7063541,
+      43.86813852,
       {
         "type": "line",
         "values": [
@@ -3018,8 +3020,6 @@ export const BAIL_RACE_RATE_DATA = [
           43.86813852
         ]
       },
-      55.7063541,
-      43.86813852,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3031,6 +3031,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Fayette",
+      54,
+      42.30092389,
       {
         "type": "line",
         "values": [
@@ -3038,8 +3040,6 @@ export const BAIL_RACE_RATE_DATA = [
           42.30092389
         ]
       },
-      54,
-      42.30092389,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3051,6 +3051,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Carbon",
+      43.7751004,
+      32.34139961,
       {
         "type": "line",
         "values": [
@@ -3058,8 +3060,6 @@ export const BAIL_RACE_RATE_DATA = [
           32.34139961
         ]
       },
-      43.7751004,
-      32.34139961,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3071,6 +3071,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Clinton",
+      47.14285714,
+      35.98750976,
       {
         "type": "line",
         "values": [
@@ -3078,8 +3080,6 @@ export const BAIL_RACE_RATE_DATA = [
           35.98750976
         ]
       },
-      47.14285714,
-      35.98750976,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3091,6 +3091,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Lebanon",
+      48.84547069,
+      37.97733949,
       {
         "type": "line",
         "values": [
@@ -3098,8 +3100,6 @@ export const BAIL_RACE_RATE_DATA = [
           37.97733949
         ]
       },
-      48.84547069,
-      37.97733949,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3111,6 +3111,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Montour",
+      46.15384615,
+      35.34136546,
       {
         "type": "line",
         "values": [
@@ -3118,8 +3120,6 @@ export const BAIL_RACE_RATE_DATA = [
           35.34136546
         ]
       },
-      46.15384615,
-      35.34136546,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3131,6 +3131,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Bucks",
+      41.06901218,
+      30.62392673,
       {
         "type": "line",
         "values": [
@@ -3138,8 +3140,6 @@ export const BAIL_RACE_RATE_DATA = [
           30.62392673
         ]
       },
-      41.06901218,
-      30.62392673,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3151,6 +3151,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Schuylkill",
+      46.5060241,
+      37.27521501,
       {
         "type": "line",
         "values": [
@@ -3158,8 +3160,6 @@ export const BAIL_RACE_RATE_DATA = [
           37.27521501
         ]
       },
-      46.5060241,
-      37.27521501,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3171,6 +3171,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Lehigh",
+      61.81634031,
+      52.85376562,
       {
         "type": "line",
         "values": [
@@ -3178,8 +3180,6 @@ export const BAIL_RACE_RATE_DATA = [
           52.85376562
         ]
       },
-      61.81634031,
-      52.85376562,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3191,6 +3191,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Berks",
+      58.42078961,
+      50.24259317,
       {
         "type": "line",
         "values": [
@@ -3198,8 +3200,6 @@ export const BAIL_RACE_RATE_DATA = [
           50.24259317
         ]
       },
-      58.42078961,
-      50.24259317,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3211,6 +3211,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Juniata",
+      43.75,
+      36.67425968,
       {
         "type": "line",
         "values": [
@@ -3218,8 +3220,6 @@ export const BAIL_RACE_RATE_DATA = [
           36.67425968
         ]
       },
-      43.75,
-      36.67425968,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3231,6 +3231,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Wyoming",
+      40,
+      35.59650824,
       {
         "type": "line",
         "values": [
@@ -3238,8 +3240,6 @@ export const BAIL_RACE_RATE_DATA = [
           35.59650824
         ]
       },
-      40,
-      35.59650824,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3251,6 +3251,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Pike",
+      37.41007194,
+      34.02061856,
       {
         "type": "line",
         "values": [
@@ -3258,8 +3260,6 @@ export const BAIL_RACE_RATE_DATA = [
           34.02061856
         ]
       },
-      37.41007194,
-      34.02061856,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3271,6 +3271,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Monroe",
+      35.13011152,
+      32.41612358,
       {
         "type": "line",
         "values": [
@@ -3278,8 +3280,6 @@ export const BAIL_RACE_RATE_DATA = [
           32.41612358
         ]
       },
-      35.13011152,
-      32.41612358,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3291,6 +3291,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Columbia",
+      40.7960199,
+      38.46153846,
       {
         "type": "line",
         "values": [
@@ -3298,8 +3300,6 @@ export const BAIL_RACE_RATE_DATA = [
           38.46153846
         ]
       },
-      40.7960199,
-      38.46153846,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3311,6 +3311,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Fulton",
+      31.57894737,
+      29.27536232,
       {
         "type": "line",
         "values": [
@@ -3318,8 +3320,6 @@ export const BAIL_RACE_RATE_DATA = [
           29.27536232
         ]
       },
-      31.57894737,
-      29.27536232,
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3331,6 +3331,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Clarion",
+      40.625,
+      40.83259522,
       {
         "type": "line",
         "values": [
@@ -3338,8 +3340,6 @@ export const BAIL_RACE_RATE_DATA = [
           40.83259522
         ]
       },
-      40.625,
-      40.83259522,
       {
         "type": "styled",
         "className": "negative-diff",
@@ -3351,6 +3351,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Elk",
+      27.77777778,
+      28.68117798,
       {
         "type": "line",
         "values": [
@@ -3358,8 +3360,6 @@ export const BAIL_RACE_RATE_DATA = [
           28.68117798
         ]
       },
-      27.77777778,
-      28.68117798,
       {
         "type": "styled",
         "className": "negative-diff",
@@ -3371,6 +3371,8 @@ export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
       "Indiana",
+      30.39215686,
+      36.21169916,
       {
         "type": "line",
         "values": [
@@ -3378,8 +3380,6 @@ export const BAIL_RACE_RATE_DATA = [
           36.21169916
         ]
       },
-      30.39215686,
-      36.21169916,
       {
         "type": "styled",
         "className": "negative-diff",

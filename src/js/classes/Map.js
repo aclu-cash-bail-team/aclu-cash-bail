@@ -406,8 +406,8 @@ export class RaceMapContainer {
       "#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"
     ]);
 
-    this.black = new BailRaceMap(`#${id} #black.map`, data, color, 2, "black", this);
-    this.white = new BailRaceMap(`#${id} #white.map`, data, color, 3, "white", this);
+    this.black = new BailRaceMap(`#${id} #black.map`, data, color, 1, "black", this);
+    this.white = new BailRaceMap(`#${id} #white.map`, data, color, 2, "white", this);
 
     const onLegendMouseOver = (event) => {
       this.highlightBarFromLegend(event.srcElement);
