@@ -260,10 +260,15 @@ class HeaderCell extends Cell {
       // if this is a sortable column, create wrapper with caret and text
       const wrapper = document.createElement("div");
       wrapper.className = "th-wrapper";
-      wrapper.innerHTML = CARET_SVG;
       const text = document.createElement("div");
       text.appendChild(document.createTextNode(this.content));
-      wrapper.appendChild(text);
+      if (this.id === 0) {
+        wrapper.appendChild(text);
+        wrapper.innerHTML = wrapper.innerHTML + CARET_SVG;
+      } else {
+        wrapper.innerHTML = CARET_SVG;
+        wrapper.appendChild(text);
+      }
       cell.appendChild(wrapper);
     } else {
       // otherwise, all we need is the text
