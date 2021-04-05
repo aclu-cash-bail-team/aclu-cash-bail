@@ -7328,7 +7328,7 @@ export const PRETRIAL_SPENDING_DATA = [
     "data": [
       "Allegheny",
       "$57.6M",
-      "$86.M",
+      "$86.0M",
       67.01743239,
       {
         "type": "bar",
@@ -7432,7 +7432,7 @@ export const PRETRIAL_SPENDING_DATA = [
   {
     "data": [
       "Bucks",
-      "$16.M",
+      "$16.0M",
       "$27.6M",
       57.90105653,
       {
@@ -7447,7 +7447,7 @@ export const PRETRIAL_SPENDING_DATA = [
   {
     "data": [
       "Butler",
-      "$10.M",
+      "$10.0M",
       "$11.6M",
       86.19403059,
       {
@@ -7493,7 +7493,7 @@ export const PRETRIAL_SPENDING_DATA = [
     "data": [
       "Carbon",
       "$2.7M",
-      "$5.M",
+      "$5.0M",
       55.20362881,
       {
         "type": "bar",
@@ -7507,7 +7507,7 @@ export const PRETRIAL_SPENDING_DATA = [
   {
     "data": [
       "Centre",
-      "$3.M",
+      "$3.0M",
       "$8.9M",
       33.49236863,
       {
@@ -7523,7 +7523,7 @@ export const PRETRIAL_SPENDING_DATA = [
     "data": [
       "Chester",
       "$16.3M",
-      "$30.M",
+      "$30.0M",
       54.39229774,
       {
         "type": "bar",
@@ -7583,7 +7583,7 @@ export const PRETRIAL_SPENDING_DATA = [
     "data": [
       "Columbia",
       "$2.8M",
-      "$6.M",
+      "$6.0M",
       45.91836515,
       {
         "type": "bar",
@@ -7598,7 +7598,7 @@ export const PRETRIAL_SPENDING_DATA = [
     "data": [
       "Crawford",
       "$3.3M",
-      "$6.M",
+      "$6.0M",
       54.53667276,
       {
         "type": "bar",
@@ -7673,7 +7673,7 @@ export const PRETRIAL_SPENDING_DATA = [
     "data": [
       "Erie",
       "$6.7M",
-      "$17.M",
+      "$17.0M",
       39.4405589,
       {
         "type": "bar",
@@ -7882,8 +7882,8 @@ export const PRETRIAL_SPENDING_DATA = [
   {
     "data": [
       "Lehigh",
-      "$9.M",
-      "$30.M",
+      "$9.0M",
+      "$30.0M",
       30.0079569,
       {
         "type": "bar",
@@ -7912,7 +7912,7 @@ export const PRETRIAL_SPENDING_DATA = [
   {
     "data": [
       "Lycoming",
-      "$9.M",
+      "$9.0M",
       "$10.3M",
       87.12023555,
       {
@@ -8242,7 +8242,7 @@ export const PRETRIAL_SPENDING_DATA = [
   {
     "data": [
       "Washington",
-      "$4.M",
+      "$4.0M",
       "$7.7M",
       51.11357976,
       {
