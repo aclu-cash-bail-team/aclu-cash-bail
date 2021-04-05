@@ -19,7 +19,7 @@ td.viz-cell {
   display: block;
   width: 120px;
   margin: 0 1em;
-  padding: 1.5em 0;
+  padding: 1.2em 0;
   border-left: 1px dotted #333;
   border-right: 1px dotted #333;
 }
@@ -146,7 +146,7 @@ td.bail-dist-cell {
 
 .viz-number-line-point {
   position: absolute;
-  top: 1.25em;
+  top: 1em;
   width: 0.25em;
   height: 1em;
 }
