@@ -166,13 +166,7 @@ class DistributionBarCell extends Cell {
       container.appendChild(bar);
     });
     // configure sizes of distribution bars
-    const numDists = this.values.length;
-    const [gapSize, gapUnits] = [2, "px"];
-    const gapCorrection = Math.round(((numDists - 1) * gapSize) / numDists);
-    const distWidths = this.values.map(dist =>
-      `calc(${dist["value"]}% - ${gapCorrection}${gapUnits})`
-    );
-    container.style.columnGap = `${gapSize}${gapUnits}`;
+    const distWidths = this.values.map(dist => `${dist["value"]}%`);
     container.style.gridTemplateColumns = distWidths.join(" ");
     // configure tooltip
     const tooltip = this.createTooltip();

@@ -25,7 +25,7 @@ const createMdjTable = () => {
     {
       class: "total-bail-rate-cell  number-cell",
       header: {
-        "text": "Cash Bail Rate",
+        "text": "Cash bail rt.",
         "unit": "percent"
       },
       sortable: true,

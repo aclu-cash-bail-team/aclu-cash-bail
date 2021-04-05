@@ -86,8 +86,13 @@ td {
 }
 
 .bail-black-cell, .bail-white-cell {
-  min-width: 0;
-  width: auto;
+  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
+}
+
+.total-bail-rate-cell {
+  min-width: 90px;
 }
 
 .diff-cell {

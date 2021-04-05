@@ -165,17 +165,12 @@ td.bail-dist-cell {
   margin-right: 0;
   padding-left: 1em;
   padding-right: 1em;
-  border-right: unset;
 }
 
 .dist-bar-container {
   display: inline-grid;
   width: 100%;
   border: 1px #000 solid;
-}
-
-.dist-bar-container:hover {
-  border-color: #fff;
 }
 
 /* TODO: Generalize this to generic tooltip for use in county map */
