@@ -56,6 +56,10 @@
       display: none;
   }
 
+  .viz-bar {
+    height: 1em;
+  }
+
   .switch-container {
     width: 100%;
   }
