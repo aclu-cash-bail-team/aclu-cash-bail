@@ -173,7 +173,7 @@ const createBailPostingTable = () => {
     {
       class: "nonposting-rate-cell number-cell",
       header: {
-        "text": "Non-Posting Rate",
+        "text": "Non-posting rt.",
         "unit": "percent"
       },
       sortable: true,
@@ -202,7 +202,7 @@ const createBailPostingTable = () => {
     "$31.8K",
     58.5211725,
     {
-      "type": "line",
+      "type": "bar",
       "values": [
         58.5211725
       ]

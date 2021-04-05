@@ -318,8 +318,9 @@ class VizHeaderCell extends HeaderCell {
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
       wrapper.style.paddingLeft = "10px";
-    } else if (className === "end-num" && content.toString().length <= 3) {
+    } else if (className === "end-num") {
       wrapper.style.paddingRight = `${8 - content.toString().length}px`;
+      wrapper.style.marginRight = "-13px";
     }
 
     // create the vertical tick underneath the number
