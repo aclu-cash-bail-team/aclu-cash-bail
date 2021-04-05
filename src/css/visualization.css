@@ -146,9 +146,10 @@ td.bail-dist-cell {
 
 .viz-number-line-point {
   position: absolute;
-  top: 1em;
-  width: 0.25em;
-  height: 1em;
+  top: 1.25em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
 }
 
 .viz-number-line-point.green {

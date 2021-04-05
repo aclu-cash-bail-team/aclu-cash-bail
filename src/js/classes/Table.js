@@ -196,7 +196,7 @@ class NumberLineCell extends Cell {
     this.content.forEach((value, i) => {
       const point = document.createElement("div");
       point.className = `viz-number-line-point ${this.vizColors[i]}`;
-      point.style.left = `${(value - this.range["start"]) / this.range["end"] * 100}%`;
+      point.style.left = `calc(${(value - this.range["start"]) / this.range["end"] * 100}% - 2px)`;
       this.element.appendChild(point);
     });
     // add the vertical line denoting the average
