@@ -7311,21 +7311,6 @@ export const BAIL_RETENTION_FEE_DATA = [
 export const PRETRIAL_SPENDING_DATA = [
   {
     "data": [
-      "Average",
-      "$10.1M",
-      "$16.1M",
-      62.44427927,
-      {
-        "type": "bar",
-        "values": [
-          62.44427927
-        ]
-      }
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
       "Adams",
       "$3.6M",
       "$11.1M",
