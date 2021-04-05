@@ -3393,6 +3393,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Adams",
+      "$29,479",
+      "$26,077",
       {
         "type": "line",
         "values": [
@@ -3400,8 +3402,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           26077
         ]
       },
-      "$29,479",
-      "$26,077",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3413,6 +3413,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Allegheny",
+      "$21,080",
+      "$15,881",
       {
         "type": "line",
         "values": [
@@ -3420,8 +3422,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           15881
         ]
       },
-      "$21,080",
-      "$15,881",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3433,6 +3433,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Armstrong",
+      "$18,541",
+      "$13,560",
       {
         "type": "line",
         "values": [
@@ -3440,8 +3442,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           13560
         ]
       },
-      "$18,541",
-      "$13,560",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3453,6 +3453,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Beaver",
+      "$26,145",
+      "$13,733",
       {
         "type": "line",
         "values": [
@@ -3460,8 +3462,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           13733
         ]
       },
-      "$26,145",
-      "$13,733",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3473,6 +3473,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Bedford",
+      "$65,010",
+      "$49,176",
       {
         "type": "line",
         "values": [
@@ -3480,8 +3482,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           49176
         ]
       },
-      "$65,010",
-      "$49,176",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3493,6 +3493,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Berks",
+      "$35,039",
+      "$27,399",
       {
         "type": "line",
         "values": [
@@ -3500,8 +3502,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           27399
         ]
       },
-      "$35,039",
-      "$27,399",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3513,6 +3513,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Blair",
+      "$43,726",
+      "$29,256",
       {
         "type": "line",
         "values": [
@@ -3520,8 +3522,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           29256
         ]
       },
-      "$43,726",
-      "$29,256",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3533,6 +3533,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Bradford",
+      "$63,125",
+      "$32,077",
       {
         "type": "line",
         "values": [
@@ -3540,8 +3542,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           32077
         ]
       },
-      "$63,125",
-      "$32,077",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3553,6 +3553,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Bucks",
+      "$73,635",
+      "$58,683",
       {
         "type": "line",
         "values": [
@@ -3560,8 +3562,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           58683
         ]
       },
-      "$73,635",
-      "$58,683",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3573,6 +3573,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Butler",
+      "$42,155",
+      "$12,248",
       {
         "type": "line",
         "values": [
@@ -3580,8 +3582,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           12248
         ]
       },
-      "$42,155",
-      "$12,248",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3593,6 +3593,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Cambria",
+      "$51,483",
+      "$28,879",
       {
         "type": "line",
         "values": [
@@ -3600,8 +3602,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           28879
         ]
       },
-      "$51,483",
-      "$28,879",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3613,6 +3613,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Cameron",
+      "$10,000",
+      "$26,481",
       {
         "type": "line",
         "values": [
@@ -3620,8 +3622,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           26481
         ]
       },
-      "$10,000",
-      "$26,481",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -3633,6 +3633,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Carbon",
+      "$35,236",
+      "$24,452",
       {
         "type": "line",
         "values": [
@@ -3640,8 +3642,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           24452
         ]
       },
-      "$35,236",
-      "$24,452",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3653,6 +3653,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Centre",
+      "$45,976",
+      "$34,614",
       {
         "type": "line",
         "values": [
@@ -3660,8 +3662,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           34614
         ]
       },
-      "$45,976",
-      "$34,614",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3673,6 +3673,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Chester",
+      "$32,205",
+      "$22,836",
       {
         "type": "line",
         "values": [
@@ -3680,8 +3682,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           22836
         ]
       },
-      "$32,205",
-      "$22,836",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3693,6 +3693,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Clarion",
+      "$14,200",
+      "$20,698",
       {
         "type": "line",
         "values": [
@@ -3700,8 +3702,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           20698
         ]
       },
-      "$14,200",
-      "$20,698",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -3713,6 +3713,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Clearfield",
+      "$43,890",
+      "$23,215",
       {
         "type": "line",
         "values": [
@@ -3720,8 +3722,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23215
         ]
       },
-      "$43,890",
-      "$23,215",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3733,6 +3733,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Clinton",
+      "$29,609",
+      "$19,817",
       {
         "type": "line",
         "values": [
@@ -3740,8 +3742,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           19817
         ]
       },
-      "$29,609",
-      "$19,817",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3753,6 +3753,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Columbia",
+      "$57,747",
+      "$33,130",
       {
         "type": "line",
         "values": [
@@ -3760,8 +3762,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           33130
         ]
       },
-      "$57,747",
-      "$33,130",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3773,6 +3773,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Crawford",
+      "$32,600",
+      "$21,505",
       {
         "type": "line",
         "values": [
@@ -3780,8 +3782,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           21505
         ]
       },
-      "$32,600",
-      "$21,505",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3793,6 +3793,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Cumberland",
+      "$34,037",
+      "$23,281",
       {
         "type": "line",
         "values": [
@@ -3800,8 +3802,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23281
         ]
       },
-      "$34,037",
-      "$23,281",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3813,6 +3813,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Dauphin",
+      "$40,031",
+      "$32,313",
       {
         "type": "line",
         "values": [
@@ -3820,8 +3822,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           32313
         ]
       },
-      "$40,031",
-      "$32,313",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3833,6 +3833,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Delaware",
+      "$43,250",
+      "$31,974",
       {
         "type": "line",
         "values": [
@@ -3840,8 +3842,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           31974
         ]
       },
-      "$43,250",
-      "$31,974",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3853,6 +3853,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Elk",
+      "$14,375",
+      "$21,093",
       {
         "type": "line",
         "values": [
@@ -3860,8 +3862,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           21093
         ]
       },
-      "$14,375",
-      "$21,093",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -3873,6 +3873,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Erie",
+      "$38,881",
+      "$23,611",
       {
         "type": "line",
         "values": [
@@ -3880,8 +3882,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23611
         ]
       },
-      "$38,881",
-      "$23,611",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3893,6 +3893,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Fayette",
+      "$25,444",
+      "$17,203",
       {
         "type": "line",
         "values": [
@@ -3900,8 +3902,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           17203
         ]
       },
-      "$25,444",
-      "$17,203",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3913,6 +3913,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Forest",
+      "$21,438",
+      "$22,344",
       {
         "type": "line",
         "values": [
@@ -3920,8 +3922,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           22344
         ]
       },
-      "$21,438",
-      "$22,344",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -3933,6 +3933,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Franklin",
+      "$61,407",
+      "$50,242",
       {
         "type": "line",
         "values": [
@@ -3940,8 +3942,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           50242
         ]
       },
-      "$61,407",
-      "$50,242",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3953,6 +3953,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Fulton",
+      "$24,000",
+      "$57,879",
       {
         "type": "line",
         "values": [
@@ -3960,8 +3962,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           57879
         ]
       },
-      "$24,000",
-      "$57,879",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -3973,6 +3973,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Greene",
+      "$20,977",
+      "$15,107",
       {
         "type": "line",
         "values": [
@@ -3980,8 +3982,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           15107
         ]
       },
-      "$20,977",
-      "$15,107",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -3993,6 +3993,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Huntingdon",
+      "$22,010",
+      "$18,028",
       {
         "type": "line",
         "values": [
@@ -4000,8 +4002,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           18028
         ]
       },
-      "$22,010",
-      "$18,028",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4013,6 +4013,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Indiana",
+      "$20,861",
+      "$15,479",
       {
         "type": "line",
         "values": [
@@ -4020,8 +4022,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           15479
         ]
       },
-      "$20,861",
-      "$15,479",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4033,6 +4033,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Jefferson",
+      "$35,040",
+      "$45,707",
       {
         "type": "line",
         "values": [
@@ -4040,8 +4042,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           45707
         ]
       },
-      "$35,040",
-      "$45,707",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -4053,6 +4053,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Juniata",
+      "$29,167",
+      "$22,330",
       {
         "type": "line",
         "values": [
@@ -4060,8 +4062,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           22330
         ]
       },
-      "$29,167",
-      "$22,330",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4073,6 +4073,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Lackawanna",
+      "$41,104",
+      "$26,940",
       {
         "type": "line",
         "values": [
@@ -4080,8 +4082,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           26940
         ]
       },
-      "$41,104",
-      "$26,940",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4093,6 +4093,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Lancaster",
+      "$57,668",
+      "$48,383",
       {
         "type": "line",
         "values": [
@@ -4100,8 +4102,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           48383
         ]
       },
-      "$57,668",
-      "$48,383",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4113,6 +4113,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Lawrence",
+      "$25,778",
+      "$15,192",
       {
         "type": "line",
         "values": [
@@ -4120,8 +4122,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           15192
         ]
       },
-      "$25,778",
-      "$15,192",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4133,6 +4133,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Lebanon",
+      "$36,343",
+      "$23,902",
       {
         "type": "line",
         "values": [
@@ -4140,8 +4142,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23902
         ]
       },
-      "$36,343",
-      "$23,902",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4153,6 +4153,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Lehigh",
+      "$25,138",
+      "$16,341",
       {
         "type": "line",
         "values": [
@@ -4160,8 +4162,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           16341
         ]
       },
-      "$25,138",
-      "$16,341",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4173,6 +4173,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Luzerne",
+      "$47,113",
+      "$32,968",
       {
         "type": "line",
         "values": [
@@ -4180,8 +4182,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           32968
         ]
       },
-      "$47,113",
-      "$32,968",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4193,6 +4193,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Lycoming",
+      "$77,030",
+      "$37,028",
       {
         "type": "line",
         "values": [
@@ -4200,8 +4202,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           37028
         ]
       },
-      "$77,030",
-      "$37,028",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4213,6 +4213,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "McKean",
+      "$34,911",
+      "$23,475",
       {
         "type": "line",
         "values": [
@@ -4220,8 +4222,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23475
         ]
       },
-      "$34,911",
-      "$23,475",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4233,6 +4233,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Mercer",
+      "$29,504",
+      "$23,005",
       {
         "type": "line",
         "values": [
@@ -4240,8 +4242,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           23005
         ]
       },
-      "$29,504",
-      "$23,005",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4253,6 +4253,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Mifflin",
+      "$52,219",
+      "$35,331",
       {
         "type": "line",
         "values": [
@@ -4260,8 +4262,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           35331
         ]
       },
-      "$52,219",
-      "$35,331",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4273,6 +4273,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Monroe",
+      "$34,085",
+      "$21,495",
       {
         "type": "line",
         "values": [
@@ -4280,8 +4282,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           21495
         ]
       },
-      "$34,085",
-      "$21,495",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4293,6 +4293,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Montgomery",
+      "$29,169",
+      "$21,885",
       {
         "type": "line",
         "values": [
@@ -4300,8 +4302,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           21885
         ]
       },
-      "$29,169",
-      "$21,885",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4313,6 +4313,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Montour",
+      "$25,556",
+      "$27,449",
       {
         "type": "line",
         "values": [
@@ -4320,8 +4322,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           27449
         ]
       },
-      "$25,556",
-      "$27,449",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -4333,6 +4333,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Northampton",
+      "$34,972",
+      "$24,095",
       {
         "type": "line",
         "values": [
@@ -4340,8 +4342,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           24095
         ]
       },
-      "$34,972",
-      "$24,095",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4353,6 +4353,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Northumberland",
+      "$63,255",
+      "$38,641",
       {
         "type": "line",
         "values": [
@@ -4360,8 +4362,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           38641
         ]
       },
-      "$63,255",
-      "$38,641",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4373,6 +4373,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Perry",
+      "$41,126",
+      "$24,007",
       {
         "type": "line",
         "values": [
@@ -4380,8 +4382,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           24007
         ]
       },
-      "$41,126",
-      "$24,007",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4393,6 +4393,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Philadelphia",
+      "$54,302",
+      "$43,459",
       {
         "type": "line",
         "values": [
@@ -4400,8 +4402,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           43459
         ]
       },
-      "$54,302",
-      "$43,459",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4413,6 +4413,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Pike",
+      "$34,755",
+      "$21,534",
       {
         "type": "line",
         "values": [
@@ -4420,8 +4422,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           21534
         ]
       },
-      "$34,755",
-      "$21,534",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4433,6 +4433,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Potter",
+      "$15,700",
+      "$19,338",
       {
         "type": "line",
         "values": [
@@ -4440,8 +4442,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           19338
         ]
       },
-      "$15,700",
-      "$19,338",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -4453,6 +4453,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Schuylkill",
+      "$28,947",
+      "$19,996",
       {
         "type": "line",
         "values": [
@@ -4460,8 +4462,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           19996
         ]
       },
-      "$28,947",
-      "$19,996",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4473,6 +4473,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Snyder",
+      "$29,659",
+      "$27,551",
       {
         "type": "line",
         "values": [
@@ -4480,8 +4482,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           27551
         ]
       },
-      "$29,659",
-      "$27,551",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4493,6 +4493,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Somerset",
+      "$78,071",
+      "$33,896",
       {
         "type": "line",
         "values": [
@@ -4500,8 +4502,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           33896
         ]
       },
-      "$78,071",
-      "$33,896",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4513,6 +4513,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Sullivan",
+      "$5,000",
+      "$18,667",
       {
         "type": "line",
         "values": [
@@ -4520,8 +4522,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           18667
         ]
       },
-      "$5,000",
-      "$18,667",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -4533,6 +4533,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Susquehanna",
+      "$29,808",
+      "$27,138",
       {
         "type": "line",
         "values": [
@@ -4540,8 +4542,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           27138
         ]
       },
-      "$29,808",
-      "$27,138",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4553,6 +4553,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Tioga",
+      "$30,455",
+      "$18,916",
       {
         "type": "line",
         "values": [
@@ -4560,8 +4562,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           18916
         ]
       },
-      "$30,455",
-      "$18,916",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4573,6 +4573,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Union",
+      "$34,667",
+      "$25,807",
       {
         "type": "line",
         "values": [
@@ -4580,8 +4582,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           25807
         ]
       },
-      "$34,667",
-      "$25,807",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4593,6 +4593,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Venango",
+      "$48,712",
+      "$35,510",
       {
         "type": "line",
         "values": [
@@ -4600,8 +4602,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           35510
         ]
       },
-      "$48,712",
-      "$35,510",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4613,6 +4613,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Warren",
+      "$32,692",
+      "$25,369",
       {
         "type": "line",
         "values": [
@@ -4620,8 +4622,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           25369
         ]
       },
-      "$32,692",
-      "$25,369",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4633,6 +4633,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Washington",
+      "$33,527",
+      "$19,878",
       {
         "type": "line",
         "values": [
@@ -4640,8 +4642,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           19878
         ]
       },
-      "$33,527",
-      "$19,878",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4653,6 +4653,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Wayne",
+      "$28,682",
+      "$32,101",
       {
         "type": "line",
         "values": [
@@ -4660,8 +4662,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           32101
         ]
       },
-      "$28,682",
-      "$32,101",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -4673,6 +4673,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Westmoreland",
+      "$30,920",
+      "$17,072",
       {
         "type": "line",
         "values": [
@@ -4680,8 +4682,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           17072
         ]
       },
-      "$30,920",
-      "$17,072",
       {
         "type": "styled",
         "className": "positive-diff",
@@ -4693,6 +4693,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "Wyoming",
+      "$22,611",
+      "$25,042",
       {
         "type": "line",
         "values": [
@@ -4700,8 +4702,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           25042
         ]
       },
-      "$22,611",
-      "$25,042",
       {
         "type": "styled",
         "className": "negative-diff",
@@ -4713,6 +4713,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
       "York",
+      "$30,258",
+      "$18,416",
       {
         "type": "line",
         "values": [
@@ -4720,8 +4722,6 @@ export const BAIL_RACE_AMOUNT_DATA = [
           18416
         ]
       },
-      "$30,258",
-      "$18,416",
       {
         "type": "styled",
         "className": "positive-diff",
