@@ -25,7 +25,7 @@ const createPretrialSpendingTable = () => {
     {
       class: "total-budget-cell number-cell",
       header: {
-        "text": "Total Budget",
+        "text": "Budget",
         "unit": "dollars"
       },
       sortable: true,
@@ -34,7 +34,7 @@ const createPretrialSpendingTable = () => {
     {
       class: "fraction-budget-cell number-cell",
       header: {
-        "text": "% Budget",
+        "text": "Pct. Budget",
         "unit": "percent"
       },
       sortable: true,
