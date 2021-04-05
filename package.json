@@ -27,7 +27,7 @@
     "@parcel/transformer-html": "^2.0.0-nightly.612",
     "@parcel/transformer-postcss": "^2.0.0-nightly.612",
     "@parcel/transformer-posthtml": "^2.0.0-nightly.612",
-    "eslint": "^5.16.0",
+    "eslint": "^7.23.0",
     "parcel": "^2.0.0-beta.1",
     "postcss": "^8.2.6"
   },

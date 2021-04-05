@@ -78,7 +78,6 @@ class CountyPoint {
       point.setAttributeNS(null, "class", className);
       point.setAttributeNS(null, "cx", this.xs[i]);
       point.setAttributeNS(null, "cy", this.ys[i]);
-      // point.setAttributeNS(null, "r", this.rs_desktop[i]);
       this.plot.appendChild(point);
 
       this.elements.push(point);
@@ -448,8 +447,7 @@ export class DistributionGraph {
       { rowHeader: createHeader("ROR", "ror-bar"), dataKey: "rorRate", render: renderValue },
     ],
     placement: "top",
-    followCursor: true,
-    trigger: 'click',
+    followCursor: true
     });
 
     this.render();
