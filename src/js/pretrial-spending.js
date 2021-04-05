@@ -57,7 +57,7 @@ const createPretrialSpendingTable = () => {
       searchable: false
     }
   ];
-  const initSort = 1;
+  const initSort = {col: 1, dir: -1};
   const stateData = [
     "Pennsylvania",
     "$10.1M",

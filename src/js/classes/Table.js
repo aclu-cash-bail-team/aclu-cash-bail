@@ -434,8 +434,8 @@ export class Table {
 
     this.sortCols = columnConfigs.map((config) => config.sortable);
     // start with sorting descending
-    this.sortCol = initSort;
-    this.sortDir = -1;
+    this.sortCol = initSort.col;
+    this.sortDir = initSort.dir;
 
     this.isVisible = isVisible;
     this.header = this.getHeaderRow();
@@ -518,7 +518,7 @@ export class Table {
         this.classNames[i],
         this.sortCols[i],
         // 1 designates ascending; -1, descending (default); 0, not sortable
-        this.sortCols[i] ? -1 : 0,
+        this.sortCols[i] ? this.sortDir : 0,
         i === this.sortCol,
         this,
         i

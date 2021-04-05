@@ -63,7 +63,7 @@ const createBailRaceRateTable = () => {
       searchable: false
     },
   ];
-  const initSort = 4; // initially sort by difference
+  const initSort = {col: 4, dir: -1}; // initially sort by difference
   const stateData = [
     "Pennsylvania",
     54.7,
@@ -146,7 +146,7 @@ const createBailRaceAmountTable = () => {
       searchable: false
     },
   ];
-  const initSort = 4; // initially sort by difference
+  const initSort = {col: 4, dir: -1}; // initially sort by difference
   const stateData = [
     "Pennsylvania",
     "$36,202",

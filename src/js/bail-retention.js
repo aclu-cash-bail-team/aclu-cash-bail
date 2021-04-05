@@ -23,7 +23,7 @@ const createBailRetentionFeeTable = () => {
       searchable: false
     },
   ];
-  const initSort = 0; // initially sort by county name
+  const initSort = {col: 0, dir: 1}; // initially sort by county name
   const tableContainer = document.getElementById("bail-retention-fee-container");
   return new Table(BAIL_RETENTION_FEE_DATA, columnConfigs, initSort, tableContainer);
 };

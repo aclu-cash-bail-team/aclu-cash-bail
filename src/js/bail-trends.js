@@ -59,7 +59,7 @@ const createBailRateTable = () => {
       searchable: false
     },
   ];
-  const initSort = 2; // initially sort by cash bail rate
+  const initSort = {col: 2, dir: -1}; // initially sort by cash bail rate
   const stateData = [
     "Pennsylvania",
     42.5966697900,
@@ -132,7 +132,7 @@ const createRorRateTable = () => {
       searchable: false
     },
   ];
-  const initSort = 2; // initially sort by ror bail rate
+  const initSort = {col: 2, dir: -1}; // initially sort by ror bail rate
   const stateData = [
     "Pennsylvania",
     22.73,
@@ -196,7 +196,7 @@ const createBailPostingTable = () => {
       searchable: false
     },
   ];
-  const initSort = 2;
+  const initSort = {col: 2, dir: -1};
   const stateData = [
     "Pennsylvania",
     "$31.8K",

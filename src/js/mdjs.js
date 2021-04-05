@@ -59,7 +59,7 @@ const createMdjTable = () => {
       searchable: false
     },
   ];
-  const initSort = 2;
+  const initSort = {col: 2, dir: -1};
   const tableContainer = document.getElementById("mdj-container");
   return new Table(MDJ_DATA, columnConfigs, initSort, tableContainer);
 };
