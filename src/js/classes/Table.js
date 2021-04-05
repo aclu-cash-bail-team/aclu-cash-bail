@@ -1,5 +1,5 @@
-const VIEW_ALL = "view all";
-const VIEW_LESS = "view less";
+const VIEW_ALL = "VIEW ALL";
+const VIEW_LESS = "VIEW LESS";
 const NUM_TRUNCATED_ROWS = 10;
 const CARET_SVG = `<svg class="caret" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7 0.999999L4 4L1 1" stroke="white" stroke-miterlimit="10"/>
