@@ -161,7 +161,7 @@ const createBailRaceAmountTable = () => {
     {
       "type": "styled",
       "className": "positive-diff",
-      "value": "+$11,128"
+      "value": "+$11.0K"
     }
   ];
 

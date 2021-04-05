@@ -3405,7 +3405,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$3,401"
+        "value": "$3.4K"
       }
     ],
     "outlier": false
@@ -3425,7 +3425,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$5,199"
+        "value": "$5.2K"
       }
     ],
     "outlier": false
@@ -3445,7 +3445,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$4,981"
+        "value": "$5.0K"
       }
     ],
     "outlier": false
@@ -3465,7 +3465,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$12,412"
+        "value": "$12.4K"
       }
     ],
     "outlier": false
@@ -3485,7 +3485,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$15,834"
+        "value": "$15.8K"
       }
     ],
     "outlier": false
@@ -3505,7 +3505,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$7,640"
+        "value": "$7.6K"
       }
     ],
     "outlier": false
@@ -3525,7 +3525,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$14,470"
+        "value": "$14.5K"
       }
     ],
     "outlier": false
@@ -3545,7 +3545,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$31,048"
+        "value": "$31.0K"
       }
     ],
     "outlier": false
@@ -3565,7 +3565,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$14,951"
+        "value": "$15.0K"
       }
     ],
     "outlier": false
@@ -3585,7 +3585,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$29,907"
+        "value": "$29.9K"
       }
     ],
     "outlier": false
@@ -3605,7 +3605,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$22,604"
+        "value": "$22.6K"
       }
     ],
     "outlier": false
@@ -3625,7 +3625,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$16,481"
+        "value": "-$16.5K"
       }
     ],
     "outlier": true
@@ -3645,7 +3645,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$10,784"
+        "value": "$10.8K"
       }
     ],
     "outlier": false
@@ -3665,7 +3665,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$11,361"
+        "value": "$11.4K"
       }
     ],
     "outlier": false
@@ -3685,7 +3685,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$9,369"
+        "value": "$9.4K"
       }
     ],
     "outlier": false
@@ -3705,7 +3705,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$6,498"
+        "value": "-$6.5K"
       }
     ],
     "outlier": false
@@ -3725,7 +3725,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$20,675"
+        "value": "$20.7K"
       }
     ],
     "outlier": false
@@ -3745,7 +3745,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$9,792"
+        "value": "$9.8K"
       }
     ],
     "outlier": false
@@ -3765,7 +3765,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$24,617"
+        "value": "$24.6K"
       }
     ],
     "outlier": false
@@ -3785,7 +3785,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$11,095"
+        "value": "$11.1K"
       }
     ],
     "outlier": false
@@ -3805,7 +3805,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$10,756"
+        "value": "$10.8K"
       }
     ],
     "outlier": false
@@ -3825,7 +3825,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$7,718"
+        "value": "$7.7K"
       }
     ],
     "outlier": false
@@ -3845,7 +3845,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$11,275"
+        "value": "$11.3K"
       }
     ],
     "outlier": false
@@ -3865,7 +3865,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$6,718"
+        "value": "-$6.7K"
       }
     ],
     "outlier": true
@@ -3885,7 +3885,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$15,270"
+        "value": "$15.3K"
       }
     ],
     "outlier": false
@@ -3905,7 +3905,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$8,240"
+        "value": "$8.2K"
       }
     ],
     "outlier": false
@@ -3925,7 +3925,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$906"
+        "value": "-$0.9K"
       }
     ],
     "outlier": true
@@ -3945,7 +3945,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$11,165"
+        "value": "$11.2K"
       }
     ],
     "outlier": false
@@ -3965,7 +3965,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$33,879"
+        "value": "-$33.9K"
       }
     ],
     "outlier": false
@@ -3985,7 +3985,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$5,870"
+        "value": "$5.9K"
       }
     ],
     "outlier": false
@@ -4005,7 +4005,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$3,982"
+        "value": "$4.0K"
       }
     ],
     "outlier": false
@@ -4025,7 +4025,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$5,382"
+        "value": "$5.4K"
       }
     ],
     "outlier": false
@@ -4045,7 +4045,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$10,667"
+        "value": "-$10.7K"
       }
     ],
     "outlier": false
@@ -4065,7 +4065,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$6,837"
+        "value": "$6.8K"
       }
     ],
     "outlier": true
@@ -4085,7 +4085,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$14,163"
+        "value": "$14.2K"
       }
     ],
     "outlier": false
@@ -4105,7 +4105,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$9,285"
+        "value": "$9.3K"
       }
     ],
     "outlier": false
@@ -4125,7 +4125,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$10,586"
+        "value": "$10.6K"
       }
     ],
     "outlier": false
@@ -4145,7 +4145,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$12,441"
+        "value": "$12.4K"
       }
     ],
     "outlier": false
@@ -4165,7 +4165,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$8,797"
+        "value": "$8.8K"
       }
     ],
     "outlier": false
@@ -4185,7 +4185,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$14,145"
+        "value": "$14.1K"
       }
     ],
     "outlier": false
@@ -4205,7 +4205,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$40,002"
+        "value": "$40.0K"
       }
     ],
     "outlier": false
@@ -4225,7 +4225,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$11,436"
+        "value": "$11.4K"
       }
     ],
     "outlier": false
@@ -4245,7 +4245,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$6,500"
+        "value": "$6.5K"
       }
     ],
     "outlier": false
@@ -4265,7 +4265,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$16,889"
+        "value": "$16.9K"
       }
     ],
     "outlier": false
@@ -4285,7 +4285,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$12,591"
+        "value": "$12.6K"
       }
     ],
     "outlier": false
@@ -4305,7 +4305,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$7,284"
+        "value": "$7.3K"
       }
     ],
     "outlier": false
@@ -4325,7 +4325,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$1,893"
+        "value": "-$1.9K"
       }
     ],
     "outlier": true
@@ -4345,7 +4345,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$10,877"
+        "value": "$10.9K"
       }
     ],
     "outlier": false
@@ -4365,7 +4365,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$24,614"
+        "value": "$24.6K"
       }
     ],
     "outlier": false
@@ -4385,7 +4385,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$17,119"
+        "value": "$17.1K"
       }
     ],
     "outlier": false
@@ -4405,7 +4405,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$10,843"
+        "value": "$10.8K"
       }
     ],
     "outlier": false
@@ -4425,7 +4425,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$13,221"
+        "value": "$13.2K"
       }
     ],
     "outlier": false
@@ -4445,7 +4445,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$3,638"
+        "value": "-$3.6K"
       }
     ],
     "outlier": true
@@ -4465,7 +4465,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$8,951"
+        "value": "$9.0K"
       }
     ],
     "outlier": false
@@ -4485,7 +4485,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$2,107"
+        "value": "$2.1K"
       }
     ],
     "outlier": false
@@ -4505,7 +4505,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$44,175"
+        "value": "$44.2K"
       }
     ],
     "outlier": false
@@ -4525,7 +4525,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$13,667"
+        "value": "-$13.7K"
       }
     ],
     "outlier": true
@@ -4545,7 +4545,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$2,670"
+        "value": "$2.7K"
       }
     ],
     "outlier": true
@@ -4565,7 +4565,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$11,539"
+        "value": "$11.5K"
       }
     ],
     "outlier": false
@@ -4585,7 +4585,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$8,860"
+        "value": "$8.9K"
       }
     ],
     "outlier": false
@@ -4605,7 +4605,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$13,202"
+        "value": "$13.2K"
       }
     ],
     "outlier": false
@@ -4625,7 +4625,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$7,323"
+        "value": "$7.3K"
       }
     ],
     "outlier": true
@@ -4645,7 +4645,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$13,649"
+        "value": "$13.6K"
       }
     ],
     "outlier": false
@@ -4665,7 +4665,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$3,419"
+        "value": "-$3.4K"
       }
     ],
     "outlier": false
@@ -4685,7 +4685,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$13,848"
+        "value": "$13.8K"
       }
     ],
     "outlier": false
@@ -4705,7 +4705,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "negative-diff",
-        "value": "−$2,431"
+        "value": "-$2.4K"
       }
     ],
     "outlier": true
@@ -4725,7 +4725,7 @@ export const BAIL_RACE_AMOUNT_DATA = [
       {
         "type": "styled",
         "className": "positive-diff",
-        "value": "+$11,842"
+        "value": "$11.8K"
       }
     ],
     "outlier": false
