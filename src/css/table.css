@@ -182,18 +182,6 @@ td.bold-cell {
 
 /* Table-specific styling. */
 
-#pretrail-spending-table th.viz-cell {
-  padding-right: 0;
-}
-
-#pretrail-spending-table td.viz-cell {
-  margin-right: 0;
-}
-
-#pretrail-spending-table .end-num {
-  margin-right: -6px;
-}
-
 #mdj-table .county-name-cell {
   padding-left: 0;
 }
