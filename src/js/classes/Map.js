@@ -531,14 +531,16 @@ export class BailPostingMap extends Map {
 
   onMouseEnter(event) {
     super.onMouseEnter(event);
+    d3.select(event.target).style("stroke-width", "2px");
     if (event.target.classList.contains("county-path")) {
-      d3.select(event.target).style("fill", "#181818");
+      d3.select(event.target).style("fill", "#333333");
     }
     this.highlightBar(event.target);
   }
 
   onMouseOut(event) {
     super.onMouseOut();
+    d3.select(event.target).style("stroke-width", "1px");
     if (event.target.classList.contains("county-path")) {
       d3.select(event.target).style("fill", "#1a1a1a");
     }
