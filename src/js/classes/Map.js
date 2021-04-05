@@ -10,7 +10,7 @@ const COUNTY_NAME_ATTRIBUTE = "data-county-name";
 const BUCKET_ATTRIBUTE = "data-bucket";
 
 class ColorScaleLegend {
-  constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut, title = "", offsetY = 30) {
+  constructor(id, colorDomain, labels, color, averages, onMouseOver, onMouseOut, title = "", offsetY = 35) {
     this.colorDomain = colorDomain;
     this.labels = labels;
     this.color = color;
@@ -21,13 +21,13 @@ class ColorScaleLegend {
 
     this.sectionWidth = 50;
     this.sectionHeight = 10;
-    this.offsetX = 5;
+    this.offsetX = 7;
     this.offsetY = offsetY;
-    this.labelOffsetX = this.offsetX - 4;
-    this.labelOffsetY = this.offsetY + 22;
+    this.labelOffsetX = this.offsetX - 9;
+    this.labelOffsetY = this.offsetY + 28;
     this.legendWidth = this.sectionWidth * this.colorDomain.length;
 
-    const svgWidth = this.legendWidth + 20;
+    const svgWidth = this.legendWidth + 30;
     const svgHeight = this.sectionHeight + this.labelOffsetY + 10;
     this.svg = d3.select(`#${id} .color-scale-legend`).append("svg")
       .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
@@ -72,8 +72,9 @@ class ColorScaleLegend {
       });
     // Add labels
     const legendTextClassName = "legend-text";
+    const smallLabelOffset = i => this.labels[i].toString().length < 2 ? 2 : 0;
     legend.append("text")
-      .attr("x", (_, i) => this.labelOffsetX + i*this.sectionWidth)
+      .attr("x", (_, i) => this.labelOffsetX + i*this.sectionWidth + smallLabelOffset(i))
       .attr("y", this.labelOffsetY)
       .attr("class", legendTextClassName)
       .attr(BUCKET_ATTRIBUTE, d => {
@@ -89,7 +90,7 @@ class ColorScaleLegend {
       .attr("y", this.labelOffsetY)
       .attr("class", legendTextClassName)
       .attr(BUCKET_ATTRIBUTE, this.labels[this.labels.length - 1])
-      .text(this.labels[this.labels.length - 1]);
+      .text(this.labels[this.labels.length - 1] + "%");
     // Set up average label
     const maxValue = this.colorDomain[this.colorDomain.length - 1];
     this.averages.forEach(avg => {
@@ -102,19 +103,19 @@ class ColorScaleLegend {
         .attr("y2", this.offsetY - 5)
         .attr("class", legendLineClassName);
       this.svg.append("text")
-        .attr("x", avgOffsetX - 10)
-        .attr("y", this.offsetY - 20)
+        .attr("x", avgOffsetX - 13)
+        .attr("y", this.offsetY - 25)
         .attr("class", legendTextClassName)
         .text(avg.label);
       this.svg.append("text")
-        .attr("x", avgOffsetX - 10)
+        .attr("x", avgOffsetX - 15)
         .attr("y", this.offsetY - 10)
         .attr("class", legendTextClassName)
         .text(`${avg.value}%`);
       // Add title, if any
       this.svg.append("text")
-        .attr("x", this.legendWidth/2 - 25)
-        .attr("y", this.offsetY + 40)
+        .attr("x", this.legendWidth/2 - 45)
+        .attr("y", this.offsetY + 45)
         .attr("class", legendTextClassName)
         .text(this.title);
     });
@@ -128,10 +129,10 @@ class SpikeLegend {
     this.getSpike = getSpike;
 
     this.spikeOffsetY = 110;
-    this.spikeOffsetX = 25;
+    this.spikeOffsetX = 40;
     this.spikeSpacingX = 30;
 
-    const svgWidth = 125;
+    const svgWidth = 140;
     const svgHeight = this.spikeOffsetY + 25;
     this.svg = d3.select(`#${id} .spike-legend`).append("svg")
       .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
@@ -175,7 +176,7 @@ class Map {
 
     this.projection = d3.geoMercator().scale(5500).center([-75.75, 40.5]);
 
-    this.renderTooltip = configureTooltip({...tooltipSchema, trigger: "manual", placement: "top"})
+    this.renderTooltip = configureTooltip({...tooltipSchema, trigger: "manual", placement: "top"});
   }
 
   renderCity(name, coords, labelCoords) {
@@ -209,7 +210,7 @@ class Map {
   }
 
   onMouseEnter(event) {
-    this.showTooltip(event.srcElement, {});
+    this.showTooltip(event.target, {});
   }
 
   onMouseOut() {
@@ -217,7 +218,7 @@ class Map {
   }
 
   showTooltip(element, data) {
-    this.tooltip = this.renderTooltip(element, data);
+    this.tooltip = this.renderTooltip(element, [data], data["name"]);
     this.tooltip.show();
   }
 
@@ -232,7 +233,7 @@ class Map {
     const path = d3.geoPath().projection(this.projection);
 
     const countyTopoJson = JSON.parse(JSON.stringify(COUNTY_MAP_DATA));
-    const features = feature(countyTopoJson, countyTopoJson.objects["cb_2015_pennsylvania_county_20m"]).features;
+    const features = feature(countyTopoJson, countyTopoJson.objects["pa_counties"]).features;
 
     this.renderPA(features, path);
   }
@@ -241,7 +242,6 @@ class Map {
 export class BailRateMap extends Map {
   constructor(id, data, average) {
     super(`#${id} .map`, {rows: [
-      { rowHeader: "" , isColumnHeader: true, dataKey: "name" },
       { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
     ]});
     this.id = id;
@@ -253,8 +253,8 @@ export class BailRateMap extends Map {
     ]);
 
     const onLegendMouseOver = (event) => {
-      this.highlightBar(event.srcElement);
-      this.highlightMap(event.srcElement);
+      this.highlightBar(event.target);
+      this.highlightMap(event.target);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -266,7 +266,7 @@ export class BailRateMap extends Map {
       this.color,
       [{
         value: average,
-        label: "Avg:"
+        label: "Avg"
       }],
       onLegendMouseOver,
       onLegendMouseOut
@@ -277,20 +277,20 @@ export class BailRateMap extends Map {
 
   onMouseEnter(event) {
     super.onMouseEnter(event);
-    d3.select(event.srcElement).style("stroke-width", "2px");
-    this.highlightBar(event.srcElement);
+    d3.select(event.target).style("stroke-width", "2px");
+    this.highlightBar(event.target);
   }
 
   onMouseOut(event) {
     super.onMouseOut();
-    d3.select(event.srcElement).style("stroke-width", "0.5px");
+    d3.select(event.target).style("stroke-width", "1px");
     this.resetHighlight();
   }
 
   showTooltip(element) {
     const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const countyRate = Number(element.getAttribute("data-rate"));
-    super.showTooltip(element, [{name: countyName, x: countyRate}])
+    super.showTooltip(element, {name: countyName, x: countyRate});
   }
 
   highlightBar(element) {
@@ -331,7 +331,6 @@ export class BailRateMap extends Map {
 class BailRaceMap extends Map {
   constructor(selector, data, color, dataIdx, race, parent) {
     super(selector, {rows: [
-      { rowHeader: "" , isColumnHeader: true, dataKey: "name" },
       { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
     ]});
     this.data = data;
@@ -347,11 +346,11 @@ class BailRaceMap extends Map {
     const element = document.querySelector(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${this.race}"]`);
     const countyRate = Number(element.getAttribute("data-rate"));
     this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "2px");
-    super.showTooltip(element, [{name: countyName, x: countyRate}]);
+    super.showTooltip(element, {name: countyName, x: countyRate});
   }
   _onMouseOut(countyName) {
     super.onMouseOut();
-    this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "0.5px");
+    this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "1px");
   }
 
   highlightMap(bucket) {
@@ -410,8 +409,8 @@ export class RaceMapContainer {
     this.white = new BailRaceMap(`#${id} #white.map`, data, color, 3, "white", this);
 
     const onLegendMouseOver = (event) => {
-      this.highlightBarFromLegend(event.srcElement);
-      this.highlightMap(event.srcElement);
+      this.highlightBarFromLegend(event.target);
+      this.highlightMap(event.target);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -423,11 +422,11 @@ export class RaceMapContainer {
       color,
       [{
         value: whiteAverage,
-        label: "White:"
+        label: "White"
       },
       {
         value: blackAverage,
-        label: "Black:"
+        label: "Black"
       }
       ],
       onLegendMouseOver,
@@ -438,14 +437,14 @@ export class RaceMapContainer {
   }
 
   onChildMouseEnter(event) {
-    const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
     this.black._onMouseEnter(countyName);
     this.white._onMouseEnter(countyName);
-    this.highlightBarFromMap(event.srcElement);
+    this.highlightBarFromMap(event.target);
   }
 
   onChildMouseOut(event) {
-    const countyName = event.srcElement.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
     this.black._onMouseOut(countyName);
     this.white._onMouseOut(countyName);
     this.resetHighlight();
@@ -484,7 +483,6 @@ export class RaceMapContainer {
 export class BailPostingMap extends Map {
   constructor(id, data, average, upperBound) {
     super(`#${id} .map`, {rows: [
-      { rowHeader: "" , isColumnHeader: true, dataKey: "name" },
       { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
       { rowHeader: "Avg. Bail Amount", dataKey: "y", render: value => value.toLocaleString("en", {
         style: "currency",
@@ -503,8 +501,8 @@ export class BailPostingMap extends Map {
     this.spikeScale = d3.scaleLinear([0, upperBound], [0, 100]);
 
     const onLegendMouseOver = (event) => {
-      this.highlightBar(event.srcElement);
-      this.highlightMap(event.srcElement);
+      this.highlightBar(event.target);
+      this.highlightMap(event.target);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -516,7 +514,7 @@ export class BailPostingMap extends Map {
       this.color,
       [{
         value: average,
-        label: "Avg:"
+        label: "Avg"
       }],
       onLegendMouseOver,
       onLegendMouseOut,
@@ -533,13 +531,19 @@ export class BailPostingMap extends Map {
 
   onMouseEnter(event) {
     super.onMouseEnter(event);
-    d3.select(event.srcElement).style("stroke-width", "2px");
-    this.highlightBar(event.srcElement);
+    d3.select(event.target).style("stroke-width", "2px");
+    if (event.target.classList.contains("county-path")) {
+      d3.select(event.target).style("fill", "#333333");
+    }
+    this.highlightBar(event.target);
   }
 
   onMouseOut(event) {
     super.onMouseOut();
-    d3.select(event.srcElement).style("stroke-width", "0.5px");
+    d3.select(event.target).style("stroke-width", "1px");
+    if (event.target.classList.contains("county-path")) {
+      d3.select(event.target).style("fill", "#1a1a1a");
+    }
     this.resetHighlight();
   }
 
@@ -547,7 +551,7 @@ export class BailPostingMap extends Map {
     const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const countyRate = Number(element.getAttribute("data-rate"));
     const countyAmount = element.getAttribute("data-bail-amount");
-    super.showTooltip(element, [{name: countyName, x: countyRate, y: countyAmount}]);
+    super.showTooltip(element, {name: countyName, x: countyRate, y: countyAmount});
   }
 
   highlightBar(element) {
@@ -613,6 +617,8 @@ export class BailPostingMap extends Map {
       .attr(COUNTY_NAME_ATTRIBUTE, feature => feature.properties["NAME"]);
 
     this.legend.render();
+
+    this.renderCities();
   }
 }
 
