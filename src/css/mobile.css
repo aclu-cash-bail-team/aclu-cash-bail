@@ -48,6 +48,12 @@
     padding: 0;
   }
 
+  .nonposting-rate-cell {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+  }
+
   .bar-label {
     left: calc(100% + 0.5em);
   }
