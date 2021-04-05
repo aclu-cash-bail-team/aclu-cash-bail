@@ -9436,7 +9436,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "D'Agostino, Robert M.",
+          "D’Agostino, Robert M.",
           28.41,
           36.95652174,
           28.34645669,
@@ -9464,7 +9464,7 @@ export const MDJ_DATA = [
                 "name": "ROR"
               }
             ],
-            "name": "D'Agostino, Robert M."
+            "name": "D’Agostino, Robert M."
           }
         ],
         "outlier": false
@@ -10015,7 +10015,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "D'Amore, Michael D.",
+          "D’Amore, Michael D.",
           42.59,
           46.77419355,
           40.88145897,
@@ -10043,7 +10043,7 @@ export const MDJ_DATA = [
                 "name": "ROR"
               }
             ],
-            "name": "D'Amore, Michael D."
+            "name": "D’Amore, Michael D."
           }
         ],
         "outlier": false
@@ -11392,7 +11392,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O'Brien, James",
+          "O’Brien, James",
           50.56,
           56.52024708,
           43.40175953,
@@ -11420,7 +11420,7 @@ export const MDJ_DATA = [
                 "name": "ROR"
               }
             ],
-            "name": "O'Brien, James"
+            "name": "O’Brien, James"
           }
         ],
         "outlier": false
@@ -18664,7 +18664,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O'Leary, David",
+          "O’Leary, David",
           35.03,
           41.32653061,
           38.46153846,
@@ -18692,7 +18692,7 @@ export const MDJ_DATA = [
                 "name": "ROR"
               }
             ],
-            "name": "O'Leary, David"
+            "name": "O’Leary, David"
           }
         ],
         "outlier": false
@@ -21544,7 +21544,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O'Donnell, Daniel",
+          "O’Donnell, Daniel",
           46.64,
           69.90291262,
           40.97222222,
@@ -21572,7 +21572,7 @@ export const MDJ_DATA = [
                 "name": "ROR"
               }
             ],
-            "name": "O'Donnell, Daniel"
+            "name": "O’Donnell, Daniel"
           }
         ],
         "outlier": false
@@ -30375,7 +30375,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O'donnell, Kevin P.",
+          "O’donnell, Kevin P.", // *Sigh* - this guy appears twice in the data set
           32.74,
           50,
           31.06796117,
@@ -30403,7 +30403,7 @@ export const MDJ_DATA = [
                 "name": "ROR"
               }
             ],
-            "name": "O'donnell, Kevin P."
+            "name": "O’donnell, Kevin P."
           }
         ],
         "outlier": true
@@ -30447,7 +30447,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O'Donnell, William S.",
+          "O’Donnell, William S.",
           30.98,
           33.33333333,
           30.66954644,
@@ -30475,7 +30475,7 @@ export const MDJ_DATA = [
                 "name": "ROR"
               }
             ],
-            "name": "O'Donnell, William S."
+            "name": "O’Donnell, William S."
           }
         ],
         "outlier": false
@@ -30483,7 +30483,7 @@ export const MDJ_DATA = [
       {
         "data": [
           "",
-          "O'Donnell, Kevin P.",
+          "O’Donnell, Kevin P.",
           25.69,
           42.5,
           24.62809917,
@@ -30511,7 +30511,7 @@ export const MDJ_DATA = [
                 "name": "ROR"
               }
             ],
-            "name": "O'Donnell, Kevin P."
+            "name": "O’Donnell, Kevin P."
           }
         ],
         "outlier": false
