@@ -423,7 +423,7 @@ export class Table {
     this.data = data;
     this.container = tableContainer;
     this.element = tableContainer.getElementsByTagName("table")[0];
-    this.showOutliers = false;
+    this.showOutliers = true;
     this.summaryRowData = summaryRowData;
 
     this.validate();
