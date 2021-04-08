@@ -311,7 +311,7 @@ export class BailRateMap extends Map {
   renderPA(features, path) {
     this.data.forEach(row => {
       const countyName = row.data[0];
-      const cashBailRate = row.data[2];
+      const cashBailRate = row.data[1];
       const feature = features.find(f => f.properties["NAME"] === countyName);
       feature.properties.rate = cashBailRate;
       feature.properties.color = this.color(cashBailRate);
@@ -405,8 +405,8 @@ export class RaceMapContainer {
       "#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"
     ]);
 
-    this.black = new BailRaceMap(`#${id} #black.map`, data, color, 2, "black", this);
-    this.white = new BailRaceMap(`#${id} #white.map`, data, color, 3, "white", this);
+    this.black = new BailRaceMap(`#${id} #black.map`, data, color, 1, "black", this);
+    this.white = new BailRaceMap(`#${id} #white.map`, data, color, 2, "white", this);
 
     const onLegendMouseOver = (event) => {
       this.highlightBarFromLegend(event.target);

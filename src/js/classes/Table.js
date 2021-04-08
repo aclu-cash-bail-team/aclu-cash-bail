@@ -1,5 +1,5 @@
-const VIEW_ALL = "view all";
-const VIEW_LESS = "view less";
+const VIEW_ALL = "VIEW ALL";
+const VIEW_LESS = "VIEW LESS";
 const NUM_TRUNCATED_ROWS = 10;
 const CARET_SVG = `<svg class="caret" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7 0.999999L4 4L1 1" stroke="white" stroke-miterlimit="10"/>
@@ -166,13 +166,7 @@ class DistributionBarCell extends Cell {
       container.appendChild(bar);
     });
     // configure sizes of distribution bars
-    const numDists = this.values.length;
-    const [gapSize, gapUnits] = [2, "px"];
-    const gapCorrection = Math.round(((numDists - 1) * gapSize) / numDists);
-    const distWidths = this.values.map(dist =>
-      `calc(${dist["value"]}% - ${gapCorrection}${gapUnits})`
-    );
-    container.style.columnGap = `${gapSize}${gapUnits}`;
+    const distWidths = this.values.map(dist => `${dist["value"]}%`);
     container.style.gridTemplateColumns = distWidths.join(" ");
     // configure tooltip
     const tooltip = this.createTooltip();
@@ -202,7 +196,7 @@ class NumberLineCell extends Cell {
     this.content.forEach((value, i) => {
       const point = document.createElement("div");
       point.className = `viz-number-line-point ${this.vizColors[i]}`;
-      point.style.left = `${(value - this.range["start"]) / this.range["end"] * 100}%`;
+      point.style.left = `calc(${(value - this.range["start"]) / this.range["end"] * 100}% - 2px)`;
       this.element.appendChild(point);
     });
     // add the vertical line denoting the average
@@ -260,10 +254,15 @@ class HeaderCell extends Cell {
       // if this is a sortable column, create wrapper with caret and text
       const wrapper = document.createElement("div");
       wrapper.className = "th-wrapper";
-      wrapper.innerHTML = CARET_SVG;
       const text = document.createElement("div");
       text.appendChild(document.createTextNode(this.content));
-      wrapper.appendChild(text);
+      if (this.id === 0) {
+        wrapper.appendChild(text);
+        wrapper.innerHTML = wrapper.innerHTML + CARET_SVG;
+      } else {
+        wrapper.innerHTML = CARET_SVG;
+        wrapper.appendChild(text);
+      }
       cell.appendChild(wrapper);
     } else {
       // otherwise, all we need is the text
@@ -318,12 +317,9 @@ class VizHeaderCell extends HeaderCell {
     // adjust padding based on number of digits
     if (className === "start-num" && content.toString().length === 1) {
       wrapper.style.paddingLeft = "10px";
-    } else if (className === "end-num" && content.toString().length <= 3) {
+    } else if (className === "end-num") {
       wrapper.style.paddingRight = `${8 - content.toString().length}px`;
-    }
-    // adjust padding based on number of digits
-    if (className === "end-num" && content.toString().length === 2) {
-      wrapper.style.paddingRight = `${1}px`;
+      wrapper.style.marginRight = "-13px";
     }
 
     // create the vertical tick underneath the number
@@ -360,11 +356,11 @@ class HeaderRow {
 
 
 class BodyRow {
-  constructor(cells, outlier, isHidden, isBold = false) {
+  constructor(cells, outlier, isHidden, className = "") {
     this.cells = cells;
     this.outlier = outlier;
     this.isHidden = isHidden;
-    this.isBold = isBold;
+    this.className = className;
   }
 
   setIsHidden(isHidden) {
@@ -379,11 +375,10 @@ class BodyRow {
       return [];
     }
 
-    row.className = "";
+    row.className = this.className;
     this.cells.forEach((cell, i) => {
       cell.setElementClass(cell.className);
       if (i === sorted) cell.addElementClass("sorted");
-      if (this.isBold) cell.addElementClass("bold-cell");
       row.appendChild(cell.element);
     });
     return [this.element];
@@ -423,7 +418,7 @@ export class Table {
     this.data = data;
     this.container = tableContainer;
     this.element = tableContainer.getElementsByTagName("table")[0];
-    this.showOutliers = false;
+    this.showOutliers = true;
     this.summaryRowData = summaryRowData;
 
     this.validate();
@@ -433,8 +428,8 @@ export class Table {
 
     this.sortCols = columnConfigs.map((config) => config.sortable);
     // start with sorting descending
-    this.sortCol = initSort;
-    this.sortDir = -1;
+    this.sortCol = initSort.col;
+    this.sortDir = initSort.dir;
 
     this.isVisible = isVisible;
     this.header = this.getHeaderRow();
@@ -517,7 +512,7 @@ export class Table {
         this.classNames[i],
         this.sortCols[i],
         // 1 designates ascending; -1, descending (default); 0, not sortable
-        this.sortCols[i] ? -1 : 0,
+        this.sortCols[i] ? this.sortDir : 0,
         i === this.sortCol,
         this,
         i
@@ -583,7 +578,7 @@ export class Table {
     });
     if (this.summaryRowData.length > 0) {
       const cells = this.getCells(this.summaryRowData);
-      rows.unshift(new BodyRow(cells, false, false, true));
+      rows.unshift(new BodyRow(cells, false, false, "summary-row"));
     }
     return rows;
   }

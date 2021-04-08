@@ -16,6 +16,24 @@ const createBailRaceRateTable = () => {
       searchable: true
     },
     {
+      class: "bail-black-cell number-cell",
+      header: {
+        "text": "Black",
+        "unit": "percent"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-white-cell number-cell",
+      header: {
+        "text": "White",
+        "unit": "percent"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
       class: "viz-cell",
       header: {
         "start": 0,
@@ -36,24 +54,6 @@ const createBailRaceRateTable = () => {
       searchable: false
     },
     {
-      class: "bail-black-cell number-cell",
-      header: {
-        "text": "Black",
-        "unit": "percent"
-      },
-      sortable: true,
-      searchable: false
-    },
-    {
-      class: "bail-white-cell number-cell",
-      header: {
-        "text": "White",
-        "unit": "percent"
-      },
-      sortable: true,
-      searchable: false
-    },
-    {
       class: "diff-cell number-cell",
       header: {
         "text": "Gap",
@@ -63,9 +63,11 @@ const createBailRaceRateTable = () => {
       searchable: false
     },
   ];
-  const initSort = 4; // initially sort by difference
+  const initSort = {col: 4, dir: -1}; // initially sort by difference
   const stateData = [
     "Pennsylvania",
+    54.7,
+    37.0,
     {
       "type": "line",
       "values": [
@@ -73,9 +75,11 @@ const createBailRaceRateTable = () => {
         37.0
       ]
     },
-    54.7,
-    37.0,
-    0
+    {
+      "type": "styled",
+      "className": "positive-diff",
+      "value": "+17.7"
+    }
   ];
 
 
@@ -93,6 +97,24 @@ const createBailRaceAmountTable = () => {
       },
       sortable: false,
       searchable: true
+    },
+    {
+      class: "bail-black-cell number-cell",
+      header: {
+        "text": "Black",
+        "unit": "dollars"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-white-cell number-cell",
+      header: {
+        "text": "White",
+        "unit": "dollars"
+      },
+      sortable: true,
+      searchable: false
     },
     {
       class: "viz-cell",
@@ -115,24 +137,6 @@ const createBailRaceAmountTable = () => {
       searchable: false
     },
     {
-      class: "bail-black-cell number-cell",
-      header: {
-        "text": "Black",
-        "unit": "dollars"
-      },
-      sortable: true,
-      searchable: false
-    },
-    {
-      class: "bail-white-cell number-cell",
-      header: {
-        "text": "White",
-        "unit": "dollars"
-      },
-      sortable: true,
-      searchable: false
-    },
-    {
       class: "diff-cell number-cell",
       header: {
         "text": "Gap",
@@ -142,9 +146,11 @@ const createBailRaceAmountTable = () => {
       searchable: false
     },
   ];
-  const initSort = 4; // initially sort by difference
+  const initSort = {col: 4, dir: -1}; // initially sort by difference
   const stateData = [
     "Pennsylvania",
+    "$36,202",
+    "$26,868",
     {
       "type": "line",
       "values": [
@@ -152,9 +158,11 @@ const createBailRaceAmountTable = () => {
         27572.55514
       ]
     },
-    "$36,202",
-    "$26,868",
-    0
+    {
+      "type": "styled",
+      "className": "positive-diff",
+      "value": "+$11.0K"
+    }
   ];
 
   const tableContainer = document.getElementById("bail-race-amount-container");
