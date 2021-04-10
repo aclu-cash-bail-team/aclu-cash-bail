@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import { feature } from "topojson";
+import { feature } from "topojson-client";
 import { COUNTY_MAP_DATA } from "../data.js";
 import { configureTooltip } from "./Tooltip";
 
@@ -176,7 +176,7 @@ class Map {
 
     this.projection = d3.geoMercator().scale(5500).center([-75.75, 40.5]);
 
-    this.renderTooltip = configureTooltip({...tooltipSchema, trigger: "manual", placement: "top"});
+    this.renderTooltip = configureTooltip({...tooltipSchema, placement: "top"});
   }
 
   renderCity(name, coords, labelCoords) {
