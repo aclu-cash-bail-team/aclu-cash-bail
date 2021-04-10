@@ -15,7 +15,8 @@ class CountyPoint {
     this.container = container;
     this.renderTooltip = (elements, config) => renderTooltip(elements, this.data, this.county, config);
     [this.xs, this.ys] = this.getPositions();
-    this.rs = this.getRadiis();
+    this.rs_desktop = this.getRadiis(radiusScale?.desktop || radiusScale);
+    this.rs_mobile = this.getRadiis(radiusScale?.mobile || radiusScale);
     this.elements = [];
     this.tooltipTriggerTargets = [];
   }
@@ -36,16 +37,16 @@ class CountyPoint {
     return [xs, ys];
   }
 
-  getRadiis() {
+  getRadiis(radiusScale) {
     const rs = [];
     this.data.forEach((data) => {
-      if (!this.radiusScale) return rs.push(4);
-      if (this.radiusScale.min === this.radiusScale.max) return rs.push(this.radiusScale.min);
-      const rValueDiff = this.radiusScale.maxValue - this.radiusScale.minValue;
-      const rCircleSizeDiff = this.radiusScale.max - this.radiusScale.min;
-      const scaledR = Math.min(((data.r - this.radiusScale.minValue) * rCircleSizeDiff / rValueDiff) + this.radiusScale.min, this.radiusScale.max);
+      if (!radiusScale) return rs.push(4);
+      if (radiusScale.min === radiusScale.max) return rs.push(radiusScale.min);
+      const rValueDiff = radiusScale.maxValue - radiusScale.minValue;
+      const rCircleSizeDiff = radiusScale.max - radiusScale.min;
+      const scaledR = Math.min(((data.r - radiusScale.minValue) * rCircleSizeDiff / rValueDiff) + radiusScale.min, radiusScale.max);
 
-      rs.push(Math.min(Math.max(scaledR, this.radiusScale.min), this.radiusScale.max));
+      rs.push(Math.min(Math.max(scaledR, radiusScale.min), radiusScale.max));
     });
     return rs;
   }
@@ -77,7 +78,6 @@ class CountyPoint {
       point.setAttributeNS(null, "class", className);
       point.setAttributeNS(null, "cx", this.xs[i]);
       point.setAttributeNS(null, "cy", this.ys[i]);
-      point.setAttributeNS(null, "r", this.rs[i]);
       this.plot.appendChild(point);
 
       this.elements.push(point);
@@ -140,7 +140,7 @@ export class ScatterPlot {
     this.renderTooltip = configureTooltip(tooltipConfig);
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
-    this.mobileSizing = window.innerWidth < 670;
+    this.mobileSizing;
     this.showOutliers = false;
     this.setUpSearchBar();
     this.setUpOutlierButton();
@@ -228,10 +228,8 @@ export class ScatterPlot {
   }
 
   updateViewBox() {
-    this.mobileSizing = window.innerWidth < 670;
-    // rerender axes with new mobile sizing value
-    this.renderAxis(this.xAxis, false);
-    this.renderAxis(this.yAxis, true);
+    const prevMobileSizing = this.mobileSizing;
+    this.mobileSizing = window.innerWidth <= 670;
 
     // set viewbox based on window size (customized for specific phones)
     const iPhoneSE = window.innerWidth < 350;
@@ -239,11 +237,23 @@ export class ScatterPlot {
     const width = iPhoneSE ? 180 : iPhone8 ? 280 : this.mobileSizing ? 300 : 600;
     const height = this.mobileSizing ? 400 : 500;
     this.plot.setAttributeNS(null, "viewBox", `0 0 ${width} ${height}`);
+    if (prevMobileSizing !== this.mobileSizing) {
+      // rerender axes with mobile sizing value
+      this.renderAxis(this.xAxis, false);
+      this.renderAxis(this.yAxis, true);
+      //set radii with mobile sizing value  
+      this.points.forEach(point => {
+        const circles = point.elements.filter(el => el instanceof SVGCircleElement);
+        circles.forEach((_, i) => {
+          circles[i].setAttributeNS(null, "r", this.mobileSizing ? point.rs_mobile[i] : point.rs_desktop[i]);
+        });
+      });
+    }
   }
 
   render() {
     // set up svg to resize on window resize
-    this.updateViewBox();
+    
     window.addEventListener("resize", () => this.updateViewBox());
 
     // render axes
@@ -265,6 +275,7 @@ export class ScatterPlot {
         followCursor: true,
       });
     });
+    this.updateViewBox();
   }
 
   renderAxis(axis, isYAxis) {

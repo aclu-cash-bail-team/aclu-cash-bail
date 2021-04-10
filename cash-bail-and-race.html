@@ -14,19 +14,20 @@
     <link rel="stylesheet" href="src/css/graph.css">
     <link rel="stylesheet" href="src/css/map.css">
     <link rel="stylesheet" href="src/css/mobile.css">
+    <link rel="stylesheet" href="src/css/tooltip.css">
   </head>
   <body>
-    <div class="container">
-      <div id="race-rate" class="map-container">
-        <div class="legend-container">
-          <div class="color-scale-legend"></div>
-        </div>
-        <div class="legend"></div>
-        <div class="map-row">
-          <div id="black" class="map race-map"></div>
-          <div id="white" class="map race-map"></div>
-        </div>
+    <div id="race-rate" class="map-container">
+      <div class="legend-container">
+        <div class="color-scale-legend"></div>
       </div>
+      <div class="legend"></div>
+      <div class="map-row">
+        <div id="black" class="map race-map"></div>
+        <div id="white" class="map race-map"></div>
+      </div>
+    </div>
+    <div class="container">
       <div id="race-container">
         <div class="table-container" id="bail-race-rate-container">
           <div class="search-container">
@@ -36,12 +37,10 @@
               <div class="default text">Search counties</div>
               <div class="menu"></div>
             </div>
-            <div class="btn-text outliers-btn">Show Outliers</div>
           </div>
           <div class="switch-container">
-            <div class="btn-text switch left showing">% Cash Bail</div>
-            <div class="btn-text switch right">Bail Amount</div>
-            <div class="btn-text outliers-btn mobile-only">Show Outliers</div>
+            <div class="btn-text switch left showing">Cash bail rt.</div>
+            <div class="btn-text switch right">Bail amt.</div>
           </div>
           <table id="bail-race-rate-table">
             <thead></thead>
@@ -58,12 +57,10 @@
               <div class="default text">Search counties</div>
               <div class="menu"></div>
             </div>
-            <div class="btn-text outliers-btn">Show Outliers</div>
           </div>
           <div class="switch-container">
-            <div class="btn-text switch left">% Cash Bail</div>
-            <div class="btn-text switch right showing">Bail Amount</div>
-            <div class="btn-text outliers-btn mobile-only">Show Outliers</div>
+            <div class="btn-text switch left">Cash bail rt.</div>
+            <div class="btn-text switch right showing">Bail amt.</div>
           </div>
           <table id="bail-race-amount-table">
             <thead></thead>
@@ -86,7 +83,6 @@
             <span class="key-circle green">Black Defendants</span>
             <span class="key-circle purple">White Defendants</span>
           </div>
-          <div class="btn-text outliers-btn">Show Outliers</div>
         </div>
         <div class="plot-container">
           <svg class="scatter-plot" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg"></svg>

@@ -16,22 +16,6 @@ const createBailRateTable = () => {
       searchable: true
     },
     {
-      class: "viz-cell",
-      header: {
-        "start": 0,
-        "end": 60,
-        "averages": [
-          {
-            "name": "Avg.",
-            "value": 42.5966697900,
-          },
-        ],
-        "unit": "percent"
-      },
-      sortable: false,
-      searchable: false
-    },
-    {
       class: "bail-rate-cell number-cell",
       header: {
         "text": "Rate\xa0(%)",
@@ -58,19 +42,35 @@ const createBailRateTable = () => {
       sortable: true,
       searchable: false
     },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 60,
+        "averages": [
+          {
+            "name": "Avg.",
+            "value": 42.5966697900,
+          },
+        ],
+        "unit": "percent"
+      },
+      sortable: false,
+      searchable: false
+    },
   ];
-  const initSort = 2; // initially sort by cash bail rate
+  const initSort = {col: 2, dir: -1}; // initially sort by cash bail rate
   const stateData = [
     "Pennsylvania",
+    42.5966697900,
+    2470,
+    5681,
     {
       "type": "bar",
       "values": [
         42.5966697900
       ]
     },
-    42.5966697900,
-    2470,
-    5681
   ];
 
   const tableContainer = document.getElementById("bail-rate-container");
@@ -87,22 +87,6 @@ const createRorRateTable = () => {
       },
       sortable: false,
       searchable: true
-    },
-    {
-      class: "viz-cell",
-      header: {
-        "start": 0,
-        "end": 75,
-        "averages": [
-          {
-            "name": "Avg.",
-            "value": 22.73,
-          }
-        ],
-        "unit": "percent"
-      },
-      sortable: false,
-      searchable: false
     },
     {
       class: "ror-rate-cell number-cell",
@@ -131,19 +115,35 @@ const createRorRateTable = () => {
       sortable: true,
       searchable: false
     },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 75,
+        "averages": [
+          {
+            "name": "Avg.",
+            "value": 22.73,
+          }
+        ],
+        "unit": "percent"
+      },
+      sortable: false,
+      searchable: false
+    },
   ];
-  const initSort = 2; // initially sort by ror bail rate
+  const initSort = {col: 2, dir: -1}; // initially sort by ror bail rate
   const stateData = [
     "Pennsylvania",
+    22.73,
+    1294,
+    5681,
     {
       "type": "bar",
       "values": [
         22.73
       ]
     },
-    22.73,
-    1294,
-    5681
   ];
 
   const tableContainer = document.getElementById("ror-rate-container");
@@ -173,7 +173,7 @@ const createBailPostingTable = () => {
     {
       class: "nonposting-rate-cell number-cell",
       header: {
-        "text": "Non-Posting Rate",
+        "text": "Non-posting rt.",
         "unit": "percent"
       },
       sortable: true,
@@ -196,13 +196,13 @@ const createBailPostingTable = () => {
       searchable: false
     },
   ];
-  const initSort = 2;
+  const initSort = {col: 2, dir: -1};
   const stateData = [
     "Pennsylvania",
     "$31.8K",
     58.5211725,
     {
-      "type": "line",
+      "type": "bar",
       "values": [
         58.5211725
       ]
@@ -247,15 +247,28 @@ const createCasesScatterPlot = () => {
     ]
   };
 
-  // 4px radius - 100;
-  // 30px radius - 10000;
-  // 120px radius - 40000;
+  const radiusDesktopMin = 4, radiusDesktop10k = 35;
+  const radiusMobileMin = 4, radiusMobile10k = 21;
+
+  const maxRadiusValue = Math.max(...Object.values(BAIL_CASES_SCATTER_PLOT).map(county => county.r));
+  const minRadiusValue = 100;
+
+  const radiusDesktopMax = (radiusDesktop10k * (minRadiusValue - maxRadiusValue) + radiusDesktopMin * (maxRadiusValue - 10000)) / (minRadiusValue - 10000);
+  const radiusMobileMax = (radiusMobile10k * (minRadiusValue - maxRadiusValue) + radiusMobileMin * (maxRadiusValue - 10000)) / (minRadiusValue - 10000);
 
   const radiusScale = {
-    min: 4,
-    max: 120,
-    minValue: 100,
-    maxValue: 42000
+    desktop: {
+      min: radiusDesktopMin,
+      max: radiusDesktopMax,
+      minValue: minRadiusValue,
+      maxValue: maxRadiusValue
+    },
+    mobile: {
+      min: radiusMobileMin,
+      max: radiusMobileMax,
+      minValue: minRadiusValue,
+      maxValue: maxRadiusValue
+    },
   };
 
   const container = document.getElementById("cases-scatter-plot");

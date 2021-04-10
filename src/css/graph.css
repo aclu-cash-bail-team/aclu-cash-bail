@@ -78,13 +78,13 @@
 }
 
 .key-circle.large::before {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 
 .key-circle.mid::before {
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
 }
 
 .key-circle.green::before {
@@ -192,6 +192,11 @@
 
   .plot-container {
     position: static;
+  }
+
+  .key-circle.large::before {
+    width: 42px;
+    height: 42px;
   }
 }
 
