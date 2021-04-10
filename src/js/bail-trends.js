@@ -16,22 +16,6 @@ const createBailRateTable = () => {
       searchable: true
     },
     {
-      class: "viz-cell",
-      header: {
-        "start": 0,
-        "end": 60,
-        "averages": [
-          {
-            "name": "Avg.",
-            "value": 42.5966697900,
-          },
-        ],
-        "unit": "percent"
-      },
-      sortable: false,
-      searchable: false
-    },
-    {
       class: "bail-rate-cell number-cell",
       header: {
         "text": "Rate\xa0(%)",
@@ -58,19 +42,35 @@ const createBailRateTable = () => {
       sortable: true,
       searchable: false
     },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 60,
+        "averages": [
+          {
+            "name": "Avg.",
+            "value": 42.5966697900,
+          },
+        ],
+        "unit": "percent"
+      },
+      sortable: false,
+      searchable: false
+    },
   ];
-  const initSort = 2; // initially sort by cash bail rate
+  const initSort = {col: 2, dir: -1}; // initially sort by cash bail rate
   const stateData = [
     "Pennsylvania",
+    42.5966697900,
+    2470,
+    5681,
     {
       "type": "bar",
       "values": [
         42.5966697900
       ]
     },
-    42.5966697900,
-    2470,
-    5681
   ];
 
   const tableContainer = document.getElementById("bail-rate-container");
@@ -87,22 +87,6 @@ const createRorRateTable = () => {
       },
       sortable: false,
       searchable: true
-    },
-    {
-      class: "viz-cell",
-      header: {
-        "start": 0,
-        "end": 75,
-        "averages": [
-          {
-            "name": "Avg.",
-            "value": 22.73,
-          }
-        ],
-        "unit": "percent"
-      },
-      sortable: false,
-      searchable: false
     },
     {
       class: "ror-rate-cell number-cell",
@@ -131,19 +115,35 @@ const createRorRateTable = () => {
       sortable: true,
       searchable: false
     },
+    {
+      class: "viz-cell",
+      header: {
+        "start": 0,
+        "end": 75,
+        "averages": [
+          {
+            "name": "Avg.",
+            "value": 22.73,
+          }
+        ],
+        "unit": "percent"
+      },
+      sortable: false,
+      searchable: false
+    },
   ];
-  const initSort = 2; // initially sort by ror bail rate
+  const initSort = {col: 2, dir: -1}; // initially sort by ror bail rate
   const stateData = [
     "Pennsylvania",
+    22.73,
+    1294,
+    5681,
     {
       "type": "bar",
       "values": [
         22.73
       ]
     },
-    22.73,
-    1294,
-    5681
   ];
 
   const tableContainer = document.getElementById("ror-rate-container");
@@ -173,7 +173,7 @@ const createBailPostingTable = () => {
     {
       class: "nonposting-rate-cell number-cell",
       header: {
-        "text": "Non-Posting Rate",
+        "text": "Non-posting rt.",
         "unit": "percent"
       },
       sortable: true,
@@ -196,13 +196,13 @@ const createBailPostingTable = () => {
       searchable: false
     },
   ];
-  const initSort = 2;
+  const initSort = {col: 2, dir: -1};
   const stateData = [
     "Pennsylvania",
     "$31.8K",
     58.5211725,
     {
-      "type": "line",
+      "type": "bar",
       "values": [
         58.5211725
       ]
@@ -247,25 +247,25 @@ const createCasesScatterPlot = () => {
     ]
   };
 
-  const radius_desktop_min = 4, radius_desktop_10k = 35;
-  const radius_mobile_min = 4, radius_mobile_10k = 21;
+  const radiusDesktopMin = 4, radiusDesktop10k = 35;
+  const radiusMobileMin = 4, radiusMobile10k = 21;
 
   const maxRadiusValue = Math.max(...Object.values(BAIL_CASES_SCATTER_PLOT).map(county => county.r));
   const minRadiusValue = 100;
 
-  const radius_desktop_max = ((radius_desktop_10k * (minRadiusValue - maxRadiusValue) + radius_desktop_min * (maxRadiusValue - 10000)) / (minRadiusValue - 10000));
-  const radius_mobile_max = ((radius_mobile_10k * (minRadiusValue - maxRadiusValue) + radius_mobile_min * (maxRadiusValue - 10000)) / (minRadiusValue - 10000));
+  const radiusDesktopMax = (radiusDesktop10k * (minRadiusValue - maxRadiusValue) + radiusDesktopMin * (maxRadiusValue - 10000)) / (minRadiusValue - 10000);
+  const radiusMobileMax = (radiusMobile10k * (minRadiusValue - maxRadiusValue) + radiusMobileMin * (maxRadiusValue - 10000)) / (minRadiusValue - 10000);
 
   const radiusScale = {
     desktop: {
-      min: radius_desktop_min,
-      max: radius_desktop_max,
+      min: radiusDesktopMin,
+      max: radiusDesktopMax,
       minValue: minRadiusValue,
       maxValue: maxRadiusValue
     },
     mobile: {
-      min: radius_mobile_min,
-      max: radius_mobile_max,
+      min: radiusMobileMin,
+      max: radiusMobileMax,
       minValue: minRadiusValue,
       maxValue: maxRadiusValue
     },

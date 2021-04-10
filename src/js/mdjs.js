@@ -25,7 +25,7 @@ const createMdjTable = () => {
     {
       class: "total-bail-rate-cell  number-cell",
       header: {
-        "text": "Cash Bail Rate",
+        "text": "Cash bail rt.",
         "unit": "percent"
       },
       sortable: true,
@@ -59,7 +59,7 @@ const createMdjTable = () => {
       searchable: false
     },
   ];
-  const initSort = 2;
+  const initSort = {col: 2, dir: -1};
   const tableContainer = document.getElementById("mdj-container");
   return new Table(MDJ_DATA, columnConfigs, initSort, tableContainer);
 };

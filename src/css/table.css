@@ -17,13 +17,17 @@
   background-color: #131313;
 }
 
+
+.table-container > table tr.summary-row {
+  background-color: #131313;
+}
+
 .table-container > table th {
   padding: 13px 6px;
   color: #fff;
   font-family: "GT America Condensed";
   font-weight: 400;
   font-size: 12px;
-  line-height: 16px;
   text-align: left;
   text-transform: uppercase;
   vertical-align: bottom;
@@ -39,11 +43,7 @@
 
 .table-container > table td {
   text-align: left;
-  padding: 13px 6px;
-}
-
-.table-container > table td.bold-cell {
-  font-weight: 700;
+  padding: 8px 6px;
 }
 
 .table-container > table .number-cell {
@@ -86,8 +86,25 @@
 }
 
 .table-container > table .bail-black-cell, .table-container > table .bail-white-cell {
-  min-width: 0;
-  width: auto;
+  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
+}
+
+.table-container > table .total-bail-rate-cell {
+  min-width: 90px;
+}
+
+.table-container > table .diff-cell {
+  width: 65px;
+  min-width: 65px;
+  max-width: 65px;
+}
+
+.table-container > table .nonposting-rate-cell {
+  width: 120px;
+  min-width: 120px;
+  max-width: 120px;
 }
 
 .table-container > table .sort-desc, .table-container > table .sort-asc {
@@ -102,7 +119,7 @@
 
 .table-container > table .caret {
   min-width: 8px;
-  padding-right: 5px;
+  padding: 0 5px;
   opacity: 0;
 }
 
@@ -155,7 +172,7 @@
 }
 
 .switch-container .switch {
-  width: 140px;
+  width: 100px;
   padding: 10px;
   border: 1px #333 solid;
 }
@@ -182,18 +199,6 @@
 }
 
 /* Table-specific styling. */
-
-#pretrail-spending-table th.viz-cell {
-  padding-right: 0;
-}
-
-#pretrail-spending-table td.viz-cell {
-  margin-right: 0;
-}
-
-#pretrail-spending-table .end-num {
-  margin-right: -6px;
-}
 
 #mdj-table .county-name-cell {
   padding-left: 0;
