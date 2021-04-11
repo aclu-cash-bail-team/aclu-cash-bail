@@ -30,6 +30,10 @@
   margin-bottom: 50px;
 }
 
+svg.scatter-plot {
+  overflow: visible;
+}
+
 .scatter-plot {
   width: 600px;
   height: 500px;
