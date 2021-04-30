@@ -209,9 +209,10 @@
 
 .bail-retention-footnote {
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 0;
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.25);
+  line-height: 15px;
+  color: #4F4F4F;
 }
 
 .footnote-text {
