@@ -42,6 +42,7 @@
   padding: 10px 13px;
   color: #fff;
   font-size: 13px;
+  box-sizing: content-box;
 }
 
 /* Selection Label */
@@ -97,6 +98,7 @@ i.icon.delete:hover {
   background-color: #000;
   border-radius: 0 0 3px 3px;
   border-color: rgba(255, 255, 255, 0.4);
+  box-sizing: content-box;
 }
 
 .ui.selection.active.dropdown.upward .menu {
@@ -108,6 +110,7 @@ i.icon.delete:hover {
 }
 
 .ui.selection.dropdown .menu > .item {
+  margin-bottom: 0;
   padding-left: 13px;
   border-top: 0;
   color: #fff;
