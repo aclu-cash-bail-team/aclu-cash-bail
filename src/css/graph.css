@@ -60,7 +60,7 @@ svg.scatter-plot {
 }
 
 .scatter-plot-key span {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 16px;
   color:rgba(255, 255, 255, 0.75);
 }
@@ -107,18 +107,18 @@ svg.scatter-plot {
 
 .axis-label {
   fill: #FFF;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 13px;
   text-transform: uppercase;
 }
 
-.label-wrapper {
+svg.label-wrapper {
   overflow: visible;
 }
 
 .axis-tick {
   fill: rgba(255, 255, 255, 0.75);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 16px;
 }
 
@@ -182,7 +182,7 @@ svg.scatter-plot {
 
 .scatter-text {
   fill: #FFF;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 16px;
   cursor: default;
 }

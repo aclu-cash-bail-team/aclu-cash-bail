@@ -190,7 +190,7 @@ const createRaceScatterPlot = () => {
     columns: [
       { dataKey: "name", isRowHeader: true },
       { columnHeader: "% Cash Bail", dataKey: "x", render: value => `${value.toFixed(1)}%` },
-      { columnHeader: "Avg. Bail Amount", dataKey: "y", render: value => value.toLocaleString("en", {
+      { columnHeader: "Bail Amount", dataKey: "y", render: value => value.toLocaleString("en", {
         style: "currency",
         currency: "USD",
         minimumFractionDigits: 0,
