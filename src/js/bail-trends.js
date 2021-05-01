@@ -223,7 +223,7 @@ const createCasesScatterPlot = () => {
     name: "Cash Bail Rate",
     min: 20,
     max: 60,
-    numTicks: 8,
+    numTicks: 4,
     convert: cashBailRateToText
   };
   const yAxis = {
