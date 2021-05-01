@@ -27,7 +27,6 @@
   position: relative;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 svg.scatter-plot {
@@ -37,7 +36,7 @@ svg.scatter-plot {
 .scatter-plot {
   width: 600px;
   height: 500px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.075);
   overflow: visible;
 }
 
