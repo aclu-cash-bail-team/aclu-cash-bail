@@ -1,21 +1,21 @@
 @media only screen and (max-width: 640px) {
-  table {
+  .table-container > table {
     max-width: 100%;
   }
 
-  th {
+  .table-container > table th {
     padding: 1em 0.5em;
   }
 
-  td {
+  .table-container > table td {
     padding: 1em 0.5em;
   }
 
-  th.viz-cell {
+  .table-container > table th.viz-cell {
     width: 100px;
   }
 
-  td.viz-cell {
+  .table-container > table td.viz-cell {
     width: 100px;
     margin: 0 1em;
     padding: 1.5em 0;
@@ -27,29 +27,30 @@
     width: 100px;
   }
 
-  .county-name-cell {
+  .table-container > table .county-name-cell {
     min-width: 75px;
     max-width: 75px;
   }
 
-  .total-bail-rate-cell {
+  .table-container > table .bail-rate-cell {
     min-width: unset;
     padding-left: 0;
   }
 
-  .bail-black-cell {
+  .table-container > table .total-bail-rate-cell {
+    min-width: unset;
+    padding-left: 0;
+  }
+
+  .bail-black-cell.table-container > table .bail-black-cell, .table-container > table .bail-white-cell {
     min-width: unset;
   }
 
-  .bail-white-cell {
-    min-width: unset;
-  }
-
-  .caret-cell {
+  .table-container > table .caret-cell {
     padding: 0;
   }
 
-  .nonposting-rate-cell {
+  .table-container > table .nonposting-rate-cell {
     width: 60px;
     min-width: 60px;
     max-width: 60px;
@@ -60,7 +61,7 @@
     font-size: 11px;
   }
 
-  .total-budget-cell {
+  .table-container > table .total-budget-cell {
       display: none;
   }
 
@@ -113,7 +114,7 @@
 }
 
 @media only screen and (max-width: 425px) {
-  th.viz-cell {
+  .table-container > table th.viz-cell {
     width: 80px;
   }
 
@@ -121,11 +122,11 @@
     width: 80px;
   }
 
-  td.viz-cell {
+  .table-container > table td.viz-cell {
     width: 80px;
   }
 
-  .diff-cell, .total-cases-cell {
+  .table-container > table .diff-cell, .table-container > table .total-cases-cell {
     display: none;
   }
 
@@ -135,5 +136,13 @@
 
   .spike-legend {
     min-width: 100px;
+  }
+
+  .legend-segment {
+    padding: 0 5px;
+  }
+
+  .legend-color-bar {
+    width: 75px;
   }
 }
