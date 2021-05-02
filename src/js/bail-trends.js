@@ -109,7 +109,7 @@ const createRorRateTable = () => {
     {
       class: "total-cases-cell number-cell",
       header: {
-        "text": "Cases",
+        "text": "Total",
         "unit": "number"
       },
       sortable: true,
