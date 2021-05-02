@@ -303,8 +303,13 @@
 /* Bail Distribution Visualization Header & Legend */
 
 #dist-graph-header {
-  font-family: 'GT America Bold';
+  margin-bottom: 20px;
+  font-family: "GT America Bold";
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 28px;
   text-align: center;
+  color: #FFF;
 }
 
 #dist-graph-legend {
