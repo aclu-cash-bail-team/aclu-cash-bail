@@ -19,15 +19,18 @@ class ColorScaleLegend {
     this.onMouseOver = onMouseOver;
     this.onMouseOut = onMouseOut;
 
-    this.sectionWidth = 50;
+    // SVG viewbox width matches CSS width to avoid scaling/zoom
+    const element = document.querySelector(`#${id} .color-scale-legend`);
+    const svgWidth = Number(getComputedStyle(element).width.replace(/[^\d.]/g, ""));
+
+    this.legendWidth = svgWidth - 30;
+    this.sectionWidth = this.legendWidth / this.colorDomain.length;
     this.sectionHeight = 10;
     this.offsetX = 7;
     this.offsetY = offsetY;
     this.labelOffsetX = this.offsetX - 9;
     this.labelOffsetY = this.offsetY + 28;
-    this.legendWidth = this.sectionWidth * this.colorDomain.length;
 
-    const svgWidth = this.legendWidth + 30;
     const svgHeight = this.sectionHeight + this.labelOffsetY + 10;
     this.svg = d3.select(`#${id} .color-scale-legend`).append("svg")
       .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
@@ -240,9 +243,9 @@ class Map {
 }
 
 export class BailRateMap extends Map {
-  constructor(id, data, average) {
+  constructor(id, data, average, tooltipHeader) {
     super(`#${id} .map`, {rows: [
-      { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
+      { rowHeader: tooltipHeader, dataKey: "x", render: value => `${value.toFixed(1)}%`},
     ]});
     this.id = id;
     this.data = data;
@@ -331,7 +334,8 @@ export class BailRateMap extends Map {
 class BailRaceMap extends Map {
   constructor(selector, data, color, dataIdx, race, parent) {
     super(selector, {rows: [
-      { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
+      { rowHeader: "Cash Bail Rate, black", dataKey: "black", render: value => `${value.toFixed(1)}%`},
+      { rowHeader: "Cash Bail Rate, white", dataKey: "white", render: value => `${value.toFixed(1)}%`},
     ]});
     this.data = data;
     this.dataIdx = dataIdx;
@@ -342,11 +346,10 @@ class BailRaceMap extends Map {
   }
 
   // Called by parent
-  _onMouseEnter(countyName) {
+  _onMouseEnter(countyName, tooltipData) {
     const element = document.querySelector(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${this.race}"]`);
-    const countyRate = Number(element.getAttribute("data-rate"));
     this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "2px");
-    super.showTooltip(element, {name: countyName, x: countyRate});
+    super.showTooltip(element, tooltipData);
   }
   _onMouseOut(countyName) {
     super.onMouseOut();
@@ -436,10 +439,16 @@ export class RaceMapContainer {
     this.render();
   }
 
+  getCountyRate(countyName, race) {
+    const element = document.querySelector(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${race}"]`);
+    return Number(element.getAttribute("data-rate"));
+  }
+
   onChildMouseEnter(event) {
     const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
-    this.black._onMouseEnter(countyName);
-    this.white._onMouseEnter(countyName);
+    const tooltipData = {name: countyName, black: this.getCountyRate(countyName, "black"), white: this.getCountyRate(countyName, "white")};
+    this.black._onMouseEnter(countyName, tooltipData);
+    this.white._onMouseEnter(countyName, tooltipData);
     this.highlightBarFromMap(event.target);
   }
 
