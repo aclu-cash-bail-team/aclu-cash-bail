@@ -6907,403 +6907,682 @@ export const BAIL_RETENTION_FEE_DATA = [
   {
     "data": [
       "Adams",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
+        "href": "http://www.adamscounty.us/Dept/CourtofCommonPleas/Documents/Adams%20County%20Rules%20of%20Criminal%20Procedure.pdf"
+      }
     ]
   },
   {
     "data": [
       "Allegheny",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "5% of first $1,000 deposited, 2% of each additional dollar",
+        "href": "https://www.alleghenycounty.us/court-records/criminal/cost-and-fee-schedule.aspx"
+      }
     ]
   },
   {
     "data": [
       "Armstrong",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "https://co.armstrong.pa.us/images/departments/prothonotary/prothfees.pdf"
+      }
     ]
   },
   {
     "data": [
       "Beaver",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "30% of amount deposited, but no less than $10",
+        "href": "http://www.beavercountypa.gov/Depts/Courts/CCP/Documents/Local%20Rules%20Criminal%20Procedure.pdf"
+      }
     ]
   },
   {
     "data": [
       "Bedford",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "5% of first $1,000 deposited, 2% of each additional dollar",
+        "href": "https://www.bedfordcountypa.org/document_center/Prothonotary/Amended%20Clerk%20of%20Courts%20%20Fee%20Schedule.pdf"
+      }
     ]
   },
   {
     "data": [
       "Berks",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "http://www.co.berks.pa.us/Dept/Prothy/Documents/FEE%20BILL%20update%201-1-2019%20-%20Act%20119%20Increase.pdf"
+      }
     ]
   },
   {
     "data": [
       "Blair",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1/2020",
+        "number": 1
+      }
     ]
   },
   {
     "data": [
       "Bradford",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% for each additional dollar",
+        "href": "http://bradfordcountypa.org/wp-content/uploads/2019/01/Prothonotary-Fee-Schedule.pdf"
+      }
     ]
   },
   {
     "data": [
       "Bucks",
-      "Placeholder....!!!!!"
+      "$100"
     ]
   },
   {
     "data": [
       "Butler",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "5.25% of first $1,000 deposited, 1.8% of each additional dollar ",
+        "href": "https://www.butlercountypa.gov/DocumentCenter/View/878/Fee-Schedule-PDF"
+      }
     ]
   },
   {
     "data": [
       "Cambria",
-      "Placeholder....!!!!!"
+      "$25"
     ]
   },
   {
     "data": [
       "Cameron",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "http://www.cameroncountypa.com/Document_Center/Clerk_Court/2020%20Protho%20and%20Clerk%20of%20Courts%20Fee%20Schedules.pdf"
+      }
     ]
   },
   {
     "data": [
       "Carbon",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "$75",
+        "href": "https://www.carboncourts.com/Crimrules.htm#l535d"
+      }
     ]
   },
   {
     "data": [
       "Centre",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1/2020",
+        "number": 2
+      }
     ]
   },
   {
     "data": [
       "Chester",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "For percentage bail, 40% of amount deposited, but no less than $50",
+        "href": "https://chesco.org/DocumentCenter/View/34793/CCCriminal-Rules?bidId="
+      }
     ]
   },
   {
     "data": [
       "Clarion",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1/2020",
+        "number": 3
+      }
     ]
   },
   {
     "data": [
       "Clearfield",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1/2020.",
+        "number": 4
+      }
     ]
   },
   {
     "data": [
       "Clinton",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% for each additional dollar",
+        "href": "https://www.clintoncountypa.com/home/showdocument?id=2151"
+      }
     ]
   },
   {
     "data": [
       "Columbia",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "$25",
+        "href": "http://www.columbiamontourcourts.com/wp-content/uploads/2015/05/Criminal-Local-Rules.pdf"
+      }
     ]
   },
   {
     "data": [
       "Crawford",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 05/1/2020.",
+        "number": 5
+      }
     ]
   },
   {
     "data": [
       "Cumberland",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "5% of first $1,000 deposited, 1.5% for each additional dollar",
+        "href": "https://www.ccpa.net/1919/Current-Fee-Schedule"
+      }
     ]
   },
   {
     "data": [
       "Dauphin",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "For percentage bail, 30% percent of amount deposited, but no less than $50; for nominal bail, $25",
+        "href": "https://cms3.revize.com/revize/dauphincounty/document_center/courtdepartments/Local%20Rules%20of%20Court/Criminal%20Rules/530-Duties%20and%20Powers%20of%20a%20Bail%20Agency.pdf"
+      }
     ]
   },
   {
     "data": [
       "Delaware",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "For percentage bail, 40% percent of amount deposited, but no less than $100; for straight bail, 4% of first $1,000 deposited, 2% of each additional dollar",
+        "href": "https://www.delcopa.gov/courts/localrules/CriminalRules.pdf"
+      }
     ]
   },
   {
     "data": [
       "Elk",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "https://www.co.elk.pa.us/images/Prothonotary/CLERK-OF-COURTS-FEE-SCHEDULE-2019-2021.pdf"
+      }
     ]
   },
   {
     "data": [
       "Erie",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "$16.50 filing fee on all bonds",
+        "href": "https://eriecountypa.gov/wp-content/uploads/2019/06/BOND-INFORMATION.revised-2019.pdf  "
+      }
     ]
   },
   {
     "data": [
       "Fayette",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "For percentage bail, 30% percent of amount deposited, but no less than $10",
+        "href": "https://www.fayettecountypa.org/DocumentCenter/View/1737/Local-Rules-PDF?bidId="
+      }
     ]
   },
   {
     "data": [
       "Forest",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/26/2020",
+        "number": 6
+      }
     ]
   },
   {
     "data": [
       "Franklin",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "https://franklincountypa.gov/ckeditorfiles/files/Clerk%20of%20Courts/03012019%20Fee%20Schedule.pdf"
+      }
     ]
   },
   {
     "data": [
       "Fulton",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Magisterial District Judge Wendy Richards Mellott on 5/8/2020",
+        "number": 7
+      }
     ]
   },
   {
     "data": [
       "Greene",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/6/2020",
+        "number": 8
+      }
     ]
   },
   {
     "data": [
       "Huntingdon",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "https://huntingdoncountycourt.net/wp-content/uploads/2019/01/2019_Prothonotary_Fee_Schedule.pdf"
+      }
     ]
   },
   {
     "data": [
       "Indiana",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/8/2020",
+        "number": 9
+      }
     ]
   },
   {
     "data": [
       "Jefferson",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/8/2020",
+        "number": 10
+      }
     ]
   },
   {
     "data": [
       "Juniata",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of Prothonotary on 5/8/2020",
+        "number": 11
+      }
     ]
   },
   {
     "data": [
       "Lackawanna",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "For percentage bail, 20% of amount deposited, but no less than $50 and no greater than $500",
+        "href": "https://www.lackawannacounty.org/wp-content/uploads/2017/11/Rules-of-Criminal-Procedure.pdf"
+      }
     ]
   },
   {
     "data": [
       "Lancaster",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "4.9% of first $1,000 deposited, 1.6% of each additional dollar",
+        "href": "https://lancasterpaclerkofcourts.com/DocumentCenter/View/37/Fee-Schedule?bidId="
+      }
     ]
   },
   {
     "data": [
       "Lawrence",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "https://co.lawrence.pa.us/gov/prothonotary-lawrence_county/clerk-of-court-fees/"
+      }
     ]
   },
   {
     "data": [
       "Lebanon",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/21/2020 ",
+        "number": 12
+      }
     ]
   },
   {
     "data": [
       "Lehigh",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "For percentage bail, 30% of amount deposited, but no less than $10; for straight bail,  6.54% of first $1,000, 2.17% of each additional dollar",
+        "href": "https://www.lccpa.org/criminal/CriminalCourtRules.pdf"
+      }
     ]
   },
   {
     "data": [
       "Luzerne",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": " https://www.luzernecounty.org/DocumentCenter/View/11672/Fee-Schedule"
+      }
     ]
   },
   {
     "data": [
       "Lycoming",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "For straight bail, 3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "https://www.lyco.org/Portals/1/Prothonotary/Documents/Fee%20Schedule.pdf?ver=2019-02-08-084920-037 "
+      }
     ]
   },
   {
     "data": [
       "McKean",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of the Prothonotary on 5/22/2020",
+        "number": 13
+      }
     ]
   },
   {
     "data": [
       "Mercer",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "6% of first $1,000 deposited, 2% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/22/2020",
+        "number": 14
+      }
     ]
   },
   {
     "data": [
       "Mifflin",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
+        "footnote": "Conversation with Office of the Prothonotary on 5/22/2020",
+        "number": 15
+      }
     ]
   },
   {
     "data": [
       "Monroe",
-      "Placeholder....!!!!!"
+      "Unable to confirm fee"
     ]
   },
   {
     "data": [
       "Montgomery",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "Graduated percentages for straight and cash bail",
+        "href": "https://www.montcopa.org/DocumentCenter/View/533/Cash-Bail-Fees?bidId="
+      }
     ]
   },
   {
     "data": [
       "Montour",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "$25",
+        "href": "http://www.columbiamontourcourts.com/wp-content/uploads/2015/05/Criminal-Local-Rules.pdf"
+      }
     ]
   },
   {
     "data": [
       "Northampton",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "For percentage bail, 20% of amount deposited; for straight bail, 4.5% of first $1,000 deposited, 1.5% for each additional dollar",
+        "href": "https://www.northamptoncounty.org/CRTSRVCS/CRIMINAL/Documents/FEE%20SCHEDULE.pdf#search=criminal%20fees"
+      }
     ]
   },
   {
     "data": [
       "Northumberland",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "$25",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 7/24/2020",
+        "number": 16
+      }
     ]
   },
   {
     "data": [
       "Perry",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/22/2020",
+        "number": 17
+      }
     ]
   },
   {
     "data": [
       "Philadelphia",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "None if the defendant appears at all court dates",
+        "href": "https://www.courts.phila.gov/pdf/rules/CP-Criminal-Division-Compiled-Rules.pdf"
+      }
     ]
   },
   {
     "data": [
       "Pike",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": " https://www.pikepa.org/Prothfold/Prothonotaryfee.pdf "
+      }
     ]
   },
   {
     "data": [
       "Potter",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": " https://pottercountypa.net/post/_docs/2018POCO_FEE_SCHEDULE.pdf  "
+      }
     ]
   },
   {
     "data": [
       "Schuylkill",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "For percentage bail, 10% of the amount deposited, but no less than $10",
+        "href": "http://www.co.schuylkill.pa.us/Offices/LawLibrary/CriminalRulesRevNovember2018.pdf"
+      }
     ]
   },
   {
     "data": [
       "Snyder",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of Prothonotary on 5/15/2020",
+        "number": 18
+      }
     ]
   },
   {
     "data": [
       "Somerset",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "1% of all money deposited",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/15 and 7/24/2020.",
+        "number": 19
+      }
     ]
   },
   {
     "data": [
       "Sullivan",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with Office of Prothonotary on 5/26/2020",
+        "number": 20
+      }
     ]
   },
   {
     "data": [
       "Susquehanna",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 7/24/2020.",
+        "number": 21
+      }
     ]
   },
   {
     "data": [
       "Tioga",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": " http://www.tiogacountypa.us/Departments/Prothonotary_Clerk_of_Courts/Documents/TIOGA%20COUNTY%20PROTHONOTARY%20FEE%20SCHEDULE%20EFFECTIVE%20DECEMBER%201.pdf"
+      }
     ]
   },
   {
     "data": [
       "Union",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of Prothonotary on 5/15/2020",
+        "number": 22
+      }
     ]
   },
   {
     "data": [
       "Venango",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar  Additional $30 service fee",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/26/2020",
+        "number": 23
+      }
     ]
   },
   {
     "data": [
       "Warren",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with Office of Prothonotary on 5/21/2020",
+        "number": 24
+      }
     ]
   },
   {
     "data": [
       "Washington",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "For percentage bail, $60; for straight bail, 5% of first $1,000 deposited, 1.8% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/21/2020",
+        "number": 25
+      }
     ]
   },
   {
     "data": [
       "Wayne",
-      "Placeholder....!!!!!"
+      {
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "http://www.waynecountypa.gov/DocumentCenter/View/901/Fee-Schedule-PDF?bidId="
+      }
     ]
   },
   {
     "data": [
       "Westmoreland",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "6.6% of first $1,000 deposited, 2.5% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/18/2020",
+        "number": 26
+      }
     ]
   },
   {
     "data": [
       "Wyoming",
-      "Placeholder....!!!!!"
+      {
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with Office of Prothonotary on 5/18/2020",
+        "number": 27
+      }
     ]
   },
   {
     "data": [
       "York",
-      "Placeholder....!!!!!"
+      "Unable to confirm fee"
     ]
   }
 ];
