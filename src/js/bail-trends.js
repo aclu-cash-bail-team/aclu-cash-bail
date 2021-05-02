@@ -284,8 +284,8 @@ new SwitchableTable(bailRateTable, rorRateTable, rateTableContainer);
 
 createBailPostingTable();
 
-const cashBailRateMap = new BailRateMap("cash-bail-rate", BAIL_RATE_DATA, 42.6);
-const rorRateMap = new BailRateMap("ror-rate", ROR_RATE_DATA, 22.7);
+const cashBailRateMap = new BailRateMap("cash-bail-rate", BAIL_RATE_DATA, 42.6, "Cash Bail Rate");
+const rorRateMap = new BailRateMap("ror-rate", ROR_RATE_DATA, 22.7, "ROR Rate");
 const rateChloroplethContainer = document.getElementById("rate-chloropleth-container");
 new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
 new BailPostingMap("bail-posting", BAIL_POSTING_DATA, 58.5, 70);

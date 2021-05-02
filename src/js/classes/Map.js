@@ -240,9 +240,9 @@ class Map {
 }
 
 export class BailRateMap extends Map {
-  constructor(id, data, average) {
+  constructor(id, data, average, tooltipHeader) {
     super(`#${id} .map`, {rows: [
-      { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
+      { rowHeader: tooltipHeader, dataKey: "x", render: value => `${value.toFixed(1)}%`},
     ]});
     this.id = id;
     this.data = data;
