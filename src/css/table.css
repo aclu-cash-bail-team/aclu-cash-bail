@@ -203,6 +203,11 @@
   text-decoration: none;
 }
 
+.link-arrow {
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
 .retention-fee-cell sup {
   margin-left: 3px;
 }
