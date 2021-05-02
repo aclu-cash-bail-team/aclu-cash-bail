@@ -354,7 +354,7 @@ class VizHeaderCell extends HeaderCell {
     if (className === "start-num" && content.toString().length === 1) {
       wrapper.style.paddingLeft = "10px";
     } else if (className === "end-num") {
-      wrapper.style.paddingRight = `${8 - content.toString().length}px`;
+      wrapper.style.paddingRight = `${13 - 3*content.toString().length}px`;
       wrapper.style.marginRight = "-13px";
     }
 
