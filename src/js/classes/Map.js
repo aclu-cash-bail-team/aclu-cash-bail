@@ -331,7 +331,8 @@ export class BailRateMap extends Map {
 class BailRaceMap extends Map {
   constructor(selector, data, color, dataIdx, race, parent) {
     super(selector, {rows: [
-      { rowHeader: "Cash Bail Rate", dataKey: "x", render: value => `${value.toFixed(1)}%`},
+      { rowHeader: "Cash Bail Rate, black", dataKey: "black", render: value => `${value.toFixed(1)}%`},
+      { rowHeader: "Cash Bail Rate, white", dataKey: "white", render: value => `${value.toFixed(1)}%`},
     ]});
     this.data = data;
     this.dataIdx = dataIdx;
@@ -342,11 +343,10 @@ class BailRaceMap extends Map {
   }
 
   // Called by parent
-  _onMouseEnter(countyName) {
+  _onMouseEnter(countyName, tooltipData) {
     const element = document.querySelector(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${this.race}"]`);
-    const countyRate = Number(element.getAttribute("data-rate"));
     this.svg.selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`).style("stroke-width", "2px");
-    super.showTooltip(element, {name: countyName, x: countyRate});
+    super.showTooltip(element, tooltipData);
   }
   _onMouseOut(countyName) {
     super.onMouseOut();
@@ -436,10 +436,16 @@ export class RaceMapContainer {
     this.render();
   }
 
+  getCountyRate(countyName, race) {
+    const element = document.querySelector(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${race}"]`);
+    return Number(element.getAttribute("data-rate"));
+  }
+
   onChildMouseEnter(event) {
     const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
-    this.black._onMouseEnter(countyName);
-    this.white._onMouseEnter(countyName);
+    const tooltipData = {name: countyName, black: this.getCountyRate(countyName, "black"), white: this.getCountyRate(countyName, "white")};
+    this.black._onMouseEnter(countyName, tooltipData);
+    this.white._onMouseEnter(countyName, tooltipData);
     this.highlightBarFromMap(event.target);
   }
 
