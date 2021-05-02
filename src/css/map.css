@@ -29,8 +29,7 @@
 }
 
 .color-scale-legend {
-    min-width: 300px;
-    max-width: 325px;
+    width: 350px;
 }
 
 .legend-text {

@@ -19,15 +19,18 @@ class ColorScaleLegend {
     this.onMouseOver = onMouseOver;
     this.onMouseOut = onMouseOut;
 
-    this.sectionWidth = 50;
+    // SVG viewbox width matches CSS width to avoid scaling/zoom
+    const element = document.querySelector(`#${id} .color-scale-legend`);
+    const svgWidth = Number(getComputedStyle(element).width.replace(/[^\d.]/g, ""));
+
+    this.legendWidth = svgWidth - 30;
+    this.sectionWidth = this.legendWidth / this.colorDomain.length;
     this.sectionHeight = 10;
     this.offsetX = 7;
     this.offsetY = offsetY;
     this.labelOffsetX = this.offsetX - 9;
     this.labelOffsetY = this.offsetY + 28;
-    this.legendWidth = this.sectionWidth * this.colorDomain.length;
 
-    const svgWidth = this.legendWidth + 30;
     const svgHeight = this.sectionHeight + this.labelOffsetY + 10;
     this.svg = d3.select(`#${id} .color-scale-legend`).append("svg")
       .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
