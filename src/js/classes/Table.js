@@ -58,6 +58,42 @@ class StyledTextCell extends Cell {
 }
 
 
+class LinkCell extends Cell {
+  constructor(content, className) {
+    super(className);
+    this.content = document.createElement("a");
+    this.content.className = "retention-fee-link";
+    this.content.href = content.href;
+    this.content.target = "_blank";
+    this.content.innerText = `${content.text} ➚`;
+    this.render();
+  }
+
+  render() {
+    super.render();
+    this.element.appendChild(this.content);
+  }
+}
+
+
+class FootnoteCell extends Cell {
+  constructor(content, className) {
+    super(className);
+    this.content = document.createElement("span");
+    this.content.innerText = content.text;
+    const footnote = document.createElement("sup");
+    footnote.innerText = content.number;
+    this.content.appendChild(footnote);
+    this.render();
+  }
+
+  render() {
+    super.render();
+    this.element.appendChild(this.content);
+  }
+}
+
+
 class NumberCell extends Cell {
   constructor(content, className, data) {
     super(className);
@@ -535,6 +571,10 @@ export class Table {
           CellType = StyledTextCell;
         } else if (cell["type"] === "dist") {
           CellType = DistributionBarCell;
+        } else if (cell["type"] === "link") {
+          CellType = LinkCell;
+        } else if (cell["type"] === "footnote") {
+          CellType = FootnoteCell;
         }
       }
       // for county names, append an asterisk if it's an outlier

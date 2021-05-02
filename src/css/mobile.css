@@ -57,6 +57,7 @@
 
   .bar-label {
     left: calc(100% + 0.5em);
+    font-size: 11px;
   }
 
   .total-budget-cell {
@@ -76,6 +77,10 @@
     padding: 10px;
   }
 
+  .btn-text {
+    font-size: 11px;
+  }
+
   .outliers-btn {
     display: none;
   }
@@ -88,6 +93,22 @@
 
   .map-row {
     flex-wrap: wrap;
+  }
+
+  .scatter-plot-key span {
+    font-size: 11px;
+  }
+
+  .axis-label {
+    font-size: 11px;
+  }
+
+  .axis-tick {
+    font-size: 11px;
+  }
+
+  .scatter-text {
+    font-size: 11px;
   }
 }
 

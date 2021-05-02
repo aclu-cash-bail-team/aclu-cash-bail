@@ -17,7 +17,7 @@ const createBailRetentionFeeTable = () => {
       class: "retention-fee-cell",
       header: {
         "text": "Retention Fee",
-        "unit": "dollars"
+        "unit": ""
       },
       sortable: false,
       searchable: false
@@ -28,5 +28,24 @@ const createBailRetentionFeeTable = () => {
   return new Table(BAIL_RETENTION_FEE_DATA, columnConfigs, initSort, tableContainer);
 };
 
+/* FOOTNOTE CREATION FUNCTIONS */
+const createBailRetentionFeeFootnotes = () => {
+  const footnotesContainer = document.getElementById("bail-retention-fee-footnotes");
+  BAIL_RETENTION_FEE_DATA.forEach(data => {
+    if (data.data[1].type == "footnote") {
+      const number = data.data[1].number;
+      const footnote = document.createElement("p");
+      footnote.className = "bail-retention-footnote";
+      footnote.innerText = number;
+      const text = document.createElement("span");
+      text.className = "footnote-text";
+      text.innerText = data.data[1].footnote;
+      footnote.appendChild(text);
+      footnotesContainer.appendChild(footnote);
+    }
+  });
+};
+
 /* RENDER PAGE */
 createBailRetentionFeeTable();
+createBailRetentionFeeFootnotes()
