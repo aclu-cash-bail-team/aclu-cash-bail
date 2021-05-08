@@ -7,6 +7,7 @@
     <!-- TODO: Extract the styles we use from these and remove the imports -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css">
+    <link rel="stylesheet" href="src/css/webflow.css" />
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/table.css">
     <link rel="stylesheet" href="src/css/search.css">
@@ -17,25 +18,26 @@
     <link rel="stylesheet" href="src/css/tooltip.css">
   </head>
   <body>
-    <div id="rate-chloropleth-container" class="map-container">
-      <div class="switch-container">
-        <div class="btn-text switch left showing">Cash Bail</div>
-        <div class="btn-text switch right">ROR</div>
-      </div>
-      <div id="cash-bail-rate" class="map-container">
-        <div class="legend-container">
-          <div class="color-scale-legend"></div>
-        </div>
-        <div class="map"></div>
-      </div>
-      <div id="ror-rate" class="map-container">
-        <div class="legend-container">
-          <div class="color-scale-legend"></div>
-        </div>
-          <div class="map"></div>
-      </div>
-    </div>
+    
     <div class="container">
+      <div id="rate-chloropleth-container" class="map-container">
+        <div class="switch-container">
+          <div class="btn-text switch left showing">Cash Bail</div>
+          <div class="btn-text switch right">ROR</div>
+        </div>
+        <div id="cash-bail-rate" class="map-container">
+          <div class="legend-container">
+            <div class="color-scale-legend"></div>
+          </div>
+          <div class="map"></div>
+        </div>
+        <div id="ror-rate" class="map-container">
+          <div class="legend-container">
+            <div class="color-scale-legend"></div>
+          </div>
+            <div class="map"></div>
+        </div>
+      </div>
       <div id="rate-table-container">
         <div class="table-container" id="bail-rate-container">
           <div class="ui fluid multiple search selection dropdown">
@@ -116,8 +118,8 @@
           <svg class="scatter-plot" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg"></svg>
         </div>
       </div>
-      <div>
-        <h2 id="dist-graph-header">Bail Type Distributions Across Counties</h2>
+      <div class="graph">
+        <h3 id="dist-graph-header">Bail Type Distributions Across Counties</h3>
         <div id="dist-graph-legend">
           <div class="legend-segment cash-bail-legend">
             <div class="legend-color-bar cash-bar"></div>
