@@ -10,7 +10,6 @@
   font-family: "GT America Condensed";
   font-weight: 400;
   font-size: 12px;
-  line-height: 16px;
   text-align: left;
 }
 
@@ -25,7 +24,7 @@
 }
 
 .table-container > table td.bail-dist-cell {
-  padding: 1.5em 1em;
+  padding: 1em 1em;
 }
 
 .start-num {
@@ -303,8 +302,13 @@
 /* Bail Distribution Visualization Header & Legend */
 
 #dist-graph-header {
-  font-family: 'GT America Bold';
+  margin-bottom: 20px;
+  font-family: "GT America Bold";
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 28px;
   text-align: center;
+  color: #FFF;
 }
 
 #dist-graph-legend {

@@ -43,21 +43,6 @@ class TextCell extends Cell {
 }
 
 
-class StyledTextCell extends Cell {
-  constructor(content, className) {
-    super(`${className} ${content["className"]}`);
-    // styled cells, which display differences, should always show positive
-    this.content = content["value"].replace("-", "+");
-    this.render();
-  }
-
-  render() {
-    super.render();
-    this.element.appendChild(document.createTextNode(this.content));
-  }
-}
-
-
 class LinkCell extends Cell {
   constructor(content, className) {
     super(className);
@@ -354,7 +339,7 @@ class VizHeaderCell extends HeaderCell {
     if (className === "start-num" && content.toString().length === 1) {
       wrapper.style.paddingLeft = "10px";
     } else if (className === "end-num") {
-      wrapper.style.paddingRight = `${8 - content.toString().length}px`;
+      wrapper.style.paddingRight = `${13 - 3*content.toString().length}px`;
       wrapper.style.marginRight = "-13px";
     }
 
@@ -567,8 +552,6 @@ export class Table {
           CellType = BarGraphCell;
         } else if (cell["type"] === "line") {
           CellType = NumberLineCell;
-        } else if (cell["type"] === "styled") {
-          CellType = StyledTextCell;
         } else if (cell["type"] === "dist") {
           CellType = DistributionBarCell;
         } else if (cell["type"] === "link") {
