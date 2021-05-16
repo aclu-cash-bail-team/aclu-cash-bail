@@ -56,30 +56,4 @@
     text-shadow: 1px 0 0 rgba(238, 238, 238, 0.8), -1px 0 0 rgba(238, 238, 238, 0.8), 0 1px 0 rgba(238, 238, 238, 0.8), 0 -1px 0 rgba(238, 238, 238, 0.8), 1px 1px rgba(238, 238, 238, 0.8), -1px -1px 0 rgba(238, 238, 238, 0.8), 1px -1px 0 rgba(238, 238, 238, 0.8), -1px 1px 0 rgba(238, 238, 238, 0.8);
 }
 
-/* Map Switches */
-.switch-container {
-  display: flex;
-  margin: 1.5em 0;
-  cursor: pointer;
-  user-select: none;
-  justify-content: center;
-}
 
-.switch-container .switch {
-  width: 100px;
-  padding: 7px;
-  border: 1px #333 solid;
-}
-
-.switch.left {
-  border-radius: 3px 0 0 3px;
-}
-
-.switch.right {
-  border-radius: 0 3px 3px 0;
-  border-left: 0;
-}
-
-.switch-container .switch.showing, .switch-container .switch:hover {
-  background-color: #1D1D1D;
-}

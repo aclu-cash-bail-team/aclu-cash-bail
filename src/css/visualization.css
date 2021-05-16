@@ -110,6 +110,7 @@
   position: relative;
   height: 0.75em;
   background-color: #00ED89;
+  /* border: 1px solid #000; */
 }
 
 .bar-label {
@@ -170,45 +171,12 @@
 .dist-bar-container {
   display: inline-grid;
   width: 100%;
-  border: 1px #000 solid;
+  /* border: 1px #000 solid; */
 }
 
-/* TODO: Generalize this to generic tooltip for use in county map */
-.dist-bar-container .dist-tooltip {
-  position: absolute;
-  left: 5em;
-  bottom: 4em;
-  border-radius: 0.5em;
-  padding: 1em;
-  display: none;
-  background-color: #fff;
-  color: #000;
-}
-
-.dist-bar-container:hover .dist-tooltip {
-  display: block;
-}
-
-.dist-tooltip .dist-tooltip-name {
-  margin-top: 0;
-  margin-bottom: 0.5em;
-}
-
-.dist-tooltip .tooltip-table {
-  color: #000;
-  width: 250px;
-}
-
-.dist-tooltip .tooltip-row {
-  border-top: 0.5px #d6d6d6 solid;
-  border-bottom: 0;
-  display: flex;
-  align-items: center;
-}
-
-.dist-tooltip .tooltip-cell {
-  padding: 0.5em 0;
-}
+/* .dist-bar-container:hover {
+  border: 1px #fff solid;
+} */
 
 .color-box {
   width: 10px;
@@ -221,7 +189,7 @@
 }
 
 .unsecured-bar {
-  background-color: rgba(33, 95, 93, 1);
+  background-color: rgba(117, 203, 214, 1);
 }
 
 .nonmonetary-bar {
@@ -229,7 +197,8 @@
 }
 
 .ror-bar {
-  background-color: rgba(176, 140, 240, 1);
+  background-color: rgba(193, 78, 248, 1);
+
 }
 
 /* Bail Distribution Visualization */
