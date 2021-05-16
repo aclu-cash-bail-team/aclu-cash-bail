@@ -1,3 +1,5 @@
+import { configureTooltip } from "./Tooltip";
+
 const VIEW_ALL = "VIEW ALL";
 const VIEW_LESS = "VIEW LESS";
 const NUM_TRUNCATED_ROWS = 10;
@@ -131,49 +133,38 @@ class DistributionBarCell extends Cell {
   constructor(content, className) {
     super(className);
     this.values = content["values"].filter(dist => dist["value"] !== 0);
+    this.tooltipValues = [this.values.reduce((obj, { value, className }) => {
+      obj[className] = value;
+      return obj;
+    }, {})];
+
+    const createHeader = (hdr, colorClassName) => {
+      const container = document.createElement("div");
+      container.style.display = "flex";
+      container.style.alignItems = "center";
+      const colorBox = document.createElement("div");
+      colorBox.classList.add("color-box");
+      colorBox.classList.add(colorClassName);
+      colorBox.style.marginRight = "10px";
+      const text = document.createElement("div");
+      text.innerText = hdr;
+      container.appendChild(colorBox);
+      container.appendChild(text);
+      return container;
+    };
+    const renderValue = (value) => `${value.toFixed(1)}%`;
+
+    this.renderTooltip = configureTooltip({
+      rows: this.values.map(v => ({
+        rowHeader: createHeader(v.name, v.className), 
+        dataKey: v.className, 
+        render: renderValue
+      })),
+      placement: "top",
+      followCursor: true
+    });
     this.tooltipName = content["name"];
     this.render();
-  }
-
-  createDistributionTable() {
-    const tooltipTable = document.createElement("div");
-    tooltipTable.className = "tooltip-table";
-    this.values.forEach(dist => {
-      const tooltipRow = document.createElement("div");
-      tooltipRow.className = "tooltip-row";
-      const colorCell = document.createElement("div");
-      colorCell.className = "tooltip-cell";
-      colorCell.style.marginRight = "10px";
-      const color = document.createElement("div");
-      color.className = dist["className"];
-      color.classList.add("color-box");
-      colorCell.appendChild(color);
-      const category = document.createElement("div");
-      category.className = "tooltip-cell";
-      category.style.flexGrow = 2;
-      const value = document.createElement("div");
-      value.className = "tooltip-cell";
-      category.innerText = dist["name"];
-      value.style.textAlign = "right";
-      value.innerText = `${Math.round(dist["value"] * 100) / 100}%`;
-      tooltipRow.appendChild(colorCell);
-      tooltipRow.appendChild(category);
-      tooltipRow.appendChild(value);
-      tooltipTable.appendChild(tooltipRow);
-    });
-    return tooltipTable;
-  }
-
-  createTooltip() {
-    const tooltip = document.createElement("div");
-    tooltip.className = "dist-tooltip";
-    const name = document.createElement("h3");
-    name.className = "dist-tooltip-name";
-    name.innerText = this.tooltipName;
-    const table = this.createDistributionTable();
-    tooltip.appendChild(name);
-    tooltip.appendChild(table);
-    return tooltip;
   }
 
   render() {
@@ -189,9 +180,7 @@ class DistributionBarCell extends Cell {
     // configure sizes of distribution bars
     const distWidths = this.values.map(dist => `${dist["value"]}%`);
     container.style.gridTemplateColumns = distWidths.join(" ");
-    // configure tooltip
-    const tooltip = this.createTooltip();
-    container.appendChild(tooltip);
+    this.renderTooltip(container, this.tooltipValues, this.tooltipName);
     this.element.appendChild(container);
   }
 }
