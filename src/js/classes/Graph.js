@@ -3,7 +3,18 @@ import { configureTooltip } from "./Tooltip";
 const SVG_NS = "http://www.w3.org/2000/svg";
 
 class CountyPoint {
-  constructor(data, county, xAxis, yAxis, radiusScale, outlier, showName, plot, renderTooltip, container) {
+  constructor(
+    data,
+    county,
+    xAxis,
+    yAxis,
+    radiusScale,
+    outlier,
+    showName,
+    plot,
+    renderTooltip,
+    container
+  ) {
     this.county = county;
     this.data = data;
     this.xAxis = xAxis;
@@ -13,7 +24,8 @@ class CountyPoint {
     this.showName = showName;
     this.plot = plot;
     this.container = container;
-    this.renderTooltip = (elements, config) => renderTooltip(elements, this.data, this.county, config);
+    this.renderTooltip = (elements, config) =>
+      renderTooltip(elements, this.data, this.county, config);
     [this.xs, this.ys] = this.getPositions();
     this.rs_desktop = this.getRadiis(radiusScale?.desktop || radiusScale);
     this.rs_mobile = this.getRadiis(radiusScale?.mobile || radiusScale);
@@ -26,13 +38,14 @@ class CountyPoint {
   }
 
   getPositions() {
-    const xs = [], ys = [];
-    this.data.forEach(data => {
+    const xs = [],
+      ys = [];
+    this.data.forEach((data) => {
       const xDiff = this.xAxis.max - this.xAxis.min;
       const yDiff = this.yAxis.max - this.yAxis.min;
-      xs.push(`${(data.x - this.xAxis.min) / xDiff * 100}%`);
+      xs.push(`${((data.x - this.xAxis.min) / xDiff) * 100}%`);
       // svgs start Y from the top, so subtract the percentage from 100
-      ys.push(`${100 - ((data.y - this.yAxis.min) / yDiff * 100)}%`);
+      ys.push(`${100 - ((data.y - this.yAxis.min) / yDiff) * 100}%`);
     });
     return [xs, ys];
   }
@@ -44,7 +57,11 @@ class CountyPoint {
       if (radiusScale.min === radiusScale.max) return rs.push(radiusScale.min);
       const rValueDiff = radiusScale.maxValue - radiusScale.minValue;
       const rCircleSizeDiff = radiusScale.max - radiusScale.min;
-      const scaledR = Math.min(((data.r - radiusScale.minValue) * rCircleSizeDiff / rValueDiff) + radiusScale.min, radiusScale.max);
+      const scaledR = Math.min(
+        ((data.r - radiusScale.minValue) * rCircleSizeDiff) / rValueDiff +
+          radiusScale.min,
+        radiusScale.max
+      );
 
       rs.push(Math.min(Math.max(scaledR, radiusScale.min), radiusScale.max));
     });
@@ -73,7 +90,9 @@ class CountyPoint {
 
   renderPoints() {
     this.data.forEach((data, i) => {
-      const className = `${data.name} scatter-point${this.outlier ? " outlier" : ""}`;
+      const className = `${data.name} scatter-point${
+        this.outlier ? " outlier" : ""
+      }`;
       const point = document.createElementNS(SVG_NS, "circle");
       point.setAttributeNS(null, "class", className);
       point.setAttributeNS(null, "cx", this.xs[i]);
@@ -114,29 +133,29 @@ class CountyPoint {
   }
 
   onMouseEnter() {
-    this.elements.forEach(element => {
+    this.elements.forEach((element) => {
       element.classList.add("hovering");
     });
   }
 
   onMouseLeave() {
-    this.elements.forEach(element => {
+    this.elements.forEach((element) => {
       element.classList.remove("hovering");
     });
   }
 }
-
 
 export class ScatterPlot {
   constructor(data, xAxis, yAxis, radiusScale, tooltipConfig, container) {
     this.data = data;
     this.xAxis = xAxis;
     this.yAxis = yAxis;
-    this.ticks = {"x": [], "y": []};
-    this.axisLabels = {"x": [], "y": []};
+    this.ticks = { x: [], y: [] };
+    this.axisLabels = { x: [], y: [] };
     this.radiusScale = radiusScale;
     this.container = container;
-    this.plotContainer = this.container.getElementsByClassName("plot-container")[0];
+    this.plotContainer =
+      this.container.getElementsByClassName("plot-container")[0];
     this.renderTooltip = configureTooltip(tooltipConfig);
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
@@ -150,10 +169,12 @@ export class ScatterPlot {
   setUpSearchBar() {
     const stateAvg = "State Average";
     const searchMenu = this.container.getElementsByClassName("menu")[0];
-    const counties = Object.keys(this.data).filter(c => c !== stateAvg).sort();
+    const counties = Object.keys(this.data)
+      .filter((c) => c !== stateAvg)
+      .sort();
     // make sure state average appears at the beginning of the search
     counties.unshift(stateAvg);
-    counties.forEach(county => {
+    counties.forEach((county) => {
       const element = document.createElement("div");
       // state average should be bolded
       element.className = county === stateAvg ? "item bold" : "item";
@@ -162,10 +183,10 @@ export class ScatterPlot {
     });
 
     const searchInput = this.container.getElementsByTagName("input")[0];
-    searchInput.addEventListener("change", e => {
+    searchInput.addEventListener("change", (e) => {
       const searchValue = e.target.value;
-      this.searchTerms = searchValue.split(";").filter(s => s !== "");
-      this.points.forEach(point => {
+      this.searchTerms = searchValue.split(";").filter((s) => s !== "");
+      this.points.forEach((point) => {
         const searched = this.searchTerms.includes(point.county.toLowerCase());
         searched ? point.onMouseEnter() : point.onMouseLeave();
       });
@@ -189,9 +210,7 @@ export class ScatterPlot {
   }
 
   getNumber(val) {
-    return typeof val === "string"
-      ? Number(val.replace(/[^\d.-]/g, ""))
-      : val;
+    return typeof val === "string" ? Number(val.replace(/[^\d.-]/g, "")) : val;
   }
 
   createPoints() {
@@ -205,14 +224,24 @@ export class ScatterPlot {
       x = typeof x !== "object" ? { total: x } : x;
       y = typeof y !== "object" ? { total: y } : y;
       r = typeof r !== "object" ? { total: r } : r;
-      const countyInfo = [county, this.xAxis, this.yAxis, this.radiusScale, outlier, showName, this.plot, this.renderTooltip, this.container];
+      const countyInfo = [
+        county,
+        this.xAxis,
+        this.yAxis,
+        this.radiusScale,
+        outlier,
+        showName,
+        this.plot,
+        this.renderTooltip,
+        this.container
+      ];
 
-      const data = Object.keys(x).map(key => {
+      const data = Object.keys(x).map((key) => {
         return {
           name: key,
           x: this.getNumber(x[key]),
           y: this.getNumber(y[key]),
-          r: this.getNumber(r[key]),
+          r: this.getNumber(r[key])
         };
       });
       points.push(new CountyPoint(data, ...countyInfo));
@@ -234,18 +263,30 @@ export class ScatterPlot {
     // set viewbox based on window size (customized for specific phones)
     const iPhoneSE = window.innerWidth < 350;
     const iPhone8 = window.innerWidth < 400;
-    const width = iPhoneSE ? 180 : iPhone8 ? 280 : this.mobileSizing ? 300 : 600;
+    const width = iPhoneSE
+      ? 180
+      : iPhone8
+      ? 280
+      : this.mobileSizing
+      ? 300
+      : 600;
     const height = this.mobileSizing ? 400 : 500;
     this.plot.setAttributeNS(null, "viewBox", `0 0 ${width} ${height}`);
     if (prevMobileSizing !== this.mobileSizing) {
       // rerender axes with mobile sizing value
       this.renderAxis(this.xAxis, false);
       this.renderAxis(this.yAxis, true);
-      //set radii with mobile sizing value  
-      this.points.forEach(point => {
-        const circles = point.elements.filter(el => el instanceof SVGCircleElement);
+      //set radii with mobile sizing value
+      this.points.forEach((point) => {
+        const circles = point.elements.filter(
+          (el) => el instanceof SVGCircleElement
+        );
         circles.forEach((_, i) => {
-          circles[i].setAttributeNS(null, "r", this.mobileSizing ? point.rs_mobile[i] : point.rs_desktop[i]);
+          circles[i].setAttributeNS(
+            null,
+            "r",
+            this.mobileSizing ? point.rs_mobile[i] : point.rs_desktop[i]
+          );
         });
       });
     }
@@ -253,7 +294,7 @@ export class ScatterPlot {
 
   render() {
     // set up svg to resize on window resize
-    
+
     window.addEventListener("resize", () => this.updateViewBox());
 
     // render axes
@@ -265,14 +306,14 @@ export class ScatterPlot {
     this.renderPlotLines(this.yAxis, true);
 
     // order: lines in background, then points, then names on top
-    this.points.forEach(point => point.renderLine());
-    this.points.forEach(point => point.renderPoints());
-    this.points.forEach(point => point.renderCountyName());
+    this.points.forEach((point) => point.renderLine());
+    this.points.forEach((point) => point.renderPoints());
+    this.points.forEach((point) => point.renderCountyName());
 
-    this.points.forEach(point => {
+    this.points.forEach((point) => {
       point.renderTooltip(point.tooltipTriggerTargets[0], {
         triggerTarget: point.tooltipTriggerTargets,
-        followCursor: true,
+        followCursor: true
       });
     });
     this.updateViewBox();
@@ -280,14 +321,14 @@ export class ScatterPlot {
 
   renderAxis(axis, isYAxis) {
     // remove ticks from previous render
-    this.ticks[isYAxis ? "y" : "x"].forEach(tick => tick.remove());
+    this.ticks[isYAxis ? "y" : "x"].forEach((tick) => tick.remove());
 
     const tickSize = (axis.max - axis.min) / axis.numTicks;
     for (let i = 0; i < axis.numTicks + 1; i++) {
       const tickValue = axis.convert(axis.min + i * tickSize);
 
       // calculate spacing value depending on axis
-      let spacingValue = i / axis.numTicks * 100;
+      let spacingValue = (i / axis.numTicks) * 100;
       if (isYAxis) spacingValue = 100 - spacingValue;
       spacingValue = `${spacingValue}%`;
 
@@ -310,7 +351,7 @@ export class ScatterPlot {
     }
 
     // remove axis labels from previous render
-    this.axisLabels[isYAxis ? "y" : "x"].forEach(label => label.remove());
+    this.axisLabels[isYAxis ? "y" : "x"].forEach((label) => label.remove());
 
     // render lower and higher labels
     this.renderAxisLabels(axis, isYAxis, true);
@@ -329,7 +370,11 @@ export class ScatterPlot {
       wrapper.setAttributeNS(null, "y", isYAxis ? "50%" : "100%");
     } else {
       wrapper.setAttributeNS(null, "x", isLower ? 0 : isYAxis ? 0 : "100%");
-      wrapper.setAttributeNS(null, "y", isLower ? "100%" : isYAxis ? 0 : "100%");
+      wrapper.setAttributeNS(
+        null,
+        "y",
+        isLower ? "100%" : isYAxis ? 0 : "100%"
+      );
     }
 
     // get offset based on window size
@@ -342,7 +387,9 @@ export class ScatterPlot {
     label.setAttributeNS(null, "dy", isYAxis ? -dy : dy);
     if (isYAxis) label.setAttributeNS(null, "transform", "rotate(-90)");
     const text = isLower ? `← Lower ${axis.name}` : `Higher ${axis.name} →`;
-    label.appendChild(document.createTextNode(this.mobileSizing ? axis.name : text));
+    label.appendChild(
+      document.createTextNode(this.mobileSizing ? axis.name : text)
+    );
     wrapper.appendChild(label);
     this.axisLabels[isYAxis ? "y" : "x"].push(wrapper);
     this.plot.appendChild(wrapper);
@@ -351,7 +398,7 @@ export class ScatterPlot {
   renderPlotLines(axis, isYAxis) {
     for (let i = 0; i < axis.numTicks + 1; i++) {
       // calculate spacing value depending on axis
-      let spacingValue = i / axis.numTicks * 100;
+      let spacingValue = (i / axis.numTicks) * 100;
       if (isYAxis) spacingValue = 100 - spacingValue;
       spacingValue = `${spacingValue}%`;
 
@@ -367,21 +414,34 @@ export class ScatterPlot {
   }
 }
 
-
 class DistributionRow {
-  constructor(county, cashBailRate, unsecuredRate, nonmonetaryRate, rorRate, renderTooltip) {
+  constructor(
+    county,
+    cashBailRate,
+    unsecuredRate,
+    nonmonetaryRate,
+    rorRate,
+    renderTooltip
+  ) {
     this.county = county;
     this.cashBailRate = cashBailRate;
     this.unsecuredRate = unsecuredRate;
     this.nonmonetaryRate = nonmonetaryRate;
     this.rorRate = rorRate;
 
-    this.renderTooltip = elements => renderTooltip(elements, [{
-      cashBailRate: cashBailRate["value"],
-      unsecuredRate: unsecuredRate["value"],
-      nonmonetaryRate: nonmonetaryRate["value"],
-      rorRate: rorRate["value"]
-    }], county);
+    this.renderTooltip = (elements) =>
+      renderTooltip(
+        elements,
+        [
+          {
+            cashBailRate: cashBailRate["value"],
+            unsecuredRate: unsecuredRate["value"],
+            nonmonetaryRate: nonmonetaryRate["value"],
+            rorRate: rorRate["value"]
+          }
+        ],
+        county
+      );
   }
 
   render() {
@@ -392,15 +452,19 @@ class DistributionRow {
     // Add distribution bars
     const distBarsSegment = document.createElement("div");
     distBarsSegment.className = "dist-bars-segment";
-    [this.cashBailRate, this.unsecuredRate, this.nonmonetaryRate, this.rorRate].forEach(dist  => {
+    [
+      this.cashBailRate,
+      this.unsecuredRate,
+      this.nonmonetaryRate,
+      this.rorRate
+    ].forEach((dist) => {
       const distBarElement = document.createElement("div");
       distBarElement.classList.add("dist-column-segment");
       distBarElement.classList.add(dist["className"]);
       distBarsSegment.appendChild(distBarElement);
     });
     // Set width of bar based on distribution
-    const colWidths =
-      `${this.cashBailRate["value"]}% ${this.unsecuredRate["value"]}% ${this.nonmonetaryRate["value"]}% ${this.rorRate["value"]}%`;
+    const colWidths = `${this.cashBailRate["value"]}% ${this.unsecuredRate["value"]}% ${this.nonmonetaryRate["value"]}% ${this.rorRate["value"]}%`;
     distBarsSegment.style.gridTemplateColumns = colWidths;
 
     this.renderTooltip(distBarsSegment);
@@ -422,7 +486,11 @@ export class DistributionGraph {
     this.distributionIdx = 5;
     // Sort data by county name
     this.data.sort((a, b) =>
-      a["data"][this.nameIdx] > b["data"][1] ? 1 : a["data"][this.nameIdx] < b["data"][this.nameIdx] ? -1 : 0
+      a["data"][this.nameIdx] > b["data"][1]
+        ? 1
+        : a["data"][this.nameIdx] < b["data"][this.nameIdx]
+        ? -1
+        : 0
     );
 
     const createHeader = (hdr, colorClassName) => {
@@ -439,26 +507,49 @@ export class DistributionGraph {
       container.appendChild(text);
       return container;
     };
-    const renderValue = value => `${value.toFixed(1)}%`;
-    this.renderTooltip = configureTooltip({rows: [
-      { rowHeader: createHeader("Cash Bail", "cash-bar"), dataKey: "cashBailRate", render: renderValue },
-      { rowHeader: createHeader("Unsecured", "unsecured-bar"), dataKey: "unsecuredRate", render: renderValue },
-      { rowHeader: createHeader("Nonmonetary", "nonmonetary-bar"), dataKey: "nonmonetaryRate", render: renderValue },
-      { rowHeader: createHeader("ROR", "ror-bar"), dataKey: "rorRate", render: renderValue },
-    ],
-    placement: "top",
-    followCursor: true
+    const renderValue = (value) => `${value.toFixed(1)}%`;
+    this.renderTooltip = configureTooltip({
+      rows: [
+        {
+          rowHeader: createHeader("Cash Bail", "cash-bar"),
+          dataKey: "cashBailRate",
+          render: renderValue
+        },
+        {
+          rowHeader: createHeader("Unsecured", "unsecured-bar"),
+          dataKey: "unsecuredRate",
+          render: renderValue
+        },
+        {
+          rowHeader: createHeader("Nonmonetary", "nonmonetary-bar"),
+          dataKey: "nonmonetaryRate",
+          render: renderValue
+        },
+        {
+          rowHeader: createHeader("ROR", "ror-bar"),
+          dataKey: "rorRate",
+          render: renderValue
+        }
+      ],
+      placement: "top",
+      followCursor: true
     });
 
     this.render();
   }
 
   render() {
-    this.data.forEach(county => {
+    this.data.forEach((county) => {
       const countyName = county["data"][1];
       const distributions = county["data"][this.distributionIdx]["values"];
-      const distributionRow =  new DistributionRow(countyName, distributions[0],
-        distributions[1], distributions[2], distributions[3], this.renderTooltip);
+      const distributionRow = new DistributionRow(
+        countyName,
+        distributions[0],
+        distributions[1],
+        distributions[2],
+        distributions[3],
+        this.renderTooltip
+      );
       this.container.appendChild(distributionRow.render());
     });
   }

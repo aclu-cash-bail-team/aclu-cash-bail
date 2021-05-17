@@ -14,7 +14,7 @@
   font-weight: normal;
   line-height: 28px;
   text-align: center;
-  color: #FFF;
+  color: #fff;
 }
 
 .graph .outliers-btn {
@@ -48,7 +48,7 @@ svg.scatter-plot {
 
 .scatter-plot-subhead h5 {
   margin: 0;
-  color:rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
   font-weight: normal;
 }
 
@@ -61,7 +61,7 @@ svg.scatter-plot {
 .scatter-plot-key span {
   font-size: 12px;
   line-height: 16px;
-  color:rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .scatter-plot-key span:not(:last-of-type) {
@@ -69,7 +69,7 @@ svg.scatter-plot {
 }
 
 .key-circle::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 8px;
   height: 8px;
@@ -91,21 +91,21 @@ svg.scatter-plot {
 }
 
 .key-circle.green::before {
-  background-color: #00ED89;
+  background-color: #00ed89;
 }
 
 .key-circle.green-with-opacity::before {
-  background-color: #55EAAC66;
-  border: 1px solid #55EAAC;
+  background-color: #55eaac66;
+  border: 1px solid #55eaac;
   mix-blend-mode: hard-light;
 }
 
 .key-circle.purple::before {
-  background-color: #C14EF8;
+  background-color: #c14ef8;
 }
 
 .axis-label {
-  fill: #FFF;
+  fill: #fff;
   font-size: 12px;
   line-height: 13px;
   text-transform: uppercase;
@@ -151,36 +151,36 @@ svg.label-wrapper {
 .hover-line {
   stroke: rgba(255, 255, 255, 0);
   stroke-width: 12px;
-
 }
 
 .scatter-point.total {
-  fill: #55EAAC66;
-  stroke: #55EAAC;
+  fill: #55eaac66;
+  stroke: #55eaac;
   mix-blend-mode: hard-light;
 }
 
 .scatter-point.hovering.total {
-  fill: #55EAACab;
-  stroke: #FFF;
+  fill: #55eaacab;
+  stroke: #fff;
   stroke-width: 2px;
 }
 
 .scatter-point.black {
-  fill: #00ED89;
+  fill: #00ed89;
 }
 
 .scatter-point.white {
-  fill: #C14EF8;
+  fill: #c14ef8;
 }
 
-.scatter-line.hovering, .scatter-point.hovering {
-  stroke: #FFF;
+.scatter-line.hovering,
+.scatter-point.hovering {
+  stroke: #fff;
   stroke-width: 0.5px;
 }
 
 .scatter-text {
-  fill: #FFF;
+  fill: #fff;
   font-size: 12px;
   line-height: 16px;
   cursor: default;

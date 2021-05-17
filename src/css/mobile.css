@@ -42,7 +42,8 @@
     padding-left: 0;
   }
 
-  .bail-black-cell.table-container > table .bail-black-cell, .table-container > table .bail-white-cell {
+  .bail-black-cell.table-container > table .bail-black-cell,
+  .table-container > table .bail-white-cell {
     min-width: unset;
   }
 
@@ -62,7 +63,7 @@
   }
 
   .table-container > table .total-budget-cell {
-      display: none;
+    display: none;
   }
 
   .viz-bar {
@@ -126,7 +127,8 @@
     width: 80px;
   }
 
-  .table-container > table .diff-cell, .table-container > table .total-cases-cell {
+  .table-container > table .diff-cell,
+  .table-container > table .total-cases-cell {
     display: none;
   }
 

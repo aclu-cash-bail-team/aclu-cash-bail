@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ACLU Cash Bail</title>
     <!-- TODO: Extract the styles we use from these and remove the imports -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css">
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/table.css">
-    <link rel="stylesheet" href="src/css/search.css">
-    <link rel="stylesheet" href="src/css/visualization.css">
-    <link rel="stylesheet" href="src/css/mobile.css">
-    <link rel="stylesheet" href="src/css/tooltip.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/table.css" />
+    <link rel="stylesheet" href="src/css/search.css" />
+    <link rel="stylesheet" href="src/css/visualization.css" />
+    <link rel="stylesheet" href="src/css/mobile.css" />
+    <link rel="stylesheet" href="src/css/tooltip.css" />
   </head>
   <body>
     <div class="container">
       <div class="table-container" id="mdj-container">
         <div class="search-container">
           <div class="ui fluid multiple search selection dropdown">
-            <input type="hidden" name="county">
+            <input type="hidden" name="county" />
             <i class="dropdown icon"></i>
             <div class="default text">Select counties or judges</div>
             <div class="menu"></div>
@@ -41,10 +47,10 @@
   <script src="src/js/mdjs.js" charset="utf-8"></script>
   <script>
     $(document).ready(() => {
-      $('.dropdown').dropdown({
+      $(".dropdown").dropdown({
         fullTextSearch: true,
         ignoreCase: true,
-        delimiter: ';',
+        delimiter: ";",
         label: {
           transition: undefined,
           duration: 0,

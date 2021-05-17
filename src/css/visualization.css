@@ -70,7 +70,8 @@
   transform: translateX(0.75em);
 }
 
-.average.white, .average.black {
+.average.white,
+.average.black {
   bottom: 0;
 }
 
@@ -94,22 +95,23 @@
   z-index: 1;
 }
 
-.average.black .average-line, .average.white .average-line {
+.average.black .average-line,
+.average.white .average-line {
   bottom: -20px;
 }
 
 .average-line.green {
-  background: #00ED89;
+  background: #00ed89;
 }
 
 .average-line.purple {
-  background: #C14EF8;
+  background: #c14ef8;
 }
 
 .viz-bar {
   position: relative;
   height: 0.75em;
-  background-color: #00ED89;
+  background-color: #00ed89;
 }
 
 .bar-label {
@@ -128,11 +130,11 @@
 }
 
 .bar-average-line.green {
-  border-right: 1px dotted #00ED89;
+  border-right: 1px dotted #00ed89;
 }
 
 .bar-average-line.purple {
-  border-right: 1px dotted #C14EF8;
+  border-right: 1px dotted #c14ef8;
 }
 
 .viz-number-line {
@@ -152,11 +154,11 @@
 }
 
 .viz-number-line-point.green {
-  background-color: #00ED89;
+  background-color: #00ed89;
 }
 
 .viz-number-line-point.purple {
-  background-color: #C14EF8;
+  background-color: #c14ef8;
 }
 
 /* Distribution viz */
@@ -243,7 +245,7 @@
   Oh how I wish I could just slap opacity on here, but opacity can't be overriden by children!
 */
 #dist-graph-container:hover .dist-county-name {
-  color: rgba(238, 238, 238, 0.4)
+  color: rgba(238, 238, 238, 0.4);
 }
 
 #dist-graph-container:hover .cash-bar {
@@ -269,7 +271,7 @@
 
 /* Allow specific row to remain highlighted on hover */
 #dist-graph-container .dist-row:hover .dist-county-name {
-  color: rgba(238, 238, 238, 1)
+  color: rgba(238, 238, 238, 1);
 }
 
 #dist-graph-container .dist-row:hover .cash-bar {
@@ -308,7 +310,7 @@
   font-weight: normal;
   line-height: 28px;
   text-align: center;
-  color: #FFF;
+  color: #fff;
 }
 
 #dist-graph-legend {

@@ -1,59 +1,63 @@
 .map-container {
-    max-width: 1200px;
-    text-align: center;
-    margin: auto;
+  max-width: 1200px;
+  text-align: center;
+  margin: auto;
 }
 
 .race-map {
-    width: 100%; /* Needed, otherwise svg w/ viewBox in flexbox in Chrome will have 0 width/height */
+  width: 100%; /* Needed, otherwise svg w/ viewBox in flexbox in Chrome will have 0 width/height */
 }
 
 .map-row {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .map-container path {
-    stroke-width: 1px;
+  stroke-width: 1px;
 }
 
 .county-path {
-    stroke: #c6c6c6;
+  stroke: #c6c6c6;
 }
 
 .legend-container {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .color-scale-legend {
-    width: 350px;
+  width: 350px;
 }
 
 .legend-text {
-    fill: rgba(255, 255, 255, 0.75);
+  fill: rgba(255, 255, 255, 0.75);
 }
 
 .legend-avg-line {
-    stroke-dasharray: 1;
-    stroke: #eee;
-    stroke-width: 1px;
+  stroke-dasharray: 1;
+  stroke: #eee;
+  stroke-width: 1px;
 }
 
 .legend-avg-label {
-    fill: #eee;
-    font-size: 9px;
+  fill: #eee;
+  font-size: 9px;
 }
 
 .spike-legend {
-    min-width: 135px;
+  min-width: 135px;
 }
 
 .city-label {
-    font-size: 13px;
-    text-shadow: 1px 0 0 rgba(238, 238, 238, 0.8), -1px 0 0 rgba(238, 238, 238, 0.8), 0 1px 0 rgba(238, 238, 238, 0.8), 0 -1px 0 rgba(238, 238, 238, 0.8), 1px 1px rgba(238, 238, 238, 0.8), -1px -1px 0 rgba(238, 238, 238, 0.8), 1px -1px 0 rgba(238, 238, 238, 0.8), -1px 1px 0 rgba(238, 238, 238, 0.8);
+  font-size: 13px;
+  text-shadow: 1px 0 0 rgba(238, 238, 238, 0.8),
+    -1px 0 0 rgba(238, 238, 238, 0.8), 0 1px 0 rgba(238, 238, 238, 0.8),
+    0 -1px 0 rgba(238, 238, 238, 0.8), 1px 1px rgba(238, 238, 238, 0.8),
+    -1px -1px 0 rgba(238, 238, 238, 0.8), 1px -1px 0 rgba(238, 238, 238, 0.8),
+    -1px 1px 0 rgba(238, 238, 238, 0.8);
 }
 
 /* Map Switches */
@@ -80,6 +84,7 @@
   border-left: 0;
 }
 
-.switch-container .switch.showing, .switch-container .switch:hover {
-  background-color: #1D1D1D;
+.switch-container .switch.showing,
+.switch-container .switch:hover {
+  background-color: #1d1d1d;
 }
