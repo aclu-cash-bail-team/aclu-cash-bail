@@ -13,16 +13,6 @@
   src: url("./GT-America-Condensed-Regular.otf") format("opentype");
 }
 
-/* Added to match webflow styling */
-* {
-  -webkit-font-smoothing: antialiased;
-}
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "GT America";
   font-size: 13px;

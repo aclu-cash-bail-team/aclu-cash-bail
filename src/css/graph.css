@@ -1,5 +1,6 @@
 .graph {
-  margin: 0 0 5em;
+  margin: 0;
+  padding-bottom: 5em;
   position: relative;
 }
 
@@ -8,6 +9,7 @@
 }
 
 .graph h3 {
+  margin-top: 0;
   margin-bottom: 20px;
   font-family: "GT America Bold";
   font-size: 13px;
