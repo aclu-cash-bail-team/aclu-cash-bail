@@ -167,34 +167,6 @@
   user-select: none;
 }
 
-.switch-container {
-  display: flex;
-  margin: 1.5em 0;
-  cursor: pointer;
-  user-select: none;
-}
-
-.switch-container .switch {
-  width: 100px;
-  padding: 10px;
-  text-transform: uppercase;
-  border: 1px #333 solid;
-}
-
-.switch.left {
-  border-radius: 3px 0 0 3px;
-}
-
-.switch.right {
-  border-radius: 0 3px 3px 0;
-  border-left: 0;
-}
-
-.switch-container .switch.showing,
-.switch-container .switch:hover {
-  background-color: #1d1d1d;
-}
-
 .positive-diff {
   color: #00ed89;
 }
