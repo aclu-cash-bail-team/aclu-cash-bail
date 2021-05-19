@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ACLU Cash Bail</title>
     <!-- TODO: Extract the styles we use from these and remove the imports -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css">
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/table.css">
-    <link rel="stylesheet" href="src/css/search.css">
-    <link rel="stylesheet" href="src/css/visualization.css">
-    <link rel="stylesheet" href="src/css/graph.css">
-    <link rel="stylesheet" href="src/css/map.css">
-    <link rel="stylesheet" href="src/css/mobile.css">
-    <link rel="stylesheet" href="src/css/tooltip.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css"
+    />
+    <link rel="stylesheet" href="src/css/webflow.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/table.css" />
+    <link rel="stylesheet" href="src/css/search.css" />
+    <link rel="stylesheet" href="src/css/visualization.css" />
+    <link rel="stylesheet" href="src/css/graph.css" />
+    <link rel="stylesheet" href="src/css/map.css" />
+    <link rel="stylesheet" href="src/css/mobile.css" />
+    <link rel="stylesheet" href="src/css/tooltip.css" />
   </head>
   <body>
     <div class="container">
@@ -33,13 +40,13 @@
           <div class="legend-container">
             <div class="color-scale-legend"></div>
           </div>
-            <div class="map"></div>
+          <div class="map"></div>
         </div>
       </div>
       <div id="rate-table-container">
         <div class="table-container" id="bail-rate-container">
           <div class="ui fluid multiple search selection dropdown">
-            <input type="hidden" name="county">
+            <input type="hidden" name="county" />
             <i class="dropdown icon"></i>
             <div class="default text">Search counties</div>
             <div class="menu"></div>
@@ -53,11 +60,14 @@
             <tbody></tbody>
           </table>
           <div class="btn-text view-all-btn"></div>
-          <p class="footnote">Outliers exceeding the 99th percentile were removed in calculating bail rate averages.</p>
+          <p class="footnote">
+            Outliers exceeding the 99th percentile were removed in calculating
+            bail rate averages.
+          </p>
         </div>
         <div class="table-container" id="ror-rate-container">
           <div class="ui fluid multiple search selection dropdown">
-            <input type="hidden" name="county">
+            <input type="hidden" name="county" />
             <i class="dropdown icon"></i>
             <div class="default text">Search counties</div>
             <div class="menu"></div>
@@ -71,7 +81,10 @@
             <tbody></tbody>
           </table>
           <div class="btn-text view-all-btn"></div>
-          <p class="footnote">Outliers exceeding the 99th percentile were removed in calculating bail rate averages.</p>
+          <p class="footnote">
+            Outliers exceeding the 99th percentile were removed in calculating
+            bail rate averages.
+          </p>
         </div>
       </div>
       <div id="bail-posting" class="map-container">
@@ -83,7 +96,7 @@
       </div>
       <div class="table-container" id="bail-posting-container">
         <div class="ui fluid multiple search selection dropdown">
-          <input type="hidden" name="county">
+          <input type="hidden" name="county" />
           <i class="dropdown icon"></i>
           <div class="default text">Select counties</div>
           <div class="menu"></div>
@@ -97,7 +110,7 @@
       <div class="graph" id="cases-scatter-plot">
         <h3>Cash Bail Rates and Assigned Amounts Across Counties</h3>
         <div class="ui fluid multiple search selection dropdown">
-          <input type="hidden" name="county">
+          <input type="hidden" name="county" />
           <i class="dropdown icon"></i>
           <div class="default text">Search counties</div>
           <div class="menu"></div>
@@ -113,11 +126,15 @@
           <h5>TOTAL CASH BAIL CASES</h5>
         </div>
         <div class="plot-container">
-          <svg class="scatter-plot" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg"></svg>
+          <svg
+            class="scatter-plot"
+            viewBox="0 0 600 500"
+            xmlns="http://www.w3.org/2000/svg"
+          ></svg>
         </div>
       </div>
-      <div>
-        <h2 id="dist-graph-header">Bail Type Distributions Across Counties</h2>
+      <div class="graph">
+        <h3 id="dist-graph-header">Bail Type Distributions Across Counties</h3>
         <div id="dist-graph-legend">
           <div class="legend-segment cash-bail-legend">
             <div class="legend-color-bar cash-bar"></div>
@@ -148,15 +165,15 @@
   <script src="src/js/bail-trends.js" charset="utf-8"></script>
   <script>
     $(document).ready(() => {
-      $('.dropdown').dropdown({
+      $(".dropdown").dropdown({
         fullTextSearch: true,
         ignoreCase: true,
-        delimiter: ';',
+        delimiter: ";",
         label: {
           transition: undefined,
           duration: 0,
-          variation: false
-        }
+          variation: false,
+        },
       });
     });
   </script>

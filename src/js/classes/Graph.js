@@ -352,16 +352,16 @@ export class ScatterPlot {
     for (let i = 0; i < axis.numTicks + 1; i++) {
       // calculate spacing value depending on axis
       let spacingValue = i / axis.numTicks * 100;
-      if (isYAxis) spacingValue = 100 - spacingValue;
+      if (!isYAxis) spacingValue = 100 - spacingValue;
       spacingValue = `${spacingValue}%`;
 
       // render the line for each axis tick
       const line = document.createElementNS(SVG_NS, "line");
       line.setAttributeNS(null, "class", "axis-line");
-      line.setAttributeNS(null, "x1", isYAxis ? spacingValue : 0);
-      line.setAttributeNS(null, "y1", isYAxis ? 0 : spacingValue);
-      line.setAttributeNS(null, "x2", isYAxis ? spacingValue : "100%");
-      line.setAttributeNS(null, "y2", isYAxis ? "100%" : spacingValue);
+      line.setAttributeNS(null, "x1", !isYAxis ? spacingValue : 0);
+      line.setAttributeNS(null, "y1", !isYAxis ? 0 : spacingValue);
+      line.setAttributeNS(null, "x2", !isYAxis ? spacingValue : "100%");
+      line.setAttributeNS(null, "y2", !isYAxis ? "100%" : spacingValue);
       this.plot.appendChild(line);
     }
   }

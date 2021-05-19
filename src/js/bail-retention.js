@@ -31,17 +31,22 @@ const createBailRetentionFeeTable = () => {
 /* FOOTNOTE CREATION FUNCTIONS */
 const createBailRetentionFeeFootnotes = () => {
   const footnotesContainer = document.getElementById("bail-retention-fee-footnotes");
+  // deduplicate footnotes by number
+  const dedupedFootnotes = [];
   BAIL_RETENTION_FEE_DATA.forEach(data => {
     if (data.data[1].type == "footnote") {
       const number = data.data[1].number;
-      const footnote = document.createElement("p");
-      footnote.className = "bail-retention-footnote";
-      footnote.innerText = number;
-      const text = document.createElement("span");
-      text.className = "footnote-text";
-      text.innerText = data.data[1].footnote;
-      footnote.appendChild(text);
-      footnotesContainer.appendChild(footnote);
+      if (!dedupedFootnotes.includes(number)) {
+        dedupedFootnotes.push(number);
+        const footnote = document.createElement("p");
+        footnote.className = "bail-retention-footnote";
+        footnote.innerText = number;
+        const text = document.createElement("span");
+        text.className = "footnote-text";
+        text.innerText = data.data[1].footnote;
+        footnote.appendChild(text);
+        footnotesContainer.appendChild(footnote);
+      }
     }
   });
 };
