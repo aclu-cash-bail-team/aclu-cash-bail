@@ -5628,10 +5628,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Blair",
       {
-        type: "footnote",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        footnote: "Conversation with Office of the Prothonotary on 5/1/2020",
-        number: 1
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },
@@ -5685,10 +5685,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Centre",
       {
-        type: "footnote",
-        text: "None",
-        footnote: "Conversation with Office of the Prothonotary on 5/1/2020",
-        number: 2
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },
@@ -5706,10 +5706,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Clarion",
       {
-        type: "footnote",
-        text: "None",
-        footnote: "Conversation with Office of the Prothonotary on 5/1/2020",
-        number: 3
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },
@@ -5717,11 +5717,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Clearfield",
       {
-        type: "footnote",
-        text: "None",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/1/2020.",
-        number: 4
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -5749,11 +5748,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Crawford",
       {
-        type: "footnote",
-        text: "None",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 05/1/2020.",
-        number: 5
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -5821,11 +5819,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Forest",
       {
-        type: "footnote",
-        text: "None",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/26/2020",
-        number: 6
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -5843,11 +5840,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Fulton",
       {
-        type: "footnote",
-        text: "None",
-        footnote:
-          "Conversation with Magisterial District Judge Wendy Richards Mellott on 5/8/2020",
-        number: 7
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Magisterial District Judge Wendy Richards Mellott on 5/8/2020",
+        "number": 3
       }
     ]
   },
@@ -5855,11 +5851,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Greene",
       {
-        type: "footnote",
-        text: "None",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/6/2020",
-        number: 8
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -5877,11 +5872,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Indiana",
       {
-        type: "footnote",
-        text: "None",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/8/2020",
-        number: 9
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -5889,11 +5883,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Jefferson",
       {
-        type: "footnote",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/8/2020",
-        number: 10
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -5901,10 +5894,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Juniata",
       {
-        type: "footnote",
-        text: "None",
-        footnote: "Conversation with Office of Prothonotary on 5/8/2020",
-        number: 11
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },
@@ -5942,11 +5935,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Lebanon",
       {
-        type: "footnote",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/21/2020 ",
-        number: 12
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -5964,9 +5956,9 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Luzerne",
       {
-        type: "link",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        href: " https://www.luzernecounty.org/DocumentCenter/View/11672/Fee-Schedule"
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "https://www.luzernecounty.org/DocumentCenter/View/11672/Fee-Schedule"
       }
     ]
   },
@@ -5984,10 +5976,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "McKean",
       {
-        type: "footnote",
-        text: "None",
-        footnote: "Conversation with Office of the Prothonotary on 5/22/2020",
-        number: 13
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },
@@ -5995,11 +5987,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Mercer",
       {
-        type: "footnote",
-        text: "6% of first $1,000 deposited, 2% of each additional dollar",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/22/2020",
-        number: 14
+        "type": "footnote",
+        "text": "6% of first $1,000 deposited, 2% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -6007,10 +5998,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Mifflin",
       {
-        type: "footnote",
-        text: "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
-        footnote: "Conversation with Office of the Prothonotary on 5/22/2020",
-        number: 15
+        "type": "footnote",
+        "text": "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },
@@ -6051,11 +6042,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Northumberland",
       {
-        type: "footnote",
-        text: "$25",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 7/24/2020",
-        number: 16
+        "type": "footnote",
+        "text": "$25",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -6063,11 +6053,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Perry",
       {
-        type: "footnote",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/22/2020",
-        number: 17
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -6085,9 +6074,9 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Pike",
       {
-        type: "link",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        href: " https://www.pikepa.org/Prothfold/Prothonotaryfee.pdf "
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "https://www.pikepa.org/Prothfold/Prothonotaryfee.pdf "
       }
     ]
   },
@@ -6095,9 +6084,9 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Potter",
       {
-        type: "link",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        href: " https://pottercountypa.net/post/_docs/2018POCO_FEE_SCHEDULE.pdf  "
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "https://pottercountypa.net/post/_docs/2018POCO_FEE_SCHEDULE.pdf  "
       }
     ]
   },
@@ -6115,10 +6104,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Snyder",
       {
-        type: "footnote",
-        text: "None",
-        footnote: "Conversation with Office of Prothonotary on 5/15/2020",
-        number: 18
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },
@@ -6126,11 +6115,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Somerset",
       {
-        type: "footnote",
-        text: "1% of all money deposited",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/15 and 7/24/2020.",
-        number: 19
+        "type": "footnote",
+        "text": "1% of all money deposited",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -6138,10 +6126,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Sullivan",
       {
-        type: "footnote",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        footnote: "Conversation with Office of Prothonotary on 5/26/2020",
-        number: 20
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },
@@ -6149,11 +6137,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Susquehanna",
       {
-        type: "footnote",
-        text: "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 7/24/2020.",
-        number: 21
+        "type": "footnote",
+        "text": "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -6161,9 +6148,9 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Tioga",
       {
-        type: "link",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        href: " http://www.tiogacountypa.us/Departments/Prothonotary_Clerk_of_Courts/Documents/TIOGA%20COUNTY%20PROTHONOTARY%20FEE%20SCHEDULE%20EFFECTIVE%20DECEMBER%201.pdf"
+        "type": "link",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "href": "http://www.tiogacountypa.us/Departments/Prothonotary_Clerk_of_Courts/Documents/TIOGA%20COUNTY%20PROTHONOTARY%20FEE%20SCHEDULE%20EFFECTIVE%20DECEMBER%201.pdf"
       }
     ]
   },
@@ -6171,10 +6158,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Union",
       {
-        type: "footnote",
-        text: "None",
-        footnote: "Conversation with Office of Prothonotary on 5/15/2020",
-        number: 22
+        "type": "footnote",
+        "text": "None",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },
@@ -6182,11 +6169,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Venango",
       {
-        type: "footnote",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar  Additional $30 service fee",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/26/2020",
-        number: 23
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar  Additional $30 service fee",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -6194,10 +6180,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Warren",
       {
-        type: "footnote",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        footnote: "Conversation with Office of Prothonotary on 5/21/2020",
-        number: 24
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },
@@ -6205,11 +6191,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Washington",
       {
-        type: "footnote",
-        text: "For percentage bail, $60; for straight bail, 5% of first $1,000 deposited, 1.8% of each additional dollar",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/21/2020",
-        number: 25
+        "type": "footnote",
+        "text": "For percentage bail, $60; for straight bail, 5% of first $1,000 deposited, 1.8% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -6227,11 +6212,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Westmoreland",
       {
-        type: "footnote",
-        text: "6.6% of first $1,000 deposited, 2.5% of each additional dollar",
-        footnote:
-          "Conversation with the Office of the Clerk of Courts on 5/18/2020",
-        number: 26
+        "type": "footnote",
+        "text": "6.6% of first $1,000 deposited, 2.5% of each additional dollar",
+        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        "number": 2
       }
     ]
   },
@@ -6239,10 +6223,10 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Wyoming",
       {
-        type: "footnote",
-        text: "3% of first $1,000 deposited, 1% of each additional dollar",
-        footnote: "Conversation with Office of Prothonotary on 5/18/2020",
-        number: 27
+        "type": "footnote",
+        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
+        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        "number": 1
       }
     ]
   },

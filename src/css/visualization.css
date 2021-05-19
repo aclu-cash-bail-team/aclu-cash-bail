@@ -172,12 +172,7 @@
 .dist-bar-container {
   display: inline-grid;
   width: 100%;
-  /* border: 1px #000 solid; */
 }
-
-/* .dist-bar-container:hover {
-  border: 1px #fff solid;
-} */
 
 .color-box {
   width: 10px;

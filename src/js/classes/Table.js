@@ -6,6 +6,9 @@ const NUM_TRUNCATED_ROWS = 10;
 const CARET_SVG = `<svg class="caret" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7 0.999999L4 4L1 1" stroke="white" stroke-miterlimit="10"/>
 </svg>`;
+const ARROW_SVG = `<svg class="link-arrow" width="11" height="11" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+</svg>`;
 
 class Cell {
   constructor(className) {
@@ -50,7 +53,7 @@ class LinkCell extends Cell {
     this.content.className = "retention-fee-link";
     this.content.href = content.href;
     this.content.target = "_blank";
-    this.content.innerText = `${content.text} ➚`;
+    this.content.innerHTML = `${content.text} ${ARROW_SVG}`;
     this.render();
   }
 
