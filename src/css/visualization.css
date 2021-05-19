@@ -111,12 +111,7 @@
 .viz-bar {
   position: relative;
   height: 0.75em;
-<<<<<<< HEAD
   background-color: #00ed89;
-=======
-  background-color: #00ED89;
-  /* border: 1px solid #000; */
->>>>>>> marioaks/table-tooltip
 }
 
 .bar-label {
@@ -204,10 +199,6 @@
 
 .ror-bar {
   background-color: rgba(193, 78, 248, 1);
-<<<<<<< HEAD
-=======
-
->>>>>>> marioaks/table-tooltip
 }
 
 /* Bail Distribution Visualization */
