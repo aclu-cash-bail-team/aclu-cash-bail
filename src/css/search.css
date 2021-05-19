@@ -18,7 +18,8 @@
   padding: 0;
 }
 
-.ui.fluid.dropdown:hover, .ui.fluid.dropdown:focus {
+.ui.fluid.dropdown:hover,
+.ui.fluid.dropdown:focus {
   border: 0.5px rgba(255, 255, 255, 0.4) solid;
 }
 
@@ -35,7 +36,7 @@
   margin: 0;
   padding: 10px 13px;
   color: rgba(255, 255, 255, 0.75);
- }
+}
 
 .ui.multiple.search.dropdown > input.search {
   margin: 0;
@@ -106,7 +107,7 @@ i.icon.delete:hover {
 }
 
 .ui.selection.active.dropdown:hover .menu {
-  border-color:rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .ui.selection.dropdown .menu > .item {
@@ -121,7 +122,8 @@ i.icon.delete:hover {
   font-family: "GT America Bold";
 }
 
-.ui.dropdown.selected, .ui.dropdown .menu .selected.item,
+.ui.dropdown.selected,
+.ui.dropdown .menu .selected.item,
 .ui.dropdown .menu > .item:hover {
   background-color: #222;
 }
