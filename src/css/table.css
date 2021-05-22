@@ -9,7 +9,8 @@
   color: rgba(255, 255, 255, 0.75);
 }
 
-.table-container > table thead tr, .table-container > table tbody tr {
+.table-container > table thead tr,
+.table-container > table tbody tr {
   border-bottom: 1px #333 solid;
 }
 
@@ -20,7 +21,6 @@
 .table-container > table tr.expanded {
   background-color: #131313;
 }
-
 
 .table-container > table tr.summary-row {
   background-color: #131313;
@@ -91,7 +91,8 @@
   min-width: 84px;
 }
 
-.table-container > table .bail-black-cell, .table-container > table .bail-white-cell {
+.table-container > table .bail-black-cell,
+.table-container > table .bail-white-cell {
   width: 50px;
   min-width: 50px;
   max-width: 50px;
@@ -113,12 +114,14 @@
   max-width: 120px;
 }
 
-.table-container > table .sort-desc, .table-container > table .sort-asc {
+.table-container > table .sort-desc,
+.table-container > table .sort-asc {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.75);
 }
 
-.table-container > table .sort-desc:hover, .table-container > table .sort-asc:hover {
+.table-container > table .sort-desc:hover,
+.table-container > table .sort-asc:hover {
   color: #fff;
   transition: 0.3s ease;
 }
@@ -130,7 +133,8 @@
   opacity: 0;
 }
 
-.table-container > table .sorted .caret, .table-container > table .caret-cell .caret {
+.table-container > table .sorted .caret,
+.table-container > table .caret-cell .caret {
   opacity: 1;
 }
 
@@ -163,44 +167,23 @@
   user-select: none;
 }
 
-.switch-container {
-  display: flex;
-  margin: 1.5em 0;
-  cursor: pointer;
-  user-select: none;
-}
-
-.switch-container .switch {
-  width: 100px;
-  padding: 10px;
-  text-transform: uppercase;
-  border: 1px #333 solid;
-}
-
-.switch.left {
-  border-radius: 3px 0 0 3px;
-}
-
-.switch.right {
-  border-radius: 0 3px 3px 0;
-  border-left: 0;
-}
-
-.switch-container .switch.showing, .switch-container .switch:hover {
-  background-color: #1D1D1D;
-}
-
 .positive-diff {
-  color: #00ED89;
+  color: #00ed89;
 }
 
 .negative-diff {
-  color: #C14EF8;
+  color: #c14ef8;
 }
 
-.retention-fee-cell, .retention-fee-link {
-  color: #FFFFFF;
+.retention-fee-cell,
+.retention-fee-link {
+  color: #ffffff;
   text-decoration: none;
+}
+
+.link-arrow {
+  margin-left: 3px;
+  vertical-align: middle;
 }
 
 .retention-fee-cell sup {
@@ -212,7 +195,7 @@
   margin-bottom: 0;
   font-size: 11px;
   line-height: 15px;
-  color: #4F4F4F;
+  color: #4f4f4f;
 }
 
 .footnote-text {

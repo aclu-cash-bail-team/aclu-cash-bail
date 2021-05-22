@@ -1,7 +1,5 @@
-.DS_Store
-.cache/
 node_modules/
 package-lock.json
 local_dist/
 .parcel-cache/
-.husky/
+dist/

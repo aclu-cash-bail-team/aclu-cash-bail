@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ACLU Cash Bail</title>
     <!-- TODO: Extract the styles we use from these and remove the imports -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css">
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/table.css">
-    <link rel="stylesheet" href="src/css/search.css">
-    <link rel="stylesheet" href="src/css/visualization.css">
-    <link rel="stylesheet" href="src/css/graph.css">
-    <link rel="stylesheet" href="src/css/map.css">
-    <link rel="stylesheet" href="src/css/mobile.css">
-    <link rel="stylesheet" href="src/css/tooltip.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.css"
+    />
+    <link rel="stylesheet" href="src/css/webflow.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/table.css" />
+    <link rel="stylesheet" href="src/css/search.css" />
+    <link rel="stylesheet" href="src/css/visualization.css" />
+    <link rel="stylesheet" href="src/css/graph.css" />
+    <link rel="stylesheet" href="src/css/map.css" />
+    <link rel="stylesheet" href="src/css/mobile.css" />
+    <link rel="stylesheet" href="src/css/tooltip.css" />
   </head>
   <body>
     <div id="race-rate" class="map-container">
@@ -32,7 +39,7 @@
         <div class="table-container" id="bail-race-rate-container">
           <div class="search-container">
             <div class="ui fluid multiple search selection dropdown">
-              <input type="hidden" name="county">
+              <input type="hidden" name="county" />
               <i class="dropdown icon"></i>
               <div class="default text">Search counties</div>
               <div class="menu"></div>
@@ -47,12 +54,14 @@
             <tbody></tbody>
           </table>
           <div class="btn-text view-all-btn"></div>
-          <p class="footnote">*Outlier for low number of cases with black defendants.</p>
+          <p class="footnote">
+            *Outlier for low number of cases with black defendants.
+          </p>
         </div>
         <div class="table-container" id="bail-race-amount-container">
           <div class="search-container">
             <div class="ui fluid multiple search selection dropdown">
-              <input type="hidden" name="county">
+              <input type="hidden" name="county" />
               <i class="dropdown icon"></i>
               <div class="default text">Search counties</div>
               <div class="menu"></div>
@@ -67,13 +76,15 @@
             <tbody></tbody>
           </table>
           <div class="btn-text view-all-btn"></div>
-          <p class="footnote">*Outlier for low number of cases with black defendants.</p>
+          <p class="footnote">
+            *Outlier for low number of cases with black defendants.
+          </p>
         </div>
       </div>
       <div class="graph" id="race-scatter-plot">
         <h3>Racial Disparities in Cash Bail Across Counties</h3>
         <div class="ui fluid multiple search selection dropdown">
-          <input type="hidden" name="county">
+          <input type="hidden" name="county" />
           <i class="dropdown icon"></i>
           <div class="default text">Search counties</div>
           <div class="menu"></div>
@@ -85,7 +96,11 @@
           </div>
         </div>
         <div class="plot-container">
-          <svg class="scatter-plot" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg"></svg>
+          <svg
+            class="scatter-plot"
+            viewBox="0 0 600 500"
+            xmlns="http://www.w3.org/2000/svg"
+          ></svg>
         </div>
       </div>
     </div>
@@ -98,10 +113,10 @@
   <script src="src/js/cash-bail-and-race.js" charset="utf-8"></script>
   <script>
     $(document).ready(() => {
-      $('.dropdown').dropdown({
+      $(".dropdown").dropdown({
         fullTextSearch: true,
         ignoreCase: true,
-        delimiter: ';',
+        delimiter: ";",
         label: {
           transition: undefined,
           duration: 0,

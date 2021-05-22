@@ -13,16 +13,6 @@
   src: url("./GT-America-Condensed-Regular.otf") format("opentype");
 }
 
-/* Added to match webflow styling */
-* {
-  -webkit-font-smoothing: antialiased;
-}
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "GT America";
   font-size: 13px;
@@ -60,7 +50,7 @@ body {
   color: #fff;
   font-family: "GT America Bold";
   font-weight: 600;
-  font-size: 12px;
+  font-size: 11px;
   text-align: center;
   border-radius: 3px;
 }
@@ -75,5 +65,62 @@ body {
 
 .outliers-btn.showing {
   color: #fff;
+  background-color: #1d1d1d;
+}
+
+.switch-container {
+  display: flex;
+  margin: 1.5em 0;
+  cursor: pointer;
+  user-select: none;
+  justify-content: center;
+}
+
+.switch-container .switch {
+  width: 130px;
+  padding: 10px;
+  border: 1px #333 solid;
+  text-transform: uppercase;
+}
+
+.switch.left {
+  border-radius: 3px 0 0 3px;
+}
+
+.switch.right {
+  border-radius: 0 3px 3px 0;
+  border-left: 0;
+}
+
+.switch-container .switch.showing,
+.switch-container .switch:hover {
+  background-color: #1d1d1d;
+}
+
+.switch-container {
+  display: flex;
+  margin: 1.5em 0;
+  cursor: pointer;
+  user-select: none;
+  justify-content: center;
+}
+
+.switch-container .switch {
+  width: 130px;
+  padding: 10px;
+  border: 1px #333 solid;
+  text-transform: uppercase;
+}
+
+.switch.left {
+  border-radius: 3px 0 0 3px;
+}
+
+.switch.right {
+  border-radius: 0 3px 3px 0;
+  border-left: 0;
+}
+
+.switch-container .switch.showing, .switch-container .switch:hover {
   background-color: #1D1D1D;
 }

@@ -1,7 +1,13 @@
 import { Table, SwitchableTable } from "./classes/Table.js";
 import { BailRateMap, BailPostingMap, SwitchableMap } from "./classes/Map.js";
 import { ScatterPlot, DistributionGraph } from "./classes/Graph.js";
-import { BAIL_RATE_DATA, ROR_RATE_DATA, BAIL_POSTING_DATA, BAIL_CASES_SCATTER_PLOT, MDJ_DATA } from "./data.js";
+import {
+  BAIL_RATE_DATA,
+  ROR_RATE_DATA,
+  BAIL_POSTING_DATA,
+  BAIL_CASES_SCATTER_PLOT,
+  MDJ_DATA
+} from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -9,8 +15,8 @@ const createBailRateTable = () => {
     {
       class: "county-name-cell",
       header: {
-        "text": "",
-        "unit": ""
+        text: "",
+        unit: ""
       },
       sortable: false,
       searchable: true
@@ -18,8 +24,8 @@ const createBailRateTable = () => {
     {
       class: "bail-rate-cell number-cell",
       header: {
-        "text": "Rate\xa0(%)",
-        "unit": "percent"
+        text: "Rate\xa0(%)",
+        unit: "percent"
       },
       sortable: true,
       searchable: false
@@ -27,8 +33,8 @@ const createBailRateTable = () => {
     {
       class: "bail-cases-cell number-cell",
       header: {
-        "text": "Cases",
-        "unit": "number"
+        text: "Cases",
+        unit: "number"
       },
       sortable: true,
       searchable: false
@@ -36,8 +42,8 @@ const createBailRateTable = () => {
     {
       class: "total-cases-cell number-cell",
       header: {
-        "text": "Total",
-        "unit": "number"
+        text: "Total",
+        unit: "number"
       },
       sortable: true,
       searchable: false
@@ -45,36 +51,41 @@ const createBailRateTable = () => {
     {
       class: "viz-cell",
       header: {
-        "start": 0,
-        "end": 60,
-        "averages": [
+        start: 0,
+        end: 60,
+        averages: [
           {
-            "name": "Avg.",
-            "value": 42.5966697900,
-          },
+            name: "Avg.",
+            value: 42.59666979
+          }
         ],
-        "unit": "percent"
+        unit: "percent"
       },
       sortable: false,
       searchable: false
-    },
+    }
   ];
-  const initSort = {col: 2, dir: -1}; // initially sort by cash bail rate
+  const initSort = { col: 2, dir: -1 }; // initially sort by cash bail rate
   const stateData = [
     "Pennsylvania",
-    42.5966697900,
+    42.59666979,
     2470,
     5681,
     {
-      "type": "bar",
-      "values": [
-        42.5966697900
-      ]
-    },
+      type: "bar",
+      values: [42.59666979]
+    }
   ];
 
   const tableContainer = document.getElementById("bail-rate-container");
-  return new Table(BAIL_RATE_DATA, columnConfigs, initSort, tableContainer, stateData, false);
+  return new Table(
+    BAIL_RATE_DATA,
+    columnConfigs,
+    initSort,
+    tableContainer,
+    stateData,
+    false
+  );
 };
 
 const createRorRateTable = () => {
@@ -82,8 +93,8 @@ const createRorRateTable = () => {
     {
       class: "county-name-cell",
       header: {
-        "text": "",
-        "unit": ""
+        text: "",
+        unit: ""
       },
       sortable: false,
       searchable: true
@@ -91,8 +102,8 @@ const createRorRateTable = () => {
     {
       class: "ror-rate-cell number-cell",
       header: {
-        "text": "Rate\xa0(%)",
-        "unit": "percent"
+        text: "Rate\xa0(%)",
+        unit: "percent"
       },
       sortable: true,
       searchable: false
@@ -100,8 +111,8 @@ const createRorRateTable = () => {
     {
       class: "ror-cases-cell number-cell",
       header: {
-        "text": "Cases",
-        "unit": "number"
+        text: "Cases",
+        unit: "number"
       },
       sortable: true,
       searchable: false
@@ -109,8 +120,8 @@ const createRorRateTable = () => {
     {
       class: "total-cases-cell number-cell",
       header: {
-        "text": "Total",
-        "unit": "number"
+        text: "Total",
+        unit: "number"
       },
       sortable: true,
       searchable: false
@@ -118,36 +129,41 @@ const createRorRateTable = () => {
     {
       class: "viz-cell",
       header: {
-        "start": 0,
-        "end": 75,
-        "averages": [
+        start: 0,
+        end: 75,
+        averages: [
           {
-            "name": "Avg.",
-            "value": 22.73,
+            name: "Avg.",
+            value: 22.73
           }
         ],
-        "unit": "percent"
+        unit: "percent"
       },
       sortable: false,
       searchable: false
-    },
+    }
   ];
-  const initSort = {col: 2, dir: -1}; // initially sort by ror bail rate
+  const initSort = { col: 2, dir: -1 }; // initially sort by ror bail rate
   const stateData = [
     "Pennsylvania",
     22.73,
     1294,
     5681,
     {
-      "type": "bar",
-      "values": [
-        22.73
-      ]
-    },
+      type: "bar",
+      values: [22.73]
+    }
   ];
 
   const tableContainer = document.getElementById("ror-rate-container");
-  return new Table(ROR_RATE_DATA, columnConfigs, initSort, tableContainer, stateData, false);
+  return new Table(
+    ROR_RATE_DATA,
+    columnConfigs,
+    initSort,
+    tableContainer,
+    stateData,
+    false
+  );
 };
 
 const createBailPostingTable = () => {
@@ -155,8 +171,8 @@ const createBailPostingTable = () => {
     {
       class: "county-name-cell",
       header: {
-        "text": "",
-        "unit": ""
+        text: "",
+        unit: ""
       },
       sortable: false,
       searchable: true
@@ -164,8 +180,8 @@ const createBailPostingTable = () => {
     {
       class: "bail-amount-cell number-cell",
       header: {
-        "text": "Bail Set",
-        "unit": "dollars"
+        text: "Bail Set",
+        unit: "dollars"
       },
       sortable: true,
       searchable: false
@@ -173,8 +189,8 @@ const createBailPostingTable = () => {
     {
       class: "nonposting-rate-cell number-cell",
       header: {
-        "text": "Non-posting rt.",
-        "unit": "percent"
+        text: "Non-posting rt.",
+        unit: "percent"
       },
       sortable: true,
       searchable: false
@@ -182,42 +198,46 @@ const createBailPostingTable = () => {
     {
       class: "viz-cell",
       header: {
-        "start": 0,
-        "end": 100,
-        "averages": [
+        start: 0,
+        end: 100,
+        averages: [
           {
-            "name": "Avg.",
-            "value": 58.5211725
+            name: "Avg.",
+            value: 58.5211725
           }
         ],
-        "unit": "percent"
+        unit: "percent"
       },
       sortable: false,
       searchable: false
-    },
+    }
   ];
-  const initSort = {col: 2, dir: -1};
+  const initSort = { col: 2, dir: -1 };
   const stateData = [
     "Pennsylvania",
     "$31.8K",
     58.5211725,
     {
-      "type": "bar",
-      "values": [
-        58.5211725
-      ]
+      type: "bar",
+      values: [58.5211725]
     }
   ];
 
   const tableContainer = document.getElementById("bail-posting-container");
-  return new Table(BAIL_POSTING_DATA, columnConfigs, initSort, tableContainer, stateData);
+  return new Table(
+    BAIL_POSTING_DATA,
+    columnConfigs,
+    initSort,
+    tableContainer,
+    stateData
+  );
 };
 
 /* PLOT CREATION FUNCTIONS */
 const createCasesScatterPlot = () => {
-  const cashBailRateToText = num => `${num}%`;
-  const bailAmountToText = num => num === 0 ? "0" : `${num}K`;
-  const totalBailCasesToText = num => num.toLocaleString();
+  const cashBailRateToText = (num) => `${num}%`;
+  const bailAmountToText = (num) => (num === 0 ? "0" : `${num}K`);
+  const totalBailCasesToText = (num) => num.toLocaleString();
 
   const xAxis = {
     name: "Cash Bail Rate",
@@ -236,25 +256,44 @@ const createCasesScatterPlot = () => {
 
   const tooltipConfig = {
     rows: [
-      { rowHeader: "Cash Bail Rate", dataKey: "x", render: num => `${num.toFixed(1)}%`},
-      { rowHeader: "Average Bail Amount", dataKey: "y", render: value => (value * 1000).toLocaleString("en", {
-        style: "currency",
-        currency: "USD",
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-      }) },
+      {
+        rowHeader: "Cash Bail Rate",
+        dataKey: "x",
+        render: (num) => `${num.toFixed(1)}%`
+      },
+      {
+        rowHeader: "Average Bail Amount",
+        dataKey: "y",
+        render: (value) =>
+          (value * 1000).toLocaleString("en", {
+            style: "currency",
+            currency: "USD",
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+          })
+      },
       { rowHeader: "Total Cases", dataKey: "r", render: totalBailCasesToText }
     ]
   };
 
-  const radiusDesktopMin = 4, radiusDesktop10k = 35;
-  const radiusMobileMin = 4, radiusMobile10k = 21;
+  const radiusDesktopMin = 4,
+    radiusDesktop10k = 35;
+  const radiusMobileMin = 4,
+    radiusMobile10k = 21;
 
-  const maxRadiusValue = Math.max(...Object.values(BAIL_CASES_SCATTER_PLOT).map(county => county.r));
+  const maxRadiusValue = Math.max(
+    ...Object.values(BAIL_CASES_SCATTER_PLOT).map((county) => county.r)
+  );
   const minRadiusValue = 100;
 
-  const radiusDesktopMax = (radiusDesktop10k * (minRadiusValue - maxRadiusValue) + radiusDesktopMin * (maxRadiusValue - 10000)) / (minRadiusValue - 10000);
-  const radiusMobileMax = (radiusMobile10k * (minRadiusValue - maxRadiusValue) + radiusMobileMin * (maxRadiusValue - 10000)) / (minRadiusValue - 10000);
+  const radiusDesktopMax =
+    (radiusDesktop10k * (minRadiusValue - maxRadiusValue) +
+      radiusDesktopMin * (maxRadiusValue - 10000)) /
+    (minRadiusValue - 10000);
+  const radiusMobileMax =
+    (radiusMobile10k * (minRadiusValue - maxRadiusValue) +
+      radiusMobileMin * (maxRadiusValue - 10000)) /
+    (minRadiusValue - 10000);
 
   const radiusScale = {
     desktop: {
@@ -268,11 +307,18 @@ const createCasesScatterPlot = () => {
       max: radiusMobileMax,
       minValue: minRadiusValue,
       maxValue: maxRadiusValue
-    },
+    }
   };
 
   const container = document.getElementById("cases-scatter-plot");
-  return new ScatterPlot(BAIL_CASES_SCATTER_PLOT, xAxis, yAxis, radiusScale, tooltipConfig, container);
+  return new ScatterPlot(
+    BAIL_CASES_SCATTER_PLOT,
+    xAxis,
+    yAxis,
+    radiusScale,
+    tooltipConfig,
+    container
+  );
 };
 
 /* RENDER PAGE */
@@ -284,11 +330,21 @@ new SwitchableTable(bailRateTable, rorRateTable, rateTableContainer);
 
 createBailPostingTable();
 
-const cashBailRateMap = new BailRateMap("cash-bail-rate", BAIL_RATE_DATA, 42.6, "Cash Bail Rate");
+const cashBailRateMap = new BailRateMap(
+  "cash-bail-rate",
+  BAIL_RATE_DATA,
+  42.6,
+  "Cash Bail Rate"
+);
 const rorRateMap = new BailRateMap("ror-rate", ROR_RATE_DATA, 22.7, "ROR Rate");
-const rateChloroplethContainer = document.getElementById("rate-chloropleth-container");
+const rateChloroplethContainer = document.getElementById(
+  "rate-chloropleth-container"
+);
 new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
 new BailPostingMap("bail-posting", BAIL_POSTING_DATA, 58.5, 70);
 
 createCasesScatterPlot();
-new DistributionGraph(document.getElementById("dist-graph-container"), MDJ_DATA);
+new DistributionGraph(
+  document.getElementById("dist-graph-container"),
+  MDJ_DATA
+);

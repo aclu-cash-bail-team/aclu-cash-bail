@@ -7,17 +7,17 @@ const createMdjTable = () => {
     {
       class: "caret-cell",
       header: {
-        "text": "",
-        "unit": ""
+        text: "",
+        unit: ""
       },
       sortable: false,
-      searchable: false,
+      searchable: false
     },
     {
       class: "county-name-cell",
       header: {
-        "text": "",
-        "unit": ""
+        text: "",
+        unit: ""
       },
       sortable: false,
       searchable: true
@@ -25,8 +25,8 @@ const createMdjTable = () => {
     {
       class: "total-bail-rate-cell  number-cell",
       header: {
-        "text": "Cash bail rt.",
-        "unit": "percent"
+        text: "Cash bail rt.",
+        unit: "percent"
       },
       sortable: true,
       searchable: false
@@ -34,8 +34,8 @@ const createMdjTable = () => {
     {
       class: "bail-black-cell number-cell",
       header: {
-        "text": "Black",
-        "unit": "percent"
+        text: "Black",
+        unit: "percent"
       },
       sortable: true,
       searchable: false
@@ -43,8 +43,8 @@ const createMdjTable = () => {
     {
       class: "bail-white-cell number-cell",
       header: {
-        "text": "White",
-        "unit": "percent"
+        text: "White",
+        unit: "percent"
       },
       sortable: true,
       searchable: false
@@ -52,14 +52,14 @@ const createMdjTable = () => {
     {
       class: "viz-cell bail-dist-cell",
       header: {
-        "text": "Bail Types",
-        "unit": "number"
+        text: "Bail Types",
+        unit: "number"
       },
       sortable: false,
       searchable: false
-    },
+    }
   ];
-  const initSort = {col: 2, dir: -1};
+  const initSort = { col: 2, dir: -1 };
   const tableContainer = document.getElementById("mdj-container");
   return new Table(MDJ_DATA, columnConfigs, initSort, tableContainer);
 };
