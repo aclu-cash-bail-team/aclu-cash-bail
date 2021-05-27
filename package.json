@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "rm -rf local_dist/ && parcel serve *.html --dist-dir local_dist --open",
     "build": "rm -rf dist/ && parcel build *.html --public-url='https://cdn.jsdelivr.net/gh/aclu-cash-bail-team/aclu-cash-bail@deploy/dist/'",
+    "test": "rm -rf dist/ && parcel build *.html --public-url='/aclu-cash-bail'",
     "deploy": "git subtree push --prefix dist origin gh-pages",
     "deploy-test": "git subtree push --prefix dist origin gh-pages-test",
     "lint": "./node_modules/.bin/eslint src/js/*.js src/js/classes/*.js",
