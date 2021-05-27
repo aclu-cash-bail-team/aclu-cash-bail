@@ -4,8 +4,9 @@
   margin: auto;
 }
 
+/* Needed, otherwise svg w/ viewBox in flexbox in Chrome will have 0 width/height */
 .race-map {
-  width: 100%; /* Needed, otherwise svg w/ viewBox in flexbox in Chrome will have 0 width/height */
+  width: 100%;
 }
 
 .map-row {
@@ -59,12 +60,3 @@
     -1px -1px 0 rgba(238, 238, 238, 0.8), 1px -1px 0 rgba(238, 238, 238, 0.8),
     -1px 1px 0 rgba(238, 238, 238, 0.8);
 }
-
-
-<<<<<<< HEAD
-.switch-container .switch.showing,
-.switch-container .switch:hover {
-  background-color: #1d1d1d;
-}
-=======
->>>>>>> marioaks/table-tooltip
