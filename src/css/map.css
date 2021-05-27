@@ -4,8 +4,9 @@
   margin: auto;
 }
 
+/* Needed, otherwise svg w/ viewBox in flexbox in Chrome will have 0 width/height */
 .race-map {
-  width: 100%; /* Needed, otherwise svg w/ viewBox in flexbox in Chrome will have 0 width/height */
+  width: 100%;
 }
 
 .map-row {
