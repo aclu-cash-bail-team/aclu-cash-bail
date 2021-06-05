@@ -32,6 +32,16 @@
     max-width: 75px;
   }
 
+  .table-container > table .number-cell {
+    min-width: unset;
+    padding-left: 0;
+  }
+
+  .table-container > table .bail-cases-cell {
+    min-width: unset;
+    padding-left: 0;
+  }
+
   .table-container > table .bail-rate-cell {
     min-width: unset;
     padding-left: 0;
@@ -146,5 +156,25 @@
 
   .legend-color-bar {
     width: 75px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .table-container > table th.viz-cell {
+    width: 60px;
+  }
+
+  .average-wrapper {
+    width: 60px;
+  }
+
+  .table-container > table td.viz-cell {
+    width: 60px;
+  }
+
+  .table-container > table .nonposting-rate-cell {
+    width: 40px;
+    min-width: unset;
+    max-width: 40px;
   }
 }
