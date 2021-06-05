@@ -152,8 +152,8 @@ const createBailRaceAmountTable = () => {
   const initSort = { col: 4, dir: -1 }; // initially sort by difference
   const stateData = [
     "Pennsylvania",
-    "$36,202",
-    "$26,868",
+    "$36.2K",
+    "$26.8K",
     {
       type: "line",
       values: [38700.61968, 27572.55514]
