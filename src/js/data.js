@@ -2656,8 +2656,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Adams",
-      "$29,479",
-      "$26,077",
+      "$29.5K",
+      "$26.1K",
       {
         type: "line",
         values: [29479, 26077]
@@ -2669,8 +2669,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Allegheny",
-      "$21,080",
-      "$15,881",
+      "$21.1K",
+      "$15.9K",
       {
         type: "line",
         values: [21080, 15881]
@@ -2682,8 +2682,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Armstrong",
-      "$18,541",
-      "$13,560",
+      "$18.5K",
+      "$13.6K",
       {
         type: "line",
         values: [18541, 13560]
@@ -2695,8 +2695,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Beaver",
-      "$26,145",
-      "$13,733",
+      "$26.1K",
+      "$13.7K",
       {
         type: "line",
         values: [26145, 13733]
@@ -2708,8 +2708,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Bedford",
-      "$65,010",
-      "$49,176",
+      "$65.0K",
+      "$49.2K",
       {
         type: "line",
         values: [65010, 49176]
@@ -2721,8 +2721,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Berks",
-      "$35,039",
-      "$27,399",
+      "$35.0K",
+      "$27.4K",
       {
         type: "line",
         values: [35039, 27399]
@@ -2734,8 +2734,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Blair",
-      "$43,726",
-      "$29,256",
+      "$43.7K",
+      "$29.3K",
       {
         type: "line",
         values: [43726, 29256]
@@ -2747,8 +2747,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Bradford",
-      "$63,125",
-      "$32,077",
+      "$63.1K",
+      "$32.1K",
       {
         type: "line",
         values: [63125, 32077]
@@ -2760,8 +2760,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Bucks",
-      "$73,635",
-      "$58,683",
+      "$73.6K",
+      "$58.7K",
       {
         type: "line",
         values: [73635, 58683]
@@ -2773,8 +2773,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Butler",
-      "$42,155",
-      "$12,248",
+      "$42.2K",
+      "$12.2K",
       {
         type: "line",
         values: [42155, 12248]
@@ -2786,8 +2786,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Cambria",
-      "$51,483",
-      "$28,879",
+      "$51.5K",
+      "$28.9K",
       {
         type: "line",
         values: [51483, 28879]
@@ -2799,8 +2799,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Cameron",
-      "$10,000",
-      "$26,481",
+      "$10.0K",
+      "$26.5K",
       {
         type: "line",
         values: [10000, 26481]
@@ -2812,8 +2812,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Carbon",
-      "$35,236",
-      "$24,452",
+      "$35.2K",
+      "$24.5K",
       {
         type: "line",
         values: [35236, 24452]
@@ -2825,8 +2825,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Centre",
-      "$45,976",
-      "$34,614",
+      "$46.0K",
+      "$34.6K",
       {
         type: "line",
         values: [45976, 34614]
@@ -2838,8 +2838,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Chester",
-      "$32,205",
-      "$22,836",
+      "$32.2K",
+      "$22.8K",
       {
         type: "line",
         values: [32205, 22836]
@@ -2851,8 +2851,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Clarion",
-      "$14,200",
-      "$20,698",
+      "$14.2K",
+      "$20.7K",
       {
         type: "line",
         values: [14200, 20698]
@@ -2864,8 +2864,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Clearfield",
-      "$43,890",
-      "$23,215",
+      "$43.9K",
+      "$23.2K",
       {
         type: "line",
         values: [43890, 23215]
@@ -2877,8 +2877,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Clinton",
-      "$29,609",
-      "$19,817",
+      "$29.6K",
+      "$19.8K",
       {
         type: "line",
         values: [29609, 19817]
@@ -2890,8 +2890,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Columbia",
-      "$57,747",
-      "$33,130",
+      "$57.7K",
+      "$33.1K",
       {
         type: "line",
         values: [57747, 33130]
@@ -2903,8 +2903,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Crawford",
-      "$32,600",
-      "$21,505",
+      "$32.6K",
+      "$21.5K",
       {
         type: "line",
         values: [32600, 21505]
@@ -2916,8 +2916,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Cumberland",
-      "$34,037",
-      "$23,281",
+      "$34.0K",
+      "$23.3K",
       {
         type: "line",
         values: [34037, 23281]
@@ -2929,8 +2929,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Dauphin",
-      "$40,031",
-      "$32,313",
+      "$40.0K",
+      "$32.3K",
       {
         type: "line",
         values: [40031, 32313]
@@ -2942,8 +2942,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Delaware",
-      "$43,250",
-      "$31,974",
+      "$43.3K",
+      "$32.0K",
       {
         type: "line",
         values: [43250, 31974]
@@ -2955,8 +2955,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Elk",
-      "$14,375",
-      "$21,093",
+      "$14.4K",
+      "$21.1K",
       {
         type: "line",
         values: [14375, 21093]
@@ -2968,8 +2968,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Erie",
-      "$38,881",
-      "$23,611",
+      "$38.9K",
+      "$23.6K",
       {
         type: "line",
         values: [38881, 23611]
@@ -2981,8 +2981,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Fayette",
-      "$25,444",
-      "$17,203",
+      "$25.4K",
+      "$17.2K",
       {
         type: "line",
         values: [25444, 17203]
@@ -2994,8 +2994,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Forest",
-      "$21,438",
-      "$22,344",
+      "$21.4K",
+      "$22.3K",
       {
         type: "line",
         values: [21438, 22344]
@@ -3007,8 +3007,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Franklin",
-      "$61,407",
-      "$50,242",
+      "$61.4K",
+      "$50.2K",
       {
         type: "line",
         values: [61407, 50242]
@@ -3020,8 +3020,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Fulton",
-      "$24,000",
-      "$57,879",
+      "$24.0K",
+      "$57.9K",
       {
         type: "line",
         values: [24000, 57879]
@@ -3033,8 +3033,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Greene",
-      "$20,977",
-      "$15,107",
+      "$21.0K",
+      "$15.1K",
       {
         type: "line",
         values: [20977, 15107]
@@ -3046,8 +3046,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Huntingdon",
-      "$22,010",
-      "$18,028",
+      "$22.0K",
+      "$18.0K",
       {
         type: "line",
         values: [22010, 18028]
@@ -3059,8 +3059,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Indiana",
-      "$20,861",
-      "$15,479",
+      "$20.9K",
+      "$15.5K",
       {
         type: "line",
         values: [20861, 15479]
@@ -3072,8 +3072,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Jefferson",
-      "$35,040",
-      "$45,707",
+      "$35.0K",
+      "$45.7K",
       {
         type: "line",
         values: [35040, 45707]
@@ -3085,8 +3085,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Juniata",
-      "$29,167",
-      "$22,330",
+      "$29.2K",
+      "$22.3K",
       {
         type: "line",
         values: [29167, 22330]
@@ -3098,8 +3098,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Lackawanna",
-      "$41,104",
-      "$26,940",
+      "$41.1K",
+      "$26.9K",
       {
         type: "line",
         values: [41104, 26940]
@@ -3111,8 +3111,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Lancaster",
-      "$57,668",
-      "$48,383",
+      "$57.7K",
+      "$48.4K",
       {
         type: "line",
         values: [57668, 48383]
@@ -3124,8 +3124,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Lawrence",
-      "$25,778",
-      "$15,192",
+      "$25.8K",
+      "$15.2K",
       {
         type: "line",
         values: [25778, 15192]
@@ -3137,8 +3137,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Lebanon",
-      "$36,343",
-      "$23,902",
+      "$36.3K",
+      "$23.9K",
       {
         type: "line",
         values: [36343, 23902]
@@ -3150,8 +3150,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Lehigh",
-      "$25,138",
-      "$16,341",
+      "$25.1K",
+      "$16.3K",
       {
         type: "line",
         values: [25138, 16341]
@@ -3163,8 +3163,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Luzerne",
-      "$47,113",
-      "$32,968",
+      "$47.1K",
+      "$33.0K",
       {
         type: "line",
         values: [47113, 32968]
@@ -3176,8 +3176,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Lycoming",
-      "$77,030",
-      "$37,028",
+      "$77.0K",
+      "$37.0K",
       {
         type: "line",
         values: [77030, 37028]
@@ -3189,8 +3189,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "McKean",
-      "$34,911",
-      "$23,475",
+      "$34.9K",
+      "$23.5K",
       {
         type: "line",
         values: [34911, 23475]
@@ -3202,8 +3202,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Mercer",
-      "$29,504",
-      "$23,005",
+      "$29.5K",
+      "$23.0K",
       {
         type: "line",
         values: [29504, 23005]
@@ -3215,8 +3215,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Mifflin",
-      "$52,219",
-      "$35,331",
+      "$52.2K",
+      "$35.3K",
       {
         type: "line",
         values: [52219, 35331]
@@ -3228,8 +3228,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Monroe",
-      "$34,085",
-      "$21,495",
+      "$34.1K",
+      "$21.5K",
       {
         type: "line",
         values: [34085, 21495]
@@ -3241,8 +3241,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Montgomery",
-      "$29,169",
-      "$21,885",
+      "$29.2K",
+      "$21.9K",
       {
         type: "line",
         values: [29169, 21885]
@@ -3254,8 +3254,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Montour",
-      "$25,556",
-      "$27,449",
+      "$25.6K",
+      "$27.4K",
       {
         type: "line",
         values: [25556, 27449]
@@ -3267,8 +3267,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Northampton",
-      "$34,972",
-      "$24,095",
+      "$35.0K",
+      "$24.1K",
       {
         type: "line",
         values: [34972, 24095]
@@ -3280,8 +3280,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Northumberland",
-      "$63,255",
-      "$38,641",
+      "$63.3K",
+      "$38.6K",
       {
         type: "line",
         values: [63255, 38641]
@@ -3293,8 +3293,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Perry",
-      "$41,126",
-      "$24,007",
+      "$41.1K",
+      "$24.0K",
       {
         type: "line",
         values: [41126, 24007]
@@ -3306,8 +3306,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Philadelphia",
-      "$54,302",
-      "$43,459",
+      "$54.3K",
+      "$43.5K",
       {
         type: "line",
         values: [54302, 43459]
@@ -3319,8 +3319,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Pike",
-      "$34,755",
-      "$21,534",
+      "$34.8K",
+      "$21.5K",
       {
         type: "line",
         values: [34755, 21534]
@@ -3332,8 +3332,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Potter",
-      "$15,700",
-      "$19,338",
+      "$15.7K",
+      "$19.3K",
       {
         type: "line",
         values: [15700, 19338]
@@ -3345,8 +3345,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Schuylkill",
-      "$28,947",
-      "$19,996",
+      "$28.9K",
+      "$20.0K",
       {
         type: "line",
         values: [28947, 19996]
@@ -3358,8 +3358,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Snyder",
-      "$29,659",
-      "$27,551",
+      "$29.7K",
+      "$27.6K",
       {
         type: "line",
         values: [29659, 27551]
@@ -3371,8 +3371,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Somerset",
-      "$78,071",
-      "$33,896",
+      "$78.1K",
+      "$33.9K",
       {
         type: "line",
         values: [78071, 33896]
@@ -3384,8 +3384,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Sullivan",
-      "$5,000",
-      "$18,667",
+      "$5.0K",
+      "$18.7K",
       {
         type: "line",
         values: [5000, 18667]
@@ -3397,8 +3397,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Susquehanna",
-      "$29,808",
-      "$27,138",
+      "$29.8K",
+      "$27.1K",
       {
         type: "line",
         values: [29808, 27138]
@@ -3410,8 +3410,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Tioga",
-      "$30,455",
-      "$18,916",
+      "$30.5K",
+      "$18.9K",
       {
         type: "line",
         values: [30455, 18916]
@@ -3423,8 +3423,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Union",
-      "$34,667",
-      "$25,807",
+      "$34.7K",
+      "$25.8K",
       {
         type: "line",
         values: [34667, 25807]
@@ -3436,8 +3436,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Venango",
-      "$48,712",
-      "$35,510",
+      "$48.7K",
+      "$35.5K",
       {
         type: "line",
         values: [48712, 35510]
@@ -3449,8 +3449,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Warren",
-      "$32,692",
-      "$25,369",
+      "$32.7K",
+      "$25.4K",
       {
         type: "line",
         values: [32692, 25369]
@@ -3462,8 +3462,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Washington",
-      "$33,527",
-      "$19,878",
+      "$33.5K",
+      "$19.9K",
       {
         type: "line",
         values: [33527, 19878]
@@ -3475,8 +3475,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Wayne",
-      "$28,682",
-      "$32,101",
+      "$28.7K",
+      "$32.1K",
       {
         type: "line",
         values: [28682, 32101]
@@ -3488,8 +3488,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Westmoreland",
-      "$30,920",
-      "$17,072",
+      "$30.9K",
+      "$17.1K",
       {
         type: "line",
         values: [30920, 17072]
@@ -3501,8 +3501,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "Wyoming",
-      "$22,611",
-      "$25,042",
+      "$22.6K",
+      "$25.0K",
       {
         type: "line",
         values: [22611, 25042]
@@ -3514,8 +3514,8 @@ export const BAIL_RACE_AMOUNT_DATA = [
   {
     data: [
       "York",
-      "$30,258",
-      "$18,416",
+      "$30.3K",
+      "$18.4K",
       {
         type: "line",
         values: [30258, 18416]
@@ -5628,10 +5628,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Blair",
       {
-        "type": "footnote",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
@@ -5685,10 +5686,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Centre",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
@@ -5706,10 +5708,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Clarion",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
@@ -5717,10 +5720,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Clearfield",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -5748,10 +5752,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Crawford",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -5819,10 +5824,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Forest",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -5840,10 +5846,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Fulton",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with Magisterial District Judge Wendy Richards Mellott on 5/8/2020",
-        "number": 3
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with Magisterial District Judge Wendy Richards Mellott on 5/8/2020",
+        number: 3
       }
     ]
   },
@@ -5851,10 +5858,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Greene",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -5872,10 +5880,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Indiana",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -5883,10 +5892,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Jefferson",
       {
-        "type": "footnote",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -5894,10 +5904,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Juniata",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
@@ -5935,10 +5946,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Lebanon",
       {
-        "type": "footnote",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -5956,9 +5968,9 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Luzerne",
       {
-        "type": "link",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "href": "https://www.luzernecounty.org/DocumentCenter/View/11672/Fee-Schedule"
+        type: "link",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        href: "https://www.luzernecounty.org/DocumentCenter/View/11672/Fee-Schedule"
       }
     ]
   },
@@ -5976,10 +5988,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "McKean",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
@@ -5987,10 +6000,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Mercer",
       {
-        "type": "footnote",
-        "text": "6% of first $1,000 deposited, 2% of each additional dollar",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "6% of first $1,000 deposited, 2% of each additional dollar",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -5998,10 +6012,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Mifflin",
       {
-        "type": "footnote",
-        "text": "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
@@ -6042,10 +6057,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Northumberland",
       {
-        "type": "footnote",
-        "text": "$25",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "$25",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -6053,10 +6069,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Perry",
       {
-        "type": "footnote",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -6074,9 +6091,9 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Pike",
       {
-        "type": "link",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "href": "https://www.pikepa.org/Prothfold/Prothonotaryfee.pdf "
+        type: "link",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        href: "https://www.pikepa.org/Prothfold/Prothonotaryfee.pdf "
       }
     ]
   },
@@ -6084,9 +6101,9 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Potter",
       {
-        "type": "link",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "href": "https://pottercountypa.net/post/_docs/2018POCO_FEE_SCHEDULE.pdf  "
+        type: "link",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        href: "https://pottercountypa.net/post/_docs/2018POCO_FEE_SCHEDULE.pdf  "
       }
     ]
   },
@@ -6104,10 +6121,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Snyder",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
@@ -6115,10 +6133,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Somerset",
       {
-        "type": "footnote",
-        "text": "1% of all money deposited",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "1% of all money deposited",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -6126,10 +6145,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Sullivan",
       {
-        "type": "footnote",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
@@ -6137,10 +6157,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Susquehanna",
       {
-        "type": "footnote",
-        "text": "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "4.5% of first $1,000 deposited, 1.5% of each additional dollar",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -6148,9 +6169,9 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Tioga",
       {
-        "type": "link",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "href": "http://www.tiogacountypa.us/Departments/Prothonotary_Clerk_of_Courts/Documents/TIOGA%20COUNTY%20PROTHONOTARY%20FEE%20SCHEDULE%20EFFECTIVE%20DECEMBER%201.pdf"
+        type: "link",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        href: "http://www.tiogacountypa.us/Departments/Prothonotary_Clerk_of_Courts/Documents/TIOGA%20COUNTY%20PROTHONOTARY%20FEE%20SCHEDULE%20EFFECTIVE%20DECEMBER%201.pdf"
       }
     ]
   },
@@ -6158,10 +6179,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Union",
       {
-        "type": "footnote",
-        "text": "None",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "None",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
@@ -6169,10 +6191,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Venango",
       {
-        "type": "footnote",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar  Additional $30 service fee",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar  Additional $30 service fee",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -6180,10 +6203,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Warren",
       {
-        "type": "footnote",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
@@ -6191,10 +6215,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Washington",
       {
-        "type": "footnote",
-        "text": "For percentage bail, $60; for straight bail, 5% of first $1,000 deposited, 1.8% of each additional dollar",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "For percentage bail, $60; for straight bail, 5% of first $1,000 deposited, 1.8% of each additional dollar",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -6212,10 +6237,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Westmoreland",
       {
-        "type": "footnote",
-        "text": "6.6% of first $1,000 deposited, 2.5% of each additional dollar",
-        "footnote": "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
-        "number": 2
+        type: "footnote",
+        text: "6.6% of first $1,000 deposited, 2.5% of each additional dollar",
+        footnote:
+          "Conversation with the Office of the Clerk of Courts on 5/1, 5/6, 5/8, 5/18, 5/21, 5/22, 5/26, 7/21, 7/24 of 2020",
+        number: 2
       }
     ]
   },
@@ -6223,10 +6249,11 @@ export const BAIL_RETENTION_FEE_DATA = [
     data: [
       "Wyoming",
       {
-        "type": "footnote",
-        "text": "3% of first $1,000 deposited, 1% of each additional dollar",
-        "footnote": "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
-        "number": 1
+        type: "footnote",
+        text: "3% of first $1,000 deposited, 1% of each additional dollar",
+        footnote:
+          "Conversation with Office of the Prothonotary on 5/1, 5/8, 5/15, 5/18, 5/21, 5/22 of 2020",
+        number: 1
       }
     ]
   },
