@@ -142,6 +142,10 @@
     display: none;
   }
 
+  .table-container > table td.viz-cell {
+    margin-right: 0;
+  }
+
   .color-scale-legend {
     min-width: 200px;
   }
@@ -159,22 +163,12 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
-  .table-container > table th.viz-cell {
-    width: 60px;
+@media only screen and (max-width: 350px) {
+  .table-container > table td.viz-cell, table th.viz-cell   {
+    display: none;
   }
 
-  .average-wrapper {
-    width: 60px;
-  }
-
-  .table-container > table td.viz-cell {
-    width: 60px;
-  }
-
-  .table-container > table .nonposting-rate-cell {
-    width: 40px;
-    min-width: unset;
-    max-width: 40px;
+  .legend-segment {
+    padding: 0 2px;
   }
 }
