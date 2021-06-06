@@ -164,7 +164,8 @@
 }
 
 @media only screen and (max-width: 350px) {
-  .table-container > table td.viz-cell, table th.viz-cell   {
+  .table-container > table td.viz-cell,
+  table th.viz-cell {
     display: none;
   }
 
