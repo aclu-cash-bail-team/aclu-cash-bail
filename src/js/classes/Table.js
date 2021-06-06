@@ -598,7 +598,7 @@ export class Table {
       const isRowVisible =
         isRowSearched ||
         (!isTruncated && !isHiddenOutlier && this.searchTerms.length === 0);
-      if (row.collapseData !== undefined) {
+      if (row.collapseData !== undefined && row.collapseData.length > 0) {
         const collapseRows = row.collapseData.map((collapseRow) => {
           const isSubRowSearched = this.searchTerms.some(
             (searchTerm) =>

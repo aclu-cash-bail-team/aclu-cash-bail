@@ -121,6 +121,7 @@ body {
   border-left: 0;
 }
 
-.switch-container .switch.showing, .switch-container .switch:hover {
-  background-color: #1D1D1D;
+.switch-container .switch.showing,
+.switch-container .switch:hover {
+  background-color: #1d1d1d;
 }
