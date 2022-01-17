@@ -72,10 +72,6 @@
     font-size: 11px;
   }
 
-  .table-container > table .total-budget-cell {
-    display: none;
-  }
-
   .viz-bar {
     height: 1em;
   }
