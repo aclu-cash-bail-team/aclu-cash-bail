@@ -56,7 +56,7 @@ const createBailRateTable = () => {
         averages: [
           {
             name: "Avg.",
-            value: 42.59666979
+            value: 38.6
           }
         ],
         unit: "percent"
@@ -68,12 +68,12 @@ const createBailRateTable = () => {
   const initSort = { col: 2, dir: -1 }; // initially sort by cash bail rate
   const stateData = [
     "Pennsylvania",
-    42.59666979,
-    2470,
-    5681,
+    38.6,
+    2482,
+    5721,
     {
       type: "bar",
-      values: [42.59666979]
+      values: [38.6]
     }
   ];
 
@@ -134,7 +134,7 @@ const createRorRateTable = () => {
         averages: [
           {
             name: "Avg.",
-            value: 22.73
+            value: 19.7
           }
         ],
         unit: "percent"
@@ -146,12 +146,12 @@ const createRorRateTable = () => {
   const initSort = { col: 2, dir: -1 }; // initially sort by ror bail rate
   const stateData = [
     "Pennsylvania",
-    22.73,
-    1294,
-    5681,
+    19.7,
+    1286,
+    5721,
     {
       type: "bar",
-      values: [22.73]
+      values: [19.7]
     }
   ];
 
@@ -203,7 +203,7 @@ const createBailPostingTable = () => {
         averages: [
           {
             name: "Avg.",
-            value: 58.5211725
+            value: 63.2
           }
         ],
         unit: "percent"
@@ -215,11 +215,11 @@ const createBailPostingTable = () => {
   const initSort = { col: 2, dir: -1 };
   const stateData = [
     "Pennsylvania",
-    "$31.8K",
-    58.5211725,
+    "$34.5K",
+    63.2,
     {
       type: "bar",
-      values: [58.5211725]
+      values: [63.2]
     }
   ];
 
@@ -333,15 +333,15 @@ createBailPostingTable();
 const cashBailRateMap = new BailRateMap(
   "cash-bail-rate",
   BAIL_RATE_DATA,
-  42.6,
+  38.6,
   "Cash Bail Rate"
 );
-const rorRateMap = new BailRateMap("ror-rate", ROR_RATE_DATA, 22.7, "ROR Rate");
+const rorRateMap = new BailRateMap("ror-rate", ROR_RATE_DATA, 19.7, "ROR Rate");
 const rateChloroplethContainer = document.getElementById(
   "rate-chloropleth-container"
 );
 new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
-new BailPostingMap("bail-posting", BAIL_POSTING_DATA, 58.5, 70);
+new BailPostingMap("bail-posting", BAIL_POSTING_DATA, 63.2, 70);
 
 createCasesScatterPlot();
 new DistributionGraph(

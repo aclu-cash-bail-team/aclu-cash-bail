@@ -45,11 +45,11 @@ const createBailRaceRateTable = () => {
         averages: [
           {
             name: "Black",
-            value: 54.7462525
+            value: 55.9
           },
           {
             name: "White",
-            value: 37.87542236
+            value: 36.5
           }
         ],
         unit: "percent"
@@ -70,13 +70,13 @@ const createBailRaceRateTable = () => {
   const initSort = { col: 4, dir: -1 }; // initially sort by difference
   const stateData = [
     "Pennsylvania",
-    54.7,
-    37.0,
+    55.9,
+    36.5,
     {
       type: "line",
-      values: [54.7, 37.0]
+      values: [55.9, 36.5]
     },
-    "+17.7"
+    "+19.4"
   ];
 
   const tableContainer = document.getElementById("bail-race-rate-container");
@@ -127,11 +127,11 @@ const createBailRaceAmountTable = () => {
         averages: [
           {
             name: "Black",
-            value: 38700.61968
+            value: 45452
           },
           {
             name: "White",
-            value: 27572.55514
+            value: 31965
           }
         ],
         unit: "dollars"
@@ -152,13 +152,13 @@ const createBailRaceAmountTable = () => {
   const initSort = { col: 4, dir: -1 }; // initially sort by difference
   const stateData = [
     "Pennsylvania",
-    "$36.2K",
-    "$26.8K",
+    "$45.5K",
+    "$32.0K",
     {
       type: "line",
-      values: [38700.61968, 27572.55514]
+      values: [45452, 31965]
     },
-    "+$11.0K"
+    "+$13.5K"
   ];
 
   const tableContainer = document.getElementById("bail-race-amount-container");
@@ -229,6 +229,6 @@ const bailRaceAmountTable = createBailRaceAmountTable();
 const raceContainer = document.getElementById("race-container");
 new SwitchableTable(bailRaceRateTable, bailRaceAmountTable, raceContainer);
 
-new RaceMapContainer("race-rate", BAIL_RACE_RATE_DATA, 37.9, 54.7);
+new RaceMapContainer("race-rate", BAIL_RACE_RATE_DATA, 36.5, 55.9);
 
 createRaceScatterPlot();
