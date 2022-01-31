@@ -421,7 +421,6 @@ class DistributionRow {
     unsecuredRate,
     nonmonetaryRate,
     rorRate,
-    nominalRate,
     renderTooltip
   ) {
     this.county = county;
@@ -429,7 +428,6 @@ class DistributionRow {
     this.unsecuredRate = unsecuredRate;
     this.nonmonetaryRate = nonmonetaryRate;
     this.rorRate = rorRate;
-    this.nominalRate = nominalRate
 
     this.renderTooltip = (elements) =>
       renderTooltip(
@@ -439,8 +437,7 @@ class DistributionRow {
             cashBailRate: cashBailRate["value"],
             unsecuredRate: unsecuredRate["value"],
             nonmonetaryRate: nonmonetaryRate["value"],
-            rorRate: rorRate["value"],
-            nominalRate: nominalRate["value"]
+            rorRate: rorRate["value"]
           }
         ],
         county
@@ -459,8 +456,7 @@ class DistributionRow {
       this.cashBailRate,
       this.unsecuredRate,
       this.nonmonetaryRate,
-      this.rorRate,
-      this.nominalRate
+      this.rorRate
     ].forEach((dist) => {
       const distBarElement = document.createElement("div");
       distBarElement.classList.add("dist-column-segment");
@@ -468,7 +464,7 @@ class DistributionRow {
       distBarsSegment.appendChild(distBarElement);
     });
     // Set width of bar based on distribution
-    const colWidths = `${this.cashBailRate["value"]}% ${this.unsecuredRate["value"]}% ${this.nonmonetaryRate["value"]}% ${this.rorRate["value"]}% ${this.nominalRate["value"]}%`;
+    const colWidths = `${this.cashBailRate["value"]}% ${this.unsecuredRate["value"]}% ${this.nonmonetaryRate["value"]}% ${this.rorRate["value"]}%`;
     distBarsSegment.style.gridTemplateColumns = colWidths;
 
     this.renderTooltip(distBarsSegment);
@@ -490,7 +486,7 @@ export class DistributionGraph {
     this.distributionIdx = 5;
     // Sort data by county name
     this.data.sort((a, b) =>
-      a["data"][this.nameIdx] > b["data"][this.nameIdx]
+      a["data"][this.nameIdx] > b["data"][1]
         ? 1
         : a["data"][this.nameIdx] < b["data"][this.nameIdx]
         ? -1
@@ -533,11 +529,6 @@ export class DistributionGraph {
           rowHeader: createHeader("ROR", "ror-bar"),
           dataKey: "rorRate",
           render: renderValue
-        },
-        {
-          rowHeader: createHeader("Nominal", "nominal-bar"),
-          dataKey: "nominalRate",
-          render: renderValue
         }
       ],
       placement: "top",
@@ -557,7 +548,6 @@ export class DistributionGraph {
         distributions[1],
         distributions[2],
         distributions[3],
-        distributions[4],
         this.renderTooltip
       );
       this.container.appendChild(distributionRow.render());

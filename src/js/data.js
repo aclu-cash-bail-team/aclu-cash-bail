@@ -6399,11 +6399,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 25.4,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Adams"
@@ -6440,11 +6435,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Little, Tony J."
@@ -6481,11 +6471,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 17.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Harvey, Matthew Robert"
@@ -6522,11 +6507,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bowman, Daniel S."
@@ -6563,11 +6543,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Beauchat, Mark D."
@@ -6607,11 +6582,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 25.4,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.03,
-            "name": "Nominal"
           }
         ],
         "name": "Allegheny"
@@ -6648,11 +6618,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 8.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cramer, Jesse J."
@@ -6689,11 +6654,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 68.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Schricker, Scott H."
@@ -6730,11 +6690,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 34.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Torkowsky, Thomas R."
@@ -6771,11 +6726,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 12.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hoots, Kim Marie"
@@ -6812,11 +6762,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 61.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Dzvonick, Robert Paul"
@@ -6853,11 +6798,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 8.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Welsh, Regis C."
@@ -6894,11 +6834,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 46.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Miller, Thomas Jr."
@@ -6935,11 +6870,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Wagner, William"
@@ -6976,11 +6906,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 43,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Saveikis, Anthony"
@@ -7017,11 +6942,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 40.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Larotonda, Blaise P."
@@ -7058,11 +6978,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 29.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bengel, Carolyn S."
@@ -7099,11 +7014,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 55.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kaiser, Ralph E."
@@ -7140,11 +7050,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 48.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Barton, David J."
@@ -7181,11 +7086,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 58.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Herbst, Jeffrey L."
@@ -7222,11 +7122,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 47.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Eichler, Roxanne Sakoian"
@@ -7263,11 +7158,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Costa, Ron Sr."
@@ -7304,11 +7194,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 19.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Stephens, Craig C."
@@ -7345,11 +7230,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 25.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Motznik, James A."
@@ -7386,11 +7266,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 43.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Manning, Jeffrey A."
@@ -7427,11 +7302,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 42.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "McGraw-Desmet, Maureen"
@@ -7468,11 +7338,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 31.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mills, Beth S."
@@ -7509,11 +7374,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 7.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Tibbs, Edward A."
@@ -7550,11 +7410,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 18.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Opiela, Richard G."
@@ -7591,11 +7446,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 23.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ricciardi, Eugene"
@@ -7632,11 +7482,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 6.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Armour, John W."
@@ -7673,11 +7518,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 8.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Barner, Robert L."
@@ -7714,11 +7554,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 21.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Sosovicka, David J."
@@ -7755,11 +7590,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 33.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "DeLuca, Anthony L."
@@ -7796,11 +7626,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hanley, James Joseph Jr."
@@ -7837,11 +7662,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 18.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Martini, Randy C."
@@ -7878,11 +7698,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Butler, Daniel E."
@@ -7919,11 +7734,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 27.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cooper, Kevin E."
@@ -7960,11 +7770,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 39.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Zucco, Linda Inez"
@@ -8001,11 +7806,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 10.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hromyak, Leonard J."
@@ -8042,11 +7842,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 34.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Swan, Tom"
@@ -8083,11 +7878,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Rushing, Derwin"
@@ -8124,11 +7914,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 28.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ravenstahl, Robert Jr."
@@ -8165,11 +7950,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 9.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Zyra, Gary M."
@@ -8206,11 +7986,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "King, Richard G."
@@ -8247,11 +8022,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 17.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Martin, Armand"
@@ -8288,11 +8058,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 15.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Smith, Tara"
@@ -8329,11 +8094,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 30.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lang, Elissa Marie"
@@ -8370,11 +8130,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 15.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Shaffer, Peter H."
@@ -8411,11 +8166,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 15.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Swearingen-Batch, Carla M."
@@ -8452,11 +8202,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 12.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Caulfield, Thomas P."
@@ -8493,11 +8238,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ford, Robert L."
@@ -8534,11 +8274,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 10.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cercone, Mary A."
@@ -8575,11 +8310,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 14.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Brletic, Thomas S."
@@ -8616,11 +8346,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 19.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Olasz, Richard D. Jr."
@@ -8657,11 +8382,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 12.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Joyce, Dennis Robert"
@@ -8698,11 +8418,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 27.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Ceoffe, Anthony M."
@@ -8739,11 +8454,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 28.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Petite, Oscar Jerome Jr."
@@ -8780,11 +8490,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 27.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Riazzi, Eugene F. Jr."
@@ -8821,11 +8526,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 44.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Murray, Mary P."
@@ -8862,11 +8562,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
               }
             ],
             "name": "Arnoni, Ronald A."
@@ -8906,11 +8601,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 42.7,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Armstrong"
@@ -8947,11 +8637,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Andring, James"
@@ -8988,11 +8673,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 47.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Owen, James H."
@@ -9029,11 +8709,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 54.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Decomo, J. Gary"
@@ -9073,11 +8748,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 34.1,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.02,
-            "name": "Nominal"
           }
         ],
         "name": "Beaver"
@@ -9114,11 +8784,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Livingston, William R. II"
@@ -9155,11 +8820,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hladio, Andrew M."
@@ -9196,11 +8856,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 38.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Schafer, Joseph"
@@ -9237,11 +8892,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 29.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Howe, Edward"
@@ -9278,11 +8928,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 29.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Nicholson, Dale F."
@@ -9319,11 +8964,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 41.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Finn, Timothy"
@@ -9360,11 +9000,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 41.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Loughner, C. Douglas."
@@ -9401,11 +9036,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 64,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Conroy, Eileen M."
@@ -9442,11 +9072,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 35.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Armour, John W."
@@ -9483,11 +9108,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 31,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Swihart, Janet"
@@ -9527,11 +9147,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 1.9,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Bedford"
@@ -9568,11 +9183,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bingham, H. Cyril Jr."
@@ -9609,11 +9219,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Osman, Tonya M."
@@ -9650,11 +9255,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Calhoun, Kathy S."
@@ -9691,11 +9291,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Baker, Brian K."
@@ -9735,11 +9330,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 15.1,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.03,
-            "name": "Nominal"
           }
         ],
         "name": "Berks"
@@ -9776,11 +9366,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Glass, David E."
@@ -9817,11 +9402,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Patton, Dean R."
@@ -9858,11 +9438,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Frederick, Victor M. IV"
@@ -9899,11 +9474,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Greth, Gail M."
@@ -9940,11 +9510,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hartman, Michael G."
@@ -9981,11 +9546,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hadzick, Paul J."
@@ -10022,11 +9582,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Robinson, Alvin B."
@@ -10063,11 +9618,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kowalski, Phyllis J."
@@ -10104,11 +9654,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Leonardziak, Michael J."
@@ -10145,11 +9690,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Xavios, Thomas H."
@@ -10186,11 +9726,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 16.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kennedy, Stuart D."
@@ -10227,11 +9762,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 24.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Yoch, David L."
@@ -10268,11 +9798,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Scott, Kyley L."
@@ -10309,11 +9834,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 35.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bentz, Nicholas M. Jr."
@@ -10350,11 +9870,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 36.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bagenstose, Kim L."
@@ -10391,11 +9906,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 46.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Young, Ann L."
@@ -10432,11 +9942,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 63.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Dougherty, Timothy M."
@@ -10473,11 +9978,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gauby, Thomas M. Sr."
@@ -10514,11 +10014,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 37.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Fegley, Sandra L."
@@ -10555,11 +10050,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Hall, William N. Jr."
@@ -10596,11 +10086,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 18,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Book, Andrea"
@@ -10640,11 +10125,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0.4,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Blair"
@@ -10681,11 +10161,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Aigner, Paula M."
@@ -10722,11 +10197,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ormsby, Craig E."
@@ -10763,11 +10233,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kelly, Todd F."
@@ -10804,11 +10269,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Jackson, Steven D."
@@ -10845,11 +10305,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Miller, Fred B."
@@ -10886,11 +10341,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Auker, Jeffrey P."
@@ -10930,11 +10380,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 11.6,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Bradford"
@@ -10971,11 +10416,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Wheaton, Fred M."
@@ -11012,11 +10452,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 47,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Wilcox, Jonathan"
@@ -11053,11 +10488,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Shaw, Michael"
@@ -11094,11 +10524,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Clark, Timothy M."
@@ -11138,11 +10563,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 15.9,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.01,
-            "name": "Nominal"
           }
         ],
         "name": "Bucks"
@@ -11179,11 +10599,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Petrucci, Michael W."
@@ -11220,11 +10635,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kelly, John J. Jr."
@@ -11261,11 +10671,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Douple, Mark D."
@@ -11302,11 +10707,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 12.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Burns, Michael J."
@@ -11343,11 +10743,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 16.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Waltman, John I."
@@ -11384,11 +10779,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 24.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Armitage, Regina"
@@ -11425,11 +10815,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 34.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Schnell, Robert A. Jr."
@@ -11466,11 +10851,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 35.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Wagner, Robert L. Jr."
@@ -11507,11 +10887,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 36.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Snow, Maggie"
@@ -11548,11 +10923,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 42.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Daly, Philip J."
@@ -11589,11 +10959,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 48.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Roth, C. Robert"
@@ -11630,11 +10995,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 51.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Deatelhauser, Kenneth E."
@@ -11671,11 +11031,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Falcone, Joseph P."
@@ -11712,11 +11067,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gallagher, Michael W."
@@ -11753,11 +11103,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 33,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gambardella, Gary"
@@ -11794,11 +11139,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Vislosky, Jan"
@@ -11835,11 +11175,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 50.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Seaman, Jean"
@@ -11876,11 +11211,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Baum, Charles W."
@@ -11917,11 +11247,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Benz, William J."
@@ -11958,11 +11283,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Finello, Daniel J. Jr."
@@ -11999,11 +11319,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 2.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Peranteau, Frank W. Sr."
@@ -12040,11 +11355,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 44.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kline, Joanne V."
@@ -12081,11 +11391,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 39.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Baranoski, Daniel"
@@ -12122,11 +11427,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.8,
-                "name": "Nominal"
               }
             ],
             "name": "Durkin, John J."
@@ -12166,11 +11466,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 49,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.55,
-            "name": "Nominal"
           }
         ],
         "name": "Butler"
@@ -12207,11 +11502,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 60.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "O'Donnell, William S."
@@ -12248,11 +11538,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 37.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kovach, David T."
@@ -12289,11 +11574,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 46,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Seibel, Wayne D."
@@ -12330,11 +11610,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 71.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "O'Donnell, Kevin P."
@@ -12371,11 +11646,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 50.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Haggerty, Sue"
@@ -12412,11 +11682,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 44.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.6,
-                "name": "Nominal"
               }
             ],
             "name": "Stoughton, Lewis E."
@@ -12453,11 +11718,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 41,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.7,
-                "name": "Nominal"
               }
             ],
             "name": "Fullerton, William T."
@@ -12497,11 +11757,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 20.7,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Cambria"
@@ -12538,11 +11793,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Varner, Rick W."
@@ -12579,11 +11829,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 2.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Price, Kevin J."
@@ -12620,11 +11865,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 24.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Musulin, Michael"
@@ -12661,11 +11901,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Barron, John W."
@@ -12702,11 +11937,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Zungali, Michael"
@@ -12743,11 +11973,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 40,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Creany, Fred"
@@ -12784,11 +12009,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 19.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Prebish, John Jr."
@@ -12825,11 +12045,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 25.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Zanghi, Mary Ann"
@@ -12869,11 +12084,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Cameron"
@@ -12910,11 +12120,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Brown, Barry D."
@@ -12954,11 +12159,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 14.2,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Carbon"
@@ -12995,11 +12195,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 6.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Homanko, Joseph D. Sr."
@@ -13036,11 +12231,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 15.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kissner, William J."
@@ -13077,11 +12267,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 15.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kosciolek, Casimir T."
@@ -13118,11 +12303,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 16.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Schrantz, Eric M."
@@ -13159,11 +12339,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lewis, Edward M."
@@ -13203,11 +12378,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 61.6,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Centre"
@@ -13244,11 +12414,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 46,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Jordan, Thomas N."
@@ -13285,11 +12450,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 46.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gillette-Walker, Kelley"
@@ -13326,11 +12486,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 64.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Prestia, Carmine W. Jr."
@@ -13367,11 +12522,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 68.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lachman, Steven Frederic"
@@ -13408,11 +12558,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 90.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Horner, Ronald J."
@@ -13449,11 +12594,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 98.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Nileski, Charity L."
@@ -13490,11 +12630,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 60.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Sinclair, Allen W."
@@ -13534,11 +12669,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 20.8,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 1.05,
-            "name": "Nominal"
           }
         ],
         "name": "Chester"
@@ -13575,11 +12705,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 29.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Brown, Leonard J."
@@ -13616,11 +12741,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 42.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Nistico, Charles"
@@ -13657,11 +12777,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 20.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Michaels, Theodore Peter Jr."
@@ -13698,11 +12813,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Hines, Gregory V."
@@ -13739,11 +12849,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 9.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Gill, Nancy"
@@ -13780,11 +12885,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 21.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Donatelli, Lori Novak"
@@ -13821,11 +12921,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 20.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
               }
             ],
             "name": "Vito, Marian T."
@@ -13862,11 +12957,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 18.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
               }
             ],
             "name": "Bailey, John R."
@@ -13903,11 +12993,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 7.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.6,
-                "name": "Nominal"
               }
             ],
             "name": "Koon, Grover E."
@@ -13944,11 +13029,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 17.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.8,
-                "name": "Nominal"
               }
             ],
             "name": "Massey, Scott A."
@@ -13985,11 +13065,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 31.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.9,
-                "name": "Nominal"
               }
             ],
             "name": "Knapp, Gwenn S."
@@ -14026,11 +13101,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 20.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1,
-                "name": "Nominal"
               }
             ],
             "name": "Cabry, Michael J. III"
@@ -14067,11 +13137,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 24.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.1,
-                "name": "Nominal"
               }
             ],
             "name": "Kraut, William D."
@@ -14108,11 +13173,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 28.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.8,
-                "name": "Nominal"
               }
             ],
             "name": "Sondergaard, Analisa"
@@ -14149,11 +13209,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.8,
-                "name": "Nominal"
               }
             ],
             "name": "Tartaglio, Thomas W."
@@ -14190,11 +13245,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 29.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.9,
-                "name": "Nominal"
               }
             ],
             "name": "Bruno, Mark A."
@@ -14231,11 +13281,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.9,
-                "name": "Nominal"
               }
             ],
             "name": "Seavey, Matthew"
@@ -14272,11 +13317,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 18.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 2,
-                "name": "Nominal"
               }
             ],
             "name": "Valocchi, Jeffrey J."
@@ -14316,11 +13356,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 26.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Clarion"
@@ -14357,11 +13392,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Miller, Jeffrey C."
@@ -14398,11 +13428,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Long Turk, Amy L."
@@ -14439,11 +13464,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 39,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Schill, Timothy P."
@@ -14480,11 +13500,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 33.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Quinn, Duane L."
@@ -14524,11 +13539,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0.1,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Clearfield"
@@ -14565,11 +13575,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ireland, Richard Allen"
@@ -14606,11 +13611,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hawkins, James L."
@@ -14647,11 +13647,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ford, Patrick N."
@@ -14688,11 +13683,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Nevling, Jerome M."
@@ -14732,11 +13722,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 13,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.08,
-            "name": "Nominal"
           }
         ],
         "name": "Clinton"
@@ -14773,11 +13758,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Maggs, John W."
@@ -14814,11 +13794,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mills, Frank P."
@@ -14855,11 +13830,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Sanders, Joseph L."
@@ -14899,11 +13869,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 21.4,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Columbia"
@@ -14940,11 +13905,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lawton, Russell L."
@@ -14981,11 +13941,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 35.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Long, Craig W."
@@ -15022,11 +13977,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 46.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Knecht, Richard W."
@@ -15063,11 +14013,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Brewer, Doug D."
@@ -15107,11 +14052,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 43,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Crawford"
@@ -15148,11 +14088,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 52.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Marwood, Rita J."
@@ -15189,11 +14124,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 45.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Nicols, Amy L."
@@ -15230,11 +14160,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 38.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Pendolino, Samuel V."
@@ -15271,11 +14196,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 38.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Zilhaver, Lincoln S."
@@ -15315,11 +14235,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 39.2,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.1,
-            "name": "Nominal"
           }
         ],
         "name": "Cumberland"
@@ -15356,11 +14271,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Beckley, Elizabeth S."
@@ -15397,11 +14307,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 39,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Correal, Paula P."
@@ -15438,11 +14343,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 39.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Martin, Mark"
@@ -15479,11 +14379,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 41.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Fegley, Paul M"
@@ -15520,11 +14415,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 58.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Adams, H. Anthony"
@@ -15561,11 +14451,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 45.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Day, Susan K."
@@ -15602,11 +14487,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Silcox, Kathryn H."
@@ -15643,11 +14523,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 48.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Birbeck, Jonathan R."
@@ -15684,11 +14559,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 42.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cohick, Vivian"
@@ -15725,11 +14595,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 42.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
               }
             ],
             "name": "Clement, Charles A. Jr."
@@ -15766,11 +14631,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 44.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.7,
-                "name": "Nominal"
               }
             ],
             "name": "Dougherty, Richard S. Jr."
@@ -15810,11 +14670,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 19,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.06,
-            "name": "Nominal"
           }
         ],
         "name": "Dauphin"
@@ -15851,11 +14706,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Pianka, Barbara"
@@ -15892,11 +14742,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lindsey, Joseph S."
@@ -15933,11 +14778,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Smith, Michael J."
@@ -15974,11 +14814,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Semic, Steven M."
@@ -16015,11 +14850,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lenker, James A."
@@ -16056,11 +14886,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Zozos, Paul T."
@@ -16097,11 +14922,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Shugars, Raymond F."
@@ -16138,11 +14958,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 2.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "O'Leary, David"
@@ -16179,11 +14994,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 34.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lenker, Kenneth A."
@@ -16220,11 +15030,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 36.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Margerum, Rebecca J."
@@ -16261,11 +15066,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 36.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Teyral, Joann L."
@@ -16302,11 +15102,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 40.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Judy, David H."
@@ -16343,11 +15138,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 45.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Wenner, William C."
@@ -16384,11 +15174,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 50.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Pelino, Dominic"
@@ -16425,11 +15210,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Witmer, Lowell A."
@@ -16466,11 +15246,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Zozos, George A."
@@ -16507,11 +15282,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 56.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Johnson, Gregory D."
@@ -16548,11 +15318,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 34.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
               }
             ],
             "name": "McKnight, Sonya M."
@@ -16592,11 +15357,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0.1,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.6,
-            "name": "Nominal"
           }
         ],
         "name": "Delaware"
@@ -16633,11 +15393,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Tenaglia, Leonard V."
@@ -16674,11 +15429,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gallagher, Vincent D. Jr."
@@ -16715,11 +15465,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Berardocco, Ann"
@@ -16756,11 +15501,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Loftus, Greg J."
@@ -16797,11 +15537,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Radano, Robert J."
@@ -16838,11 +15573,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lippincott, Nicholas S."
@@ -16879,11 +15609,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Tozer, Peter P."
@@ -16920,11 +15645,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Griffin, David"
@@ -16961,11 +15681,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Burke, Robert R."
@@ -17002,11 +15717,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Krull, Deborah A."
@@ -17043,11 +15753,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mattox, Christopher R."
@@ -17084,11 +15789,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lacianca, Elisa C."
@@ -17125,11 +15825,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Lippart, Jack D."
@@ -17166,11 +15861,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Vann, Dawn L."
@@ -17207,11 +15897,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Williams, W Keith II"
@@ -17248,11 +15933,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Sandone, Steven A."
@@ -17289,11 +15969,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Roberts, Wendy B."
@@ -17330,11 +16005,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Turner, Phillip S."
@@ -17371,11 +16041,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Merkins, James"
@@ -17412,11 +16077,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "D'Agostino, Robert M."
@@ -17453,11 +16113,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 2.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Hunter, Leon"
@@ -17494,11 +16149,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Davis, Wilden H."
@@ -17535,11 +16185,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.6,
-                "name": "Nominal"
               }
             ],
             "name": "Holefelder, Diane M."
@@ -17576,11 +16221,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.6,
-                "name": "Nominal"
               }
             ],
             "name": "Strohl, Walter A."
@@ -17617,11 +16257,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.7,
-                "name": "Nominal"
               }
             ],
             "name": "Puppio, Andrea B."
@@ -17658,11 +16293,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.7,
-                "name": "Nominal"
               }
             ],
             "name": "Karapalides, Harry J. Jr."
@@ -17699,11 +16329,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.7,
-                "name": "Nominal"
               }
             ],
             "name": "Micozzie-Aguirre, Kelly A."
@@ -17740,11 +16365,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.7,
-                "name": "Nominal"
               }
             ],
             "name": "Seaton, Spencer B. Jr."
@@ -17781,11 +16401,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.6,
-                "name": "Nominal"
               }
             ],
             "name": "Nistico, Charles"
@@ -17822,11 +16437,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 2.6,
-                "name": "Nominal"
               }
             ],
             "name": "Lacey, Thomas J."
@@ -17863,11 +16473,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 4.8,
-                "name": "Nominal"
               }
             ],
             "name": "Lang, David H."
@@ -17904,11 +16509,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 10.7,
-                "name": "Nominal"
               }
             ],
             "name": "McCray, C. Walter III"
@@ -17948,11 +16548,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Elk"
@@ -17989,11 +16584,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Martin, James L."
@@ -18030,11 +16620,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Jacob, Mark S."
@@ -18074,11 +16659,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 33.4,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Erie"
@@ -18115,11 +16695,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mackendrick, Chris K."
@@ -18156,11 +16731,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "DiPaolo, Dominick D."
@@ -18197,11 +16767,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Manzi, Paul"
@@ -18238,11 +16803,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 38.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hammer, Scott B."
@@ -18279,11 +16839,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 58.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Krahe, Mark R."
@@ -18320,11 +16875,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 60.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "McGowan, Brian M."
@@ -18361,11 +16911,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 66,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Nichols, Brenda A."
@@ -18402,11 +16947,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Carney, Thomas"
@@ -18443,11 +16983,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 54.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Stuck-Lewis, Denise"
@@ -18484,11 +17019,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 57.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Strohmeyer, Susan D."
@@ -18525,11 +17055,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bizzarro, Paul A."
@@ -18566,11 +17091,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 28.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Urbaniak, Paul G."
@@ -18607,11 +17127,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 23.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mack, Suzanne C."
@@ -18651,11 +17166,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0.1,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Fayette"
@@ -18692,11 +17202,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Jeffries, Jennifer L."
@@ -18733,11 +17238,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Haggerty, Ronald J. Sr."
@@ -18774,11 +17274,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Shimshock, Daniel C."
@@ -18815,11 +17310,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Metros, Michael"
@@ -18856,11 +17346,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Defino, Michael J. Jr."
@@ -18897,11 +17382,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kasunic, Richard II"
@@ -18938,11 +17418,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Dennis, Wendy D."
@@ -18982,11 +17457,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 12.6,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Forest"
@@ -19023,11 +17493,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 13.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Miller, Daniel L."
@@ -19067,11 +17532,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 50.4,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.02,
-            "name": "Nominal"
           }
         ],
         "name": "Franklin"
@@ -19108,11 +17568,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 36.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Plum, David L."
@@ -19149,11 +17604,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 52.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Rock, Kelly L."
@@ -19190,11 +17640,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 37.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cunningham, Duane K."
@@ -19231,11 +17676,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 54.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Williams, Todd R."
@@ -19272,11 +17712,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 34.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Eyer, Jody C."
@@ -19313,11 +17748,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 66.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Pentz, Larry G."
@@ -19354,11 +17784,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 51.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Manns, Glenn Kenneth"
@@ -19398,11 +17823,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 51.8,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Fulton"
@@ -19439,11 +17859,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 68.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mellott, Wendy"
@@ -19480,11 +17895,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 50,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Horne, Devin C."
@@ -19521,11 +17931,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 25.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Heming, Tamela M."
@@ -19565,11 +17970,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 24.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.13,
-            "name": "Nominal"
           }
         ],
         "name": "Greene"
@@ -19606,11 +18006,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bates, D Glenn"
@@ -19647,11 +18042,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 28.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Watson, Lee"
@@ -19688,11 +18078,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 44.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Cramer, Jesse J."
@@ -19732,11 +18117,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 30,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Huntingdon"
@@ -19773,11 +18153,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Jamison, Mary"
@@ -19814,11 +18189,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 38.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gummo, Douglas L."
@@ -19855,11 +18225,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 44.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Wilt, Richard S."
@@ -19899,11 +18264,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 23.2,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Indiana"
@@ -19940,11 +18300,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Thachik, George M."
@@ -19981,11 +18336,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 13.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Rega, Jennifer J."
@@ -20022,11 +18372,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 29.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Haberl, Guy B."
@@ -20063,11 +18408,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 38.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Steffee, Susanne V."
@@ -20107,11 +18447,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0.1,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Jefferson"
@@ -20148,11 +18483,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Inzana, David B."
@@ -20189,11 +18519,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Chambers, Douglas R."
@@ -20230,11 +18555,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bazylak, Gregory M."
@@ -20274,11 +18594,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 19.5,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Juniata"
@@ -20315,11 +18630,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lyter, Barbara M."
@@ -20356,11 +18666,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 39.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Leister, Jacqueline T."
@@ -20400,11 +18705,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 1.8,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.07,
-            "name": "Nominal"
           }
         ],
         "name": "Lackawanna"
@@ -20441,11 +18741,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Turlip-Murphy, Laura"
@@ -20482,11 +18777,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Farrell, Alyce Hailstone"
@@ -20523,11 +18813,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ware, Paul J."
@@ -20564,11 +18849,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Giglio, Theodore J."
@@ -20605,11 +18885,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gallagher, Terrence V."
@@ -20646,11 +18921,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Pesota, John P."
@@ -20687,11 +18957,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "McGraw, Sean P."
@@ -20728,11 +18993,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Keeler, Paul"
@@ -20769,11 +19029,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Corbett, Joanne Price"
@@ -20813,11 +19068,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 14.6,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.09,
-            "name": "Nominal"
           }
         ],
         "name": "Lancaster"
@@ -20854,11 +19104,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Willwerth, Jene"
@@ -20895,11 +19140,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mylin, Stuart J."
@@ -20936,11 +19176,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Chudzik, Brian E."
@@ -20977,11 +19212,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Albert, Scott E."
@@ -21018,11 +19248,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Benner, William E. Jr."
@@ -21059,11 +19284,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 5.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Jimenez, Janice"
@@ -21100,11 +19320,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 5.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Russell, Tony S."
@@ -21141,11 +19356,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 6.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Commins, B. Denise"
@@ -21182,11 +19392,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 7.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hartman, Rodney H."
@@ -21223,11 +19428,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 8.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Sheller, Raymond S."
@@ -21264,11 +19464,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 15.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bixler, Miles K."
@@ -21305,11 +19500,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 17.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Miller, David P."
@@ -21346,11 +19536,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 35.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mongiovi Sponaugle, Mary"
@@ -21387,11 +19572,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 66.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Herman, Robert A. Jr."
@@ -21428,11 +19608,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hamill, Nancy G."
@@ -21469,11 +19644,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Duncan, Jayne F."
@@ -21510,11 +19680,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 50.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Reinaker, Dennis E."
@@ -21551,11 +19716,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 6.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Tobin, Edward A."
@@ -21592,11 +19752,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Roth, Bruce A."
@@ -21633,11 +19788,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 11.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Witkonis, Adam J."
@@ -21674,11 +19824,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 19.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
               }
             ],
             "name": "Keller, Joshua R."
@@ -21715,11 +19860,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.8,
-                "name": "Nominal"
               }
             ],
             "name": "Winters, John C."
@@ -21756,11 +19896,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 2.8,
-                "name": "Nominal"
               }
             ],
             "name": "Reuter, William G."
@@ -21800,11 +19935,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 22.1,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.05,
-            "name": "Nominal"
           }
         ],
         "name": "Lawrence"
@@ -21841,11 +19971,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 34.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Rishel, David B."
@@ -21882,11 +20007,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "McGrath, Scott"
@@ -21923,11 +20043,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 42.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cartwright, Jerry G. Jr."
@@ -21964,11 +20079,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 18.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Nicholson, Jennifer L."
@@ -22005,11 +20115,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 11.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Amodie, Melissa Ann"
@@ -22049,11 +20154,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Lebanon"
@@ -22090,11 +20190,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Capello, Thomas M."
@@ -22131,11 +20226,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Garver, Carl Russell"
@@ -22172,11 +20262,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Wolfe, Kim R."
@@ -22213,11 +20298,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Verna, Anthony J."
@@ -22254,11 +20334,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Dissinger, Maria M."
@@ -22295,11 +20370,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ditzler, John W."
@@ -22339,11 +20409,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 8.4,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.17,
-            "name": "Nominal"
           }
         ],
         "name": "Lehigh"
@@ -22380,11 +20445,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Manescu, Ronald S."
@@ -22421,11 +20481,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Pochron, Michael Joseph"
@@ -22462,11 +20517,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Maura, Wayne"
@@ -22503,11 +20553,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Balliet, Carl L."
@@ -22544,11 +20589,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Engler, Patricia M."
@@ -22585,11 +20625,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Devine, Karen C."
@@ -22626,11 +20661,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Howells, David M. Jr."
@@ -22667,11 +20697,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Halal, Robert C."
@@ -22708,11 +20733,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Crawford, Charles H."
@@ -22749,11 +20769,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 21.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Beck, Rod"
@@ -22790,11 +20805,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 27.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Hammond, Jacob E."
@@ -22831,11 +20841,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 5.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Santiago, Rashid"
@@ -22872,11 +20877,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Butler, Donna R."
@@ -22913,11 +20913,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Faulkner, Michael J."
@@ -22954,11 +20949,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 25.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Trexler, Daniel C."
@@ -22995,11 +20985,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 35.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.3,
-                "name": "Nominal"
               }
             ],
             "name": "D'Amore, Michael D."
@@ -23039,11 +21024,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 30.7,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.03,
-            "name": "Nominal"
           }
         ],
         "name": "Luzerne"
@@ -23080,11 +21060,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Roberts, Paul J."
@@ -23121,11 +21096,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 73.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Sharkey, Thomas"
@@ -23162,11 +21132,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 56.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Tupper, Brian James"
@@ -23203,11 +21168,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 23.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Barilla, David A."
@@ -23244,11 +21204,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 12.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Dixon, James M."
@@ -23285,11 +21240,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 39.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Zola, Joseph D."
@@ -23326,11 +21276,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 24.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Halesey, Joseph A."
@@ -23367,11 +21312,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 28.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kravitz, Alexandra Kokura"
@@ -23408,11 +21348,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 15.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Carmody, Joseph J."
@@ -23449,11 +21384,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 31.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cronauer, Rick"
@@ -23490,11 +21420,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 45,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Malast, Diana"
@@ -23531,11 +21456,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 30.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "O'Donnell, Daniel"
@@ -23572,11 +21492,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 52,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Dotzel, Michael G."
@@ -23613,11 +21528,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 29.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hasay, John E."
@@ -23654,11 +21564,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 33.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Malloy, Thomas F. Sr."
@@ -23695,11 +21600,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 21.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Spagnuolo, Joseph D. Jr."
@@ -23736,11 +21636,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 30.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Whittaker, Donald L."
@@ -23780,11 +21675,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Lycoming"
@@ -23821,11 +21711,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Solomon, William C."
@@ -23862,11 +21747,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Page, Allen P. III"
@@ -23903,11 +21783,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lepley, Jerry C."
@@ -23944,11 +21819,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Whiteman, Gary A."
@@ -23985,11 +21855,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kemp, Jon Edward"
@@ -24026,11 +21891,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Frey, Christian David"
@@ -24070,11 +21930,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 5,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "McKean"
@@ -24111,11 +21966,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Engman, David Richard"
@@ -24152,11 +22002,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 5.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Luther, Richard W."
@@ -24193,11 +22038,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 7.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cercone, Dominic Jr."
@@ -24234,11 +22074,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Todd, William K."
@@ -24278,11 +22113,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 11.5,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Mercer"
@@ -24319,11 +22149,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Fagley, William L."
@@ -24360,11 +22185,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Arthur, Brian R."
@@ -24401,11 +22221,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 2.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "McEwen, D. Neil"
@@ -24442,11 +22257,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 16,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hinch, Lorinda L."
@@ -24483,11 +22293,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 15.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Songer, Dennis M."
@@ -24524,11 +22329,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 19.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Antos, Ronald E."
@@ -24568,11 +22368,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0.4,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.07,
-            "name": "Nominal"
           }
         ],
         "name": "Mifflin"
@@ -24609,11 +22404,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Reed, Jonathan W."
@@ -24650,11 +22440,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Smith, Kent A."
@@ -24691,11 +22476,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Miller, Jack E."
@@ -24735,11 +22515,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 17.6,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.02,
-            "name": "Nominal"
           }
         ],
         "name": "Monroe"
@@ -24776,11 +22551,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Muth, Michael R."
@@ -24817,11 +22587,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Claypool, Richard"
@@ -24858,11 +22623,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mancuso, Colleen"
@@ -24899,11 +22659,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Anzini, Kristina"
@@ -24940,11 +22695,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 23.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Fluegel, Anthony D."
@@ -24981,11 +22731,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 43.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Higgins, C. Daniel"
@@ -25022,11 +22767,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 47.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Riley, Phillip R."
@@ -25063,11 +22803,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Olsen, Thomas E."
@@ -25104,11 +22839,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 52.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Krawitz, Jolana"
@@ -25145,11 +22875,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Germano, Brian"
@@ -25189,11 +22914,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 15.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Montgomery"
@@ -25230,11 +22950,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "McHugh Casey, Elizabeth A."
@@ -25271,11 +22986,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Nesbitt, Harry J. III"
@@ -25312,11 +23022,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Saylor, Maurice H."
@@ -25353,11 +23058,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kelly Rebar, Cathleen"
@@ -25394,11 +23094,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Casillo, Ester J."
@@ -25435,11 +23130,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "McGill, Katherine E."
@@ -25476,11 +23166,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Eisner Zucker, Karen"
@@ -25517,11 +23202,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Schireson, Henry J."
@@ -25558,11 +23238,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Augustine, Albert J."
@@ -25599,11 +23274,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hummel Fried, Catherine M."
@@ -25640,11 +23310,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kropp, Edward C. Sr."
@@ -25681,11 +23346,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Leo, Paul N."
@@ -25722,11 +23382,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Maruszczak, William I."
@@ -25763,11 +23418,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cerski, Christopher"
@@ -25804,11 +23454,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Zaffarano, Patricia Ann"
@@ -25845,11 +23490,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Palladino, Scott T."
@@ -25886,11 +23526,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 20.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lawrence, Francis J. Jr."
@@ -25927,11 +23562,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 24.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hudak Duffy, Andrea"
@@ -25968,11 +23598,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 25.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hunsicker, Margaret A."
@@ -26009,11 +23634,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 30.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bernhardt, Francis J. III"
@@ -26050,11 +23670,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Sobeck, Robert M."
@@ -26091,11 +23706,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 33,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gallagher, James"
@@ -26132,11 +23742,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 34.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gadzicki, Walter F. Jr."
@@ -26173,11 +23778,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 38.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kessler, John D."
@@ -26214,11 +23814,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 40.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lukens, Deborah"
@@ -26255,11 +23850,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 50.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Friedenberg, Jay S."
@@ -26296,11 +23886,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 47.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Levine, Edward"
@@ -26337,11 +23922,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Scott, Gregory L."
@@ -26378,11 +23958,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Quinn, Michael P."
@@ -26419,11 +23994,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Price, Juanita A."
@@ -26463,11 +24033,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 41.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Montour"
@@ -26504,11 +24069,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 54.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Shrawder, Marvin K."
@@ -26548,11 +24108,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 8.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.2,
-            "name": "Nominal"
           }
         ],
         "name": "Northampton"
@@ -26589,11 +24144,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Capobianco, John C."
@@ -26630,11 +24180,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Narlesky, James J."
@@ -26671,11 +24216,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Barner, Joseph K."
@@ -26712,11 +24252,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Broscius, Patricia C."
@@ -26753,11 +24288,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hawke, Robert A."
@@ -26794,11 +24324,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Manwaring, Roy A. II"
@@ -26835,11 +24360,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Corpora, Daniel G."
@@ -26876,11 +24396,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 37.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Tidd, David W."
@@ -26917,11 +24432,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 58.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Romig-Gainer, Elizabeth A."
@@ -26958,11 +24468,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 5.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Matos Gonzalez, Nancy"
@@ -26999,11 +24504,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Zito, Alicia Rose"
@@ -27040,11 +24540,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 6.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Yetter, Richard H. III"
@@ -27081,11 +24576,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 18.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Taschner, Jacqueline M."
@@ -27122,11 +24612,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 15.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Grifo, Antonia"
@@ -27163,11 +24648,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.9,
-                "name": "Nominal"
               }
             ],
             "name": "Schlegel, Douglas"
@@ -27204,11 +24684,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.3,
-                "name": "Nominal"
               }
             ],
             "name": "Rapp, Anthony G. Jr."
@@ -27248,11 +24723,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 11.8,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.04,
-            "name": "Nominal"
           }
         ],
         "name": "Northumberland"
@@ -27289,11 +24759,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cashman, Richard P."
@@ -27330,11 +24795,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Diehl, Michael I."
@@ -27371,11 +24831,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gembic, John"
@@ -27412,11 +24867,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 38.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Apfelbaum, Benjamin"
@@ -27456,11 +24906,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 42.7,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 1.55,
-            "name": "Nominal"
           }
         ],
         "name": "Perry"
@@ -27497,11 +24942,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 46.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Frownfelter, Elizabeth R."
@@ -27538,11 +24978,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 50.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "McGuire, Daniel R."
@@ -27579,11 +25014,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 40.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 2.6,
-                "name": "Nominal"
               }
             ],
             "name": "Schechterly, Michael E."
@@ -27623,11 +25053,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 34.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Philadelphia"
@@ -27664,11 +25089,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hayden, Charles"
@@ -27705,11 +25125,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 2.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Washington, Craig M."
@@ -27746,11 +25161,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Shuter, David C."
@@ -27787,11 +25197,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Jimenez, Nazario Jr."
@@ -27828,11 +25233,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Pew, Wendy L."
@@ -27869,11 +25269,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Dugan, Patrick F."
@@ -27910,11 +25305,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "DeLeon, James M."
@@ -27951,11 +25341,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 5.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Meehan, William Austin Jr."
@@ -27992,11 +25377,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 6.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kosinski, Gerard A."
@@ -28033,11 +25413,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Robbins, Harvey W."
@@ -28074,11 +25449,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 48.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Stack, Patrick"
@@ -28115,11 +25485,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 40.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Rebstock, Francis J."
@@ -28156,11 +25521,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 30.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Rice, Jane M."
@@ -28197,11 +25557,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 33.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "O'Brien, James"
@@ -28238,11 +25593,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 18.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "E-Filing Judge"
@@ -28279,11 +25629,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 34.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bedford, Sheila M."
@@ -28320,11 +25665,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 37.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Devlin, Kevin R."
@@ -28361,11 +25701,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 33.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Emergency Arraignment Court Magistrate"
@@ -28405,11 +25740,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 28.9,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.1,
-            "name": "Nominal"
           }
         ],
         "name": "Pike"
@@ -28446,11 +25776,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 35.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cooper, Alan B."
@@ -28487,11 +25812,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 21.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Menditto, Paul D. Sr."
@@ -28528,11 +25848,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 12.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Muir, Shannon L."
@@ -28569,11 +25884,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 49.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Fischer, Deborah"
@@ -28613,11 +25923,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 15.9,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Potter"
@@ -28654,11 +25959,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "McCleaft, Kari A."
@@ -28695,11 +25995,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 16,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Weiss, Delores G."
@@ -28736,11 +26031,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Easton, Annette L."
@@ -28780,11 +26070,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 11.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.15,
-            "name": "Nominal"
           }
         ],
         "name": "Schuylkill"
@@ -28821,11 +26106,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Rossi, David J."
@@ -28862,11 +26142,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Reiley, James"
@@ -28903,11 +26178,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ferrier, James R."
@@ -28944,11 +26214,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kilker, Anthony J."
@@ -28985,11 +26250,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Plachko, David A."
@@ -29026,11 +26286,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hale, Christina E."
@@ -29067,11 +26322,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 49.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.9,
-                "name": "Nominal"
               }
             ],
             "name": "Bayer, Stephen J."
@@ -29111,11 +26361,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 3.8,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Snyder"
@@ -29152,11 +26397,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Reed, John H."
@@ -29193,11 +26433,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hackenberg, Lori R."
@@ -29237,11 +26472,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 2.5,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Somerset"
@@ -29278,11 +26508,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 1.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Stevanus, Sandra L."
@@ -29319,11 +26544,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Johnson, Kenneth W."
@@ -29360,11 +26580,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 10,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bell, Douglas McCall"
@@ -29401,11 +26616,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Seger, William E."
@@ -29442,11 +26652,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mankamyer, Susan"
@@ -29486,11 +26691,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 1.9,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Sullivan"
@@ -29529,11 +26729,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 26.2,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Susquehanna"
@@ -29570,11 +26765,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 9.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hollister, Jeffrey L."
@@ -29611,11 +26801,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 39.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Cordner, Jodi L."
@@ -29652,11 +26837,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 28.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Brainard, Suzanne M."
@@ -29696,11 +26876,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Tioga"
@@ -29737,11 +26912,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Edgcomb, James R."
@@ -29778,11 +26948,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Carlson, James E."
@@ -29819,11 +26984,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Repard, Robert L."
@@ -29863,11 +27023,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 48.8,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Union"
@@ -29904,11 +27059,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 75.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Armbruster, Leo S."
@@ -29945,11 +27095,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 21.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mensch, Jeffrey L."
@@ -29989,11 +27134,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0.1,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Venango"
@@ -30030,11 +27170,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kirtland, Matthew T."
@@ -30071,11 +27206,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Fish, Andrew F."
@@ -30112,11 +27242,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Lowrey, Patrick E."
@@ -30156,11 +27281,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 41.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Warren"
@@ -30197,11 +27317,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 33.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Carlson, Glenn S."
@@ -30238,11 +27353,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 49.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Woodin, Todd A."
@@ -30279,11 +27389,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 49.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bauer, Laura"
@@ -30323,11 +27428,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 26.1,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.02,
-            "name": "Nominal"
           }
         ],
         "name": "Washington"
@@ -30364,11 +27464,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kanalis, Joshua P."
@@ -30405,11 +27500,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ward, Ethan T."
@@ -30446,11 +27536,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Hopkins, Larry W."
@@ -30487,11 +27572,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 20,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "McDonald, Traci L."
@@ -30528,11 +27608,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Wilson, Mark"
@@ -30569,11 +27644,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 36.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Havelka, Gary H."
@@ -30610,11 +27680,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 56.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Ellis, James C."
@@ -30651,11 +27716,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Thompson, Curtis"
@@ -30692,11 +27752,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 64.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Weller, Jay"
@@ -30733,11 +27788,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 47,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mark, David W."
@@ -30774,11 +27824,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 16.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Redlinger, Robert W."
@@ -30818,11 +27863,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 34.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Wayne"
@@ -30859,11 +27899,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 11.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Carney, Bonnie L."
@@ -30900,11 +27935,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 41.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Myers, Linus H."
@@ -30941,11 +27971,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 53,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Edwards, Ronald"
@@ -30985,11 +28010,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 32.8,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Westmoreland"
@@ -31026,11 +28046,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Kistler, Helen M."
@@ -31067,11 +28082,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 3.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "DeMarchis, Joseph R."
@@ -31108,11 +28118,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 4.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Weimer, Douglas Reid"
@@ -31149,11 +28154,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 42.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Thiel, Denise S."
@@ -31190,11 +28190,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 49.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bilik, Mark"
@@ -31231,11 +28226,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 67.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mahady, Michael"
@@ -31272,11 +28262,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 29.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Pallone, Frank J. Jr."
@@ -31313,11 +28298,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Peck, Yackopec Cheryl J."
@@ -31354,11 +28334,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 19.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Albert, James"
@@ -31395,11 +28370,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 43.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Buczak, Jason"
@@ -31436,11 +28406,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 36.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Eckels, Roger"
@@ -31477,11 +28442,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 49,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Bompiani, L. Anthony"
@@ -31518,11 +28478,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 30.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Gongaware, Wayne"
@@ -31559,11 +28514,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 57.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Conway, Charles R."
@@ -31600,11 +28550,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Falcon, James N."
@@ -31641,11 +28586,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 60.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Moore, Charles D."
@@ -31682,11 +28622,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 39.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Christner, Charles M."
@@ -31723,11 +28658,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 29,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Dalfonso, Joseph A."
@@ -31764,11 +28694,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Mansour, Mark Stephen"
@@ -31808,11 +28733,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 0.2,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0,
-            "name": "Nominal"
           }
         ],
         "name": "Wyoming"
@@ -31849,11 +28769,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Plummer, David K"
@@ -31890,11 +28805,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Smith, Carl W. Jr."
@@ -31934,11 +28844,6 @@ export const MDJ_DATA = [
             "className": "ror-bar",
             "value": 33.3,
             "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.34,
-            "name": "Nominal"
           }
         ],
         "name": "York"
@@ -31975,11 +28880,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Meisenhelter, Douglas F."
@@ -32016,11 +28916,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Groom, Walter"
@@ -32057,11 +28952,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 49.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Dubs, Dwayne A."
@@ -32098,11 +28988,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 29.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Reilly, Thomas J."
@@ -32139,11 +29024,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 77.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Edie, Nancy Lee"
@@ -32180,11 +29060,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 26.1,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Albright, Keith L."
@@ -32221,11 +29096,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 23.2,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Clancy, Jennifer J.P."
@@ -32262,11 +29132,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 50.3,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Eckenrode, Robert A."
@@ -32303,11 +29168,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 22.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Eshbach, David C."
@@ -32344,11 +29204,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 35.9,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0,
-                "name": "Nominal"
               }
             ],
             "name": "Laird, Scott"
@@ -32385,11 +29240,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
               }
             ],
             "name": "Bloss, Barry L."
@@ -32426,11 +29276,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 35.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Manifold, Laura S."
@@ -32467,11 +29312,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 47.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Miner, James S."
@@ -32508,11 +29348,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 33.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Toluba, Joel N."
@@ -32549,11 +29384,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 32.7,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Williams, Linda L."
@@ -32590,11 +29420,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 25,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
               }
             ],
             "name": "Haskell, Ronald J. Jr."
@@ -32631,11 +29456,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 44.4,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Oberdorf, Jeffrey L."
@@ -32672,11 +29492,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 35,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
               }
             ],
             "name": "Gross, Scott J."
@@ -32713,11 +29528,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 31.8,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
               }
             ],
             "name": "Morgan, James H."
@@ -32754,11 +29564,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 0.5,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
               }
             ],
             "name": "Martin, Richard E. II"
@@ -32795,11 +29600,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 33.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.6,
-                "name": "Nominal"
               }
             ],
             "name": "Thomas, Richard T."
@@ -32836,11 +29636,6 @@ export const MDJ_DATA = [
                 "className": "ror-bar",
                 "value": 50.6,
                 "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 3.3,
-                "name": "Nominal"
               }
             ],
             "name": "Fishel, John H."

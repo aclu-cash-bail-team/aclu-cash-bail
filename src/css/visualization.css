@@ -196,11 +196,6 @@
   background-color: rgba(193, 78, 248, 1);
 }
 
-.nominal-bar {
-  /* Placeholder */
-  background-color: rgba(238, 238, 238, 1);
-}
-
 /* Bail Distribution Visualization */
 
 #dist-graph-container {

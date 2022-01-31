@@ -151,16 +151,11 @@
   }
 
   .legend-segment {
-    padding: 0 2px;
+    padding: 0 5px;
   }
 
   .legend-color-bar {
-    width: 70px;
-  }
-
-  .legend-header {
-    margin-top: 10px;
-    font-size: 11px;
+    width: 75px;
   }
 }
 
