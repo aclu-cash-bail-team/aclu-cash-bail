@@ -4,6 +4,10 @@ import { ScatterPlot } from "./classes/Graph.js";
 import {
   BAIL_RACE_RATE_DATA,
   BAIL_RACE_AMOUNT_DATA,
+  PA_AVG_BLACK_BAIL_RATE,
+  PA_AVG_WHITE_BAIL_RATE,
+  PA_BLACK_CASES,
+  PA_WHITE_CASES,
   RACE_SCATTER_PLOT
 } from "./data.js";
 
@@ -70,11 +74,11 @@ const createBailRaceRateTable = () => {
   const initSort = { col: 4, dir: -1 }; // initially sort by difference
   const stateData = [
     "Pennsylvania",
-    55.9,
-    36.5,
+    PA_AVG_BLACK_BAIL_RATE,
+    PA_AVG_WHITE_BAIL_RATE,
     {
       type: "line",
-      values: [55.9, 36.5]
+      values: [PA_AVG_BLACK_BAIL_RATE, PA_AVG_WHITE_BAIL_RATE]
     },
     "+19.4"
   ];
@@ -127,11 +131,11 @@ const createBailRaceAmountTable = () => {
         averages: [
           {
             name: "Black",
-            value: 45452
+            value: PA_BLACK_CASES
           },
           {
             name: "White",
-            value: 31965
+            value: PA_WHITE_CASES
           }
         ],
         unit: "dollars"
@@ -156,7 +160,7 @@ const createBailRaceAmountTable = () => {
     "$32.0K",
     {
       type: "line",
-      values: [45452, 31965]
+      values: [PA_BLACK_CASES, PA_WHITE_CASES]
     },
     "+$13.5K"
   ];
@@ -229,6 +233,6 @@ const bailRaceAmountTable = createBailRaceAmountTable();
 const raceContainer = document.getElementById("race-container");
 new SwitchableTable(bailRaceRateTable, bailRaceAmountTable, raceContainer);
 
-new RaceMapContainer("race-rate", BAIL_RACE_RATE_DATA, 36.5, 55.9);
+new RaceMapContainer("race-rate", BAIL_RACE_RATE_DATA, PA_AVG_WHITE_BAIL_RATE, PA_AVG_BLACK_BAIL_RATE);
 
 createRaceScatterPlot();

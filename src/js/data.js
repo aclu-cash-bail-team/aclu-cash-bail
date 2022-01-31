@@ -1040,6 +1040,10 @@ export const BAIL_RATE_DATA = [
   }
 ];
 
+export const PA_BAIL_CASES = 2482;
+export const PA_ROR_CASES = 1286;
+export const PA_TOTAL_CASES = 5721;
+
 export const ROR_RATE_DATA = [
   {
     "data": [
@@ -2047,6 +2051,7 @@ export const ROR_RATE_DATA = [
     "outlier": false
   }
 ];
+
 
 export const BAIL_RACE_RATE_DATA = [
   {
@@ -4197,6 +4202,11 @@ export const BAIL_RACE_AMOUNT_DATA = [
     "outlier": false
   }
 ];
+
+export const PA_AVG_BLACK_BAIL_RATE = 55.9;
+export const PA_AVG_WHITE_BAIL_RATE = 36.5;
+export const PA_BLACK_CASES = 45452;
+export const PA_WHITE_CASES = 31965;
 
 export const RACE_SCATTER_PLOT = {
   "Adams": {
@@ -6368,6 +6378,8 @@ export const BAIL_POSTING_DATA = [
     "outlier": false
   }
 ];
+
+export const PA_AVG_POSTING_RATE = 63.2;
 
 export const MDJ_DATA = [
   {

@@ -3,11 +3,18 @@ import { BailRateMap, BailPostingMap, SwitchableMap } from "./classes/Map.js";
 import { ScatterPlot, DistributionGraph } from "./classes/Graph.js";
 import {
   BAIL_RATE_DATA,
+  PA_BAIL_CASES,
+  PA_ROR_CASES,
+  PA_TOTAL_CASES,
+  PA_AVG_POSTING_RATE,
   ROR_RATE_DATA,
   BAIL_POSTING_DATA,
   BAIL_CASES_SCATTER_PLOT,
   MDJ_DATA
 } from "./data.js";
+
+const PA_BAIL_RATE = Math.round(PA_BAIL_CASES / PA_TOTAL_CASES * 100 * 10) / 10;
+const PA_ROR_RATE = Math.round(PA_ROR_CASES / PA_TOTAL_CASES * 100 * 10) / 10;
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -56,7 +63,7 @@ const createBailRateTable = () => {
         averages: [
           {
             name: "Avg.",
-            value: 38.6
+            value: PA_BAIL_RATE
           }
         ],
         unit: "percent"
@@ -68,12 +75,12 @@ const createBailRateTable = () => {
   const initSort = { col: 2, dir: -1 }; // initially sort by cash bail rate
   const stateData = [
     "Pennsylvania",
-    38.6,
-    2482,
-    5721,
+    PA_BAIL_RATE,
+    PA_BAIL_CASES,
+    PA_TOTAL_CASES,
     {
       type: "bar",
-      values: [38.6]
+      values: [PA_BAIL_RATE]
     }
   ];
 
@@ -134,7 +141,7 @@ const createRorRateTable = () => {
         averages: [
           {
             name: "Avg.",
-            value: 19.7
+            value: PA_ROR_RATE
           }
         ],
         unit: "percent"
@@ -146,12 +153,12 @@ const createRorRateTable = () => {
   const initSort = { col: 2, dir: -1 }; // initially sort by ror bail rate
   const stateData = [
     "Pennsylvania",
-    19.7,
-    1286,
-    5721,
+    PA_ROR_RATE,
+    PA_ROR_CASES,
+    PA_TOTAL_CASES,
     {
       type: "bar",
-      values: [19.7]
+      values: [PA_ROR_RATE]
     }
   ];
 
@@ -203,7 +210,7 @@ const createBailPostingTable = () => {
         averages: [
           {
             name: "Avg.",
-            value: 63.2
+            value: PA_AVG_POSTING_RATE
           }
         ],
         unit: "percent"
@@ -216,10 +223,10 @@ const createBailPostingTable = () => {
   const stateData = [
     "Pennsylvania",
     "$34.5K",
-    63.2,
+    PA_AVG_POSTING_RATE,
     {
       type: "bar",
-      values: [63.2]
+      values: [PA_AVG_POSTING_RATE]
     }
   ];
 
@@ -333,15 +340,15 @@ createBailPostingTable();
 const cashBailRateMap = new BailRateMap(
   "cash-bail-rate",
   BAIL_RATE_DATA,
-  38.6,
+  PA_BAIL_RATE,
   "Cash Bail Rate"
 );
-const rorRateMap = new BailRateMap("ror-rate", ROR_RATE_DATA, 19.7, "ROR Rate");
+const rorRateMap = new BailRateMap("ror-rate", ROR_RATE_DATA, PA_ROR_RATE, "ROR Rate");
 const rateChloroplethContainer = document.getElementById(
   "rate-chloropleth-container"
 );
 new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
-new BailPostingMap("bail-posting", BAIL_POSTING_DATA, 63.2, 70);
+new BailPostingMap("bail-posting", BAIL_POSTING_DATA, PA_AVG_POSTING_RATE, 70);
 
 createCasesScatterPlot();
 new DistributionGraph(
