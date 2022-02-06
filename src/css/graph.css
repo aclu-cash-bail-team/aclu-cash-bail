@@ -131,17 +131,23 @@ svg.label-wrapper {
 .scatter-point.outlier,
 .scatter-line.outlier,
 .scatter-text.outlier {
-  display: none;
-  opacity: 0.5;
+  fill-opacity: 0.2;
 }
 
+.scatter-point.black.outlier {
+  stroke: #00ed89;
+}
+
+.scatter-point.white.outlier {
+  stroke: #c14ef8;
+}
 .scatter-text.hovering {
   text-shadow: 1px 0px;
 }
 
-.scatter-plot.show-outliers .scatter-line.outlier,
-.scatter-plot.show-outliers .scatter-point.outlier,
-.scatter-plot.show-outliers .scatter-text.outlier {
+.scatter-plot .scatter-line.outlier,
+.scatter-plot .scatter-point.outlier,
+.scatter-plot .scatter-text.outlier {
   display: inline-block;
 }
 

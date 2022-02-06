@@ -160,9 +160,7 @@ export class ScatterPlot {
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
     this.mobileSizing;
-    this.showOutliers = false;
     this.setUpSearchBar();
-    this.setUpOutlierButton();
     this.render();
   }
 
@@ -191,22 +189,6 @@ export class ScatterPlot {
         searched ? point.onMouseEnter() : point.onMouseLeave();
       });
     });
-  }
-
-  setUpOutlierButton() {
-    const button = this.container.getElementsByClassName("outliers-btn")[0];
-    if (this.mobileSizing) this.plot.classList.add("show-outliers");
-    if (button) {
-      button.addEventListener("click", (e) => {
-        if (this.toggleOutliers()) {
-          e.target.classList.add("showing");
-          this.plot.classList.add("show-outliers");
-        } else {
-          e.target.classList.remove("showing");
-          this.plot.classList.remove("show-outliers");
-        }
-      });
-    }
   }
 
   getNumber(val) {
@@ -249,11 +231,6 @@ export class ScatterPlot {
 
     const sortedPoints = points.sort((a, b) => b.data[0].r - a.data[0].r);
     return sortedPoints;
-  }
-
-  toggleOutliers() {
-    this.showOutliers = !this.showOutliers;
-    return this.showOutliers || this.mobileSizing;
   }
 
   updateViewBox() {
