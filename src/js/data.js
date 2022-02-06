@@ -2309,7 +2309,7 @@ export const BAIL_RACE_RATE_DATA = [
           40.4
         ]
       },
-      "--0.7"
+      "-0.7"
     ],
     "outlier": true
   },
@@ -2517,7 +2517,7 @@ export const BAIL_RACE_RATE_DATA = [
           29.1
         ]
       },
-      "--0.5"
+      "-0.5"
     ],
     "outlier": true
   },
