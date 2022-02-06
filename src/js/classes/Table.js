@@ -578,6 +578,10 @@ export class Table {
     });
   }
 
+  isSearching() {
+    return this.searchTerms.length > 0;
+  }
+
   getRows() {
     let numVisibleRows = 0;
     const rows = this.data.map((row) => {
@@ -597,7 +601,7 @@ export class Table {
       const isHiddenOutlier = row.outlier && !this.showOutliers;
       const isRowVisible =
         isRowSearched ||
-        (!isTruncated && !isHiddenOutlier && this.searchTerms.length === 0);
+        (!isTruncated && !isHiddenOutlier && !this.isSearching());
       if (row.collapseData !== undefined && row.collapseData.length > 0) {
         const collapseRows = row.collapseData.map((collapseRow) => {
           const isSubRowSearched = this.searchTerms.some(
@@ -605,10 +609,9 @@ export class Table {
               // For simplicity, only the first sub-row column is searchable
               collapseRow.data[1].toLowerCase() === searchTerm.toLowerCase()
           );
-          const isSubRowHiddenOutlier =
-            collapseRow.outlier && !this.showOutliers;
+          const isSubRowHiddenOutlier = collapseRow.outlier && !this.showOutliers;
           const isSubRowVisible =
-            isSubRowSearched || (!row.isCollapsed && !isSubRowHiddenOutlier);
+            isSubRowSearched || (!row.isCollapsed && !isSubRowHiddenOutlier && !this.isSearching());
           return new BodyRow(
             this.getCells(collapseRow.data, collapseRow.outlier),
             collapseRow.outlier,
