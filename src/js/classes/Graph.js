@@ -186,7 +186,10 @@ export class ScatterPlot {
       this.searchTerms = searchValue.split(";").filter((s) => s !== "");
       this.points.forEach((point) => {
         const searched = this.searchTerms.includes(point.county.toLowerCase());
-        searched ? point.onMouseEnter() : point.onMouseLeave();
+        point.elements.forEach((element) => {
+          if (searched) element.classList.add("searched");
+          else element.classList.remove("searched");
+        });
       });
     });
   }
