@@ -6,15 +6,16 @@ import {
   PA_BAIL_CASES,
   PA_ROR_CASES,
   PA_TOTAL_CASES,
+  PA_BAIL_RATE,
+  PA_ROR_RATE,
   PA_AVG_POSTING_RATE,
+  PA_AVG_BAIL_AMT,
   ROR_RATE_DATA,
   BAIL_POSTING_DATA,
   BAIL_CASES_SCATTER_PLOT,
   MDJ_DATA
 } from "./data.js";
 
-const PA_BAIL_RATE = Math.round(PA_BAIL_CASES / PA_TOTAL_CASES * 100 * 10) / 10;
-const PA_ROR_RATE = Math.round(PA_ROR_CASES / PA_TOTAL_CASES * 100 * 10) / 10;
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -222,7 +223,7 @@ const createBailPostingTable = () => {
   const initSort = { col: 2, dir: -1 };
   const stateData = [
     "Pennsylvania",
-    "$34.5K",
+    PA_AVG_BAIL_AMT,
     PA_AVG_POSTING_RATE,
     {
       type: "bar",

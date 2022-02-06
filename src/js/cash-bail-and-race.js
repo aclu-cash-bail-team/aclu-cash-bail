@@ -8,6 +8,10 @@ import {
   PA_AVG_WHITE_BAIL_RATE,
   PA_BLACK_CASES,
   PA_WHITE_CASES,
+  PA_AVG_BLACK_BAIL_AMT,
+  PA_AVG_WHITE_BAIL_AMT,
+  PA_AVG_RACE_BAIL_AMT_DIFF,
+  PA_AVG_RACE_BAIL_RATE_DIFF,
   RACE_SCATTER_PLOT
 } from "./data.js";
 
@@ -49,11 +53,11 @@ const createBailRaceRateTable = () => {
         averages: [
           {
             name: "Black",
-            value: 55.9
+            value: PA_AVG_BLACK_BAIL_RATE
           },
           {
             name: "White",
-            value: 36.5
+            value: PA_AVG_WHITE_BAIL_RATE
           }
         ],
         unit: "percent"
@@ -80,7 +84,7 @@ const createBailRaceRateTable = () => {
       type: "line",
       values: [PA_AVG_BLACK_BAIL_RATE, PA_AVG_WHITE_BAIL_RATE]
     },
-    "+19.4"
+    PA_AVG_RACE_BAIL_RATE_DIFF
   ];
 
   const tableContainer = document.getElementById("bail-race-rate-container");
@@ -156,13 +160,13 @@ const createBailRaceAmountTable = () => {
   const initSort = { col: 4, dir: -1 }; // initially sort by difference
   const stateData = [
     "Pennsylvania",
-    "$45.5K",
-    "$32.0K",
+    PA_AVG_BLACK_BAIL_AMT,
+    PA_AVG_WHITE_BAIL_AMT,
     {
       type: "line",
       values: [PA_BLACK_CASES, PA_WHITE_CASES]
     },
-    "+$13.5K"
+    PA_AVG_RACE_BAIL_AMT_DIFF
   ];
 
   const tableContainer = document.getElementById("bail-race-amount-container");

@@ -1043,6 +1043,9 @@ export const BAIL_RATE_DATA = [
 export const PA_BAIL_CASES = 2482;
 export const PA_ROR_CASES = 1286;
 export const PA_TOTAL_CASES = 5721;
+export const PA_BAIL_RATE =  parseFloat((PA_BAIL_CASES / PA_TOTAL_CASES * 100).toFixed(1));
+export const PA_ROR_RATE = parseFloat((PA_ROR_CASES / PA_TOTAL_CASES * 100).toFixed(1));
+export const PA_AVG_BAIL_AMT = "$34.5K";
 
 export const ROR_RATE_DATA = [
   {
@@ -4205,8 +4208,12 @@ export const BAIL_RACE_AMOUNT_DATA = [
 
 export const PA_AVG_BLACK_BAIL_RATE = 55.9;
 export const PA_AVG_WHITE_BAIL_RATE = 36.5;
+export const PA_AVG_RACE_BAIL_RATE_DIFF = "+19.4"
 export const PA_BLACK_CASES = 45452;
 export const PA_WHITE_CASES = 31965;
+export const PA_AVG_BLACK_BAIL_AMT = "$45.5K";
+export const PA_AVG_WHITE_BAIL_AMT = "$32.0K";
+export const PA_AVG_RACE_BAIL_AMT_DIFF = "13.5K";
 
 export const RACE_SCATTER_PLOT = {
   "Adams": {
@@ -5017,8 +5024,8 @@ export const RACE_SCATTER_PLOT = {
     "showName": true,
     "outlier": false,
     "x": {
-      "black": 55.9,
-      "white": 36.5
+      "black": PA_AVG_BLACK_BAIL_RATE,
+      "white": PA_AVG_WHITE_BAIL_RATE
     },
     "y": {
       "black": "$45,452",
@@ -5030,9 +5037,9 @@ export const RACE_SCATTER_PLOT = {
 export const BAIL_CASES_SCATTER_PLOT = {
   "State Average": {
     showName: true,
-    x: 38.6,
-    y: "$34.5K",
-    r: 5721
+    x: PA_BAIL_RATE,
+    y: PA_AVG_BAIL_AMT,
+    r: PA_TOTAL_CASES
   },
   "Adams": {
     "showName": false,
