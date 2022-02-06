@@ -167,9 +167,10 @@ class SpikeLegend {
     this.values = values;
     this.getSpike = getSpike;
 
-    this.spikeOffsetY = 110;
+    this.spikeOffsetY = 115;
     this.spikeOffsetX = 40;
     this.spikeSpacingX = 30;
+    this.spikeLabelOffsetY = 20;
 
     const svgWidth = 140;
     const svgHeight = this.spikeOffsetY + 25;
@@ -201,7 +202,7 @@ class SpikeLegend {
       .data(this.values)
       .join("text")
       .attr("x", (_, i) => i * this.spikeSpacingX + this.spikeOffsetX / 2)
-      .attr("y", (_, i) => (this.values.length - i - 1) * 30 + 15)
+      .attr("y", (_, i) => (this.values.length - i - 1) * 30 + this.spikeLabelOffsetY)
       .attr("class", "legend-text")
       .text((d) => d);
     // Add title
