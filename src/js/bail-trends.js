@@ -1,3 +1,4 @@
+import * as d3 from "d3";
 import { Table, SwitchableTable } from "./classes/Table.js";
 import { BailRateMap, BailPostingMap, SwitchableMap } from "./classes/Map.js";
 import { ScatterPlot, DistributionGraph } from "./classes/Graph.js";
@@ -249,8 +250,8 @@ const createCasesScatterPlot = () => {
   const yAxis = {
     name: "Bail Amount",
     min: 0,
-    max: 70,
-    numTicks: 7,
+    max: 90,
+    numTicks: 9,
     convert: bailAmountToText
   };
 
@@ -276,38 +277,30 @@ const createCasesScatterPlot = () => {
     ]
   };
 
-  const radiusDesktopMin = 4,
-    radiusDesktop10k = 35;
-  const radiusMobileMin = 4,
-    radiusMobile10k = 21;
+  const _100_cases_px_desktop = 4; // 100 total cash bail cases === 4px radius circle for desktop screens
+  const _25K_cases_px_desktop = 35; // 25,000 total cash bail cases === 40px radius circle for desktop screens
+  const _100_cases_px_mobile = 4; // 100 total cash bail cases === 4px radius circle for mobile screens
+  const _25K_cases_px_mobile = 21; // 25,000 total cash bail cases === 20px radius circle for mobile screens
 
-  const maxRadiusValue = Math.max(
-    ...Object.values(BAIL_CASES_SCATTER_PLOT).map((county) => county.r)
-  );
-  const minRadiusValue = 100;
+  /* The scaleSqrt scale is useful for sizing circles by area (rather than radius).
+     (When using circle size to represent data, it’s considered better practice to set the area,
+     rather than the radius proportionally to the data.)
+     https://eagereyes.org/blog/2008/linear-vs-quadratic-change
+  */
 
-  const radiusDesktopMax =
-    (radiusDesktop10k * (minRadiusValue - maxRadiusValue) +
-      radiusDesktopMin * (maxRadiusValue - 10000)) /
-    (minRadiusValue - 10000);
-  const radiusMobileMax =
-    (radiusMobile10k * (minRadiusValue - maxRadiusValue) +
-      radiusMobileMin * (maxRadiusValue - 10000)) /
-    (minRadiusValue - 10000);
+  const desktopScale = d3
+    .scaleSqrt()
+    .domain([100, 25000]) // values used in legend
+    .range([_100_cases_px_desktop, _25K_cases_px_desktop]);
+
+  const mobileScale = d3
+    .scaleSqrt()
+    .domain([100, 25000]) // values used in legend
+    .range([_100_cases_px_mobile, _25K_cases_px_mobile]);
 
   const radiusScale = {
-    desktop: {
-      min: radiusDesktopMin,
-      max: radiusDesktopMax,
-      minValue: minRadiusValue,
-      maxValue: maxRadiusValue
-    },
-    mobile: {
-      min: radiusMobileMin,
-      max: radiusMobileMax,
-      minValue: minRadiusValue,
-      maxValue: maxRadiusValue
-    }
+    desktop: desktopScale,
+    mobile: mobileScale
   };
 
   const container = document.getElementById("cases-scatter-plot");
