@@ -266,6 +266,7 @@ class Map {
 
   onMouseEnter(event) {
     this.showTooltip(event.target, {});
+    this.highlightMapForCounty(event.target)
   }
 
   onMouseOut() {
@@ -282,6 +283,12 @@ class Map {
       this.tooltip.hide();
       this.tooltip.destroy();
     }
+  }
+
+  highlightMapForCounty(element) {
+    this.svg
+    .selectAll(`path:not([${COUNTY_NAME_ATTRIBUTE}="${element.getAttribute(COUNTY_NAME_ATTRIBUTE)}"])`)
+    .style("opacity", "0.2")
   }
 
   render() {
@@ -326,7 +333,7 @@ export class BailRateMap extends Map {
 
     const onLegendMouseOver = (event) => {
       this.highlightBar(event.target);
-      this.highlightMap(event.target);
+      this.highlightMapForBucket(event.target);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -373,7 +380,7 @@ export class BailRateMap extends Map {
     this.legend.highlightBars([bucket]);
   }
 
-  highlightMap(element) {
+  highlightMapForBucket(element) {
     const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
     this.svg
       .selectAll(`path:not([${BUCKET_ATTRIBUTE}="${bucket}"])`)
@@ -441,6 +448,7 @@ class BailRaceMap extends Map {
       .selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`)
       .style("stroke-width", "2px");
     super.showTooltip(element, tooltipData);
+    this.highlightMapForCounty(element);
   }
   _onMouseOut(countyName) {
     super.onMouseOut();
@@ -449,7 +457,7 @@ class BailRaceMap extends Map {
       .style("stroke-width", "1px");
   }
 
-  highlightMap(bucket) {
+  highlightMapForBucket(bucket) {
     this.svg
       .selectAll(`path:not([${BUCKET_ATTRIBUTE}="${bucket}"])`)
       .style("opacity", "0.2");
@@ -526,7 +534,7 @@ export class RaceMapContainer {
 
     const onLegendMouseOver = (event) => {
       this.highlightBarFromLegend(event.target);
-      this.highlightMap(event.target);
+      this.highlightMapForBucket(event.target);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -594,10 +602,10 @@ export class RaceMapContainer {
     this.legend.highlightBars(buckets);
   }
 
-  highlightMap(element) {
+  highlightMapForBucket(element) {
     const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
-    this.black.highlightMap(bucket);
-    this.white.highlightMap(bucket);
+    this.black.highlightMapForBucket(bucket);
+    this.white.highlightMapForBucket(bucket);
   }
 
   resetHighlight() {
@@ -647,7 +655,7 @@ export class BailPostingMap extends Map {
 
     const onLegendMouseOver = (event) => {
       this.highlightBar(event.target);
-      this.highlightMap(event.target);
+      this.highlightMapForBucket(event.target);
     };
     const onLegendMouseOut = () => this.resetHighlight();
     onLegendMouseOver.bind(this);
@@ -716,7 +724,7 @@ export class BailPostingMap extends Map {
     this.legend.highlightBars([bucket]);
   }
 
-  highlightMap(element) {
+  highlightMapForBucket(element) {
     const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
     this.svg.selectAll("path").style("opacity", "0.2");
     this.svg
