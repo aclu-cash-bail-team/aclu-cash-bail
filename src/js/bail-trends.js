@@ -285,10 +285,10 @@ const createCasesScatterPlot = () => {
     ]
   };
 
-  const _100_cases_px_desktop = 4; // 100 total cash bail cases === 4px radius circle for desktop screens
-  const _25K_cases_px_desktop = 35; // 25,000 total cash bail cases === 40px radius circle for desktop screens
-  const _100_cases_px_mobile = 4; // 100 total cash bail cases === 4px radius circle for mobile screens
-  const _25K_cases_px_mobile = 21; // 25,000 total cash bail cases === 20px radius circle for mobile screens
+  const DESKTOP_100_CASES_PX = 4; // 100 total cash bail cases === 4px radius circle for desktop screens
+  const DESKTOP_25K_CASES_PX = 35; // 25,000 total cash bail cases === 40px radius circle for desktop screens
+  const MOBILE_100_CASES_PX = 4; // 100 total cash bail cases === 4px radius circle for mobile screens
+  const MOBILE_25K_CASES_PX = 21; // 25,000 total cash bail cases === 20px radius circle for mobile screens
 
   /* The scaleSqrt scale is useful for sizing circles by area (rather than radius).
      (When using circle size to represent data, it’s considered better practice to set the area,
@@ -299,12 +299,12 @@ const createCasesScatterPlot = () => {
   const desktopScale = d3
     .scaleSqrt()
     .domain([100, 25000]) // values used in legend
-    .range([_100_cases_px_desktop, _25K_cases_px_desktop]);
+    .range([DESKTOP_100_CASES_PX, DESKTOP_25K_CASES_PX]);
 
   const mobileScale = d3
     .scaleSqrt()
     .domain([100, 25000]) // values used in legend
-    .range([_100_cases_px_mobile, _25K_cases_px_mobile]);
+    .range([MOBILE_100_CASES_PX, MOBILE_25K_CASES_PX]);
 
   const radiusScale = {
     desktop: desktopScale,
