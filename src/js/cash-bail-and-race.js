@@ -184,9 +184,9 @@ const createBailRaceAmountTable = () => {
 const createRaceScatterPlot = () => {
   const xAxis = {
     name: "Cash Bail Rate",
-    min: 10,
-    max: 90,
-    numTicks: 8,
+    min: 0,
+    max: 100,
+    numTicks: 10,
     convert: (num) => `${num}%`
   };
   const yAxis = {
