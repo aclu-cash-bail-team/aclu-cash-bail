@@ -193,7 +193,6 @@ class SpikeLegend {
         })`;
       })
       .attr("fill", "#404040")
-      .attr("stroke", "#1a1a1a")
       .attr("opacity", 1);
     // Add spike labels
     this.svg
