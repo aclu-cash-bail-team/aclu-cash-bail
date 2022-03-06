@@ -54,16 +54,7 @@ class CountyPoint {
     const rs = [];
     this.data.forEach((data) => {
       if (!radiusScale) return rs.push(4);
-      if (radiusScale.min === radiusScale.max) return rs.push(radiusScale.min);
-      const rValueDiff = radiusScale.maxValue - radiusScale.minValue;
-      const rCircleSizeDiff = radiusScale.max - radiusScale.min;
-      const scaledR = Math.min(
-        ((data.r - radiusScale.minValue) * rCircleSizeDiff) / rValueDiff +
-          radiusScale.min,
-        radiusScale.max
-      );
-
-      rs.push(Math.min(Math.max(scaledR, radiusScale.min), radiusScale.max));
+      rs.push(Math.max(radiusScale(data.r), 0));
     });
     return rs;
   }

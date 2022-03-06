@@ -70,6 +70,10 @@ svg.scatter-plot {
   margin-right: 15px;
 }
 
+.key-circle {
+  display: inline-flex;
+}
+
 .key-circle::before {
   content: "";
   display: inline-block;
