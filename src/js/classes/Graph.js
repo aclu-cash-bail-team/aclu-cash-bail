@@ -378,6 +378,7 @@ class DistributionRow {
     unsecuredRate,
     nonmonetaryRate,
     rorRate,
+    nominalRate,
     renderTooltip
   ) {
     this.county = county;
@@ -385,6 +386,7 @@ class DistributionRow {
     this.unsecuredRate = unsecuredRate;
     this.nonmonetaryRate = nonmonetaryRate;
     this.rorRate = rorRate;
+    this.nominalRate = nominalRate
 
     this.renderTooltip = (elements) =>
       renderTooltip(
@@ -392,6 +394,7 @@ class DistributionRow {
         [
           {
             cashBailRate: cashBailRate["value"],
+            nominalRate: nominalRate["value"],
             unsecuredRate: unsecuredRate["value"],
             nonmonetaryRate: nonmonetaryRate["value"],
             rorRate: rorRate["value"]
@@ -411,6 +414,7 @@ class DistributionRow {
     distBarsSegment.className = "dist-bars-segment";
     [
       this.cashBailRate,
+      this.nominalRate,
       this.unsecuredRate,
       this.nonmonetaryRate,
       this.rorRate
@@ -421,7 +425,7 @@ class DistributionRow {
       distBarsSegment.appendChild(distBarElement);
     });
     // Set width of bar based on distribution
-    const colWidths = `${this.cashBailRate["value"]}% ${this.unsecuredRate["value"]}% ${this.nonmonetaryRate["value"]}% ${this.rorRate["value"]}%`;
+    const colWidths = `${this.cashBailRate["value"]}% ${this.nominalRate["value"]}% ${this.unsecuredRate["value"]}% ${this.nonmonetaryRate["value"]}% ${this.rorRate["value"]}%`;
     distBarsSegment.style.gridTemplateColumns = colWidths;
 
     this.renderTooltip(distBarsSegment);
@@ -443,7 +447,7 @@ export class DistributionGraph {
     this.distributionIdx = 5;
     // Sort data by county name
     this.data.sort((a, b) =>
-      a["data"][this.nameIdx] > b["data"][1]
+      a["data"][this.nameIdx] > b["data"][this.nameIdx]
         ? 1
         : a["data"][this.nameIdx] < b["data"][this.nameIdx]
         ? -1
@@ -470,6 +474,11 @@ export class DistributionGraph {
         {
           rowHeader: createHeader("Cash Bail", "cash-bar"),
           dataKey: "cashBailRate",
+          render: renderValue
+        },
+        {
+          rowHeader: createHeader("Nominal", "nominal-bar"),
+          dataKey: "nominalRate",
           render: renderValue
         },
         {
@@ -505,6 +514,7 @@ export class DistributionGraph {
         distributions[1],
         distributions[2],
         distributions[3],
+        distributions[4],
         this.renderTooltip
       );
       this.container.appendChild(distributionRow.render());
