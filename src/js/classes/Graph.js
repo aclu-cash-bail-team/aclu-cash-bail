@@ -396,7 +396,7 @@ class DistributionRow {
     this.unsecuredRate = unsecuredRate;
     this.nonmonetaryRate = nonmonetaryRate;
     this.rorRate = rorRate;
-    this.nominalRate = nominalRate
+    this.nominalRate = nominalRate;
 
     this.renderTooltip = (elements) =>
       renderTooltip(
