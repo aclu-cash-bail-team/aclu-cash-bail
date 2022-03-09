@@ -352,15 +352,11 @@ export class ScatterPlot {
     const dy = this.mobileSizing ? 40 : 60;
 
     const label = document.createElementNS(SVG_NS, "text");
-    const textAnchor = this.mobileSizing ? "middle" : isLower ? "start" : "end";
     label.setAttributeNS(null, "class", "axis-label");
-    label.setAttributeNS(null, "text-anchor", textAnchor);
+    label.setAttributeNS(null, "text-anchor", "middle");
     label.setAttributeNS(null, "dy", isYAxis ? -dy : dy);
     if (isYAxis) label.setAttributeNS(null, "transform", "rotate(-90)");
-    const text = isLower ? `← Lower ${axis.name}` : `Higher ${axis.name} →`;
-    label.appendChild(
-      document.createTextNode(this.mobileSizing ? axis.name : text)
-    );
+    label.appendChild(document.createTextNode(axis.name));
     wrapper.appendChild(label);
     this.axisLabels[isYAxis ? "y" : "x"].push(wrapper);
     this.plot.appendChild(wrapper);
