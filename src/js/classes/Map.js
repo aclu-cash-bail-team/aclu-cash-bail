@@ -193,7 +193,6 @@ class SpikeLegend {
         })`;
       })
       .attr("fill", "#404040")
-      .attr("stroke", "#1a1a1a")
       .attr("opacity", 1);
     // Add spike labels
     this.svg
@@ -235,6 +234,7 @@ class Map {
       .append("circle")
       .attr("transform", `translate(${this.projection(coords)})`)
       .attr("r", 4)
+      .attr("class", "city-label-dot")
       .attr("fill", "white");
     this.svg
       .append("text")
@@ -244,9 +244,9 @@ class Map {
   }
 
   renderCities() {
-    this.renderCity("Philadelphia", [-75.4, 39.9], [-75.75, 40]);
-    this.renderCity("Harrisburg", [-76.9, 40.3], [-77.15, 40.375]);
-    this.renderCity("Pittsburgh", [-80, 40.44], [-80.25, 40.3]);
+    this.renderCity("Philadelphia", [-75.1652, 39.9526], [-75.6, 40.06]);
+    this.renderCity("Harrisburg", [-76.8867, 40.2732], [-77.15, 40.375]);
+    this.renderCity("Pittsburgh", [-79.9959, 40.4406], [-80.25, 40.3]);
   }
 
   renderPA(features, path) {
@@ -351,14 +351,17 @@ export class BailRateMap extends Map {
   }
 
   onMouseEnter(event) {
+    const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    const attributeSelector = `${COUNTY_NAME_ATTRIBUTE}="${countyName}"`;
     super.onMouseEnter(event);
-    d3.select(event.target).style("stroke-width", "2px");
+    this.svg
+      .selectAll(`path:not([${attributeSelector}])`)
+      .classed("faded", true);
     this.highlightBar(event.target);
   }
 
   onMouseOut(event) {
-    super.onMouseOut();
-    d3.select(event.target).style("stroke-width", "1px");
+    super.onMouseOut(event);
     this.resetHighlight();
   }
 
@@ -375,14 +378,15 @@ export class BailRateMap extends Map {
 
   highlightMap(element) {
     const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
+    const attributeSelector = `${BUCKET_ATTRIBUTE}="${bucket}"`;
     this.svg
-      .selectAll(`path:not([${BUCKET_ATTRIBUTE}="${bucket}"])`)
-      .style("opacity", "0.2");
+      .selectAll(`path:not([${attributeSelector}])`)
+      .classed("faded", true);
   }
 
   resetHighlight() {
     this.legend.resetHighlight();
-    this.svg.selectAll("path").style("opacity", "1");
+    this.svg.selectAll("path").classed("faded", false);
   }
 
   renderPA(features, path) {
@@ -434,31 +438,36 @@ class BailRaceMap extends Map {
 
   // Called by parent
   _onMouseEnter(countyName, tooltipData) {
-    const element = document.querySelector(
-      `path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"][data-race="${this.race}"]`
-    );
+    const nameAttributeSelector = `${COUNTY_NAME_ATTRIBUTE}="${countyName}"`;
+    const raceAttributeSelector = `data-race="${this.race}"`;
+    const element = this.svg
+      .select(`path[${nameAttributeSelector}][${raceAttributeSelector}]`)
+      .node();
+
     this.svg
-      .selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`)
-      .style("stroke-width", "2px");
+      .selectAll(`path:not([${nameAttributeSelector}])`)
+      .classed("faded", true);
     super.showTooltip(element, tooltipData);
   }
   _onMouseOut(countyName) {
     super.onMouseOut();
     this.svg
-      .selectAll(`path[${COUNTY_NAME_ATTRIBUTE}="${countyName}"]`)
-      .style("stroke-width", "1px");
+      .selectAll(`path:not([${COUNTY_NAME_ATTRIBUTE}="${countyName}"])`)
+      .classed("faded", false);
   }
 
   highlightMap(bucket) {
+    const attributeSelector = `${BUCKET_ATTRIBUTE}="${bucket}"`;
+
     this.svg
-      .selectAll(`path:not([${BUCKET_ATTRIBUTE}="${bucket}"])`)
-      .style("opacity", "0.2");
+      .selectAll(`path:not([${attributeSelector}])`)
+      .classed("faded", true);
   }
 
   resetHighlight() {
     this.svg.selectAll("rect").style("opacity", "1");
     this.svg.selectAll("text").style("opacity", "1");
-    this.svg.selectAll("path").style("opacity", "1");
+    this.svg.selectAll("path").classed("faded", false);
   }
 
   onMouseEnter(event) {
@@ -684,19 +693,27 @@ export class BailPostingMap extends Map {
 
   onMouseEnter(event) {
     super.onMouseEnter(event);
-    d3.select(event.target).style("stroke-width", "2px");
-    if (event.target.classList.contains("county-path")) {
-      d3.select(event.target).style("fill", "#333333");
-    }
+
+    const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    const attributeSelector = `${COUNTY_NAME_ATTRIBUTE}="${countyName}"`;
+
+    this.svg
+      .select(`.county-path[${attributeSelector}]`)
+      .classed("highlighted", true);
+
     this.highlightBar(event.target);
   }
 
   onMouseOut(event) {
-    super.onMouseOut();
-    d3.select(event.target).style("stroke-width", "1px");
-    if (event.target.classList.contains("county-path")) {
-      d3.select(event.target).style("fill", "#1a1a1a");
-    }
+    super.onMouseOut(event);
+
+    const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
+    const attributeSelector = `${COUNTY_NAME_ATTRIBUTE}="${countyName}"`;
+
+    this.svg
+      .select(`.county-path[${attributeSelector}]`)
+      .classed("highlighted", false);
+
     this.resetHighlight();
   }
 
@@ -704,7 +721,9 @@ export class BailPostingMap extends Map {
     const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
     const countyRate = Number(element.getAttribute("data-rate"));
     const countyAmount = element.getAttribute("data-bail-amount");
-    super.showTooltip(element, {
+    const attributeSelector = `${COUNTY_NAME_ATTRIBUTE}="${countyName}"`;
+    const spike = this.svg.select(`.spike[${attributeSelector}]`);
+    super.showTooltip(spike.node(), {
       name: countyName,
       x: countyRate,
       y: countyAmount
@@ -718,15 +737,15 @@ export class BailPostingMap extends Map {
 
   highlightMap(element) {
     const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
-    this.svg.selectAll("path").style("opacity", "0.2");
+    const attributeSelector = `${BUCKET_ATTRIBUTE}="${bucket}"`;
     this.svg
-      .selectAll(`path.spike[${BUCKET_ATTRIBUTE}="${bucket}"`)
-      .style("opacity", "1");
+      .selectAll(`.spike:not([${attributeSelector}])`)
+      .classed("faded", true);
   }
 
   resetHighlight() {
     this.legend.resetHighlight();
-    this.svg.selectAll("path").style("opacity", "1");
+    this.svg.selectAll("path.spike").classed("faded", false);
   }
 
   spikeShape(bailAmount) {
@@ -752,7 +771,6 @@ export class BailPostingMap extends Map {
 
     const paths = super.renderPA(features, path);
     paths
-      .style("fill", "#1a1a1a")
       .attr("data-rate", (feature) => feature.properties.rate)
       .attr("data-bail-amount", (feature) => feature.properties.amount)
       .attr(BUCKET_ATTRIBUTE, (feature) => feature.properties.bucket);

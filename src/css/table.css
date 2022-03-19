@@ -87,10 +87,6 @@
   min-width: 90px;
 }
 
-.table-container > table .total-budget-cell {
-  min-width: 84px;
-}
-
 .table-container > table .bail-black-cell,
 .table-container > table .bail-white-cell {
   width: 50px;
@@ -175,40 +171,8 @@
   color: #c14ef8;
 }
 
-.retention-fee-cell,
-.retention-fee-link {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.link-arrow {
-  margin-left: 3px;
-  vertical-align: middle;
-}
-
-.retention-fee-cell sup {
-  margin-left: 3px;
-}
-
-.bail-retention-footnote {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 11px;
-  line-height: 15px;
-  color: #4f4f4f;
-}
-
-.footnote-text {
-  margin-left: 10px;
-}
-
 /* Table-specific styling. */
 
 #mdj-table .county-name-cell {
   padding-left: 0;
-}
-
-.table-container > #bail-retention-fee-table .county-name-cell {
-  min-width: 115px;
-  width: 115px;
 }

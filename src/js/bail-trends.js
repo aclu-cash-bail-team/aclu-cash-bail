@@ -1,13 +1,22 @@
+import * as d3 from "d3";
 import { Table, SwitchableTable } from "./classes/Table.js";
 import { BailRateMap, BailPostingMap, SwitchableMap } from "./classes/Map.js";
 import { ScatterPlot, DistributionGraph } from "./classes/Graph.js";
 import {
   BAIL_RATE_DATA,
+  PA_BAIL_CASES,
+  PA_ROR_CASES,
+  PA_TOTAL_CASES,
+  PA_BAIL_RATE,
+  PA_ROR_RATE,
+  PA_AVG_POSTING_RATE,
+  PA_AVG_BAIL_AMT,
   ROR_RATE_DATA,
   BAIL_POSTING_DATA,
   BAIL_CASES_SCATTER_PLOT,
   MDJ_DATA
 } from "./data.js";
+
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -56,7 +65,7 @@ const createBailRateTable = () => {
         averages: [
           {
             name: "Avg.",
-            value: 42.59666979
+            value: PA_BAIL_RATE
           }
         ],
         unit: "percent"
@@ -68,12 +77,12 @@ const createBailRateTable = () => {
   const initSort = { col: 2, dir: -1 }; // initially sort by cash bail rate
   const stateData = [
     "Pennsylvania",
-    42.59666979,
-    2470,
-    5681,
+    PA_BAIL_RATE,
+    PA_BAIL_CASES,
+    PA_TOTAL_CASES,
     {
       type: "bar",
-      values: [42.59666979]
+      values: [PA_BAIL_RATE]
     }
   ];
 
@@ -134,7 +143,7 @@ const createRorRateTable = () => {
         averages: [
           {
             name: "Avg.",
-            value: 22.73
+            value: PA_ROR_RATE
           }
         ],
         unit: "percent"
@@ -146,12 +155,12 @@ const createRorRateTable = () => {
   const initSort = { col: 2, dir: -1 }; // initially sort by ror bail rate
   const stateData = [
     "Pennsylvania",
-    22.73,
-    1294,
-    5681,
+    PA_ROR_RATE,
+    PA_ROR_CASES,
+    PA_TOTAL_CASES,
     {
       type: "bar",
-      values: [22.73]
+      values: [PA_ROR_RATE]
     }
   ];
 
@@ -203,7 +212,7 @@ const createBailPostingTable = () => {
         averages: [
           {
             name: "Avg.",
-            value: 58.5211725
+            value: PA_AVG_POSTING_RATE
           }
         ],
         unit: "percent"
@@ -215,11 +224,11 @@ const createBailPostingTable = () => {
   const initSort = { col: 2, dir: -1 };
   const stateData = [
     "Pennsylvania",
-    "$31.8K",
-    58.5211725,
+    PA_AVG_BAIL_AMT,
+    PA_AVG_POSTING_RATE,
     {
       type: "bar",
-      values: [58.5211725]
+      values: [PA_AVG_POSTING_RATE]
     }
   ];
 
@@ -249,8 +258,8 @@ const createCasesScatterPlot = () => {
   const yAxis = {
     name: "Bail Amount",
     min: 0,
-    max: 70,
-    numTicks: 7,
+    max: 90,
+    numTicks: 9,
     convert: bailAmountToText
   };
 
@@ -276,38 +285,30 @@ const createCasesScatterPlot = () => {
     ]
   };
 
-  const radiusDesktopMin = 4,
-    radiusDesktop10k = 35;
-  const radiusMobileMin = 4,
-    radiusMobile10k = 21;
+  const DESKTOP_100_CASES_PX = 4; // 100 total cash bail cases === 4px radius circle for desktop screens
+  const DESKTOP_25K_CASES_PX = 35; // 25,000 total cash bail cases === 40px radius circle for desktop screens
+  const MOBILE_100_CASES_PX = 4; // 100 total cash bail cases === 4px radius circle for mobile screens
+  const MOBILE_25K_CASES_PX = 21; // 25,000 total cash bail cases === 20px radius circle for mobile screens
 
-  const maxRadiusValue = Math.max(
-    ...Object.values(BAIL_CASES_SCATTER_PLOT).map((county) => county.r)
-  );
-  const minRadiusValue = 100;
+  /* The scaleSqrt scale is useful for sizing circles by area (rather than radius).
+     (When using circle size to represent data, it’s considered better practice to set the area,
+     rather than the radius proportionally to the data.)
+     https://eagereyes.org/blog/2008/linear-vs-quadratic-change
+  */
 
-  const radiusDesktopMax =
-    (radiusDesktop10k * (minRadiusValue - maxRadiusValue) +
-      radiusDesktopMin * (maxRadiusValue - 10000)) /
-    (minRadiusValue - 10000);
-  const radiusMobileMax =
-    (radiusMobile10k * (minRadiusValue - maxRadiusValue) +
-      radiusMobileMin * (maxRadiusValue - 10000)) /
-    (minRadiusValue - 10000);
+  const desktopScale = d3
+    .scaleSqrt()
+    .domain([100, 25000]) // values used in legend
+    .range([DESKTOP_100_CASES_PX, DESKTOP_25K_CASES_PX]);
+
+  const mobileScale = d3
+    .scaleSqrt()
+    .domain([100, 25000]) // values used in legend
+    .range([MOBILE_100_CASES_PX, MOBILE_25K_CASES_PX]);
 
   const radiusScale = {
-    desktop: {
-      min: radiusDesktopMin,
-      max: radiusDesktopMax,
-      minValue: minRadiusValue,
-      maxValue: maxRadiusValue
-    },
-    mobile: {
-      min: radiusMobileMin,
-      max: radiusMobileMax,
-      minValue: minRadiusValue,
-      maxValue: maxRadiusValue
-    }
+    desktop: desktopScale,
+    mobile: mobileScale
   };
 
   const container = document.getElementById("cases-scatter-plot");
@@ -333,15 +334,15 @@ createBailPostingTable();
 const cashBailRateMap = new BailRateMap(
   "cash-bail-rate",
   BAIL_RATE_DATA,
-  42.6,
+  PA_BAIL_RATE,
   "Cash Bail Rate"
 );
-const rorRateMap = new BailRateMap("ror-rate", ROR_RATE_DATA, 22.7, "ROR Rate");
+const rorRateMap = new BailRateMap("ror-rate", ROR_RATE_DATA, PA_ROR_RATE, "ROR Rate");
 const rateChloroplethContainer = document.getElementById(
   "rate-chloropleth-container"
 );
 new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
-new BailPostingMap("bail-posting", BAIL_POSTING_DATA, 58.5, 70);
+new BailPostingMap("bail-posting", BAIL_POSTING_DATA, PA_AVG_POSTING_RATE, 70);
 
 createCasesScatterPlot();
 new DistributionGraph(
