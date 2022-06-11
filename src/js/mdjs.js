@@ -87,7 +87,7 @@ const MDJ_BAIL_TYPE_DATA = Object.entries(MDJ_DATA).map(([county, judges]) => ({
 }));
 
 /* TABLE CREATION FUNCTIONS */
-const createMdjTable = () => {
+const createMdjTable = (tableContainer, county = "") => {
   const columnConfigs = [
     {
       class: "caret-cell",
@@ -136,9 +136,52 @@ const createMdjTable = () => {
     }
   ];
   const initSort = { col: 3, dir: -1 };
-  const tableContainer = document.getElementById("mdj-container");
-  return new Table(MDJ_BAIL_TYPE_DATA, columnConfigs, initSort, tableContainer);
+  if (county !== "") {
+    const countyMdjBailTypeData = MDJ_BAIL_TYPE_DATA.flatMap(row => {
+        const countyName = row.data[1];
+        if (countyName === county) {
+          const copy = { ...row }
+          copy.isCollapsed = false;
+          return [copy];
+        } else { return []; }
+      })
+    return new Table(countyMdjBailTypeData, columnConfigs, initSort, tableContainer);
+  } else {
+    return new Table(MDJ_BAIL_TYPE_DATA, columnConfigs, initSort, tableContainer);
+  }
 };
 
 /* RENDER PAGE */
-createMdjTable();
+createMdjTable(document.getElementById("mdj-container"));
+
+const counties = COUNTY_DATA.map(county => county["name"]);
+counties.forEach((name) => {
+  const tableContainer = document.getElementById(`${name.toLowerCase()}-mdj-container`)
+  if (tableContainer !== null) {
+    createMdjTable(tableContainer, name)
+  }
+});
+
+/*
+  Produce county HTML - consider moving to templating engine if modifying HTML frequently
+  Parcel supports Pug: https://parceljs.org/languages/pug/
+*/
+// const html = countyName =>
+// `
+//       <div class="table-container" id="${countyName.toLowerCase()}-mdj-container">
+//         <div class="search-container">
+//           <div class="ui fluid multiple search selection dropdown">
+//             <input type="hidden" name="county" />
+//             <i class="dropdown icon"></i>
+//             <div class="default text">Select judges</div>
+//             <div class="menu"></div>
+//           </div>
+//         </div>
+//         <table class="mdj-table">
+//           <thead></thead>
+//           <tbody></tbody>
+//         </table>
+//         <div class="btn-text view-all-btn"></div>
+//       </div>
+// `
+// console.log(counties.sort((a, b) => a.localeCompare(b)).map(name => html(name)).join(""))
