@@ -50,7 +50,7 @@ const createBailRateTable = () => {
     {
       class: "bail-rate-cell number-cell",
       header: {
-        text: "CB\xa0Rate\xa0(%)",
+        text: "Cash\xa0Rate",
         unit: "percent"
       },
       sortable: true,
@@ -59,7 +59,7 @@ const createBailRateTable = () => {
     {
       class: "bail-cases-cell number-cell",
       header: {
-        text: "CB\xa0Cases",
+        text: "Cash\xa0Cases",
         unit: "number"
       },
       sortable: true,
@@ -129,7 +129,7 @@ const createRorRateTable = () => {
     {
       class: "ror-rate-cell number-cell",
       header: {
-        text: "ROR\xa0Rate\xa0(%)",
+        text: "ROR\xa0Rate",
         unit: "percent"
       },
       sortable: true,

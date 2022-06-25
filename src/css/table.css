@@ -54,7 +54,7 @@
 .table-container > table .number-cell {
   width: auto;
   min-width: 60px;
-  max-width: 90px;
+  max-width: 80px;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }

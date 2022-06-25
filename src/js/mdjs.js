@@ -23,27 +23,9 @@ const createMdjTable = () => {
       searchable: true
     },
     {
-      class: "total-bail-rate-cell  number-cell",
+      class: "total-bail-rate-cell number-cell",
       header: {
         text: "Cash bail rt.",
-        unit: "percent"
-      },
-      sortable: true,
-      searchable: false
-    },
-    {
-      class: "bail-black-cell number-cell",
-      header: {
-        text: "Black",
-        unit: "percent"
-      },
-      sortable: true,
-      searchable: false
-    },
-    {
-      class: "bail-white-cell number-cell",
-      header: {
-        text: "White",
         unit: "percent"
       },
       sortable: true,

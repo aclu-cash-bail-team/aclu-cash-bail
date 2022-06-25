@@ -84,7 +84,7 @@ class NumberCell extends Cell {
   constructor(content, className, data) {
     super(className);
     const isPercent = data["unit"] === "percent";
-    this.content = isPercent ? content.toFixed(1) : content.toLocaleString();
+    this.content = isPercent ? `${content.toFixed(1)}%` : content.toLocaleString();
     this.render();
   }
 
@@ -136,7 +136,7 @@ class BarGraphCell extends Cell {
 class DistributionBarCell extends Cell {
   constructor(content, className) {
     super(className);
-    this.values = content["values"].filter((dist) => dist["value"] !== 0);
+    this.values = content["values"];
     this.tooltipValues = [
       this.values.reduce((obj, { value, className }) => {
         obj[className] = value;
