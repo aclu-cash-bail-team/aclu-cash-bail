@@ -101,6 +101,7 @@ class BarGraphCell extends Cell {
     this.content = content["values"][0];
     this.average = data["averages"][0]["value"];
     this.range = data;
+    this.showDiff = data["showDiff"];
     this.render();
   }
 
@@ -111,16 +112,18 @@ class BarGraphCell extends Cell {
     bar.className = "viz-bar";
     bar.style.width = `${(this.content / this.range["end"]) * 100}%`;
     // label the bar with the difference between value and average
-    const label = document.createElement("div");
-    const diff = this.content - this.average;
-    if (diff > 0) {
-      label.textContent = `+${diff.toFixed(1)}`;
+    if (this.showDiff) {
+      const label = document.createElement("div");
+      const diff = this.content - this.average;
+      if (diff > 0) {
+        label.textContent = `+${diff.toFixed(1)}`;
+      }
+      if (diff < 0) {
+        label.textContent = `${diff.toFixed(1)}`;
+      }
+      label.className = "bar-label";
+      bar.appendChild(label);
     }
-    if (diff < 0) {
-      label.textContent = `${diff.toFixed(1)}`;
-    }
-    label.className = "bar-label";
-    bar.appendChild(label);
     this.element.appendChild(bar);
     // add the vertical line denoting the average
     const averageLine = document.createElement("div");
@@ -437,14 +440,15 @@ export class Table {
     initSort,
     tableContainer,
     summaryRowData = [],
-    isVisible = true
+    isVisible = true,
+    showOutliers = true
   ) {
     this.classNames = columnConfigs.map((config) => config.class);
     this.headers = columnConfigs.map((config) => config.header);
     this.data = data;
     this.container = tableContainer;
     this.element = tableContainer.getElementsByTagName("table")[0];
-    this.showOutliers = true;
+    this.showOutliers = showOutliers;
     this.summaryRowData = summaryRowData;
 
     this.validate();
