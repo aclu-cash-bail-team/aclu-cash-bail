@@ -94,8 +94,8 @@ const createBailRaceRateTable = () => {
     initSort,
     tableContainer,
     stateData,
-    isVisible = false,
-    showOutliers = false
+    false,
+    false
   );
 };
 
@@ -177,8 +177,8 @@ const createBailRaceAmountTable = () => {
     initSort,
     tableContainer,
     stateData,
-    isVisible = false,
-    showOutliers = false
+    false,
+    false
   );
 };
 
