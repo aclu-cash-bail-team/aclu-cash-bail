@@ -454,7 +454,7 @@ export class DistributionGraph {
     this.container = container;
     this.data = data;
     this.nameIdx = 1;
-    this.distributionIdx = 5;
+    this.distributionIdx = 3;
     // Sort data by county name
     this.data.sort((a, b) =>
       a["data"][this.nameIdx] > b["data"][this.nameIdx]
