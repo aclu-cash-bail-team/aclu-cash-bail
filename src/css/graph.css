@@ -143,6 +143,22 @@ svg.label-wrapper {
   display: inline-block;
 }
 
+.scatter-plot.hovering .scatter-line:not(.hovering):not(.searched),
+.scatter-plot.hovering .scatter-point:not(.hovering):not(.searched),
+.scatter-plot.hovering .scatter-text:not(.hovering):not(.searched),
+.scatter-plot.searched .scatter-line:not(.searched),
+.scatter-plot.searched .scatter-point:not(.searched),
+.scatter-plot.searched .scatter-text:not(.searched) {
+  opacity: 0.15;
+  transition: opacity 0.05s;
+}
+
+.scatter-line.hovering,
+.scatter-point.hovering,
+.scatter-text.hovering {
+  opacity: 1 !important;
+}
+
 .scatter-line {
   stroke: rgba(255, 255, 255, 0.2);
   stroke-width: 0.5px;
