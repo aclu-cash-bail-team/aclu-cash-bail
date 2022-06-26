@@ -72,6 +72,7 @@ svg.scatter-plot {
 
 .key-circle {
   display: inline-flex;
+  align-items: center;
 }
 
 .key-circle::before {
@@ -108,6 +109,11 @@ svg.scatter-plot {
 
 .key-circle.purple::before {
   background-color: #c14ef8;
+}
+
+.key-circle.outlier::before {
+  outline: 1px solid white;
+  outline-offset: -1px;
 }
 
 .axis-label {
