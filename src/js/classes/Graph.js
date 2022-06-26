@@ -124,12 +124,14 @@ class CountyPoint {
   }
 
   onMouseEnter() {
+    this.plot.classList.add("hovering");
     this.elements.forEach((element) => {
       element.classList.add("hovering");
     });
   }
 
   onMouseLeave() {
+    this.plot.classList.remove("hovering");
     this.elements.forEach((element) => {
       element.classList.remove("hovering");
     });
@@ -175,6 +177,10 @@ export class ScatterPlot {
     searchInput.addEventListener("change", (e) => {
       const searchValue = e.target.value;
       this.searchTerms = searchValue.split(";").filter((s) => s !== "");
+
+      if (this.searchTerms.length) this.plot.classList.add("searched");
+      else this.plot.classList.remove("searched");
+
       this.points.forEach((point) => {
         const searched = this.searchTerms.includes(point.county.toLowerCase());
         point.elements.forEach((element) => {
