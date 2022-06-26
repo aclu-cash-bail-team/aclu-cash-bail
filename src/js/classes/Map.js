@@ -393,7 +393,7 @@ export class BailRateMap extends Map {
   renderPA(features, path) {
     this.data.forEach((row) => {
       const countyName = row.data[0];
-      const cashBailRate = row.data[1];
+      const cashBailRate = row.data[2];
       const feature = features.find((f) => f.properties["NAME"] === countyName);
       feature.properties.rate = cashBailRate;
       feature.properties.color = this.color(cashBailRate);

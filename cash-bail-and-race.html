@@ -24,6 +24,7 @@
   </head>
   <body>
     <div id="race-rate" class="map-container">
+      <h2>Rates of Cash Bail for Black and White by County</h2>
       <div class="legend-container">
         <div class="color-scale-legend"></div>
       </div>
@@ -32,9 +33,20 @@
         <div id="black" class="map race-map choropleth"></div>
         <div id="white" class="map race-map choropleth"></div>
       </div>
+      <p class="footnote">
+        Note: Counties that had fewer than 50 cases involving a Black
+        defendant are specially marked to flag the small number of cases.
+        Numbers for these counties may not be meaningful. Further, AOPC data
+        misclassifies Latinx people as white, leading to higher estimates of
+        white cash bail. Finally, poor data reporting makes it difficult to
+        measure bail rates for people of other races and ethnicities. For
+        more information about our methodology and limitations, please see
+        our report.
+      </p>
     </div>
     <div class="container">
       <div id="race-container">
+        <h2>Rates and Average Amounts of Cash Bail for Black and White by County</h2>
         <div class="table-container" id="bail-race-rate-container">
           <div class="search-container">
             <div class="ui fluid multiple search selection dropdown">
@@ -43,19 +55,18 @@
               <div class="default text">Search counties</div>
               <div class="menu"></div>
             </div>
+            <div class="btn-text outliers-btn">Show Outliers</div>
           </div>
           <div class="switch-container">
             <div class="btn-text switch left showing">Cash bail rt.</div>
             <div class="btn-text switch right">Bail amt.</div>
+            <div class="btn-text outliers-btn mobile-only">Show Outliers</div>
           </div>
           <table id="bail-race-rate-table">
             <thead></thead>
             <tbody></tbody>
           </table>
           <div class="btn-text view-all-btn"></div>
-          <p class="footnote">
-            *Outlier for low number of cases with black defendants.
-          </p>
         </div>
         <div class="table-container" id="bail-race-amount-container">
           <div class="search-container">
@@ -65,23 +76,32 @@
               <div class="default text">Search counties</div>
               <div class="menu"></div>
             </div>
+            <div class="btn-text outliers-btn">Show Outliers</div>
           </div>
           <div class="switch-container">
             <div class="btn-text switch left">Cash bail rt.</div>
             <div class="btn-text switch right showing">Bail amt.</div>
+            <div class="btn-text outliers-btn mobile-only">Show Outliers</div>
           </div>
           <table id="bail-race-amount-table">
             <thead></thead>
             <tbody></tbody>
           </table>
           <div class="btn-text view-all-btn"></div>
-          <p class="footnote">
-            *Outlier for low number of cases with black defendants.
-          </p>
         </div>
+        <p class="footnote">
+          Note: Counties that had fewer than 50 cases involving a Black
+          defendant are specially marked to flag the small number of cases.
+          Numbers for these counties may not be meaningful. Further, AOPC data
+          misclassifies Latinx people as white, leading to higher estimates of
+          white cash bail. Finally, poor data reporting makes it difficult to
+          measure bail rates for people of other races and ethnicities. For
+          more information about our methodology and limitations, please see
+          our report.
+        </p>
       </div>
       <div class="graph" id="race-scatter-plot">
-        <h3>Racial Disparities in Cash Bail Across Counties</h3>
+        <h2>Racial Disparities in Cash Bail</h2>
         <div class="ui fluid multiple search selection dropdown">
           <input type="hidden" name="county" />
           <i class="dropdown icon"></i>
@@ -101,6 +121,16 @@
             xmlns="http://www.w3.org/2000/svg"
           ></svg>
         </div>
+        <p class="footnote graph-footnote">
+          Note: Counties that had fewer than 50 cases involving a Black
+          defendant are specially marked to flag the small number of cases.
+          Numbers for these counties may not be meaningful. Further, AOPC data
+          misclassifies Latinx people as white, leading to higher estimates of
+          white cash bail. Finally, poor data reporting makes it difficult to
+          measure bail rates for people of other races and ethnicities. For
+          more information about our methodology and limitations, please see
+          our report.
+        </p>
       </div>
     </div>
   </body>

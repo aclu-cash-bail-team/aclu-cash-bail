@@ -29,7 +29,7 @@
     "@parcel/transformer-html": "^2.0.0-nightly.612",
     "@parcel/transformer-postcss": "^2.0.0-nightly.612",
     "@parcel/transformer-posthtml": "^2.0.0-nightly.612",
-    "eslint": "^7.23.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
