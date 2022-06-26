@@ -232,7 +232,10 @@
 
 #dist-graph-container .dist-row {
   display: flex;
-  margin-bottom: 4px;
+}
+
+#dist-graph-container .dist-column-segment {
+  margin-bottom: 6px;
 }
 
 /* Allow specific row to remain highlighted on hover */
@@ -258,13 +261,15 @@
 
 .dist-county-name {
   width: 120px;
+  line-height: 1;
+  margin-bottom: 6px;
 }
 
 .dist-bars-segment {
   display: inline-grid;
   flex: 1;
-  margin-bottom: -4px; /* Hack to allow tooltips to show in margins between bars */
-  padding-bottom: 4px; /* which prevents tooltip from flashing on hover */
+  /* margin-bottom: -4px; Hack to allow tooltips to show in margins between bars */
+  /* padding-bottom: 4px; which prevents tooltip from flashing on hover */
 }
 
 /* Bail Distribution Visualization Header & Legend */
@@ -374,17 +379,18 @@
 }
 
 #avg-bail-graph-container .county-name {
+  line-height: 1;
   width: 120px;
 }
 
 #avg-bail-graph-container .bar-chart-row:not(:last-child) .county-name {
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
 
 #avg-bail-graph-container
   .bar-chart-row:not(:last-child)
   .county-bar-chart-bar {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 #avg-bail-graph-container .county-bar-chart-bar-container {
