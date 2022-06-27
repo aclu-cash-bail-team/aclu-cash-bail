@@ -1,2061 +1,1387 @@
 /*
- * To get the data in this format, export a CSV with the columns in the order
- * you want. In the case of BAIL_RACE_DATA, I had [county, black %, white %,
- * difference]. I pasted the contents of the CSV into this file (you can wrap
- * multi-line strings in ``) and created the following script to convert from
- * that string to the output array. JSON.stringify will output something with
- * no spacing, so i just pasted the result into a JSON formatter to get the
- * desired format (https://jsonformatter.org).
+ * Given a CSV with the desired keys as header and all the data you need, use
+ * the function below to generate an array of objects containing all the data.
  *
  * const excelData = ``;
  * const data = [];
  * const lines = excelData.split("\n");
- * lines.forEach((line, i) => {
+ * const headers = lines.shift().split(",");
+ * lines.forEach(line => {
  *   const cells = line.split(",");
- *   const diff = parseFloat(cells[3]);
- *   const entry = {
- *     "data": [
- *       cells[0], // county
- *       {
- *         "type": "line", // visualization
- *         "values": [parseFloat(cells[1]), parseFloat(cells[2])]
- *       },
- *       parseFloat(cells[1]), // black cash bail rate
- *       parseFloat(cells[2]), // white cash bail rate
- *       `${diff > 0 ? "+" : ""}${diff.toFixed(1)}` // overall rate
- *     ],
- *     "outlier": false
- *   };
- *   data.push(entry);
+ *   data.push(
+ *     cells.reduce((acc, cell, i) => ({
+ *       ...acc, [headers[i]]: parseFloat(cell) || cell
+ *     }), {})
+ *   );
  * });
  *
  * console.log(JSON.stringify(data));
  */
 
-export const BAIL_RATE_DATA = [
-  {
-    "data": [
-      "Adams",
-      {
-        "type": "bar",
-        "values": [
-          31.3
-        ]
-      },
-      31.3,
-      714,
-      2280
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      {
-        "type": "bar",
-        "values": [
-          42.6
-        ]
-      },
-      42.6,
-      20214,
-      47473
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      {
-        "type": "bar",
-        "values": [
-          41.5
-        ]
-      },
-      41.5,
-      735,
-      1770
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      {
-        "type": "bar",
-        "values": [
-          50.8
-        ]
-      },
-      50.8,
-      2931,
-      5765
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      {
-        "type": "bar",
-        "values": [
-          37.4
-        ]
-      },
-      37.4,
-      520,
-      1392
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Berks",
-      {
-        "type": "bar",
-        "values": [
-          50.9
-        ]
-      },
-      50.9,
-      5765,
-      11330
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      {
-        "type": "bar",
-        "values": [
-          30.8
-        ]
-      },
-      30.8,
-      1324,
-      4298
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      {
-        "type": "bar",
-        "values": [
-          45.9
-        ]
-      },
-      45.9,
-      814,
-      1773
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bucks",
-      {
-        "type": "bar",
-        "values": [
-          34.9
-        ]
-      },
-      34.9,
-      4823,
-      13830
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      {
-        "type": "bar",
-        "values": [
-          35.5
-        ]
-      },
-      35.5,
-      1820,
-      5123
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      {
-        "type": "bar",
-        "values": [
-          45
-        ]
-      },
-      45,
-      1978,
-      4395
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      {
-        "type": "bar",
-        "values": [
-          22.1
-        ]
-      },
-      22.1,
-      30,
-      136
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Carbon",
-      {
-        "type": "bar",
-        "values": [
-          32.9
-        ]
-      },
-      32.9,
-      914,
-      2780
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      {
-        "type": "bar",
-        "values": [
-          27.3
-        ]
-      },
-      27.3,
-      868,
-      3185
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      {
-        "type": "bar",
-        "values": [
-          38.3
-        ]
-      },
-      38.3,
-      3806,
-      9932
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      {
-        "type": "bar",
-        "values": [
-          39.4
-        ]
-      },
-      39.4,
-      470,
-      1192
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clearfield",
-      {
-        "type": "bar",
-        "values": [
-          37
-        ]
-      },
-      37,
-      657,
-      1775
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clinton",
-      {
-        "type": "bar",
-        "values": [
-          33.3
-        ]
-      },
-      33.3,
-      404,
-      1212
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Columbia",
-      {
-        "type": "bar",
-        "values": [
-          40.9
-        ]
-      },
-      40.9,
-      624,
-      1526
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      {
-        "type": "bar",
-        "values": [
-          35.6
-        ]
-      },
-      35.6,
-      696,
-      1954
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      {
-        "type": "bar",
-        "values": [
-          41.1
-        ]
-      },
-      41.1,
-      2740,
-      6674
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      {
-        "type": "bar",
-        "values": [
-          44.2
-        ]
-      },
-      44.2,
-      5420,
-      12269
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      {
-        "type": "bar",
-        "values": [
-          55.9
-        ]
-      },
-      55.9,
-      9533,
-      17059
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      {
-        "type": "bar",
-        "values": [
-          28.6
-        ]
-      },
-      28.6,
-      228,
-      797
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Erie",
-      {
-        "type": "bar",
-        "values": [
-          47.1
-        ]
-      },
-      47.1,
-      3161,
-      6716
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      {
-        "type": "bar",
-        "values": [
-          44.9
-        ]
-      },
-      44.9,
-      2250,
-      5007
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      {
-        "type": "bar",
-        "values": [
-          35.1
-        ]
-      },
-      35.1,
-      53,
-      151
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Franklin",
-      {
-        "type": "bar",
-        "values": [
-          37.3
-        ]
-      },
-      37.3,
-      1651,
-      4421
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      {
-        "type": "bar",
-        "values": [
-          28.3
-        ]
-      },
-      28.3,
-      113,
-      400
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Greene",
-      {
-        "type": "bar",
-        "values": [
-          39.4
-        ]
-      },
-      39.4,
-      314,
-      797
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Huntingdon",
-      {
-        "type": "bar",
-        "values": [
-          38.6
-        ]
-      },
-      38.6,
-      497,
-      1287
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      {
-        "type": "bar",
-        "values": [
-          40.7
-        ]
-      },
-      40.7,
-      893,
-      2196
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      {
-        "type": "bar",
-        "values": [
-          38.7
-        ]
-      },
-      38.7,
-      420,
-      1086
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Juniata",
-      {
-        "type": "bar",
-        "values": [
-          34.2
-        ]
-      },
-      34.2,
-      158,
-      462
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lackawanna",
-      {
-        "type": "bar",
-        "values": [
-          52.6
-        ]
-      },
-      52.6,
-      3166,
-      6021
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      {
-        "type": "bar",
-        "values": [
-          45.1
-        ]
-      },
-      45.1,
-      5640,
-      12510
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      {
-        "type": "bar",
-        "values": [
-          50.7
-        ]
-      },
-      50.7,
-      1118,
-      2204
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      {
-        "type": "bar",
-        "values": [
-          37.8
-        ]
-      },
-      37.8,
-      1470,
-      3890
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      {
-        "type": "bar",
-        "values": [
-          56.5
-        ]
-      },
-      56.5,
-      6054,
-      10715
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      {
-        "type": "bar",
-        "values": [
-          40.9
-        ]
-      },
-      40.9,
-      3839,
-      9392
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      {
-        "type": "bar",
-        "values": [
-          34.4
-        ]
-      },
-      34.4,
-      1364,
-      3963
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      {
-        "type": "bar",
-        "values": [
-          41.9
-        ]
-      },
-      41.9,
-      482,
-      1150
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mercer",
-      {
-        "type": "bar",
-        "values": [
-          35.7
-        ]
-      },
-      35.7,
-      1551,
-      4349
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      {
-        "type": "bar",
-        "values": [
-          48.1
-        ]
-      },
-      48.1,
-      661,
-      1375
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      {
-        "type": "bar",
-        "values": [
-          33.6
-        ]
-      },
-      33.6,
-      1860,
-      5537
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      {
-        "type": "bar",
-        "values": [
-          37.5
-        ]
-      },
-      37.5,
-      6538,
-      17417
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      {
-        "type": "bar",
-        "values": [
-          35.4
-        ]
-      },
-      35.4,
-      90,
-      254
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northampton",
-      {
-        "type": "bar",
-        "values": [
-          50.7
-        ]
-      },
-      50.7,
-      3344,
-      6591
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      {
-        "type": "bar",
-        "values": [
-          37.7
-        ]
-      },
-      37.7,
-      876,
-      2325
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      {
-        "type": "bar",
-        "values": [
-          30.2
-        ]
-      },
-      30.2,
-      292,
-      967
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Philadelphia",
-      {
-        "type": "bar",
-        "values": [
-          49.9
-        ]
-      },
-      49.9,
-      32426,
-      64951
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      {
-        "type": "bar",
-        "values": [
-          33.3
-        ]
-      },
-      33.3,
-      320,
-      962
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Potter",
-      {
-        "type": "bar",
-        "values": [
-          22.5
-        ]
-      },
-      22.5,
-      116,
-      515
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Schuylkill",
-      {
-        "type": "bar",
-        "values": [
-          39.9
-        ]
-      },
-      39.9,
-      1902,
-      4763
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      {
-        "type": "bar",
-        "values": [
-          36.3
-        ]
-      },
-      36.3,
-      340,
-      937
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Somerset",
-      {
-        "type": "bar",
-        "values": [
-          25
-        ]
-      },
-      25,
-      455,
-      1821
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      {
-        "type": "bar",
-        "values": [
-          36.5
-        ]
-      },
-      36.5,
-      38,
-      104
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Susquehanna",
-      {
-        "type": "bar",
-        "values": [
-          39.4
-        ]
-      },
-      39.4,
-      291,
-      738
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Tioga",
-      {
-        "type": "bar",
-        "values": [
-          31.3
-        ]
-      },
-      31.3,
-      264,
-      843
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Union",
-      {
-        "type": "bar",
-        "values": [
-          25.6
-        ]
-      },
-      25.6,
-      174,
-      680
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Venango",
-      {
-        "type": "bar",
-        "values": [
-          38.4
-        ]
-      },
-      38.4,
-      552,
-      1436
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      {
-        "type": "bar",
-        "values": [
-          40.5
-        ]
-      },
-      40.5,
-      334,
-      825
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Washington",
-      {
-        "type": "bar",
-        "values": [
-          39.6
-        ]
-      },
-      39.6,
-      2448,
-      6183
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      {
-        "type": "bar",
-        "values": [
-          37.6
-        ]
-      },
-      37.6,
-      280,
-      744
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Westmoreland",
-      {
-        "type": "bar",
-        "values": [
-          31.7
-        ]
-      },
-      31.7,
-      3819,
-      12042
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      {
-        "type": "bar",
-        "values": [
-          35.5
-        ]
-      },
-      35.5,
-      344,
-      969
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "York",
-      {
-        "type": "bar",
-        "values": [
-          46.1
-        ]
-      },
-      46.1,
-      6313,
-      13701
-    ],
-    "outlier": false
+export const STATEWIDE_DATA = {
+  "name": "Pennsylvania",
+  "nominal_pct": "",
+  "nonmonetary_pct": "",
+  "cash_bail_pct": 0.433842,
+  "ror_pct": 0.224746,
+  "unsecured_pct": "",
+  "total_cases": 383317,
+  "cash_bail_cases": 166299,
+  "ror_cases": 86149,
+  "avg_bail_amount": 34450.1196,
+  "non_posting_rate": 0, // TODO: need this datapoint
+  "cash_bail_pct_black": "",
+  "cash_bail_cases_black": 64473,
+  "cash_bail_pct_white": "",
+  "bail_amount_black": "",
+  "bail_amount_white": "",
+  "bail_amount_diff": "",
+  "is_outlier": false
+};
+export const COUNTY_DATA = [
+  {
+    "name": "Adams",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.149123,
+    "cash_bail_pct": 0.313158,
+    "ror_pct": 0.253509,
+    "unsecured_pct": 0.284211,
+    "total_cases": 2280,
+    "cash_bail_cases": 714,
+    "ror_cases": 578,
+    "avg_bail_amount": 30449.43978,
+    "non_posting_rate": 0.442577,
+    "cash_bail_pct_black": 0.442982,
+    "cash_bail_cases_black": 101,
+    "cash_bail_pct_white": 0.301849,
+    "bail_amount_black": 39302.9703,
+    "bail_amount_white": 29094.86755,
+    "bail_amount_diff": 10208.10275,
+    "is_outlier": false
+  },
+  {
+    "name": "Allegheny",
+    "nominal_pct": 0.000316,
+    "nonmonetary_pct": 0.292861,
+    "cash_bail_pct": 0.4258,
+    "ror_pct": 0.254355,
+    "unsecured_pct": 0.026668,
+    "total_cases": 47473,
+    "cash_bail_cases": 20214,
+    "ror_cases": 12075,
+    "avg_bail_amount": 16795.83635,
+    "non_posting_rate": 0.604878,
+    "cash_bail_pct_black": 0.525011,
+    "cash_bail_cases_black": 11031,
+    "cash_bail_pct_white": 0.349545,
+    "bail_amount_black": 18845.16218,
+    "bail_amount_white": 13921.65751,
+    "bail_amount_diff": 4923.504669,
+    "is_outlier": false
+  },
+  {
+    "name": "Armstrong",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.031073,
+    "cash_bail_pct": 0.415254,
+    "ror_pct": 0.426554,
+    "unsecured_pct": 0.127119,
+    "total_cases": 1770,
+    "cash_bail_cases": 735,
+    "ror_cases": 755,
+    "avg_bail_amount": 15099.45578,
+    "non_posting_rate": 0.563265,
+    "cash_bail_pct_black": 0.622807,
+    "cash_bail_cases_black": 71,
+    "cash_bail_pct_white": 0.401119,
+    "bail_amount_black": 19380.28169,
+    "bail_amount_white": 14656.74419,
+    "bail_amount_diff": 4723.537504,
+    "is_outlier": false
+  },
+  {
+    "name": "Beaver",
+    "nominal_pct": 0.000173,
+    "nonmonetary_pct": 0.020295,
+    "cash_bail_pct": 0.508413,
+    "ror_pct": 0.341197,
+    "unsecured_pct": 0.129922,
+    "total_cases": 5765,
+    "cash_bail_cases": 2931,
+    "ror_cases": 1967,
+    "avg_bail_amount": 21476.32446,
+    "non_posting_rate": 0.668031,
+    "cash_bail_pct_black": 0.653036,
+    "cash_bail_cases_black": 1054,
+    "cash_bail_pct_white": 0.460601,
+    "bail_amount_black": 32043.50285,
+    "bail_amount_white": 15969.64266,
+    "bail_amount_diff": 16073.86019,
+    "is_outlier": false
+  },
+  {
+    "name": "Bedford",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.373563,
+    "ror_pct": 0.019397,
+    "unsecured_pct": 0.60704,
+    "total_cases": 1392,
+    "cash_bail_cases": 520,
+    "ror_cases": 27,
+    "avg_bail_amount": 54775.96154,
+    "non_posting_rate": 0.713462,
+    "cash_bail_pct_black": 0.55814,
+    "cash_bail_cases_black": 48,
+    "cash_bail_pct_white": 0.360063,
+    "bail_amount_black": 82145.83333,
+    "bail_amount_white": 51605.8952,
+    "bail_amount_diff": 30539.93814,
+    "is_outlier": true
+  },
+  {
+    "name": "Berks",
+    "nominal_pct": 0.000265,
+    "nonmonetary_pct": 0.008826,
+    "cash_bail_pct": 0.508826,
+    "ror_pct": 0.150838,
+    "unsecured_pct": 0.331244,
+    "total_cases": 11330,
+    "cash_bail_cases": 5765,
+    "ror_cases": 1709,
+    "avg_bail_amount": 35951.36201,
+    "non_posting_rate": 0.571899,
+    "cash_bail_pct_black": 0.585288,
+    "cash_bail_cases_black": 1098,
+    "cash_bail_pct_white": 0.501453,
+    "bail_amount_black": 41514.57377,
+    "bail_amount_white": 35373.15496,
+    "bail_amount_diff": 6141.418809,
+    "is_outlier": false
+  },
+  {
+    "name": "Blair",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000698,
+    "cash_bail_pct": 0.30805,
+    "ror_pct": 0.004421,
+    "unsecured_pct": 0.686831,
+    "total_cases": 4298,
+    "cash_bail_cases": 1324,
+    "ror_cases": 19,
+    "avg_bail_amount": 33359.70544,
+    "non_posting_rate": 0.665408,
+    "cash_bail_pct_black": 0.538084,
+    "cash_bail_cases_black": 219,
+    "cash_bail_pct_white": 0.290748,
+    "bail_amount_black": 50874.42922,
+    "bail_amount_white": 30764.80111,
+    "bail_amount_diff": 20109.62811,
+    "is_outlier": false
+  },
+  {
+    "name": "Bradford",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.289904,
+    "cash_bail_pct": 0.459109,
+    "ror_pct": 0.116187,
+    "unsecured_pct": 0.1348,
+    "total_cases": 1773,
+    "cash_bail_cases": 814,
+    "ror_cases": 206,
+    "avg_bail_amount": 35212.04423,
+    "non_posting_rate": 0.89312,
+    "cash_bail_pct_black": 0.615385,
+    "cash_bail_cases_black": 32,
+    "cash_bail_pct_white": 0.455742,
+    "bail_amount_black": 68109.375,
+    "bail_amount_white": 34295.28084,
+    "bail_amount_diff": 33814.09416,
+    "is_outlier": true
+  },
+  {
+    "name": "Bucks",
+    "nominal_pct": 0.000145,
+    "nonmonetary_pct": 0.002386,
+    "cash_bail_pct": 0.348735,
+    "ror_pct": 0.159147,
+    "unsecured_pct": 0.489588,
+    "total_cases": 13830,
+    "cash_bail_cases": 4823,
+    "ror_cases": 2201,
+    "avg_bail_amount": 77461.73689,
+    "non_posting_rate": 0.50425,
+    "cash_bail_pct_black": 0.455865,
+    "cash_bail_cases_black": 1193,
+    "cash_bail_pct_white": 0.326778,
+    "bail_amount_black": 87411.6513,
+    "bail_amount_white": 73918.96991,
+    "bail_amount_diff": 13492.68139,
+    "is_outlier": false
+  },
+  {
+    "name": "Butler",
+    "nominal_pct": 0.005466,
+    "nonmonetary_pct": 0.086082,
+    "cash_bail_pct": 0.355261,
+    "ror_pct": 0.490142,
+    "unsecured_pct": 0.063049,
+    "total_cases": 5123,
+    "cash_bail_cases": 1820,
+    "ror_cases": 2511,
+    "avg_bail_amount": 25638.93736,
+    "non_posting_rate": 0.619231,
+    "cash_bail_pct_black": 0.593684,
+    "cash_bail_cases_black": 282,
+    "cash_bail_pct_white": 0.330989,
+    "bail_amount_black": 43726.24823,
+    "bail_amount_white": 21800.64011,
+    "bail_amount_diff": 21925.60812,
+    "is_outlier": false
+  },
+  {
+    "name": "Cambria",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000455,
+    "cash_bail_pct": 0.450057,
+    "ror_pct": 0.207053,
+    "unsecured_pct": 0.342435,
+    "total_cases": 4395,
+    "cash_bail_cases": 1978,
+    "ror_cases": 910,
+    "avg_bail_amount": 40106.82508,
+    "non_posting_rate": 0.427705,
+    "cash_bail_pct_black": 0.663657,
+    "cash_bail_cases_black": 588,
+    "cash_bail_pct_white": 0.398235,
+    "bail_amount_black": 58433.33333,
+    "bail_amount_white": 32649.18759,
+    "bail_amount_diff": 25784.14574,
+    "is_outlier": false
+  },
+  {
+    "name": "Cameron",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.220588,
+    "ror_pct": 0.000000,
+    "unsecured_pct": 0.779412,
+    "total_cases": 136,
+    "cash_bail_cases": 30,
+    "ror_cases": "0",
+    "avg_bail_amount": 28258.33333,
+    "non_posting_rate": 0.566667,
+    "cash_bail_pct_black": 1,
+    "cash_bail_cases_black": 2,
+    "cash_bail_pct_white": 0.262136,
+    "bail_amount_black": 42175,
+    "bail_amount_white": 27851.85185,
+    "bail_amount_diff": 14323.14815,
+    "is_outlier": true
+  },
+  {
+    "name": "Carbon",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.328777,
+    "ror_pct": 0.142446,
+    "unsecured_pct": 0.528777,
+    "total_cases": 2780,
+    "cash_bail_cases": 914,
+    "ror_cases": 396,
+    "avg_bail_amount": 32519.26696,
+    "non_posting_rate": 0.5186,
+    "cash_bail_pct_black": 0.475,
+    "cash_bail_cases_black": 95,
+    "cash_bail_pct_white": 0.319692,
+    "bail_amount_black": 43984.21053,
+    "bail_amount_white": 31083.78961,
+    "bail_amount_diff": 12900.42092,
+    "is_outlier": false
+  },
+  {
+    "name": "Centre",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000314,
+    "cash_bail_pct": 0.272527,
+    "ror_pct": 0.616327,
+    "unsecured_pct": 0.110832,
+    "total_cases": 3185,
+    "cash_bail_cases": 868,
+    "ror_cases": 1963,
+    "avg_bail_amount": 51739.7477,
+    "non_posting_rate": 0.665899,
+    "cash_bail_pct_black": 0.489796,
+    "cash_bail_cases_black": 240,
+    "cash_bail_pct_white": 0.227858,
+    "bail_amount_black": 56770.83333,
+    "bail_amount_white": 46869.4364,
+    "bail_amount_diff": 9901.396937,
+    "is_outlier": false
+  },
+  {
+    "name": "Chester",
+    "nominal_pct": 0.010471,
+    "nonmonetary_pct": 0.000201,
+    "cash_bail_pct": 0.383206,
+    "ror_pct": 0.208216,
+    "unsecured_pct": 0.397906,
+    "total_cases": 9932,
+    "cash_bail_cases": 3806,
+    "ror_cases": 2068,
+    "avg_bail_amount": 33629.82974,
+    "non_posting_rate": 0.516816,
+    "cash_bail_pct_black": 0.490007,
+    "cash_bail_cases_black": 1373,
+    "cash_bail_pct_white": 0.343277,
+    "bail_amount_black": 37417.2622,
+    "bail_amount_white": 31420.82705,
+    "bail_amount_diff": 5996.435155,
+    "is_outlier": false
+  },
+  {
+    "name": "Clarion",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000839,
+    "cash_bail_pct": 0.394295,
+    "ror_pct": 0.263423,
+    "unsecured_pct": 0.341443,
+    "total_cases": 1192,
+    "cash_bail_cases": 470,
+    "ror_cases": 314,
+    "avg_bail_amount": 23134.46809,
+    "non_posting_rate": 0.717021,
+    "cash_bail_pct_black": 0.396825,
+    "cash_bail_cases_black": 25,
+    "cash_bail_pct_white": 0.403721,
+    "bail_amount_black": 14104,
+    "bail_amount_white": 24033.87097,
+    "bail_amount_diff": -9929.870968,
+    "is_outlier": true
+  },
+  {
+    "name": "Clearfield",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.370141,
+    "ror_pct": 0.001127,
+    "unsecured_pct": 0.628732,
+    "total_cases": 1775,
+    "cash_bail_cases": 657,
+    "ror_cases": 2,
+    "avg_bail_amount": 29201.97869,
+    "non_posting_rate": 0.838661,
+    "cash_bail_pct_black": 0.657143,
+    "cash_bail_cases_black": 46,
+    "cash_bail_pct_white": 0.362388,
+    "bail_amount_black": 59500,
+    "bail_amount_white": 27240.85667,
+    "bail_amount_diff": 32259.14333,
+    "is_outlier": true
+  },
+  {
+    "name": "Clinton",
+    "nominal_pct": 0.000825,
+    "nonmonetary_pct": 0.00165,
+    "cash_bail_pct": 0.333333,
+    "ror_pct": 0.129538,
+    "unsecured_pct": 0.534653,
+    "total_cases": 1212,
+    "cash_bail_cases": 404,
+    "ror_cases": 157,
+    "avg_bail_amount": 28516.73515,
+    "non_posting_rate": 0.730198,
+    "cash_bail_pct_black": 0.398058,
+    "cash_bail_cases_black": 41,
+    "cash_bail_pct_white": 0.330594,
+    "bail_amount_black": 30579.29268,
+    "bail_amount_white": 28093.25967,
+    "bail_amount_diff": 2486.033014,
+    "is_outlier": true
+  },
+  {
+    "name": "Columbia",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.001311,
+    "cash_bail_pct": 0.408912,
+    "ror_pct": 0.21363,
+    "unsecured_pct": 0.376147,
+    "total_cases": 1526,
+    "cash_bail_cases": 624,
+    "ror_cases": 326,
+    "avg_bail_amount": 37230.86539,
+    "non_posting_rate": 0.275641,
+    "cash_bail_pct_black": 0.428571,
+    "cash_bail_cases_black": 72,
+    "cash_bail_pct_white": 0.411899,
+    "bail_amount_black": 60937.5,
+    "bail_amount_white": 34290.85185,
+    "bail_amount_diff": 26646.64815,
+    "is_outlier": false
+  },
+  {
+    "name": "Crawford",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.084442,
+    "cash_bail_pct": 0.356192,
+    "ror_pct": 0.430399,
+    "unsecured_pct": 0.128966,
+    "total_cases": 1954,
+    "cash_bail_cases": 696,
+    "ror_cases": 841,
+    "avg_bail_amount": 26715.51724,
+    "non_posting_rate": 0.568966,
+    "cash_bail_pct_black": 0.551282,
+    "cash_bail_cases_black": 86,
+    "cash_bail_pct_white": 0.341324,
+    "bail_amount_black": 29781.97674,
+    "bail_amount_white": 26269.23077,
+    "bail_amount_diff": 3512.745975,
+    "is_outlier": false
+  },
+  {
+    "name": "Cumberland",
+    "nominal_pct": 0.001049,
+    "nonmonetary_pct": 0.004345,
+    "cash_bail_pct": 0.410548,
+    "ror_pct": 0.391669,
+    "unsecured_pct": 0.192388,
+    "total_cases": 6674,
+    "cash_bail_cases": 2740,
+    "ror_cases": 2614,
+    "avg_bail_amount": 27850.80584,
+    "non_posting_rate": 0.553285,
+    "cash_bail_pct_black": 0.551493,
+    "cash_bail_cases_black": 739,
+    "cash_bail_pct_white": 0.375695,
+    "bail_amount_black": 35423.58728,
+    "bail_amount_white": 25383.11684,
+    "bail_amount_diff": 10040.47044,
+    "is_outlier": false
+  },
+  {
+    "name": "Dauphin",
+    "nominal_pct": 0.000571,
+    "nonmonetary_pct": 0.01084,
+    "cash_bail_pct": 0.441764,
+    "ror_pct": 0.189828,
+    "unsecured_pct": 0.356997,
+    "total_cases": 12269,
+    "cash_bail_cases": 5420,
+    "ror_cases": 2329,
+    "avg_bail_amount": 43160.53911,
+    "non_posting_rate": 0.68321,
+    "cash_bail_pct_black": 0.536661,
+    "cash_bail_cases_black": 2774,
+    "cash_bail_pct_white": 0.378675,
+    "bail_amount_black": 45889.83886,
+    "bail_amount_white": 40000.19469,
+    "bail_amount_diff": 5889.644171,
+    "is_outlier": false
+  },
+  {
+    "name": "Delaware",
+    "nominal_pct": 0.006038,
+    "nonmonetary_pct": 0.000059,
+    "cash_bail_pct": 0.558825,
+    "ror_pct": 0.001055,
+    "unsecured_pct": 0.434023,
+    "total_cases": 17059,
+    "cash_bail_cases": 9533,
+    "ror_cases": 18,
+    "avg_bail_amount": 46630.95584,
+    "non_posting_rate": 0.613448,
+    "cash_bail_pct_black": 0.641501,
+    "cash_bail_cases_black": 5472,
+    "cash_bail_pct_white": 0.48597,
+    "bail_amount_black": 52748.20925,
+    "bail_amount_white": 35606.1592,
+    "bail_amount_diff": 17142.05005,
+    "is_outlier": false
+  },
+  {
+    "name": "Elk",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.286073,
+    "ror_pct": 0.000000,
+    "unsecured_pct": 0.713927,
+    "total_cases": 797,
+    "cash_bail_cases": 228,
+    "ror_cases": "0",
+    "avg_bail_amount": 29280.70175,
+    "non_posting_rate": 0.798246,
+    "cash_bail_pct_black": 0.294118,
+    "cash_bail_cases_black": 5,
+    "cash_bail_pct_white": 0.286667,
+    "bail_amount_black": 17460,
+    "bail_amount_white": 29516.27907,
+    "bail_amount_diff": -12056.27907,
+    "is_outlier": true
+  },
+  {
+    "name": "Erie",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.006849,
+    "cash_bail_pct": 0.470667,
+    "ror_pct": 0.334127,
+    "unsecured_pct": 0.188356,
+    "total_cases": 6716,
+    "cash_bail_cases": 3161,
+    "ror_cases": 2244,
+    "avg_bail_amount": 32539.14046,
+    "non_posting_rate": 0.624486,
+    "cash_bail_pct_black": 0.678438,
+    "cash_bail_cases_black": 1268,
+    "cash_bail_pct_white": 0.394262,
+    "bail_amount_black": 41009.0694,
+    "bail_amount_white": 26792.57056,
+    "bail_amount_diff": 14216.49884,
+    "is_outlier": false
+  },
+  {
+    "name": "Fayette",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.449371,
+    "ror_pct": 0.000999,
+    "unsecured_pct": 0.549631,
+    "total_cases": 5007,
+    "cash_bail_cases": 2250,
+    "ror_cases": 5,
+    "avg_bail_amount": 22434.84444,
+    "non_posting_rate": 0.392889,
+    "cash_bail_pct_black": 0.541899,
+    "cash_bail_cases_black": 485,
+    "cash_bail_pct_white": 0.43027,
+    "bail_amount_black": 29696.28866,
+    "bail_amount_white": 20176.5688,
+    "bail_amount_diff": 9519.719863,
+    "is_outlier": false
+  },
+  {
+    "name": "Forest",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.350993,
+    "ror_pct": 0.125828,
+    "unsecured_pct": 0.523179,
+    "total_cases": 151,
+    "cash_bail_cases": 53,
+    "ror_cases": 19,
+    "avg_bail_amount": 27849.0566,
+    "non_posting_rate": 0.811321,
+    "cash_bail_pct_black": 0.888889,
+    "cash_bail_cases_black": 16,
+    "cash_bail_pct_white": 0.3125,
+    "bail_amount_black": 27375,
+    "bail_amount_white": 27086.66667,
+    "bail_amount_diff": 288.333333,
+    "is_outlier": true
+  },
+  {
+    "name": "Franklin",
+    "nominal_pct": 0.000226,
+    "nonmonetary_pct": 0.006107,
+    "cash_bail_pct": 0.373445,
+    "ror_pct": 0.503732,
+    "unsecured_pct": 0.116489,
+    "total_cases": 4421,
+    "cash_bail_cases": 1651,
+    "ror_cases": 2227,
+    "avg_bail_amount": 64731.37492,
+    "non_posting_rate": 0.765597,
+    "cash_bail_pct_black": 0.494532,
+    "cash_bail_cases_black": 407,
+    "cash_bail_pct_white": 0.350513,
+    "bail_amount_black": 65076.16708,
+    "bail_amount_white": 64309.91064,
+    "bail_amount_diff": 766.256434,
+    "is_outlier": false
+  },
+  {
+    "name": "Fulton",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.0525,
+    "cash_bail_pct": 0.2825,
+    "ror_pct": 0.5175,
+    "unsecured_pct": 0.1475,
+    "total_cases": 400,
+    "cash_bail_cases": 113,
+    "ror_cases": 207,
+    "avg_bail_amount": 64907.07965,
+    "non_posting_rate": 0.787611,
+    "cash_bail_pct_black": 0.285714,
+    "cash_bail_cases_black": 10,
+    "cash_bail_pct_white": 0.290909,
+    "bail_amount_black": 38000,
+    "bail_amount_white": 69270.83333,
+    "bail_amount_diff": -31270.83333,
+    "is_outlier": true
+  },
+  {
+    "name": "Greene",
+    "nominal_pct": 0.001255,
+    "nonmonetary_pct": 0.002509,
+    "cash_bail_pct": 0.393977,
+    "ror_pct": 0.243413,
+    "unsecured_pct": 0.358846,
+    "total_cases": 797,
+    "cash_bail_cases": 314,
+    "ror_cases": 194,
+    "avg_bail_amount": 19024.66879,
+    "non_posting_rate": 0.570064,
+    "cash_bail_pct_black": 0.583333,
+    "cash_bail_cases_black": 21,
+    "cash_bail_pct_white": 0.39749,
+    "bail_amount_black": 21023.80952,
+    "bail_amount_white": 18309.63509,
+    "bail_amount_diff": 2714.174436,
+    "is_outlier": true
+  },
+  {
+    "name": "Huntingdon",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.386169,
+    "ror_pct": 0.299922,
+    "unsecured_pct": 0.313908,
+    "total_cases": 1287,
+    "cash_bail_cases": 497,
+    "ror_cases": 386,
+    "avg_bail_amount": 22393.05835,
+    "non_posting_rate": 0.7666,
+    "cash_bail_pct_black": 0.648276,
+    "cash_bail_cases_black": 94,
+    "cash_bail_pct_white": 0.369732,
+    "bail_amount_black": 24255.31915,
+    "bail_amount_white": 21800.12953,
+    "bail_amount_diff": 2455.189615,
+    "is_outlier": false
+  },
+  {
+    "name": "Indiana",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.406648,
+    "ror_pct": 0.23224,
+    "unsecured_pct": 0.361111,
+    "total_cases": 2196,
+    "cash_bail_cases": 893,
+    "ror_cases": 510,
+    "avg_bail_amount": 17639.19373,
+    "non_posting_rate": 0.479283,
+    "cash_bail_pct_black": 0.493548,
+    "cash_bail_cases_black": 153,
+    "cash_bail_pct_white": 0.393148,
+    "bail_amount_black": 28699.34641,
+    "bail_amount_white": 15395.98894,
+    "bail_amount_diff": 13303.35747,
+    "is_outlier": false
+  },
+  {
+    "name": "Jefferson",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000921,
+    "cash_bail_pct": 0.38674,
+    "ror_pct": 0.000921,
+    "unsecured_pct": 0.611418,
+    "total_cases": 1086,
+    "cash_bail_cases": 420,
+    "ror_cases": 1,
+    "avg_bail_amount": 52759.52381,
+    "non_posting_rate": 0.859524,
+    "cash_bail_pct_black": 0.69697,
+    "cash_bail_cases_black": 23,
+    "cash_bail_pct_white": 0.383937,
+    "bail_amount_black": 79565.21739,
+    "bail_amount_white": 51413.26531,
+    "bail_amount_diff": 28151.95209,
+    "is_outlier": true
+  },
+  {
+    "name": "Juniata",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.077922,
+    "cash_bail_pct": 0.341991,
+    "ror_pct": 0.194805,
+    "unsecured_pct": 0.385281,
+    "total_cases": 462,
+    "cash_bail_cases": 158,
+    "ror_cases": 90,
+    "avg_bail_amount": 27028.48101,
+    "non_posting_rate": 0.727848,
+    "cash_bail_pct_black": 0.4375,
+    "cash_bail_cases_black": 7,
+    "cash_bail_pct_white": 0.365915,
+    "bail_amount_black": 39071.42857,
+    "bail_amount_white": 26784.24658,
+    "bail_amount_diff": 12287.182,
+    "is_outlier": true
+  },
+  {
+    "name": "Lackawanna",
+    "nominal_pct": 0.000664,
+    "nonmonetary_pct": 0.07424,
+    "cash_bail_pct": 0.525826,
+    "ror_pct": 0.017937,
+    "unsecured_pct": 0.381332,
+    "total_cases": 6021,
+    "cash_bail_cases": 3166,
+    "ror_cases": 108,
+    "avg_bail_amount": 32984.23879,
+    "non_posting_rate": 0.722678,
+    "cash_bail_pct_black": 0.666667,
+    "cash_bail_cases_black": 788,
+    "cash_bail_pct_white": 0.490579,
+    "bail_amount_black": 43937.30965,
+    "bail_amount_white": 29251.71468,
+    "bail_amount_diff": 14685.59497,
+    "is_outlier": false
+  },
+  {
+    "name": "Lancaster",
+    "nominal_pct": 0.000879,
+    "nonmonetary_pct": 0.000959,
+    "cash_bail_pct": 0.450839,
+    "ror_pct": 0.146283,
+    "unsecured_pct": 0.401039,
+    "total_cases": 12510,
+    "cash_bail_cases": 5640,
+    "ror_cases": 1830,
+    "avg_bail_amount": 56861.72021,
+    "non_posting_rate": 0.646809,
+    "cash_bail_pct_black": 0.552574,
+    "cash_bail_cases_black": 1256,
+    "cash_bail_pct_white": 0.43393,
+    "bail_amount_black": 66013.01752,
+    "bail_amount_white": 55177.34693,
+    "bail_amount_diff": 10835.67059,
+    "is_outlier": false
+  },
+  {
+    "name": "Lawrence",
+    "nominal_pct": 0.000454,
+    "nonmonetary_pct": 0.246824,
+    "cash_bail_pct": 0.50726,
+    "ror_pct": 0.221416,
+    "unsecured_pct": 0.024047,
+    "total_cases": 2204,
+    "cash_bail_cases": 1118,
+    "ror_cases": 488,
+    "avg_bail_amount": 22124.77639,
+    "non_posting_rate": 0.457961,
+    "cash_bail_pct_black": 0.68784,
+    "cash_bail_cases_black": 379,
+    "cash_bail_pct_white": 0.451511,
+    "bail_amount_black": 30965.69921,
+    "bail_amount_white": 16481.8689,
+    "bail_amount_diff": 14483.83031,
+    "is_outlier": false
+  },
+  {
+    "name": "Lebanon",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.377892,
+    "ror_pct": 0.002828,
+    "unsecured_pct": 0.61928,
+    "total_cases": 3890,
+    "cash_bail_cases": 1470,
+    "ror_cases": 11,
+    "avg_bail_amount": 36573.77687,
+    "non_posting_rate": 0.427211,
+    "cash_bail_pct_black": 0.511429,
+    "cash_bail_cases_black": 179,
+    "cash_bail_pct_white": 0.37101,
+    "bail_amount_black": 67514.52514,
+    "bail_amount_white": 33646.29203,
+    "bail_amount_diff": 33868.23311,
+    "is_outlier": false
+  },
+  {
+    "name": "Lehigh",
+    "nominal_pct": 0.00168,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.565002,
+    "ror_pct": 0.083714,
+    "unsecured_pct": 0.349603,
+    "total_cases": 10715,
+    "cash_bail_cases": 6054,
+    "ror_cases": 897,
+    "avg_bail_amount": 23279.31682,
+    "non_posting_rate": 0.579452,
+    "cash_bail_pct_black": 0.625051,
+    "cash_bail_cases_black": 1537,
+    "cash_bail_pct_white": 0.545657,
+    "bail_amount_black": 27318.21991,
+    "bail_amount_white": 22187.57741,
+    "bail_amount_diff": 5130.642495,
+    "is_outlier": false
+  },
+  {
+    "name": "Luzerne",
+    "nominal_pct": 0.000319,
+    "nonmonetary_pct": 0.011286,
+    "cash_bail_pct": 0.408752,
+    "ror_pct": 0.306963,
+    "unsecured_pct": 0.272679,
+    "total_cases": 9392,
+    "cash_bail_cases": 3839,
+    "ror_cases": 2883,
+    "avg_bail_amount": 39863.67079,
+    "non_posting_rate": 0.669706,
+    "cash_bail_pct_black": 0.577887,
+    "cash_bail_cases_black": 1061,
+    "cash_bail_pct_white": 0.368782,
+    "bail_amount_black": 52198.33662,
+    "bail_amount_white": 36195.32523,
+    "bail_amount_diff": 16003.01139,
+    "is_outlier": false
+  },
+  {
+    "name": "Lycoming",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.344184,
+    "ror_pct": 0.002523,
+    "unsecured_pct": 0.653293,
+    "total_cases": 3963,
+    "cash_bail_cases": 1364,
+    "ror_cases": 10,
+    "avg_bail_amount": 59972.14076,
+    "non_posting_rate": 0.732405,
+    "cash_bail_pct_black": 0.559162,
+    "cash_bail_cases_black": 534,
+    "cash_bail_pct_white": 0.277141,
+    "bail_amount_black": 85748.12734,
+    "bail_amount_white": 43319.95134,
+    "bail_amount_diff": 42428.176,
+    "is_outlier": false
+  },
+  {
+    "name": "McKean",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.00087,
+    "cash_bail_pct": 0.41913,
+    "ror_pct": 0.050435,
+    "unsecured_pct": 0.529565,
+    "total_cases": 1150,
+    "cash_bail_cases": 482,
+    "ror_cases": 58,
+    "avg_bail_amount": 25103.73444,
+    "non_posting_rate": 0.695021,
+    "cash_bail_pct_black": 0.605634,
+    "cash_bail_cases_black": 43,
+    "cash_bail_pct_white": 0.412916,
+    "bail_amount_black": 35930.23256,
+    "bail_amount_white": 24742.891,
+    "bail_amount_diff": 11187.34156,
+    "is_outlier": true
+  },
+  {
+    "name": "Mercer",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.120947,
+    "cash_bail_pct": 0.356634,
+    "ror_pct": 0.115429,
+    "unsecured_pct": 0.40699,
+    "total_cases": 4349,
+    "cash_bail_cases": 1551,
+    "ror_cases": 502,
+    "avg_bail_amount": 28138.29787,
+    "non_posting_rate": 0.508704,
+    "cash_bail_pct_black": 0.456349,
+    "cash_bail_cases_black": 460,
+    "cash_bail_pct_white": 0.326274,
+    "bail_amount_black": 33481.52174,
+    "bail_amount_white": 25741.76858,
+    "bail_amount_diff": 7739.75316,
+    "is_outlier": false
+  },
+  {
+    "name": "Mifflin",
+    "nominal_pct": 0.000727,
+    "nonmonetary_pct": 0.002909,
+    "cash_bail_pct": 0.480727,
+    "ror_pct": 0.003636,
+    "unsecured_pct": 0.512,
+    "total_cases": 1375,
+    "cash_bail_cases": 661,
+    "ror_cases": 5,
+    "avg_bail_amount": 49405.76399,
+    "non_posting_rate": 0.822995,
+    "cash_bail_pct_black": 0.702381,
+    "cash_bail_cases_black": 59,
+    "cash_bail_pct_white": 0.469756,
+    "bail_amount_black": 114474.5763,
+    "bail_amount_white": 43165.90301,
+    "bail_amount_diff": 71308.67326,
+    "is_outlier": false
+  },
+  {
+    "name": "Monroe",
+    "nominal_pct": 0.000181,
+    "nonmonetary_pct": 0.004515,
+    "cash_bail_pct": 0.335922,
+    "ror_pct": 0.175546,
+    "unsecured_pct": 0.483836,
+    "total_cases": 5537,
+    "cash_bail_cases": 1860,
+    "ror_cases": 972,
+    "avg_bail_amount": 30385.00054,
+    "non_posting_rate": 0.385484,
+    "cash_bail_pct_black": 0.361759,
+    "cash_bail_cases_black": 543,
+    "cash_bail_pct_white": 0.331622,
+    "bail_amount_black": 38310.6814,
+    "bail_amount_white": 27099.69118,
+    "bail_amount_diff": 11210.99022,
+    "is_outlier": false
+  },
+  {
+    "name": "Montgomery",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.004938,
+    "cash_bail_pct": 0.37538,
+    "ror_pct": 0.152954,
+    "unsecured_pct": 0.466728,
+    "total_cases": 17417,
+    "cash_bail_cases": 6538,
+    "ror_cases": 2664,
+    "avg_bail_amount": 33857.12585,
+    "non_posting_rate": 0.638574,
+    "cash_bail_pct_black": 0.487213,
+    "cash_bail_cases_black": 3010,
+    "cash_bail_pct_white": 0.319375,
+    "bail_amount_black": 36939.01522,
+    "bail_amount_white": 30934.82705,
+    "bail_amount_diff": 6004.188171,
+    "is_outlier": false
+  },
+  {
+    "name": "Montour",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.007874,
+    "cash_bail_pct": 0.354331,
+    "ror_pct": 0.413386,
+    "unsecured_pct": 0.224409,
+    "total_cases": 254,
+    "cash_bail_cases": 90,
+    "ror_cases": 105,
+    "avg_bail_amount": 38861.11111,
+    "non_posting_rate": 0.666667,
+    "cash_bail_pct_black": 0.478261,
+    "cash_bail_cases_black": 11,
+    "cash_bail_pct_white": 0.35,
+    "bail_amount_black": 39545.45455,
+    "bail_amount_white": 39188.31169,
+    "bail_amount_diff": 357.142857,
+    "is_outlier": true
+  },
+  {
+    "name": "Northampton",
+    "nominal_pct": 0.001972,
+    "nonmonetary_pct": 0.000303,
+    "cash_bail_pct": 0.507359,
+    "ror_pct": 0.082992,
+    "unsecured_pct": 0.407374,
+    "total_cases": 6591,
+    "cash_bail_cases": 3344,
+    "ror_cases": 547,
+    "avg_bail_amount": 30214.74342,
+    "non_posting_rate": 0.550837,
+    "cash_bail_pct_black": 0.600712,
+    "cash_bail_cases_black": 844,
+    "cash_bail_pct_white": 0.486885,
+    "bail_amount_black": 42868.66114,
+    "bail_amount_white": 26636.32491,
+    "bail_amount_diff": 16232.33623,
+    "is_outlier": false
+  },
+  {
+    "name": "Northumberland",
+    "nominal_pct": 0.00043,
+    "nonmonetary_pct": 0.00086,
+    "cash_bail_pct": 0.376774,
+    "ror_pct": 0.117849,
+    "unsecured_pct": 0.504086,
+    "total_cases": 2325,
+    "cash_bail_cases": 876,
+    "ror_cases": 274,
+    "avg_bail_amount": 44800.34932,
+    "non_posting_rate": 0.584475,
+    "cash_bail_pct_black": 0.590674,
+    "cash_bail_cases_black": 114,
+    "cash_bail_pct_white": 0.353759,
+    "bail_amount_black": 72181.57895,
+    "bail_amount_white": 42108.45124,
+    "bail_amount_diff": 30073.12771,
+    "is_outlier": false
+  },
+  {
+    "name": "Perry",
+    "nominal_pct": 0.015512,
+    "nonmonetary_pct": 0.009307,
+    "cash_bail_pct": 0.301965,
+    "ror_pct": 0.427094,
+    "unsecured_pct": 0.246122,
+    "total_cases": 967,
+    "cash_bail_cases": 292,
+    "ror_cases": 413,
+    "avg_bail_amount": 27077.84247,
+    "non_posting_rate": 0.763699,
+    "cash_bail_pct_black": 0.442857,
+    "cash_bail_cases_black": 31,
+    "cash_bail_pct_white": 0.286848,
+    "bail_amount_black": 49388.06452,
+    "bail_amount_white": 24192.49012,
+    "bail_amount_diff": 25195.5744,
+    "is_outlier": true
+  },
+  {
+    "name": "Philadelphia",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.057413,
+    "cash_bail_pct": 0.499238,
+    "ror_pct": 0.343043,
+    "unsecured_pct": 0.100306,
+    "total_cases": 64951,
+    "cash_bail_cases": 32426,
+    "ror_cases": 22281,
+    "avg_bail_amount": 62130.10856,
+    "non_posting_rate": 0.514001,
+    "cash_bail_pct_black": 0.558269,
+    "cash_bail_cases_black": 20503,
+    "cash_bail_pct_white": 0.431232,
+    "bail_amount_black": 65123.11369,
+    "bail_amount_white": 56370.81098,
+    "bail_amount_diff": 8752.302711,
+    "is_outlier": false
+  },
+  {
+    "name": "Pike",
+    "nominal_pct": 0.00104,
+    "nonmonetary_pct": 0.317048,
+    "cash_bail_pct": 0.33264,
+    "ror_pct": 0.288981,
+    "unsecured_pct": 0.060291,
+    "total_cases": 962,
+    "cash_bail_cases": 320,
+    "ror_cases": 278,
+    "avg_bail_amount": 34725.15938,
+    "non_posting_rate": 0.640625,
+    "cash_bail_pct_black": 0.385965,
+    "cash_bail_cases_black": 44,
+    "cash_bail_pct_white": 0.330855,
+    "bail_amount_black": 53193.18182,
+    "bail_amount_white": 32148.13109,
+    "bail_amount_diff": 21045.05073,
+    "is_outlier": true
+  },
+  {
+    "name": "Potter",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.021359,
+    "cash_bail_pct": 0.225243,
+    "ror_pct": 0.159223,
+    "unsecured_pct": 0.594175,
+    "total_cases": 515,
+    "cash_bail_cases": 116,
+    "ror_cases": 82,
+    "avg_bail_amount": 23887.93103,
+    "non_posting_rate": 0.698276,
+    "cash_bail_pct_black": 0.8,
+    "cash_bail_cases_black": 4,
+    "cash_bail_pct_white": 0.2249,
+    "bail_amount_black": 33562.5,
+    "bail_amount_white": 23535.71429,
+    "bail_amount_diff": 10026.78571,
+    "is_outlier": true
+  },
+  {
+    "name": "Schuylkill",
+    "nominal_pct": 0.00147,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.399328,
+    "ror_pct": 0.112744,
+    "unsecured_pct": 0.486458,
+    "total_cases": 4763,
+    "cash_bail_cases": 1902,
+    "ror_cases": 537,
+    "avg_bail_amount": 25202.97056,
+    "non_posting_rate": 0.602524,
+    "cash_bail_pct_black": 0.487535,
+    "cash_bail_cases_black": 176,
+    "cash_bail_pct_white": 0.394481,
+    "bail_amount_black": 37605.11364,
+    "bail_amount_white": 24236.65491,
+    "bail_amount_diff": 13368.45873,
+    "is_outlier": false
+  },
+  {
+    "name": "Snyder",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.027748,
+    "cash_bail_pct": 0.36286,
+    "ror_pct": 0.03842,
+    "unsecured_pct": 0.570971,
+    "total_cases": 937,
+    "cash_bail_cases": 340,
+    "ror_cases": 36,
+    "avg_bail_amount": 31695,
+    "non_posting_rate": 0.444118,
+    "cash_bail_pct_black": 0.521739,
+    "cash_bail_cases_black": 36,
+    "cash_bail_pct_white": 0.350348,
+    "bail_amount_black": 33048.61111,
+    "bail_amount_white": 31631.78808,
+    "bail_amount_diff": 1416.823032,
+    "is_outlier": true
+  },
+  {
+    "name": "Somerset",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.486546,
+    "cash_bail_pct": 0.249863,
+    "ror_pct": 0.024712,
+    "unsecured_pct": 0.23888,
+    "total_cases": 1821,
+    "cash_bail_cases": 455,
+    "ror_cases": 45,
+    "avg_bail_amount": 45684.61539,
+    "non_posting_rate": 0.56044,
+    "cash_bail_pct_black": 0.705882,
+    "cash_bail_cases_black": 60,
+    "cash_bail_pct_white": 0.231132,
+    "bail_amount_black": 84933.33333,
+    "bail_amount_white": 38187.5,
+    "bail_amount_diff": 46745.83333,
+    "is_outlier": false
+  },
+  {
+    "name": "Sullivan",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.365385,
+    "ror_pct": 0.019231,
+    "unsecured_pct": 0.615385,
+    "total_cases": 104,
+    "cash_bail_cases": 38,
+    "ror_cases": 2,
+    "avg_bail_amount": 18328.94737,
+    "non_posting_rate": 0.684211,
+    "cash_bail_pct_black": 0.625,
+    "cash_bail_cases_black": 5,
+    "cash_bail_pct_white": 0.326087,
+    "bail_amount_black": 8000,
+    "bail_amount_white": 20516.66667,
+    "bail_amount_diff": -12516.66667,
+    "is_outlier": true
+  },
+  {
+    "name": "Susquehanna",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.009485,
+    "cash_bail_pct": 0.394309,
+    "ror_pct": 0.261518,
+    "unsecured_pct": 0.334688,
+    "total_cases": 738,
+    "cash_bail_cases": 291,
+    "ror_cases": 193,
+    "avg_bail_amount": 29464.60481,
+    "non_posting_rate": 0.735395,
+    "cash_bail_pct_black": 0.65,
+    "cash_bail_cases_black": 13,
+    "cash_bail_pct_white": 0.388652,
+    "bail_amount_black": 43346.15385,
+    "bail_amount_white": 29491.60584,
+    "bail_amount_diff": 13854.54801,
+    "is_outlier": true
+  },
+  {
+    "name": "Tioga",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.313167,
+    "ror_pct": 0.000000,
+    "unsecured_pct": 0.686833,
+    "total_cases": 843,
+    "cash_bail_cases": 264,
+    "ror_cases": "0",
+    "avg_bail_amount": 34378.78788,
+    "non_posting_rate": 0.787879,
+    "cash_bail_pct_black": 0.535714,
+    "cash_bail_cases_black": 15,
+    "cash_bail_pct_white": 0.304455,
+    "bail_amount_black": 49300,
+    "bail_amount_white": 33552.84553,
+    "bail_amount_diff": 15747.15447,
+    "is_outlier": true
+  },
+  {
+    "name": "Union",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.145588,
+    "cash_bail_pct": 0.255882,
+    "ror_pct": 0.488235,
+    "unsecured_pct": 0.110294,
+    "total_cases": 680,
+    "cash_bail_cases": 174,
+    "ror_cases": 332,
+    "avg_bail_amount": 31385.05747,
+    "non_posting_rate": 0.735632,
+    "cash_bail_pct_black": 0.381579,
+    "cash_bail_cases_black": 29,
+    "cash_bail_pct_white": 0.235094,
+    "bail_amount_black": 45637.93103,
+    "bail_amount_white": 28018.11594,
+    "bail_amount_diff": 17619.81509,
+    "is_outlier": true
+  },
+  {
+    "name": "Venango",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.384401,
+    "ror_pct": 0.001393,
+    "unsecured_pct": 0.614206,
+    "total_cases": 1436,
+    "cash_bail_cases": 552,
+    "ror_cases": 2,
+    "avg_bail_amount": 41589.67391,
+    "non_posting_rate": 0.737319,
+    "cash_bail_pct_black": 0.635659,
+    "cash_bail_cases_black": 82,
+    "cash_bail_pct_white": 0.359568,
+    "bail_amount_black": 53475.60976,
+    "bail_amount_white": 39360.51502,
+    "bail_amount_diff": 14115.09474,
+    "is_outlier": false
+  },
+  {
+    "name": "Warren",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.025455,
+    "cash_bail_pct": 0.404848,
+    "ror_pct": 0.413333,
+    "unsecured_pct": 0.156364,
+    "total_cases": 825,
+    "cash_bail_cases": 334,
+    "ror_cases": 341,
+    "avg_bail_amount": 31258.98204,
+    "non_posting_rate": 0.757485,
+    "cash_bail_pct_black": 0.684211,
+    "cash_bail_cases_black": 13,
+    "cash_bail_pct_white": 0.398983,
+    "bail_amount_black": 49769.23077,
+    "bail_amount_white": 30089.17198,
+    "bail_amount_diff": 19680.05879,
+    "is_outlier": true
+  },
+  {
+    "name": "Washington",
+    "nominal_pct": 0.000162,
+    "nonmonetary_pct": 0.010351,
+    "cash_bail_pct": 0.395924,
+    "ror_pct": 0.260877,
+    "unsecured_pct": 0.332686,
+    "total_cases": 6183,
+    "cash_bail_cases": 2448,
+    "ror_cases": 1613,
+    "avg_bail_amount": 30160.78391,
+    "non_posting_rate": 0.635621,
+    "cash_bail_pct_black": 0.567729,
+    "cash_bail_cases_black": 570,
+    "cash_bail_pct_white": 0.365188,
+    "bail_amount_black": 46258.07018,
+    "bail_amount_white": 23939.11435,
+    "bail_amount_diff": 22318.95583,
+    "is_outlier": false
+  },
+  {
+    "name": "Wayne",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.376344,
+    "ror_pct": 0.342742,
+    "unsecured_pct": 0.280914,
+    "total_cases": 744,
+    "cash_bail_cases": 280,
+    "ror_cases": 255,
+    "avg_bail_amount": 34030.71429,
+    "non_posting_rate": 0.467857,
+    "cash_bail_pct_black": 0.6,
+    "cash_bail_cases_black": 21,
+    "cash_bail_pct_white": 0.36099,
+    "bail_amount_black": 28619.04762,
+    "bail_amount_white": 36399.59677,
+    "bail_amount_diff": -7780.549155,
+    "is_outlier": true
+  },
+  {
+    "name": "Westmoreland",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.045757,
+    "cash_bail_pct": 0.31714,
+    "ror_pct": 0.327603,
+    "unsecured_pct": 0.3095,
+    "total_cases": 12042,
+    "cash_bail_cases": 3819,
+    "ror_cases": 3945,
+    "avg_bail_amount": 23548.32216,
+    "non_posting_rate": 0.710919,
+    "cash_bail_pct_black": 0.495816,
+    "cash_bail_cases_black": 948,
+    "cash_bail_pct_white": 0.287781,
+    "bail_amount_black": 38192.51213,
+    "bail_amount_white": 18989.29884,
+    "bail_amount_diff": 19203.21329,
+    "is_outlier": false
+  },
+  {
+    "name": "Wyoming",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.355005,
+    "ror_pct": 0.002064,
+    "unsecured_pct": 0.642931,
+    "total_cases": 969,
+    "cash_bail_cases": 344,
+    "ror_cases": 2,
+    "avg_bail_amount": 28720.13081,
+    "non_posting_rate": 0.694767,
+    "cash_bail_pct_black": 0.434783,
+    "cash_bail_cases_black": 10,
+    "cash_bail_pct_white": 0.353579,
+    "bail_amount_black": 39000,
+    "bail_amount_white": 28822.77607,
+    "bail_amount_diff": 10177.22393,
+    "is_outlier": true
+  },
+  {
+    "name": "York",
+    "nominal_pct": 0.003357,
+    "nonmonetary_pct": 0.055543,
+    "cash_bail_pct": 0.460769,
+    "ror_pct": 0.333479,
+    "unsecured_pct": 0.146851,
+    "total_cases": 13701,
+    "cash_bail_cases": 6313,
+    "ror_cases": 4569,
+    "avg_bail_amount": 26958.81841,
+    "non_posting_rate": 0.592428,
+    "cash_bail_pct_black": 0.568894,
+    "cash_bail_cases_black": 1924,
+    "cash_bail_pct_white": 0.427047,
+    "bail_amount_black": 37078.00813,
+    "bail_amount_white": 23258.83229,
+    "bail_amount_diff": 13819.17584,
+    "is_outlier": false
   }
 ];
 
-export const PA_BAIL_CASES = 2482;
-export const PA_ROR_CASES = 1286;
-export const PA_TOTAL_CASES = 5721;
-export const PA_BAIL_RATE =  parseFloat((PA_BAIL_CASES / PA_TOTAL_CASES * 100).toFixed(1));
-export const PA_ROR_RATE = parseFloat((PA_ROR_CASES / PA_TOTAL_CASES * 100).toFixed(1));
-export const PA_AVG_BAIL_AMT = "$34.5K";
-
-export const ROR_RATE_DATA = [
-  {
-    "data": [
-      "Adams",
-      {
-        "type": "bar",
-        "values": [
-          25.4
-        ]
-      },
-      25.4,
-      578,
-      2280
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      {
-        "type": "bar",
-        "values": [
-          25.4
-        ]
-      },
-      25.4,
-      12075,
-      47473
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      {
-        "type": "bar",
-        "values": [
-          42.7
-        ]
-      },
-      42.7,
-      755,
-      1770
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      {
-        "type": "bar",
-        "values": [
-          34.1
-        ]
-      },
-      34.1,
-      1967,
-      5765
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      {
-        "type": "bar",
-        "values": [
-          1.9
-        ]
-      },
-      1.9,
-      27,
-      1392
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Berks",
-      {
-        "type": "bar",
-        "values": [
-          15.1
-        ]
-      },
-      15.1,
-      1709,
-      11330
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      {
-        "type": "bar",
-        "values": [
-          0.4
-        ]
-      },
-      0.4,
-      19,
-      4298
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      {
-        "type": "bar",
-        "values": [
-          11.6
-        ]
-      },
-      11.6,
-      206,
-      1773
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bucks",
-      {
-        "type": "bar",
-        "values": [
-          15.9
-        ]
-      },
-      15.9,
-      2201,
-      13830
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      {
-        "type": "bar",
-        "values": [
-          49.0
-        ]
-      },
-      49.0,
-      2511,
-      5123
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      {
-        "type": "bar",
-        "values": [
-          20.7
-        ]
-      },
-      20.7,
-      910,
-      4395
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      {
-        "type": "bar",
-        "values": [
-          0.0
-        ]
-      },
-      0.0,
-      0,
-      136
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Carbon",
-      {
-        "type": "bar",
-        "values": [
-          14.2
-        ]
-      },
-      14.2,
-      396,
-      2780
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      {
-        "type": "bar",
-        "values": [
-          61.6
-        ]
-      },
-      61.6,
-      1963,
-      3185
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      {
-        "type": "bar",
-        "values": [
-          20.8
-        ]
-      },
-      20.8,
-      2068,
-      9932
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      {
-        "type": "bar",
-        "values": [
-          26.3
-        ]
-      },
-      26.3,
-      314,
-      1192
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clearfield",
-      {
-        "type": "bar",
-        "values": [
-          0.1
-        ]
-      },
-      0.1,
-      2,
-      1775
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clinton",
-      {
-        "type": "bar",
-        "values": [
-          13.0
-        ]
-      },
-      13.0,
-      157,
-      1212
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Columbia",
-      {
-        "type": "bar",
-        "values": [
-          21.4
-        ]
-      },
-      21.4,
-      326,
-      1526
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      {
-        "type": "bar",
-        "values": [
-          43.0
-        ]
-      },
-      43.0,
-      841,
-      1954
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      {
-        "type": "bar",
-        "values": [
-          39.2
-        ]
-      },
-      39.2,
-      2614,
-      6674
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      {
-        "type": "bar",
-        "values": [
-          19.0
-        ]
-      },
-      19.0,
-      2329,
-      12269
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      {
-        "type": "bar",
-        "values": [
-          0.1
-        ]
-      },
-      0.1,
-      18,
-      17059
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      {
-        "type": "bar",
-        "values": [
-          0.0
-        ]
-      },
-      0.0,
-      0,
-      797
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Erie",
-      {
-        "type": "bar",
-        "values": [
-          33.4
-        ]
-      },
-      33.4,
-      2244,
-      6716
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      {
-        "type": "bar",
-        "values": [
-          0.1
-        ]
-      },
-      0.1,
-      5,
-      5007
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      {
-        "type": "bar",
-        "values": [
-          12.6
-        ]
-      },
-      12.6,
-      19,
-      151
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Franklin",
-      {
-        "type": "bar",
-        "values": [
-          50.4
-        ]
-      },
-      50.4,
-      2227,
-      4421
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      {
-        "type": "bar",
-        "values": [
-          51.8
-        ]
-      },
-      51.8,
-      207,
-      400
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Greene",
-      {
-        "type": "bar",
-        "values": [
-          24.3
-        ]
-      },
-      24.3,
-      194,
-      797
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Huntingdon",
-      {
-        "type": "bar",
-        "values": [
-          30.0
-        ]
-      },
-      30.0,
-      386,
-      1287
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      {
-        "type": "bar",
-        "values": [
-          23.2
-        ]
-      },
-      23.2,
-      510,
-      2196
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      {
-        "type": "bar",
-        "values": [
-          0.1
-        ]
-      },
-      0.1,
-      1,
-      1086
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Juniata",
-      {
-        "type": "bar",
-        "values": [
-          19.5
-        ]
-      },
-      19.5,
-      90,
-      462
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lackawanna",
-      {
-        "type": "bar",
-        "values": [
-          1.8
-        ]
-      },
-      1.8,
-      108,
-      6021
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      {
-        "type": "bar",
-        "values": [
-          14.6
-        ]
-      },
-      14.6,
-      1830,
-      12510
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      {
-        "type": "bar",
-        "values": [
-          22.1
-        ]
-      },
-      22.1,
-      488,
-      2204
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      {
-        "type": "bar",
-        "values": [
-          0.3
-        ]
-      },
-      0.3,
-      11,
-      3890
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      {
-        "type": "bar",
-        "values": [
-          8.4
-        ]
-      },
-      8.4,
-      897,
-      10715
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      {
-        "type": "bar",
-        "values": [
-          30.7
-        ]
-      },
-      30.7,
-      2883,
-      9392
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      {
-        "type": "bar",
-        "values": [
-          0.3
-        ]
-      },
-      0.3,
-      10,
-      3963
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      {
-        "type": "bar",
-        "values": [
-          5.0
-        ]
-      },
-      5.0,
-      58,
-      1150
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mercer",
-      {
-        "type": "bar",
-        "values": [
-          11.5
-        ]
-      },
-      11.5,
-      502,
-      4349
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      {
-        "type": "bar",
-        "values": [
-          0.4
-        ]
-      },
-      0.4,
-      5,
-      1375
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      {
-        "type": "bar",
-        "values": [
-          17.6
-        ]
-      },
-      17.6,
-      972,
-      5537
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      {
-        "type": "bar",
-        "values": [
-          15.3
-        ]
-      },
-      15.3,
-      2664,
-      17417
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      {
-        "type": "bar",
-        "values": [
-          41.3
-        ]
-      },
-      41.3,
-      105,
-      254
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northampton",
-      {
-        "type": "bar",
-        "values": [
-          8.3
-        ]
-      },
-      8.3,
-      547,
-      6591
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      {
-        "type": "bar",
-        "values": [
-          11.8
-        ]
-      },
-      11.8,
-      274,
-      2325
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      {
-        "type": "bar",
-        "values": [
-          42.7
-        ]
-      },
-      42.7,
-      413,
-      967
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Philadelphia",
-      {
-        "type": "bar",
-        "values": [
-          34.3
-        ]
-      },
-      34.3,
-      22281,
-      64951
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      {
-        "type": "bar",
-        "values": [
-          28.9
-        ]
-      },
-      28.9,
-      278,
-      962
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Potter",
-      {
-        "type": "bar",
-        "values": [
-          15.9
-        ]
-      },
-      15.9,
-      82,
-      515
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Schuylkill",
-      {
-        "type": "bar",
-        "values": [
-          11.3
-        ]
-      },
-      11.3,
-      537,
-      4763
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      {
-        "type": "bar",
-        "values": [
-          3.8
-        ]
-      },
-      3.8,
-      36,
-      937
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Somerset",
-      {
-        "type": "bar",
-        "values": [
-          2.5
-        ]
-      },
-      2.5,
-      45,
-      1821
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      {
-        "type": "bar",
-        "values": [
-          1.9
-        ]
-      },
-      1.9,
-      2,
-      104
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Susquehanna",
-      {
-        "type": "bar",
-        "values": [
-          26.2
-        ]
-      },
-      26.2,
-      193,
-      738
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Tioga",
-      {
-        "type": "bar",
-        "values": [
-          0.0
-        ]
-      },
-      0.0,
-      0,
-      843
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Union",
-      {
-        "type": "bar",
-        "values": [
-          48.8
-        ]
-      },
-      48.8,
-      332,
-      680
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Venango",
-      {
-        "type": "bar",
-        "values": [
-          0.1
-        ]
-      },
-      0.1,
-      2,
-      1436
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      {
-        "type": "bar",
-        "values": [
-          41.3
-        ]
-      },
-      41.3,
-      341,
-      825
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Washington",
-      {
-        "type": "bar",
-        "values": [
-          26.1
-        ]
-      },
-      26.1,
-      1613,
-      6183
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      {
-        "type": "bar",
-        "values": [
-          34.3
-        ]
-      },
-      34.3,
-      255,
-      744
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Westmoreland",
-      {
-        "type": "bar",
-        "values": [
-          32.8
-        ]
-      },
-      32.8,
-      3945,
-      12042
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      {
-        "type": "bar",
-        "values": [
-          0.2
-        ]
-      },
-      0.2,
-      2,
-      969
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "York",
-      {
-        "type": "bar",
-        "values": [
-          33.3
-        ]
-      },
-      33.3,
-      4569,
-      13701
-    ],
-    "outlier": false
-  }
-];
-
-
+// TODO: all data below should be derived from STATEWIDE_DATA and COUNTY_DATA
 export const BAIL_RACE_RATE_DATA = [
   {
     "data": [
@@ -3130,7 +2456,6 @@ export const BAIL_RACE_RATE_DATA = [
     "outlier": false
   }
 ];
-
 export const BAIL_RACE_AMOUNT_DATA = [
   {
     "data": [
@@ -5034,958 +4359,7 @@ export const RACE_SCATTER_PLOT = {
   }
 };
 
-export const BAIL_CASES_SCATTER_PLOT = {
-  "State Average": {
-    showName: true,
-    x: PA_BAIL_RATE,
-    y: PA_AVG_BAIL_AMT,
-    r: PA_TOTAL_CASES
-  },
-  "Adams": {
-    "showName": false,
-    "x": 31.3,
-    "r": 2280,
-    "y": "$30.4K"
-  },
-  "Allegheny": {
-    "showName": false,
-    "x": 42.6,
-    "r": 47473,
-    "y": "$16.8K"
-  },
-  "Armstrong": {
-    "showName": false,
-    "x": 41.5,
-    "r": 1770,
-    "y": "$15.1K"
-  },
-  "Beaver": {
-    "showName": false,
-    "x": 50.8,
-    "r": 5765,
-    "y": "$21.5K"
-  },
-  "Bedford": {
-    "showName": false,
-    "x": 37.4,
-    "r": 1392,
-    "y": "$54.8K"
-  },
-  "Berks": {
-    "showName": false,
-    "x": 50.9,
-    "r": 11330,
-    "y": "$36.0K"
-  },
-  "Blair": {
-    "showName": false,
-    "x": 30.8,
-    "r": 4298,
-    "y": "$33.4K"
-  },
-  "Bradford": {
-    "showName": false,
-    "x": 45.9,
-    "r": 1773,
-    "y": "$35.2K"
-  },
-  "Bucks": {
-    "showName": false,
-    "x": 34.9,
-    "r": 13830,
-    "y": "$77.5K"
-  },
-  "Butler": {
-    "showName": false,
-    "x": 35.5,
-    "r": 5123,
-    "y": "$25.6K"
-  },
-  "Cambria": {
-    "showName": false,
-    "x": 45.0,
-    "r": 4395,
-    "y": "$40.1K"
-  },
-  "Cameron": {
-    "showName": false,
-    "x": 22.1,
-    "r": 136,
-    "y": "$28.3K"
-  },
-  "Carbon": {
-    "showName": false,
-    "x": 32.9,
-    "r": 2780,
-    "y": "$32.5K"
-  },
-  "Centre": {
-    "showName": false,
-    "x": 27.3,
-    "r": 3185,
-    "y": "$51.7K"
-  },
-  "Chester": {
-    "showName": false,
-    "x": 38.3,
-    "r": 9932,
-    "y": "$33.6K"
-  },
-  "Clarion": {
-    "showName": false,
-    "x": 39.4,
-    "r": 1192,
-    "y": "$23.1K"
-  },
-  "Clearfield": {
-    "showName": false,
-    "x": 37.0,
-    "r": 1775,
-    "y": "$29.2K"
-  },
-  "Clinton": {
-    "showName": false,
-    "x": 33.3,
-    "r": 1212,
-    "y": "$28.5K"
-  },
-  "Columbia": {
-    "showName": false,
-    "x": 40.9,
-    "r": 1526,
-    "y": "$37.2K"
-  },
-  "Crawford": {
-    "showName": false,
-    "x": 35.6,
-    "r": 1954,
-    "y": "$26.7K"
-  },
-  "Cumberland": {
-    "showName": false,
-    "x": 41.1,
-    "r": 6674,
-    "y": "$27.9K"
-  },
-  "Dauphin": {
-    "showName": false,
-    "x": 44.2,
-    "r": 12269,
-    "y": "$43.2K"
-  },
-  "Delaware": {
-    "showName": false,
-    "x": 55.9,
-    "r": 17059,
-    "y": "$46.6K"
-  },
-  "Elk": {
-    "showName": false,
-    "x": 28.6,
-    "r": 797,
-    "y": "$29.3K"
-  },
-  "Erie": {
-    "showName": false,
-    "x": 47.1,
-    "r": 6716,
-    "y": "$32.5K"
-  },
-  "Fayette": {
-    "showName": false,
-    "x": 44.9,
-    "r": 5007,
-    "y": "$22.4K"
-  },
-  "Forest": {
-    "showName": false,
-    "x": 35.1,
-    "r": 151,
-    "y": "$27.8K"
-  },
-  "Franklin": {
-    "showName": false,
-    "x": 37.3,
-    "r": 4421,
-    "y": "$64.7K"
-  },
-  "Fulton": {
-    "showName": false,
-    "x": 28.3,
-    "r": 400,
-    "y": "$64.9K"
-  },
-  "Greene": {
-    "showName": false,
-    "x": 39.4,
-    "r": 797,
-    "y": "$19.0K"
-  },
-  "Huntingdon": {
-    "showName": false,
-    "x": 38.6,
-    "r": 1287,
-    "y": "$22.4K"
-  },
-  "Indiana": {
-    "showName": false,
-    "x": 40.7,
-    "r": 2196,
-    "y": "$17.6K"
-  },
-  "Jefferson": {
-    "showName": false,
-    "x": 38.7,
-    "r": 1086,
-    "y": "$52.8K"
-  },
-  "Juniata": {
-    "showName": false,
-    "x": 34.2,
-    "r": 462,
-    "y": "$27.0K"
-  },
-  "Lackawanna": {
-    "showName": false,
-    "x": 52.6,
-    "r": 6021,
-    "y": "$33.0K"
-  },
-  "Lancaster": {
-    "showName": false,
-    "x": 45.1,
-    "r": 12510,
-    "y": "$56.9K"
-  },
-  "Lawrence": {
-    "showName": false,
-    "x": 50.7,
-    "r": 2204,
-    "y": "$22.1K"
-  },
-  "Lebanon": {
-    "showName": false,
-    "x": 37.8,
-    "r": 3890,
-    "y": "$36.6K"
-  },
-  "Lehigh": {
-    "showName": false,
-    "x": 56.5,
-    "r": 10715,
-    "y": "$23.3K"
-  },
-  "Luzerne": {
-    "showName": false,
-    "x": 40.9,
-    "r": 9392,
-    "y": "$39.9K"
-  },
-  "Lycoming": {
-    "showName": false,
-    "x": 34.4,
-    "r": 3963,
-    "y": "$60.0K"
-  },
-  "McKean": {
-    "showName": false,
-    "x": 41.9,
-    "r": 1150,
-    "y": "$25.1K"
-  },
-  "Mercer": {
-    "showName": false,
-    "x": 35.7,
-    "r": 4349,
-    "y": "$28.1K"
-  },
-  "Mifflin": {
-    "showName": false,
-    "x": 48.1,
-    "r": 1375,
-    "y": "$49.4K"
-  },
-  "Monroe": {
-    "showName": false,
-    "x": 33.6,
-    "r": 5537,
-    "y": "$30.4K"
-  },
-  "Montgomery": {
-    "showName": false,
-    "x": 37.5,
-    "r": 17417,
-    "y": "$33.9K"
-  },
-  "Montour": {
-    "showName": false,
-    "x": 35.4,
-    "r": 254,
-    "y": "$38.9K"
-  },
-  "Northampton": {
-    "showName": false,
-    "x": 50.7,
-    "r": 6591,
-    "y": "$30.2K"
-  },
-  "Northumberland": {
-    "showName": false,
-    "x": 37.7,
-    "r": 2325,
-    "y": "$44.8K"
-  },
-  "Perry": {
-    "showName": false,
-    "x": 30.2,
-    "r": 967,
-    "y": "$27.1K"
-  },
-  "Philadelphia": {
-    "showName": false,
-    "x": 49.9,
-    "r": 64951,
-    "y": "$62.1K"
-  },
-  "Pike": {
-    "showName": false,
-    "x": 33.3,
-    "r": 962,
-    "y": "$34.7K"
-  },
-  "Potter": {
-    "showName": false,
-    "x": 22.5,
-    "r": 515,
-    "y": "$23.9K"
-  },
-  "Schuylkill": {
-    "showName": false,
-    "x": 39.9,
-    "r": 4763,
-    "y": "$25.2K"
-  },
-  "Snyder": {
-    "showName": false,
-    "x": 36.3,
-    "r": 937,
-    "y": "$31.7K"
-  },
-  "Somerset": {
-    "showName": false,
-    "x": 25.0,
-    "r": 1821,
-    "y": "$45.7K"
-  },
-  "Sullivan": {
-    "showName": false,
-    "x": 36.5,
-    "r": 104,
-    "y": "$18.3K"
-  },
-  "Susquehanna": {
-    "showName": false,
-    "x": 39.4,
-    "r": 738,
-    "y": "$29.5K"
-  },
-  "Tioga": {
-    "showName": false,
-    "x": 31.3,
-    "r": 843,
-    "y": "$34.4K"
-  },
-  "Union": {
-    "showName": false,
-    "x": 25.6,
-    "r": 680,
-    "y": "$31.4K"
-  },
-  "Venango": {
-    "showName": false,
-    "x": 38.4,
-    "r": 1436,
-    "y": "$41.6K"
-  },
-  "Warren": {
-    "showName": false,
-    "x": 40.5,
-    "r": 825,
-    "y": "$31.3K"
-  },
-  "Washington": {
-    "showName": false,
-    "x": 39.6,
-    "r": 6183,
-    "y": "$30.2K"
-  },
-  "Wayne": {
-    "showName": false,
-    "x": 37.6,
-    "r": 744,
-    "y": "$34.0K"
-  },
-  "Westmoreland": {
-    "showName": false,
-    "x": 31.7,
-    "r": 12042,
-    "y": "$23.5K"
-  },
-  "Wyoming": {
-    "showName": false,
-    "x": 35.5,
-    "r": 969,
-    "y": "$28.7K"
-  },
-  "York": {
-    "showName": false,
-    "x": 46.1,
-    "r": 13701,
-    "y": "$27.0K"
-  }
-};
-
-export const BAIL_POSTING_DATA = [
-  {
-    "data": [
-      "Adams",
-      "$30.4K",
-      44.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      "$16.8K",
-      60.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      "$15.1K",
-      56.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      "$21.5K",
-      66.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      "$54.8K",
-      71.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Berks",
-      "$36.0K",
-      57.2,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      "$33.4K",
-      66.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      "$35.2K",
-      89.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bucks",
-      "$77.5K",
-      50.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      "$25.6K",
-      61.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      "$40.1K",
-      42.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      "$28.3K",
-      56.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Carbon",
-      "$32.5K",
-      51.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      "$51.7K",
-      66.6,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      "$33.6K",
-      51.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      "$23.1K",
-      71.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clearfield",
-      "$29.2K",
-      83.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clinton",
-      "$28.5K",
-      73.0,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Columbia",
-      "$37.2K",
-      27.6,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      "$26.7K",
-      56.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      "$27.9K",
-      55.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      "$43.2K",
-      68.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      "$46.6K",
-      61.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      "$29.3K",
-      79.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Erie",
-      "$32.5K",
-      62.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      "$22.4K",
-      39.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      "$27.8K",
-      81.1,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Franklin",
-      "$64.7K",
-      76.6,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      "$64.9K",
-      78.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Greene",
-      "$19.0K",
-      57.0,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Huntingdon",
-      "$22.4K",
-      76.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      "$17.6K",
-      47.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      "$52.8K",
-      86.0,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Juniata",
-      "$27.0K",
-      72.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lackawanna",
-      "$33.0K",
-      72.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      "$56.9K",
-      64.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      "$22.1K",
-      45.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      "$36.6K",
-      42.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      "$23.3K",
-      57.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      "$39.9K",
-      67.0,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      "$60.0K",
-      73.2,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      "$25.1K",
-      69.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mercer",
-      "$28.1K",
-      50.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      "$49.4K",
-      82.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      "$30.4K",
-      38.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      "$33.9K",
-      63.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      "$38.9K",
-      66.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northampton",
-      "$30.2K",
-      55.1,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      "$44.8K",
-      58.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      "$27.1K",
-      76.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Philadelphia",
-      "$62.1K",
-      51.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      "$34.7K",
-      64.1,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Potter",
-      "$23.9K",
-      69.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Schuylkill",
-      "$25.2K",
-      60.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      "$31.7K",
-      44.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Somerset",
-      "$45.7K",
-      56.0,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      "$18.3K",
-      68.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Susquehanna",
-      "$29.5K",
-      73.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Tioga",
-      "$34.4K",
-      78.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Union",
-      "$31.4K",
-      73.6,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Venango",
-      "$41.6K",
-      73.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      "$31.3K",
-      75.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Washington",
-      "$30.2K",
-      63.6,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      "$34.0K",
-      46.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Westmoreland",
-      "$23.5K",
-      71.1,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      "$28.7K",
-      69.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "York",
-      "$27.0K",
-      59.2,
-    ],
-    "outlier": false
-  }
-];
-
-export const PA_AVG_POSTING_RATE = 63.2;
-
+// TODO: except for these two
 export const MDJ_DATA = [
   {
     "data": [

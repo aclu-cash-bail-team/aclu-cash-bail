@@ -1,4 +1,5 @@
 import { configureTooltip } from "./Tooltip";
+import { toMoney, toPercent, toNumberString } from "../helpers";
 
 const VIEW_ALL = "VIEW ALL";
 const VIEW_LESS = "VIEW LESS";
@@ -83,8 +84,10 @@ class FootnoteCell extends Cell {
 class NumberCell extends Cell {
   constructor(content, className, data) {
     super(className);
-    const isPercent = data["unit"] === "percent";
-    this.content = isPercent ? `${content.toFixed(1)}%` : content.toLocaleString();
+    let formatFunc = toNumberString;
+    if (data["unit"] === "percent") formatFunc = toPercent;
+    if (data["unit"] === "dollars") formatFunc = toMoney;
+    this.content = formatFunc(content);
     this.render();
   }
 
@@ -100,6 +103,12 @@ class BarGraphCell extends Cell {
     // BarGraphCell should only ever be passed one number
     this.content = content["values"][0];
     this.average = data["averages"][0]["value"];
+    // adjust value based on unit
+    if (data["unit"] === "percent") {
+      this.content *= 100;
+      this.average *= 100;
+    }
+
     this.range = data;
     this.showDiff = data["showDiff"];
     this.render();
@@ -158,13 +167,12 @@ class DistributionBarCell extends Cell {
       container.appendChild(text);
       return container;
     };
-    const renderValue = (value) => `${value.toFixed(1)}%`;
 
     this.renderTooltip = configureTooltip({
       rows: this.values.map((v) => ({
         rowHeader: createHeader(v.name, v.className),
         dataKey: v.className,
-        render: renderValue
+        render: toPercent
       })),
       placement: "top",
       followCursor: true
@@ -313,9 +321,8 @@ class VizHeaderCell extends HeaderCell {
     const cell = document.createElement("th");
     cell.className = this.className;
     // create start, end, and average tick/number elements
-    const startText =
-      unit === "dollars" ? `$${Math.round(start / 1000)}K` : start;
-    const endText = unit === "dollars" ? `$${Math.round(end / 1000)}K` : end;
+    const startText = unit === "dollars" ? toMoney(start, 0) : start;
+    const endText = unit === "dollars" ? toMoney(end, 0) : end;
     const startElement = this.createTickElement(startText, "start-num");
     const endElement = this.createTickElement(endText, "end-num");
     // add all the elements to the cell
@@ -603,9 +610,9 @@ export class Table {
       const isTruncated =
         this.isTruncated && numVisibleRows >= NUM_TRUNCATED_ROWS;
       const isHiddenOutlier = row.outlier && !this.showOutliers;
-      const isRowVisible =
-        isRowSearched ||
-        (!isTruncated && !isHiddenOutlier && !this.isSearching());
+      const isRowVisible = isRowSearched || (
+        !isTruncated && !isHiddenOutlier && !this.isSearching()
+      );
       if (row.collapseData !== undefined && row.collapseData.length > 0) {
         const collapseRows = row.collapseData.map((collapseRow) => {
           const isSubRowSearched = this.searchTerms.some(
@@ -614,8 +621,9 @@ export class Table {
               collapseRow.data[1].toLowerCase() === searchTerm.toLowerCase()
           );
           const isSubRowHiddenOutlier = collapseRow.outlier && !this.showOutliers;
-          const isSubRowVisible =
-            isSubRowSearched || (!row.isCollapsed && !isSubRowHiddenOutlier && !this.isSearching());
+          const isSubRowVisible = isSubRowSearched || (
+            !row.isCollapsed && !isSubRowHiddenOutlier && !this.isSearching()
+          );
           return new BodyRow(
             this.getCells(collapseRow.data, collapseRow.outlier),
             collapseRow.outlier,
