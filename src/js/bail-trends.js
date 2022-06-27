@@ -3,10 +3,10 @@ import { toMoney, toPercent, toNumberString } from "./helpers";
 import { Table, SwitchableTable } from "./classes/Table.js";
 import { BailRateMap, BailPostingMap, SwitchableMap } from "./classes/Map.js";
 import { ScatterPlot, DistributionGraph } from "./classes/Graph.js";
-import { STATEWIDE_DATA, COUNTY_DATA, MDJ_DATA } from "./data.js";
+import { STATE_DATA, COUNTY_DATA, MDJ_DATA } from "./data.js";
 
 // restructure county data for tables and maps
-const BAIL_RATE_DATA = COUNTY_DATA.map(county_data => ({
+const BAIL_RATE_DATA = COUNTY_DATA.map((county_data) => ({
   data: [
     county_data["name"],
     {
@@ -18,7 +18,7 @@ const BAIL_RATE_DATA = COUNTY_DATA.map(county_data => ({
     county_data["total_cases"]
   ]
 }));
-const ROR_RATE_DATA = COUNTY_DATA.map(county_data => ({
+const ROR_RATE_DATA = COUNTY_DATA.map((county_data) => ({
   data: [
     county_data["name"],
     {
@@ -30,7 +30,7 @@ const ROR_RATE_DATA = COUNTY_DATA.map(county_data => ({
     county_data["total_cases"]
   ]
 }));
-const BAIL_POSTING_DATA = COUNTY_DATA.map(county_data => ({
+const BAIL_POSTING_DATA = COUNTY_DATA.map((county_data) => ({
   data: [
     county_data["name"],
     county_data["avg_bail_amount"],
@@ -54,11 +54,11 @@ const createBailRateTable = () => {
       class: "viz-cell",
       header: {
         start: 0,
-        end: 60,
+        end: 0.6,
         averages: [
           {
             name: "Avg.",
-            value: STATEWIDE_DATA["cash_bail_pct"]
+            value: STATE_DATA["cash_bail_pct"]
           }
         ],
         unit: "percent",
@@ -100,11 +100,11 @@ const createBailRateTable = () => {
     "Pennsylvania",
     {
       type: "bar",
-      values: [STATEWIDE_DATA["cash_bail_pct"]]
+      values: [STATE_DATA["cash_bail_pct"]]
     },
-    STATEWIDE_DATA["cash_bail_pct"],
-    STATEWIDE_DATA["cash_bail_cases"],
-    STATEWIDE_DATA["total_cases"]
+    STATE_DATA["cash_bail_pct"],
+    STATE_DATA["cash_bail_cases"],
+    STATE_DATA["total_cases"]
   ];
 
   const tableContainer = document.getElementById("bail-rate-container");
@@ -133,11 +133,11 @@ const createRorRateTable = () => {
       class: "viz-cell",
       header: {
         start: 0,
-        end: 75,
+        end: 0.75,
         averages: [
           {
             name: "Avg.",
-            value: STATEWIDE_DATA["ror_pct"]
+            value: STATE_DATA["ror_pct"]
           }
         ],
         unit: "percent",
@@ -179,11 +179,11 @@ const createRorRateTable = () => {
     "Pennsylvania",
     {
       type: "bar",
-      values: [STATEWIDE_DATA["ror_pct"]]
+      values: [STATE_DATA["ror_pct"]]
     },
-    STATEWIDE_DATA["ror_pct"],
-    STATEWIDE_DATA["ror_cases"],
-    STATEWIDE_DATA["total_cases"]
+    STATE_DATA["ror_pct"],
+    STATE_DATA["ror_cases"],
+    STATE_DATA["total_cases"]
   ];
 
   const tableContainer = document.getElementById("ror-rate-container");
@@ -230,8 +230,8 @@ const createBailPostingTable = () => {
   const initSort = { col: 2, dir: -1 };
   const stateData = [
     "Pennsylvania",
-    STATEWIDE_DATA["avg_bail_amount"],
-    STATEWIDE_DATA["non_posting_rate"]
+    STATE_DATA["avg_bail_amount"],
+    STATE_DATA["non_posting_rate"]
   ];
 
   const tableContainer = document.getElementById("bail-posting-container");
@@ -266,7 +266,7 @@ const createCasesScatterPlot = () => {
       {
         rowHeader: "Cash Bail Rate",
         dataKey: "x",
-        render: toPercent
+        render: (value) => toPercent(value)
       },
       {
         rowHeader: "Average Bail Amount",
@@ -279,7 +279,11 @@ const createCasesScatterPlot = () => {
             maximumFractionDigits: 0
           })
       },
-      { rowHeader: "Total Cases", dataKey: "r", render: toNumberString }
+      {
+        rowHeader: "Total Cases",
+        dataKey: "r",
+        render: (value) => toNumberString(value)
+      }
     ]
   };
 
@@ -320,9 +324,9 @@ const createCasesScatterPlot = () => {
   }), {});
   PLOT_DATA["State Average"] = {
     showName: true,
-    x: STATEWIDE_DATA["cash_bail_pct"],
-    r: STATEWIDE_DATA["cash_bail_cases"],
-    y: STATEWIDE_DATA["avg_bail_amount"]
+    x: STATE_DATA["cash_bail_pct"],
+    r: STATE_DATA["cash_bail_cases"],
+    y: STATE_DATA["avg_bail_amount"]
   };
   const container = document.getElementById("cases-scatter-plot");
   return new ScatterPlot(
@@ -338,23 +342,21 @@ const createCasesScatterPlot = () => {
 /* RENDER TABLES */
 const bailRateTable = createBailRateTable();
 const rorRateTable = createRorRateTable();
-
 const rateTableContainer = document.getElementById("rate-table-container");
 new SwitchableTable(bailRateTable, rorRateTable, rateTableContainer);
-
 createBailPostingTable();
 
 /* RENDER MAPS */
 const cashBailRateMap = new BailRateMap(
   "cash-bail-rate",
   BAIL_RATE_DATA,
-  STATEWIDE_DATA["cash_bail_pct"],
+  STATE_DATA["cash_bail_pct"],
   "Cash Bail Rate"
 );
 const rorRateMap = new BailRateMap(
   "ror-rate",
   ROR_RATE_DATA,
-  STATEWIDE_DATA["ror_pct"],
+  STATE_DATA["ror_pct"],
   "ROR Rate"
 );
 const rateChloroplethContainer = document.getElementById(

@@ -84,11 +84,16 @@ class FootnoteCell extends Cell {
 class NumberCell extends Cell {
   constructor(content, className, data) {
     super(className);
-    let formatFunc = toNumberString;
-    if (data["unit"] === "percent") formatFunc = toPercent;
-    if (data["unit"] === "dollars") formatFunc = toMoney;
-    this.content = formatFunc(content);
+    this.data = data;
+    this.content = this.formatValue(content);
     this.render();
+  }
+
+  formatValue(value) {
+    const sign = this.data["showSigns"] ? (value > 0 ? "+" : "") : "";
+    if (this.data["unit"] === "percent") return `${sign}${toPercent(value)}`;
+    if (this.data["unit"] === "dollars") return `${sign}${toMoney(value)}`;
+    return `${sign}${toNumberString(value)}`;
   }
 
   render() {
@@ -103,12 +108,6 @@ class BarGraphCell extends Cell {
     // BarGraphCell should only ever be passed one number
     this.content = content["values"][0];
     this.average = data["averages"][0]["value"];
-    // adjust value based on unit
-    if (data["unit"] === "percent") {
-      this.content *= 100;
-      this.average *= 100;
-    }
-
     this.range = data;
     this.showDiff = data["showDiff"];
     this.render();
@@ -124,11 +123,9 @@ class BarGraphCell extends Cell {
     if (this.showDiff) {
       const label = document.createElement("div");
       const diff = this.content - this.average;
+      label.textContent = `${diff.toFixed(1)}`
       if (diff > 0) {
-        label.textContent = `+${diff.toFixed(1)}`;
-      }
-      if (diff < 0) {
-        label.textContent = `${diff.toFixed(1)}`;
+        label.textContent = `+${label.textContent}`;
       }
       label.className = "bar-label";
       bar.appendChild(label);
@@ -313,16 +310,17 @@ class VizHeaderCell extends HeaderCell {
     super(data, className, sortCol, sortDir, initSort, table, id);
   }
 
-  render() {
-    const start = this.content["start"];
-    const end = this.content["end"];
-    const unit = this.content["unit"];
+  formatValue(value) {
+    if (this.content["unit"] === "percent") return toPercent(value, 0, false);
+    if (this.content["unit"] === "dollars") return toMoney(value, 0);
+    return toNumberString(value);
+  }
 
+  render() {
     const cell = document.createElement("th");
     cell.className = this.className;
-    // create start, end, and average tick/number elements
-    const startText = unit === "dollars" ? toMoney(start, 0) : start;
-    const endText = unit === "dollars" ? toMoney(end, 0) : end;
+    const startText = this.formatValue(this.content["start"]);
+    const endText = this.formatValue(this.content["end"]);
     const startElement = this.createTickElement(startText, "start-num");
     const endElement = this.createTickElement(endText, "end-num");
     // add all the elements to the cell
@@ -340,10 +338,10 @@ class VizHeaderCell extends HeaderCell {
     if (className.includes("average")) text.className = "average-text";
     wrapper.appendChild(text);
     // adjust padding based on number of digits
-    if (className === "start-num" && content.toString().length === 1) {
+    if (className === "start-num" && content.length === 1) {
       wrapper.style.paddingLeft = "10px";
     } else if (className === "end-num") {
-      wrapper.style.paddingRight = `${13 - 3 * content.toString().length}px`;
+      wrapper.style.paddingRight = `${13 - 3 * content.length}px`;
       wrapper.style.marginRight = "-13px";
     }
 

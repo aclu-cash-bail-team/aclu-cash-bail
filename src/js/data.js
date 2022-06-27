@@ -18,7 +18,7 @@
  * console.log(JSON.stringify(data));
  */
 
-export const STATEWIDE_DATA = {
+export const STATE_DATA = {
   "name": "Pennsylvania",
   "nominal_pct": "",
   "nonmonetary_pct": "",
@@ -29,13 +29,13 @@ export const STATEWIDE_DATA = {
   "cash_bail_cases": 166299,
   "ror_cases": 86149,
   "avg_bail_amount": 34450.1196,
-  "non_posting_rate": 0, // TODO: need this datapoint
-  "cash_bail_pct_black": "",
-  "cash_bail_cases_black": 64473,
-  "cash_bail_pct_white": "",
-  "bail_amount_black": "",
-  "bail_amount_white": "",
-  "bail_amount_diff": "",
+  "non_posting_rate": 0.632, // TODO: should be more granular?
+  "cash_bail_pct_black": 0.559,
+  "cash_bail_cases_black": 63922,
+  "cash_bail_pct_white": 0.365,
+  "cash_bail_cases_white": 0, // TODO: need this datapoint
+  "bail_amount_black": 45452,
+  "bail_amount_white": 31965,
   "is_outlier": false
 };
 export const COUNTY_DATA = [
@@ -56,7 +56,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.301849,
     "bail_amount_black": 39302.9703,
     "bail_amount_white": 29094.86755,
-    "bail_amount_diff": 10208.10275,
     "is_outlier": false
   },
   {
@@ -76,7 +75,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.349545,
     "bail_amount_black": 18845.16218,
     "bail_amount_white": 13921.65751,
-    "bail_amount_diff": 4923.504669,
     "is_outlier": false
   },
   {
@@ -96,7 +94,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.401119,
     "bail_amount_black": 19380.28169,
     "bail_amount_white": 14656.74419,
-    "bail_amount_diff": 4723.537504,
     "is_outlier": false
   },
   {
@@ -116,7 +113,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.460601,
     "bail_amount_black": 32043.50285,
     "bail_amount_white": 15969.64266,
-    "bail_amount_diff": 16073.86019,
     "is_outlier": false
   },
   {
@@ -136,7 +132,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.360063,
     "bail_amount_black": 82145.83333,
     "bail_amount_white": 51605.8952,
-    "bail_amount_diff": 30539.93814,
     "is_outlier": true
   },
   {
@@ -156,7 +151,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.501453,
     "bail_amount_black": 41514.57377,
     "bail_amount_white": 35373.15496,
-    "bail_amount_diff": 6141.418809,
     "is_outlier": false
   },
   {
@@ -176,7 +170,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.290748,
     "bail_amount_black": 50874.42922,
     "bail_amount_white": 30764.80111,
-    "bail_amount_diff": 20109.62811,
     "is_outlier": false
   },
   {
@@ -196,7 +189,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.455742,
     "bail_amount_black": 68109.375,
     "bail_amount_white": 34295.28084,
-    "bail_amount_diff": 33814.09416,
     "is_outlier": true
   },
   {
@@ -216,7 +208,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.326778,
     "bail_amount_black": 87411.6513,
     "bail_amount_white": 73918.96991,
-    "bail_amount_diff": 13492.68139,
     "is_outlier": false
   },
   {
@@ -236,7 +227,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.330989,
     "bail_amount_black": 43726.24823,
     "bail_amount_white": 21800.64011,
-    "bail_amount_diff": 21925.60812,
     "is_outlier": false
   },
   {
@@ -256,7 +246,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.398235,
     "bail_amount_black": 58433.33333,
     "bail_amount_white": 32649.18759,
-    "bail_amount_diff": 25784.14574,
     "is_outlier": false
   },
   {
@@ -276,7 +265,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.262136,
     "bail_amount_black": 42175,
     "bail_amount_white": 27851.85185,
-    "bail_amount_diff": 14323.14815,
     "is_outlier": true
   },
   {
@@ -296,7 +284,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.319692,
     "bail_amount_black": 43984.21053,
     "bail_amount_white": 31083.78961,
-    "bail_amount_diff": 12900.42092,
     "is_outlier": false
   },
   {
@@ -316,7 +303,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.227858,
     "bail_amount_black": 56770.83333,
     "bail_amount_white": 46869.4364,
-    "bail_amount_diff": 9901.396937,
     "is_outlier": false
   },
   {
@@ -336,7 +322,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.343277,
     "bail_amount_black": 37417.2622,
     "bail_amount_white": 31420.82705,
-    "bail_amount_diff": 5996.435155,
     "is_outlier": false
   },
   {
@@ -356,7 +341,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.403721,
     "bail_amount_black": 14104,
     "bail_amount_white": 24033.87097,
-    "bail_amount_diff": -9929.870968,
     "is_outlier": true
   },
   {
@@ -376,7 +360,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.362388,
     "bail_amount_black": 59500,
     "bail_amount_white": 27240.85667,
-    "bail_amount_diff": 32259.14333,
     "is_outlier": true
   },
   {
@@ -396,7 +379,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.330594,
     "bail_amount_black": 30579.29268,
     "bail_amount_white": 28093.25967,
-    "bail_amount_diff": 2486.033014,
     "is_outlier": true
   },
   {
@@ -416,7 +398,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.411899,
     "bail_amount_black": 60937.5,
     "bail_amount_white": 34290.85185,
-    "bail_amount_diff": 26646.64815,
     "is_outlier": false
   },
   {
@@ -436,7 +417,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.341324,
     "bail_amount_black": 29781.97674,
     "bail_amount_white": 26269.23077,
-    "bail_amount_diff": 3512.745975,
     "is_outlier": false
   },
   {
@@ -456,7 +436,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.375695,
     "bail_amount_black": 35423.58728,
     "bail_amount_white": 25383.11684,
-    "bail_amount_diff": 10040.47044,
     "is_outlier": false
   },
   {
@@ -476,7 +455,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.378675,
     "bail_amount_black": 45889.83886,
     "bail_amount_white": 40000.19469,
-    "bail_amount_diff": 5889.644171,
     "is_outlier": false
   },
   {
@@ -496,7 +474,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.48597,
     "bail_amount_black": 52748.20925,
     "bail_amount_white": 35606.1592,
-    "bail_amount_diff": 17142.05005,
     "is_outlier": false
   },
   {
@@ -516,7 +493,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.286667,
     "bail_amount_black": 17460,
     "bail_amount_white": 29516.27907,
-    "bail_amount_diff": -12056.27907,
     "is_outlier": true
   },
   {
@@ -536,7 +512,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.394262,
     "bail_amount_black": 41009.0694,
     "bail_amount_white": 26792.57056,
-    "bail_amount_diff": 14216.49884,
     "is_outlier": false
   },
   {
@@ -556,7 +531,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.43027,
     "bail_amount_black": 29696.28866,
     "bail_amount_white": 20176.5688,
-    "bail_amount_diff": 9519.719863,
     "is_outlier": false
   },
   {
@@ -576,7 +550,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.3125,
     "bail_amount_black": 27375,
     "bail_amount_white": 27086.66667,
-    "bail_amount_diff": 288.333333,
     "is_outlier": true
   },
   {
@@ -596,7 +569,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.350513,
     "bail_amount_black": 65076.16708,
     "bail_amount_white": 64309.91064,
-    "bail_amount_diff": 766.256434,
     "is_outlier": false
   },
   {
@@ -616,7 +588,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.290909,
     "bail_amount_black": 38000,
     "bail_amount_white": 69270.83333,
-    "bail_amount_diff": -31270.83333,
     "is_outlier": true
   },
   {
@@ -636,7 +607,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.39749,
     "bail_amount_black": 21023.80952,
     "bail_amount_white": 18309.63509,
-    "bail_amount_diff": 2714.174436,
     "is_outlier": true
   },
   {
@@ -656,7 +626,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.369732,
     "bail_amount_black": 24255.31915,
     "bail_amount_white": 21800.12953,
-    "bail_amount_diff": 2455.189615,
     "is_outlier": false
   },
   {
@@ -676,7 +645,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.393148,
     "bail_amount_black": 28699.34641,
     "bail_amount_white": 15395.98894,
-    "bail_amount_diff": 13303.35747,
     "is_outlier": false
   },
   {
@@ -696,7 +664,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.383937,
     "bail_amount_black": 79565.21739,
     "bail_amount_white": 51413.26531,
-    "bail_amount_diff": 28151.95209,
     "is_outlier": true
   },
   {
@@ -716,7 +683,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.365915,
     "bail_amount_black": 39071.42857,
     "bail_amount_white": 26784.24658,
-    "bail_amount_diff": 12287.182,
     "is_outlier": true
   },
   {
@@ -736,7 +702,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.490579,
     "bail_amount_black": 43937.30965,
     "bail_amount_white": 29251.71468,
-    "bail_amount_diff": 14685.59497,
     "is_outlier": false
   },
   {
@@ -756,7 +721,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.43393,
     "bail_amount_black": 66013.01752,
     "bail_amount_white": 55177.34693,
-    "bail_amount_diff": 10835.67059,
     "is_outlier": false
   },
   {
@@ -776,7 +740,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.451511,
     "bail_amount_black": 30965.69921,
     "bail_amount_white": 16481.8689,
-    "bail_amount_diff": 14483.83031,
     "is_outlier": false
   },
   {
@@ -796,7 +759,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.37101,
     "bail_amount_black": 67514.52514,
     "bail_amount_white": 33646.29203,
-    "bail_amount_diff": 33868.23311,
     "is_outlier": false
   },
   {
@@ -816,7 +778,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.545657,
     "bail_amount_black": 27318.21991,
     "bail_amount_white": 22187.57741,
-    "bail_amount_diff": 5130.642495,
     "is_outlier": false
   },
   {
@@ -836,7 +797,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.368782,
     "bail_amount_black": 52198.33662,
     "bail_amount_white": 36195.32523,
-    "bail_amount_diff": 16003.01139,
     "is_outlier": false
   },
   {
@@ -856,7 +816,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.277141,
     "bail_amount_black": 85748.12734,
     "bail_amount_white": 43319.95134,
-    "bail_amount_diff": 42428.176,
     "is_outlier": false
   },
   {
@@ -876,7 +835,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.412916,
     "bail_amount_black": 35930.23256,
     "bail_amount_white": 24742.891,
-    "bail_amount_diff": 11187.34156,
     "is_outlier": true
   },
   {
@@ -896,7 +854,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.326274,
     "bail_amount_black": 33481.52174,
     "bail_amount_white": 25741.76858,
-    "bail_amount_diff": 7739.75316,
     "is_outlier": false
   },
   {
@@ -916,7 +873,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.469756,
     "bail_amount_black": 114474.5763,
     "bail_amount_white": 43165.90301,
-    "bail_amount_diff": 71308.67326,
     "is_outlier": false
   },
   {
@@ -936,7 +892,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.331622,
     "bail_amount_black": 38310.6814,
     "bail_amount_white": 27099.69118,
-    "bail_amount_diff": 11210.99022,
     "is_outlier": false
   },
   {
@@ -956,7 +911,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.319375,
     "bail_amount_black": 36939.01522,
     "bail_amount_white": 30934.82705,
-    "bail_amount_diff": 6004.188171,
     "is_outlier": false
   },
   {
@@ -976,7 +930,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.35,
     "bail_amount_black": 39545.45455,
     "bail_amount_white": 39188.31169,
-    "bail_amount_diff": 357.142857,
     "is_outlier": true
   },
   {
@@ -996,7 +949,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.486885,
     "bail_amount_black": 42868.66114,
     "bail_amount_white": 26636.32491,
-    "bail_amount_diff": 16232.33623,
     "is_outlier": false
   },
   {
@@ -1016,7 +968,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.353759,
     "bail_amount_black": 72181.57895,
     "bail_amount_white": 42108.45124,
-    "bail_amount_diff": 30073.12771,
     "is_outlier": false
   },
   {
@@ -1036,7 +987,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.286848,
     "bail_amount_black": 49388.06452,
     "bail_amount_white": 24192.49012,
-    "bail_amount_diff": 25195.5744,
     "is_outlier": true
   },
   {
@@ -1056,7 +1006,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.431232,
     "bail_amount_black": 65123.11369,
     "bail_amount_white": 56370.81098,
-    "bail_amount_diff": 8752.302711,
     "is_outlier": false
   },
   {
@@ -1076,7 +1025,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.330855,
     "bail_amount_black": 53193.18182,
     "bail_amount_white": 32148.13109,
-    "bail_amount_diff": 21045.05073,
     "is_outlier": true
   },
   {
@@ -1096,7 +1044,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.2249,
     "bail_amount_black": 33562.5,
     "bail_amount_white": 23535.71429,
-    "bail_amount_diff": 10026.78571,
     "is_outlier": true
   },
   {
@@ -1116,7 +1063,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.394481,
     "bail_amount_black": 37605.11364,
     "bail_amount_white": 24236.65491,
-    "bail_amount_diff": 13368.45873,
     "is_outlier": false
   },
   {
@@ -1136,7 +1082,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.350348,
     "bail_amount_black": 33048.61111,
     "bail_amount_white": 31631.78808,
-    "bail_amount_diff": 1416.823032,
     "is_outlier": true
   },
   {
@@ -1156,7 +1101,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.231132,
     "bail_amount_black": 84933.33333,
     "bail_amount_white": 38187.5,
-    "bail_amount_diff": 46745.83333,
     "is_outlier": false
   },
   {
@@ -1176,7 +1120,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.326087,
     "bail_amount_black": 8000,
     "bail_amount_white": 20516.66667,
-    "bail_amount_diff": -12516.66667,
     "is_outlier": true
   },
   {
@@ -1196,7 +1139,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.388652,
     "bail_amount_black": 43346.15385,
     "bail_amount_white": 29491.60584,
-    "bail_amount_diff": 13854.54801,
     "is_outlier": true
   },
   {
@@ -1216,7 +1158,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.304455,
     "bail_amount_black": 49300,
     "bail_amount_white": 33552.84553,
-    "bail_amount_diff": 15747.15447,
     "is_outlier": true
   },
   {
@@ -1236,7 +1177,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.235094,
     "bail_amount_black": 45637.93103,
     "bail_amount_white": 28018.11594,
-    "bail_amount_diff": 17619.81509,
     "is_outlier": true
   },
   {
@@ -1256,7 +1196,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.359568,
     "bail_amount_black": 53475.60976,
     "bail_amount_white": 39360.51502,
-    "bail_amount_diff": 14115.09474,
     "is_outlier": false
   },
   {
@@ -1276,7 +1215,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.398983,
     "bail_amount_black": 49769.23077,
     "bail_amount_white": 30089.17198,
-    "bail_amount_diff": 19680.05879,
     "is_outlier": true
   },
   {
@@ -1296,7 +1234,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.365188,
     "bail_amount_black": 46258.07018,
     "bail_amount_white": 23939.11435,
-    "bail_amount_diff": 22318.95583,
     "is_outlier": false
   },
   {
@@ -1316,7 +1253,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.36099,
     "bail_amount_black": 28619.04762,
     "bail_amount_white": 36399.59677,
-    "bail_amount_diff": -7780.549155,
     "is_outlier": true
   },
   {
@@ -1336,7 +1272,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.287781,
     "bail_amount_black": 38192.51213,
     "bail_amount_white": 18989.29884,
-    "bail_amount_diff": 19203.21329,
     "is_outlier": false
   },
   {
@@ -1356,7 +1291,6 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.353579,
     "bail_amount_black": 39000,
     "bail_amount_white": 28822.77607,
-    "bail_amount_diff": 10177.22393,
     "is_outlier": true
   },
   {
@@ -1376,2990 +1310,11 @@ export const COUNTY_DATA = [
     "cash_bail_pct_white": 0.427047,
     "bail_amount_black": 37078.00813,
     "bail_amount_white": 23258.83229,
-    "bail_amount_diff": 13819.17584,
     "is_outlier": false
   }
 ];
 
-// TODO: all data below should be derived from STATEWIDE_DATA and COUNTY_DATA
-export const BAIL_RACE_RATE_DATA = [
-  {
-    "data": [
-      "Adams",
-      44.3,
-      30.2,
-      {
-        "type": "line",
-        "values": [
-          44.3,
-          30.2
-        ]
-      },
-      "+14.1%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      52.5,
-      35,
-      {
-        "type": "line",
-        "values": [
-          52.5,
-          35
-        ]
-      },
-      "+17.5%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      62.3,
-      40.1,
-      {
-        "type": "line",
-        "values": [
-          62.3,
-          40.1
-        ]
-      },
-      "+22.2%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      65.3,
-      46.1,
-      {
-        "type": "line",
-        "values": [
-          65.3,
-          46.1
-        ]
-      },
-      "+19.2%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      55.8,
-      36,
-      {
-        "type": "line",
-        "values": [
-          55.8,
-          36
-        ]
-      },
-      "+19.8%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Berks",
-      58.5,
-      50.1,
-      {
-        "type": "line",
-        "values": [
-          58.5,
-          50.1
-        ]
-      },
-      "+8.4%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      53.8,
-      29.1,
-      {
-        "type": "line",
-        "values": [
-          53.8,
-          29.1
-        ]
-      },
-      "+24.7%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      61.5,
-      45.6,
-      {
-        "type": "line",
-        "values": [
-          61.5,
-          45.6
-        ]
-      },
-      "+16.0%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Bucks",
-      45.6,
-      32.7,
-      {
-        "type": "line",
-        "values": [
-          45.6,
-          32.7
-        ]
-      },
-      "+12.9%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      59.4,
-      33.1,
-      {
-        "type": "line",
-        "values": [
-          59.4,
-          33.1
-        ]
-      },
-      "+26.3%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      66.4,
-      39.8,
-      {
-        "type": "line",
-        "values": [
-          66.4,
-          39.8
-        ]
-      },
-      "+26.5%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      100,
-      26.2,
-      {
-        "type": "line",
-        "values": [
-          100,
-          26.2
-        ]
-      },
-      "+73.8%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Carbon",
-      47.5,
-      32,
-      {
-        "type": "line",
-        "values": [
-          47.5,
-          32
-        ]
-      },
-      "+15.5%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      49,
-      22.8,
-      {
-        "type": "line",
-        "values": [
-          49,
-          22.8
-        ]
-      },
-      "+26.2%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      49,
-      34.3,
-      {
-        "type": "line",
-        "values": [
-          49,
-          34.3
-        ]
-      },
-      "+14.7%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      39.7,
-      40.4,
-      {
-        "type": "line",
-        "values": [
-          39.7,
-          40.4
-        ]
-      },
-      "-0.7%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Clearfield",
-      65.7,
-      36.2,
-      {
-        "type": "line",
-        "values": [
-          65.7,
-          36.2
-        ]
-      },
-      "+29.5%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Clinton",
-      39.8,
-      33.1,
-      {
-        "type": "line",
-        "values": [
-          39.8,
-          33.1
-        ]
-      },
-      "+6.7%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Columbia",
-      42.9,
-      41.2,
-      {
-        "type": "line",
-        "values": [
-          42.9,
-          41.2
-        ]
-      },
-      "+1.7%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      55.1,
-      34.1,
-      {
-        "type": "line",
-        "values": [
-          55.1,
-          34.1
-        ]
-      },
-      "+21.0%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      55.1,
-      37.6,
-      {
-        "type": "line",
-        "values": [
-          55.1,
-          37.6
-        ]
-      },
-      "+17.6%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      53.7,
-      37.9,
-      {
-        "type": "line",
-        "values": [
-          53.7,
-          37.9
-        ]
-      },
-      "+15.8%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      64.2,
-      48.6,
-      {
-        "type": "line",
-        "values": [
-          64.2,
-          48.6
-        ]
-      },
-      "+15.6%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      29.4,
-      28.7,
-      {
-        "type": "line",
-        "values": [
-          29.4,
-          28.7
-        ]
-      },
-      "+0.7%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Erie",
-      67.8,
-      39.4,
-      {
-        "type": "line",
-        "values": [
-          67.8,
-          39.4
-        ]
-      },
-      "+28.4%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      54.2,
-      43,
-      {
-        "type": "line",
-        "values": [
-          54.2,
-          43
-        ]
-      },
-      "+11.2%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      88.9,
-      31.3,
-      {
-        "type": "line",
-        "values": [
-          88.9,
-          31.3
-        ]
-      },
-      "+57.6%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Franklin",
-      49.5,
-      35.1,
-      {
-        "type": "line",
-        "values": [
-          49.5,
-          35.1
-        ]
-      },
-      "+14.4%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      28.6,
-      29.1,
-      {
-        "type": "line",
-        "values": [
-          28.6,
-          29.1
-        ]
-      },
-      "-0.5%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Greene",
-      58.3,
-      39.7,
-      {
-        "type": "line",
-        "values": [
-          58.3,
-          39.7
-        ]
-      },
-      "+18.6%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Huntingdon",
-      64.8,
-      37,
-      {
-        "type": "line",
-        "values": [
-          64.8,
-          37
-        ]
-      },
-      "+27.9%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      49.4,
-      39.3,
-      {
-        "type": "line",
-        "values": [
-          49.4,
-          39.3
-        ]
-      },
-      "+10.0%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      69.7,
-      38.4,
-      {
-        "type": "line",
-        "values": [
-          69.7,
-          38.4
-        ]
-      },
-      "+31.3%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Juniata",
-      43.8,
-      36.6,
-      {
-        "type": "line",
-        "values": [
-          43.8,
-          36.6
-        ]
-      },
-      "+7.2%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Lackawanna",
-      66.7,
-      49.1,
-      {
-        "type": "line",
-        "values": [
-          66.7,
-          49.1
-        ]
-      },
-      "+17.6%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      55.3,
-      43.4,
-      {
-        "type": "line",
-        "values": [
-          55.3,
-          43.4
-        ]
-      },
-      "+11.9%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      68.8,
-      45.2,
-      {
-        "type": "line",
-        "values": [
-          68.8,
-          45.2
-        ]
-      },
-      "+23.6%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      51.1,
-      37.1,
-      {
-        "type": "line",
-        "values": [
-          51.1,
-          37.1
-        ]
-      },
-      "+14.0%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      62.5,
-      54.6,
-      {
-        "type": "line",
-        "values": [
-          62.5,
-          54.6
-        ]
-      },
-      "+7.9%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      57.8,
-      36.9,
-      {
-        "type": "line",
-        "values": [
-          57.8,
-          36.9
-        ]
-      },
-      "+20.9%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      55.9,
-      27.7,
-      {
-        "type": "line",
-        "values": [
-          55.9,
-          27.7
-        ]
-      },
-      "+28.2%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      60.6,
-      41.3,
-      {
-        "type": "line",
-        "values": [
-          60.6,
-          41.3
-        ]
-      },
-      "+19.3%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Mercer",
-      45.6,
-      32.6,
-      {
-        "type": "line",
-        "values": [
-          45.6,
-          32.6
-        ]
-      },
-      "+13.0%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      70.2,
-      47,
-      {
-        "type": "line",
-        "values": [
-          70.2,
-          47
-        ]
-      },
-      "+23.3%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      36.2,
-      33.2,
-      {
-        "type": "line",
-        "values": [
-          36.2,
-          33.2
-        ]
-      },
-      "+3.0%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      48.7,
-      31.9,
-      {
-        "type": "line",
-        "values": [
-          48.7,
-          31.9
-        ]
-      },
-      "+16.8%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      47.8,
-      35,
-      {
-        "type": "line",
-        "values": [
-          47.8,
-          35
-        ]
-      },
-      "+12.8%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Northampton",
-      60.1,
-      48.7,
-      {
-        "type": "line",
-        "values": [
-          60.1,
-          48.7
-        ]
-      },
-      "+11.4%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      59.1,
-      35.4,
-      {
-        "type": "line",
-        "values": [
-          59.1,
-          35.4
-        ]
-      },
-      "+23.7%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      44.3,
-      28.7,
-      {
-        "type": "line",
-        "values": [
-          44.3,
-          28.7
-        ]
-      },
-      "+15.6%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Philadelphia",
-      55.8,
-      43.1,
-      {
-        "type": "line",
-        "values": [
-          55.8,
-          43.1
-        ]
-      },
-      "+12.7%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      38.6,
-      33.1,
-      {
-        "type": "line",
-        "values": [
-          38.6,
-          33.1
-        ]
-      },
-      "+5.5%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Potter",
-      80,
-      22.5,
-      {
-        "type": "line",
-        "values": [
-          80,
-          22.5
-        ]
-      },
-      "+57.5%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Schuylkill",
-      48.8,
-      39.4,
-      {
-        "type": "line",
-        "values": [
-          48.8,
-          39.4
-        ]
-      },
-      "+9.3%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      52.2,
-      35,
-      {
-        "type": "line",
-        "values": [
-          52.2,
-          35
-        ]
-      },
-      "+17.1%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Somerset",
-      70.6,
-      23.1,
-      {
-        "type": "line",
-        "values": [
-          70.6,
-          23.1
-        ]
-      },
-      "+47.5%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      62.5,
-      32.6,
-      {
-        "type": "line",
-        "values": [
-          62.5,
-          32.6
-        ]
-      },
-      "+29.9%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Susquehanna",
-      65,
-      38.9,
-      {
-        "type": "line",
-        "values": [
-          65,
-          38.9
-        ]
-      },
-      "+26.1%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Tioga",
-      53.6,
-      30.4,
-      {
-        "type": "line",
-        "values": [
-          53.6,
-          30.4
-        ]
-      },
-      "+23.1%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Union",
-      38.2,
-      23.5,
-      {
-        "type": "line",
-        "values": [
-          38.2,
-          23.5
-        ]
-      },
-      "+14.6%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Venango",
-      63.6,
-      36,
-      {
-        "type": "line",
-        "values": [
-          63.6,
-          36
-        ]
-      },
-      "+27.6%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      68.4,
-      39.9,
-      {
-        "type": "line",
-        "values": [
-          68.4,
-          39.9
-        ]
-      },
-      "+28.5%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Washington",
-      56.8,
-      36.5,
-      {
-        "type": "line",
-        "values": [
-          56.8,
-          36.5
-        ]
-      },
-      "+20.3%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      60,
-      36.1,
-      {
-        "type": "line",
-        "values": [
-          60,
-          36.1
-        ]
-      },
-      "+23.9%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Westmoreland",
-      49.6,
-      28.8,
-      {
-        "type": "line",
-        "values": [
-          49.6,
-          28.8
-        ]
-      },
-      "+20.8%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      43.5,
-      35.4,
-      {
-        "type": "line",
-        "values": [
-          43.5,
-          35.4
-        ]
-      },
-      "+8.1%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "York",
-      56.9,
-      42.7,
-      {
-        "type": "line",
-        "values": [
-          56.9,
-          42.7
-        ]
-      },
-      "+14.2%"
-    ],
-    "outlier": false
-  }
-];
-export const BAIL_RACE_AMOUNT_DATA = [
-  {
-    "data": [
-      "Adams",
-      "$39.3K",
-      "$29.1K",
-      {
-        "type": "line",
-        "values": [
-          39303,
-          29095
-        ]
-      },
-      "+$10.2K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      "$18.8K",
-      "$13.9K",
-      {
-        "type": "line",
-        "values": [
-          18845,
-          13922
-        ]
-      },
-      "+$4.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      "$19.4K",
-      "$14.7K",
-      {
-        "type": "line",
-        "values": [
-          19380,
-          14657
-        ]
-      },
-      "+$4.7K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      "$32.0K",
-      "$16.0K",
-      {
-        "type": "line",
-        "values": [
-          32044,
-          15970
-        ]
-      },
-      "+$16.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      "$82.1K",
-      "$51.6K",
-      {
-        "type": "line",
-        "values": [
-          82146,
-          51606
-        ]
-      },
-      "+$30.5K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Berks",
-      "$41.5K",
-      "$35.4K",
-      {
-        "type": "line",
-        "values": [
-          41515,
-          35373
-        ]
-      },
-      "+$6.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      "$50.9K",
-      "$30.8K",
-      {
-        "type": "line",
-        "values": [
-          50874,
-          30765
-        ]
-      },
-      "+$20.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      "$68.1K",
-      "$34.3K",
-      {
-        "type": "line",
-        "values": [
-          68109,
-          34295
-        ]
-      },
-      "+$33.8K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Bucks",
-      "$87.4K",
-      "$73.9K",
-      {
-        "type": "line",
-        "values": [
-          87412,
-          73919
-        ]
-      },
-      "+$13.5K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      "$43.7K",
-      "$21.8K",
-      {
-        "type": "line",
-        "values": [
-          43726,
-          21801
-        ]
-      },
-      "+$21.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      "$58.4K",
-      "$32.6K",
-      {
-        "type": "line",
-        "values": [
-          58433,
-          32649
-        ]
-      },
-      "+$25.8K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      "$42.2K",
-      "$27.9K",
-      {
-        "type": "line",
-        "values": [
-          42175,
-          27852
-        ]
-      },
-      "+$14.3K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Carbon",
-      "$44.0K",
-      "$31.1K",
-      {
-        "type": "line",
-        "values": [
-          43984,
-          31084
-        ]
-      },
-      "+$12.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      "$56.8K",
-      "$46.9K",
-      {
-        "type": "line",
-        "values": [
-          56771,
-          46869
-        ]
-      },
-      "+$9.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      "$37.4K",
-      "$31.4K",
-      {
-        "type": "line",
-        "values": [
-          37417,
-          31421
-        ]
-      },
-      "+$6.0K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      "$14.1K",
-      "$24.0K",
-      {
-        "type": "line",
-        "values": [
-          14104,
-          24034
-        ]
-      },
-      "-$9.9K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Clearfield",
-      "$59.5K",
-      "$27.2K",
-      {
-        "type": "line",
-        "values": [
-          59500,
-          27241
-        ]
-      },
-      "+$32.3K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Clinton",
-      "$30.6K",
-      "$28.1K",
-      {
-        "type": "line",
-        "values": [
-          30579,
-          28093
-        ]
-      },
-      "+$2.5K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Columbia",
-      "$60.9K",
-      "$34.3K",
-      {
-        "type": "line",
-        "values": [
-          60938,
-          34291
-        ]
-      },
-      "+$26.6K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      "$29.8K",
-      "$26.3K",
-      {
-        "type": "line",
-        "values": [
-          29782,
-          26269
-        ]
-      },
-      "+$3.5K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      "$35.4K",
-      "$25.4K",
-      {
-        "type": "line",
-        "values": [
-          35424,
-          25383
-        ]
-      },
-      "+$10.0K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      "$45.9K",
-      "$40.0K",
-      {
-        "type": "line",
-        "values": [
-          45890,
-          40000
-        ]
-      },
-      "+$5.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      "$52.7K",
-      "$35.6K",
-      {
-        "type": "line",
-        "values": [
-          52748,
-          35606
-        ]
-      },
-      "+$17.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      "$17.5K",
-      "$29.5K",
-      {
-        "type": "line",
-        "values": [
-          17460,
-          29516
-        ]
-      },
-      "-$12.1K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Erie",
-      "$41.0K",
-      "$26.8K",
-      {
-        "type": "line",
-        "values": [
-          41009,
-          26793
-        ]
-      },
-      "+$14.2K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      "$29.7K",
-      "$20.2K",
-      {
-        "type": "line",
-        "values": [
-          29696,
-          20177
-        ]
-      },
-      "+$9.5K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      "$27.4K",
-      "$27.1K",
-      {
-        "type": "line",
-        "values": [
-          27375,
-          27087
-        ]
-      },
-      "+$0.3K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Franklin",
-      "$65.1K",
-      "$64.3K",
-      {
-        "type": "line",
-        "values": [
-          65076,
-          64310
-        ]
-      },
-      "+$0.8K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      "$38.0K",
-      "$69.3K",
-      {
-        "type": "line",
-        "values": [
-          38000,
-          69271
-        ]
-      },
-      "-$31.3K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Greene",
-      "$21.0K",
-      "$18.3K",
-      {
-        "type": "line",
-        "values": [
-          21024,
-          18310
-        ]
-      },
-      "+$2.7K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Huntingdon",
-      "$24.3K",
-      "$21.8K",
-      {
-        "type": "line",
-        "values": [
-          24255,
-          21800
-        ]
-      },
-      "+$2.5K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      "$28.7K",
-      "$15.4K",
-      {
-        "type": "line",
-        "values": [
-          28699,
-          15396
-        ]
-      },
-      "+$13.3K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      "$79.6K",
-      "$51.4K",
-      {
-        "type": "line",
-        "values": [
-          79565,
-          51413
-        ]
-      },
-      "+$28.2K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Juniata",
-      "$39.1K",
-      "$26.8K",
-      {
-        "type": "line",
-        "values": [
-          39071,
-          26784
-        ]
-      },
-      "+$12.3K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Lackawanna",
-      "$43.9K",
-      "$29.3K",
-      {
-        "type": "line",
-        "values": [
-          43937,
-          29252
-        ]
-      },
-      "+$14.7K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      "$66.0K",
-      "$55.2K",
-      {
-        "type": "line",
-        "values": [
-          66013,
-          55177
-        ]
-      },
-      "+$10.8K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      "$31.0K",
-      "$16.5K",
-      {
-        "type": "line",
-        "values": [
-          30966,
-          16482
-        ]
-      },
-      "+$14.5K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      "$67.5K",
-      "$33.6K",
-      {
-        "type": "line",
-        "values": [
-          67515,
-          33646
-        ]
-      },
-      "+$33.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      "$27.3K",
-      "$22.2K",
-      {
-        "type": "line",
-        "values": [
-          27318,
-          22188
-        ]
-      },
-      "+$5.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      "$52.2K",
-      "$36.2K",
-      {
-        "type": "line",
-        "values": [
-          52198,
-          36195
-        ]
-      },
-      "+$16.0K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      "$85.7K",
-      "$43.3K",
-      {
-        "type": "line",
-        "values": [
-          85748,
-          43320
-        ]
-      },
-      "+$42.4K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      "$35.9K",
-      "$24.7K",
-      {
-        "type": "line",
-        "values": [
-          35930,
-          24743
-        ]
-      },
-      "+$11.2K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Mercer",
-      "$33.5K",
-      "$25.7K",
-      {
-        "type": "line",
-        "values": [
-          33482,
-          25742
-        ]
-      },
-      "+$7.7K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      "$114.5K",
-      "$43.2K",
-      {
-        "type": "line",
-        "values": [
-          114475,
-          43166
-        ]
-      },
-      "+$71.3K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      "$38.3K",
-      "$27.1K",
-      {
-        "type": "line",
-        "values": [
-          38311,
-          27100
-        ]
-      },
-      "+$11.2K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      "$36.9K",
-      "$30.9K",
-      {
-        "type": "line",
-        "values": [
-          36939,
-          30935
-        ]
-      },
-      "+$6.0K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      "$39.5K",
-      "$39.2K",
-      {
-        "type": "line",
-        "values": [
-          39545,
-          39188
-        ]
-      },
-      "+$0.4K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Northampton",
-      "$42.9K",
-      "$26.6K",
-      {
-        "type": "line",
-        "values": [
-          42869,
-          26636
-        ]
-      },
-      "+$16.2K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      "$72.2K",
-      "$42.1K",
-      {
-        "type": "line",
-        "values": [
-          72182,
-          42108
-        ]
-      },
-      "+$30.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      "$49.4K",
-      "$24.2K",
-      {
-        "type": "line",
-        "values": [
-          49388,
-          24192
-        ]
-      },
-      "+$25.2K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Philadelphia",
-      "$65.1K",
-      "$56.4K",
-      {
-        "type": "line",
-        "values": [
-          65123,
-          56371
-        ]
-      },
-      "+$8.8K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      "$53.2K",
-      "$32.1K",
-      {
-        "type": "line",
-        "values": [
-          53193,
-          32148
-        ]
-      },
-      "+$21.0K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Potter",
-      "$33.6K",
-      "$23.5K",
-      {
-        "type": "line",
-        "values": [
-          33563,
-          23536
-        ]
-      },
-      "+$10.0K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Schuylkill",
-      "$37.6K",
-      "$24.2K",
-      {
-        "type": "line",
-        "values": [
-          37605,
-          24237
-        ]
-      },
-      "+$13.4K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      "$33.0K",
-      "$31.6K",
-      {
-        "type": "line",
-        "values": [
-          33049,
-          31632
-        ]
-      },
-      "+$1.4K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Somerset",
-      "$84.9K",
-      "$38.2K",
-      {
-        "type": "line",
-        "values": [
-          84933,
-          38188
-        ]
-      },
-      "+$46.7K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      "$8.0K",
-      "$20.5K",
-      {
-        "type": "line",
-        "values": [
-          8000,
-          20517
-        ]
-      },
-      "-$12.5K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Susquehanna",
-      "$43.3K",
-      "$29.5K",
-      {
-        "type": "line",
-        "values": [
-          43346,
-          29492
-        ]
-      },
-      "+$13.9K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Tioga",
-      "$49.3K",
-      "$33.6K",
-      {
-        "type": "line",
-        "values": [
-          49300,
-          33553
-        ]
-      },
-      "+$15.7K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Union",
-      "$45.6K",
-      "$28.0K",
-      {
-        "type": "line",
-        "values": [
-          45638,
-          28018
-        ]
-      },
-      "+$17.6K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Venango",
-      "$53.5K",
-      "$39.4K",
-      {
-        "type": "line",
-        "values": [
-          53476,
-          39361
-        ]
-      },
-      "+$14.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      "$49.8K",
-      "$30.1K",
-      {
-        "type": "line",
-        "values": [
-          49769,
-          30089
-        ]
-      },
-      "+$19.7K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Washington",
-      "$46.3K",
-      "$23.9K",
-      {
-        "type": "line",
-        "values": [
-          46258,
-          23939
-        ]
-      },
-      "+$22.3K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      "$28.6K",
-      "$36.4K",
-      {
-        "type": "line",
-        "values": [
-          28619,
-          36400
-        ]
-      },
-      "-$7.8K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Westmoreland",
-      "$38.2K",
-      "$19.0K",
-      {
-        "type": "line",
-        "values": [
-          38193,
-          18989
-        ]
-      },
-      "+$19.2K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      "$39.0K",
-      "$28.8K",
-      {
-        "type": "line",
-        "values": [
-          39000,
-          28823
-        ]
-      },
-      "+$10.2K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "York",
-      "$37.1K",
-      "$23.3K",
-      {
-        "type": "line",
-        "values": [
-          37078,
-          23259
-        ]
-      },
-      "+$13.8K"
-    ],
-    "outlier": false
-  }
-];
-
-export const PA_AVG_BLACK_BAIL_RATE = 55.9;
-export const PA_AVG_WHITE_BAIL_RATE = 36.5;
-export const PA_AVG_RACE_BAIL_RATE_DIFF = "+19.4%"
-export const PA_BLACK_CASES = 45452;
-export const PA_WHITE_CASES = 31965;
-export const PA_AVG_BLACK_BAIL_AMT = "$45.5K";
-export const PA_AVG_WHITE_BAIL_AMT = "$32.0K";
-export const PA_AVG_RACE_BAIL_AMT_DIFF = "13.5K";
-
-export const RACE_SCATTER_PLOT = {
-  "Adams": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 44.3,
-      "white": 30.2
-    },
-    "y": {
-      "black": "$39,303",
-      "white": "$29,095"
-    }
-  },
-  "Allegheny": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 52.5,
-      "white": 35
-    },
-    "y": {
-      "black": "$18,845",
-      "white": "$13,922"
-    }
-  },
-  "Armstrong": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 62.3,
-      "white": 40.1
-    },
-    "y": {
-      "black": "$19,380",
-      "white": "$14,657"
-    }
-  },
-  "Beaver": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 65.3,
-      "white": 46.1
-    },
-    "y": {
-      "black": "$32,044",
-      "white": "$15,970"
-    }
-  },
-  "Bedford": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 55.8,
-      "white": 36
-    },
-    "y": {
-      "black": "$82,146",
-      "white": "$51,606"
-    }
-  },
-  "Berks": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 58.5,
-      "white": 50.1
-    },
-    "y": {
-      "black": "$41,515",
-      "white": "$35,373"
-    }
-  },
-  "Blair": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 53.8,
-      "white": 29.1
-    },
-    "y": {
-      "black": "$50,874",
-      "white": "$30,765"
-    }
-  },
-  "Bradford": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 61.5,
-      "white": 45.6
-    },
-    "y": {
-      "black": "$68,109",
-      "white": "$34,295"
-    }
-  },
-  "Bucks": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 45.6,
-      "white": 32.7
-    },
-    "y": {
-      "black": "$87,412",
-      "white": "$73,919"
-    }
-  },
-  "Butler": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 59.4,
-      "white": 33.1
-    },
-    "y": {
-      "black": "$43,726",
-      "white": "$21,801"
-    }
-  },
-  "Cambria": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 66.4,
-      "white": 39.8
-    },
-    "y": {
-      "black": "$58,433",
-      "white": "$32,649"
-    }
-  },
-  "Cameron": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 100,
-      "white": 26.2
-    },
-    "y": {
-      "black": "$42,175",
-      "white": "$27,852"
-    }
-  },
-  "Carbon": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 47.5,
-      "white": 32
-    },
-    "y": {
-      "black": "$43,984",
-      "white": "$31,084"
-    }
-  },
-  "Centre": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 49,
-      "white": 22.8
-    },
-    "y": {
-      "black": "$56,771",
-      "white": "$46,869"
-    }
-  },
-  "Chester": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 49,
-      "white": 34.3
-    },
-    "y": {
-      "black": "$37,417",
-      "white": "$31,421"
-    }
-  },
-  "Clarion": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 39.7,
-      "white": 40.4
-    },
-    "y": {
-      "black": "$14,104",
-      "white": "$24,034"
-    }
-  },
-  "Clearfield": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 65.7,
-      "white": 36.2
-    },
-    "y": {
-      "black": "$59,500",
-      "white": "$27,241"
-    }
-  },
-  "Clinton": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 39.8,
-      "white": 33.1
-    },
-    "y": {
-      "black": "$30,579",
-      "white": "$28,093"
-    }
-  },
-  "Columbia": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 42.9,
-      "white": 41.2
-    },
-    "y": {
-      "black": "$60,938",
-      "white": "$34,291"
-    }
-  },
-  "Crawford": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 55.1,
-      "white": 34.1
-    },
-    "y": {
-      "black": "$29,782",
-      "white": "$26,269"
-    }
-  },
-  "Cumberland": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 55.1,
-      "white": 37.6
-    },
-    "y": {
-      "black": "$35,424",
-      "white": "$25,383"
-    }
-  },
-  "Dauphin": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 53.7,
-      "white": 37.9
-    },
-    "y": {
-      "black": "$45,890",
-      "white": "$40,000"
-    }
-  },
-  "Delaware": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 64.2,
-      "white": 48.6
-    },
-    "y": {
-      "black": "$52,748",
-      "white": "$35,606"
-    }
-  },
-  "Elk": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 29.4,
-      "white": 28.7
-    },
-    "y": {
-      "black": "$17,460",
-      "white": "$29,516"
-    }
-  },
-  "Erie": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 67.8,
-      "white": 39.4
-    },
-    "y": {
-      "black": "$41,009",
-      "white": "$26,793"
-    }
-  },
-  "Fayette": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 54.2,
-      "white": 43
-    },
-    "y": {
-      "black": "$29,696",
-      "white": "$20,177"
-    }
-  },
-  "Forest": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 88.9,
-      "white": 31.3
-    },
-    "y": {
-      "black": "$27,375",
-      "white": "$27,087"
-    }
-  },
-  "Franklin": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 49.5,
-      "white": 35.1
-    },
-    "y": {
-      "black": "$65,076",
-      "white": "$64,310"
-    }
-  },
-  "Fulton": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 28.6,
-      "white": 29.1
-    },
-    "y": {
-      "black": "$38,000",
-      "white": "$69,271"
-    }
-  },
-  "Greene": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 58.3,
-      "white": 39.7
-    },
-    "y": {
-      "black": "$21,024",
-      "white": "$18,310"
-    }
-  },
-  "Huntingdon": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 64.8,
-      "white": 37
-    },
-    "y": {
-      "black": "$24,255",
-      "white": "$21,800"
-    }
-  },
-  "Indiana": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 49.4,
-      "white": 39.3
-    },
-    "y": {
-      "black": "$28,699",
-      "white": "$15,396"
-    }
-  },
-  "Jefferson": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 69.7,
-      "white": 38.4
-    },
-    "y": {
-      "black": "$79,565",
-      "white": "$51,413"
-    }
-  },
-  "Juniata": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 43.8,
-      "white": 36.6
-    },
-    "y": {
-      "black": "$39,071",
-      "white": "$26,784"
-    }
-  },
-  "Lackawanna": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 66.7,
-      "white": 49.1
-    },
-    "y": {
-      "black": "$43,937",
-      "white": "$29,252"
-    }
-  },
-  "Lancaster": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 55.3,
-      "white": 43.4
-    },
-    "y": {
-      "black": "$66,013",
-      "white": "$55,177"
-    }
-  },
-  "Lawrence": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 68.8,
-      "white": 45.2
-    },
-    "y": {
-      "black": "$30,966",
-      "white": "$16,482"
-    }
-  },
-  "Lebanon": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 51.1,
-      "white": 37.1
-    },
-    "y": {
-      "black": "$67,515",
-      "white": "$33,646"
-    }
-  },
-  "Lehigh": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 62.5,
-      "white": 54.6
-    },
-    "y": {
-      "black": "$27,318",
-      "white": "$22,188"
-    }
-  },
-  "Luzerne": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 57.8,
-      "white": 36.9
-    },
-    "y": {
-      "black": "$52,198",
-      "white": "$36,195"
-    }
-  },
-  "Lycoming": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 55.9,
-      "white": 27.7
-    },
-    "y": {
-      "black": "$85,748",
-      "white": "$43,320"
-    }
-  },
-  "McKean": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 60.6,
-      "white": 41.3
-    },
-    "y": {
-      "black": "$35,930",
-      "white": "$24,743"
-    }
-  },
-  "Mercer": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 45.6,
-      "white": 32.6
-    },
-    "y": {
-      "black": "$33,482",
-      "white": "$25,742"
-    }
-  },
-  "Mifflin": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 70.2,
-      "white": 47
-    },
-    "y": {
-      "black": "$114,475",
-      "white": "$43,166"
-    }
-  },
-  "Monroe": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 36.2,
-      "white": 33.2
-    },
-    "y": {
-      "black": "$38,311",
-      "white": "$27,100"
-    }
-  },
-  "Montgomery": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 48.7,
-      "white": 31.9
-    },
-    "y": {
-      "black": "$36,939",
-      "white": "$30,935"
-    }
-  },
-  "Montour": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 47.8,
-      "white": 35
-    },
-    "y": {
-      "black": "$39,545",
-      "white": "$39,188"
-    }
-  },
-  "Northampton": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 60.1,
-      "white": 48.7
-    },
-    "y": {
-      "black": "$42,869",
-      "white": "$26,636"
-    }
-  },
-  "Northumberland": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 59.1,
-      "white": 35.4
-    },
-    "y": {
-      "black": "$72,182",
-      "white": "$42,108"
-    }
-  },
-  "Perry": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 44.3,
-      "white": 28.7
-    },
-    "y": {
-      "black": "$49,388",
-      "white": "$24,192"
-    }
-  },
-  "Philadelphia": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 55.8,
-      "white": 43.1
-    },
-    "y": {
-      "black": "$65,123",
-      "white": "$56,371"
-    }
-  },
-  "Pike": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 38.6,
-      "white": 33.1
-    },
-    "y": {
-      "black": "$53,193",
-      "white": "$32,148"
-    }
-  },
-  "Potter": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 80,
-      "white": 22.5
-    },
-    "y": {
-      "black": "$33,563",
-      "white": "$23,536"
-    }
-  },
-  "Schuylkill": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 48.8,
-      "white": 39.4
-    },
-    "y": {
-      "black": "$37,605",
-      "white": "$24,237"
-    }
-  },
-  "Snyder": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 52.2,
-      "white": 35
-    },
-    "y": {
-      "black": "$33,049",
-      "white": "$31,632"
-    }
-  },
-  "Somerset": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 70.6,
-      "white": 23.1
-    },
-    "y": {
-      "black": "$84,933",
-      "white": "$38,188"
-    }
-  },
-  "Sullivan": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 62.5,
-      "white": 32.6
-    },
-    "y": {
-      "black": "$8,000",
-      "white": "$20,517"
-    }
-  },
-  "Susquehanna": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 65,
-      "white": 38.9
-    },
-    "y": {
-      "black": "$43,346",
-      "white": "$29,492"
-    }
-  },
-  "Tioga": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 53.6,
-      "white": 30.4
-    },
-    "y": {
-      "black": "$49,300",
-      "white": "$33,553"
-    }
-  },
-  "Union": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 38.2,
-      "white": 23.5
-    },
-    "y": {
-      "black": "$45,638",
-      "white": "$28,018"
-    }
-  },
-  "Venango": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 63.6,
-      "white": 36
-    },
-    "y": {
-      "black": "$53,476",
-      "white": "$39,361"
-    }
-  },
-  "Warren": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 68.4,
-      "white": 39.9
-    },
-    "y": {
-      "black": "$49,769",
-      "white": "$30,089"
-    }
-  },
-  "Washington": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 56.8,
-      "white": 36.5
-    },
-    "y": {
-      "black": "$46,258",
-      "white": "$23,939"
-    }
-  },
-  "Wayne": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 60,
-      "white": 36.1
-    },
-    "y": {
-      "black": "$28,619",
-      "white": "$36,400"
-    }
-  },
-  "Westmoreland": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 49.6,
-      "white": 28.8
-    },
-    "y": {
-      "black": "$38,193",
-      "white": "$18,989"
-    }
-  },
-  "Wyoming": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 43.5,
-      "white": 35.4
-    },
-    "y": {
-      "black": "$39,000",
-      "white": "$28,823"
-    }
-  },
-  "York": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 56.9,
-      "white": 42.7
-    },
-    "y": {
-      "black": "$37,078",
-      "white": "$23,259"
-    }
-  },
-  "State Average": {
-    "showName": true,
-    "outlier": false,
-    "x": {
-      "black": PA_AVG_BLACK_BAIL_RATE,
-      "white": PA_AVG_WHITE_BAIL_RATE
-    },
-    "y": {
-      "black": "$45,452",
-      "white": "$31,965"
-    }
-  }
-};
-
-// TODO: except for these two
+// TODO: convert to array of objects
 export const MDJ_DATA = [
   {
     "data": [
