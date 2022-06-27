@@ -94,6 +94,7 @@ const createBailRaceRateTable = () => {
     initSort,
     tableContainer,
     stateData,
+    false,
     false
   );
 };
@@ -176,6 +177,7 @@ const createBailRaceAmountTable = () => {
     initSort,
     tableContainer,
     stateData,
+    false,
     false
   );
 };

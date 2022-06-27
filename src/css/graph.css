@@ -115,6 +115,10 @@ svg.scatter-plot {
   background-color: #fcaa17;
 }
 
+.key-circle.outlier::before {
+  box-shadow: inset 0 0 0 1px;
+}
+
 .bar-graph-subhead {
   position: relative;
   margin: 30px 0;
@@ -173,6 +177,22 @@ svg.label-wrapper {
 .scatter-plot .scatter-point.outlier,
 .scatter-plot .scatter-text.outlier {
   display: inline-block;
+}
+
+.scatter-plot.hovering .scatter-line:not(.hovering):not(.searched),
+.scatter-plot.hovering .scatter-point:not(.hovering):not(.searched),
+.scatter-plot.hovering .scatter-text:not(.hovering):not(.searched),
+.scatter-plot.searched .scatter-line:not(.searched),
+.scatter-plot.searched .scatter-point:not(.searched),
+.scatter-plot.searched .scatter-text:not(.searched) {
+  opacity: 0.15;
+  transition: opacity 0.05s;
+}
+
+.scatter-line.hovering,
+.scatter-point.hovering,
+.scatter-text.hovering {
+  opacity: 1 !important;
 }
 
 .scatter-line {

@@ -124,12 +124,14 @@ class CountyPoint {
   }
 
   onMouseEnter() {
+    this.plot.classList.add("hovering");
     this.elements.forEach((element) => {
       element.classList.add("hovering");
     });
   }
 
   onMouseLeave() {
+    this.plot.classList.remove("hovering");
     this.elements.forEach((element) => {
       element.classList.remove("hovering");
     });
@@ -175,6 +177,10 @@ export class ScatterPlot {
     searchInput.addEventListener("change", (e) => {
       const searchValue = e.target.value;
       this.searchTerms = searchValue.split(";").filter((s) => s !== "");
+
+      if (this.searchTerms.length) this.plot.classList.add("searched");
+      else this.plot.classList.remove("searched");
+
       this.points.forEach((point) => {
         const searched = this.searchTerms.includes(point.county.toLowerCase());
         point.elements.forEach((element) => {
@@ -454,7 +460,7 @@ export class DistributionGraph {
     this.container = container;
     this.data = data;
     this.nameIdx = 1;
-    this.distributionIdx = 5;
+    this.distributionIdx = 3;
     // Sort data by county name
     this.data.sort((a, b) =>
       a["data"][this.nameIdx] > b["data"][this.nameIdx]
@@ -632,12 +638,11 @@ export class CountyBarChart {
     let sortIndex = 0;
     const sortFunctions = [
       (a, b) => a.getAttribute("name").localeCompare(b.getAttribute("name")),
-      (a, b) => b.getAttribute("x").localeCompare(a.getAttribute("x")),
-      (a, b) => b.getAttribute("y").localeCompare(a.getAttribute("y"))
+      (a, b) => b.getAttribute("x").localeCompare(a.getAttribute("x"))
     ];
 
     sortButton.onclick = () => {
-      sortIndex = (sortIndex + 1) % 3;
+      sortIndex = (sortIndex + 1) % sortFunctions.length;
 
       [...this.rows.children]
         .sort(sortFunctions[sortIndex])

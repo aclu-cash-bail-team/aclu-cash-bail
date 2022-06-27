@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import { Table, SwitchableTable } from "./classes/Table.js";
-import { BailRateMap, BailPostingMap, SwitchableMap } from "./classes/Map.js";
+import { BailRateMap, SwitchableMap } from "./classes/Map.js";
 import {
   ScatterPlot,
   DistributionGraph,
@@ -34,9 +34,26 @@ const createBailRateTable = () => {
       searchable: true
     },
     {
+      class: "viz-cell",
+      header: {
+        start: 0,
+        end: 60,
+        averages: [
+          {
+            name: "Avg.",
+            value: PA_BAIL_RATE
+          }
+        ],
+        unit: "percent",
+        showDiff: false
+      },
+      sortable: false,
+      searchable: false
+    },
+    {
       class: "bail-rate-cell number-cell",
       header: {
-        text: "Rate\xa0(%)",
+        text: "Cash\xa0Rate",
         unit: "percent"
       },
       sortable: true,
@@ -45,7 +62,7 @@ const createBailRateTable = () => {
     {
       class: "bail-cases-cell number-cell",
       header: {
-        text: "Cases",
+        text: "Cash\xa0Cases",
         unit: "number"
       },
       sortable: true,
@@ -59,34 +76,18 @@ const createBailRateTable = () => {
       },
       sortable: true,
       searchable: false
-    },
-    {
-      class: "viz-cell",
-      header: {
-        start: 0,
-        end: 60,
-        averages: [
-          {
-            name: "Avg.",
-            value: PA_BAIL_RATE
-          }
-        ],
-        unit: "percent"
-      },
-      sortable: false,
-      searchable: false
     }
   ];
   const initSort = { col: 2, dir: -1 }; // initially sort by cash bail rate
   const stateData = [
     "Pennsylvania",
-    PA_BAIL_RATE,
-    PA_BAIL_CASES,
-    PA_TOTAL_CASES,
     {
       type: "bar",
       values: [PA_BAIL_RATE]
-    }
+    },
+    PA_BAIL_RATE,
+    PA_BAIL_CASES,
+    PA_TOTAL_CASES
   ];
 
   const tableContainer = document.getElementById("bail-rate-container");
@@ -112,9 +113,26 @@ const createRorRateTable = () => {
       searchable: true
     },
     {
+      class: "viz-cell",
+      header: {
+        start: 0,
+        end: 75,
+        averages: [
+          {
+            name: "Avg.",
+            value: PA_ROR_RATE
+          }
+        ],
+        unit: "percent",
+        showDiff: false
+      },
+      sortable: false,
+      searchable: false
+    },
+    {
       class: "ror-rate-cell number-cell",
       header: {
-        text: "Rate\xa0(%)",
+        text: "ROR\xa0Rate",
         unit: "percent"
       },
       sortable: true,
@@ -123,7 +141,7 @@ const createRorRateTable = () => {
     {
       class: "ror-cases-cell number-cell",
       header: {
-        text: "Cases",
+        text: "ROR\xa0Cases",
         unit: "number"
       },
       sortable: true,
@@ -137,34 +155,18 @@ const createRorRateTable = () => {
       },
       sortable: true,
       searchable: false
-    },
-    {
-      class: "viz-cell",
-      header: {
-        start: 0,
-        end: 75,
-        averages: [
-          {
-            name: "Avg.",
-            value: PA_ROR_RATE
-          }
-        ],
-        unit: "percent"
-      },
-      sortable: false,
-      searchable: false
     }
   ];
   const initSort = { col: 2, dir: -1 }; // initially sort by ror bail rate
   const stateData = [
     "Pennsylvania",
-    PA_ROR_RATE,
-    PA_ROR_CASES,
-    PA_TOTAL_CASES,
     {
       type: "bar",
       values: [PA_ROR_RATE]
-    }
+    },
+    PA_ROR_RATE,
+    PA_ROR_CASES,
+    PA_TOTAL_CASES
   ];
 
   const tableContainer = document.getElementById("ror-rate-container");
@@ -206,34 +208,10 @@ const createBailPostingTable = () => {
       },
       sortable: true,
       searchable: false
-    },
-    {
-      class: "viz-cell",
-      header: {
-        start: 0,
-        end: 100,
-        averages: [
-          {
-            name: "Avg.",
-            value: PA_AVG_POSTING_RATE
-          }
-        ],
-        unit: "percent"
-      },
-      sortable: false,
-      searchable: false
     }
   ];
   const initSort = { col: 2, dir: -1 };
-  const stateData = [
-    "Pennsylvania",
-    PA_AVG_BAIL_AMT,
-    PA_AVG_POSTING_RATE,
-    {
-      type: "bar",
-      values: [PA_AVG_POSTING_RATE]
-    }
-  ];
+  const stateData = ["Pennsylvania", PA_AVG_BAIL_AMT, PA_AVG_POSTING_RATE];
 
   const tableContainer = document.getElementById("bail-posting-container");
   return new Table(
@@ -357,7 +335,7 @@ const createAvgBailAmountBarChart = () => {
     name: county[0],
     x: parseFloat(county[1].replace(/[$K]/g, "")),
     y: county[2],
-    highlighted: county[2] > 75
+    highlighted: county[2] > 50
   }));
 
   const container = document.getElementById("avg-bail-graph-container");
@@ -379,22 +357,24 @@ const cashBailRateMap = new BailRateMap(
   PA_BAIL_RATE,
   "Cash Bail Rate"
 );
+
 const rorRateMap = new BailRateMap(
   "ror-rate",
   ROR_RATE_DATA,
   PA_ROR_RATE,
   "ROR Rate"
 );
+
 const rateChloroplethContainer = document.getElementById(
   "rate-chloropleth-container"
 );
+
 new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
-new BailPostingMap("bail-posting", BAIL_POSTING_DATA, PA_AVG_POSTING_RATE, 70);
+
+createAvgBailAmountBarChart();
 
 createCasesScatterPlot();
 new DistributionGraph(
   document.getElementById("dist-graph-container"),
   MDJ_DATA
 );
-
-createAvgBailAmountBarChart();

@@ -272,19 +272,6 @@
   /* padding-bottom: 4px; which prevents tooltip from flashing on hover */
 }
 
-/* Bail Distribution Visualization Header & Legend */
-
-#dist-graph-header,
-#avg-bail-graph-header {
-  margin-bottom: 20px;
-  font-family: "GT America Bold";
-  font-size: 13px;
-  font-weight: normal;
-  line-height: 28px;
-  text-align: center;
-  color: #fff;
-}
-
 #dist-graph-legend {
   display: flex;
   align-items: center;
