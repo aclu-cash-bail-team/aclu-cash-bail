@@ -232,7 +232,10 @@
 
 #dist-graph-container .dist-row {
   display: flex;
-  margin-bottom: 4px;
+}
+
+#dist-graph-container .dist-column-segment {
+  margin-bottom: 6px;
 }
 
 /* Allow specific row to remain highlighted on hover */
@@ -257,17 +260,15 @@
 }
 
 .dist-county-name {
-  width: 125px;
+  width: 120px;
+  line-height: 1;
+  margin-bottom: 6px;
 }
 
 .dist-bars-segment {
   display: inline-grid;
-  width: 100%;
-  margin-bottom: -4px; /* Hack to allow tooltips to show in margins between bars */
-  padding-bottom: 4px; /* which prevents tooltip from flashing on hover */
+  flex: 1;
 }
-
-/* Bail Distribution Visualization Header & Legend */
 
 #dist-graph-legend {
   display: flex;
@@ -292,4 +293,107 @@
 .legend-header {
   color: rgba(255, 255, 255, 0.75);
   margin-top: 15px;
+}
+
+/* Avg Bail Amount Visualization */
+#avg-bail-graph-container {
+  position: relative;
+  width: 100%;
+}
+
+#avg-bail-graph-container .bar-chart-plot {
+  position: relative;
+}
+
+#avg-bail-graph-container .bar-chart-plotlines {
+  position: absolute;
+  inset: 0 0 0 120px;
+  display: flex;
+  border-left: 1px dashed rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+#avg-bail-graph-container .bar-chart-plotline {
+  border-right: 1px dashed rgba(255, 255, 255, 0.3);
+  flex-grow: 1;
+}
+
+#avg-bail-graph-container .bar-chart-xaxis {
+  display: flex;
+  width: 100%;
+  margin-bottom: 16.5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#avg-bail-graph-container .bar-chart-xaxis .tick {
+  flex: 1;
+  width: 0;
+}
+#avg-bail-graph-container .bar-chart-xaxis .tick > p {
+  width: fit-content;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+#avg-bail-graph-container .bar-chart-xaxis .tick:last-of-type {
+  flex: 0;
+}
+#avg-bail-graph-container .bar-chart-xaxis .bar-chart-sort-button {
+  width: 120px;
+}
+
+#avg-bail-graph-container .bar-chart-xaxis .bar-chart-sort-button > button {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: none;
+  font-family: "GT America Bold";
+}
+
+#avg-bail-graph-container > .bar-chart-plot:hover .county-name {
+  color: rgba(238, 238, 238, 0.4);
+}
+
+#avg-bail-graph-container .bar-chart-row {
+  display: flex;
+}
+
+/* Allow specific row to remain highlighted on hover */
+#avg-bail-graph-container .bar-chart-row:hover .county-name {
+  color: rgba(238, 238, 238, 1);
+}
+
+#avg-bail-graph-container .county-name {
+  line-height: 1;
+  width: 120px;
+}
+
+#avg-bail-graph-container .bar-chart-row:not(:last-child) .county-name {
+  padding-bottom: 6px;
+}
+
+#avg-bail-graph-container
+  .bar-chart-row:not(:last-child)
+  .county-bar-chart-bar {
+  margin-bottom: 6px;
+}
+
+#avg-bail-graph-container .county-bar-chart-bar-container {
+  display: flex;
+  flex: 1;
+}
+
+#avg-bail-graph-container .county-bar-chart-bar {
+  background: #303030;
+}
+
+#avg-bail-graph-container .county-bar-chart-bar.highlighted {
+  background: #fcaa17;
+}
+
+#avg-bail-graph-container
+  > .bar-chart-plot:hover
+  .bar-chart-row:not(:hover)
+  .county-bar-chart-bar {
+  opacity: 0.15;
 }

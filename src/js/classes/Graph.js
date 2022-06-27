@@ -537,3 +537,132 @@ export class DistributionGraph {
     });
   }
 }
+
+class Row {
+  constructor(data, minValue, maxValue, renderTooltip) {
+    this.data = data;
+    this.renderTooltip = (elements) =>
+      renderTooltip(elements, [data], this.data.name);
+
+    this.barWidth = ((data.x - minValue) * 100) / (maxValue - minValue);
+  }
+
+  render() {
+    // Add county name
+    const nameElement = document.createElement("div");
+    nameElement.className = "county-name";
+    nameElement.innerText = this.data.name;
+
+    // Add bar
+    const barContainer = document.createElement("div");
+    barContainer.className = "county-bar-chart-bar-container";
+    const bar = document.createElement("div");
+    bar.classList.add("county-bar-chart-bar");
+    if (this.data.highlighted) bar.classList.add("highlighted");
+    bar.style.width = this.barWidth + "%";
+    barContainer.appendChild(bar);
+
+    const rowElement = document.createElement("div");
+    rowElement.className = "bar-chart-row";
+    rowElement.appendChild(nameElement);
+    rowElement.appendChild(barContainer);
+
+    rowElement.setAttribute("name", this.data.name);
+    rowElement.setAttribute("x", this.data.x);
+    rowElement.setAttribute("y", this.data.y);
+
+    this.renderTooltip(barContainer);
+
+    return rowElement;
+  }
+}
+
+export class CountyBarChart {
+  constructor(data, xAxis, tooltipConfig, container) {
+    this.data = data;
+    this.xAxis = xAxis;
+    this.container = container;
+    this.plot = document.createElement("div");
+    this.plot.className = "bar-chart-plot";
+
+    this.rows = document.createElement("div");
+    this.rows.className = "bar-chart-rows";
+
+    this.renderTooltip = configureTooltip(tooltipConfig);
+
+    // Sort data by county name
+    this.data.sort((a, b) =>
+      a.name.toString().localeCompare(b.name.toString())
+    );
+    this.render();
+  }
+
+  render() {
+    this.renderAxis(this.xAxis);
+    this.renderPlotLines(this.xAxis);
+
+    this.data.forEach((county) => {
+      const row = new Row(
+        county,
+        this.xAxis.min,
+        this.xAxis.max,
+        this.renderTooltip
+      );
+      this.rows.appendChild(row.render());
+    });
+    this.plot.appendChild(this.rows);
+    this.container.appendChild(this.plot);
+  }
+
+  renderPlotLines(xAxis) {
+    const plotLines = document.createElement("div");
+    plotLines.className = "bar-chart-plotlines";
+    for (let i = 0; i < xAxis.numTicks; i++) {
+      const plotLine = document.createElement("div");
+      plotLine.className = "bar-chart-plotline";
+      plotLines.appendChild(plotLine);
+    }
+
+    this.plot.appendChild(plotLines);
+  }
+
+  renderAxis(xAxis) {
+    const axis = document.createElement("div");
+    axis.className = "bar-chart-xaxis";
+
+    const sortButtonWrapper = document.createElement("div");
+    sortButtonWrapper.className = "bar-chart-sort-button";
+    const sortButton = document.createElement("button");
+    sortButton.innerHTML = "SORT";
+
+    let sortIndex = 0;
+    const sortFunctions = [
+      (a, b) => a.getAttribute("name").localeCompare(b.getAttribute("name")),
+      (a, b) => b.getAttribute("x").localeCompare(a.getAttribute("x"))
+    ];
+
+    sortButton.onclick = () => {
+      sortIndex = (sortIndex + 1) % sortFunctions.length;
+
+      [...this.rows.children]
+        .sort(sortFunctions[sortIndex])
+        .forEach((node) => this.rows.appendChild(node));
+    };
+
+    sortButtonWrapper.appendChild(sortButton);
+    axis.appendChild(sortButtonWrapper);
+
+    const tickSize = (xAxis.max - xAxis.min) / xAxis.numTicks;
+    for (let i = 0; i < xAxis.numTicks + 1; i++) {
+      const tickValue = xAxis.convert(xAxis.min + i * tickSize);
+      const tickWrapper = document.createElement("div");
+      tickWrapper.className = "tick";
+      const tickSpan = document.createElement("p");
+      const tickNode = document.createTextNode(tickValue);
+      tickSpan.appendChild(tickNode);
+      tickWrapper.appendChild(tickSpan);
+      axis.appendChild(tickWrapper);
+    }
+    this.container.appendChild(axis);
+  }
+}
