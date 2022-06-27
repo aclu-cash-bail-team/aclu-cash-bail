@@ -172,7 +172,7 @@ class DistributionBarCell extends Cell {
       rows: this.values.map((v) => ({
         rowHeader: createHeader(v.name, v.className),
         dataKey: v.className,
-        render: toPercent
+        render: (value) => toPercent(value)
       })),
       placement: "top",
       followCursor: true

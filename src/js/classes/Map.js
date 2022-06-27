@@ -250,7 +250,7 @@ export class BailRateMap extends Map {
         {
           rowHeader: tooltipHeader,
           dataKey: "x",
-          render: toPercent
+          render: (value) => toPercent(value)
         }
       ]
     });
@@ -364,12 +364,12 @@ class BailRaceMap extends Map {
         {
           rowHeader: "Cash Bail Rate, black",
           dataKey: "black",
-          render: toPercent
+          render: (value) => toPercent(value)
         },
         {
           rowHeader: "Cash Bail Rate, white",
           dataKey: "white",
-          render: toPercent
+          render: (value) => toPercent(value)
         }
       ]
     });
