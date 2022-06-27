@@ -34,7 +34,8 @@ const BAIL_POSTING_DATA = COUNTY_DATA.map((county_data) => ({
   data: [
     county_data["name"],
     county_data["avg_bail_amount"],
-    county_data["non_posting_rate"]
+    county_data["non_posting_rate"],
+    county_data["total_cases"]
   ]
 }));
 
@@ -220,8 +221,17 @@ const createBailPostingTable = () => {
     {
       class: "nonposting-rate-cell number-cell",
       header: {
-        text: "Non-posting rt.",
+        text: "Non-Posting Rt.",
         unit: "percent"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "total-cases-cell number-cell",
+      header: {
+        text: "Total Cases",
+        unit: "number"
       },
       sortable: true,
       searchable: false
@@ -231,7 +241,8 @@ const createBailPostingTable = () => {
   const stateData = [
     "Pennsylvania",
     STATE_DATA["avg_bail_amount"],
-    STATE_DATA["non_posting_rate"]
+    STATE_DATA["non_posting_rate"],
+    STATE_DATA["total_cases"]
   ];
 
   const tableContainer = document.getElementById("bail-posting-container");
