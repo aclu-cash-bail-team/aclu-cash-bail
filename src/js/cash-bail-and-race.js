@@ -4,37 +4,37 @@ import { RaceMapContainer } from "./classes/Map.js";
 import { ScatterPlot } from "./classes/Graph.js";
 import { STATE_DATA, COUNTY_DATA } from "./data.js";
 
-const BAIL_RACE_RATE_DATA = COUNTY_DATA.map((county_data) => ({
+const BAIL_RACE_RATE_DATA = COUNTY_DATA.map((countyData) => ({
   data: [
-    county_data["name"],
-    county_data["cash_bail_pct_black"],
-    county_data["cash_bail_pct_white"],
+    countyData["name"],
+    countyData["cash_bail_pct_black"],
+    countyData["cash_bail_pct_white"],
     {
       type: "line",
       values: [
-        county_data["cash_bail_pct_black"],
-        county_data["cash_bail_pct_white"]
+        countyData["cash_bail_pct_black"],
+        countyData["cash_bail_pct_white"]
       ]
     },
-    county_data["cash_bail_pct_black"] - county_data["cash_bail_pct_white"]
+    countyData["cash_bail_pct_black"] - countyData["cash_bail_pct_white"]
   ],
-  outlier: county_data["is_outlier"]
+  outlier: countyData["is_outlier"]
 }));
-const BAIL_RACE_AMOUNT_DATA = COUNTY_DATA.map((county_data) => ({
+const BAIL_RACE_AMOUNT_DATA = COUNTY_DATA.map((countyData) => ({
   data: [
-    county_data["name"],
-    county_data["bail_amount_black"],
-    county_data["bail_amount_white"],
+    countyData["name"],
+    countyData["bail_amount_black"],
+    countyData["bail_amount_white"],
     {
       type: "line",
       values: [
-        county_data["bail_amount_black"],
-        county_data["bail_amount_white"]
+        countyData["bail_amount_black"],
+        countyData["bail_amount_white"]
       ]
     },
-    county_data["bail_amount_black"] - county_data["bail_amount_white"]
+    countyData["bail_amount_black"] - countyData["bail_amount_white"]
   ],
-  outlier: county_data["is_outlier"]
+  outlier: countyData["is_outlier"]
 }));
 
 /* TABLE CREATION FUNCTIONS */
@@ -251,18 +251,18 @@ const createRaceScatterPlot = () => {
     ]
   };
 
-  const PLOT_DATA = COUNTY_DATA.reduce((acc, county_data) => ({
+  const PLOT_DATA = COUNTY_DATA.reduce((acc, countyData) => ({
     ...acc,
-    [county_data["name"]]: {
+    [countyData["name"]]: {
       showName: false,
-      outlier: county_data["is_outlier"],
+      outlier: countyData["is_outlier"],
       x: {
-        black: county_data["cash_bail_pct_black"],
-        white: county_data["cash_bail_pct_white"]
+        black: countyData["cash_bail_pct_black"],
+        white: countyData["cash_bail_pct_white"]
       },
       y: {
-        black: county_data["bail_amount_black"],
-        white: county_data["bail_amount_white"]
+        black: countyData["bail_amount_black"],
+        white: countyData["bail_amount_white"]
       }
     }
   }), {});

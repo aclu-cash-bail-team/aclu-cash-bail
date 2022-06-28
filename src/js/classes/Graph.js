@@ -1,4 +1,5 @@
 import { configureTooltip } from "./Tooltip";
+import { toMoney, toPercent, toNumberString } from "../helpers";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
@@ -271,7 +272,6 @@ export class ScatterPlot {
 
   render() {
     // set up svg to resize on window resize
-
     window.addEventListener("resize", () => this.updateViewBox());
 
     // render axes
@@ -388,36 +388,22 @@ export class ScatterPlot {
 }
 
 class DistributionRow {
-  constructor(
-    county,
-    cashBailRate,
-    unsecuredRate,
-    nonmonetaryRate,
-    rorRate,
-    nominalRate,
-    renderTooltip
-  ) {
+  constructor(county, distributions, renderTooltip) {
     this.county = county;
-    this.cashBailRate = cashBailRate;
-    this.unsecuredRate = unsecuredRate;
-    this.nonmonetaryRate = nonmonetaryRate;
-    this.rorRate = rorRate;
-    this.nominalRate = nominalRate;
+    this.distributions = distributions;
+    this.renderTooltip = renderTooltip;
+  }
 
-    this.renderTooltip = (elements) =>
-      renderTooltip(
-        elements,
-        [
-          {
-            cashBailRate: cashBailRate["value"],
-            nominalRate: nominalRate["value"],
-            unsecuredRate: unsecuredRate["value"],
-            nonmonetaryRate: nonmonetaryRate["value"],
-            rorRate: rorRate["value"]
-          }
-        ],
-        county
-      );
+  createTooltip(elements) {
+    return this.renderTooltip(
+      elements,
+      [
+        this.distributions.reduce((acc, dist) => ({
+          ...acc, [dist["className"]]: dist["value"]
+        }), {})
+      ],
+      this.county
+    );
   }
 
   render() {
@@ -428,39 +414,33 @@ class DistributionRow {
     // Add distribution bars
     const distBarsSegment = document.createElement("div");
     distBarsSegment.className = "dist-bars-segment";
-    [
-      this.cashBailRate,
-      this.nominalRate,
-      this.unsecuredRate,
-      this.nonmonetaryRate,
-      this.rorRate
-    ].forEach((dist) => {
+    this.distributions.forEach((dist) => {
       const distBarElement = document.createElement("div");
       distBarElement.classList.add("dist-column-segment");
       distBarElement.classList.add(dist["className"]);
       distBarsSegment.appendChild(distBarElement);
     });
     // Set width of bar based on distribution
-    const colWidths = `${this.cashBailRate["value"]}% ${this.nominalRate["value"]}% ${this.unsecuredRate["value"]}% ${this.nonmonetaryRate["value"]}% ${this.rorRate["value"]}%`;
-    distBarsSegment.style.gridTemplateColumns = colWidths;
+    const cols = this.distributions.map((dist) => `${dist["value"] * 100}%`);
+    distBarsSegment.style.gridTemplateColumns = cols.join(" ");
 
-    this.renderTooltip(distBarsSegment);
+    this.createTooltip(distBarsSegment);
 
     const rowElement = document.createElement("div");
     rowElement.className = "dist-row";
     rowElement.appendChild(nameElement);
     rowElement.appendChild(distBarsSegment);
-
     return rowElement;
   }
 }
 
 export class DistributionGraph {
-  constructor(container, data) {
+  constructor(container, data, headerConfig) {
     this.container = container;
     this.data = data;
-    this.nameIdx = 1;
-    this.distributionIdx = 3;
+    this.headerConfig = headerConfig;
+    this.nameIdx = 0;
+    this.distributionIdx = 1;
     // Sort data by county name
     this.data.sort((a, b) =>
       a["data"][this.nameIdx] > b["data"][this.nameIdx]
@@ -469,7 +449,10 @@ export class DistributionGraph {
         ? -1
         : 0
     );
+    this.render();
+  }
 
+  renderTooltip(headerConfig) {
     const createHeader = (hdr, colorClassName) => {
       const container = document.createElement("div");
       container.style.display = "flex";
@@ -483,55 +466,29 @@ export class DistributionGraph {
       container.appendChild(colorBox);
       container.appendChild(text);
       return container;
-    };
-    const renderValue = (value) => `${value.toFixed(1)}%`;
-    this.renderTooltip = configureTooltip({
-      rows: [
-        {
-          rowHeader: createHeader("Cash Bail", "cash-bar"),
-          dataKey: "cashBailRate",
-          render: renderValue
-        },
-        {
-          rowHeader: createHeader("Nominal", "nominal-bar"),
-          dataKey: "nominalRate",
-          render: renderValue
-        },
-        {
-          rowHeader: createHeader("Unsecured", "unsecured-bar"),
-          dataKey: "unsecuredRate",
-          render: renderValue
-        },
-        {
-          rowHeader: createHeader("Nonmonetary", "nonmonetary-bar"),
-          dataKey: "nonmonetaryRate",
-          render: renderValue
-        },
-        {
-          rowHeader: createHeader("ROR", "ror-bar"),
-          dataKey: "rorRate",
-          render: renderValue
-        }
-      ],
+    }
+
+    // configureTooltip returns a render function to which we'll pass the data
+    return configureTooltip({
+      rows: headerConfig.map((header) => ({
+        rowHeader: createHeader(header.title, header.className),
+        dataKey: header.className,
+        render: header.render
+      })),
       placement: "top",
       followCursor: true
     });
-
-    this.render();
   }
 
   render() {
     this.data.forEach((county) => {
-      const countyName = county["data"][1];
+      const countyName = county["data"][this.nameIdx];
       const distributions = county["data"][this.distributionIdx]["values"];
       const distributionRow = new DistributionRow(
         countyName,
-        distributions[0],
-        distributions[1],
-        distributions[2],
-        distributions[3],
-        distributions[4],
-        this.renderTooltip
+        distributions,
+        // closure since we always want the header config to be the same
+        this.renderTooltip(this.headerConfig)
       );
       this.container.appendChild(distributionRow.render());
     });

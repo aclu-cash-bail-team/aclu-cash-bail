@@ -6,37 +6,72 @@ import { ScatterPlot, DistributionGraph } from "./classes/Graph.js";
 import { STATE_DATA, COUNTY_DATA, MDJ_DATA } from "./data.js";
 
 // restructure county data for tables and maps
-const BAIL_RATE_DATA = COUNTY_DATA.map((county_data) => ({
+const BAIL_RATE_DATA = COUNTY_DATA.map((countyData) => ({
   data: [
-    county_data["name"],
+    countyData["name"],
     {
       type: "bar",
-      values: [county_data["cash_bail_pct"]]
+      values: [countyData["cash_bail_pct"]]
     },
-    county_data["cash_bail_pct"],
-    county_data["cash_bail_cases"],
-    county_data["total_cases"]
+    countyData["cash_bail_pct"],
+    countyData["cash_bail_cases"],
+    countyData["total_cases"]
   ]
 }));
-const ROR_RATE_DATA = COUNTY_DATA.map((county_data) => ({
+const ROR_RATE_DATA = COUNTY_DATA.map((countyData) => ({
   data: [
-    county_data["name"],
+    countyData["name"],
     {
       type: "bar",
-      values: [county_data["ror_pct"]]
+      values: [countyData["ror_pct"]]
     },
-    county_data["ror_pct"],
-    county_data["ror_cases"],
-    county_data["total_cases"]
+    countyData["ror_pct"],
+    countyData["ror_cases"],
+    countyData["total_cases"]
   ]
 }));
-const BAIL_POSTING_DATA = COUNTY_DATA.map((county_data) => ({
+const BAIL_POSTING_DATA = COUNTY_DATA.map((countyData) => ({
   data: [
-    county_data["name"],
-    county_data["avg_bail_amount"],
-    county_data["non_posting_rate"],
-    county_data["total_cases"]
+    countyData["name"],
+    countyData["avg_bail_amount"],
+    countyData["non_posting_rate"],
+    countyData["total_cases"]
   ]
+}));
+const COUNTY_BAIL_TYPE_DATA = COUNTY_DATA.map((countyData) => ({
+  data: [
+    countyData["name"],
+    {
+      type: "dist",
+      values: [
+        {
+          className: "cash-bar",
+          value: countyData["cash_bail_pct"],
+          name: "Cash Bail"
+        },
+        {
+          className: "unsecured-bar",
+          value: countyData["unsecured_pct"],
+          name: "Unsecured"
+        },
+        {
+          className: "ror-bar",
+          value: countyData["ror_pct"],
+          name: "ROR"
+        },
+        {
+          className: "nonmonetary-bar",
+          value: countyData["nonmonetary_pct"],
+          name: "Nonmonetary"
+        },
+        {
+          className: "nominal-bar",
+          value: countyData["nominal_pct"],
+          name: "Nominal"
+        }
+      ],
+    }
+  ],
 }));
 
 /* TABLE CREATION FUNCTIONS */
@@ -324,13 +359,13 @@ const createCasesScatterPlot = () => {
     mobile: mobileScale
   };
 
-  const PLOT_DATA = COUNTY_DATA.reduce((acc, county_data) => ({
+  const PLOT_DATA = COUNTY_DATA.reduce((acc, countyData) => ({
     ...acc,
-    [county_data["name"]]: {
+    [countyData["name"]]: {
       showName: false,
-      x: county_data["cash_bail_pct"],
-      r: county_data["cash_bail_cases"],
-      y: county_data["avg_bail_amount"]
+      x: countyData["cash_bail_pct"],
+      r: countyData["cash_bail_cases"],
+      y: countyData["avg_bail_amount"]
     }
   }), {});
   PLOT_DATA["State Average"] = {
@@ -378,7 +413,35 @@ new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
 /* RENDER GRAPHS */
 createCasesScatterPlot();
 // TODO: new bail posting graph goes here
+const headerConfig = [
+  {
+    title: "Cash Bail",
+    className: "cash-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "Unsecured",
+    className: "unsecured-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "ROR",
+    className: "ror-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "Nonmonetary",
+    className: "nonmonetary-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "Nominal",
+    className: "nominal-bar",
+    render: (value) => toPercent(value)
+  },
+];
 new DistributionGraph(
   document.getElementById("dist-graph-container"),
-  MDJ_DATA
+  COUNTY_BAIL_TYPE_DATA,
+  headerConfig
 );
