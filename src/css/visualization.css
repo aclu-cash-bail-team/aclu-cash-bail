@@ -161,7 +161,8 @@
   background-color: #c14ef8;
 }
 
-/* Distribution viz */
+/* Bail Distribution Visualization */
+
 .table-container > table td.bail-dist-cell {
   vertical-align: bottom;
   margin-right: 0;
@@ -200,7 +201,25 @@
   background-color: rgba(253, 177, 255, 1);
 }
 
-/* Bail Distribution Visualization */
+.dist-row {
+  display: flex;
+}
+
+.dist-column-segment {
+  margin-bottom: 6px;
+}
+
+.dist-county-name {
+  width: 120px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.dist-bars-segment {
+  display: inline-grid;
+  flex: 1;
+}
+
 
 #dist-graph-container {
   width: 100%;
@@ -230,14 +249,6 @@
   background-color: rgba(176, 140, 240, 0.4);
 }
 
-#dist-graph-container .dist-row {
-  display: flex;
-}
-
-#dist-graph-container .dist-column-segment {
-  margin-bottom: 6px;
-}
-
 /* Allow specific row to remain highlighted on hover */
 #dist-graph-container .dist-row:hover .dist-county-name {
   color: rgba(238, 238, 238, 1);
@@ -259,15 +270,12 @@
   background-color: rgba(176, 140, 240, 1);
 }
 
-.dist-county-name {
-  width: 120px;
-  line-height: 1;
-  margin-bottom: 6px;
+.county-dist-row-container .dist-county-name {
+  display: none;
 }
 
-.dist-bars-segment {
-  display: inline-grid;
-  flex: 1;
+.county-dist-row-container .dist-bars-segment {
+  height: 19px;
 }
 
 #dist-graph-legend {

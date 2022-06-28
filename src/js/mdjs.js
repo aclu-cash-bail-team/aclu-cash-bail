@@ -1,90 +1,8 @@
 import { Table } from "./classes/Table.js";
-import { COUNTY_DATA, MDJ_DATA } from "./data.js";
-
-const COUNTY_INFO = COUNTY_DATA.reduce((acc, data) => ({
-  ...acc, [data["name"]]: data
-}), {});
-const MDJ_BAIL_TYPE_DATA = Object.entries(MDJ_DATA).map(([county, judges]) => ({
-  data: [
-    "",
-    county,
-    COUNTY_INFO[county]["total_cases"],
-    COUNTY_INFO[county]["cash_bail_pct"],
-    {
-      type: "dist",
-      values: [
-        {
-          "className": "cash-bar",
-          "value": COUNTY_INFO[county]["cash_bail_pct"],
-          "name": "Cash bail"
-        },
-        {
-          "className": "unsecured-bar",
-          "value": COUNTY_INFO[county]["unsecured_pct"],
-          "name": "Unsecured"
-        },
-        {
-          "className": "ror-bar",
-          "value": COUNTY_INFO[county]["ror_pct"],
-          "name": "ROR"
-        },
-        {
-          "className": "nonmonetary-bar",
-          "value": COUNTY_INFO[county]["nonmonetary_pct"],
-          "name": "Nonmonetary"
-        },
-        {
-          "className": "nominal-bar",
-          "value": COUNTY_INFO[county]["nominal_pct"],
-          "name": "Nominal"
-        }
-      ],
-      name: county
-    }
-  ],
-  outlier: COUNTY_INFO[county]["is_outlier"],
-  collapseData: judges.map((judge) => ({
-    data: [
-      "",
-      judge["name"],
-      judge["total_cases"],
-      judge["cash_bail_pct"],
-      {
-        type: "dist",
-        values: [
-          {
-            "className": "cash-bar",
-            "value": judge["cash_bail_pct"],
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": judge["unsecured_pct"],
-            "name": "Unsecured"
-          },
-          {
-            "className": "ror-bar",
-            "value": judge["ror_pct"],
-            "name": "ROR"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": judge["nonmonetary_pct"],
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "nominal-bar",
-            "value": judge["nominal_pct"],
-            "name": "Nominal"
-          }
-        ],
-        name: judge["name"]
-      }
-    ],
-    outlier: false
-  })),
-  isCollapsed: true
-}));
+import { DistributionGraph } from "./classes/Graph.js";
+import { MDJ_BAIL_TYPE_DATA, COUNTY_BAIL_TYPE_DATA } from "./data.js";
+import { toMoney, toPercent, toNumberString } from "./helpers";
+import { COUNTY_DATA } from "./raw-data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createMdjTable = (tableContainer, county = "") => {
@@ -137,13 +55,13 @@ const createMdjTable = (tableContainer, county = "") => {
   ];
   const initSort = { col: 3, dir: -1 };
   if (county !== "") {
-    const countyMdjBailTypeData = MDJ_BAIL_TYPE_DATA.flatMap(row => {
+      const countyMdjBailTypeData = MDJ_BAIL_TYPE_DATA.flatMap(row => {
         const countyName = row.data[1];
         if (countyName === county) {
-          const copy = { ...row }
-          copy.isCollapsed = false;
-          return [copy];
-        } else { return []; }
+          return row.collapseData;
+        } else {
+          return [];
+        }
       })
     return new Table(countyMdjBailTypeData, columnConfigs, initSort, tableContainer);
   } else {
@@ -159,6 +77,42 @@ counties.forEach((name) => {
   const tableContainer = document.getElementById(`${name.toLowerCase()}-mdj-container`)
   if (tableContainer !== null) {
     createMdjTable(tableContainer, name)
+  }
+});
+
+const headerConfig = [
+  {
+    title: "Cash Bail",
+    className: "cash-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "Unsecured",
+    className: "unsecured-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "ROR",
+    className: "ror-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "Nonmonetary",
+    className: "nonmonetary-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "Nominal",
+    className: "nominal-bar",
+    render: (value) => toPercent(value)
+  },
+];
+
+counties.forEach((name) => {
+  const rowContainer = document.getElementById(`${name.toLowerCase()}-dist-row-container`)
+  if (rowContainer !== null) {
+    const data = COUNTY_BAIL_TYPE_DATA.filter(row => row.data[0] === name);
+    new DistributionGraph(rowContainer, data, headerConfig);
   }
 });
 
@@ -183,5 +137,6 @@ counties.forEach((name) => {
 //         </table>
 //         <div class="btn-text view-all-btn"></div>
 //       </div>
+//       <div id="${countyName.toLowerCase()}-dist-row-container" class="dist-row-container"></div>
 // `
 // console.log(counties.sort((a, b) => a.localeCompare(b)).map(name => html(name)).join(""))

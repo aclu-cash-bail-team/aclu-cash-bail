@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import { feature } from "topojson-client";
-import { COUNTY_MAP_DATA } from "../data.js";
+import { COUNTY_MAP_DATA } from "../raw-data.js";
 import { configureTooltip } from "./Tooltip";
 import { toMoney, toPercent, toNumberString } from "../helpers";
 
