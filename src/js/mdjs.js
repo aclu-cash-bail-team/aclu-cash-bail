@@ -81,7 +81,7 @@ const MDJ_BAIL_TYPE_DATA = Object.entries(MDJ_DATA).map(([county, judges]) => ({
         name: judge["name"]
       }
     ],
-    outlier: false // TODO: ???
+    outlier: false
   })),
   isCollapsed: true
 }));
