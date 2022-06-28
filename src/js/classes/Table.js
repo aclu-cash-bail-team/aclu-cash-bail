@@ -189,7 +189,7 @@ class DistributionBarCell extends Cell {
       container.appendChild(bar);
     });
     // configure sizes of distribution bars
-    const distWidths = this.values.map((dist) => `${dist["value"]}%`);
+    const distWidths = this.values.map((dist) => `${dist["value"] * 100}%`);
     container.style.gridTemplateColumns = distWidths.join(" ");
     this.renderTooltip(container, this.tooltipValues, this.tooltipName);
     this.element.appendChild(container);
