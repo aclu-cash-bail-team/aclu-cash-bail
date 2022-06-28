@@ -1,8 +1,12 @@
 import * as d3 from "d3";
 import { toMoney, toPercent, toNumberString } from "./helpers";
 import { Table, SwitchableTable } from "./classes/Table.js";
-import { BailRateMap, BailPostingMap, SwitchableMap } from "./classes/Map.js";
-import { ScatterPlot, DistributionGraph } from "./classes/Graph.js";
+import { BailRateMap, SwitchableMap } from "./classes/Map.js";
+import {
+  ScatterPlot,
+  DistributionGraph,
+  CountyBarChart
+} from "./classes/Graph.js";
 import { STATE_DATA, COUNTY_DATA, MDJ_DATA } from "./data.js";
 
 // restructure county data for tables and maps
@@ -385,6 +389,45 @@ const createCasesScatterPlot = () => {
   );
 };
 
+const createAvgBailAmountBarChart = () => {
+  const nonPostingRateToText = (num) => `${num}%`;
+  const bailAmountToText = (num) => (num === 0 ? "0" : `${num}K`);
+
+  const xAxis = {
+    min: 10,
+    max: 80,
+    numTicks: 7,
+    convert: bailAmountToText
+  };
+
+  const tooltipConfig = {
+    rows: [
+      {
+        rowHeader: "Average bail amount",
+        dataKey: "x",
+        render: bailAmountToText
+      },
+      {
+        rowHeader: "Non-posting rate",
+        dataKey: "y",
+        render: nonPostingRateToText
+      }
+    ],
+    placement: "top",
+    followCursor: true
+  };
+
+  const data = BAIL_POSTING_DATA.map(({ data: county }) => ({
+    name: county[0],
+    x: parseFloat(county[1].replace(/[$K]/g, "")),
+    y: county[2],
+    highlighted: county[2] > 50
+  }));
+
+  const container = document.getElementById("avg-bail-graph-container");
+  return new CountyBarChart(data, xAxis, tooltipConfig, container);
+};
+
 /* RENDER TABLES */
 const bailRateTable = createBailRateTable();
 const rorRateTable = createRorRateTable();
@@ -412,7 +455,7 @@ new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
 
 /* RENDER GRAPHS */
 createCasesScatterPlot();
-// TODO: new bail posting graph goes here
+createAvgBailAmountBarChart();
 const headerConfig = [
   {
     title: "Cash Bail",
