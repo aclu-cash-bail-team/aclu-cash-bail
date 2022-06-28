@@ -390,14 +390,11 @@ const createCasesScatterPlot = () => {
 };
 
 const createAvgBailAmountBarChart = () => {
-  const nonPostingRateToText = (num) => `${num}%`;
-  const bailAmountToText = (num) => (num === 0 ? "0" : `${num}K`);
-
   const xAxis = {
-    min: 10,
-    max: 80,
+    min: 10000,
+    max: 80000,
     numTicks: 7,
-    convert: bailAmountToText
+    convert: toMoney
   };
 
   const tooltipConfig = {
@@ -405,23 +402,23 @@ const createAvgBailAmountBarChart = () => {
       {
         rowHeader: "Average bail amount",
         dataKey: "x",
-        render: bailAmountToText
+        render: (value) => toMoney(value)
       },
       {
         rowHeader: "Non-posting rate",
         dataKey: "y",
-        render: nonPostingRateToText
+        render: (value) => toPercent(value)
       }
     ],
     placement: "top",
     followCursor: true
   };
 
-  const data = BAIL_POSTING_DATA.map(({ data: county }) => ({
-    name: county[0],
-    x: parseFloat(county[1].replace(/[$K]/g, "")),
-    y: county[2],
-    highlighted: county[2] > 50
+  const data = COUNTY_DATA.map((countyData) => ({
+    name: countyData["name"],
+    x: countyData["avg_bail_amount"],
+    y: countyData["non_posting_rate"],
+    highlighted: countyData["non_posting_rate"] > 0.5
   }));
 
   const container = document.getElementById("avg-bail-graph-container");

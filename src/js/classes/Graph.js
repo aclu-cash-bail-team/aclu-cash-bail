@@ -498,9 +498,9 @@ export class DistributionGraph {
 class Row {
   constructor(data, minValue, maxValue, renderTooltip) {
     this.data = data;
-    this.renderTooltip = (elements) =>
-      renderTooltip(elements, [data], this.data.name);
-
+    this.renderTooltip = (elements) => renderTooltip(
+      elements, [data], this.data.name
+    );
     this.barWidth = ((data.x - minValue) * 100) / (maxValue - minValue);
   }
 
@@ -516,7 +516,7 @@ class Row {
     const bar = document.createElement("div");
     bar.classList.add("county-bar-chart-bar");
     if (this.data.highlighted) bar.classList.add("highlighted");
-    bar.style.width = this.barWidth + "%";
+    bar.style.width = `${this.barWidth}%`;
     barContainer.appendChild(bar);
 
     const rowElement = document.createElement("div");
