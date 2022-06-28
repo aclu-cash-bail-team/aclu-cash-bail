@@ -394,7 +394,7 @@ const createAvgBailAmountBarChart = () => {
     min: 10000,
     max: 80000,
     numTicks: 7,
-    convert: toMoney
+    convert: (value) => toMoney(value, 0, false)
   };
 
   const tooltipConfig = {
