@@ -1,31192 +1,7767 @@
 /*
- * To get the data in this format, export a CSV with the columns in the order
- * you want. In the case of BAIL_RACE_DATA, I had [county, black %, white %,
- * difference]. I pasted the contents of the CSV into this file (you can wrap
- * multi-line strings in ``) and created the following script to convert from
- * that string to the output array. JSON.stringify will output something with
- * no spacing, so i just pasted the result into a JSON formatter to get the
- * desired format (https://jsonformatter.org).
+ * Given a CSV with the desired keys as header and all the data you need, use
+ * the function below to generate an array of objects containing all the data.
  *
  * const excelData = ``;
  * const data = [];
  * const lines = excelData.split("\n");
- * lines.forEach((line, i) => {
+ * const headers = lines.shift().split(",");
+ * lines.forEach(line => {
  *   const cells = line.split(",");
- *   const diff = parseFloat(cells[3]);
- *   const entry = {
- *     "data": [
- *       cells[0], // county
- *       {
- *         "type": "line", // visualization
- *         "values": [parseFloat(cells[1]), parseFloat(cells[2])]
- *       },
- *       parseFloat(cells[1]), // black cash bail rate
- *       parseFloat(cells[2]), // white cash bail rate
- *       `${diff > 0 ? "+" : ""}${diff.toFixed(1)}` // overall rate
- *     ],
- *     "outlier": false
- *   };
- *   data.push(entry);
+ *   data.push(
+ *     cells.reduce((acc, cell, i) => ({
+ *       ...acc, [headers[i]]: parseFloat(cell) || cell
+ *     }), {})
+ *   );
  * });
  *
  * console.log(JSON.stringify(data));
  */
 
-export const BAIL_RATE_DATA = [
-  {
-    "data": [
-      "Adams",
-      {
-        "type": "bar",
-        "values": [
-          31.3
-        ]
-      },
-      31.3,
-      714,
-      2280
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      {
-        "type": "bar",
-        "values": [
-          42.6
-        ]
-      },
-      42.6,
-      20214,
-      47473
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      {
-        "type": "bar",
-        "values": [
-          41.5
-        ]
-      },
-      41.5,
-      735,
-      1770
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      {
-        "type": "bar",
-        "values": [
-          50.8
-        ]
-      },
-      50.8,
-      2931,
-      5765
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      {
-        "type": "bar",
-        "values": [
-          37.4
-        ]
-      },
-      37.4,
-      520,
-      1392
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Berks",
-      {
-        "type": "bar",
-        "values": [
-          50.9
-        ]
-      },
-      50.9,
-      5765,
-      11330
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      {
-        "type": "bar",
-        "values": [
-          30.8
-        ]
-      },
-      30.8,
-      1324,
-      4298
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      {
-        "type": "bar",
-        "values": [
-          45.9
-        ]
-      },
-      45.9,
-      814,
-      1773
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bucks",
-      {
-        "type": "bar",
-        "values": [
-          34.9
-        ]
-      },
-      34.9,
-      4823,
-      13830
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      {
-        "type": "bar",
-        "values": [
-          35.5
-        ]
-      },
-      35.5,
-      1820,
-      5123
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      {
-        "type": "bar",
-        "values": [
-          45
-        ]
-      },
-      45,
-      1978,
-      4395
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      {
-        "type": "bar",
-        "values": [
-          22.1
-        ]
-      },
-      22.1,
-      30,
-      136
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Carbon",
-      {
-        "type": "bar",
-        "values": [
-          32.9
-        ]
-      },
-      32.9,
-      914,
-      2780
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      {
-        "type": "bar",
-        "values": [
-          27.3
-        ]
-      },
-      27.3,
-      868,
-      3185
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      {
-        "type": "bar",
-        "values": [
-          38.3
-        ]
-      },
-      38.3,
-      3806,
-      9932
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      {
-        "type": "bar",
-        "values": [
-          39.4
-        ]
-      },
-      39.4,
-      470,
-      1192
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clearfield",
-      {
-        "type": "bar",
-        "values": [
-          37
-        ]
-      },
-      37,
-      657,
-      1775
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clinton",
-      {
-        "type": "bar",
-        "values": [
-          33.3
-        ]
-      },
-      33.3,
-      404,
-      1212
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Columbia",
-      {
-        "type": "bar",
-        "values": [
-          40.9
-        ]
-      },
-      40.9,
-      624,
-      1526
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      {
-        "type": "bar",
-        "values": [
-          35.6
-        ]
-      },
-      35.6,
-      696,
-      1954
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      {
-        "type": "bar",
-        "values": [
-          41.1
-        ]
-      },
-      41.1,
-      2740,
-      6674
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      {
-        "type": "bar",
-        "values": [
-          44.2
-        ]
-      },
-      44.2,
-      5420,
-      12269
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      {
-        "type": "bar",
-        "values": [
-          55.9
-        ]
-      },
-      55.9,
-      9533,
-      17059
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      {
-        "type": "bar",
-        "values": [
-          28.6
-        ]
-      },
-      28.6,
-      228,
-      797
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Erie",
-      {
-        "type": "bar",
-        "values": [
-          47.1
-        ]
-      },
-      47.1,
-      3161,
-      6716
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      {
-        "type": "bar",
-        "values": [
-          44.9
-        ]
-      },
-      44.9,
-      2250,
-      5007
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      {
-        "type": "bar",
-        "values": [
-          35.1
-        ]
-      },
-      35.1,
-      53,
-      151
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Franklin",
-      {
-        "type": "bar",
-        "values": [
-          37.3
-        ]
-      },
-      37.3,
-      1651,
-      4421
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      {
-        "type": "bar",
-        "values": [
-          28.3
-        ]
-      },
-      28.3,
-      113,
-      400
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Greene",
-      {
-        "type": "bar",
-        "values": [
-          39.4
-        ]
-      },
-      39.4,
-      314,
-      797
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Huntingdon",
-      {
-        "type": "bar",
-        "values": [
-          38.6
-        ]
-      },
-      38.6,
-      497,
-      1287
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      {
-        "type": "bar",
-        "values": [
-          40.7
-        ]
-      },
-      40.7,
-      893,
-      2196
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      {
-        "type": "bar",
-        "values": [
-          38.7
-        ]
-      },
-      38.7,
-      420,
-      1086
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Juniata",
-      {
-        "type": "bar",
-        "values": [
-          34.2
-        ]
-      },
-      34.2,
-      158,
-      462
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lackawanna",
-      {
-        "type": "bar",
-        "values": [
-          52.6
-        ]
-      },
-      52.6,
-      3166,
-      6021
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      {
-        "type": "bar",
-        "values": [
-          45.1
-        ]
-      },
-      45.1,
-      5640,
-      12510
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      {
-        "type": "bar",
-        "values": [
-          50.7
-        ]
-      },
-      50.7,
-      1118,
-      2204
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      {
-        "type": "bar",
-        "values": [
-          37.8
-        ]
-      },
-      37.8,
-      1470,
-      3890
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      {
-        "type": "bar",
-        "values": [
-          56.5
-        ]
-      },
-      56.5,
-      6054,
-      10715
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      {
-        "type": "bar",
-        "values": [
-          40.9
-        ]
-      },
-      40.9,
-      3839,
-      9392
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      {
-        "type": "bar",
-        "values": [
-          34.4
-        ]
-      },
-      34.4,
-      1364,
-      3963
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      {
-        "type": "bar",
-        "values": [
-          41.9
-        ]
-      },
-      41.9,
-      482,
-      1150
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mercer",
-      {
-        "type": "bar",
-        "values": [
-          35.7
-        ]
-      },
-      35.7,
-      1551,
-      4349
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      {
-        "type": "bar",
-        "values": [
-          48.1
-        ]
-      },
-      48.1,
-      661,
-      1375
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      {
-        "type": "bar",
-        "values": [
-          33.6
-        ]
-      },
-      33.6,
-      1860,
-      5537
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      {
-        "type": "bar",
-        "values": [
-          37.5
-        ]
-      },
-      37.5,
-      6538,
-      17417
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      {
-        "type": "bar",
-        "values": [
-          35.4
-        ]
-      },
-      35.4,
-      90,
-      254
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northampton",
-      {
-        "type": "bar",
-        "values": [
-          50.7
-        ]
-      },
-      50.7,
-      3344,
-      6591
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      {
-        "type": "bar",
-        "values": [
-          37.7
-        ]
-      },
-      37.7,
-      876,
-      2325
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      {
-        "type": "bar",
-        "values": [
-          30.2
-        ]
-      },
-      30.2,
-      292,
-      967
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Philadelphia",
-      {
-        "type": "bar",
-        "values": [
-          49.9
-        ]
-      },
-      49.9,
-      32426,
-      64951
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      {
-        "type": "bar",
-        "values": [
-          33.3
-        ]
-      },
-      33.3,
-      320,
-      962
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Potter",
-      {
-        "type": "bar",
-        "values": [
-          22.5
-        ]
-      },
-      22.5,
-      116,
-      515
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Schuylkill",
-      {
-        "type": "bar",
-        "values": [
-          39.9
-        ]
-      },
-      39.9,
-      1902,
-      4763
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      {
-        "type": "bar",
-        "values": [
-          36.3
-        ]
-      },
-      36.3,
-      340,
-      937
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Somerset",
-      {
-        "type": "bar",
-        "values": [
-          25
-        ]
-      },
-      25,
-      455,
-      1821
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      {
-        "type": "bar",
-        "values": [
-          36.5
-        ]
-      },
-      36.5,
-      38,
-      104
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Susquehanna",
-      {
-        "type": "bar",
-        "values": [
-          39.4
-        ]
-      },
-      39.4,
-      291,
-      738
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Tioga",
-      {
-        "type": "bar",
-        "values": [
-          31.3
-        ]
-      },
-      31.3,
-      264,
-      843
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Union",
-      {
-        "type": "bar",
-        "values": [
-          25.6
-        ]
-      },
-      25.6,
-      174,
-      680
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Venango",
-      {
-        "type": "bar",
-        "values": [
-          38.4
-        ]
-      },
-      38.4,
-      552,
-      1436
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      {
-        "type": "bar",
-        "values": [
-          40.5
-        ]
-      },
-      40.5,
-      334,
-      825
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Washington",
-      {
-        "type": "bar",
-        "values": [
-          39.6
-        ]
-      },
-      39.6,
-      2448,
-      6183
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      {
-        "type": "bar",
-        "values": [
-          37.6
-        ]
-      },
-      37.6,
-      280,
-      744
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Westmoreland",
-      {
-        "type": "bar",
-        "values": [
-          31.7
-        ]
-      },
-      31.7,
-      3819,
-      12042
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      {
-        "type": "bar",
-        "values": [
-          35.5
-        ]
-      },
-      35.5,
-      344,
-      969
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "York",
-      {
-        "type": "bar",
-        "values": [
-          46.1
-        ]
-      },
-      46.1,
-      6313,
-      13701
-    ],
-    "outlier": false
-  }
-];
-
-export const PA_BAIL_CASES = 2482;
-export const PA_ROR_CASES = 1286;
-export const PA_TOTAL_CASES = 5721;
-export const PA_BAIL_RATE =  parseFloat((PA_BAIL_CASES / PA_TOTAL_CASES * 100).toFixed(1));
-export const PA_ROR_RATE = parseFloat((PA_ROR_CASES / PA_TOTAL_CASES * 100).toFixed(1));
-export const PA_AVG_BAIL_AMT = "$34.5K";
-
-export const ROR_RATE_DATA = [
-  {
-    "data": [
-      "Adams",
-      {
-        "type": "bar",
-        "values": [
-          25.4
-        ]
-      },
-      25.4,
-      578,
-      2280
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      {
-        "type": "bar",
-        "values": [
-          25.4
-        ]
-      },
-      25.4,
-      12075,
-      47473
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      {
-        "type": "bar",
-        "values": [
-          42.7
-        ]
-      },
-      42.7,
-      755,
-      1770
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      {
-        "type": "bar",
-        "values": [
-          34.1
-        ]
-      },
-      34.1,
-      1967,
-      5765
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      {
-        "type": "bar",
-        "values": [
-          1.9
-        ]
-      },
-      1.9,
-      27,
-      1392
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Berks",
-      {
-        "type": "bar",
-        "values": [
-          15.1
-        ]
-      },
-      15.1,
-      1709,
-      11330
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      {
-        "type": "bar",
-        "values": [
-          0.4
-        ]
-      },
-      0.4,
-      19,
-      4298
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      {
-        "type": "bar",
-        "values": [
-          11.6
-        ]
-      },
-      11.6,
-      206,
-      1773
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bucks",
-      {
-        "type": "bar",
-        "values": [
-          15.9
-        ]
-      },
-      15.9,
-      2201,
-      13830
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      {
-        "type": "bar",
-        "values": [
-          49.0
-        ]
-      },
-      49.0,
-      2511,
-      5123
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      {
-        "type": "bar",
-        "values": [
-          20.7
-        ]
-      },
-      20.7,
-      910,
-      4395
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      {
-        "type": "bar",
-        "values": [
-          0.0
-        ]
-      },
-      0.0,
-      0,
-      136
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Carbon",
-      {
-        "type": "bar",
-        "values": [
-          14.2
-        ]
-      },
-      14.2,
-      396,
-      2780
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      {
-        "type": "bar",
-        "values": [
-          61.6
-        ]
-      },
-      61.6,
-      1963,
-      3185
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      {
-        "type": "bar",
-        "values": [
-          20.8
-        ]
-      },
-      20.8,
-      2068,
-      9932
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      {
-        "type": "bar",
-        "values": [
-          26.3
-        ]
-      },
-      26.3,
-      314,
-      1192
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clearfield",
-      {
-        "type": "bar",
-        "values": [
-          0.1
-        ]
-      },
-      0.1,
-      2,
-      1775
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clinton",
-      {
-        "type": "bar",
-        "values": [
-          13.0
-        ]
-      },
-      13.0,
-      157,
-      1212
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Columbia",
-      {
-        "type": "bar",
-        "values": [
-          21.4
-        ]
-      },
-      21.4,
-      326,
-      1526
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      {
-        "type": "bar",
-        "values": [
-          43.0
-        ]
-      },
-      43.0,
-      841,
-      1954
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      {
-        "type": "bar",
-        "values": [
-          39.2
-        ]
-      },
-      39.2,
-      2614,
-      6674
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      {
-        "type": "bar",
-        "values": [
-          19.0
-        ]
-      },
-      19.0,
-      2329,
-      12269
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      {
-        "type": "bar",
-        "values": [
-          0.1
-        ]
-      },
-      0.1,
-      18,
-      17059
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      {
-        "type": "bar",
-        "values": [
-          0.0
-        ]
-      },
-      0.0,
-      0,
-      797
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Erie",
-      {
-        "type": "bar",
-        "values": [
-          33.4
-        ]
-      },
-      33.4,
-      2244,
-      6716
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      {
-        "type": "bar",
-        "values": [
-          0.1
-        ]
-      },
-      0.1,
-      5,
-      5007
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      {
-        "type": "bar",
-        "values": [
-          12.6
-        ]
-      },
-      12.6,
-      19,
-      151
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Franklin",
-      {
-        "type": "bar",
-        "values": [
-          50.4
-        ]
-      },
-      50.4,
-      2227,
-      4421
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      {
-        "type": "bar",
-        "values": [
-          51.8
-        ]
-      },
-      51.8,
-      207,
-      400
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Greene",
-      {
-        "type": "bar",
-        "values": [
-          24.3
-        ]
-      },
-      24.3,
-      194,
-      797
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Huntingdon",
-      {
-        "type": "bar",
-        "values": [
-          30.0
-        ]
-      },
-      30.0,
-      386,
-      1287
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      {
-        "type": "bar",
-        "values": [
-          23.2
-        ]
-      },
-      23.2,
-      510,
-      2196
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      {
-        "type": "bar",
-        "values": [
-          0.1
-        ]
-      },
-      0.1,
-      1,
-      1086
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Juniata",
-      {
-        "type": "bar",
-        "values": [
-          19.5
-        ]
-      },
-      19.5,
-      90,
-      462
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lackawanna",
-      {
-        "type": "bar",
-        "values": [
-          1.8
-        ]
-      },
-      1.8,
-      108,
-      6021
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      {
-        "type": "bar",
-        "values": [
-          14.6
-        ]
-      },
-      14.6,
-      1830,
-      12510
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      {
-        "type": "bar",
-        "values": [
-          22.1
-        ]
-      },
-      22.1,
-      488,
-      2204
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      {
-        "type": "bar",
-        "values": [
-          0.3
-        ]
-      },
-      0.3,
-      11,
-      3890
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      {
-        "type": "bar",
-        "values": [
-          8.4
-        ]
-      },
-      8.4,
-      897,
-      10715
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      {
-        "type": "bar",
-        "values": [
-          30.7
-        ]
-      },
-      30.7,
-      2883,
-      9392
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      {
-        "type": "bar",
-        "values": [
-          0.3
-        ]
-      },
-      0.3,
-      10,
-      3963
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      {
-        "type": "bar",
-        "values": [
-          5.0
-        ]
-      },
-      5.0,
-      58,
-      1150
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mercer",
-      {
-        "type": "bar",
-        "values": [
-          11.5
-        ]
-      },
-      11.5,
-      502,
-      4349
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      {
-        "type": "bar",
-        "values": [
-          0.4
-        ]
-      },
-      0.4,
-      5,
-      1375
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      {
-        "type": "bar",
-        "values": [
-          17.6
-        ]
-      },
-      17.6,
-      972,
-      5537
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      {
-        "type": "bar",
-        "values": [
-          15.3
-        ]
-      },
-      15.3,
-      2664,
-      17417
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      {
-        "type": "bar",
-        "values": [
-          41.3
-        ]
-      },
-      41.3,
-      105,
-      254
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northampton",
-      {
-        "type": "bar",
-        "values": [
-          8.3
-        ]
-      },
-      8.3,
-      547,
-      6591
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      {
-        "type": "bar",
-        "values": [
-          11.8
-        ]
-      },
-      11.8,
-      274,
-      2325
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      {
-        "type": "bar",
-        "values": [
-          42.7
-        ]
-      },
-      42.7,
-      413,
-      967
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Philadelphia",
-      {
-        "type": "bar",
-        "values": [
-          34.3
-        ]
-      },
-      34.3,
-      22281,
-      64951
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      {
-        "type": "bar",
-        "values": [
-          28.9
-        ]
-      },
-      28.9,
-      278,
-      962
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Potter",
-      {
-        "type": "bar",
-        "values": [
-          15.9
-        ]
-      },
-      15.9,
-      82,
-      515
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Schuylkill",
-      {
-        "type": "bar",
-        "values": [
-          11.3
-        ]
-      },
-      11.3,
-      537,
-      4763
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      {
-        "type": "bar",
-        "values": [
-          3.8
-        ]
-      },
-      3.8,
-      36,
-      937
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Somerset",
-      {
-        "type": "bar",
-        "values": [
-          2.5
-        ]
-      },
-      2.5,
-      45,
-      1821
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      {
-        "type": "bar",
-        "values": [
-          1.9
-        ]
-      },
-      1.9,
-      2,
-      104
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Susquehanna",
-      {
-        "type": "bar",
-        "values": [
-          26.2
-        ]
-      },
-      26.2,
-      193,
-      738
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Tioga",
-      {
-        "type": "bar",
-        "values": [
-          0.0
-        ]
-      },
-      0.0,
-      0,
-      843
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Union",
-      {
-        "type": "bar",
-        "values": [
-          48.8
-        ]
-      },
-      48.8,
-      332,
-      680
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Venango",
-      {
-        "type": "bar",
-        "values": [
-          0.1
-        ]
-      },
-      0.1,
-      2,
-      1436
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      {
-        "type": "bar",
-        "values": [
-          41.3
-        ]
-      },
-      41.3,
-      341,
-      825
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Washington",
-      {
-        "type": "bar",
-        "values": [
-          26.1
-        ]
-      },
-      26.1,
-      1613,
-      6183
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      {
-        "type": "bar",
-        "values": [
-          34.3
-        ]
-      },
-      34.3,
-      255,
-      744
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Westmoreland",
-      {
-        "type": "bar",
-        "values": [
-          32.8
-        ]
-      },
-      32.8,
-      3945,
-      12042
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      {
-        "type": "bar",
-        "values": [
-          0.2
-        ]
-      },
-      0.2,
-      2,
-      969
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "York",
-      {
-        "type": "bar",
-        "values": [
-          33.3
-        ]
-      },
-      33.3,
-      4569,
-      13701
-    ],
-    "outlier": false
-  }
-];
-
-
-export const BAIL_RACE_RATE_DATA = [
-  {
-    "data": [
-      "Adams",
-      44.3,
-      30.2,
-      {
-        "type": "line",
-        "values": [
-          44.3,
-          30.2
-        ]
-      },
-      "+14.1%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      52.5,
-      35,
-      {
-        "type": "line",
-        "values": [
-          52.5,
-          35
-        ]
-      },
-      "+17.5%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      62.3,
-      40.1,
-      {
-        "type": "line",
-        "values": [
-          62.3,
-          40.1
-        ]
-      },
-      "+22.2%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      65.3,
-      46.1,
-      {
-        "type": "line",
-        "values": [
-          65.3,
-          46.1
-        ]
-      },
-      "+19.2%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      55.8,
-      36,
-      {
-        "type": "line",
-        "values": [
-          55.8,
-          36
-        ]
-      },
-      "+19.8%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Berks",
-      58.5,
-      50.1,
-      {
-        "type": "line",
-        "values": [
-          58.5,
-          50.1
-        ]
-      },
-      "+8.4%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      53.8,
-      29.1,
-      {
-        "type": "line",
-        "values": [
-          53.8,
-          29.1
-        ]
-      },
-      "+24.7%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      61.5,
-      45.6,
-      {
-        "type": "line",
-        "values": [
-          61.5,
-          45.6
-        ]
-      },
-      "+16.0%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Bucks",
-      45.6,
-      32.7,
-      {
-        "type": "line",
-        "values": [
-          45.6,
-          32.7
-        ]
-      },
-      "+12.9%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      59.4,
-      33.1,
-      {
-        "type": "line",
-        "values": [
-          59.4,
-          33.1
-        ]
-      },
-      "+26.3%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      66.4,
-      39.8,
-      {
-        "type": "line",
-        "values": [
-          66.4,
-          39.8
-        ]
-      },
-      "+26.5%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      100,
-      26.2,
-      {
-        "type": "line",
-        "values": [
-          100,
-          26.2
-        ]
-      },
-      "+73.8%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Carbon",
-      47.5,
-      32,
-      {
-        "type": "line",
-        "values": [
-          47.5,
-          32
-        ]
-      },
-      "+15.5%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      49,
-      22.8,
-      {
-        "type": "line",
-        "values": [
-          49,
-          22.8
-        ]
-      },
-      "+26.2%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      49,
-      34.3,
-      {
-        "type": "line",
-        "values": [
-          49,
-          34.3
-        ]
-      },
-      "+14.7%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      39.7,
-      40.4,
-      {
-        "type": "line",
-        "values": [
-          39.7,
-          40.4
-        ]
-      },
-      "-0.7%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Clearfield",
-      65.7,
-      36.2,
-      {
-        "type": "line",
-        "values": [
-          65.7,
-          36.2
-        ]
-      },
-      "+29.5%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Clinton",
-      39.8,
-      33.1,
-      {
-        "type": "line",
-        "values": [
-          39.8,
-          33.1
-        ]
-      },
-      "+6.7%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Columbia",
-      42.9,
-      41.2,
-      {
-        "type": "line",
-        "values": [
-          42.9,
-          41.2
-        ]
-      },
-      "+1.7%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      55.1,
-      34.1,
-      {
-        "type": "line",
-        "values": [
-          55.1,
-          34.1
-        ]
-      },
-      "+21.0%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      55.1,
-      37.6,
-      {
-        "type": "line",
-        "values": [
-          55.1,
-          37.6
-        ]
-      },
-      "+17.6%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      53.7,
-      37.9,
-      {
-        "type": "line",
-        "values": [
-          53.7,
-          37.9
-        ]
-      },
-      "+15.8%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      64.2,
-      48.6,
-      {
-        "type": "line",
-        "values": [
-          64.2,
-          48.6
-        ]
-      },
-      "+15.6%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      29.4,
-      28.7,
-      {
-        "type": "line",
-        "values": [
-          29.4,
-          28.7
-        ]
-      },
-      "+0.7%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Erie",
-      67.8,
-      39.4,
-      {
-        "type": "line",
-        "values": [
-          67.8,
-          39.4
-        ]
-      },
-      "+28.4%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      54.2,
-      43,
-      {
-        "type": "line",
-        "values": [
-          54.2,
-          43
-        ]
-      },
-      "+11.2%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      88.9,
-      31.3,
-      {
-        "type": "line",
-        "values": [
-          88.9,
-          31.3
-        ]
-      },
-      "+57.6%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Franklin",
-      49.5,
-      35.1,
-      {
-        "type": "line",
-        "values": [
-          49.5,
-          35.1
-        ]
-      },
-      "+14.4%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      28.6,
-      29.1,
-      {
-        "type": "line",
-        "values": [
-          28.6,
-          29.1
-        ]
-      },
-      "-0.5%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Greene",
-      58.3,
-      39.7,
-      {
-        "type": "line",
-        "values": [
-          58.3,
-          39.7
-        ]
-      },
-      "+18.6%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Huntingdon",
-      64.8,
-      37,
-      {
-        "type": "line",
-        "values": [
-          64.8,
-          37
-        ]
-      },
-      "+27.9%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      49.4,
-      39.3,
-      {
-        "type": "line",
-        "values": [
-          49.4,
-          39.3
-        ]
-      },
-      "+10.0%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      69.7,
-      38.4,
-      {
-        "type": "line",
-        "values": [
-          69.7,
-          38.4
-        ]
-      },
-      "+31.3%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Juniata",
-      43.8,
-      36.6,
-      {
-        "type": "line",
-        "values": [
-          43.8,
-          36.6
-        ]
-      },
-      "+7.2%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Lackawanna",
-      66.7,
-      49.1,
-      {
-        "type": "line",
-        "values": [
-          66.7,
-          49.1
-        ]
-      },
-      "+17.6%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      55.3,
-      43.4,
-      {
-        "type": "line",
-        "values": [
-          55.3,
-          43.4
-        ]
-      },
-      "+11.9%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      68.8,
-      45.2,
-      {
-        "type": "line",
-        "values": [
-          68.8,
-          45.2
-        ]
-      },
-      "+23.6%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      51.1,
-      37.1,
-      {
-        "type": "line",
-        "values": [
-          51.1,
-          37.1
-        ]
-      },
-      "+14.0%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      62.5,
-      54.6,
-      {
-        "type": "line",
-        "values": [
-          62.5,
-          54.6
-        ]
-      },
-      "+7.9%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      57.8,
-      36.9,
-      {
-        "type": "line",
-        "values": [
-          57.8,
-          36.9
-        ]
-      },
-      "+20.9%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      55.9,
-      27.7,
-      {
-        "type": "line",
-        "values": [
-          55.9,
-          27.7
-        ]
-      },
-      "+28.2%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      60.6,
-      41.3,
-      {
-        "type": "line",
-        "values": [
-          60.6,
-          41.3
-        ]
-      },
-      "+19.3%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Mercer",
-      45.6,
-      32.6,
-      {
-        "type": "line",
-        "values": [
-          45.6,
-          32.6
-        ]
-      },
-      "+13.0%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      70.2,
-      47,
-      {
-        "type": "line",
-        "values": [
-          70.2,
-          47
-        ]
-      },
-      "+23.3%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      36.2,
-      33.2,
-      {
-        "type": "line",
-        "values": [
-          36.2,
-          33.2
-        ]
-      },
-      "+3.0%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      48.7,
-      31.9,
-      {
-        "type": "line",
-        "values": [
-          48.7,
-          31.9
-        ]
-      },
-      "+16.8%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      47.8,
-      35,
-      {
-        "type": "line",
-        "values": [
-          47.8,
-          35
-        ]
-      },
-      "+12.8%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Northampton",
-      60.1,
-      48.7,
-      {
-        "type": "line",
-        "values": [
-          60.1,
-          48.7
-        ]
-      },
-      "+11.4%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      59.1,
-      35.4,
-      {
-        "type": "line",
-        "values": [
-          59.1,
-          35.4
-        ]
-      },
-      "+23.7%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      44.3,
-      28.7,
-      {
-        "type": "line",
-        "values": [
-          44.3,
-          28.7
-        ]
-      },
-      "+15.6%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Philadelphia",
-      55.8,
-      43.1,
-      {
-        "type": "line",
-        "values": [
-          55.8,
-          43.1
-        ]
-      },
-      "+12.7%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      38.6,
-      33.1,
-      {
-        "type": "line",
-        "values": [
-          38.6,
-          33.1
-        ]
-      },
-      "+5.5%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Potter",
-      80,
-      22.5,
-      {
-        "type": "line",
-        "values": [
-          80,
-          22.5
-        ]
-      },
-      "+57.5%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Schuylkill",
-      48.8,
-      39.4,
-      {
-        "type": "line",
-        "values": [
-          48.8,
-          39.4
-        ]
-      },
-      "+9.3%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      52.2,
-      35,
-      {
-        "type": "line",
-        "values": [
-          52.2,
-          35
-        ]
-      },
-      "+17.1%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Somerset",
-      70.6,
-      23.1,
-      {
-        "type": "line",
-        "values": [
-          70.6,
-          23.1
-        ]
-      },
-      "+47.5%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      62.5,
-      32.6,
-      {
-        "type": "line",
-        "values": [
-          62.5,
-          32.6
-        ]
-      },
-      "+29.9%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Susquehanna",
-      65,
-      38.9,
-      {
-        "type": "line",
-        "values": [
-          65,
-          38.9
-        ]
-      },
-      "+26.1%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Tioga",
-      53.6,
-      30.4,
-      {
-        "type": "line",
-        "values": [
-          53.6,
-          30.4
-        ]
-      },
-      "+23.1%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Union",
-      38.2,
-      23.5,
-      {
-        "type": "line",
-        "values": [
-          38.2,
-          23.5
-        ]
-      },
-      "+14.6%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Venango",
-      63.6,
-      36,
-      {
-        "type": "line",
-        "values": [
-          63.6,
-          36
-        ]
-      },
-      "+27.6%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      68.4,
-      39.9,
-      {
-        "type": "line",
-        "values": [
-          68.4,
-          39.9
-        ]
-      },
-      "+28.5%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Washington",
-      56.8,
-      36.5,
-      {
-        "type": "line",
-        "values": [
-          56.8,
-          36.5
-        ]
-      },
-      "+20.3%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      60,
-      36.1,
-      {
-        "type": "line",
-        "values": [
-          60,
-          36.1
-        ]
-      },
-      "+23.9%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Westmoreland",
-      49.6,
-      28.8,
-      {
-        "type": "line",
-        "values": [
-          49.6,
-          28.8
-        ]
-      },
-      "+20.8%"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      43.5,
-      35.4,
-      {
-        "type": "line",
-        "values": [
-          43.5,
-          35.4
-        ]
-      },
-      "+8.1%"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "York",
-      56.9,
-      42.7,
-      {
-        "type": "line",
-        "values": [
-          56.9,
-          42.7
-        ]
-      },
-      "+14.2%"
-    ],
-    "outlier": false
-  }
-];
-
-export const BAIL_RACE_AMOUNT_DATA = [
-  {
-    "data": [
-      "Adams",
-      "$39.3K",
-      "$29.1K",
-      {
-        "type": "line",
-        "values": [
-          39303,
-          29095
-        ]
-      },
-      "+$10.2K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      "$18.8K",
-      "$13.9K",
-      {
-        "type": "line",
-        "values": [
-          18845,
-          13922
-        ]
-      },
-      "+$4.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      "$19.4K",
-      "$14.7K",
-      {
-        "type": "line",
-        "values": [
-          19380,
-          14657
-        ]
-      },
-      "+$4.7K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      "$32.0K",
-      "$16.0K",
-      {
-        "type": "line",
-        "values": [
-          32044,
-          15970
-        ]
-      },
-      "+$16.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      "$82.1K",
-      "$51.6K",
-      {
-        "type": "line",
-        "values": [
-          82146,
-          51606
-        ]
-      },
-      "+$30.5K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Berks",
-      "$41.5K",
-      "$35.4K",
-      {
-        "type": "line",
-        "values": [
-          41515,
-          35373
-        ]
-      },
-      "+$6.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      "$50.9K",
-      "$30.8K",
-      {
-        "type": "line",
-        "values": [
-          50874,
-          30765
-        ]
-      },
-      "+$20.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      "$68.1K",
-      "$34.3K",
-      {
-        "type": "line",
-        "values": [
-          68109,
-          34295
-        ]
-      },
-      "+$33.8K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Bucks",
-      "$87.4K",
-      "$73.9K",
-      {
-        "type": "line",
-        "values": [
-          87412,
-          73919
-        ]
-      },
-      "+$13.5K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      "$43.7K",
-      "$21.8K",
-      {
-        "type": "line",
-        "values": [
-          43726,
-          21801
-        ]
-      },
-      "+$21.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      "$58.4K",
-      "$32.6K",
-      {
-        "type": "line",
-        "values": [
-          58433,
-          32649
-        ]
-      },
-      "+$25.8K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      "$42.2K",
-      "$27.9K",
-      {
-        "type": "line",
-        "values": [
-          42175,
-          27852
-        ]
-      },
-      "+$14.3K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Carbon",
-      "$44.0K",
-      "$31.1K",
-      {
-        "type": "line",
-        "values": [
-          43984,
-          31084
-        ]
-      },
-      "+$12.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      "$56.8K",
-      "$46.9K",
-      {
-        "type": "line",
-        "values": [
-          56771,
-          46869
-        ]
-      },
-      "+$9.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      "$37.4K",
-      "$31.4K",
-      {
-        "type": "line",
-        "values": [
-          37417,
-          31421
-        ]
-      },
-      "+$6.0K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      "$14.1K",
-      "$24.0K",
-      {
-        "type": "line",
-        "values": [
-          14104,
-          24034
-        ]
-      },
-      "-$9.9K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Clearfield",
-      "$59.5K",
-      "$27.2K",
-      {
-        "type": "line",
-        "values": [
-          59500,
-          27241
-        ]
-      },
-      "+$32.3K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Clinton",
-      "$30.6K",
-      "$28.1K",
-      {
-        "type": "line",
-        "values": [
-          30579,
-          28093
-        ]
-      },
-      "+$2.5K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Columbia",
-      "$60.9K",
-      "$34.3K",
-      {
-        "type": "line",
-        "values": [
-          60938,
-          34291
-        ]
-      },
-      "+$26.6K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      "$29.8K",
-      "$26.3K",
-      {
-        "type": "line",
-        "values": [
-          29782,
-          26269
-        ]
-      },
-      "+$3.5K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      "$35.4K",
-      "$25.4K",
-      {
-        "type": "line",
-        "values": [
-          35424,
-          25383
-        ]
-      },
-      "+$10.0K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      "$45.9K",
-      "$40.0K",
-      {
-        "type": "line",
-        "values": [
-          45890,
-          40000
-        ]
-      },
-      "+$5.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      "$52.7K",
-      "$35.6K",
-      {
-        "type": "line",
-        "values": [
-          52748,
-          35606
-        ]
-      },
-      "+$17.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      "$17.5K",
-      "$29.5K",
-      {
-        "type": "line",
-        "values": [
-          17460,
-          29516
-        ]
-      },
-      "-$12.1K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Erie",
-      "$41.0K",
-      "$26.8K",
-      {
-        "type": "line",
-        "values": [
-          41009,
-          26793
-        ]
-      },
-      "+$14.2K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      "$29.7K",
-      "$20.2K",
-      {
-        "type": "line",
-        "values": [
-          29696,
-          20177
-        ]
-      },
-      "+$9.5K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      "$27.4K",
-      "$27.1K",
-      {
-        "type": "line",
-        "values": [
-          27375,
-          27087
-        ]
-      },
-      "+$0.3K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Franklin",
-      "$65.1K",
-      "$64.3K",
-      {
-        "type": "line",
-        "values": [
-          65076,
-          64310
-        ]
-      },
-      "+$0.8K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      "$38.0K",
-      "$69.3K",
-      {
-        "type": "line",
-        "values": [
-          38000,
-          69271
-        ]
-      },
-      "-$31.3K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Greene",
-      "$21.0K",
-      "$18.3K",
-      {
-        "type": "line",
-        "values": [
-          21024,
-          18310
-        ]
-      },
-      "+$2.7K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Huntingdon",
-      "$24.3K",
-      "$21.8K",
-      {
-        "type": "line",
-        "values": [
-          24255,
-          21800
-        ]
-      },
-      "+$2.5K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      "$28.7K",
-      "$15.4K",
-      {
-        "type": "line",
-        "values": [
-          28699,
-          15396
-        ]
-      },
-      "+$13.3K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      "$79.6K",
-      "$51.4K",
-      {
-        "type": "line",
-        "values": [
-          79565,
-          51413
-        ]
-      },
-      "+$28.2K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Juniata",
-      "$39.1K",
-      "$26.8K",
-      {
-        "type": "line",
-        "values": [
-          39071,
-          26784
-        ]
-      },
-      "+$12.3K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Lackawanna",
-      "$43.9K",
-      "$29.3K",
-      {
-        "type": "line",
-        "values": [
-          43937,
-          29252
-        ]
-      },
-      "+$14.7K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      "$66.0K",
-      "$55.2K",
-      {
-        "type": "line",
-        "values": [
-          66013,
-          55177
-        ]
-      },
-      "+$10.8K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      "$31.0K",
-      "$16.5K",
-      {
-        "type": "line",
-        "values": [
-          30966,
-          16482
-        ]
-      },
-      "+$14.5K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      "$67.5K",
-      "$33.6K",
-      {
-        "type": "line",
-        "values": [
-          67515,
-          33646
-        ]
-      },
-      "+$33.9K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      "$27.3K",
-      "$22.2K",
-      {
-        "type": "line",
-        "values": [
-          27318,
-          22188
-        ]
-      },
-      "+$5.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      "$52.2K",
-      "$36.2K",
-      {
-        "type": "line",
-        "values": [
-          52198,
-          36195
-        ]
-      },
-      "+$16.0K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      "$85.7K",
-      "$43.3K",
-      {
-        "type": "line",
-        "values": [
-          85748,
-          43320
-        ]
-      },
-      "+$42.4K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      "$35.9K",
-      "$24.7K",
-      {
-        "type": "line",
-        "values": [
-          35930,
-          24743
-        ]
-      },
-      "+$11.2K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Mercer",
-      "$33.5K",
-      "$25.7K",
-      {
-        "type": "line",
-        "values": [
-          33482,
-          25742
-        ]
-      },
-      "+$7.7K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      "$114.5K",
-      "$43.2K",
-      {
-        "type": "line",
-        "values": [
-          114475,
-          43166
-        ]
-      },
-      "+$71.3K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      "$38.3K",
-      "$27.1K",
-      {
-        "type": "line",
-        "values": [
-          38311,
-          27100
-        ]
-      },
-      "+$11.2K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      "$36.9K",
-      "$30.9K",
-      {
-        "type": "line",
-        "values": [
-          36939,
-          30935
-        ]
-      },
-      "+$6.0K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      "$39.5K",
-      "$39.2K",
-      {
-        "type": "line",
-        "values": [
-          39545,
-          39188
-        ]
-      },
-      "+$0.4K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Northampton",
-      "$42.9K",
-      "$26.6K",
-      {
-        "type": "line",
-        "values": [
-          42869,
-          26636
-        ]
-      },
-      "+$16.2K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      "$72.2K",
-      "$42.1K",
-      {
-        "type": "line",
-        "values": [
-          72182,
-          42108
-        ]
-      },
-      "+$30.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      "$49.4K",
-      "$24.2K",
-      {
-        "type": "line",
-        "values": [
-          49388,
-          24192
-        ]
-      },
-      "+$25.2K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Philadelphia",
-      "$65.1K",
-      "$56.4K",
-      {
-        "type": "line",
-        "values": [
-          65123,
-          56371
-        ]
-      },
-      "+$8.8K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      "$53.2K",
-      "$32.1K",
-      {
-        "type": "line",
-        "values": [
-          53193,
-          32148
-        ]
-      },
-      "+$21.0K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Potter",
-      "$33.6K",
-      "$23.5K",
-      {
-        "type": "line",
-        "values": [
-          33563,
-          23536
-        ]
-      },
-      "+$10.0K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Schuylkill",
-      "$37.6K",
-      "$24.2K",
-      {
-        "type": "line",
-        "values": [
-          37605,
-          24237
-        ]
-      },
-      "+$13.4K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      "$33.0K",
-      "$31.6K",
-      {
-        "type": "line",
-        "values": [
-          33049,
-          31632
-        ]
-      },
-      "+$1.4K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Somerset",
-      "$84.9K",
-      "$38.2K",
-      {
-        "type": "line",
-        "values": [
-          84933,
-          38188
-        ]
-      },
-      "+$46.7K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      "$8.0K",
-      "$20.5K",
-      {
-        "type": "line",
-        "values": [
-          8000,
-          20517
-        ]
-      },
-      "-$12.5K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Susquehanna",
-      "$43.3K",
-      "$29.5K",
-      {
-        "type": "line",
-        "values": [
-          43346,
-          29492
-        ]
-      },
-      "+$13.9K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Tioga",
-      "$49.3K",
-      "$33.6K",
-      {
-        "type": "line",
-        "values": [
-          49300,
-          33553
-        ]
-      },
-      "+$15.7K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Union",
-      "$45.6K",
-      "$28.0K",
-      {
-        "type": "line",
-        "values": [
-          45638,
-          28018
-        ]
-      },
-      "+$17.6K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Venango",
-      "$53.5K",
-      "$39.4K",
-      {
-        "type": "line",
-        "values": [
-          53476,
-          39361
-        ]
-      },
-      "+$14.1K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      "$49.8K",
-      "$30.1K",
-      {
-        "type": "line",
-        "values": [
-          49769,
-          30089
-        ]
-      },
-      "+$19.7K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Washington",
-      "$46.3K",
-      "$23.9K",
-      {
-        "type": "line",
-        "values": [
-          46258,
-          23939
-        ]
-      },
-      "+$22.3K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      "$28.6K",
-      "$36.4K",
-      {
-        "type": "line",
-        "values": [
-          28619,
-          36400
-        ]
-      },
-      "-$7.8K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "Westmoreland",
-      "$38.2K",
-      "$19.0K",
-      {
-        "type": "line",
-        "values": [
-          38193,
-          18989
-        ]
-      },
-      "+$19.2K"
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      "$39.0K",
-      "$28.8K",
-      {
-        "type": "line",
-        "values": [
-          39000,
-          28823
-        ]
-      },
-      "+$10.2K"
-    ],
-    "outlier": true
-  },
-  {
-    "data": [
-      "York",
-      "$37.1K",
-      "$23.3K",
-      {
-        "type": "line",
-        "values": [
-          37078,
-          23259
-        ]
-      },
-      "+$13.8K"
-    ],
-    "outlier": false
-  }
-];
-
-export const PA_AVG_BLACK_BAIL_RATE = 55.9;
-export const PA_AVG_WHITE_BAIL_RATE = 36.5;
-export const PA_AVG_RACE_BAIL_RATE_DIFF = "+19.4%"
-export const PA_BLACK_CASES = 45452;
-export const PA_WHITE_CASES = 31965;
-export const PA_AVG_BLACK_BAIL_AMT = "$45.5K";
-export const PA_AVG_WHITE_BAIL_AMT = "$32.0K";
-export const PA_AVG_RACE_BAIL_AMT_DIFF = "13.5K";
-
-export const RACE_SCATTER_PLOT = {
-  "Adams": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 44.3,
-      "white": 30.2
-    },
-    "y": {
-      "black": "$39,303",
-      "white": "$29,095"
-    }
-  },
-  "Allegheny": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 52.5,
-      "white": 35
-    },
-    "y": {
-      "black": "$18,845",
-      "white": "$13,922"
-    }
-  },
-  "Armstrong": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 62.3,
-      "white": 40.1
-    },
-    "y": {
-      "black": "$19,380",
-      "white": "$14,657"
-    }
-  },
-  "Beaver": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 65.3,
-      "white": 46.1
-    },
-    "y": {
-      "black": "$32,044",
-      "white": "$15,970"
-    }
-  },
-  "Bedford": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 55.8,
-      "white": 36
-    },
-    "y": {
-      "black": "$82,146",
-      "white": "$51,606"
-    }
-  },
-  "Berks": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 58.5,
-      "white": 50.1
-    },
-    "y": {
-      "black": "$41,515",
-      "white": "$35,373"
-    }
-  },
-  "Blair": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 53.8,
-      "white": 29.1
-    },
-    "y": {
-      "black": "$50,874",
-      "white": "$30,765"
-    }
-  },
-  "Bradford": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 61.5,
-      "white": 45.6
-    },
-    "y": {
-      "black": "$68,109",
-      "white": "$34,295"
-    }
-  },
-  "Bucks": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 45.6,
-      "white": 32.7
-    },
-    "y": {
-      "black": "$87,412",
-      "white": "$73,919"
-    }
-  },
-  "Butler": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 59.4,
-      "white": 33.1
-    },
-    "y": {
-      "black": "$43,726",
-      "white": "$21,801"
-    }
-  },
-  "Cambria": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 66.4,
-      "white": 39.8
-    },
-    "y": {
-      "black": "$58,433",
-      "white": "$32,649"
-    }
-  },
-  "Cameron": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 100,
-      "white": 26.2
-    },
-    "y": {
-      "black": "$42,175",
-      "white": "$27,852"
-    }
-  },
-  "Carbon": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 47.5,
-      "white": 32
-    },
-    "y": {
-      "black": "$43,984",
-      "white": "$31,084"
-    }
-  },
-  "Centre": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 49,
-      "white": 22.8
-    },
-    "y": {
-      "black": "$56,771",
-      "white": "$46,869"
-    }
-  },
-  "Chester": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 49,
-      "white": 34.3
-    },
-    "y": {
-      "black": "$37,417",
-      "white": "$31,421"
-    }
-  },
-  "Clarion": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 39.7,
-      "white": 40.4
-    },
-    "y": {
-      "black": "$14,104",
-      "white": "$24,034"
-    }
-  },
-  "Clearfield": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 65.7,
-      "white": 36.2
-    },
-    "y": {
-      "black": "$59,500",
-      "white": "$27,241"
-    }
-  },
-  "Clinton": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 39.8,
-      "white": 33.1
-    },
-    "y": {
-      "black": "$30,579",
-      "white": "$28,093"
-    }
-  },
-  "Columbia": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 42.9,
-      "white": 41.2
-    },
-    "y": {
-      "black": "$60,938",
-      "white": "$34,291"
-    }
-  },
-  "Crawford": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 55.1,
-      "white": 34.1
-    },
-    "y": {
-      "black": "$29,782",
-      "white": "$26,269"
-    }
-  },
-  "Cumberland": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 55.1,
-      "white": 37.6
-    },
-    "y": {
-      "black": "$35,424",
-      "white": "$25,383"
-    }
-  },
-  "Dauphin": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 53.7,
-      "white": 37.9
-    },
-    "y": {
-      "black": "$45,890",
-      "white": "$40,000"
-    }
-  },
-  "Delaware": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 64.2,
-      "white": 48.6
-    },
-    "y": {
-      "black": "$52,748",
-      "white": "$35,606"
-    }
-  },
-  "Elk": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 29.4,
-      "white": 28.7
-    },
-    "y": {
-      "black": "$17,460",
-      "white": "$29,516"
-    }
-  },
-  "Erie": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 67.8,
-      "white": 39.4
-    },
-    "y": {
-      "black": "$41,009",
-      "white": "$26,793"
-    }
-  },
-  "Fayette": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 54.2,
-      "white": 43
-    },
-    "y": {
-      "black": "$29,696",
-      "white": "$20,177"
-    }
-  },
-  "Forest": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 88.9,
-      "white": 31.3
-    },
-    "y": {
-      "black": "$27,375",
-      "white": "$27,087"
-    }
-  },
-  "Franklin": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 49.5,
-      "white": 35.1
-    },
-    "y": {
-      "black": "$65,076",
-      "white": "$64,310"
-    }
-  },
-  "Fulton": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 28.6,
-      "white": 29.1
-    },
-    "y": {
-      "black": "$38,000",
-      "white": "$69,271"
-    }
-  },
-  "Greene": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 58.3,
-      "white": 39.7
-    },
-    "y": {
-      "black": "$21,024",
-      "white": "$18,310"
-    }
-  },
-  "Huntingdon": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 64.8,
-      "white": 37
-    },
-    "y": {
-      "black": "$24,255",
-      "white": "$21,800"
-    }
-  },
-  "Indiana": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 49.4,
-      "white": 39.3
-    },
-    "y": {
-      "black": "$28,699",
-      "white": "$15,396"
-    }
-  },
-  "Jefferson": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 69.7,
-      "white": 38.4
-    },
-    "y": {
-      "black": "$79,565",
-      "white": "$51,413"
-    }
-  },
-  "Juniata": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 43.8,
-      "white": 36.6
-    },
-    "y": {
-      "black": "$39,071",
-      "white": "$26,784"
-    }
-  },
-  "Lackawanna": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 66.7,
-      "white": 49.1
-    },
-    "y": {
-      "black": "$43,937",
-      "white": "$29,252"
-    }
-  },
-  "Lancaster": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 55.3,
-      "white": 43.4
-    },
-    "y": {
-      "black": "$66,013",
-      "white": "$55,177"
-    }
-  },
-  "Lawrence": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 68.8,
-      "white": 45.2
-    },
-    "y": {
-      "black": "$30,966",
-      "white": "$16,482"
-    }
-  },
-  "Lebanon": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 51.1,
-      "white": 37.1
-    },
-    "y": {
-      "black": "$67,515",
-      "white": "$33,646"
-    }
-  },
-  "Lehigh": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 62.5,
-      "white": 54.6
-    },
-    "y": {
-      "black": "$27,318",
-      "white": "$22,188"
-    }
-  },
-  "Luzerne": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 57.8,
-      "white": 36.9
-    },
-    "y": {
-      "black": "$52,198",
-      "white": "$36,195"
-    }
-  },
-  "Lycoming": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 55.9,
-      "white": 27.7
-    },
-    "y": {
-      "black": "$85,748",
-      "white": "$43,320"
-    }
-  },
-  "McKean": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 60.6,
-      "white": 41.3
-    },
-    "y": {
-      "black": "$35,930",
-      "white": "$24,743"
-    }
-  },
-  "Mercer": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 45.6,
-      "white": 32.6
-    },
-    "y": {
-      "black": "$33,482",
-      "white": "$25,742"
-    }
-  },
-  "Mifflin": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 70.2,
-      "white": 47
-    },
-    "y": {
-      "black": "$114,475",
-      "white": "$43,166"
-    }
-  },
-  "Monroe": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 36.2,
-      "white": 33.2
-    },
-    "y": {
-      "black": "$38,311",
-      "white": "$27,100"
-    }
-  },
-  "Montgomery": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 48.7,
-      "white": 31.9
-    },
-    "y": {
-      "black": "$36,939",
-      "white": "$30,935"
-    }
-  },
-  "Montour": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 47.8,
-      "white": 35
-    },
-    "y": {
-      "black": "$39,545",
-      "white": "$39,188"
-    }
-  },
-  "Northampton": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 60.1,
-      "white": 48.7
-    },
-    "y": {
-      "black": "$42,869",
-      "white": "$26,636"
-    }
-  },
-  "Northumberland": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 59.1,
-      "white": 35.4
-    },
-    "y": {
-      "black": "$72,182",
-      "white": "$42,108"
-    }
-  },
-  "Perry": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 44.3,
-      "white": 28.7
-    },
-    "y": {
-      "black": "$49,388",
-      "white": "$24,192"
-    }
-  },
-  "Philadelphia": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 55.8,
-      "white": 43.1
-    },
-    "y": {
-      "black": "$65,123",
-      "white": "$56,371"
-    }
-  },
-  "Pike": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 38.6,
-      "white": 33.1
-    },
-    "y": {
-      "black": "$53,193",
-      "white": "$32,148"
-    }
-  },
-  "Potter": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 80,
-      "white": 22.5
-    },
-    "y": {
-      "black": "$33,563",
-      "white": "$23,536"
-    }
-  },
-  "Schuylkill": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 48.8,
-      "white": 39.4
-    },
-    "y": {
-      "black": "$37,605",
-      "white": "$24,237"
-    }
-  },
-  "Snyder": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 52.2,
-      "white": 35
-    },
-    "y": {
-      "black": "$33,049",
-      "white": "$31,632"
-    }
-  },
-  "Somerset": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 70.6,
-      "white": 23.1
-    },
-    "y": {
-      "black": "$84,933",
-      "white": "$38,188"
-    }
-  },
-  "Sullivan": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 62.5,
-      "white": 32.6
-    },
-    "y": {
-      "black": "$8,000",
-      "white": "$20,517"
-    }
-  },
-  "Susquehanna": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 65,
-      "white": 38.9
-    },
-    "y": {
-      "black": "$43,346",
-      "white": "$29,492"
-    }
-  },
-  "Tioga": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 53.6,
-      "white": 30.4
-    },
-    "y": {
-      "black": "$49,300",
-      "white": "$33,553"
-    }
-  },
-  "Union": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 38.2,
-      "white": 23.5
-    },
-    "y": {
-      "black": "$45,638",
-      "white": "$28,018"
-    }
-  },
-  "Venango": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 63.6,
-      "white": 36
-    },
-    "y": {
-      "black": "$53,476",
-      "white": "$39,361"
-    }
-  },
-  "Warren": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 68.4,
-      "white": 39.9
-    },
-    "y": {
-      "black": "$49,769",
-      "white": "$30,089"
-    }
-  },
-  "Washington": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 56.8,
-      "white": 36.5
-    },
-    "y": {
-      "black": "$46,258",
-      "white": "$23,939"
-    }
-  },
-  "Wayne": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 60,
-      "white": 36.1
-    },
-    "y": {
-      "black": "$28,619",
-      "white": "$36,400"
-    }
-  },
-  "Westmoreland": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 49.6,
-      "white": 28.8
-    },
-    "y": {
-      "black": "$38,193",
-      "white": "$18,989"
-    }
-  },
-  "Wyoming": {
-    "showName": false,
-    "outlier": true,
-    "x": {
-      "black": 43.5,
-      "white": 35.4
-    },
-    "y": {
-      "black": "$39,000",
-      "white": "$28,823"
-    }
-  },
-  "York": {
-    "showName": false,
-    "outlier": false,
-    "x": {
-      "black": 56.9,
-      "white": 42.7
-    },
-    "y": {
-      "black": "$37,078",
-      "white": "$23,259"
-    }
-  },
-  "State Average": {
-    "showName": true,
-    "outlier": false,
-    "x": {
-      "black": PA_AVG_BLACK_BAIL_RATE,
-      "white": PA_AVG_WHITE_BAIL_RATE
-    },
-    "y": {
-      "black": "$45,452",
-      "white": "$31,965"
-    }
-  }
+export const STATE_DATA = {
+  "name": "Pennsylvania",
+  "nominal_pct": "",
+  "nonmonetary_pct": "",
+  "cash_bail_pct": 0.433842,
+  "ror_pct": 0.224746,
+  "unsecured_pct": "",
+  "total_cases": 383317,
+  "cash_bail_cases": 166299,
+  "ror_cases": 86149,
+  "avg_bail_amount": 34450.1196,
+  "non_posting_rate": 0.632, // TODO: should be more granular?
+  "cash_bail_pct_black": 0.559,
+  "cash_bail_cases_black": 63922,
+  "cash_bail_pct_white": 0.365,
+  "cash_bail_cases_white": 0, // TODO: need this datapoint
+  "bail_amount_black": 45452,
+  "bail_amount_white": 31965,
+  "is_outlier": false
 };
-
-export const BAIL_CASES_SCATTER_PLOT = {
-  "State Average": {
-    showName: true,
-    x: PA_BAIL_RATE,
-    y: PA_AVG_BAIL_AMT,
-    r: PA_TOTAL_CASES
-  },
-  "Adams": {
-    "showName": false,
-    "x": 31.3,
-    "r": 2280,
-    "y": "$30.4K"
-  },
-  "Allegheny": {
-    "showName": false,
-    "x": 42.6,
-    "r": 47473,
-    "y": "$16.8K"
-  },
-  "Armstrong": {
-    "showName": false,
-    "x": 41.5,
-    "r": 1770,
-    "y": "$15.1K"
-  },
-  "Beaver": {
-    "showName": false,
-    "x": 50.8,
-    "r": 5765,
-    "y": "$21.5K"
-  },
-  "Bedford": {
-    "showName": false,
-    "x": 37.4,
-    "r": 1392,
-    "y": "$54.8K"
-  },
-  "Berks": {
-    "showName": false,
-    "x": 50.9,
-    "r": 11330,
-    "y": "$36.0K"
-  },
-  "Blair": {
-    "showName": false,
-    "x": 30.8,
-    "r": 4298,
-    "y": "$33.4K"
-  },
-  "Bradford": {
-    "showName": false,
-    "x": 45.9,
-    "r": 1773,
-    "y": "$35.2K"
-  },
-  "Bucks": {
-    "showName": false,
-    "x": 34.9,
-    "r": 13830,
-    "y": "$77.5K"
-  },
-  "Butler": {
-    "showName": false,
-    "x": 35.5,
-    "r": 5123,
-    "y": "$25.6K"
-  },
-  "Cambria": {
-    "showName": false,
-    "x": 45.0,
-    "r": 4395,
-    "y": "$40.1K"
-  },
-  "Cameron": {
-    "showName": false,
-    "x": 22.1,
-    "r": 136,
-    "y": "$28.3K"
-  },
-  "Carbon": {
-    "showName": false,
-    "x": 32.9,
-    "r": 2780,
-    "y": "$32.5K"
-  },
-  "Centre": {
-    "showName": false,
-    "x": 27.3,
-    "r": 3185,
-    "y": "$51.7K"
-  },
-  "Chester": {
-    "showName": false,
-    "x": 38.3,
-    "r": 9932,
-    "y": "$33.6K"
-  },
-  "Clarion": {
-    "showName": false,
-    "x": 39.4,
-    "r": 1192,
-    "y": "$23.1K"
-  },
-  "Clearfield": {
-    "showName": false,
-    "x": 37.0,
-    "r": 1775,
-    "y": "$29.2K"
-  },
-  "Clinton": {
-    "showName": false,
-    "x": 33.3,
-    "r": 1212,
-    "y": "$28.5K"
-  },
-  "Columbia": {
-    "showName": false,
-    "x": 40.9,
-    "r": 1526,
-    "y": "$37.2K"
-  },
-  "Crawford": {
-    "showName": false,
-    "x": 35.6,
-    "r": 1954,
-    "y": "$26.7K"
-  },
-  "Cumberland": {
-    "showName": false,
-    "x": 41.1,
-    "r": 6674,
-    "y": "$27.9K"
-  },
-  "Dauphin": {
-    "showName": false,
-    "x": 44.2,
-    "r": 12269,
-    "y": "$43.2K"
-  },
-  "Delaware": {
-    "showName": false,
-    "x": 55.9,
-    "r": 17059,
-    "y": "$46.6K"
-  },
-  "Elk": {
-    "showName": false,
-    "x": 28.6,
-    "r": 797,
-    "y": "$29.3K"
-  },
-  "Erie": {
-    "showName": false,
-    "x": 47.1,
-    "r": 6716,
-    "y": "$32.5K"
-  },
-  "Fayette": {
-    "showName": false,
-    "x": 44.9,
-    "r": 5007,
-    "y": "$22.4K"
-  },
-  "Forest": {
-    "showName": false,
-    "x": 35.1,
-    "r": 151,
-    "y": "$27.8K"
-  },
-  "Franklin": {
-    "showName": false,
-    "x": 37.3,
-    "r": 4421,
-    "y": "$64.7K"
-  },
-  "Fulton": {
-    "showName": false,
-    "x": 28.3,
-    "r": 400,
-    "y": "$64.9K"
-  },
-  "Greene": {
-    "showName": false,
-    "x": 39.4,
-    "r": 797,
-    "y": "$19.0K"
-  },
-  "Huntingdon": {
-    "showName": false,
-    "x": 38.6,
-    "r": 1287,
-    "y": "$22.4K"
-  },
-  "Indiana": {
-    "showName": false,
-    "x": 40.7,
-    "r": 2196,
-    "y": "$17.6K"
-  },
-  "Jefferson": {
-    "showName": false,
-    "x": 38.7,
-    "r": 1086,
-    "y": "$52.8K"
-  },
-  "Juniata": {
-    "showName": false,
-    "x": 34.2,
-    "r": 462,
-    "y": "$27.0K"
-  },
-  "Lackawanna": {
-    "showName": false,
-    "x": 52.6,
-    "r": 6021,
-    "y": "$33.0K"
-  },
-  "Lancaster": {
-    "showName": false,
-    "x": 45.1,
-    "r": 12510,
-    "y": "$56.9K"
-  },
-  "Lawrence": {
-    "showName": false,
-    "x": 50.7,
-    "r": 2204,
-    "y": "$22.1K"
-  },
-  "Lebanon": {
-    "showName": false,
-    "x": 37.8,
-    "r": 3890,
-    "y": "$36.6K"
-  },
-  "Lehigh": {
-    "showName": false,
-    "x": 56.5,
-    "r": 10715,
-    "y": "$23.3K"
-  },
-  "Luzerne": {
-    "showName": false,
-    "x": 40.9,
-    "r": 9392,
-    "y": "$39.9K"
-  },
-  "Lycoming": {
-    "showName": false,
-    "x": 34.4,
-    "r": 3963,
-    "y": "$60.0K"
-  },
-  "McKean": {
-    "showName": false,
-    "x": 41.9,
-    "r": 1150,
-    "y": "$25.1K"
-  },
-  "Mercer": {
-    "showName": false,
-    "x": 35.7,
-    "r": 4349,
-    "y": "$28.1K"
-  },
-  "Mifflin": {
-    "showName": false,
-    "x": 48.1,
-    "r": 1375,
-    "y": "$49.4K"
-  },
-  "Monroe": {
-    "showName": false,
-    "x": 33.6,
-    "r": 5537,
-    "y": "$30.4K"
-  },
-  "Montgomery": {
-    "showName": false,
-    "x": 37.5,
-    "r": 17417,
-    "y": "$33.9K"
-  },
-  "Montour": {
-    "showName": false,
-    "x": 35.4,
-    "r": 254,
-    "y": "$38.9K"
-  },
-  "Northampton": {
-    "showName": false,
-    "x": 50.7,
-    "r": 6591,
-    "y": "$30.2K"
-  },
-  "Northumberland": {
-    "showName": false,
-    "x": 37.7,
-    "r": 2325,
-    "y": "$44.8K"
-  },
-  "Perry": {
-    "showName": false,
-    "x": 30.2,
-    "r": 967,
-    "y": "$27.1K"
-  },
-  "Philadelphia": {
-    "showName": false,
-    "x": 49.9,
-    "r": 64951,
-    "y": "$62.1K"
-  },
-  "Pike": {
-    "showName": false,
-    "x": 33.3,
-    "r": 962,
-    "y": "$34.7K"
-  },
-  "Potter": {
-    "showName": false,
-    "x": 22.5,
-    "r": 515,
-    "y": "$23.9K"
-  },
-  "Schuylkill": {
-    "showName": false,
-    "x": 39.9,
-    "r": 4763,
-    "y": "$25.2K"
-  },
-  "Snyder": {
-    "showName": false,
-    "x": 36.3,
-    "r": 937,
-    "y": "$31.7K"
-  },
-  "Somerset": {
-    "showName": false,
-    "x": 25.0,
-    "r": 1821,
-    "y": "$45.7K"
-  },
-  "Sullivan": {
-    "showName": false,
-    "x": 36.5,
-    "r": 104,
-    "y": "$18.3K"
-  },
-  "Susquehanna": {
-    "showName": false,
-    "x": 39.4,
-    "r": 738,
-    "y": "$29.5K"
-  },
-  "Tioga": {
-    "showName": false,
-    "x": 31.3,
-    "r": 843,
-    "y": "$34.4K"
-  },
-  "Union": {
-    "showName": false,
-    "x": 25.6,
-    "r": 680,
-    "y": "$31.4K"
-  },
-  "Venango": {
-    "showName": false,
-    "x": 38.4,
-    "r": 1436,
-    "y": "$41.6K"
-  },
-  "Warren": {
-    "showName": false,
-    "x": 40.5,
-    "r": 825,
-    "y": "$31.3K"
-  },
-  "Washington": {
-    "showName": false,
-    "x": 39.6,
-    "r": 6183,
-    "y": "$30.2K"
-  },
-  "Wayne": {
-    "showName": false,
-    "x": 37.6,
-    "r": 744,
-    "y": "$34.0K"
-  },
-  "Westmoreland": {
-    "showName": false,
-    "x": 31.7,
-    "r": 12042,
-    "y": "$23.5K"
-  },
-  "Wyoming": {
-    "showName": false,
-    "x": 35.5,
-    "r": 969,
-    "y": "$28.7K"
-  },
-  "York": {
-    "showName": false,
-    "x": 46.1,
-    "r": 13701,
-    "y": "$27.0K"
+export const COUNTY_DATA = [
+  {
+    "name": "Adams",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.149123,
+    "cash_bail_pct": 0.313158,
+    "ror_pct": 0.253509,
+    "unsecured_pct": 0.284211,
+    "total_cases": 2280,
+    "cash_bail_cases": 714,
+    "ror_cases": 578,
+    "avg_bail_amount": 30449.43978,
+    "non_posting_rate": 0.442577,
+    "cash_bail_pct_black": 0.442982,
+    "cash_bail_cases_black": 101,
+    "cash_bail_pct_white": 0.301849,
+    "bail_amount_black": 39302.9703,
+    "bail_amount_white": 29094.86755,
+    "is_outlier": false
+  },
+  {
+    "name": "Allegheny",
+    "nominal_pct": 0.000316,
+    "nonmonetary_pct": 0.292861,
+    "cash_bail_pct": 0.4258,
+    "ror_pct": 0.254355,
+    "unsecured_pct": 0.026668,
+    "total_cases": 47473,
+    "cash_bail_cases": 20214,
+    "ror_cases": 12075,
+    "avg_bail_amount": 16795.83635,
+    "non_posting_rate": 0.604878,
+    "cash_bail_pct_black": 0.525011,
+    "cash_bail_cases_black": 11031,
+    "cash_bail_pct_white": 0.349545,
+    "bail_amount_black": 18845.16218,
+    "bail_amount_white": 13921.65751,
+    "is_outlier": false
+  },
+  {
+    "name": "Armstrong",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.031073,
+    "cash_bail_pct": 0.415254,
+    "ror_pct": 0.426554,
+    "unsecured_pct": 0.127119,
+    "total_cases": 1770,
+    "cash_bail_cases": 735,
+    "ror_cases": 755,
+    "avg_bail_amount": 15099.45578,
+    "non_posting_rate": 0.563265,
+    "cash_bail_pct_black": 0.622807,
+    "cash_bail_cases_black": 71,
+    "cash_bail_pct_white": 0.401119,
+    "bail_amount_black": 19380.28169,
+    "bail_amount_white": 14656.74419,
+    "is_outlier": false
+  },
+  {
+    "name": "Beaver",
+    "nominal_pct": 0.000173,
+    "nonmonetary_pct": 0.020295,
+    "cash_bail_pct": 0.508413,
+    "ror_pct": 0.341197,
+    "unsecured_pct": 0.129922,
+    "total_cases": 5765,
+    "cash_bail_cases": 2931,
+    "ror_cases": 1967,
+    "avg_bail_amount": 21476.32446,
+    "non_posting_rate": 0.668031,
+    "cash_bail_pct_black": 0.653036,
+    "cash_bail_cases_black": 1054,
+    "cash_bail_pct_white": 0.460601,
+    "bail_amount_black": 32043.50285,
+    "bail_amount_white": 15969.64266,
+    "is_outlier": false
+  },
+  {
+    "name": "Bedford",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.373563,
+    "ror_pct": 0.019397,
+    "unsecured_pct": 0.60704,
+    "total_cases": 1392,
+    "cash_bail_cases": 520,
+    "ror_cases": 27,
+    "avg_bail_amount": 54775.96154,
+    "non_posting_rate": 0.713462,
+    "cash_bail_pct_black": 0.55814,
+    "cash_bail_cases_black": 48,
+    "cash_bail_pct_white": 0.360063,
+    "bail_amount_black": 82145.83333,
+    "bail_amount_white": 51605.8952,
+    "is_outlier": true
+  },
+  {
+    "name": "Berks",
+    "nominal_pct": 0.000265,
+    "nonmonetary_pct": 0.008826,
+    "cash_bail_pct": 0.508826,
+    "ror_pct": 0.150838,
+    "unsecured_pct": 0.331244,
+    "total_cases": 11330,
+    "cash_bail_cases": 5765,
+    "ror_cases": 1709,
+    "avg_bail_amount": 35951.36201,
+    "non_posting_rate": 0.571899,
+    "cash_bail_pct_black": 0.585288,
+    "cash_bail_cases_black": 1098,
+    "cash_bail_pct_white": 0.501453,
+    "bail_amount_black": 41514.57377,
+    "bail_amount_white": 35373.15496,
+    "is_outlier": false
+  },
+  {
+    "name": "Blair",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000698,
+    "cash_bail_pct": 0.30805,
+    "ror_pct": 0.004421,
+    "unsecured_pct": 0.686831,
+    "total_cases": 4298,
+    "cash_bail_cases": 1324,
+    "ror_cases": 19,
+    "avg_bail_amount": 33359.70544,
+    "non_posting_rate": 0.665408,
+    "cash_bail_pct_black": 0.538084,
+    "cash_bail_cases_black": 219,
+    "cash_bail_pct_white": 0.290748,
+    "bail_amount_black": 50874.42922,
+    "bail_amount_white": 30764.80111,
+    "is_outlier": false
+  },
+  {
+    "name": "Bradford",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.289904,
+    "cash_bail_pct": 0.459109,
+    "ror_pct": 0.116187,
+    "unsecured_pct": 0.1348,
+    "total_cases": 1773,
+    "cash_bail_cases": 814,
+    "ror_cases": 206,
+    "avg_bail_amount": 35212.04423,
+    "non_posting_rate": 0.89312,
+    "cash_bail_pct_black": 0.615385,
+    "cash_bail_cases_black": 32,
+    "cash_bail_pct_white": 0.455742,
+    "bail_amount_black": 68109.375,
+    "bail_amount_white": 34295.28084,
+    "is_outlier": true
+  },
+  {
+    "name": "Bucks",
+    "nominal_pct": 0.000145,
+    "nonmonetary_pct": 0.002386,
+    "cash_bail_pct": 0.348735,
+    "ror_pct": 0.159147,
+    "unsecured_pct": 0.489588,
+    "total_cases": 13830,
+    "cash_bail_cases": 4823,
+    "ror_cases": 2201,
+    "avg_bail_amount": 77461.73689,
+    "non_posting_rate": 0.50425,
+    "cash_bail_pct_black": 0.455865,
+    "cash_bail_cases_black": 1193,
+    "cash_bail_pct_white": 0.326778,
+    "bail_amount_black": 87411.6513,
+    "bail_amount_white": 73918.96991,
+    "is_outlier": false
+  },
+  {
+    "name": "Butler",
+    "nominal_pct": 0.005466,
+    "nonmonetary_pct": 0.086082,
+    "cash_bail_pct": 0.355261,
+    "ror_pct": 0.490142,
+    "unsecured_pct": 0.063049,
+    "total_cases": 5123,
+    "cash_bail_cases": 1820,
+    "ror_cases": 2511,
+    "avg_bail_amount": 25638.93736,
+    "non_posting_rate": 0.619231,
+    "cash_bail_pct_black": 0.593684,
+    "cash_bail_cases_black": 282,
+    "cash_bail_pct_white": 0.330989,
+    "bail_amount_black": 43726.24823,
+    "bail_amount_white": 21800.64011,
+    "is_outlier": false
+  },
+  {
+    "name": "Cambria",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000455,
+    "cash_bail_pct": 0.450057,
+    "ror_pct": 0.207053,
+    "unsecured_pct": 0.342435,
+    "total_cases": 4395,
+    "cash_bail_cases": 1978,
+    "ror_cases": 910,
+    "avg_bail_amount": 40106.82508,
+    "non_posting_rate": 0.427705,
+    "cash_bail_pct_black": 0.663657,
+    "cash_bail_cases_black": 588,
+    "cash_bail_pct_white": 0.398235,
+    "bail_amount_black": 58433.33333,
+    "bail_amount_white": 32649.18759,
+    "is_outlier": false
+  },
+  {
+    "name": "Cameron",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.220588,
+    "ror_pct": 0.000000,
+    "unsecured_pct": 0.779412,
+    "total_cases": 136,
+    "cash_bail_cases": 30,
+    "ror_cases": "0",
+    "avg_bail_amount": 28258.33333,
+    "non_posting_rate": 0.566667,
+    "cash_bail_pct_black": 1,
+    "cash_bail_cases_black": 2,
+    "cash_bail_pct_white": 0.262136,
+    "bail_amount_black": 42175,
+    "bail_amount_white": 27851.85185,
+    "is_outlier": true
+  },
+  {
+    "name": "Carbon",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.328777,
+    "ror_pct": 0.142446,
+    "unsecured_pct": 0.528777,
+    "total_cases": 2780,
+    "cash_bail_cases": 914,
+    "ror_cases": 396,
+    "avg_bail_amount": 32519.26696,
+    "non_posting_rate": 0.5186,
+    "cash_bail_pct_black": 0.475,
+    "cash_bail_cases_black": 95,
+    "cash_bail_pct_white": 0.319692,
+    "bail_amount_black": 43984.21053,
+    "bail_amount_white": 31083.78961,
+    "is_outlier": false
+  },
+  {
+    "name": "Centre",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000314,
+    "cash_bail_pct": 0.272527,
+    "ror_pct": 0.616327,
+    "unsecured_pct": 0.110832,
+    "total_cases": 3185,
+    "cash_bail_cases": 868,
+    "ror_cases": 1963,
+    "avg_bail_amount": 51739.7477,
+    "non_posting_rate": 0.665899,
+    "cash_bail_pct_black": 0.489796,
+    "cash_bail_cases_black": 240,
+    "cash_bail_pct_white": 0.227858,
+    "bail_amount_black": 56770.83333,
+    "bail_amount_white": 46869.4364,
+    "is_outlier": false
+  },
+  {
+    "name": "Chester",
+    "nominal_pct": 0.010471,
+    "nonmonetary_pct": 0.000201,
+    "cash_bail_pct": 0.383206,
+    "ror_pct": 0.208216,
+    "unsecured_pct": 0.397906,
+    "total_cases": 9932,
+    "cash_bail_cases": 3806,
+    "ror_cases": 2068,
+    "avg_bail_amount": 33629.82974,
+    "non_posting_rate": 0.516816,
+    "cash_bail_pct_black": 0.490007,
+    "cash_bail_cases_black": 1373,
+    "cash_bail_pct_white": 0.343277,
+    "bail_amount_black": 37417.2622,
+    "bail_amount_white": 31420.82705,
+    "is_outlier": false
+  },
+  {
+    "name": "Clarion",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000839,
+    "cash_bail_pct": 0.394295,
+    "ror_pct": 0.263423,
+    "unsecured_pct": 0.341443,
+    "total_cases": 1192,
+    "cash_bail_cases": 470,
+    "ror_cases": 314,
+    "avg_bail_amount": 23134.46809,
+    "non_posting_rate": 0.717021,
+    "cash_bail_pct_black": 0.396825,
+    "cash_bail_cases_black": 25,
+    "cash_bail_pct_white": 0.403721,
+    "bail_amount_black": 14104,
+    "bail_amount_white": 24033.87097,
+    "is_outlier": true
+  },
+  {
+    "name": "Clearfield",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.370141,
+    "ror_pct": 0.001127,
+    "unsecured_pct": 0.628732,
+    "total_cases": 1775,
+    "cash_bail_cases": 657,
+    "ror_cases": 2,
+    "avg_bail_amount": 29201.97869,
+    "non_posting_rate": 0.838661,
+    "cash_bail_pct_black": 0.657143,
+    "cash_bail_cases_black": 46,
+    "cash_bail_pct_white": 0.362388,
+    "bail_amount_black": 59500,
+    "bail_amount_white": 27240.85667,
+    "is_outlier": true
+  },
+  {
+    "name": "Clinton",
+    "nominal_pct": 0.000825,
+    "nonmonetary_pct": 0.00165,
+    "cash_bail_pct": 0.333333,
+    "ror_pct": 0.129538,
+    "unsecured_pct": 0.534653,
+    "total_cases": 1212,
+    "cash_bail_cases": 404,
+    "ror_cases": 157,
+    "avg_bail_amount": 28516.73515,
+    "non_posting_rate": 0.730198,
+    "cash_bail_pct_black": 0.398058,
+    "cash_bail_cases_black": 41,
+    "cash_bail_pct_white": 0.330594,
+    "bail_amount_black": 30579.29268,
+    "bail_amount_white": 28093.25967,
+    "is_outlier": true
+  },
+  {
+    "name": "Columbia",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.001311,
+    "cash_bail_pct": 0.408912,
+    "ror_pct": 0.21363,
+    "unsecured_pct": 0.376147,
+    "total_cases": 1526,
+    "cash_bail_cases": 624,
+    "ror_cases": 326,
+    "avg_bail_amount": 37230.86539,
+    "non_posting_rate": 0.275641,
+    "cash_bail_pct_black": 0.428571,
+    "cash_bail_cases_black": 72,
+    "cash_bail_pct_white": 0.411899,
+    "bail_amount_black": 60937.5,
+    "bail_amount_white": 34290.85185,
+    "is_outlier": false
+  },
+  {
+    "name": "Crawford",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.084442,
+    "cash_bail_pct": 0.356192,
+    "ror_pct": 0.430399,
+    "unsecured_pct": 0.128966,
+    "total_cases": 1954,
+    "cash_bail_cases": 696,
+    "ror_cases": 841,
+    "avg_bail_amount": 26715.51724,
+    "non_posting_rate": 0.568966,
+    "cash_bail_pct_black": 0.551282,
+    "cash_bail_cases_black": 86,
+    "cash_bail_pct_white": 0.341324,
+    "bail_amount_black": 29781.97674,
+    "bail_amount_white": 26269.23077,
+    "is_outlier": false
+  },
+  {
+    "name": "Cumberland",
+    "nominal_pct": 0.001049,
+    "nonmonetary_pct": 0.004345,
+    "cash_bail_pct": 0.410548,
+    "ror_pct": 0.391669,
+    "unsecured_pct": 0.192388,
+    "total_cases": 6674,
+    "cash_bail_cases": 2740,
+    "ror_cases": 2614,
+    "avg_bail_amount": 27850.80584,
+    "non_posting_rate": 0.553285,
+    "cash_bail_pct_black": 0.551493,
+    "cash_bail_cases_black": 739,
+    "cash_bail_pct_white": 0.375695,
+    "bail_amount_black": 35423.58728,
+    "bail_amount_white": 25383.11684,
+    "is_outlier": false
+  },
+  {
+    "name": "Dauphin",
+    "nominal_pct": 0.000571,
+    "nonmonetary_pct": 0.01084,
+    "cash_bail_pct": 0.441764,
+    "ror_pct": 0.189828,
+    "unsecured_pct": 0.356997,
+    "total_cases": 12269,
+    "cash_bail_cases": 5420,
+    "ror_cases": 2329,
+    "avg_bail_amount": 43160.53911,
+    "non_posting_rate": 0.68321,
+    "cash_bail_pct_black": 0.536661,
+    "cash_bail_cases_black": 2774,
+    "cash_bail_pct_white": 0.378675,
+    "bail_amount_black": 45889.83886,
+    "bail_amount_white": 40000.19469,
+    "is_outlier": false
+  },
+  {
+    "name": "Delaware",
+    "nominal_pct": 0.006038,
+    "nonmonetary_pct": 0.000059,
+    "cash_bail_pct": 0.558825,
+    "ror_pct": 0.001055,
+    "unsecured_pct": 0.434023,
+    "total_cases": 17059,
+    "cash_bail_cases": 9533,
+    "ror_cases": 18,
+    "avg_bail_amount": 46630.95584,
+    "non_posting_rate": 0.613448,
+    "cash_bail_pct_black": 0.641501,
+    "cash_bail_cases_black": 5472,
+    "cash_bail_pct_white": 0.48597,
+    "bail_amount_black": 52748.20925,
+    "bail_amount_white": 35606.1592,
+    "is_outlier": false
+  },
+  {
+    "name": "Elk",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.286073,
+    "ror_pct": 0.000000,
+    "unsecured_pct": 0.713927,
+    "total_cases": 797,
+    "cash_bail_cases": 228,
+    "ror_cases": "0",
+    "avg_bail_amount": 29280.70175,
+    "non_posting_rate": 0.798246,
+    "cash_bail_pct_black": 0.294118,
+    "cash_bail_cases_black": 5,
+    "cash_bail_pct_white": 0.286667,
+    "bail_amount_black": 17460,
+    "bail_amount_white": 29516.27907,
+    "is_outlier": true
+  },
+  {
+    "name": "Erie",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.006849,
+    "cash_bail_pct": 0.470667,
+    "ror_pct": 0.334127,
+    "unsecured_pct": 0.188356,
+    "total_cases": 6716,
+    "cash_bail_cases": 3161,
+    "ror_cases": 2244,
+    "avg_bail_amount": 32539.14046,
+    "non_posting_rate": 0.624486,
+    "cash_bail_pct_black": 0.678438,
+    "cash_bail_cases_black": 1268,
+    "cash_bail_pct_white": 0.394262,
+    "bail_amount_black": 41009.0694,
+    "bail_amount_white": 26792.57056,
+    "is_outlier": false
+  },
+  {
+    "name": "Fayette",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.449371,
+    "ror_pct": 0.000999,
+    "unsecured_pct": 0.549631,
+    "total_cases": 5007,
+    "cash_bail_cases": 2250,
+    "ror_cases": 5,
+    "avg_bail_amount": 22434.84444,
+    "non_posting_rate": 0.392889,
+    "cash_bail_pct_black": 0.541899,
+    "cash_bail_cases_black": 485,
+    "cash_bail_pct_white": 0.43027,
+    "bail_amount_black": 29696.28866,
+    "bail_amount_white": 20176.5688,
+    "is_outlier": false
+  },
+  {
+    "name": "Forest",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.350993,
+    "ror_pct": 0.125828,
+    "unsecured_pct": 0.523179,
+    "total_cases": 151,
+    "cash_bail_cases": 53,
+    "ror_cases": 19,
+    "avg_bail_amount": 27849.0566,
+    "non_posting_rate": 0.811321,
+    "cash_bail_pct_black": 0.888889,
+    "cash_bail_cases_black": 16,
+    "cash_bail_pct_white": 0.3125,
+    "bail_amount_black": 27375,
+    "bail_amount_white": 27086.66667,
+    "is_outlier": true
+  },
+  {
+    "name": "Franklin",
+    "nominal_pct": 0.000226,
+    "nonmonetary_pct": 0.006107,
+    "cash_bail_pct": 0.373445,
+    "ror_pct": 0.503732,
+    "unsecured_pct": 0.116489,
+    "total_cases": 4421,
+    "cash_bail_cases": 1651,
+    "ror_cases": 2227,
+    "avg_bail_amount": 64731.37492,
+    "non_posting_rate": 0.765597,
+    "cash_bail_pct_black": 0.494532,
+    "cash_bail_cases_black": 407,
+    "cash_bail_pct_white": 0.350513,
+    "bail_amount_black": 65076.16708,
+    "bail_amount_white": 64309.91064,
+    "is_outlier": false
+  },
+  {
+    "name": "Fulton",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.0525,
+    "cash_bail_pct": 0.2825,
+    "ror_pct": 0.5175,
+    "unsecured_pct": 0.1475,
+    "total_cases": 400,
+    "cash_bail_cases": 113,
+    "ror_cases": 207,
+    "avg_bail_amount": 64907.07965,
+    "non_posting_rate": 0.787611,
+    "cash_bail_pct_black": 0.285714,
+    "cash_bail_cases_black": 10,
+    "cash_bail_pct_white": 0.290909,
+    "bail_amount_black": 38000,
+    "bail_amount_white": 69270.83333,
+    "is_outlier": true
+  },
+  {
+    "name": "Greene",
+    "nominal_pct": 0.001255,
+    "nonmonetary_pct": 0.002509,
+    "cash_bail_pct": 0.393977,
+    "ror_pct": 0.243413,
+    "unsecured_pct": 0.358846,
+    "total_cases": 797,
+    "cash_bail_cases": 314,
+    "ror_cases": 194,
+    "avg_bail_amount": 19024.66879,
+    "non_posting_rate": 0.570064,
+    "cash_bail_pct_black": 0.583333,
+    "cash_bail_cases_black": 21,
+    "cash_bail_pct_white": 0.39749,
+    "bail_amount_black": 21023.80952,
+    "bail_amount_white": 18309.63509,
+    "is_outlier": true
+  },
+  {
+    "name": "Huntingdon",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.386169,
+    "ror_pct": 0.299922,
+    "unsecured_pct": 0.313908,
+    "total_cases": 1287,
+    "cash_bail_cases": 497,
+    "ror_cases": 386,
+    "avg_bail_amount": 22393.05835,
+    "non_posting_rate": 0.7666,
+    "cash_bail_pct_black": 0.648276,
+    "cash_bail_cases_black": 94,
+    "cash_bail_pct_white": 0.369732,
+    "bail_amount_black": 24255.31915,
+    "bail_amount_white": 21800.12953,
+    "is_outlier": false
+  },
+  {
+    "name": "Indiana",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.406648,
+    "ror_pct": 0.23224,
+    "unsecured_pct": 0.361111,
+    "total_cases": 2196,
+    "cash_bail_cases": 893,
+    "ror_cases": 510,
+    "avg_bail_amount": 17639.19373,
+    "non_posting_rate": 0.479283,
+    "cash_bail_pct_black": 0.493548,
+    "cash_bail_cases_black": 153,
+    "cash_bail_pct_white": 0.393148,
+    "bail_amount_black": 28699.34641,
+    "bail_amount_white": 15395.98894,
+    "is_outlier": false
+  },
+  {
+    "name": "Jefferson",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000921,
+    "cash_bail_pct": 0.38674,
+    "ror_pct": 0.000921,
+    "unsecured_pct": 0.611418,
+    "total_cases": 1086,
+    "cash_bail_cases": 420,
+    "ror_cases": 1,
+    "avg_bail_amount": 52759.52381,
+    "non_posting_rate": 0.859524,
+    "cash_bail_pct_black": 0.69697,
+    "cash_bail_cases_black": 23,
+    "cash_bail_pct_white": 0.383937,
+    "bail_amount_black": 79565.21739,
+    "bail_amount_white": 51413.26531,
+    "is_outlier": true
+  },
+  {
+    "name": "Juniata",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.077922,
+    "cash_bail_pct": 0.341991,
+    "ror_pct": 0.194805,
+    "unsecured_pct": 0.385281,
+    "total_cases": 462,
+    "cash_bail_cases": 158,
+    "ror_cases": 90,
+    "avg_bail_amount": 27028.48101,
+    "non_posting_rate": 0.727848,
+    "cash_bail_pct_black": 0.4375,
+    "cash_bail_cases_black": 7,
+    "cash_bail_pct_white": 0.365915,
+    "bail_amount_black": 39071.42857,
+    "bail_amount_white": 26784.24658,
+    "is_outlier": true
+  },
+  {
+    "name": "Lackawanna",
+    "nominal_pct": 0.000664,
+    "nonmonetary_pct": 0.07424,
+    "cash_bail_pct": 0.525826,
+    "ror_pct": 0.017937,
+    "unsecured_pct": 0.381332,
+    "total_cases": 6021,
+    "cash_bail_cases": 3166,
+    "ror_cases": 108,
+    "avg_bail_amount": 32984.23879,
+    "non_posting_rate": 0.722678,
+    "cash_bail_pct_black": 0.666667,
+    "cash_bail_cases_black": 788,
+    "cash_bail_pct_white": 0.490579,
+    "bail_amount_black": 43937.30965,
+    "bail_amount_white": 29251.71468,
+    "is_outlier": false
+  },
+  {
+    "name": "Lancaster",
+    "nominal_pct": 0.000879,
+    "nonmonetary_pct": 0.000959,
+    "cash_bail_pct": 0.450839,
+    "ror_pct": 0.146283,
+    "unsecured_pct": 0.401039,
+    "total_cases": 12510,
+    "cash_bail_cases": 5640,
+    "ror_cases": 1830,
+    "avg_bail_amount": 56861.72021,
+    "non_posting_rate": 0.646809,
+    "cash_bail_pct_black": 0.552574,
+    "cash_bail_cases_black": 1256,
+    "cash_bail_pct_white": 0.43393,
+    "bail_amount_black": 66013.01752,
+    "bail_amount_white": 55177.34693,
+    "is_outlier": false
+  },
+  {
+    "name": "Lawrence",
+    "nominal_pct": 0.000454,
+    "nonmonetary_pct": 0.246824,
+    "cash_bail_pct": 0.50726,
+    "ror_pct": 0.221416,
+    "unsecured_pct": 0.024047,
+    "total_cases": 2204,
+    "cash_bail_cases": 1118,
+    "ror_cases": 488,
+    "avg_bail_amount": 22124.77639,
+    "non_posting_rate": 0.457961,
+    "cash_bail_pct_black": 0.68784,
+    "cash_bail_cases_black": 379,
+    "cash_bail_pct_white": 0.451511,
+    "bail_amount_black": 30965.69921,
+    "bail_amount_white": 16481.8689,
+    "is_outlier": false
+  },
+  {
+    "name": "Lebanon",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.377892,
+    "ror_pct": 0.002828,
+    "unsecured_pct": 0.61928,
+    "total_cases": 3890,
+    "cash_bail_cases": 1470,
+    "ror_cases": 11,
+    "avg_bail_amount": 36573.77687,
+    "non_posting_rate": 0.427211,
+    "cash_bail_pct_black": 0.511429,
+    "cash_bail_cases_black": 179,
+    "cash_bail_pct_white": 0.37101,
+    "bail_amount_black": 67514.52514,
+    "bail_amount_white": 33646.29203,
+    "is_outlier": false
+  },
+  {
+    "name": "Lehigh",
+    "nominal_pct": 0.00168,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.565002,
+    "ror_pct": 0.083714,
+    "unsecured_pct": 0.349603,
+    "total_cases": 10715,
+    "cash_bail_cases": 6054,
+    "ror_cases": 897,
+    "avg_bail_amount": 23279.31682,
+    "non_posting_rate": 0.579452,
+    "cash_bail_pct_black": 0.625051,
+    "cash_bail_cases_black": 1537,
+    "cash_bail_pct_white": 0.545657,
+    "bail_amount_black": 27318.21991,
+    "bail_amount_white": 22187.57741,
+    "is_outlier": false
+  },
+  {
+    "name": "Luzerne",
+    "nominal_pct": 0.000319,
+    "nonmonetary_pct": 0.011286,
+    "cash_bail_pct": 0.408752,
+    "ror_pct": 0.306963,
+    "unsecured_pct": 0.272679,
+    "total_cases": 9392,
+    "cash_bail_cases": 3839,
+    "ror_cases": 2883,
+    "avg_bail_amount": 39863.67079,
+    "non_posting_rate": 0.669706,
+    "cash_bail_pct_black": 0.577887,
+    "cash_bail_cases_black": 1061,
+    "cash_bail_pct_white": 0.368782,
+    "bail_amount_black": 52198.33662,
+    "bail_amount_white": 36195.32523,
+    "is_outlier": false
+  },
+  {
+    "name": "Lycoming",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.344184,
+    "ror_pct": 0.002523,
+    "unsecured_pct": 0.653293,
+    "total_cases": 3963,
+    "cash_bail_cases": 1364,
+    "ror_cases": 10,
+    "avg_bail_amount": 59972.14076,
+    "non_posting_rate": 0.732405,
+    "cash_bail_pct_black": 0.559162,
+    "cash_bail_cases_black": 534,
+    "cash_bail_pct_white": 0.277141,
+    "bail_amount_black": 85748.12734,
+    "bail_amount_white": 43319.95134,
+    "is_outlier": false
+  },
+  {
+    "name": "McKean",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.00087,
+    "cash_bail_pct": 0.41913,
+    "ror_pct": 0.050435,
+    "unsecured_pct": 0.529565,
+    "total_cases": 1150,
+    "cash_bail_cases": 482,
+    "ror_cases": 58,
+    "avg_bail_amount": 25103.73444,
+    "non_posting_rate": 0.695021,
+    "cash_bail_pct_black": 0.605634,
+    "cash_bail_cases_black": 43,
+    "cash_bail_pct_white": 0.412916,
+    "bail_amount_black": 35930.23256,
+    "bail_amount_white": 24742.891,
+    "is_outlier": true
+  },
+  {
+    "name": "Mercer",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.120947,
+    "cash_bail_pct": 0.356634,
+    "ror_pct": 0.115429,
+    "unsecured_pct": 0.40699,
+    "total_cases": 4349,
+    "cash_bail_cases": 1551,
+    "ror_cases": 502,
+    "avg_bail_amount": 28138.29787,
+    "non_posting_rate": 0.508704,
+    "cash_bail_pct_black": 0.456349,
+    "cash_bail_cases_black": 460,
+    "cash_bail_pct_white": 0.326274,
+    "bail_amount_black": 33481.52174,
+    "bail_amount_white": 25741.76858,
+    "is_outlier": false
+  },
+  {
+    "name": "Mifflin",
+    "nominal_pct": 0.000727,
+    "nonmonetary_pct": 0.002909,
+    "cash_bail_pct": 0.480727,
+    "ror_pct": 0.003636,
+    "unsecured_pct": 0.512,
+    "total_cases": 1375,
+    "cash_bail_cases": 661,
+    "ror_cases": 5,
+    "avg_bail_amount": 49405.76399,
+    "non_posting_rate": 0.822995,
+    "cash_bail_pct_black": 0.702381,
+    "cash_bail_cases_black": 59,
+    "cash_bail_pct_white": 0.469756,
+    "bail_amount_black": 114474.5763,
+    "bail_amount_white": 43165.90301,
+    "is_outlier": false
+  },
+  {
+    "name": "Monroe",
+    "nominal_pct": 0.000181,
+    "nonmonetary_pct": 0.004515,
+    "cash_bail_pct": 0.335922,
+    "ror_pct": 0.175546,
+    "unsecured_pct": 0.483836,
+    "total_cases": 5537,
+    "cash_bail_cases": 1860,
+    "ror_cases": 972,
+    "avg_bail_amount": 30385.00054,
+    "non_posting_rate": 0.385484,
+    "cash_bail_pct_black": 0.361759,
+    "cash_bail_cases_black": 543,
+    "cash_bail_pct_white": 0.331622,
+    "bail_amount_black": 38310.6814,
+    "bail_amount_white": 27099.69118,
+    "is_outlier": false
+  },
+  {
+    "name": "Montgomery",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.004938,
+    "cash_bail_pct": 0.37538,
+    "ror_pct": 0.152954,
+    "unsecured_pct": 0.466728,
+    "total_cases": 17417,
+    "cash_bail_cases": 6538,
+    "ror_cases": 2664,
+    "avg_bail_amount": 33857.12585,
+    "non_posting_rate": 0.638574,
+    "cash_bail_pct_black": 0.487213,
+    "cash_bail_cases_black": 3010,
+    "cash_bail_pct_white": 0.319375,
+    "bail_amount_black": 36939.01522,
+    "bail_amount_white": 30934.82705,
+    "is_outlier": false
+  },
+  {
+    "name": "Montour",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.007874,
+    "cash_bail_pct": 0.354331,
+    "ror_pct": 0.413386,
+    "unsecured_pct": 0.224409,
+    "total_cases": 254,
+    "cash_bail_cases": 90,
+    "ror_cases": 105,
+    "avg_bail_amount": 38861.11111,
+    "non_posting_rate": 0.666667,
+    "cash_bail_pct_black": 0.478261,
+    "cash_bail_cases_black": 11,
+    "cash_bail_pct_white": 0.35,
+    "bail_amount_black": 39545.45455,
+    "bail_amount_white": 39188.31169,
+    "is_outlier": true
+  },
+  {
+    "name": "Northampton",
+    "nominal_pct": 0.001972,
+    "nonmonetary_pct": 0.000303,
+    "cash_bail_pct": 0.507359,
+    "ror_pct": 0.082992,
+    "unsecured_pct": 0.407374,
+    "total_cases": 6591,
+    "cash_bail_cases": 3344,
+    "ror_cases": 547,
+    "avg_bail_amount": 30214.74342,
+    "non_posting_rate": 0.550837,
+    "cash_bail_pct_black": 0.600712,
+    "cash_bail_cases_black": 844,
+    "cash_bail_pct_white": 0.486885,
+    "bail_amount_black": 42868.66114,
+    "bail_amount_white": 26636.32491,
+    "is_outlier": false
+  },
+  {
+    "name": "Northumberland",
+    "nominal_pct": 0.00043,
+    "nonmonetary_pct": 0.00086,
+    "cash_bail_pct": 0.376774,
+    "ror_pct": 0.117849,
+    "unsecured_pct": 0.504086,
+    "total_cases": 2325,
+    "cash_bail_cases": 876,
+    "ror_cases": 274,
+    "avg_bail_amount": 44800.34932,
+    "non_posting_rate": 0.584475,
+    "cash_bail_pct_black": 0.590674,
+    "cash_bail_cases_black": 114,
+    "cash_bail_pct_white": 0.353759,
+    "bail_amount_black": 72181.57895,
+    "bail_amount_white": 42108.45124,
+    "is_outlier": false
+  },
+  {
+    "name": "Perry",
+    "nominal_pct": 0.015512,
+    "nonmonetary_pct": 0.009307,
+    "cash_bail_pct": 0.301965,
+    "ror_pct": 0.427094,
+    "unsecured_pct": 0.246122,
+    "total_cases": 967,
+    "cash_bail_cases": 292,
+    "ror_cases": 413,
+    "avg_bail_amount": 27077.84247,
+    "non_posting_rate": 0.763699,
+    "cash_bail_pct_black": 0.442857,
+    "cash_bail_cases_black": 31,
+    "cash_bail_pct_white": 0.286848,
+    "bail_amount_black": 49388.06452,
+    "bail_amount_white": 24192.49012,
+    "is_outlier": true
+  },
+  {
+    "name": "Philadelphia",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.057413,
+    "cash_bail_pct": 0.499238,
+    "ror_pct": 0.343043,
+    "unsecured_pct": 0.100306,
+    "total_cases": 64951,
+    "cash_bail_cases": 32426,
+    "ror_cases": 22281,
+    "avg_bail_amount": 62130.10856,
+    "non_posting_rate": 0.514001,
+    "cash_bail_pct_black": 0.558269,
+    "cash_bail_cases_black": 20503,
+    "cash_bail_pct_white": 0.431232,
+    "bail_amount_black": 65123.11369,
+    "bail_amount_white": 56370.81098,
+    "is_outlier": false
+  },
+  {
+    "name": "Pike",
+    "nominal_pct": 0.00104,
+    "nonmonetary_pct": 0.317048,
+    "cash_bail_pct": 0.33264,
+    "ror_pct": 0.288981,
+    "unsecured_pct": 0.060291,
+    "total_cases": 962,
+    "cash_bail_cases": 320,
+    "ror_cases": 278,
+    "avg_bail_amount": 34725.15938,
+    "non_posting_rate": 0.640625,
+    "cash_bail_pct_black": 0.385965,
+    "cash_bail_cases_black": 44,
+    "cash_bail_pct_white": 0.330855,
+    "bail_amount_black": 53193.18182,
+    "bail_amount_white": 32148.13109,
+    "is_outlier": true
+  },
+  {
+    "name": "Potter",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.021359,
+    "cash_bail_pct": 0.225243,
+    "ror_pct": 0.159223,
+    "unsecured_pct": 0.594175,
+    "total_cases": 515,
+    "cash_bail_cases": 116,
+    "ror_cases": 82,
+    "avg_bail_amount": 23887.93103,
+    "non_posting_rate": 0.698276,
+    "cash_bail_pct_black": 0.8,
+    "cash_bail_cases_black": 4,
+    "cash_bail_pct_white": 0.2249,
+    "bail_amount_black": 33562.5,
+    "bail_amount_white": 23535.71429,
+    "is_outlier": true
+  },
+  {
+    "name": "Schuylkill",
+    "nominal_pct": 0.00147,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.399328,
+    "ror_pct": 0.112744,
+    "unsecured_pct": 0.486458,
+    "total_cases": 4763,
+    "cash_bail_cases": 1902,
+    "ror_cases": 537,
+    "avg_bail_amount": 25202.97056,
+    "non_posting_rate": 0.602524,
+    "cash_bail_pct_black": 0.487535,
+    "cash_bail_cases_black": 176,
+    "cash_bail_pct_white": 0.394481,
+    "bail_amount_black": 37605.11364,
+    "bail_amount_white": 24236.65491,
+    "is_outlier": false
+  },
+  {
+    "name": "Snyder",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.027748,
+    "cash_bail_pct": 0.36286,
+    "ror_pct": 0.03842,
+    "unsecured_pct": 0.570971,
+    "total_cases": 937,
+    "cash_bail_cases": 340,
+    "ror_cases": 36,
+    "avg_bail_amount": 31695,
+    "non_posting_rate": 0.444118,
+    "cash_bail_pct_black": 0.521739,
+    "cash_bail_cases_black": 36,
+    "cash_bail_pct_white": 0.350348,
+    "bail_amount_black": 33048.61111,
+    "bail_amount_white": 31631.78808,
+    "is_outlier": true
+  },
+  {
+    "name": "Somerset",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.486546,
+    "cash_bail_pct": 0.249863,
+    "ror_pct": 0.024712,
+    "unsecured_pct": 0.23888,
+    "total_cases": 1821,
+    "cash_bail_cases": 455,
+    "ror_cases": 45,
+    "avg_bail_amount": 45684.61539,
+    "non_posting_rate": 0.56044,
+    "cash_bail_pct_black": 0.705882,
+    "cash_bail_cases_black": 60,
+    "cash_bail_pct_white": 0.231132,
+    "bail_amount_black": 84933.33333,
+    "bail_amount_white": 38187.5,
+    "is_outlier": false
+  },
+  {
+    "name": "Sullivan",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.365385,
+    "ror_pct": 0.019231,
+    "unsecured_pct": 0.615385,
+    "total_cases": 104,
+    "cash_bail_cases": 38,
+    "ror_cases": 2,
+    "avg_bail_amount": 18328.94737,
+    "non_posting_rate": 0.684211,
+    "cash_bail_pct_black": 0.625,
+    "cash_bail_cases_black": 5,
+    "cash_bail_pct_white": 0.326087,
+    "bail_amount_black": 8000,
+    "bail_amount_white": 20516.66667,
+    "is_outlier": true
+  },
+  {
+    "name": "Susquehanna",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.009485,
+    "cash_bail_pct": 0.394309,
+    "ror_pct": 0.261518,
+    "unsecured_pct": 0.334688,
+    "total_cases": 738,
+    "cash_bail_cases": 291,
+    "ror_cases": 193,
+    "avg_bail_amount": 29464.60481,
+    "non_posting_rate": 0.735395,
+    "cash_bail_pct_black": 0.65,
+    "cash_bail_cases_black": 13,
+    "cash_bail_pct_white": 0.388652,
+    "bail_amount_black": 43346.15385,
+    "bail_amount_white": 29491.60584,
+    "is_outlier": true
+  },
+  {
+    "name": "Tioga",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.313167,
+    "ror_pct": 0.000000,
+    "unsecured_pct": 0.686833,
+    "total_cases": 843,
+    "cash_bail_cases": 264,
+    "ror_cases": "0",
+    "avg_bail_amount": 34378.78788,
+    "non_posting_rate": 0.787879,
+    "cash_bail_pct_black": 0.535714,
+    "cash_bail_cases_black": 15,
+    "cash_bail_pct_white": 0.304455,
+    "bail_amount_black": 49300,
+    "bail_amount_white": 33552.84553,
+    "is_outlier": true
+  },
+  {
+    "name": "Union",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.145588,
+    "cash_bail_pct": 0.255882,
+    "ror_pct": 0.488235,
+    "unsecured_pct": 0.110294,
+    "total_cases": 680,
+    "cash_bail_cases": 174,
+    "ror_cases": 332,
+    "avg_bail_amount": 31385.05747,
+    "non_posting_rate": 0.735632,
+    "cash_bail_pct_black": 0.381579,
+    "cash_bail_cases_black": 29,
+    "cash_bail_pct_white": 0.235094,
+    "bail_amount_black": 45637.93103,
+    "bail_amount_white": 28018.11594,
+    "is_outlier": true
+  },
+  {
+    "name": "Venango",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.384401,
+    "ror_pct": 0.001393,
+    "unsecured_pct": 0.614206,
+    "total_cases": 1436,
+    "cash_bail_cases": 552,
+    "ror_cases": 2,
+    "avg_bail_amount": 41589.67391,
+    "non_posting_rate": 0.737319,
+    "cash_bail_pct_black": 0.635659,
+    "cash_bail_cases_black": 82,
+    "cash_bail_pct_white": 0.359568,
+    "bail_amount_black": 53475.60976,
+    "bail_amount_white": 39360.51502,
+    "is_outlier": false
+  },
+  {
+    "name": "Warren",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.025455,
+    "cash_bail_pct": 0.404848,
+    "ror_pct": 0.413333,
+    "unsecured_pct": 0.156364,
+    "total_cases": 825,
+    "cash_bail_cases": 334,
+    "ror_cases": 341,
+    "avg_bail_amount": 31258.98204,
+    "non_posting_rate": 0.757485,
+    "cash_bail_pct_black": 0.684211,
+    "cash_bail_cases_black": 13,
+    "cash_bail_pct_white": 0.398983,
+    "bail_amount_black": 49769.23077,
+    "bail_amount_white": 30089.17198,
+    "is_outlier": true
+  },
+  {
+    "name": "Washington",
+    "nominal_pct": 0.000162,
+    "nonmonetary_pct": 0.010351,
+    "cash_bail_pct": 0.395924,
+    "ror_pct": 0.260877,
+    "unsecured_pct": 0.332686,
+    "total_cases": 6183,
+    "cash_bail_cases": 2448,
+    "ror_cases": 1613,
+    "avg_bail_amount": 30160.78391,
+    "non_posting_rate": 0.635621,
+    "cash_bail_pct_black": 0.567729,
+    "cash_bail_cases_black": 570,
+    "cash_bail_pct_white": 0.365188,
+    "bail_amount_black": 46258.07018,
+    "bail_amount_white": 23939.11435,
+    "is_outlier": false
+  },
+  {
+    "name": "Wayne",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.376344,
+    "ror_pct": 0.342742,
+    "unsecured_pct": 0.280914,
+    "total_cases": 744,
+    "cash_bail_cases": 280,
+    "ror_cases": 255,
+    "avg_bail_amount": 34030.71429,
+    "non_posting_rate": 0.467857,
+    "cash_bail_pct_black": 0.6,
+    "cash_bail_cases_black": 21,
+    "cash_bail_pct_white": 0.36099,
+    "bail_amount_black": 28619.04762,
+    "bail_amount_white": 36399.59677,
+    "is_outlier": true
+  },
+  {
+    "name": "Westmoreland",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.045757,
+    "cash_bail_pct": 0.31714,
+    "ror_pct": 0.327603,
+    "unsecured_pct": 0.3095,
+    "total_cases": 12042,
+    "cash_bail_cases": 3819,
+    "ror_cases": 3945,
+    "avg_bail_amount": 23548.32216,
+    "non_posting_rate": 0.710919,
+    "cash_bail_pct_black": 0.495816,
+    "cash_bail_cases_black": 948,
+    "cash_bail_pct_white": 0.287781,
+    "bail_amount_black": 38192.51213,
+    "bail_amount_white": 18989.29884,
+    "is_outlier": false
+  },
+  {
+    "name": "Wyoming",
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
+    "cash_bail_pct": 0.355005,
+    "ror_pct": 0.002064,
+    "unsecured_pct": 0.642931,
+    "total_cases": 969,
+    "cash_bail_cases": 344,
+    "ror_cases": 2,
+    "avg_bail_amount": 28720.13081,
+    "non_posting_rate": 0.694767,
+    "cash_bail_pct_black": 0.434783,
+    "cash_bail_cases_black": 10,
+    "cash_bail_pct_white": 0.353579,
+    "bail_amount_black": 39000,
+    "bail_amount_white": 28822.77607,
+    "is_outlier": true
+  },
+  {
+    "name": "York",
+    "nominal_pct": 0.003357,
+    "nonmonetary_pct": 0.055543,
+    "cash_bail_pct": 0.460769,
+    "ror_pct": 0.333479,
+    "unsecured_pct": 0.146851,
+    "total_cases": 13701,
+    "cash_bail_cases": 6313,
+    "ror_cases": 4569,
+    "avg_bail_amount": 26958.81841,
+    "non_posting_rate": 0.592428,
+    "cash_bail_pct_black": 0.568894,
+    "cash_bail_cases_black": 1924,
+    "cash_bail_pct_white": 0.427047,
+    "bail_amount_black": 37078.00813,
+    "bail_amount_white": 23258.83229,
+    "is_outlier": false
   }
+];
+
+export const MDJ_DATA = {
+  "Adams": [
+    {
+      "name": "Beauchat, Mark D.",
+      "cash_bail_pct": 0.28827,
+      "unsecured_pct": 0.10338,
+      "ror_pct": 0.32008,
+      "nonmonetary_pct": 0.28827,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.4,
+      "cash_bail_pct_white": 0.276786,
+      "total_cases": 503
+    },
+    {
+      "name": "Bowman, Daniel S.",
+      "cash_bail_pct": 0.346334,
+      "unsecured_pct": 0.126365,
+      "ror_pct": 0.263651,
+      "nonmonetary_pct": 0.263651,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.460317,
+      "cash_bail_pct_white": 0.338681,
+      "total_cases": 641
+    },
+    {
+      "name": "Harvey, Matthew Robert",
+      "cash_bail_pct": 0.352518,
+      "unsecured_pct": 0.440647,
+      "ror_pct": 0.17446,
+      "nonmonetary_pct": 0.032374,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.484848,
+      "cash_bail_pct_white": 0.333333,
+      "total_cases": 556
+    },
+    {
+      "name": "Little, Tony J.",
+      "cash_bail_pct": 0.259067,
+      "unsecured_pct": 0.466321,
+      "ror_pct": 0.260794,
+      "nonmonetary_pct": 0.013817,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.408163,
+      "cash_bail_pct_white": 0.252446,
+      "total_cases": 579
+    }
+  ],
+  "Allegheny": [
+    {
+      "name": "Armour, John W.",
+      "cash_bail_pct": 0.639423,
+      "unsecured_pct": 0.000801,
+      "ror_pct": 0.066506,
+      "nonmonetary_pct": 0.293269,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.660714,
+      "cash_bail_pct_white": 0.62013,
+      "total_cases": 1248
+    },
+    {
+      "name": "Arnoni, Ronald A.",
+      "cash_bail_pct": 0.372986,
+      "unsecured_pct": 0.184634,
+      "ror_pct": 0.039653,
+      "nonmonetary_pct": 0.39777,
+      "nominal_pct": 0.004957,
+      "cash_bail_pct_black": 0.646154,
+      "cash_bail_pct_white": 0.290541,
+      "total_cases": 807
+    },
+    {
+      "name": "Barner, Robert L.",
+      "cash_bail_pct": 0.621569,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.083333,
+      "nonmonetary_pct": 0.295098,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.67658,
+      "cash_bail_pct_white": 0.563715,
+      "total_cases": 1020
+    },
+    {
+      "name": "Barton, David J.",
+      "cash_bail_pct": 0.322742,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.481605,
+      "nonmonetary_pct": 0.195652,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.522222,
+      "cash_bail_pct_white": 0.245614,
+      "total_cases": 598
+    },
+    {
+      "name": "Bengel, Carolyn S.",
+      "cash_bail_pct": 0.519451,
+      "unsecured_pct": 0.010297,
+      "ror_pct": 0.291762,
+      "nonmonetary_pct": 0.17849,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.726619,
+      "cash_bail_pct_white": 0.418403,
+      "total_cases": 874
+    },
+    {
+      "name": "Brletic, Thomas S.",
+      "cash_bail_pct": 0.714207,
+      "unsecured_pct": 0.013216,
+      "ror_pct": 0.148128,
+      "nonmonetary_pct": 0.123899,
+      "nominal_pct": 0.000551,
+      "cash_bail_pct_black": 0.799327,
+      "cash_bail_pct_white": 0.634038,
+      "total_cases": 1816
+    },
+    {
+      "name": "Butler, Daniel E.",
+      "cash_bail_pct": 0.452659,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.220493,
+      "nonmonetary_pct": 0.326848,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.511682,
+      "cash_bail_pct_white": 0.395706,
+      "total_cases": 771
+    },
+    {
+      "name": "Caulfield, Thomas P.",
+      "cash_bail_pct": 0.25,
+      "unsecured_pct": 0.003226,
+      "ror_pct": 0.120968,
+      "nonmonetary_pct": 0.625806,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.279883,
+      "cash_bail_pct_white": 0.215613,
+      "total_cases": 620
+    },
+    {
+      "name": "Ceoffe, Anthony M.",
+      "cash_bail_pct": 0.323481,
+      "unsecured_pct": 0.039409,
+      "ror_pct": 0.275862,
+      "nonmonetary_pct": 0.359606,
+      "nominal_pct": 0.001642,
+      "cash_bail_pct_black": 0.372168,
+      "cash_bail_pct_white": 0.274744,
+      "total_cases": 1218
+    },
+    {
+      "name": "Cercone, Mary A.",
+      "cash_bail_pct": 0.230869,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.103761,
+      "nonmonetary_pct": 0.66537,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.31454,
+      "cash_bail_pct_white": 0.169856,
+      "total_cases": 771
+    },
+    {
+      "name": "Cooper, Kevin E.",
+      "cash_bail_pct": 0.363955,
+      "unsecured_pct": 0.020997,
+      "ror_pct": 0.272966,
+      "nonmonetary_pct": 0.342082,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.422807,
+      "cash_bail_pct_white": 0.312839,
+      "total_cases": 1143
+    },
+    {
+      "name": "Costa, Ron Sr.",
+      "cash_bail_pct": 0.547289,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.220681,
+      "nonmonetary_pct": 0.23203,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.608924,
+      "cash_bail_pct_white": 0.5,
+      "total_cases": 793
+    },
+    {
+      "name": "Cramer, Jesse J.",
+      "cash_bail_pct": 0.694379,
+      "unsecured_pct": 0.222012,
+      "ror_pct": 0.082192,
+      "nonmonetary_pct": 0.001417,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.74882,
+      "cash_bail_pct_white": 0.645631,
+      "total_cases": 2117
+    },
+    {
+      "name": "DeLuca, Anthony L.",
+      "cash_bail_pct": 0.348297,
+      "unsecured_pct": 0.001548,
+      "ror_pct": 0.334365,
+      "nonmonetary_pct": 0.315789,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.417417,
+      "cash_bail_pct_white": 0.269737,
+      "total_cases": 646
+    },
+    {
+      "name": "Dzvonick, Robert Paul",
+      "cash_bail_pct": 0.27676,
+      "unsecured_pct": 0.001929,
+      "ror_pct": 0.616201,
+      "nonmonetary_pct": 0.105111,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.551471,
+      "cash_bail_pct_white": 0.180611,
+      "total_cases": 1037
+    },
+    {
+      "name": "Eichler, Roxanne Sakoian",
+      "cash_bail_pct": 0.244924,
+      "unsecured_pct": 0.058376,
+      "ror_pct": 0.474619,
+      "nonmonetary_pct": 0.222081,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.315789,
+      "cash_bail_pct_white": 0.190698,
+      "total_cases": 788
+    },
+    {
+      "name": "Ford, Robert L.",
+      "cash_bail_pct": 0.342954,
+      "unsecured_pct": 0.003396,
+      "ror_pct": 0.018676,
+      "nonmonetary_pct": 0.634975,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.488506,
+      "cash_bail_pct_white": 0.278325,
+      "total_cases": 589
+    },
+    {
+      "name": "Hanley, James Joseph Jr.",
+      "cash_bail_pct": 0.338885,
+      "unsecured_pct": 0.016015,
+      "ror_pct": 0.326714,
+      "nonmonetary_pct": 0.318386,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.423833,
+      "cash_bail_pct_white": 0.248276,
+      "total_cases": 1561
+    },
+    {
+      "name": "Herbst, Jeffrey L.",
+      "cash_bail_pct": 0.217391,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.580645,
+      "nonmonetary_pct": 0.201964,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.267742,
+      "cash_bail_pct_white": 0.181586,
+      "total_cases": 713
+    },
+    {
+      "name": "Hoots, Kim Marie",
+      "cash_bail_pct": 0.641509,
+      "unsecured_pct": 0.130189,
+      "ror_pct": 0.124528,
+      "nonmonetary_pct": 0.103774,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.60745,
+      "cash_bail_pct_white": 0.715116,
+      "total_cases": 530
+    },
+    {
+      "name": "Hromyak, Leonard J.",
+      "cash_bail_pct": 0.50508,
+      "unsecured_pct": 0.001451,
+      "ror_pct": 0.107402,
+      "nonmonetary_pct": 0.386067,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.53681,
+      "cash_bail_pct_white": 0.480114,
+      "total_cases": 689
+    },
+    {
+      "name": "Joyce, Dennis Robert",
+      "cash_bail_pct": 0.383775,
+      "unsecured_pct": 0.00312,
+      "ror_pct": 0.124805,
+      "nonmonetary_pct": 0.486739,
+      "nominal_pct": 0.00156,
+      "cash_bail_pct_black": 0.462963,
+      "cash_bail_pct_white": 0.327824,
+      "total_cases": 641
+    },
+    {
+      "name": "Kaiser, Ralph E.",
+      "cash_bail_pct": 0.255289,
+      "unsecured_pct": 0.00141,
+      "ror_pct": 0.558533,
+      "nonmonetary_pct": 0.184767,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.402439,
+      "cash_bail_pct_white": 0.186047,
+      "total_cases": 709
+    },
+    {
+      "name": "King, Richard G.",
+      "cash_bail_pct": 0.3174,
+      "unsecured_pct": 0.028681,
+      "ror_pct": 0.219885,
+      "nonmonetary_pct": 0.434034,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.395745,
+      "cash_bail_pct_white": 0.256318,
+      "total_cases": 523
+    },
+    {
+      "name": "Lang, Elissa Marie",
+      "cash_bail_pct": 0.232249,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.307692,
+      "nonmonetary_pct": 0.460059,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.383673,
+      "cash_bail_pct_white": 0.143541,
+      "total_cases": 676
+    },
+    {
+      "name": "Larotonda, Blaise P.",
+      "cash_bail_pct": 0.423295,
+      "unsecured_pct": 0.00142,
+      "ror_pct": 0.40483,
+      "nonmonetary_pct": 0.170455,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.652968,
+      "cash_bail_pct_white": 0.320755,
+      "total_cases": 704
+    },
+    {
+      "name": "Manning, Jeffrey A.",
+      "cash_bail_pct": 0.246696,
+      "unsecured_pct": 0.057269,
+      "ror_pct": 0.436123,
+      "nonmonetary_pct": 0.259912,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.304348,
+      "cash_bail_pct_white": 0.192661,
+      "total_cases": 227
+    },
+    {
+      "name": "Martin, Armand",
+      "cash_bail_pct": 0.376471,
+      "unsecured_pct": 0.005348,
+      "ror_pct": 0.175401,
+      "nonmonetary_pct": 0.442781,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.426065,
+      "cash_bail_pct_white": 0.340952,
+      "total_cases": 935
+    },
+    {
+      "name": "Martini, Randy C.",
+      "cash_bail_pct": 0.491453,
+      "unsecured_pct": 0.001068,
+      "ror_pct": 0.185897,
+      "nonmonetary_pct": 0.321581,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.574297,
+      "cash_bail_pct_white": 0.404762,
+      "total_cases": 936
+    },
+    {
+      "name": "McGraw-Desmet, Maureen",
+      "cash_bail_pct": 0.300188,
+      "unsecured_pct": 0.009381,
+      "ror_pct": 0.425891,
+      "nonmonetary_pct": 0.26454,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.457627,
+      "cash_bail_pct_white": 0.221902,
+      "total_cases": 533
+    },
+    {
+      "name": "Miller, Thomas Jr.",
+      "cash_bail_pct": 0.420561,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.46729,
+      "nonmonetary_pct": 0.11215,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.62844,
+      "cash_bail_pct_white": 0.31401,
+      "total_cases": 642
+    },
+    {
+      "name": "Mills, Beth S.",
+      "cash_bail_pct": 0.417939,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.314885,
+      "nonmonetary_pct": 0.267176,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.573684,
+      "cash_bail_pct_white": 0.332308,
+      "total_cases": 524
+    },
+    {
+      "name": "Motznik, James A.",
+      "cash_bail_pct": 0.496751,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.254152,
+      "nonmonetary_pct": 0.249097,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.55663,
+      "cash_bail_pct_white": 0.439873,
+      "total_cases": 1385
+    },
+    {
+      "name": "Murray, Mary P.",
+      "cash_bail_pct": 0.193333,
+      "unsecured_pct": 0.000833,
+      "ror_pct": 0.445,
+      "nonmonetary_pct": 0.358333,
+      "nominal_pct": 0.0025,
+      "cash_bail_pct_black": 0.298387,
+      "cash_bail_pct_white": 0.150124,
+      "total_cases": 1200
+    },
+    {
+      "name": "Olasz, Richard D. Jr.",
+      "cash_bail_pct": 0.276013,
+      "unsecured_pct": 0.009858,
+      "ror_pct": 0.197152,
+      "nonmonetary_pct": 0.515882,
+      "nominal_pct": 0.001095,
+      "cash_bail_pct_black": 0.34689,
+      "cash_bail_pct_white": 0.214137,
+      "total_cases": 913
+    },
+    {
+      "name": "Opiela, Richard G.",
+      "cash_bail_pct": 0.293924,
+      "unsecured_pct": 0.246305,
+      "ror_pct": 0.183908,
+      "nonmonetary_pct": 0.275862,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.474227,
+      "cash_bail_pct_white": 0.211823,
+      "total_cases": 609
+    },
+    {
+      "name": "Petite, Oscar Jerome Jr.",
+      "cash_bail_pct": 0.342669,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.288303,
+      "nonmonetary_pct": 0.367381,
+      "nominal_pct": 0.001647,
+      "cash_bail_pct_black": 0.44186,
+      "cash_bail_pct_white": 0.249147,
+      "total_cases": 607
+    },
+    {
+      "name": "Ravenstahl, Robert Jr.",
+      "cash_bail_pct": 0.301179,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.289389,
+      "nonmonetary_pct": 0.409432,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.338395,
+      "cash_bail_pct_white": 0.272727,
+      "total_cases": 933
+    },
+    {
+      "name": "Riazzi, Eugene F. Jr.",
+      "cash_bail_pct": 0.375852,
+      "unsecured_pct": 0.002921,
+      "ror_pct": 0.273612,
+      "nonmonetary_pct": 0.345667,
+      "nominal_pct": 0.001947,
+      "cash_bail_pct_black": 0.39661,
+      "cash_bail_pct_white": 0.352246,
+      "total_cases": 1027
+    },
+    {
+      "name": "Ricciardi, Eugene",
+      "cash_bail_pct": 0.488941,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.235157,
+      "nonmonetary_pct": 0.275902,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.559908,
+      "cash_bail_pct_white": 0.424096,
+      "total_cases": 859
+    },
+    {
+      "name": "Rushing, Derwin",
+      "cash_bail_pct": 0.33114,
+      "unsecured_pct": 0.002924,
+      "ror_pct": 0.259503,
+      "nonmonetary_pct": 0.406433,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.384505,
+      "cash_bail_pct_white": 0.269716,
+      "total_cases": 1368
+    },
+    {
+      "name": "Saveikis, Anthony",
+      "cash_bail_pct": 0.388889,
+      "unsecured_pct": 0.011111,
+      "ror_pct": 0.42963,
+      "nonmonetary_pct": 0.17037,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.645714,
+      "cash_bail_pct_white": 0.263456,
+      "total_cases": 540
+    },
+    {
+      "name": "Schricker, Scott H.",
+      "cash_bail_pct": 0.238722,
+      "unsecured_pct": 0.00282,
+      "ror_pct": 0.68797,
+      "nonmonetary_pct": 0.070489,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.258427,
+      "cash_bail_pct_white": 0.212121,
+      "total_cases": 1064
+    },
+    {
+      "name": "Shaffer, Peter H.",
+      "cash_bail_pct": 0.35545,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.151659,
+      "nonmonetary_pct": 0.492891,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.486842,
+      "cash_bail_pct_white": 0.296875,
+      "total_cases": 211
+    },
+    {
+      "name": "Smith, Tara",
+      "cash_bail_pct": 0.341191,
+      "unsecured_pct": 0.055831,
+      "ror_pct": 0.151365,
+      "nonmonetary_pct": 0.451613,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.523636,
+      "cash_bail_pct_white": 0.241779,
+      "total_cases": 806
+    },
+    {
+      "name": "Sosovicka, David J.",
+      "cash_bail_pct": 0.472368,
+      "unsecured_pct": 0.001316,
+      "ror_pct": 0.217105,
+      "nonmonetary_pct": 0.309211,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.679348,
+      "cash_bail_pct_white": 0.407733,
+      "total_cases": 760
+    },
+    {
+      "name": "Stephens, Craig C.",
+      "cash_bail_pct": 0.474676,
+      "unsecured_pct": 0.084806,
+      "ror_pct": 0.194346,
+      "nonmonetary_pct": 0.246172,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.615616,
+      "cash_bail_pct_white": 0.388889,
+      "total_cases": 849
+    },
+    {
+      "name": "Swan, Tom",
+      "cash_bail_pct": 0.253289,
+      "unsecured_pct": 0.001645,
+      "ror_pct": 0.347039,
+      "nonmonetary_pct": 0.398026,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.458333,
+      "cash_bail_pct_white": 0.175115,
+      "total_cases": 608
+    },
+    {
+      "name": "Swearingen-Batch, Carla M.",
+      "cash_bail_pct": 0.278261,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.150725,
+      "nonmonetary_pct": 0.571014,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.503472,
+      "cash_bail_pct_white": 0.192034,
+      "total_cases": 1035
+    },
+    {
+      "name": "Tibbs, Edward A.",
+      "cash_bail_pct": 0.652322,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.077869,
+      "nonmonetary_pct": 0.269809,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.704042,
+      "cash_bail_pct_white": 0.601783,
+      "total_cases": 1464
+    },
+    {
+      "name": "Torkowsky, Thomas R.",
+      "cash_bail_pct": 0.572093,
+      "unsecured_pct": 0.004651,
+      "ror_pct": 0.344186,
+      "nonmonetary_pct": 0.07907,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.651822,
+      "cash_bail_pct_white": 0.451977,
+      "total_cases": 430
+    },
+    {
+      "name": "Wagner, William",
+      "cash_bail_pct": 0.428291,
+      "unsecured_pct": 0.084479,
+      "ror_pct": 0.32613,
+      "nonmonetary_pct": 0.1611,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.664804,
+      "cash_bail_pct_white": 0.30094,
+      "total_cases": 509
+    },
+    {
+      "name": "Welsh, Regis C.",
+      "cash_bail_pct": 0.799292,
+      "unsecured_pct": 0.003542,
+      "ror_pct": 0.086187,
+      "nonmonetary_pct": 0.11098,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.833922,
+      "cash_bail_pct_white": 0.765644,
+      "total_cases": 1694
+    },
+    {
+      "name": "Zucco, Linda Inez",
+      "cash_bail_pct": 0.253829,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.398249,
+      "nonmonetary_pct": 0.347921,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.375796,
+      "cash_bail_pct_white": 0.187713,
+      "total_cases": 457
+    },
+    {
+      "name": "Zyra, Gary M.",
+      "cash_bail_pct": 0.487013,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.094156,
+      "nonmonetary_pct": 0.418831,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.557576,
+      "cash_bail_pct_white": 0.4,
+      "total_cases": 308
+    }
+  ],
+  "Armstrong": [
+    {
+      "name": "Andring, James",
+      "cash_bail_pct": 0.610951,
+      "unsecured_pct": 0.383285,
+      "ror_pct": 0.005764,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.833333,
+      "cash_bail_pct_white": 0.607717,
+      "total_cases": 347
+    },
+    {
+      "name": "Decomo, J. Gary",
+      "cash_bail_pct": 0.364912,
+      "unsecured_pct": 0.012281,
+      "ror_pct": 0.542105,
+      "nonmonetary_pct": 0.080702,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.513514,
+      "cash_bail_pct_white": 0.351248,
+      "total_cases": 570
+    },
+    {
+      "name": "Owen, James H.",
+      "cash_bail_pct": 0.406036,
+      "unsecured_pct": 0.108368,
+      "ror_pct": 0.473251,
+      "nonmonetary_pct": 0.012346,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.660714,
+      "cash_bail_pct_white": 0.386018,
+      "total_cases": 729
+    }
+  ],
+  "Beaver": [
+    {
+      "name": "Armour, John W.",
+      "cash_bail_pct": 0.556757,
+      "unsecured_pct": 0.021622,
+      "ror_pct": 0.353153,
+      "nonmonetary_pct": 0.068468,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.697183,
+      "cash_bail_pct_white": 0.523316,
+      "total_cases": 555
+    },
+    {
+      "name": "Conroy, Eileen M.",
+      "cash_bail_pct": 0.298246,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.640351,
+      "nonmonetary_pct": 0.061404,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.37931,
+      "cash_bail_pct_white": 0.302632,
+      "total_cases": 114
+    },
+    {
+      "name": "Finn, Timothy",
+      "cash_bail_pct": 0.320127,
+      "unsecured_pct": 0.242472,
+      "ror_pct": 0.418384,
+      "nonmonetary_pct": 0.019017,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.529412,
+      "cash_bail_pct_white": 0.257336,
+      "total_cases": 631
+    },
+    {
+      "name": "Hladio, Andrew M.",
+      "cash_bail_pct": 0.625,
+      "unsecured_pct": 0.141204,
+      "ror_pct": 0.222222,
+      "nonmonetary_pct": 0.011574,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.719424,
+      "cash_bail_pct_white": 0.600707,
+      "total_cases": 432
+    },
+    {
+      "name": "Howe, Edward",
+      "cash_bail_pct": 0.557398,
+      "unsecured_pct": 0.133929,
+      "ror_pct": 0.294643,
+      "nonmonetary_pct": 0.014031,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.70297,
+      "cash_bail_pct_white": 0.517241,
+      "total_cases": 784
+    },
+    {
+      "name": "Livingston, William R. II",
+      "cash_bail_pct": 0.677249,
+      "unsecured_pct": 0.05291,
+      "ror_pct": 0.267196,
+      "nonmonetary_pct": 0.002646,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.827068,
+      "cash_bail_pct_white": 0.605263,
+      "total_cases": 378
+    },
+    {
+      "name": "Loughner, C. Douglas.",
+      "cash_bail_pct": 0.533733,
+      "unsecured_pct": 0.032984,
+      "ror_pct": 0.413793,
+      "nonmonetary_pct": 0.01949,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.6875,
+      "cash_bail_pct_white": 0.484444,
+      "total_cases": 667
+    },
+    {
+      "name": "Nicholson, Dale F.",
+      "cash_bail_pct": 0.493557,
+      "unsecured_pct": 0.190722,
+      "ror_pct": 0.298969,
+      "nonmonetary_pct": 0.016753,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.616822,
+      "cash_bail_pct_white": 0.439024,
+      "total_cases": 776
+    },
+    {
+      "name": "Schafer, Joseph",
+      "cash_bail_pct": 0.430295,
+      "unsecured_pct": 0.175603,
+      "ror_pct": 0.380697,
+      "nonmonetary_pct": 0.013405,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.570681,
+      "cash_bail_pct_white": 0.378119,
+      "total_cases": 746
+    },
+    {
+      "name": "Swihart, Janet",
+      "cash_bail_pct": 0.534712,
+      "unsecured_pct": 0.143279,
+      "ror_pct": 0.310192,
+      "nonmonetary_pct": 0.01034,
+      "nominal_pct": 0.001477,
+      "cash_bail_pct_black": 0.633028,
+      "cash_bail_pct_white": 0.501176,
+      "total_cases": 677
+    }
+  ],
+  "Bedford": [
+    {
+      "name": "Baker, Brian K.",
+      "cash_bail_pct": 0.370262,
+      "unsecured_pct": 0.594752,
+      "ror_pct": 0.034985,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.590909,
+      "cash_bail_pct_white": 0.356467,
+      "total_cases": 343
+    },
+    {
+      "name": "Bingham, H. Cyril Jr.",
+      "cash_bail_pct": 0.450135,
+      "unsecured_pct": 0.549865,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.733333,
+      "cash_bail_pct_white": 0.420732,
+      "total_cases": 371
+    },
+    {
+      "name": "Calhoun, Kathy S.",
+      "cash_bail_pct": 0.342932,
+      "unsecured_pct": 0.625654,
+      "ror_pct": 0.031414,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.411765,
+      "cash_bail_pct_white": 0.338983,
+      "total_cases": 382
+    },
+    {
+      "name": "Osman, Tonya M.",
+      "cash_bail_pct": 0.320946,
+      "unsecured_pct": 0.668919,
+      "ror_pct": 0.010135,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.352941,
+      "cash_bail_pct_white": 0.318681,
+      "total_cases": 296
+    }
+  ],
+  "Berks": [
+    {
+      "name": "Bagenstose, Kim L.",
+      "cash_bail_pct": 0.315399,
+      "unsecured_pct": 0.320965,
+      "ror_pct": 0.363636,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.482143,
+      "cash_bail_pct_white": 0.295983,
+      "total_cases": 539
+    },
+    {
+      "name": "Bentz, Nicholas M. Jr.",
+      "cash_bail_pct": 0.374858,
+      "unsecured_pct": 0.272933,
+      "ror_pct": 0.352208,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.418182,
+      "cash_bail_pct_white": 0.398413,
+      "total_cases": 883
+    },
+    {
+      "name": "Book, Andrea",
+      "cash_bail_pct": 0.437681,
+      "unsecured_pct": 0.37971,
+      "ror_pct": 0.17971,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.002899,
+      "cash_bail_pct_black": 0.52381,
+      "cash_bail_pct_white": 0.434629,
+      "total_cases": 345
+    },
+    {
+      "name": "Dougherty, Timothy M.",
+      "cash_bail_pct": 0.298611,
+      "unsecured_pct": 0.069444,
+      "ror_pct": 0.631944,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.30303,
+      "cash_bail_pct_white": 0.340206,
+      "total_cases": 144
+    },
+    {
+      "name": "Fegley, Sandra L.",
+      "cash_bail_pct": 0.320574,
+      "unsecured_pct": 0.302632,
+      "ror_pct": 0.375598,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001196,
+      "cash_bail_pct_black": 0.292517,
+      "cash_bail_pct_white": 0.327434,
+      "total_cases": 836
+    },
+    {
+      "name": "Frederick, Victor M. IV",
+      "cash_bail_pct": 0.366972,
+      "unsecured_pct": 0.633028,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.4,
+      "cash_bail_pct_white": 0.37234,
+      "total_cases": 436
+    },
+    {
+      "name": "Gauby, Thomas M. Sr.",
+      "cash_bail_pct": 0.427083,
+      "unsecured_pct": 0.3125,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.260417,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.409091,
+      "cash_bail_pct_white": 0.431193,
+      "total_cases": 384
+    },
+    {
+      "name": "Glass, David E.",
+      "cash_bail_pct": 0.567227,
+      "unsecured_pct": 0.432773,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.890909,
+      "cash_bail_pct_white": 0.534653,
+      "total_cases": 476
+    },
+    {
+      "name": "Greth, Gail M.",
+      "cash_bail_pct": 0.355231,
+      "unsecured_pct": 0.644769,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.342466,
+      "cash_bail_pct_white": 0.351682,
+      "total_cases": 411
+    },
+    {
+      "name": "Hadzick, Paul J.",
+      "cash_bail_pct": 0.82459,
+      "unsecured_pct": 0.17377,
+      "ror_pct": 0.001639,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.85124,
+      "cash_bail_pct_white": 0.824786,
+      "total_cases": 1220
+    },
+    {
+      "name": "Hall, William N. Jr.",
+      "cash_bail_pct": 0.954044,
+      "unsecured_pct": 0.044118,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001838,
+      "cash_bail_pct_black": 0.980583,
+      "cash_bail_pct_white": 0.948235,
+      "total_cases": 544
+    },
+    {
+      "name": "Hartman, Michael G.",
+      "cash_bail_pct": 0.330454,
+      "unsecured_pct": 0.669546,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.4,
+      "cash_bail_pct_white": 0.320755,
+      "total_cases": 463
+    },
+    {
+      "name": "Kennedy, Stuart D.",
+      "cash_bail_pct": 0.622263,
+      "unsecured_pct": 0.209854,
+      "ror_pct": 0.167883,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.678899,
+      "cash_bail_pct_white": 0.631188,
+      "total_cases": 548
+    },
+    {
+      "name": "Kowalski, Phyllis J.",
+      "cash_bail_pct": 0.555215,
+      "unsecured_pct": 0.43865,
+      "ror_pct": 0.006135,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.540541,
+      "cash_bail_pct_white": 0.562232,
+      "total_cases": 326
+    },
+    {
+      "name": "Leonardziak, Michael J.",
+      "cash_bail_pct": 0.495327,
+      "unsecured_pct": 0.495327,
+      "ror_pct": 0.009346,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.481481,
+      "cash_bail_pct_white": 0.506849,
+      "total_cases": 107
+    },
+    {
+      "name": "Patton, Dean R.",
+      "cash_bail_pct": 0.457143,
+      "unsecured_pct": 0.542857,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.578512,
+      "cash_bail_pct_white": 0.428571,
+      "total_cases": 770
+    },
+    {
+      "name": "Robinson, Alvin B.",
+      "cash_bail_pct": 0.67642,
+      "unsecured_pct": 0.320138,
+      "ror_pct": 0.003442,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.669355,
+      "cash_bail_pct_white": 0.695444,
+      "total_cases": 581
+    },
+    {
+      "name": "Scott, Kyley L.",
+      "cash_bail_pct": 0.523702,
+      "unsecured_pct": 0.21219,
+      "ror_pct": 0.264108,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.620253,
+      "cash_bail_pct_white": 0.535385,
+      "total_cases": 443
+    },
+    {
+      "name": "Xavios, Thomas H.",
+      "cash_bail_pct": 0.542654,
+      "unsecured_pct": 0.440758,
+      "ror_pct": 0.016588,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.641975,
+      "cash_bail_pct_white": 0.552542,
+      "total_cases": 422
+    },
+    {
+      "name": "Yoch, David L.",
+      "cash_bail_pct": 0.437396,
+      "unsecured_pct": 0.320534,
+      "ror_pct": 0.24207,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.546512,
+      "cash_bail_pct_white": 0.425051,
+      "total_cases": 599
+    },
+    {
+      "name": "Young, Ann L.",
+      "cash_bail_pct": 0.378729,
+      "unsecured_pct": 0.155642,
+      "ror_pct": 0.465629,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.461538,
+      "cash_bail_pct_white": 0.363495,
+      "total_cases": 771
+    }
+  ],
+  "Blair": [
+    {
+      "name": "Aigner, Paula M.",
+      "cash_bail_pct": 0.393885,
+      "unsecured_pct": 0.606115,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.681818,
+      "cash_bail_pct_white": 0.373016,
+      "total_cases": 556
+    },
+    {
+      "name": "Auker, Jeffrey P.",
+      "cash_bail_pct": 0.276146,
+      "unsecured_pct": 0.703878,
+      "ror_pct": 0.016451,
+      "nonmonetary_pct": 0.003525,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.345679,
+      "cash_bail_pct_white": 0.281831,
+      "total_cases": 851
+    },
+    {
+      "name": "Jackson, Steven D.",
+      "cash_bail_pct": 0.178049,
+      "unsecured_pct": 0.821951,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.413333,
+      "cash_bail_pct_white": 0.157601,
+      "total_cases": 820
+    },
+    {
+      "name": "Kelly, Todd F.",
+      "cash_bail_pct": 0.294398,
+      "unsecured_pct": 0.705602,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.445545,
+      "cash_bail_pct_white": 0.27977,
+      "total_cases": 839
+    },
+    {
+      "name": "Miller, Fred B.",
+      "cash_bail_pct": 0.428382,
+      "unsecured_pct": 0.564987,
+      "ror_pct": 0.006631,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.77027,
+      "cash_bail_pct_white": 0.395173,
+      "total_cases": 754
+    },
+    {
+      "name": "Ormsby, Craig E.",
+      "cash_bail_pct": 0.322718,
+      "unsecured_pct": 0.677282,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.903226,
+      "cash_bail_pct_white": 0.287037,
+      "total_cases": 471
+    }
+  ],
+  "Bradford": [
+    {
+      "name": "Clark, Timothy M.",
+      "cash_bail_pct": 0.419355,
+      "unsecured_pct": 0.019355,
+      "ror_pct": 0.016129,
+      "nonmonetary_pct": 0.545161,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.45,
+      "cash_bail_pct_white": 0.422877,
+      "total_cases": 620
+    },
+    {
+      "name": "Shaw, Michael",
+      "cash_bail_pct": 0.606132,
+      "unsecured_pct": 0.028302,
+      "ror_pct": 0.007075,
+      "nonmonetary_pct": 0.358491,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.826087,
+      "cash_bail_pct_white": 0.595361,
+      "total_cases": 424
+    },
+    {
+      "name": "Wheaton, Fred M.",
+      "cash_bail_pct": 0.44086,
+      "unsecured_pct": 0.47043,
+      "ror_pct": 0.069892,
+      "nonmonetary_pct": 0.018817,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.438356,
+      "total_cases": 372
+    },
+    {
+      "name": "Wilcox, Jonathan",
+      "cash_bail_pct": 0.369014,
+      "unsecured_pct": 0.112676,
+      "ror_pct": 0.470423,
+      "nonmonetary_pct": 0.047887,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.4,
+      "cash_bail_pct_white": 0.367647,
+      "total_cases": 355
+    }
+  ],
+  "Bucks": [
+    {
+      "name": "Armitage, Regina",
+      "cash_bail_pct": 0.316038,
+      "unsecured_pct": 0.435535,
+      "ror_pct": 0.248428,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.3875,
+      "cash_bail_pct_white": 0.306122,
+      "total_cases": 636
+    },
+    {
+      "name": "Baranoski, Daniel",
+      "cash_bail_pct": 0.339422,
+      "unsecured_pct": 0.263318,
+      "ror_pct": 0.395738,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001522,
+      "cash_bail_pct_black": 0.447368,
+      "cash_bail_pct_white": 0.308943,
+      "total_cases": 657
+    },
+    {
+      "name": "Baum, Charles W.",
+      "cash_bail_pct": 0.316817,
+      "unsecured_pct": 0.68018,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.003003,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.471429,
+      "cash_bail_pct_white": 0.298094,
+      "total_cases": 666
+    },
+    {
+      "name": "Benz, William J.",
+      "cash_bail_pct": 0.179936,
+      "unsecured_pct": 0.813694,
+      "ror_pct": 0.003185,
+      "nonmonetary_pct": 0.003185,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.25,
+      "cash_bail_pct_white": 0.173077,
+      "total_cases": 628
+    },
+    {
+      "name": "Burns, Michael J.",
+      "cash_bail_pct": 0.384615,
+      "unsecured_pct": 0.488166,
+      "ror_pct": 0.127219,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.468354,
+      "cash_bail_pct_white": 0.368,
+      "total_cases": 338
+    },
+    {
+      "name": "Daly, Philip J.",
+      "cash_bail_pct": 0.272727,
+      "unsecured_pct": 0.30303,
+      "ror_pct": 0.424242,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.2,
+      "cash_bail_pct_white": 0.275862,
+      "total_cases": 132
+    },
+    {
+      "name": "Deatelhauser, Kenneth E.",
+      "cash_bail_pct": 0.355556,
+      "unsecured_pct": 0.127778,
+      "ror_pct": 0.516667,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.56,
+      "cash_bail_pct_white": 0.326667,
+      "total_cases": 180
+    },
+    {
+      "name": "Douple, Mark D.",
+      "cash_bail_pct": 0.410909,
+      "unsecured_pct": 0.587273,
+      "ror_pct": 0.001818,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.685714,
+      "cash_bail_pct_white": 0.371739,
+      "total_cases": 550
+    },
+    {
+      "name": "Durkin, John J.",
+      "cash_bail_pct": 0.358333,
+      "unsecured_pct": 0.633333,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.008333,
+      "cash_bail_pct_black": 0.3,
+      "cash_bail_pct_white": 0.371134,
+      "total_cases": 120
+    },
+    {
+      "name": "Falcone, Joseph P.",
+      "cash_bail_pct": 0.342873,
+      "unsecured_pct": 0.637486,
+      "ror_pct": 0.01908,
+      "nonmonetary_pct": 0.000561,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.394841,
+      "cash_bail_pct_white": 0.328467,
+      "total_cases": 1782
+    },
+    {
+      "name": "Finello, Daniel J. Jr.",
+      "cash_bail_pct": 0.387097,
+      "unsecured_pct": 0.606855,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.006048,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.367758,
+      "total_cases": 496
+    },
+    {
+      "name": "Gallagher, Michael W.",
+      "cash_bail_pct": 0.338158,
+      "unsecured_pct": 0.657895,
+      "ror_pct": 0.003289,
+      "nonmonetary_pct": 0.000658,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.38484,
+      "cash_bail_pct_white": 0.33157,
+      "total_cases": 1520
+    },
+    {
+      "name": "Gambardella, Gary",
+      "cash_bail_pct": 0.323529,
+      "unsecured_pct": 0.345201,
+      "ror_pct": 0.329721,
+      "nonmonetary_pct": 0.001548,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.466667,
+      "cash_bail_pct_white": 0.305699,
+      "total_cases": 646
+    },
+    {
+      "name": "Kelly, John J. Jr.",
+      "cash_bail_pct": 0.330986,
+      "unsecured_pct": 0.667606,
+      "ror_pct": 0.001408,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.386905,
+      "cash_bail_pct_white": 0.317919,
+      "total_cases": 710
+    },
+    {
+      "name": "Kline, Joanne V.",
+      "cash_bail_pct": 0.459499,
+      "unsecured_pct": 0.069219,
+      "ror_pct": 0.446244,
+      "nonmonetary_pct": 0.025037,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.516129,
+      "cash_bail_pct_white": 0.444906,
+      "total_cases": 679
+    },
+    {
+      "name": "Peranteau, Frank W. Sr.",
+      "cash_bail_pct": 0.445652,
+      "unsecured_pct": 0.518116,
+      "ror_pct": 0.028986,
+      "nonmonetary_pct": 0.007246,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.65,
+      "cash_bail_pct_white": 0.388626,
+      "total_cases": 276
+    },
+    {
+      "name": "Petrucci, Michael W.",
+      "cash_bail_pct": 0.429293,
+      "unsecured_pct": 0.570707,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.623188,
+      "cash_bail_pct_white": 0.389937,
+      "total_cases": 396
+    },
+    {
+      "name": "Roth, C. Robert",
+      "cash_bail_pct": 0.300261,
+      "unsecured_pct": 0.211488,
+      "ror_pct": 0.488251,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.413793,
+      "cash_bail_pct_white": 0.293948,
+      "total_cases": 383
+    },
+    {
+      "name": "Schnell, Robert A. Jr.",
+      "cash_bail_pct": 0.40566,
+      "unsecured_pct": 0.245283,
+      "ror_pct": 0.349057,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.444444,
+      "cash_bail_pct_white": 0.410526,
+      "total_cases": 106
+    },
+    {
+      "name": "Seaman, Jean",
+      "cash_bail_pct": 0.3084,
+      "unsecured_pct": 0.188723,
+      "ror_pct": 0.500575,
+      "nonmonetary_pct": 0.002301,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.507246,
+      "cash_bail_pct_white": 0.274262,
+      "total_cases": 869
+    },
+    {
+      "name": "Snow, Maggie",
+      "cash_bail_pct": 0.326705,
+      "unsecured_pct": 0.303977,
+      "ror_pct": 0.369318,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.590164,
+      "cash_bail_pct_white": 0.281588,
+      "total_cases": 352
+    },
+    {
+      "name": "Vislosky, Jan",
+      "cash_bail_pct": 0.331868,
+      "unsecured_pct": 0.661538,
+      "ror_pct": 0.004396,
+      "nonmonetary_pct": 0.002198,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.375,
+      "cash_bail_pct_white": 0.321678,
+      "total_cases": 910
+    },
+    {
+      "name": "Wagner, Robert L. Jr.",
+      "cash_bail_pct": 0.463542,
+      "unsecured_pct": 0.185764,
+      "ror_pct": 0.350694,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.65873,
+      "cash_bail_pct_white": 0.410835,
+      "total_cases": 576
+    },
+    {
+      "name": "Waltman, John I.",
+      "cash_bail_pct": 0.480447,
+      "unsecured_pct": 0.357542,
+      "ror_pct": 0.162011,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.638889,
+      "cash_bail_pct_white": 0.451852,
+      "total_cases": 179
+    }
+  ],
+  "Butler": [
+    {
+      "name": "Fullerton, William T.",
+      "cash_bail_pct": 0.445682,
+      "unsecured_pct": 0.022284,
+      "ror_pct": 0.410399,
+      "nonmonetary_pct": 0.104921,
+      "nominal_pct": 0.016713,
+      "cash_bail_pct_black": 0.744966,
+      "cash_bail_pct_white": 0.398463,
+      "total_cases": 1077
+    },
+    {
+      "name": "Haggerty, Sue",
+      "cash_bail_pct": 0.325455,
+      "unsecured_pct": 0.123636,
+      "ror_pct": 0.503636,
+      "nonmonetary_pct": 0.043636,
+      "nominal_pct": 0.003636,
+      "cash_bail_pct_black": 0.647059,
+      "cash_bail_pct_white": 0.307692,
+      "total_cases": 550
+    },
+    {
+      "name": "Kovach, David T.",
+      "cash_bail_pct": 0.455556,
+      "unsecured_pct": 0.098765,
+      "ror_pct": 0.377778,
+      "nonmonetary_pct": 0.067901,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.634615,
+      "cash_bail_pct_white": 0.423929,
+      "total_cases": 810
+    },
+    {
+      "name": "O'Donnell, Kevin P.",
+      "cash_bail_pct": 0.253857,
+      "unsecured_pct": 0.008415,
+      "ror_pct": 0.719495,
+      "nonmonetary_pct": 0.015428,
+      "nominal_pct": 0.002805,
+      "cash_bail_pct_black": 0.409091,
+      "cash_bail_pct_white": 0.24431,
+      "total_cases": 713
+    },
+    {
+      "name": "O'Donnell, William S.",
+      "cash_bail_pct": 0.307692,
+      "unsecured_pct": 0.080342,
+      "ror_pct": 0.601709,
+      "nonmonetary_pct": 0.010256,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.311688,
+      "cash_bail_pct_white": 0.306,
+      "total_cases": 585
+    },
+    {
+      "name": "Seibel, Wayne D.",
+      "cash_bail_pct": 0.218876,
+      "unsecured_pct": 0.126506,
+      "ror_pct": 0.459839,
+      "nonmonetary_pct": 0.192771,
+      "nominal_pct": 0.002008,
+      "cash_bail_pct_black": 0.529412,
+      "cash_bail_pct_white": 0.211207,
+      "total_cases": 498
+    },
+    {
+      "name": "Stoughton, Lewis E.",
+      "cash_bail_pct": 0.354358,
+      "unsecured_pct": 0.040138,
+      "ror_pct": 0.446101,
+      "nonmonetary_pct": 0.15367,
+      "nominal_pct": 0.005734,
+      "cash_bail_pct_black": 0.625,
+      "cash_bail_pct_white": 0.339461,
+      "total_cases": 872
+    }
+  ],
+  "Cambria": [
+    {
+      "name": "Barron, John W.",
+      "cash_bail_pct": 0.359756,
+      "unsecured_pct": 0.375,
+      "ror_pct": 0.265244,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.637795,
+      "cash_bail_pct_white": 0.300601,
+      "total_cases": 656
+    },
+    {
+      "name": "Creany, Fred",
+      "cash_bail_pct": 0.503521,
+      "unsecured_pct": 0.096831,
+      "ror_pct": 0.399648,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.932432,
+      "cash_bail_pct_white": 0.434511,
+      "total_cases": 568
+    },
+    {
+      "name": "Musulin, Michael",
+      "cash_bail_pct": 0.557932,
+      "unsecured_pct": 0.197861,
+      "ror_pct": 0.244207,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.65285,
+      "cash_bail_pct_white": 0.515493,
+      "total_cases": 561
+    },
+    {
+      "name": "Prebish, John Jr.",
+      "cash_bail_pct": 0.386694,
+      "unsecured_pct": 0.413721,
+      "ror_pct": 0.197505,
+      "nonmonetary_pct": 0.002079,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.672414,
+      "cash_bail_pct_white": 0.344578,
+      "total_cases": 481
+    },
+    {
+      "name": "Price, Kevin J.",
+      "cash_bail_pct": 0.402344,
+      "unsecured_pct": 0.572917,
+      "ror_pct": 0.02474,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.511811,
+      "cash_bail_pct_white": 0.350101,
+      "total_cases": 768
+    },
+    {
+      "name": "Varner, Rick W.",
+      "cash_bail_pct": 0.539278,
+      "unsecured_pct": 0.456476,
+      "ror_pct": 0.004246,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.826923,
+      "cash_bail_pct_white": 0.509756,
+      "total_cases": 471
+    },
+    {
+      "name": "Zanghi, Mary Ann",
+      "cash_bail_pct": 0.552764,
+      "unsecured_pct": 0.190955,
+      "ror_pct": 0.253769,
+      "nonmonetary_pct": 0.002513,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.767442,
+      "cash_bail_pct_white": 0.488449,
+      "total_cases": 398
+    },
+    {
+      "name": "Zungali, Michael",
+      "cash_bail_pct": 0.356994,
+      "unsecured_pct": 0.321503,
+      "ror_pct": 0.321503,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.825,
+      "cash_bail_pct_white": 0.316279,
+      "total_cases": 479
+    }
+  ],
+  "Cameron": [
+    {
+      "name": "Brown, Barry D.",
+      "cash_bail_pct": 0.216418,
+      "unsecured_pct": 0.783582,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 1,
+      "cash_bail_pct_white": 0.254902,
+      "total_cases": 134
+    }
+  ],
+  "Carbon": [
+    {
+      "name": "Homanko, Joseph D. Sr.",
+      "cash_bail_pct": 0.356897,
+      "unsecured_pct": 0.577586,
+      "ror_pct": 0.065517,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.415584,
+      "cash_bail_pct_white": 0.346072,
+      "total_cases": 580
+    },
+    {
+      "name": "Kissner, William J.",
+      "cash_bail_pct": 0.27259,
+      "unsecured_pct": 0.575301,
+      "ror_pct": 0.152108,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.576923,
+      "cash_bail_pct_white": 0.26087,
+      "total_cases": 664
+    },
+    {
+      "name": "Kosciolek, Casimir T.",
+      "cash_bail_pct": 0.386266,
+      "unsecured_pct": 0.454936,
+      "ror_pct": 0.158798,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.590909,
+      "cash_bail_pct_white": 0.373817,
+      "total_cases": 699
+    },
+    {
+      "name": "Lewis, Edward M.",
+      "cash_bail_pct": 0.204545,
+      "unsecured_pct": 0.573864,
+      "ror_pct": 0.221591,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.4,
+      "cash_bail_pct_white": 0.18,
+      "total_cases": 176
+    },
+    {
+      "name": "Schrantz, Eric M.",
+      "cash_bail_pct": 0.328407,
+      "unsecured_pct": 0.505747,
+      "ror_pct": 0.165846,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.428571,
+      "cash_bail_pct_white": 0.332721,
+      "total_cases": 609
+    }
+  ],
+  "Centre": [
+    {
+      "name": "Gillette-Walker, Kelley",
+      "cash_bail_pct": 0.444828,
+      "unsecured_pct": 0.086207,
+      "ror_pct": 0.468966,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.748387,
+      "cash_bail_pct_white": 0.37518,
+      "total_cases": 870
+    },
+    {
+      "name": "Horner, Ronald J.",
+      "cash_bail_pct": 0.060241,
+      "unsecured_pct": 0.036145,
+      "ror_pct": 0.903614,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.25,
+      "cash_bail_pct_white": 0.02682,
+      "total_cases": 332
+    },
+    {
+      "name": "Jordan, Thomas N.",
+      "cash_bail_pct": 0.409605,
+      "unsecured_pct": 0.129944,
+      "ror_pct": 0.460452,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.72,
+      "cash_bail_pct_white": 0.346021,
+      "total_cases": 354
+    },
+    {
+      "name": "Lachman, Steven Frederic",
+      "cash_bail_pct": 0.180422,
+      "unsecured_pct": 0.134357,
+      "ror_pct": 0.685221,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.313953,
+      "cash_bail_pct_white": 0.160714,
+      "total_cases": 521
+    },
+    {
+      "name": "Nileski, Charity L.",
+      "cash_bail_pct": 0.007812,
+      "unsecured_pct": 0.007812,
+      "ror_pct": 0.984375,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.0,
+      "cash_bail_pct_white": 0.009434,
+      "total_cases": 128
+    },
+    {
+      "name": "Prestia, Carmine W. Jr.",
+      "cash_bail_pct": 0.204473,
+      "unsecured_pct": 0.151757,
+      "ror_pct": 0.64377,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.325,
+      "cash_bail_pct_white": 0.169528,
+      "total_cases": 626
+    },
+    {
+      "name": "Sinclair, Allen W.",
+      "cash_bail_pct": 0.271386,
+      "unsecured_pct": 0.120944,
+      "ror_pct": 0.60472,
+      "nonmonetary_pct": 0.00295,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.44,
+      "cash_bail_pct_white": 0.209924,
+      "total_cases": 339
+    }
+  ],
+  "Chester": [
+    {
+      "name": "Bailey, John R.",
+      "cash_bail_pct": 0.385101,
+      "unsecured_pct": 0.425505,
+      "ror_pct": 0.184343,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.005051,
+      "cash_bail_pct_black": 0.508197,
+      "cash_bail_pct_white": 0.330813,
+      "total_cases": 792
+    },
+    {
+      "name": "Brown, Leonard J.",
+      "cash_bail_pct": 0.258462,
+      "unsecured_pct": 0.449231,
+      "ror_pct": 0.292308,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.487179,
+      "cash_bail_pct_white": 0.229682,
+      "total_cases": 325
+    },
+    {
+      "name": "Bruno, Mark A.",
+      "cash_bail_pct": 0.36853,
+      "unsecured_pct": 0.320911,
+      "ror_pct": 0.291925,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.018634,
+      "cash_bail_pct_black": 0.405797,
+      "cash_bail_pct_white": 0.352239,
+      "total_cases": 483
+    },
+    {
+      "name": "Cabry, Michael J. III",
+      "cash_bail_pct": 0.399023,
+      "unsecured_pct": 0.387622,
+      "ror_pct": 0.203583,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.009772,
+      "cash_bail_pct_black": 0.525253,
+      "cash_bail_pct_white": 0.381633,
+      "total_cases": 614
+    },
+    {
+      "name": "Donatelli, Lori Novak",
+      "cash_bail_pct": 0.433036,
+      "unsecured_pct": 0.350446,
+      "ror_pct": 0.212054,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.004464,
+      "cash_bail_pct_black": 0.547619,
+      "cash_bail_pct_white": 0.386581,
+      "total_cases": 448
+    },
+    {
+      "name": "Gill, Nancy",
+      "cash_bail_pct": 0.421712,
+      "unsecured_pct": 0.475992,
+      "ror_pct": 0.098121,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.004175,
+      "cash_bail_pct_black": 0.492424,
+      "cash_bail_pct_white": 0.403614,
+      "total_cases": 479
+    },
+    {
+      "name": "Hines, Gregory V.",
+      "cash_bail_pct": 0.60735,
+      "unsecured_pct": 0.338491,
+      "ror_pct": 0.05029,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.003868,
+      "cash_bail_pct_black": 0.61204,
+      "cash_bail_pct_white": 0.586207,
+      "total_cases": 517
+    },
+    {
+      "name": "Knapp, Gwenn S.",
+      "cash_bail_pct": 0.218009,
+      "unsecured_pct": 0.459716,
+      "ror_pct": 0.312796,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.009479,
+      "cash_bail_pct_black": 0.346939,
+      "cash_bail_pct_white": 0.18125,
+      "total_cases": 211
+    },
+    {
+      "name": "Koon, Grover E.",
+      "cash_bail_pct": 0.517293,
+      "unsecured_pct": 0.4,
+      "ror_pct": 0.076692,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.006015,
+      "cash_bail_pct_black": 0.549724,
+      "cash_bail_pct_white": 0.491039,
+      "total_cases": 665
+    },
+    {
+      "name": "Kraut, William D.",
+      "cash_bail_pct": 0.328018,
+      "unsecured_pct": 0.416856,
+      "ror_pct": 0.243736,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.01139,
+      "cash_bail_pct_black": 0.427083,
+      "cash_bail_pct_white": 0.309598,
+      "total_cases": 439
+    },
+    {
+      "name": "Massey, Scott A.",
+      "cash_bail_pct": 0.436693,
+      "unsecured_pct": 0.381137,
+      "ror_pct": 0.174419,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.007752,
+      "cash_bail_pct_black": 0.5375,
+      "cash_bail_pct_white": 0.412646,
+      "total_cases": 774
+    },
+    {
+      "name": "Michaels, Theodore Peter Jr.",
+      "cash_bail_pct": 0.354077,
+      "unsecured_pct": 0.435622,
+      "ror_pct": 0.208155,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.002146,
+      "cash_bail_pct_black": 0.425743,
+      "cash_bail_pct_white": 0.333333,
+      "total_cases": 466
+    },
+    {
+      "name": "Nistico, Charles",
+      "cash_bail_pct": 0.243421,
+      "unsecured_pct": 0.335526,
+      "ror_pct": 0.421053,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.411765,
+      "cash_bail_pct_white": 0.201754,
+      "total_cases": 152
+    },
+    {
+      "name": "Seavey, Matthew",
+      "cash_bail_pct": 0.353341,
+      "unsecured_pct": 0.361268,
+      "ror_pct": 0.266138,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.019253,
+      "cash_bail_pct_black": 0.541935,
+      "cash_bail_pct_white": 0.311544,
+      "total_cases": 883
+    },
+    {
+      "name": "Sondergaard, Analisa",
+      "cash_bail_pct": 0.323333,
+      "unsecured_pct": 0.373333,
+      "ror_pct": 0.285,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.018333,
+      "cash_bail_pct_black": 0.420513,
+      "cash_bail_pct_white": 0.270202,
+      "total_cases": 600
+    },
+    {
+      "name": "Tartaglio, Thomas W.",
+      "cash_bail_pct": 0.387755,
+      "unsecured_pct": 0.365306,
+      "ror_pct": 0.228571,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.018367,
+      "cash_bail_pct_black": 0.509804,
+      "cash_bail_pct_white": 0.361186,
+      "total_cases": 490
+    },
+    {
+      "name": "Valocchi, Jeffrey J.",
+      "cash_bail_pct": 0.310474,
+      "unsecured_pct": 0.487531,
+      "ror_pct": 0.180798,
+      "nonmonetary_pct": 0.001247,
+      "nominal_pct": 0.01995,
+      "cash_bail_pct_black": 0.334572,
+      "cash_bail_pct_white": 0.310413,
+      "total_cases": 802
+    },
+    {
+      "name": "Vito, Marian T.",
+      "cash_bail_pct": 0.462287,
+      "unsecured_pct": 0.326034,
+      "ror_pct": 0.206813,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.004866,
+      "cash_bail_pct_black": 0.521429,
+      "cash_bail_pct_white": 0.442308,
+      "total_cases": 411
+    }
+  ],
+  "Clarion": [
+    {
+      "name": "Long Turk, Amy L.",
+      "cash_bail_pct": 0.288235,
+      "unsecured_pct": 0.388235,
+      "ror_pct": 0.323529,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.4,
+      "cash_bail_pct_white": 0.29932,
+      "total_cases": 170
+    },
+    {
+      "name": "Miller, Jeffrey C.",
+      "cash_bail_pct": 0.443114,
+      "unsecured_pct": 0.526946,
+      "ror_pct": 0.02994,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.4,
+      "cash_bail_pct_white": 0.448916,
+      "total_cases": 334
+    },
+    {
+      "name": "Quinn, Duane L.",
+      "cash_bail_pct": 0.370166,
+      "unsecured_pct": 0.290055,
+      "ror_pct": 0.337017,
+      "nonmonetary_pct": 0.002762,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.325581,
+      "cash_bail_pct_white": 0.380471,
+      "total_cases": 362
+    },
+    {
+      "name": "Schill, Timothy P.",
+      "cash_bail_pct": 0.42638,
+      "unsecured_pct": 0.184049,
+      "ror_pct": 0.389571,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.7,
+      "cash_bail_pct_white": 0.428571,
+      "total_cases": 326
+    }
+  ],
+  "Clearfield": [
+    {
+      "name": "Ford, Patrick N.",
+      "cash_bail_pct": 0.35614,
+      "unsecured_pct": 0.64386,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.611111,
+      "cash_bail_pct_white": 0.351005,
+      "total_cases": 570
+    },
+    {
+      "name": "Hawkins, James L.",
+      "cash_bail_pct": 0.393393,
+      "unsecured_pct": 0.606607,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.857143,
+      "cash_bail_pct_white": 0.367213,
+      "total_cases": 333
+    },
+    {
+      "name": "Ireland, Richard Allen",
+      "cash_bail_pct": 0.42243,
+      "unsecured_pct": 0.57757,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.578947,
+      "cash_bail_pct_white": 0.421782,
+      "total_cases": 535
+    },
+    {
+      "name": "Nevling, Jerome M.",
+      "cash_bail_pct": 0.28869,
+      "unsecured_pct": 0.705357,
+      "ror_pct": 0.005952,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.283912,
+      "total_cases": 336
+    }
+  ],
+  "Clinton": [
+    {
+      "name": "Maggs, John W.",
+      "cash_bail_pct": 0.57346,
+      "unsecured_pct": 0.42654,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.666667,
+      "cash_bail_pct_white": 0.570681,
+      "total_cases": 211
+    },
+    {
+      "name": "Mills, Frank P.",
+      "cash_bail_pct": 0.121777,
+      "unsecured_pct": 0.654728,
+      "ror_pct": 0.223496,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.2,
+      "cash_bail_pct_white": 0.117371,
+      "total_cases": 698
+    },
+    {
+      "name": "Sanders, Joseph L.",
+      "cash_bail_pct": 0.657807,
+      "unsecured_pct": 0.328904,
+      "ror_pct": 0.003322,
+      "nonmonetary_pct": 0.006645,
+      "nominal_pct": 0.003322,
+      "cash_bail_pct_black": 0.542857,
+      "cash_bail_pct_white": 0.676806,
+      "total_cases": 301
+    }
+  ],
+  "Columbia": [
+    {
+      "name": "Brewer, Doug D.",
+      "cash_bail_pct": 0.501805,
+      "unsecured_pct": 0.234657,
+      "ror_pct": 0.259928,
+      "nonmonetary_pct": 0.00361,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.625,
+      "cash_bail_pct_white": 0.490272,
+      "total_cases": 277
+    },
+    {
+      "name": "Knecht, Richard W.",
+      "cash_bail_pct": 0.451948,
+      "unsecured_pct": 0.080519,
+      "ror_pct": 0.464935,
+      "nonmonetary_pct": 0.002597,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.657895,
+      "cash_bail_pct_white": 0.438066,
+      "total_cases": 385
+    },
+    {
+      "name": "Lawton, Russell L.",
+      "cash_bail_pct": 0.277193,
+      "unsecured_pct": 0.722807,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.181818,
+      "cash_bail_pct_white": 0.300429,
+      "total_cases": 570
+    },
+    {
+      "name": "Long, Craig W.",
+      "cash_bail_pct": 0.432039,
+      "unsecured_pct": 0.208738,
+      "ror_pct": 0.359223,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.846154,
+      "cash_bail_pct_white": 0.413043,
+      "total_cases": 206
+    }
+  ],
+  "Crawford": [
+    {
+      "name": "Marwood, Rita J.",
+      "cash_bail_pct": 0.278846,
+      "unsecured_pct": 0.199519,
+      "ror_pct": 0.521635,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.428571,
+      "cash_bail_pct_white": 0.2711,
+      "total_cases": 416
+    },
+    {
+      "name": "Nicols, Amy L.",
+      "cash_bail_pct": 0.378556,
+      "unsecured_pct": 0.161926,
+      "ror_pct": 0.455142,
+      "nonmonetary_pct": 0.004376,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.592593,
+      "cash_bail_pct_white": 0.370546,
+      "total_cases": 457
+    },
+    {
+      "name": "Pendolino, Samuel V.",
+      "cash_bail_pct": 0.391823,
+      "unsecured_pct": 0.126065,
+      "ror_pct": 0.383305,
+      "nonmonetary_pct": 0.098807,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.581081,
+      "cash_bail_pct_white": 0.365462,
+      "total_cases": 587
+    },
+    {
+      "name": "Zilhaver, Lincoln S.",
+      "cash_bail_pct": 0.356998,
+      "unsecured_pct": 0.042596,
+      "ror_pct": 0.387424,
+      "nonmonetary_pct": 0.212982,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.529412,
+      "cash_bail_pct_white": 0.346939,
+      "total_cases": 493
+    }
+  ],
+  "Cumberland": [
+    {
+      "name": "Adams, H. Anthony",
+      "cash_bail_pct": 0.255682,
+      "unsecured_pct": 0.156818,
+      "ror_pct": 0.5875,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.303867,
+      "cash_bail_pct_white": 0.249631,
+      "total_cases": 880
+    },
+    {
+      "name": "Beckley, Elizabeth S.",
+      "cash_bail_pct": 0.530488,
+      "unsecured_pct": 0.469512,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.640244,
+      "cash_bail_pct_white": 0.491667,
+      "total_cases": 656
+    },
+    {
+      "name": "Birbeck, Jonathan R.",
+      "cash_bail_pct": 0.428064,
+      "unsecured_pct": 0.069272,
+      "ror_pct": 0.483126,
+      "nonmonetary_pct": 0.019538,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.629032,
+      "cash_bail_pct_white": 0.359155,
+      "total_cases": 563
+    },
+    {
+      "name": "Clement, Charles A. Jr.",
+      "cash_bail_pct": 0.449541,
+      "unsecured_pct": 0.120795,
+      "ror_pct": 0.425076,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.004587,
+      "cash_bail_pct_black": 0.583893,
+      "cash_bail_pct_white": 0.409639,
+      "total_cases": 654
+    },
+    {
+      "name": "Cohick, Vivian",
+      "cash_bail_pct": 0.386861,
+      "unsecured_pct": 0.164234,
+      "ror_pct": 0.421533,
+      "nonmonetary_pct": 0.027372,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.641026,
+      "cash_bail_pct_white": 0.35177,
+      "total_cases": 548
+    },
+    {
+      "name": "Correal, Paula P.",
+      "cash_bail_pct": 0.441176,
+      "unsecured_pct": 0.169118,
+      "ror_pct": 0.389706,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.609756,
+      "cash_bail_pct_white": 0.361702,
+      "total_cases": 136
+    },
+    {
+      "name": "Day, Susan K.",
+      "cash_bail_pct": 0.424635,
+      "unsecured_pct": 0.116694,
+      "ror_pct": 0.45705,
+      "nonmonetary_pct": 0.001621,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.522124,
+      "cash_bail_pct_white": 0.403614,
+      "total_cases": 617
+    },
+    {
+      "name": "Dougherty, Richard S. Jr.",
+      "cash_bail_pct": 0.421239,
+      "unsecured_pct": 0.123894,
+      "ror_pct": 0.447788,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.00708,
+      "cash_bail_pct_black": 0.566667,
+      "cash_bail_pct_white": 0.385321,
+      "total_cases": 565
+    },
+    {
+      "name": "Fegley, Paul M",
+      "cash_bail_pct": 0.428099,
+      "unsecured_pct": 0.157025,
+      "ror_pct": 0.414876,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.539062,
+      "cash_bail_pct_white": 0.395745,
+      "total_cases": 605
+    },
+    {
+      "name": "Martin, Mark",
+      "cash_bail_pct": 0.378855,
+      "unsecured_pct": 0.22467,
+      "ror_pct": 0.396476,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.53913,
+      "cash_bail_pct_white": 0.348294,
+      "total_cases": 681
+    },
+    {
+      "name": "Silcox, Kathryn H.",
+      "cash_bail_pct": 0.450609,
+      "unsecured_pct": 0.277402,
+      "ror_pct": 0.269283,
+      "nonmonetary_pct": 0.002706,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.644068,
+      "cash_bail_pct_white": 0.412829,
+      "total_cases": 739
+    }
+  ],
+  "Dauphin": [
+    {
+      "name": "Johnson, Gregory D.",
+      "cash_bail_pct": 0.309061,
+      "unsecured_pct": 0.122977,
+      "ror_pct": 0.564725,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.003236,
+      "cash_bail_pct_black": 0.6,
+      "cash_bail_pct_white": 0.232365,
+      "total_cases": 618
+    },
+    {
+      "name": "Judy, David H.",
+      "cash_bail_pct": 0.405777,
+      "unsecured_pct": 0.192572,
+      "ror_pct": 0.401651,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.56087,
+      "cash_bail_pct_white": 0.332632,
+      "total_cases": 727
+    },
+    {
+      "name": "Lenker, James A.",
+      "cash_bail_pct": 0.429254,
+      "unsecured_pct": 0.566922,
+      "ror_pct": 0.003824,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.434783,
+      "cash_bail_pct_white": 0.435345,
+      "total_cases": 1046
+    },
+    {
+      "name": "Lenker, Kenneth A.",
+      "cash_bail_pct": 0.395833,
+      "unsecured_pct": 0.255952,
+      "ror_pct": 0.348214,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.448718,
+      "cash_bail_pct_white": 0.350877,
+      "total_cases": 672
+    },
+    {
+      "name": "Lindsey, Joseph S.",
+      "cash_bail_pct": 0.342037,
+      "unsecured_pct": 0.657963,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.443787,
+      "cash_bail_pct_white": 0.264851,
+      "total_cases": 766
+    },
+    {
+      "name": "Margerum, Rebecca J.",
+      "cash_bail_pct": 0.35167,
+      "unsecured_pct": 0.282908,
+      "ror_pct": 0.365422,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.590476,
+      "cash_bail_pct_white": 0.285347,
+      "total_cases": 509
+    },
+    {
+      "name": "McKnight, Sonya M.",
+      "cash_bail_pct": 0.393293,
+      "unsecured_pct": 0.254573,
+      "ror_pct": 0.347561,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.004573,
+      "cash_bail_pct_black": 0.394667,
+      "cash_bail_pct_white": 0.4375,
+      "total_cases": 656
+    },
+    {
+      "name": "O'Leary, David",
+      "cash_bail_pct": 0.348837,
+      "unsecured_pct": 0.627907,
+      "ror_pct": 0.023256,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.411111,
+      "cash_bail_pct_white": 0.386905,
+      "total_cases": 430
+    },
+    {
+      "name": "Pelino, Dominic",
+      "cash_bail_pct": 0.237984,
+      "unsecured_pct": 0.103165,
+      "ror_pct": 0.502931,
+      "nonmonetary_pct": 0.15592,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.446154,
+      "cash_bail_pct_white": 0.177673,
+      "total_cases": 853
+    },
+    {
+      "name": "Pianka, Barbara",
+      "cash_bail_pct": 0.596573,
+      "unsecured_pct": 0.403427,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.620968,
+      "cash_bail_pct_white": 0.560166,
+      "total_cases": 642
+    },
+    {
+      "name": "Semic, Steven M.",
+      "cash_bail_pct": 0.845777,
+      "unsecured_pct": 0.150551,
+      "ror_pct": 0.003672,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.850602,
+      "cash_bail_pct_white": 0.842932,
+      "total_cases": 817
+    },
+    {
+      "name": "Shugars, Raymond F.",
+      "cash_bail_pct": 0.900322,
+      "unsecured_pct": 0.083601,
+      "ror_pct": 0.016077,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.912821,
+      "cash_bail_pct_white": 0.875,
+      "total_cases": 311
+    },
+    {
+      "name": "Smith, Michael J.",
+      "cash_bail_pct": 0.327261,
+      "unsecured_pct": 0.670854,
+      "ror_pct": 0.001884,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.397799,
+      "cash_bail_pct_white": 0.28427,
+      "total_cases": 1592
+    },
+    {
+      "name": "Teyral, Joann L.",
+      "cash_bail_pct": 0.151079,
+      "unsecured_pct": 0.482014,
+      "ror_pct": 0.366906,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.169492,
+      "cash_bail_pct_white": 0.188679,
+      "total_cases": 139
+    },
+    {
+      "name": "Wenner, William C.",
+      "cash_bail_pct": 0.430052,
+      "unsecured_pct": 0.119171,
+      "ror_pct": 0.450777,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.501832,
+      "cash_bail_pct_white": 0.384937,
+      "total_cases": 772
+    },
+    {
+      "name": "Witmer, Lowell A.",
+      "cash_bail_pct": 0.480287,
+      "unsecured_pct": 0.197133,
+      "ror_pct": 0.320789,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001792,
+      "cash_bail_pct_black": 0.656977,
+      "cash_bail_pct_white": 0.410326,
+      "total_cases": 558
+    },
+    {
+      "name": "Zozos, George A.",
+      "cash_bail_pct": 0.664247,
+      "unsecured_pct": 0.324864,
+      "ror_pct": 0.009074,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001815,
+      "cash_bail_pct_black": 0.693009,
+      "cash_bail_pct_white": 0.646154,
+      "total_cases": 551
+    },
+    {
+      "name": "Zozos, Paul T.",
+      "cash_bail_pct": 0.497521,
+      "unsecured_pct": 0.497521,
+      "ror_pct": 0.004959,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.53271,
+      "cash_bail_pct_white": 0.457692,
+      "total_cases": 605
+    }
+  ],
+  "Delaware": [
+    {
+      "name": "Berardocco, Ann",
+      "cash_bail_pct": 0.705882,
+      "unsecured_pct": 0.294118,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.757962,
+      "cash_bail_pct_white": 0.626943,
+      "total_cases": 527
+    },
+    {
+      "name": "Burke, Robert R.",
+      "cash_bail_pct": 0.509537,
+      "unsecured_pct": 0.490463,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.580153,
+      "cash_bail_pct_white": 0.44385,
+      "total_cases": 367
+    },
+    {
+      "name": "D'Agostino, Robert M.",
+      "cash_bail_pct": 0.291188,
+      "unsecured_pct": 0.704981,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.003831,
+      "cash_bail_pct_black": 0.397727,
+      "cash_bail_pct_white": 0.283333,
+      "total_cases": 261
+    },
+    {
+      "name": "Davis, Wilden H.",
+      "cash_bail_pct": 0.757576,
+      "unsecured_pct": 0.238095,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.004329,
+      "cash_bail_pct_black": 0.753799,
+      "cash_bail_pct_white": 0.814159,
+      "total_cases": 462
+    },
+    {
+      "name": "Gallagher, Vincent D. Jr.",
+      "cash_bail_pct": 0.710262,
+      "unsecured_pct": 0.289738,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.835681,
+      "cash_bail_pct_white": 0.612319,
+      "total_cases": 497
+    },
+    {
+      "name": "Griffin, David",
+      "cash_bail_pct": 0.51706,
+      "unsecured_pct": 0.48294,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.585586,
+      "cash_bail_pct_white": 0.452088,
+      "total_cases": 762
+    },
+    {
+      "name": "Holefelder, Diane M.",
+      "cash_bail_pct": 0.517647,
+      "unsecured_pct": 0.476471,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.005882,
+      "cash_bail_pct_black": 0.715686,
+      "cash_bail_pct_white": 0.385666,
+      "total_cases": 510
+    },
+    {
+      "name": "Hunter, Leon",
+      "cash_bail_pct": 0.537975,
+      "unsecured_pct": 0.43038,
+      "ror_pct": 0.027426,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.004219,
+      "cash_bail_pct_black": 0.671053,
+      "cash_bail_pct_white": 0.485577,
+      "total_cases": 474
+    },
+    {
+      "name": "Karapalides, Harry J. Jr.",
+      "cash_bail_pct": 0.564103,
+      "unsecured_pct": 0.42906,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.006838,
+      "cash_bail_pct_black": 0.577836,
+      "cash_bail_pct_white": 0.534031,
+      "total_cases": 585
+    },
+    {
+      "name": "Krull, Deborah A.",
+      "cash_bail_pct": 0.483607,
+      "unsecured_pct": 0.516393,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.606061,
+      "cash_bail_pct_white": 0.396667,
+      "total_cases": 610
+    },
+    {
+      "name": "Lacey, Thomas J.",
+      "cash_bail_pct": 0.442244,
+      "unsecured_pct": 0.531353,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.026403,
+      "cash_bail_pct_black": 0.49697,
+      "cash_bail_pct_white": 0.383333,
+      "total_cases": 303
+    },
+    {
+      "name": "Lacianca, Elisa C.",
+      "cash_bail_pct": 0.419355,
+      "unsecured_pct": 0.577713,
+      "ror_pct": 0.002933,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.608696,
+      "cash_bail_pct_white": 0.343915,
+      "total_cases": 341
+    },
+    {
+      "name": "Lang, David H.",
+      "cash_bail_pct": 0.345652,
+      "unsecured_pct": 0.606522,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.047826,
+      "cash_bail_pct_black": 0.393939,
+      "cash_bail_pct_white": 0.323887,
+      "total_cases": 460
+    },
+    {
+      "name": "Lippart, Jack D.",
+      "cash_bail_pct": 0.426653,
+      "unsecured_pct": 0.572314,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001033,
+      "cash_bail_pct_black": 0.556787,
+      "cash_bail_pct_white": 0.35337,
+      "total_cases": 968
+    },
+    {
+      "name": "Lippincott, Nicholas S.",
+      "cash_bail_pct": 0.604167,
+      "unsecured_pct": 0.395833,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.742972,
+      "cash_bail_pct_white": 0.453782,
+      "total_cases": 528
+    },
+    {
+      "name": "Loftus, Greg J.",
+      "cash_bail_pct": 0.687931,
+      "unsecured_pct": 0.312069,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.707692,
+      "cash_bail_pct_white": 0.655462,
+      "total_cases": 580
+    },
+    {
+      "name": "Mattox, Christopher R.",
+      "cash_bail_pct": 0.587326,
+      "unsecured_pct": 0.411128,
+      "ror_pct": 0.001546,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.618919,
+      "cash_bail_pct_white": 0.572052,
+      "total_cases": 647
+    },
+    {
+      "name": "McCray, C. Walter III",
+      "cash_bail_pct": 0.352201,
+      "unsecured_pct": 0.534591,
+      "ror_pct": 0.006289,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.106918,
+      "cash_bail_pct_black": 0.420765,
+      "cash_bail_pct_white": 0.259843,
+      "total_cases": 318
+    },
+    {
+      "name": "Merkins, James",
+      "cash_bail_pct": 0.614545,
+      "unsecured_pct": 0.381818,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.003636,
+      "cash_bail_pct_black": 0.797872,
+      "cash_bail_pct_white": 0.530488,
+      "total_cases": 275
+    },
+    {
+      "name": "Micozzie-Aguirre, Kelly A.",
+      "cash_bail_pct": 0.49827,
+      "unsecured_pct": 0.49481,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.00692,
+      "cash_bail_pct_black": 0.6,
+      "cash_bail_pct_white": 0.473684,
+      "total_cases": 289
+    },
+    {
+      "name": "Nistico, Charles",
+      "cash_bail_pct": 0.439516,
+      "unsecured_pct": 0.544355,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.016129,
+      "cash_bail_pct_black": 0.507246,
+      "cash_bail_pct_white": 0.377551,
+      "total_cases": 248
+    },
+    {
+      "name": "Puppio, Andrea B.",
+      "cash_bail_pct": 0.571664,
+      "unsecured_pct": 0.420099,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.001647,
+      "nominal_pct": 0.00659,
+      "cash_bail_pct_black": 0.658451,
+      "cash_bail_pct_white": 0.516892,
+      "total_cases": 607
+    },
+    {
+      "name": "Radano, Robert J.",
+      "cash_bail_pct": 0.625235,
+      "unsecured_pct": 0.374765,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.65411,
+      "cash_bail_pct_white": 0.618605,
+      "total_cases": 531
+    },
+    {
+      "name": "Roberts, Wendy B.",
+      "cash_bail_pct": 0.282119,
+      "unsecured_pct": 0.715232,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.002649,
+      "cash_bail_pct_black": 0.405286,
+      "cash_bail_pct_white": 0.194093,
+      "total_cases": 755
+    },
+    {
+      "name": "Sandone, Steven A.",
+      "cash_bail_pct": 0.7,
+      "unsecured_pct": 0.297778,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.002222,
+      "cash_bail_pct_black": 0.743363,
+      "cash_bail_pct_white": 0.682292,
+      "total_cases": 450
+    },
+    {
+      "name": "Seaton, Spencer B. Jr.",
+      "cash_bail_pct": 0.738416,
+      "unsecured_pct": 0.254111,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.007474,
+      "cash_bail_pct_black": 0.756757,
+      "cash_bail_pct_white": 0.731092,
+      "total_cases": 669
+    },
+    {
+      "name": "Strohl, Walter A.",
+      "cash_bail_pct": 0.517021,
+      "unsecured_pct": 0.476596,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.006383,
+      "cash_bail_pct_black": 0.686047,
+      "cash_bail_pct_white": 0.41637,
+      "total_cases": 470
+    },
+    {
+      "name": "Tenaglia, Leonard V.",
+      "cash_bail_pct": 0.738865,
+      "unsecured_pct": 0.261135,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.75,
+      "cash_bail_pct_white": 0.711806,
+      "total_cases": 1145
+    },
+    {
+      "name": "Tozer, Peter P.",
+      "cash_bail_pct": 0.600806,
+      "unsecured_pct": 0.399194,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.626437,
+      "cash_bail_pct_white": 0.586319,
+      "total_cases": 496
+    },
+    {
+      "name": "Turner, Phillip S.",
+      "cash_bail_pct": 0.602026,
+      "unsecured_pct": 0.39508,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.002894,
+      "cash_bail_pct_black": 0.619672,
+      "cash_bail_pct_white": 0.591398,
+      "total_cases": 691
+    },
+    {
+      "name": "Vann, Dawn L.",
+      "cash_bail_pct": 0.525974,
+      "unsecured_pct": 0.472403,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001623,
+      "cash_bail_pct_black": 0.575916,
+      "cash_bail_pct_white": 0.582192,
+      "total_cases": 616
+    },
+    {
+      "name": "Williams, W Keith II",
+      "cash_bail_pct": 0.572816,
+      "unsecured_pct": 0.423301,
+      "ror_pct": 0.001942,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001942,
+      "cash_bail_pct_black": 0.52861,
+      "cash_bail_pct_white": 0.714286,
+      "total_cases": 515
+    }
+  ],
+  "Elk": [
+    {
+      "name": "Jacob, Mark S.",
+      "cash_bail_pct": 0.25522,
+      "unsecured_pct": 0.74478,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.25,
+      "cash_bail_pct_white": 0.260976,
+      "total_cases": 431
+    },
+    {
+      "name": "Martin, James L.",
+      "cash_bail_pct": 0.267477,
+      "unsecured_pct": 0.732523,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.267742,
+      "total_cases": 329
+    }
+  ],
+  "Erie": [
+    {
+      "name": "Bizzarro, Paul A.",
+      "cash_bail_pct": 0.518927,
+      "unsecured_pct": 0.152997,
+      "ror_pct": 0.320189,
+      "nonmonetary_pct": 0.007886,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.65035,
+      "cash_bail_pct_white": 0.421384,
+      "total_cases": 634
+    },
+    {
+      "name": "Carney, Thomas",
+      "cash_bail_pct": 0.894988,
+      "unsecured_pct": 0.100239,
+      "ror_pct": 0.002387,
+      "nonmonetary_pct": 0.002387,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.892523,
+      "cash_bail_pct_white": 0.894444,
+      "total_cases": 419
+    },
+    {
+      "name": "DiPaolo, Dominick D.",
+      "cash_bail_pct": 0.976035,
+      "unsecured_pct": 0.019608,
+      "ror_pct": 0.004357,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.987805,
+      "cash_bail_pct_white": 0.984456,
+      "total_cases": 459
+    },
+    {
+      "name": "Hammer, Scott B.",
+      "cash_bail_pct": 0.472826,
+      "unsecured_pct": 0.138587,
+      "ror_pct": 0.388587,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.733333,
+      "cash_bail_pct_white": 0.451807,
+      "total_cases": 368
+    },
+    {
+      "name": "Krahe, Mark R.",
+      "cash_bail_pct": 0.2496,
+      "unsecured_pct": 0.1632,
+      "ror_pct": 0.5872,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.297619,
+      "cash_bail_pct_white": 0.25,
+      "total_cases": 625
+    },
+    {
+      "name": "Mack, Suzanne C.",
+      "cash_bail_pct": 0.613793,
+      "unsecured_pct": 0.115517,
+      "ror_pct": 0.232759,
+      "nonmonetary_pct": 0.037931,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.649007,
+      "cash_bail_pct_white": 0.606426,
+      "total_cases": 580
+    },
+    {
+      "name": "Mackendrick, Chris K.",
+      "cash_bail_pct": 0.393939,
+      "unsecured_pct": 0.60373,
+      "ror_pct": 0.002331,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.860465,
+      "cash_bail_pct_white": 0.345646,
+      "total_cases": 429
+    },
+    {
+      "name": "Manzi, Paul",
+      "cash_bail_pct": 0.387755,
+      "unsecured_pct": 0.591837,
+      "ror_pct": 0.020408,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.56,
+      "cash_bail_pct_white": 0.375,
+      "total_cases": 539
+    },
+    {
+      "name": "McGowan, Brian M.",
+      "cash_bail_pct": 0.213729,
+      "unsecured_pct": 0.182527,
+      "ror_pct": 0.603744,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.364583,
+      "cash_bail_pct_white": 0.186916,
+      "total_cases": 641
+    },
+    {
+      "name": "Nichols, Brenda A.",
+      "cash_bail_pct": 0.179487,
+      "unsecured_pct": 0.160256,
+      "ror_pct": 0.660256,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.166667,
+      "cash_bail_pct_white": 0.188811,
+      "total_cases": 312
+    },
+    {
+      "name": "Strohmeyer, Susan D.",
+      "cash_bail_pct": 0.309441,
+      "unsecured_pct": 0.108392,
+      "ror_pct": 0.576923,
+      "nonmonetary_pct": 0.005245,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.43,
+      "cash_bail_pct_white": 0.289474,
+      "total_cases": 572
+    },
+    {
+      "name": "Stuck-Lewis, Denise",
+      "cash_bail_pct": 0.347639,
+      "unsecured_pct": 0.103004,
+      "ror_pct": 0.545064,
+      "nonmonetary_pct": 0.004292,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.538462,
+      "cash_bail_pct_white": 0.322667,
+      "total_cases": 466
+    },
+    {
+      "name": "Urbaniak, Paul G.",
+      "cash_bail_pct": 0.637631,
+      "unsecured_pct": 0.054007,
+      "ror_pct": 0.287456,
+      "nonmonetary_pct": 0.020906,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.656051,
+      "cash_bail_pct_white": 0.630952,
+      "total_cases": 574
+    }
+  ],
+  "Fayette": [
+    {
+      "name": "Defino, Michael J. Jr.",
+      "cash_bail_pct": 0.410938,
+      "unsecured_pct": 0.589063,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.432,
+      "cash_bail_pct_white": 0.40239,
+      "total_cases": 640
+    },
+    {
+      "name": "Dennis, Wendy D.",
+      "cash_bail_pct": 0.477663,
+      "unsecured_pct": 0.520619,
+      "ror_pct": 0.001718,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.505051,
+      "cash_bail_pct_white": 0.475789,
+      "total_cases": 582
+    },
+    {
+      "name": "Haggerty, Ronald J. Sr.",
+      "cash_bail_pct": 0.470085,
+      "unsecured_pct": 0.529915,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.587629,
+      "cash_bail_pct_white": 0.45493,
+      "total_cases": 819
+    },
+    {
+      "name": "Jeffries, Jennifer L.",
+      "cash_bail_pct": 0.528881,
+      "unsecured_pct": 0.471119,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.68254,
+      "cash_bail_pct_white": 0.485714,
+      "total_cases": 554
+    },
+    {
+      "name": "Kasunic, Richard II",
+      "cash_bail_pct": 0.372903,
+      "unsecured_pct": 0.627097,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.495327,
+      "cash_bail_pct_white": 0.355623,
+      "total_cases": 775
+    },
+    {
+      "name": "Metros, Michael",
+      "cash_bail_pct": 0.451309,
+      "unsecured_pct": 0.548691,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.522267,
+      "cash_bail_pct_white": 0.431034,
+      "total_cases": 955
+    },
+    {
+      "name": "Shimshock, Daniel C.",
+      "cash_bail_pct": 0.462822,
+      "unsecured_pct": 0.537178,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.606742,
+      "cash_bail_pct_white": 0.437276,
+      "total_cases": 659
+    }
+  ],
+  "Forest": [
+    {
+      "name": "Miller, Daniel L.",
+      "cash_bail_pct": 0.321429,
+      "unsecured_pct": 0.542857,
+      "ror_pct": 0.135714,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.866667,
+      "cash_bail_pct_white": 0.282609,
+      "total_cases": 140
+    }
+  ],
+  "Franklin": [
+    {
+      "name": "Cunningham, Duane K.",
+      "cash_bail_pct": 0.539615,
+      "unsecured_pct": 0.077088,
+      "ror_pct": 0.376874,
+      "nonmonetary_pct": 0.006424,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.684211,
+      "cash_bail_pct_white": 0.512953,
+      "total_cases": 467
+    },
+    {
+      "name": "Eyer, Jody C.",
+      "cash_bail_pct": 0.407925,
+      "unsecured_pct": 0.235431,
+      "ror_pct": 0.344988,
+      "nonmonetary_pct": 0.011655,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.652174,
+      "cash_bail_pct_white": 0.379032,
+      "total_cases": 429
+    },
+    {
+      "name": "Manns, Glenn Kenneth",
+      "cash_bail_pct": 0.395095,
+      "unsecured_pct": 0.084469,
+      "ror_pct": 0.517711,
+      "nonmonetary_pct": 0.001817,
+      "nominal_pct": 0.000908,
+      "cash_bail_pct_black": 0.463668,
+      "cash_bail_pct_white": 0.377863,
+      "total_cases": 1101
+    },
+    {
+      "name": "Pentz, Larry G.",
+      "cash_bail_pct": 0.253181,
+      "unsecured_pct": 0.072519,
+      "ror_pct": 0.661578,
+      "nonmonetary_pct": 0.012723,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.414894,
+      "cash_bail_pct_white": 0.234949,
+      "total_cases": 786
+    },
+    {
+      "name": "Plum, David L.",
+      "cash_bail_pct": 0.465374,
+      "unsecured_pct": 0.171745,
+      "ror_pct": 0.362881,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.647887,
+      "cash_bail_pct_white": 0.426573,
+      "total_cases": 361
+    },
+    {
+      "name": "Rock, Kelly L.",
+      "cash_bail_pct": 0.358008,
+      "unsecured_pct": 0.111709,
+      "ror_pct": 0.526245,
+      "nonmonetary_pct": 0.004038,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.450704,
+      "cash_bail_pct_white": 0.341924,
+      "total_cases": 743
+    },
+    {
+      "name": "Williams, Todd R.",
+      "cash_bail_pct": 0.292135,
+      "unsecured_pct": 0.155431,
+      "ror_pct": 0.544944,
+      "nonmonetary_pct": 0.007491,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.4,
+      "cash_bail_pct_white": 0.272076,
+      "total_cases": 534
+    }
+  ],
+  "Fulton": [
+    {
+      "name": "Heming, Tamela M.",
+      "cash_bail_pct": 0.3125,
+      "unsecured_pct": 0.25,
+      "ror_pct": 0.258929,
+      "nonmonetary_pct": 0.178571,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.272727,
+      "cash_bail_pct_white": 0.319149,
+      "total_cases": 112
+    },
+    {
+      "name": "Horne, Devin C.",
+      "cash_bail_pct": 0.326923,
+      "unsecured_pct": 0.163462,
+      "ror_pct": 0.5,
+      "nonmonetary_pct": 0.009615,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.333333,
+      "cash_bail_pct_white": 0.346154,
+      "total_cases": 104
+    },
+    {
+      "name": "Mellott, Wendy",
+      "cash_bail_pct": 0.23913,
+      "unsecured_pct": 0.076087,
+      "ror_pct": 0.684783,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.266667,
+      "cash_bail_pct_white": 0.246835,
+      "total_cases": 184
+    }
+  ],
+  "Greene": [
+    {
+      "name": "Bates, D Glenn",
+      "cash_bail_pct": 0.324627,
+      "unsecured_pct": 0.675373,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.666667,
+      "cash_bail_pct_white": 0.314516,
+      "total_cases": 268
+    },
+    {
+      "name": "Cramer, Jesse J.",
+      "cash_bail_pct": 0.333333,
+      "unsecured_pct": 0.214815,
+      "ror_pct": 0.448148,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.003704,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.338843,
+      "total_cases": 270
+    },
+    {
+      "name": "Watson, Lee",
+      "cash_bail_pct": 0.527344,
+      "unsecured_pct": 0.183594,
+      "ror_pct": 0.28125,
+      "nonmonetary_pct": 0.007812,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.583333,
+      "cash_bail_pct_white": 0.549107,
+      "total_cases": 256
+    }
+  ],
+  "Huntingdon": [
+    {
+      "name": "Gummo, Douglas L.",
+      "cash_bail_pct": 0.274419,
+      "unsecured_pct": 0.344186,
+      "ror_pct": 0.381395,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.410256,
+      "cash_bail_pct_white": 0.276243,
+      "total_cases": 430
+    },
+    {
+      "name": "Jamison, Mary",
+      "cash_bail_pct": 0.372727,
+      "unsecured_pct": 0.627273,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.576923,
+      "cash_bail_pct_white": 0.379562,
+      "total_cases": 330
+    },
+    {
+      "name": "Wilt, Richard S.",
+      "cash_bail_pct": 0.463855,
+      "unsecured_pct": 0.094378,
+      "ror_pct": 0.441767,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.794872,
+      "cash_bail_pct_white": 0.414698,
+      "total_cases": 498
+    }
+  ],
+  "Indiana": [
+    {
+      "name": "Haberl, Guy B.",
+      "cash_bail_pct": 0.405594,
+      "unsecured_pct": 0.300699,
+      "ror_pct": 0.293706,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.365672,
+      "cash_bail_pct_white": 0.413953,
+      "total_cases": 572
+    },
+    {
+      "name": "Rega, Jennifer J.",
+      "cash_bail_pct": 0.403326,
+      "unsecured_pct": 0.461538,
+      "ror_pct": 0.135135,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.612903,
+      "cash_bail_pct_white": 0.36983,
+      "total_cases": 481
+    },
+    {
+      "name": "Steffee, Susanne V.",
+      "cash_bail_pct": 0.414909,
+      "unsecured_pct": 0.196906,
+      "ror_pct": 0.388186,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.474359,
+      "cash_bail_pct_white": 0.410423,
+      "total_cases": 711
+    },
+    {
+      "name": "Thachik, George M.",
+      "cash_bail_pct": 0.39486,
+      "unsecured_pct": 0.602804,
+      "ror_pct": 0.002336,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.8,
+      "cash_bail_pct_white": 0.364829,
+      "total_cases": 428
+    }
+  ],
+  "Jefferson": [
+    {
+      "name": "Bazylak, Gregory M.",
+      "cash_bail_pct": 0.34375,
+      "unsecured_pct": 0.653646,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.002604,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.8,
+      "cash_bail_pct_white": 0.344633,
+      "total_cases": 384
+    },
+    {
+      "name": "Chambers, Douglas R.",
+      "cash_bail_pct": 0.376176,
+      "unsecured_pct": 0.623824,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.376238,
+      "total_cases": 319
+    },
+    {
+      "name": "Inzana, David B.",
+      "cash_bail_pct": 0.433862,
+      "unsecured_pct": 0.566138,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.714286,
+      "cash_bail_pct_white": 0.425,
+      "total_cases": 378
+    }
+  ],
+  "Juniata": [
+    {
+      "name": "Leister, Jacqueline T.",
+      "cash_bail_pct": 0.305936,
+      "unsecured_pct": 0.13242,
+      "ror_pct": 0.39726,
+      "nonmonetary_pct": 0.164384,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.340909,
+      "total_cases": 219
+    },
+    {
+      "name": "Lyter, Barbara M.",
+      "cash_bail_pct": 0.314554,
+      "unsecured_pct": 0.685446,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.25,
+      "cash_bail_pct_white": 0.328205,
+      "total_cases": 213
+    }
+  ],
+  "Lackawanna": [
+    {
+      "name": "Corbett, Joanne Price",
+      "cash_bail_pct": 0.574534,
+      "unsecured_pct": 0.319876,
+      "ror_pct": 0.003106,
+      "nonmonetary_pct": 0.099379,
+      "nominal_pct": 0.003106,
+      "cash_bail_pct_black": 0.747826,
+      "cash_bail_pct_white": 0.536383,
+      "total_cases": 644
+    },
+    {
+      "name": "Farrell, Alyce Hailstone",
+      "cash_bail_pct": 0.504132,
+      "unsecured_pct": 0.42314,
+      "ror_pct": 0.008264,
+      "nonmonetary_pct": 0.064463,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.503937,
+      "cash_bail_pct_white": 0.510776,
+      "total_cases": 605
+    },
+    {
+      "name": "Gallagher, Terrence V.",
+      "cash_bail_pct": 0.380952,
+      "unsecured_pct": 0.486943,
+      "ror_pct": 0.012289,
+      "nonmonetary_pct": 0.119816,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.635514,
+      "cash_bail_pct_white": 0.323829,
+      "total_cases": 651
+    },
+    {
+      "name": "Giglio, Theodore J.",
+      "cash_bail_pct": 0.682432,
+      "unsecured_pct": 0.195946,
+      "ror_pct": 0.032095,
+      "nonmonetary_pct": 0.089527,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.820896,
+      "cash_bail_pct_white": 0.652681,
+      "total_cases": 592
+    },
+    {
+      "name": "Keeler, Paul",
+      "cash_bail_pct": 0.51585,
+      "unsecured_pct": 0.404899,
+      "ror_pct": 0.038905,
+      "nonmonetary_pct": 0.038905,
+      "nominal_pct": 0.001441,
+      "cash_bail_pct_black": 0.684211,
+      "cash_bail_pct_white": 0.46493,
+      "total_cases": 694
+    },
+    {
+      "name": "McGraw, Sean P.",
+      "cash_bail_pct": 0.56,
+      "unsecured_pct": 0.42069,
+      "ror_pct": 0.002759,
+      "nonmonetary_pct": 0.015172,
+      "nominal_pct": 0.001379,
+      "cash_bail_pct_black": 0.748299,
+      "cash_bail_pct_white": 0.515038,
+      "total_cases": 725
+    },
+    {
+      "name": "Pesota, John P.",
+      "cash_bail_pct": 0.530551,
+      "unsecured_pct": 0.281669,
+      "ror_pct": 0.041729,
+      "nonmonetary_pct": 0.146051,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.642336,
+      "cash_bail_pct_white": 0.5,
+      "total_cases": 671
+    },
+    {
+      "name": "Turlip-Murphy, Laura",
+      "cash_bail_pct": 0.463863,
+      "unsecured_pct": 0.505913,
+      "ror_pct": 0.001314,
+      "nonmonetary_pct": 0.028909,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.617647,
+      "cash_bail_pct_white": 0.421416,
+      "total_cases": 761
+    },
+    {
+      "name": "Ware, Paul J.",
+      "cash_bail_pct": 0.555556,
+      "unsecured_pct": 0.353678,
+      "ror_pct": 0.014085,
+      "nonmonetary_pct": 0.076682,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.590164,
+      "cash_bail_pct_white": 0.54185,
+      "total_cases": 639
+    }
+  ],
+  "Lancaster": [
+    {
+      "name": "Albert, Scott E.",
+      "cash_bail_pct": 0.421212,
+      "unsecured_pct": 0.578788,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.484127,
+      "cash_bail_pct_white": 0.409178,
+      "total_cases": 660
+    },
+    {
+      "name": "Benner, William E. Jr.",
+      "cash_bail_pct": 0.566176,
+      "unsecured_pct": 0.431373,
+      "ror_pct": 0.002451,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.704918,
+      "cash_bail_pct_white": 0.55132,
+      "total_cases": 408
+    },
+    {
+      "name": "Bixler, Miles K.",
+      "cash_bail_pct": 0.439481,
+      "unsecured_pct": 0.403458,
+      "ror_pct": 0.157061,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.549618,
+      "cash_bail_pct_white": 0.425139,
+      "total_cases": 694
+    },
+    {
+      "name": "Chudzik, Brian E.",
+      "cash_bail_pct": 0.472973,
+      "unsecured_pct": 0.527027,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.561644,
+      "cash_bail_pct_white": 0.452,
+      "total_cases": 666
+    },
+    {
+      "name": "Commins, B. Denise",
+      "cash_bail_pct": 0.407731,
+      "unsecured_pct": 0.528678,
+      "ror_pct": 0.063591,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.54491,
+      "cash_bail_pct_white": 0.384488,
+      "total_cases": 802
+    },
+    {
+      "name": "Duncan, Jayne F.",
+      "cash_bail_pct": 0.296758,
+      "unsecured_pct": 0.663342,
+      "ror_pct": 0.037406,
+      "nonmonetary_pct": 0.002494,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.457143,
+      "cash_bail_pct_white": 0.290598,
+      "total_cases": 401
+    },
+    {
+      "name": "Hamill, Nancy G.",
+      "cash_bail_pct": 0.625282,
+      "unsecured_pct": 0.37246,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.002257,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.797297,
+      "cash_bail_pct_white": 0.592287,
+      "total_cases": 443
+    },
+    {
+      "name": "Hartman, Rodney H.",
+      "cash_bail_pct": 0.586957,
+      "unsecured_pct": 0.336232,
+      "ror_pct": 0.076812,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.805556,
+      "cash_bail_pct_white": 0.553004,
+      "total_cases": 690
+    },
+    {
+      "name": "Herman, Robert A. Jr.",
+      "cash_bail_pct": 0.095618,
+      "unsecured_pct": 0.241036,
+      "ror_pct": 0.663347,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.158416,
+      "cash_bail_pct_white": 0.089569,
+      "total_cases": 1004
+    },
+    {
+      "name": "Jimenez, Janice",
+      "cash_bail_pct": 0.631485,
+      "unsecured_pct": 0.314848,
+      "ror_pct": 0.053667,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.668919,
+      "cash_bail_pct_white": 0.619403,
+      "total_cases": 559
+    },
+    {
+      "name": "Keller, Joshua R.",
+      "cash_bail_pct": 0.411905,
+      "unsecured_pct": 0.388095,
+      "ror_pct": 0.195238,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.004762,
+      "cash_bail_pct_black": 0.395349,
+      "cash_bail_pct_white": 0.419453,
+      "total_cases": 420
+    },
+    {
+      "name": "Miller, David P.",
+      "cash_bail_pct": 0.455556,
+      "unsecured_pct": 0.365556,
+      "ror_pct": 0.178889,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.492891,
+      "cash_bail_pct_white": 0.44494,
+      "total_cases": 900
+    },
+    {
+      "name": "Mongiovi Sponaugle, Mary",
+      "cash_bail_pct": 0.434316,
+      "unsecured_pct": 0.210456,
+      "ror_pct": 0.355228,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.386905,
+      "cash_bail_pct_white": 0.450355,
+      "total_cases": 746
+    },
+    {
+      "name": "Mylin, Stuart J.",
+      "cash_bail_pct": 0.508741,
+      "unsecured_pct": 0.491259,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.65,
+      "cash_bail_pct_white": 0.494048,
+      "total_cases": 572
+    },
+    {
+      "name": "Reinaker, Dennis E.",
+      "cash_bail_pct": 0.065963,
+      "unsecured_pct": 0.422164,
+      "ror_pct": 0.509235,
+      "nonmonetary_pct": 0.002639,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.166667,
+      "cash_bail_pct_white": 0.06087,
+      "total_cases": 379
+    },
+    {
+      "name": "Reuter, William G.",
+      "cash_bail_pct": 0.380282,
+      "unsecured_pct": 0.591549,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.028169,
+      "cash_bail_pct_black": 0.367347,
+      "cash_bail_pct_white": 0.388889,
+      "total_cases": 142
+    },
+    {
+      "name": "Roth, Bruce A.",
+      "cash_bail_pct": 0.621924,
+      "unsecured_pct": 0.362416,
+      "ror_pct": 0.013423,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.002237,
+      "cash_bail_pct_black": 0.67,
+      "cash_bail_pct_white": 0.644654,
+      "total_cases": 447
+    },
+    {
+      "name": "Russell, Tony S.",
+      "cash_bail_pct": 0.547945,
+      "unsecured_pct": 0.393836,
+      "ror_pct": 0.058219,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.625,
+      "cash_bail_pct_white": 0.543478,
+      "total_cases": 584
+    },
+    {
+      "name": "Sheller, Raymond S.",
+      "cash_bail_pct": 0.590164,
+      "unsecured_pct": 0.325527,
+      "ror_pct": 0.084309,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.681159,
+      "cash_bail_pct_white": 0.576705,
+      "total_cases": 427
+    },
+    {
+      "name": "Tobin, Edward A.",
+      "cash_bail_pct": 0.495851,
+      "unsecured_pct": 0.417012,
+      "ror_pct": 0.068465,
+      "nonmonetary_pct": 0.018672,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.590909,
+      "cash_bail_pct_white": 0.486553,
+      "total_cases": 482
+    },
+    {
+      "name": "Willwerth, Jene",
+      "cash_bail_pct": 0.642857,
+      "unsecured_pct": 0.357143,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.806452,
+      "cash_bail_pct_white": 0.575,
+      "total_cases": 112
+    },
+    {
+      "name": "Winters, John C.",
+      "cash_bail_pct": 0.553846,
+      "unsecured_pct": 0.438462,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.007692,
+      "cash_bail_pct_black": 0.648649,
+      "cash_bail_pct_white": 0.521739,
+      "total_cases": 130
+    },
+    {
+      "name": "Witkonis, Adam J.",
+      "cash_bail_pct": 0.503686,
+      "unsecured_pct": 0.379607,
+      "ror_pct": 0.113022,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.003686,
+      "cash_bail_pct_black": 0.572139,
+      "cash_bail_pct_white": 0.483926,
+      "total_cases": 814
+    }
+  ],
+  "Lawrence": [
+    {
+      "name": "Amodie, Melissa Ann",
+      "cash_bail_pct": 0.667114,
+      "unsecured_pct": 0.016107,
+      "ror_pct": 0.114094,
+      "nonmonetary_pct": 0.201342,
+      "nominal_pct": 0.001342,
+      "cash_bail_pct_black": 0.819853,
+      "cash_bail_pct_white": 0.594104,
+      "total_cases": 745
+    },
+    {
+      "name": "Cartwright, Jerry G. Jr.",
+      "cash_bail_pct": 0.270096,
+      "unsecured_pct": 0.019293,
+      "ror_pct": 0.421222,
+      "nonmonetary_pct": 0.289389,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.306122,
+      "cash_bail_pct_white": 0.271654,
+      "total_cases": 311
+    },
+    {
+      "name": "McGrath, Scott",
+      "cash_bail_pct": 0.476584,
+      "unsecured_pct": 0.082645,
+      "ror_pct": 0.22314,
+      "nonmonetary_pct": 0.217631,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.696203,
+      "cash_bail_pct_white": 0.42029,
+      "total_cases": 363
+    },
+    {
+      "name": "Nicholson, Jennifer L.",
+      "cash_bail_pct": 0.487903,
+      "unsecured_pct": 0.0,
+      "ror_pct": 0.181452,
+      "nonmonetary_pct": 0.330645,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.587156,
+      "cash_bail_pct_white": 0.459103,
+      "total_cases": 496
+    },
+    {
+      "name": "Rishel, David B.",
+      "cash_bail_pct": 0.422145,
+      "unsecured_pct": 0.017301,
+      "ror_pct": 0.349481,
+      "nonmonetary_pct": 0.211073,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.52381,
+      "cash_bail_pct_white": 0.403361,
+      "total_cases": 289
+    }
+  ],
+  "Lebanon": [
+    {
+      "name": "Capello, Thomas M.",
+      "cash_bail_pct": 0.448529,
+      "unsecured_pct": 0.551471,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.580645,
+      "cash_bail_pct_white": 0.434322,
+      "total_cases": 544
+    },
+    {
+      "name": "Dissinger, Maria M.",
+      "cash_bail_pct": 0.35085,
+      "unsecured_pct": 0.64915,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.454545,
+      "cash_bail_pct_white": 0.354128,
+      "total_cases": 647
+    },
+    {
+      "name": "Ditzler, John W.",
+      "cash_bail_pct": 0.296053,
+      "unsecured_pct": 0.685855,
+      "ror_pct": 0.018092,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.37931,
+      "cash_bail_pct_white": 0.289963,
+      "total_cases": 608
+    },
+    {
+      "name": "Garver, Carl Russell",
+      "cash_bail_pct": 0.413379,
+      "unsecured_pct": 0.586621,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.574468,
+      "cash_bail_pct_white": 0.4,
+      "total_cases": 583
+    },
+    {
+      "name": "Verna, Anthony J.",
+      "cash_bail_pct": 0.354167,
+      "unsecured_pct": 0.645833,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.588235,
+      "cash_bail_pct_white": 0.348018,
+      "total_cases": 768
+    },
+    {
+      "name": "Wolfe, Kim R.",
+      "cash_bail_pct": 0.41272,
+      "unsecured_pct": 0.58728,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.507692,
+      "cash_bail_pct_white": 0.406627,
+      "total_cases": 739
+    }
+  ],
+  "Lehigh": [
+    {
+      "name": "Balliet, Carl L.",
+      "cash_bail_pct": 0.606299,
+      "unsecured_pct": 0.393701,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.758621,
+      "cash_bail_pct_white": 0.523256,
+      "total_cases": 127
+    },
+    {
+      "name": "Beck, Rod",
+      "cash_bail_pct": 0.530351,
+      "unsecured_pct": 0.257188,
+      "ror_pct": 0.21246,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.772277,
+      "cash_bail_pct_white": 0.473029,
+      "total_cases": 626
+    },
+    {
+      "name": "Butler, Donna R.",
+      "cash_bail_pct": 0.593633,
+      "unsecured_pct": 0.391386,
+      "ror_pct": 0.013109,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001873,
+      "cash_bail_pct_black": 0.686869,
+      "cash_bail_pct_white": 0.551637,
+      "total_cases": 534
+    },
+    {
+      "name": "Crawford, Charles H.",
+      "cash_bail_pct": 0.512,
+      "unsecured_pct": 0.488,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.684211,
+      "cash_bail_pct_white": 0.446809,
+      "total_cases": 125
+    },
+    {
+      "name": "D'Amore, Michael D.",
+      "cash_bail_pct": 0.437931,
+      "unsecured_pct": 0.191954,
+      "ror_pct": 0.357471,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.012644,
+      "cash_bail_pct_black": 0.470588,
+      "cash_bail_pct_white": 0.428058,
+      "total_cases": 870
+    },
+    {
+      "name": "Devine, Karen C.",
+      "cash_bail_pct": 0.583333,
+      "unsecured_pct": 0.416667,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.61244,
+      "cash_bail_pct_white": 0.588384,
+      "total_cases": 708
+    },
+    {
+      "name": "Engler, Patricia M.",
+      "cash_bail_pct": 0.591722,
+      "unsecured_pct": 0.408278,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.666667,
+      "cash_bail_pct_white": 0.605634,
+      "total_cases": 1063
+    },
+    {
+      "name": "Faulkner, Michael J.",
+      "cash_bail_pct": 0.409283,
+      "unsecured_pct": 0.588608,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.00211,
+      "cash_bail_pct_black": 0.440594,
+      "cash_bail_pct_white": 0.376437,
+      "total_cases": 948
+    },
+    {
+      "name": "Halal, Robert C.",
+      "cash_bail_pct": 0.558522,
+      "unsecured_pct": 0.441478,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.705882,
+      "cash_bail_pct_white": 0.529086,
+      "total_cases": 487
+    },
+    {
+      "name": "Hammond, Jacob E.",
+      "cash_bail_pct": 0.498899,
+      "unsecured_pct": 0.229075,
+      "ror_pct": 0.270925,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001101,
+      "cash_bail_pct_black": 0.489691,
+      "cash_bail_pct_white": 0.483631,
+      "total_cases": 908
+    },
+    {
+      "name": "Howells, David M. Jr.",
+      "cash_bail_pct": 0.566372,
+      "unsecured_pct": 0.433628,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.584541,
+      "cash_bail_pct_white": 0.606127,
+      "total_cases": 791
+    },
+    {
+      "name": "Manescu, Ronald S.",
+      "cash_bail_pct": 0.691574,
+      "unsecured_pct": 0.308426,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.719512,
+      "cash_bail_pct_white": 0.691139,
+      "total_cases": 629
+    },
+    {
+      "name": "Maura, Wayne",
+      "cash_bail_pct": 0.650524,
+      "unsecured_pct": 0.349476,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.767045,
+      "cash_bail_pct_white": 0.599628,
+      "total_cases": 764
+    },
+    {
+      "name": "Pochron, Michael Joseph",
+      "cash_bail_pct": 0.658416,
+      "unsecured_pct": 0.341584,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.696552,
+      "cash_bail_pct_white": 0.627204,
+      "total_cases": 606
+    },
+    {
+      "name": "Santiago, Rashid",
+      "cash_bail_pct": 0.61519,
+      "unsecured_pct": 0.324051,
+      "ror_pct": 0.059494,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001266,
+      "cash_bail_pct_black": 0.637681,
+      "cash_bail_pct_white": 0.64557,
+      "total_cases": 790
+    },
+    {
+      "name": "Trexler, Daniel C.",
+      "cash_bail_pct": 0.614238,
+      "unsecured_pct": 0.129139,
+      "ror_pct": 0.253311,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.003311,
+      "cash_bail_pct_black": 0.713115,
+      "cash_bail_pct_white": 0.567873,
+      "total_cases": 604
+    }
+  ],
+  "Luzerne": [
+    {
+      "name": "Barilla, David A.",
+      "cash_bail_pct": 0.44,
+      "unsecured_pct": 0.321739,
+      "ror_pct": 0.236522,
+      "nonmonetary_pct": 0.001739,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.644231,
+      "cash_bail_pct_white": 0.393333,
+      "total_cases": 575
+    },
+    {
+      "name": "Carmody, Joseph J.",
+      "cash_bail_pct": 0.382664,
+      "unsecured_pct": 0.458774,
+      "ror_pct": 0.15222,
+      "nonmonetary_pct": 0.006342,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.571429,
+      "cash_bail_pct_white": 0.332394,
+      "total_cases": 473
+    },
+    {
+      "name": "Cronauer, Rick",
+      "cash_bail_pct": 0.378412,
+      "unsecured_pct": 0.297767,
+      "ror_pct": 0.316377,
+      "nonmonetary_pct": 0.007444,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.418919,
+      "cash_bail_pct_white": 0.372694,
+      "total_cases": 806
+    },
+    {
+      "name": "Dixon, James M.",
+      "cash_bail_pct": 0.476923,
+      "unsecured_pct": 0.391608,
+      "ror_pct": 0.128671,
+      "nonmonetary_pct": 0.002797,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.657895,
+      "cash_bail_pct_white": 0.446771,
+      "total_cases": 715
+    },
+    {
+      "name": "Dotzel, Michael G.",
+      "cash_bail_pct": 0.295597,
+      "unsecured_pct": 0.127883,
+      "ror_pct": 0.519916,
+      "nonmonetary_pct": 0.056604,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.305263,
+      "cash_bail_pct_white": 0.29558,
+      "total_cases": 477
+    },
+    {
+      "name": "Halesey, Joseph A.",
+      "cash_bail_pct": 0.53626,
+      "unsecured_pct": 0.217557,
+      "ror_pct": 0.242366,
+      "nonmonetary_pct": 0.003817,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.769231,
+      "cash_bail_pct_white": 0.470914,
+      "total_cases": 524
+    },
+    {
+      "name": "Hasay, John E.",
+      "cash_bail_pct": 0.527027,
+      "unsecured_pct": 0.110811,
+      "ror_pct": 0.291892,
+      "nonmonetary_pct": 0.07027,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.806452,
+      "cash_bail_pct_white": 0.472603,
+      "total_cases": 370
+    },
+    {
+      "name": "Kravitz, Alexandra Kokura",
+      "cash_bail_pct": 0.41374,
+      "unsecured_pct": 0.300763,
+      "ror_pct": 0.280916,
+      "nonmonetary_pct": 0.00458,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.583333,
+      "cash_bail_pct_white": 0.376894,
+      "total_cases": 655
+    },
+    {
+      "name": "Malast, Diana",
+      "cash_bail_pct": 0.28,
+      "unsecured_pct": 0.25,
+      "ror_pct": 0.45,
+      "nonmonetary_pct": 0.02,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.35,
+      "cash_bail_pct_white": 0.272727,
+      "total_cases": 100
+    },
+    {
+      "name": "Malloy, Thomas F. Sr.",
+      "cash_bail_pct": 0.317125,
+      "unsecured_pct": 0.348837,
+      "ror_pct": 0.331924,
+      "nonmonetary_pct": 0.001057,
+      "nominal_pct": 0.001057,
+      "cash_bail_pct_black": 0.423387,
+      "cash_bail_pct_white": 0.280811,
+      "total_cases": 946
+    },
+    {
+      "name": "O'Donnell, Daniel",
+      "cash_bail_pct": 0.463054,
+      "unsecured_pct": 0.195402,
+      "ror_pct": 0.305419,
+      "nonmonetary_pct": 0.036125,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.702703,
+      "cash_bail_pct_white": 0.408805,
+      "total_cases": 609
+    },
+    {
+      "name": "Roberts, Paul J.",
+      "cash_bail_pct": 0.439446,
+      "unsecured_pct": 0.560554,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.655172,
+      "cash_bail_pct_white": 0.384279,
+      "total_cases": 289
+    },
+    {
+      "name": "Sharkey, Thomas",
+      "cash_bail_pct": 0.163399,
+      "unsecured_pct": 0.098039,
+      "ror_pct": 0.738562,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.388889,
+      "cash_bail_pct_white": 0.140625,
+      "total_cases": 153
+    },
+    {
+      "name": "Spagnuolo, Joseph D. Jr.",
+      "cash_bail_pct": 0.447883,
+      "unsecured_pct": 0.335505,
+      "ror_pct": 0.214984,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001629,
+      "cash_bail_pct_black": 0.530973,
+      "cash_bail_pct_white": 0.433761,
+      "total_cases": 614
+    },
+    {
+      "name": "Tupper, Brian James",
+      "cash_bail_pct": 0.285467,
+      "unsecured_pct": 0.147059,
+      "ror_pct": 0.565744,
+      "nonmonetary_pct": 0.00173,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.671429,
+      "cash_bail_pct_white": 0.229979,
+      "total_cases": 578
+    },
+    {
+      "name": "Whittaker, Donald L.",
+      "cash_bail_pct": 0.611015,
+      "unsecured_pct": 0.079174,
+      "ror_pct": 0.304647,
+      "nonmonetary_pct": 0.003442,
+      "nominal_pct": 0.001721,
+      "cash_bail_pct_black": 0.804511,
+      "cash_bail_pct_white": 0.547619,
+      "total_cases": 581
+    },
+    {
+      "name": "Zola, Joseph D.",
+      "cash_bail_pct": 0.40625,
+      "unsecured_pct": 0.193182,
+      "ror_pct": 0.397727,
+      "nonmonetary_pct": 0.002841,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.661417,
+      "cash_bail_pct_white": 0.352087,
+      "total_cases": 704
+    }
+  ],
+  "Lycoming": [
+    {
+      "name": "Frey, Christian David",
+      "cash_bail_pct": 0.33499,
+      "unsecured_pct": 0.657058,
+      "ror_pct": 0.007952,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.545198,
+      "cash_bail_pct_white": 0.223975,
+      "total_cases": 1006
+    },
+    {
+      "name": "Kemp, Jon Edward",
+      "cash_bail_pct": 0.294715,
+      "unsecured_pct": 0.703252,
+      "ror_pct": 0.002033,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.578125,
+      "cash_bail_pct_white": 0.250585,
+      "total_cases": 492
+    },
+    {
+      "name": "Lepley, Jerry C.",
+      "cash_bail_pct": 0.364035,
+      "unsecured_pct": 0.635965,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.697674,
+      "cash_bail_pct_white": 0.334158,
+      "total_cases": 456
+    },
+    {
+      "name": "Page, Allen P. III",
+      "cash_bail_pct": 0.373272,
+      "unsecured_pct": 0.626728,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.526667,
+      "cash_bail_pct_white": 0.292035,
+      "total_cases": 868
+    },
+    {
+      "name": "Solomon, William C.",
+      "cash_bail_pct": 0.429213,
+      "unsecured_pct": 0.570787,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.790323,
+      "cash_bail_pct_white": 0.37037,
+      "total_cases": 445
+    },
+    {
+      "name": "Whiteman, Gary A.",
+      "cash_bail_pct": 0.28863,
+      "unsecured_pct": 0.71137,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.515385,
+      "cash_bail_pct_white": 0.236364,
+      "total_cases": 686
+    }
+  ],
+  "McKean": [
+    {
+      "name": "Cercone, Dominic Jr.",
+      "cash_bail_pct": 0.434524,
+      "unsecured_pct": 0.494048,
+      "ror_pct": 0.071429,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.655172,
+      "cash_bail_pct_white": 0.409241,
+      "total_cases": 336
+    },
+    {
+      "name": "Engman, David Richard",
+      "cash_bail_pct": 0.449541,
+      "unsecured_pct": 0.513761,
+      "ror_pct": 0.036697,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.9,
+      "cash_bail_pct_white": 0.485876,
+      "total_cases": 218
+    },
+    {
+      "name": "Luther, Richard W.",
+      "cash_bail_pct": 0.39527,
+      "unsecured_pct": 0.550676,
+      "ror_pct": 0.054054,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.4,
+      "cash_bail_pct_white": 0.400763,
+      "total_cases": 296
+    },
+    {
+      "name": "Todd, William K.",
+      "cash_bail_pct": 0.403333,
+      "unsecured_pct": 0.56,
+      "ror_pct": 0.033333,
+      "nonmonetary_pct": 0.003333,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.714286,
+      "cash_bail_pct_white": 0.382143,
+      "total_cases": 300
+    }
+  ],
+  "Mercer": [
+    {
+      "name": "Antos, Ronald E.",
+      "cash_bail_pct": 0.261216,
+      "unsecured_pct": 0.254703,
+      "ror_pct": 0.195369,
+      "nonmonetary_pct": 0.288712,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.34,
+      "cash_bail_pct_white": 0.222588,
+      "total_cases": 1382
+    },
+    {
+      "name": "Arthur, Brian R.",
+      "cash_bail_pct": 0.447861,
+      "unsecured_pct": 0.544118,
+      "ror_pct": 0.008021,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.75,
+      "cash_bail_pct_white": 0.406003,
+      "total_cases": 748
+    },
+    {
+      "name": "Fagley, William L.",
+      "cash_bail_pct": 0.188,
+      "unsecured_pct": 0.812,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.55,
+      "cash_bail_pct_white": 0.157895,
+      "total_cases": 250
+    },
+    {
+      "name": "Hinch, Lorinda L.",
+      "cash_bail_pct": 0.355372,
+      "unsecured_pct": 0.482094,
+      "ror_pct": 0.15978,
+      "nonmonetary_pct": 0.002755,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.489796,
+      "cash_bail_pct_white": 0.335505,
+      "total_cases": 363
+    },
+    {
+      "name": "McEwen, D. Neil",
+      "cash_bail_pct": 0.413428,
+      "unsecured_pct": 0.561837,
+      "ror_pct": 0.024735,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.619718,
+      "cash_bail_pct_white": 0.382353,
+      "total_cases": 566
+    },
+    {
+      "name": "Songer, Dennis M.",
+      "cash_bail_pct": 0.430129,
+      "unsecured_pct": 0.294351,
+      "ror_pct": 0.152626,
+      "nonmonetary_pct": 0.122894,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.486068,
+      "cash_bail_pct_white": 0.405045,
+      "total_cases": 1009
+    }
+  ],
+  "Mifflin": [
+    {
+      "name": "Miller, Jack E.",
+      "cash_bail_pct": 0.54717,
+      "unsecured_pct": 0.440252,
+      "ror_pct": 0.006289,
+      "nonmonetary_pct": 0.004193,
+      "nominal_pct": 0.002096,
+      "cash_bail_pct_black": 0.766667,
+      "cash_bail_pct_white": 0.536199,
+      "total_cases": 477
+    },
+    {
+      "name": "Reed, Jonathan W.",
+      "cash_bail_pct": 0.498901,
+      "unsecured_pct": 0.496703,
+      "ror_pct": 0.004396,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.740741,
+      "cash_bail_pct_white": 0.485849,
+      "total_cases": 455
+    },
+    {
+      "name": "Smith, Kent A.",
+      "cash_bail_pct": 0.385321,
+      "unsecured_pct": 0.610092,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.004587,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.592593,
+      "cash_bail_pct_white": 0.375,
+      "total_cases": 436
+    }
+  ],
+  "Monroe": [
+    {
+      "name": "Anzini, Kristina",
+      "cash_bail_pct": 0.386252,
+      "unsecured_pct": 0.610475,
+      "ror_pct": 0.003273,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.429379,
+      "cash_bail_pct_white": 0.370283,
+      "total_cases": 611
+    },
+    {
+      "name": "Claypool, Richard",
+      "cash_bail_pct": 0.293033,
+      "unsecured_pct": 0.706967,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.283688,
+      "cash_bail_pct_white": 0.305389,
+      "total_cases": 488
+    },
+    {
+      "name": "Fluegel, Anthony D.",
+      "cash_bail_pct": 0.457399,
+      "unsecured_pct": 0.307175,
+      "ror_pct": 0.235426,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.463576,
+      "cash_bail_pct_white": 0.463668,
+      "total_cases": 446
+    },
+    {
+      "name": "Germano, Brian",
+      "cash_bail_pct": 0.278638,
+      "unsecured_pct": 0.687307,
+      "ror_pct": 0.032508,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001548,
+      "cash_bail_pct_black": 0.247368,
+      "cash_bail_pct_white": 0.294253,
+      "total_cases": 646
+    },
+    {
+      "name": "Higgins, C. Daniel",
+      "cash_bail_pct": 0.243191,
+      "unsecured_pct": 0.322957,
+      "ror_pct": 0.433852,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.263566,
+      "cash_bail_pct_white": 0.250704,
+      "total_cases": 514
+    },
+    {
+      "name": "Krawitz, Jolana",
+      "cash_bail_pct": 0.344068,
+      "unsecured_pct": 0.089831,
+      "ror_pct": 0.525424,
+      "nonmonetary_pct": 0.040678,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.545455,
+      "cash_bail_pct_white": 0.298097,
+      "total_cases": 590
+    },
+    {
+      "name": "Mancuso, Colleen",
+      "cash_bail_pct": 0.366366,
+      "unsecured_pct": 0.630631,
+      "ror_pct": 0.003003,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.4375,
+      "cash_bail_pct_white": 0.354962,
+      "total_cases": 333
+    },
+    {
+      "name": "Muth, Michael R.",
+      "cash_bail_pct": 0.392996,
+      "unsecured_pct": 0.607004,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.44375,
+      "cash_bail_pct_white": 0.369186,
+      "total_cases": 514
+    },
+    {
+      "name": "Olsen, Thomas E.",
+      "cash_bail_pct": 0.272984,
+      "unsecured_pct": 0.725601,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.001414,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.281915,
+      "cash_bail_pct_white": 0.274,
+      "total_cases": 707
+    },
+    {
+      "name": "Riley, Phillip R.",
+      "cash_bail_pct": 0.375573,
+      "unsecured_pct": 0.152672,
+      "ror_pct": 0.471756,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.340782,
+      "cash_bail_pct_white": 0.394336,
+      "total_cases": 655
+    }
+  ],
+  "Montgomery": [
+    {
+      "name": "Augustine, Albert J.",
+      "cash_bail_pct": 0.371988,
+      "unsecured_pct": 0.626506,
+      "ror_pct": 0.001506,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.643836,
+      "cash_bail_pct_white": 0.300199,
+      "total_cases": 664
+    },
+    {
+      "name": "Bernhardt, Francis J. III",
+      "cash_bail_pct": 0.378492,
+      "unsecured_pct": 0.315642,
+      "ror_pct": 0.305866,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.442857,
+      "cash_bail_pct_white": 0.342043,
+      "total_cases": 716
+    },
+    {
+      "name": "Casillo, Ester J.",
+      "cash_bail_pct": 0.354545,
+      "unsecured_pct": 0.645455,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.430769,
+      "cash_bail_pct_white": 0.321534,
+      "total_cases": 550
+    },
+    {
+      "name": "Cerski, Christopher",
+      "cash_bail_pct": 0.469444,
+      "unsecured_pct": 0.525,
+      "ror_pct": 0.005556,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.465686,
+      "cash_bail_pct_white": 0.492754,
+      "total_cases": 360
+    },
+    {
+      "name": "Eisner Zucker, Karen",
+      "cash_bail_pct": 0.306522,
+      "unsecured_pct": 0.693478,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.359375,
+      "cash_bail_pct_white": 0.257895,
+      "total_cases": 460
+    },
+    {
+      "name": "Friedenberg, Jay S.",
+      "cash_bail_pct": 0.244558,
+      "unsecured_pct": 0.247119,
+      "ror_pct": 0.508323,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.363636,
+      "cash_bail_pct_white": 0.206642,
+      "total_cases": 781
+    },
+    {
+      "name": "Gadzicki, Walter F. Jr.",
+      "cash_bail_pct": 0.333333,
+      "unsecured_pct": 0.324294,
+      "ror_pct": 0.342373,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.558824,
+      "cash_bail_pct_white": 0.250404,
+      "total_cases": 885
+    },
+    {
+      "name": "Gallagher, James",
+      "cash_bail_pct": 0.364253,
+      "unsecured_pct": 0.30543,
+      "ror_pct": 0.330317,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.460123,
+      "cash_bail_pct_white": 0.30566,
+      "total_cases": 442
+    },
+    {
+      "name": "Hudak Duffy, Andrea",
+      "cash_bail_pct": 0.290433,
+      "unsecured_pct": 0.465831,
+      "ror_pct": 0.243736,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.419689,
+      "cash_bail_pct_white": 0.264463,
+      "total_cases": 878
+    },
+    {
+      "name": "Hummel Fried, Catherine M.",
+      "cash_bail_pct": 0.298113,
+      "unsecured_pct": 0.7,
+      "ror_pct": 0.001887,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.554455,
+      "cash_bail_pct_white": 0.231144,
+      "total_cases": 530
+    },
+    {
+      "name": "Hunsicker, Margaret A.",
+      "cash_bail_pct": 0.466216,
+      "unsecured_pct": 0.280405,
+      "ror_pct": 0.253378,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.516923,
+      "cash_bail_pct_white": 0.418033,
+      "total_cases": 592
+    },
+    {
+      "name": "Kelly Rebar, Cathleen",
+      "cash_bail_pct": 0.376499,
+      "unsecured_pct": 0.623501,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.527638,
+      "cash_bail_pct_white": 0.334426,
+      "total_cases": 834
+    },
+    {
+      "name": "Kessler, John D.",
+      "cash_bail_pct": 0.274953,
+      "unsecured_pct": 0.34275,
+      "ror_pct": 0.382298,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.342466,
+      "cash_bail_pct_white": 0.228956,
+      "total_cases": 531
+    },
+    {
+      "name": "Kropp, Edward C. Sr.",
+      "cash_bail_pct": 0.444444,
+      "unsecured_pct": 0.553554,
+      "ror_pct": 0.002002,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.51963,
+      "cash_bail_pct_white": 0.384615,
+      "total_cases": 999
+    },
+    {
+      "name": "Lawrence, Francis J. Jr.",
+      "cash_bail_pct": 0.62844,
+      "unsecured_pct": 0.167431,
+      "ror_pct": 0.204128,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.685106,
+      "cash_bail_pct_white": 0.559585,
+      "total_cases": 436
+    },
+    {
+      "name": "Leo, Paul N.",
+      "cash_bail_pct": 0.342553,
+      "unsecured_pct": 0.655319,
+      "ror_pct": 0.002128,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.485075,
+      "cash_bail_pct_white": 0.289231,
+      "total_cases": 470
+    },
+    {
+      "name": "Levine, Edward",
+      "cash_bail_pct": 0.294192,
+      "unsecured_pct": 0.227273,
+      "ror_pct": 0.477273,
+      "nonmonetary_pct": 0.001263,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.461078,
+      "cash_bail_pct_white": 0.251736,
+      "total_cases": 792
+    },
+    {
+      "name": "Lukens, Deborah",
+      "cash_bail_pct": 0.369942,
+      "unsecured_pct": 0.225434,
+      "ror_pct": 0.404624,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.452555,
+      "cash_bail_pct_white": 0.331633,
+      "total_cases": 346
+    },
+    {
+      "name": "Maruszczak, William I.",
+      "cash_bail_pct": 0.27957,
+      "unsecured_pct": 0.717358,
+      "ror_pct": 0.003072,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.311355,
+      "cash_bail_pct_white": 0.252907,
+      "total_cases": 651
+    },
+    {
+      "name": "McGill, Katherine E.",
+      "cash_bail_pct": 0.354286,
+      "unsecured_pct": 0.645714,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.423611,
+      "cash_bail_pct_white": 0.319797,
+      "total_cases": 350
+    },
+    {
+      "name": "McHugh Casey, Elizabeth A.",
+      "cash_bail_pct": 0.444737,
+      "unsecured_pct": 0.555263,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.488372,
+      "cash_bail_pct_white": 0.409326,
+      "total_cases": 380
+    },
+    {
+      "name": "Nesbitt, Harry J. III",
+      "cash_bail_pct": 0.406061,
+      "unsecured_pct": 0.593939,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.49,
+      "cash_bail_pct_white": 0.381395,
+      "total_cases": 330
+    },
+    {
+      "name": "Palladino, Scott T.",
+      "cash_bail_pct": 0.514139,
+      "unsecured_pct": 0.455013,
+      "ror_pct": 0.030848,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.658863,
+      "cash_bail_pct_white": 0.423656,
+      "total_cases": 778
+    },
+    {
+      "name": "Price, Juanita A.",
+      "cash_bail_pct": 0.392037,
+      "unsecured_pct": 0.257274,
+      "ror_pct": 0.225115,
+      "nonmonetary_pct": 0.125574,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.493103,
+      "cash_bail_pct_white": 0.323615,
+      "total_cases": 653
+    },
+    {
+      "name": "Quinn, Michael P.",
+      "cash_bail_pct": 0.356932,
+      "unsecured_pct": 0.631268,
+      "ror_pct": 0.0059,
+      "nonmonetary_pct": 0.0059,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.369863,
+      "cash_bail_pct_white": 0.359116,
+      "total_cases": 339
+    },
+    {
+      "name": "Saylor, Maurice H.",
+      "cash_bail_pct": 0.396491,
+      "unsecured_pct": 0.603509,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.663462,
+      "cash_bail_pct_white": 0.338496,
+      "total_cases": 570
+    },
+    {
+      "name": "Schireson, Henry J.",
+      "cash_bail_pct": 0.28972,
+      "unsecured_pct": 0.71028,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.416667,
+      "cash_bail_pct_white": 0.215385,
+      "total_cases": 428
+    },
+    {
+      "name": "Scott, Gregory L.",
+      "cash_bail_pct": 0.617702,
+      "unsecured_pct": 0.333333,
+      "ror_pct": 0.047081,
+      "nonmonetary_pct": 0.001883,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.557432,
+      "cash_bail_pct_white": 0.709821,
+      "total_cases": 531
+    },
+    {
+      "name": "Sobeck, Robert M.",
+      "cash_bail_pct": 0.368519,
+      "unsecured_pct": 0.303704,
+      "ror_pct": 0.327778,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.551948,
+      "cash_bail_pct_white": 0.319088,
+      "total_cases": 540
+    },
+    {
+      "name": "Zaffarano, Patricia Ann",
+      "cash_bail_pct": 0.368635,
+      "unsecured_pct": 0.623218,
+      "ror_pct": 0.008147,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.494505,
+      "cash_bail_pct_white": 0.294521,
+      "total_cases": 491
+    }
+  ],
+  "Montour": [
+    {
+      "name": "Shrawder, Marvin K.",
+      "cash_bail_pct": 0.215789,
+      "unsecured_pct": 0.231579,
+      "ror_pct": 0.542105,
+      "nonmonetary_pct": 0.010526,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.166667,
+      "cash_bail_pct_white": 0.230769,
+      "total_cases": 190
+    }
+  ],
+  "Northampton": [
+    {
+      "name": "Barner, Joseph K.",
+      "cash_bail_pct": 0.306034,
+      "unsecured_pct": 0.693966,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.305263,
+      "cash_bail_pct_white": 0.308357,
+      "total_cases": 464
+    },
+    {
+      "name": "Broscius, Patricia C.",
+      "cash_bail_pct": 0.396518,
+      "unsecured_pct": 0.601547,
+      "ror_pct": 0.001934,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.362903,
+      "cash_bail_pct_white": 0.41989,
+      "total_cases": 517
+    },
+    {
+      "name": "Capobianco, John C.",
+      "cash_bail_pct": 0.529126,
+      "unsecured_pct": 0.470874,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.742268,
+      "cash_bail_pct_white": 0.5,
+      "total_cases": 618
+    },
+    {
+      "name": "Corpora, Daniel G.",
+      "cash_bail_pct": 0.596577,
+      "unsecured_pct": 0.354523,
+      "ror_pct": 0.0489,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.710145,
+      "cash_bail_pct_white": 0.544061,
+      "total_cases": 409
+    },
+    {
+      "name": "Grifo, Antonia",
+      "cash_bail_pct": 0.587368,
+      "unsecured_pct": 0.256842,
+      "ror_pct": 0.151579,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.004211,
+      "cash_bail_pct_black": 0.707965,
+      "cash_bail_pct_white": 0.559078,
+      "total_cases": 475
+    },
+    {
+      "name": "Hawke, Robert A.",
+      "cash_bail_pct": 0.57485,
+      "unsecured_pct": 0.423154,
+      "ror_pct": 0.001996,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.833333,
+      "cash_bail_pct_white": 0.536643,
+      "total_cases": 501
+    },
+    {
+      "name": "Manwaring, Roy A. II",
+      "cash_bail_pct": 0.486567,
+      "unsecured_pct": 0.468657,
+      "ror_pct": 0.044776,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.625,
+      "cash_bail_pct_white": 0.446565,
+      "total_cases": 335
+    },
+    {
+      "name": "Matos Gonzalez, Nancy",
+      "cash_bail_pct": 0.649635,
+      "unsecured_pct": 0.290146,
+      "ror_pct": 0.058394,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001825,
+      "cash_bail_pct_black": 0.689655,
+      "cash_bail_pct_white": 0.64433,
+      "total_cases": 548
+    },
+    {
+      "name": "Narlesky, James J.",
+      "cash_bail_pct": 0.472906,
+      "unsecured_pct": 0.527094,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.542169,
+      "cash_bail_pct_white": 0.458746,
+      "total_cases": 406
+    },
+    {
+      "name": "Rapp, Anthony G. Jr.",
+      "cash_bail_pct": 0.337748,
+      "unsecured_pct": 0.642384,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.006623,
+      "nominal_pct": 0.013245,
+      "cash_bail_pct_black": 0.25,
+      "cash_bail_pct_white": 0.368421,
+      "total_cases": 151
+    },
+    {
+      "name": "Romig-Gainer, Elizabeth A.",
+      "cash_bail_pct": 0.237624,
+      "unsecured_pct": 0.178218,
+      "ror_pct": 0.584158,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.333333,
+      "cash_bail_pct_white": 0.212121,
+      "total_cases": 202
+    },
+    {
+      "name": "Schlegel, Douglas",
+      "cash_bail_pct": 0.507331,
+      "unsecured_pct": 0.16129,
+      "ror_pct": 0.322581,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.008798,
+      "cash_bail_pct_black": 0.759259,
+      "cash_bail_pct_white": 0.458781,
+      "total_cases": 341
+    },
+    {
+      "name": "Taschner, Jacqueline M.",
+      "cash_bail_pct": 0.531022,
+      "unsecured_pct": 0.279197,
+      "ror_pct": 0.184307,
+      "nonmonetary_pct": 0.001825,
+      "nominal_pct": 0.00365,
+      "cash_bail_pct_black": 0.5625,
+      "cash_bail_pct_white": 0.531172,
+      "total_cases": 548
+    },
+    {
+      "name": "Tidd, David W.",
+      "cash_bail_pct": 0.398058,
+      "unsecured_pct": 0.223301,
+      "ror_pct": 0.378641,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.411765,
+      "cash_bail_pct_white": 0.392857,
+      "total_cases": 103
+    },
+    {
+      "name": "Yetter, Richard H. III",
+      "cash_bail_pct": 0.576655,
+      "unsecured_pct": 0.355401,
+      "ror_pct": 0.06446,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.003484,
+      "cash_bail_pct_black": 0.635838,
+      "cash_bail_pct_white": 0.552699,
+      "total_cases": 574
+    },
+    {
+      "name": "Zito, Alicia Rose",
+      "cash_bail_pct": 0.566456,
+      "unsecured_pct": 0.427215,
+      "ror_pct": 0.003165,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.003165,
+      "cash_bail_pct_black": 0.694444,
+      "cash_bail_pct_white": 0.543071,
+      "total_cases": 316
+    }
+  ],
+  "Northumberland": [
+    {
+      "name": "Apfelbaum, Benjamin",
+      "cash_bail_pct": 0.285935,
+      "unsecured_pct": 0.324575,
+      "ror_pct": 0.386399,
+      "nonmonetary_pct": 0.001546,
+      "nominal_pct": 0.001546,
+      "cash_bail_pct_black": 0.45679,
+      "cash_bail_pct_white": 0.255941,
+      "total_cases": 647
+    },
+    {
+      "name": "Cashman, Richard P.",
+      "cash_bail_pct": 0.359173,
+      "unsecured_pct": 0.640827,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.421053,
+      "cash_bail_pct_white": 0.361111,
+      "total_cases": 387
+    },
+    {
+      "name": "Diehl, Michael I.",
+      "cash_bail_pct": 0.406667,
+      "unsecured_pct": 0.562222,
+      "ror_pct": 0.031111,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.666667,
+      "cash_bail_pct_white": 0.382927,
+      "total_cases": 450
+    },
+    {
+      "name": "Gembic, John",
+      "cash_bail_pct": 0.421508,
+      "unsecured_pct": 0.566131,
+      "ror_pct": 0.011125,
+      "nonmonetary_pct": 0.001236,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.754098,
+      "cash_bail_pct_white": 0.398333,
+      "total_cases": 809
+    }
+  ],
+  "Perry": [
+    {
+      "name": "Frownfelter, Elizabeth R.",
+      "cash_bail_pct": 0.467391,
+      "unsecured_pct": 0.070652,
+      "ror_pct": 0.461957,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.846154,
+      "cash_bail_pct_white": 0.431953,
+      "total_cases": 184
+    },
+    {
+      "name": "McGuire, Daniel R.",
+      "cash_bail_pct": 0.458599,
+      "unsecured_pct": 0.038217,
+      "ror_pct": 0.503185,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.6,
+      "cash_bail_pct_white": 0.431655,
+      "total_cases": 157
+    },
+    {
+      "name": "Schechterly, Michael E.",
+      "cash_bail_pct": 0.171329,
+      "unsecured_pct": 0.377622,
+      "ror_pct": 0.409091,
+      "nonmonetary_pct": 0.015734,
+      "nominal_pct": 0.026224,
+      "cash_bail_pct_black": 0.230769,
+      "cash_bail_pct_white": 0.165714,
+      "total_cases": 572
+    }
+  ],
+  "Philadelphia": [
+    {
+      "name": "Bedford, Sheila M.",
+      "cash_bail_pct": 0.499185,
+      "unsecured_pct": 0.035101,
+      "ror_pct": 0.343915,
+      "nonmonetary_pct": 0.121799,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.55868,
+      "cash_bail_pct_white": 0.433939,
+      "total_cases": 10427
+    },
+    {
+      "name": "DeLeon, James M.",
+      "cash_bail_pct": 0.111842,
+      "unsecured_pct": 0.842105,
+      "ror_pct": 0.046053,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.093333,
+      "cash_bail_pct_white": 0.111111,
+      "total_cases": 152
+    },
+    {
+      "name": "Devlin, Kevin R.",
+      "cash_bail_pct": 0.474274,
+      "unsecured_pct": 0.020282,
+      "ror_pct": 0.371477,
+      "nonmonetary_pct": 0.133967,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.531077,
+      "cash_bail_pct_white": 0.414718,
+      "total_cases": 9368
+    },
+    {
+      "name": "Dugan, Patrick F.",
+      "cash_bail_pct": 0.162393,
+      "unsecured_pct": 0.794872,
+      "ror_pct": 0.042735,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.169492,
+      "cash_bail_pct_white": 0.150943,
+      "total_cases": 117
+    },
+    {
+      "name": "E-Filing Judge",
+      "cash_bail_pct": 0.594798,
+      "unsecured_pct": 0.151978,
+      "ror_pct": 0.185297,
+      "nonmonetary_pct": 0.067928,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.691706,
+      "cash_bail_pct_white": 0.497315,
+      "total_cases": 4652
+    },
+    {
+      "name": "Emergency Arraignment Court Magistrate",
+      "cash_bail_pct": 0.496644,
+      "unsecured_pct": 0.010067,
+      "ror_pct": 0.337248,
+      "nonmonetary_pct": 0.15604,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.556075,
+      "cash_bail_pct_white": 0.432866,
+      "total_cases": 1192
+    },
+    {
+      "name": "Hayden, Charles",
+      "cash_bail_pct": 0.07563,
+      "unsecured_pct": 0.907563,
+      "ror_pct": 0.016807,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.070423,
+      "cash_bail_pct_white": 0.073171,
+      "total_cases": 119
+    },
+    {
+      "name": "Jimenez, Nazario Jr.",
+      "cash_bail_pct": 0.352,
+      "unsecured_pct": 0.608,
+      "ror_pct": 0.04,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.357143,
+      "cash_bail_pct_white": 0.343284,
+      "total_cases": 125
+    },
+    {
+      "name": "Kosinski, Gerard A.",
+      "cash_bail_pct": 0.160377,
+      "unsecured_pct": 0.778302,
+      "ror_pct": 0.061321,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.17094,
+      "cash_bail_pct_white": 0.157303,
+      "total_cases": 212
+    },
+    {
+      "name": "Meehan, William Austin Jr.",
+      "cash_bail_pct": 0.167273,
+      "unsecured_pct": 0.778182,
+      "ror_pct": 0.054545,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.170886,
+      "cash_bail_pct_white": 0.169811,
+      "total_cases": 275
+    },
+    {
+      "name": "O'Brien, James",
+      "cash_bail_pct": 0.516383,
+      "unsecured_pct": 0.093906,
+      "ror_pct": 0.333163,
+      "nonmonetary_pct": 0.056548,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.577351,
+      "cash_bail_pct_white": 0.44353,
+      "total_cases": 9797
+    },
+    {
+      "name": "Pew, Wendy L.",
+      "cash_bail_pct": 0.191176,
+      "unsecured_pct": 0.768382,
+      "ror_pct": 0.040441,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.240876,
+      "cash_bail_pct_white": 0.132812,
+      "total_cases": 272
+    },
+    {
+      "name": "Rebstock, Francis J.",
+      "cash_bail_pct": 0.532617,
+      "unsecured_pct": 0.054483,
+      "ror_pct": 0.406888,
+      "nonmonetary_pct": 0.006013,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.576199,
+      "cash_bail_pct_white": 0.468004,
+      "total_cases": 5488
+    },
+    {
+      "name": "Rice, Jane M.",
+      "cash_bail_pct": 0.519443,
+      "unsecured_pct": 0.165825,
+      "ror_pct": 0.307908,
+      "nonmonetary_pct": 0.006824,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.571873,
+      "cash_bail_pct_white": 0.457184,
+      "total_cases": 10698
+    },
+    {
+      "name": "Robbins, Harvey W.",
+      "cash_bail_pct": 0.16094,
+      "unsecured_pct": 0.792043,
+      "ror_pct": 0.0434,
+      "nonmonetary_pct": 0.003617,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.164,
+      "cash_bail_pct_white": 0.147887,
+      "total_cases": 553
+    },
+    {
+      "name": "Shuter, David C.",
+      "cash_bail_pct": 0.197802,
+      "unsecured_pct": 0.763736,
+      "ror_pct": 0.038462,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.212121,
+      "cash_bail_pct_white": 0.164557,
+      "total_cases": 182
+    },
+    {
+      "name": "Stack, Patrick",
+      "cash_bail_pct": 0.512712,
+      "unsecured_pct": 0.001535,
+      "ror_pct": 0.481915,
+      "nonmonetary_pct": 0.003838,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.574093,
+      "cash_bail_pct_white": 0.440613,
+      "total_cases": 10423
+    },
+    {
+      "name": "Washington, Craig M.",
+      "cash_bail_pct": 0.029126,
+      "unsecured_pct": 0.941748,
+      "ror_pct": 0.029126,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.023256,
+      "cash_bail_pct_white": 0.033898,
+      "total_cases": 103
+    }
+  ],
+  "Pike": [
+    {
+      "name": "Cooper, Alan B.",
+      "cash_bail_pct": 0.276836,
+      "unsecured_pct": 0.101695,
+      "ror_pct": 0.355932,
+      "nonmonetary_pct": 0.265537,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.234899,
+      "total_cases": 177
+    },
+    {
+      "name": "Fischer, Deborah",
+      "cash_bail_pct": 0.408922,
+      "unsecured_pct": 0.070632,
+      "ror_pct": 0.494424,
+      "nonmonetary_pct": 0.022305,
+      "nominal_pct": 0.003717,
+      "cash_bail_pct_black": 0.448276,
+      "cash_bail_pct_white": 0.411504,
+      "total_cases": 269
+    },
+    {
+      "name": "Menditto, Paul D. Sr.",
+      "cash_bail_pct": 0.29703,
+      "unsecured_pct": 0.094059,
+      "ror_pct": 0.212871,
+      "nonmonetary_pct": 0.39604,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.216216,
+      "cash_bail_pct_white": 0.346667,
+      "total_cases": 202
+    },
+    {
+      "name": "Muir, Shannon L.",
+      "cash_bail_pct": 0.321656,
+      "unsecured_pct": 0.006369,
+      "ror_pct": 0.124204,
+      "nonmonetary_pct": 0.547771,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.466667,
+      "cash_bail_pct_white": 0.308511,
+      "total_cases": 314
+    }
+  ],
+  "Potter": [
+    {
+      "name": "Easton, Annette L.",
+      "cash_bail_pct": 0.192488,
+      "unsecured_pct": 0.492958,
+      "ror_pct": 0.262911,
+      "nonmonetary_pct": 0.051643,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 1,
+      "cash_bail_pct_white": 0.190244,
+      "total_cases": 213
+    },
+    {
+      "name": "McCleaft, Kari A.",
+      "cash_bail_pct": 0.271429,
+      "unsecured_pct": 0.728571,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.666667,
+      "cash_bail_pct_white": 0.264706,
+      "total_cases": 140
+    },
+    {
+      "name": "Weiss, Delores G.",
+      "cash_bail_pct": 0.228395,
+      "unsecured_pct": 0.611111,
+      "ror_pct": 0.160494,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.0,
+      "cash_bail_pct_white": 0.235669,
+      "total_cases": 162
+    }
+  ],
+  "Schuylkill": [
+    {
+      "name": "Bayer, Stephen J.",
+      "cash_bail_pct": 0.343461,
+      "unsecured_pct": 0.153236,
+      "ror_pct": 0.494055,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.009247,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.341844,
+      "total_cases": 757
+    },
+    {
+      "name": "Ferrier, James R.",
+      "cash_bail_pct": 0.313131,
+      "unsecured_pct": 0.686869,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.205882,
+      "cash_bail_pct_white": 0.317972,
+      "total_cases": 693
+    },
+    {
+      "name": "Hale, Christina E.",
+      "cash_bail_pct": 0.439425,
+      "unsecured_pct": 0.234086,
+      "ror_pct": 0.326489,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.512821,
+      "cash_bail_pct_white": 0.434091,
+      "total_cases": 487
+    },
+    {
+      "name": "Kilker, Anthony J.",
+      "cash_bail_pct": 0.373178,
+      "unsecured_pct": 0.625364,
+      "ror_pct": 0.001458,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.57377,
+      "cash_bail_pct_white": 0.355519,
+      "total_cases": 686
+    },
+    {
+      "name": "Plachko, David A.",
+      "cash_bail_pct": 0.479062,
+      "unsecured_pct": 0.515913,
+      "ror_pct": 0.005025,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.529412,
+      "cash_bail_pct_white": 0.492593,
+      "total_cases": 597
+    },
+    {
+      "name": "Reiley, James",
+      "cash_bail_pct": 0.41109,
+      "unsecured_pct": 0.58891,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.45,
+      "cash_bail_pct_white": 0.401796,
+      "total_cases": 1046
+    },
+    {
+      "name": "Rossi, David J.",
+      "cash_bail_pct": 0.478788,
+      "unsecured_pct": 0.521212,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.809524,
+      "cash_bail_pct_white": 0.464668,
+      "total_cases": 495
+    }
+  ],
+  "Snyder": [
+    {
+      "name": "Hackenberg, Lori R.",
+      "cash_bail_pct": 0.352313,
+      "unsecured_pct": 0.52669,
+      "ror_pct": 0.060498,
+      "nonmonetary_pct": 0.060498,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.7,
+      "cash_bail_pct_white": 0.339483,
+      "total_cases": 281
+    },
+    {
+      "name": "Reed, John H.",
+      "cash_bail_pct": 0.364238,
+      "unsecured_pct": 0.609272,
+      "ror_pct": 0.018212,
+      "nonmonetary_pct": 0.008278,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.518519,
+      "cash_bail_pct_white": 0.349265,
+      "total_cases": 604
+    }
+  ],
+  "Somerset": [
+    {
+      "name": "Bell, Douglas McCall",
+      "cash_bail_pct": 0.208,
+      "unsecured_pct": 0.196,
+      "ror_pct": 0.1,
+      "nonmonetary_pct": 0.496,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 1,
+      "cash_bail_pct_white": 0.206612,
+      "total_cases": 250
+    },
+    {
+      "name": "Johnson, Kenneth W.",
+      "cash_bail_pct": 0.223496,
+      "unsecured_pct": 0.282235,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.494269,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.621622,
+      "cash_bail_pct_white": 0.204019,
+      "total_cases": 698
+    },
+    {
+      "name": "Mankamyer, Susan",
+      "cash_bail_pct": 0.256484,
+      "unsecured_pct": 0.144092,
+      "ror_pct": 0.043228,
+      "nonmonetary_pct": 0.556196,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.857143,
+      "cash_bail_pct_white": 0.237654,
+      "total_cases": 347
+    },
+    {
+      "name": "Seger, William E.",
+      "cash_bail_pct": 0.237918,
+      "unsecured_pct": 0.256506,
+      "ror_pct": 0.003717,
+      "nonmonetary_pct": 0.501859,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.666667,
+      "cash_bail_pct_white": 0.230769,
+      "total_cases": 269
+    },
+    {
+      "name": "Stevanus, Sandra L.",
+      "cash_bail_pct": 0.367188,
+      "unsecured_pct": 0.273438,
+      "ror_pct": 0.011719,
+      "nonmonetary_pct": 0.347656,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.740741,
+      "cash_bail_pct_white": 0.328829,
+      "total_cases": 256
+    }
+  ],
+  "Susquehanna": [
+    {
+      "name": "Brainard, Suzanne M.",
+      "cash_bail_pct": 0.298507,
+      "unsecured_pct": 0.383085,
+      "ror_pct": 0.283582,
+      "nonmonetary_pct": 0.034826,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.294416,
+      "total_cases": 201
+    },
+    {
+      "name": "Cordner, Jodi L.",
+      "cash_bail_pct": 0.34767,
+      "unsecured_pct": 0.258065,
+      "ror_pct": 0.394265,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.545455,
+      "cash_bail_pct_white": 0.343396,
+      "total_cases": 279
+    },
+    {
+      "name": "Hollister, Jeffrey L.",
+      "cash_bail_pct": 0.521401,
+      "unsecured_pct": 0.381323,
+      "ror_pct": 0.097276,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.857143,
+      "cash_bail_pct_white": 0.516529,
+      "total_cases": 257
+    }
+  ],
+  "Tioga": [
+    {
+      "name": "Carlson, James E.",
+      "cash_bail_pct": 0.296296,
+      "unsecured_pct": 0.703704,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.384615,
+      "cash_bail_pct_white": 0.292208,
+      "total_cases": 324
+    },
+    {
+      "name": "Edgcomb, James R.",
+      "cash_bail_pct": 0.371069,
+      "unsecured_pct": 0.628931,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.666667,
+      "cash_bail_pct_white": 0.363636,
+      "total_cases": 318
+    },
+    {
+      "name": "Repard, Robert L.",
+      "cash_bail_pct": 0.248756,
+      "unsecured_pct": 0.751244,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.666667,
+      "cash_bail_pct_white": 0.229167,
+      "total_cases": 201
+    }
+  ],
+  "Union": [
+    {
+      "name": "Armbruster, Leo S.",
+      "cash_bail_pct": 0.159459,
+      "unsecured_pct": 0.056757,
+      "ror_pct": 0.751351,
+      "nonmonetary_pct": 0.032432,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.204082,
+      "cash_bail_pct_white": 0.149206,
+      "total_cases": 370
+    },
+    {
+      "name": "Mensch, Jeffrey L.",
+      "cash_bail_pct": 0.259843,
+      "unsecured_pct": 0.185039,
+      "ror_pct": 0.212598,
+      "nonmonetary_pct": 0.34252,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.5,
+      "cash_bail_pct_white": 0.23913,
+      "total_cases": 254
+    }
+  ],
+  "Venango": [
+    {
+      "name": "Fish, Andrew F.",
+      "cash_bail_pct": 0.434095,
+      "unsecured_pct": 0.564148,
+      "ror_pct": 0.001757,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.645833,
+      "cash_bail_pct_white": 0.414062,
+      "total_cases": 569
+    },
+    {
+      "name": "Kirtland, Matthew T.",
+      "cash_bail_pct": 0.283688,
+      "unsecured_pct": 0.716312,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.641509,
+      "cash_bail_pct_white": 0.233062,
+      "total_cases": 423
+    },
+    {
+      "name": "Lowrey, Patrick E.",
+      "cash_bail_pct": 0.416667,
+      "unsecured_pct": 0.581081,
+      "ror_pct": 0.002252,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.607143,
+      "cash_bail_pct_white": 0.404819,
+      "total_cases": 444
+    }
+  ],
+  "Warren": [
+    {
+      "name": "Bauer, Laura",
+      "cash_bail_pct": 0.354839,
+      "unsecured_pct": 0.064516,
+      "ror_pct": 0.493088,
+      "nonmonetary_pct": 0.087558,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.666667,
+      "cash_bail_pct_white": 0.35122,
+      "total_cases": 217
+    },
+    {
+      "name": "Carlson, Glenn S.",
+      "cash_bail_pct": 0.453376,
+      "unsecured_pct": 0.212219,
+      "ror_pct": 0.33119,
+      "nonmonetary_pct": 0.003215,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.833333,
+      "cash_bail_pct_white": 0.447368,
+      "total_cases": 311
+    },
+    {
+      "name": "Woodin, Todd A.",
+      "cash_bail_pct": 0.333333,
+      "unsecured_pct": 0.166667,
+      "ror_pct": 0.496124,
+      "nonmonetary_pct": 0.003876,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.571429,
+      "cash_bail_pct_white": 0.322314,
+      "total_cases": 258
+    }
+  ],
+  "Washington": [
+    {
+      "name": "Ellis, James C.",
+      "cash_bail_pct": 0.311275,
+      "unsecured_pct": 0.125,
+      "ror_pct": 0.563725,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.625,
+      "cash_bail_pct_white": 0.2849,
+      "total_cases": 408
+    },
+    {
+      "name": "Havelka, Gary H.",
+      "cash_bail_pct": 0.505085,
+      "unsecured_pct": 0.125424,
+      "ror_pct": 0.369492,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.862069,
+      "cash_bail_pct_white": 0.4875,
+      "total_cases": 295
+    },
+    {
+      "name": "Hopkins, Larry W.",
+      "cash_bail_pct": 0.536508,
+      "unsecured_pct": 0.45873,
+      "ror_pct": 0.004762,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.706349,
+      "cash_bail_pct_white": 0.5,
+      "total_cases": 630
+    },
+    {
+      "name": "Kanalis, Joshua P.",
+      "cash_bail_pct": 0.303426,
+      "unsecured_pct": 0.696574,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.313043,
+      "cash_bail_pct_white": 0.301031,
+      "total_cases": 613
+    },
+    {
+      "name": "Mark, David W.",
+      "cash_bail_pct": 0.409426,
+      "unsecured_pct": 0.07511,
+      "ror_pct": 0.469809,
+      "nonmonetary_pct": 0.045655,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.627119,
+      "cash_bail_pct_white": 0.367459,
+      "total_cases": 679
+    },
+    {
+      "name": "McDonald, Traci L.",
+      "cash_bail_pct": 0.278846,
+      "unsecured_pct": 0.521154,
+      "ror_pct": 0.2,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.48,
+      "cash_bail_pct_white": 0.261161,
+      "total_cases": 520
+    },
+    {
+      "name": "Redlinger, Robert W.",
+      "cash_bail_pct": 0.438833,
+      "unsecured_pct": 0.391695,
+      "ror_pct": 0.16835,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.001122,
+      "cash_bail_pct_black": 0.569307,
+      "cash_bail_pct_white": 0.403963,
+      "total_cases": 891
+    },
+    {
+      "name": "Thompson, Curtis",
+      "cash_bail_pct": 0.346154,
+      "unsecured_pct": 0.651282,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.002564,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.615385,
+      "cash_bail_pct_white": 0.319648,
+      "total_cases": 390
+    },
+    {
+      "name": "Ward, Ethan T.",
+      "cash_bail_pct": 0.502404,
+      "unsecured_pct": 0.495192,
+      "ror_pct": 0.002404,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.7,
+      "cash_bail_pct_white": 0.469741,
+      "total_cases": 416
+    },
+    {
+      "name": "Weller, Jay",
+      "cash_bail_pct": 0.290598,
+      "unsecured_pct": 0.028846,
+      "ror_pct": 0.646368,
+      "nonmonetary_pct": 0.034188,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.450331,
+      "cash_bail_pct_white": 0.260417,
+      "total_cases": 936
+    },
+    {
+      "name": "Wilson, Mark",
+      "cash_bail_pct": 0.538272,
+      "unsecured_pct": 0.234568,
+      "ror_pct": 0.22716,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.648649,
+      "cash_bail_pct_white": 0.506289,
+      "total_cases": 405
+    }
+  ],
+  "Wayne": [
+    {
+      "name": "Carney, Bonnie L.",
+      "cash_bail_pct": 0.396078,
+      "unsecured_pct": 0.490196,
+      "ror_pct": 0.113725,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.583333,
+      "cash_bail_pct_white": 0.376569,
+      "total_cases": 255
+    },
+    {
+      "name": "Edwards, Ronald",
+      "cash_bail_pct": 0.39,
+      "unsecured_pct": 0.08,
+      "ror_pct": 0.53,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.444444,
+      "cash_bail_pct_white": 0.387978,
+      "total_cases": 200
+    },
+    {
+      "name": "Myers, Linus H.",
+      "cash_bail_pct": 0.344948,
+      "unsecured_pct": 0.236934,
+      "ror_pct": 0.418118,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.714286,
+      "cash_bail_pct_white": 0.323194,
+      "total_cases": 287
+    }
+  ],
+  "Westmoreland": [
+    {
+      "name": "Albert, James",
+      "cash_bail_pct": 0.296852,
+      "unsecured_pct": 0.508246,
+      "ror_pct": 0.193403,
+      "nonmonetary_pct": 0.001499,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.440678,
+      "cash_bail_pct_white": 0.284188,
+      "total_cases": 667
+    },
+    {
+      "name": "Bilik, Mark",
+      "cash_bail_pct": 0.369524,
+      "unsecured_pct": 0.139048,
+      "ror_pct": 0.491429,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.469388,
+      "cash_bail_pct_white": 0.365471,
+      "total_cases": 525
+    },
+    {
+      "name": "Bompiani, L. Anthony",
+      "cash_bail_pct": 0.240446,
+      "unsecured_pct": 0.265924,
+      "ror_pct": 0.490446,
+      "nonmonetary_pct": 0.003185,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.386667,
+      "cash_bail_pct_white": 0.220729,
+      "total_cases": 628
+    },
+    {
+      "name": "Buczak, Jason",
+      "cash_bail_pct": 0.293785,
+      "unsecured_pct": 0.271186,
+      "ror_pct": 0.433145,
+      "nonmonetary_pct": 0.001883,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.576923,
+      "cash_bail_pct_white": 0.266811,
+      "total_cases": 531
+    },
+    {
+      "name": "Christner, Charles M.",
+      "cash_bail_pct": 0.320189,
+      "unsecured_pct": 0.105678,
+      "ror_pct": 0.399054,
+      "nonmonetary_pct": 0.175079,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.513158,
+      "cash_bail_pct_white": 0.291439,
+      "total_cases": 634
+    },
+    {
+      "name": "Conway, Charles R.",
+      "cash_bail_pct": 0.156015,
+      "unsecured_pct": 0.261278,
+      "ror_pct": 0.577068,
+      "nonmonetary_pct": 0.005639,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.348837,
+      "cash_bail_pct_white": 0.139434,
+      "total_cases": 532
+    },
+    {
+      "name": "Dalfonso, Joseph A.",
+      "cash_bail_pct": 0.350797,
+      "unsecured_pct": 0.138952,
+      "ror_pct": 0.290433,
+      "nonmonetary_pct": 0.219818,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.470588,
+      "cash_bail_pct_white": 0.299674,
+      "total_cases": 878
+    },
+    {
+      "name": "DeMarchis, Joseph R.",
+      "cash_bail_pct": 0.453453,
+      "unsecured_pct": 0.510511,
+      "ror_pct": 0.036036,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.60119,
+      "cash_bail_pct_white": 0.39876,
+      "total_cases": 666
+    },
+    {
+      "name": "Eckels, Roger",
+      "cash_bail_pct": 0.34632,
+      "unsecured_pct": 0.290043,
+      "ror_pct": 0.361472,
+      "nonmonetary_pct": 0.002165,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.666667,
+      "cash_bail_pct_white": 0.300268,
+      "total_cases": 462
+    },
+    {
+      "name": "Falcon, James N.",
+      "cash_bail_pct": 0.269565,
+      "unsecured_pct": 0.449275,
+      "ror_pct": 0.26087,
+      "nonmonetary_pct": 0.02029,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.338983,
+      "cash_bail_pct_white": 0.278689,
+      "total_cases": 345
+    },
+    {
+      "name": "Gongaware, Wayne",
+      "cash_bail_pct": 0.187126,
+      "unsecured_pct": 0.502994,
+      "ror_pct": 0.305389,
+      "nonmonetary_pct": 0.004491,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.306452,
+      "cash_bail_pct_white": 0.171717,
+      "total_cases": 668
+    },
+    {
+      "name": "Kistler, Helen M.",
+      "cash_bail_pct": 0.306043,
+      "unsecured_pct": 0.68616,
+      "ror_pct": 0.007797,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.385965,
+      "cash_bail_pct_white": 0.292978,
+      "total_cases": 513
+    },
+    {
+      "name": "Mahady, Michael",
+      "cash_bail_pct": 0.254587,
+      "unsecured_pct": 0.071101,
+      "ror_pct": 0.674312,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.395833,
+      "cash_bail_pct_white": 0.244772,
+      "total_cases": 872
+    },
+    {
+      "name": "Mansour, Mark Stephen",
+      "cash_bail_pct": 0.342318,
+      "unsecured_pct": 0.142857,
+      "ror_pct": 0.266846,
+      "nonmonetary_pct": 0.247978,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.553398,
+      "cash_bail_pct_white": 0.327715,
+      "total_cases": 742
+    },
+    {
+      "name": "Moore, Charles D.",
+      "cash_bail_pct": 0.311644,
+      "unsecured_pct": 0.034247,
+      "ror_pct": 0.606164,
+      "nonmonetary_pct": 0.047945,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.53125,
+      "cash_bail_pct_white": 0.314961,
+      "total_cases": 584
+    },
+    {
+      "name": "Pallone, Frank J. Jr.",
+      "cash_bail_pct": 0.452249,
+      "unsecured_pct": 0.248619,
+      "ror_pct": 0.298343,
+      "nonmonetary_pct": 0.000789,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.514113,
+      "cash_bail_pct_white": 0.422402,
+      "total_cases": 1267
+    },
+    {
+      "name": "Peck, Yackopec Cheryl J.",
+      "cash_bail_pct": 0.281888,
+      "unsecured_pct": 0.715561,
+      "ror_pct": 0.001276,
+      "nonmonetary_pct": 0.001276,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.483871,
+      "cash_bail_pct_white": 0.261364,
+      "total_cases": 784
+    },
+    {
+      "name": "Thiel, Denise S.",
+      "cash_bail_pct": 0.307229,
+      "unsecured_pct": 0.271084,
+      "ror_pct": 0.421687,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.8,
+      "cash_bail_pct_white": 0.266667,
+      "total_cases": 332
+    },
+    {
+      "name": "Weimer, Douglas Reid",
+      "cash_bail_pct": 0.263441,
+      "unsecured_pct": 0.693548,
+      "ror_pct": 0.043011,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.625,
+      "cash_bail_pct_white": 0.229412,
+      "total_cases": 186
+    }
+  ],
+  "Wyoming": [
+    {
+      "name": "Plummer, David K",
+      "cash_bail_pct": 0.288732,
+      "unsecured_pct": 0.709507,
+      "ror_pct": 0.001761,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.166667,
+      "cash_bail_pct_white": 0.2939,
+      "total_cases": 568
+    },
+    {
+      "name": "Smith, Carl W. Jr.",
+      "cash_bail_pct": 0.448622,
+      "unsecured_pct": 0.548872,
+      "ror_pct": 0.002506,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.727273,
+      "cash_bail_pct_white": 0.437995,
+      "total_cases": 399
+    }
+  ],
+  "York": [
+    {
+      "name": "Albright, Keith L.",
+      "cash_bail_pct": 0.409621,
+      "unsecured_pct": 0.303207,
+      "ror_pct": 0.260933,
+      "nonmonetary_pct": 0.026239,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.429577,
+      "cash_bail_pct_white": 0.410448,
+      "total_cases": 686
+    },
+    {
+      "name": "Bloss, Barry L.",
+      "cash_bail_pct": 0.47747,
+      "unsecured_pct": 0.055336,
+      "ror_pct": 0.324111,
+      "nonmonetary_pct": 0.142292,
+      "nominal_pct": 0.000791,
+      "cash_bail_pct_black": 0.528926,
+      "cash_bail_pct_white": 0.458476,
+      "total_cases": 1265
+    },
+    {
+      "name": "Clancy, Jennifer J.P.",
+      "cash_bail_pct": 0.540404,
+      "unsecured_pct": 0.200337,
+      "ror_pct": 0.232323,
+      "nonmonetary_pct": 0.026936,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.565217,
+      "cash_bail_pct_white": 0.533958,
+      "total_cases": 594
+    },
+    {
+      "name": "Dubs, Dwayne A.",
+      "cash_bail_pct": 0.360054,
+      "unsecured_pct": 0.142663,
+      "ror_pct": 0.493207,
+      "nonmonetary_pct": 0.004076,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.607407,
+      "cash_bail_pct_white": 0.305369,
+      "total_cases": 736
+    },
+    {
+      "name": "Eckenrode, Robert A.",
+      "cash_bail_pct": 0.350769,
+      "unsecured_pct": 0.118462,
+      "ror_pct": 0.503077,
+      "nonmonetary_pct": 0.027692,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.516129,
+      "cash_bail_pct_white": 0.315891,
+      "total_cases": 650
+    },
+    {
+      "name": "Edie, Nancy Lee",
+      "cash_bail_pct": 0.186352,
+      "unsecured_pct": 0.026247,
+      "ror_pct": 0.771654,
+      "nonmonetary_pct": 0.015748,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.225,
+      "cash_bail_pct_white": 0.174497,
+      "total_cases": 381
+    },
+    {
+      "name": "Eshbach, David C.",
+      "cash_bail_pct": 0.557402,
+      "unsecured_pct": 0.099698,
+      "ror_pct": 0.223565,
+      "nonmonetary_pct": 0.119335,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.66055,
+      "cash_bail_pct_white": 0.538321,
+      "total_cases": 662
+    },
+    {
+      "name": "Fishel, John H.",
+      "cash_bail_pct": 0.31791,
+      "unsecured_pct": 0.071642,
+      "ror_pct": 0.50597,
+      "nonmonetary_pct": 0.071642,
+      "nominal_pct": 0.032836,
+      "cash_bail_pct_black": 0.518072,
+      "cash_bail_pct_white": 0.294014,
+      "total_cases": 670
+    },
+    {
+      "name": "Groom, Walter",
+      "cash_bail_pct": 0.556522,
+      "unsecured_pct": 0.434783,
+      "ror_pct": 0.008696,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.722222,
+      "cash_bail_pct_white": 0.487179,
+      "total_cases": 115
+    },
+    {
+      "name": "Gross, Scott J.",
+      "cash_bail_pct": 0.414466,
+      "unsecured_pct": 0.174512,
+      "ror_pct": 0.350172,
+      "nonmonetary_pct": 0.057405,
+      "nominal_pct": 0.003444,
+      "cash_bail_pct_black": 0.641176,
+      "cash_bail_pct_white": 0.355072,
+      "total_cases": 871
+    },
+    {
+      "name": "Haskell, Ronald J. Jr.",
+      "cash_bail_pct": 0.504762,
+      "unsecured_pct": 0.154286,
+      "ror_pct": 0.249524,
+      "nonmonetary_pct": 0.089524,
+      "nominal_pct": 0.001905,
+      "cash_bail_pct_black": 0.52,
+      "cash_bail_pct_white": 0.5,
+      "total_cases": 525
+    },
+    {
+      "name": "Laird, Scott",
+      "cash_bail_pct": 0.434783,
+      "unsecured_pct": 0.071429,
+      "ror_pct": 0.358696,
+      "nonmonetary_pct": 0.135093,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.626667,
+      "cash_bail_pct_white": 0.371663,
+      "total_cases": 644
+    },
+    {
+      "name": "Manifold, Laura S.",
+      "cash_bail_pct": 0.427921,
+      "unsecured_pct": 0.157815,
+      "ror_pct": 0.358118,
+      "nonmonetary_pct": 0.054628,
+      "nominal_pct": 0.001517,
+      "cash_bail_pct_black": 0.47482,
+      "cash_bail_pct_white": 0.417647,
+      "total_cases": 659
+    },
+    {
+      "name": "Martin, Richard E. II",
+      "cash_bail_pct": 0.774882,
+      "unsecured_pct": 0.21564,
+      "ror_pct": 0.004739,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.004739,
+      "cash_bail_pct_black": 0.896296,
+      "cash_bail_pct_white": 0.714789,
+      "total_cases": 422
+    },
+    {
+      "name": "Meisenhelter, Douglas F.",
+      "cash_bail_pct": 0.827338,
+      "unsecured_pct": 0.172662,
+      "ror_pct": 0.0,
+      "nonmonetary_pct": 0.0,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.878049,
+      "cash_bail_pct_white": 0.805217,
+      "total_cases": 834
+    },
+    {
+      "name": "Miner, James S.",
+      "cash_bail_pct": 0.451817,
+      "unsecured_pct": 0.064771,
+      "ror_pct": 0.473934,
+      "nonmonetary_pct": 0.007899,
+      "nominal_pct": 0.00158,
+      "cash_bail_pct_black": 0.716981,
+      "cash_bail_pct_white": 0.397706,
+      "total_cases": 633
+    },
+    {
+      "name": "Morgan, James H.",
+      "cash_bail_pct": 0.508969,
+      "unsecured_pct": 0.152466,
+      "ror_pct": 0.318386,
+      "nonmonetary_pct": 0.015695,
+      "nominal_pct": 0.004484,
+      "cash_bail_pct_black": 0.50641,
+      "cash_bail_pct_white": 0.519713,
+      "total_cases": 446
+    },
+    {
+      "name": "Oberdorf, Jeffrey L.",
+      "cash_bail_pct": 0.289665,
+      "unsecured_pct": 0.238719,
+      "ror_pct": 0.443959,
+      "nonmonetary_pct": 0.024745,
+      "nominal_pct": 0.002911,
+      "cash_bail_pct_black": 0.301136,
+      "cash_bail_pct_white": 0.286282,
+      "total_cases": 687
+    },
+    {
+      "name": "Reilly, Thomas J.",
+      "cash_bail_pct": 0.408983,
+      "unsecured_pct": 0.281324,
+      "ror_pct": 0.297872,
+      "nonmonetary_pct": 0.01182,
+      "nominal_pct": 0.0,
+      "cash_bail_pct_black": 0.602941,
+      "cash_bail_pct_white": 0.37464,
+      "total_cases": 423
+    },
+    {
+      "name": "Thomas, Richard T.",
+      "cash_bail_pct": 0.413163,
+      "unsecured_pct": 0.149909,
+      "ror_pct": 0.33638,
+      "nonmonetary_pct": 0.084095,
+      "nominal_pct": 0.016453,
+      "cash_bail_pct_black": 0.578431,
+      "cash_bail_pct_white": 0.381944,
+      "total_cases": 547
+    },
+    {
+      "name": "Toluba, Joel N.",
+      "cash_bail_pct": 0.428339,
+      "unsecured_pct": 0.232899,
+      "ror_pct": 0.333876,
+      "nonmonetary_pct": 0.003257,
+      "nominal_pct": 0.001629,
+      "cash_bail_pct_black": 0.461538,
+      "cash_bail_pct_white": 0.416901,
+      "total_cases": 614
+    },
+    {
+      "name": "Williams, Linda L.",
+      "cash_bail_pct": 0.489209,
+      "unsecured_pct": 0.02518,
+      "ror_pct": 0.327338,
+      "nonmonetary_pct": 0.156475,
+      "nominal_pct": 0.001799,
+      "cash_bail_pct_black": 0.567568,
+      "cash_bail_pct_white": 0.440367,
+      "total_cases": 556
+    }
+  ]
 };
-
-export const BAIL_POSTING_DATA = [
-  {
-    "data": [
-      "Adams",
-      "$30.4K",
-      44.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Allegheny",
-      "$16.8K",
-      60.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Armstrong",
-      "$15.1K",
-      56.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Beaver",
-      "$21.5K",
-      66.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bedford",
-      "$54.8K",
-      71.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Berks",
-      "$36.0K",
-      57.2,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Blair",
-      "$33.4K",
-      66.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bradford",
-      "$35.2K",
-      89.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Bucks",
-      "$77.5K",
-      50.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Butler",
-      "$25.6K",
-      61.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cambria",
-      "$40.1K",
-      42.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cameron",
-      "$28.3K",
-      56.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Carbon",
-      "$32.5K",
-      51.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Centre",
-      "$51.7K",
-      66.6,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Chester",
-      "$33.6K",
-      51.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clarion",
-      "$23.1K",
-      71.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clearfield",
-      "$29.2K",
-      83.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Clinton",
-      "$28.5K",
-      73.0,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Columbia",
-      "$37.2K",
-      27.6,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Crawford",
-      "$26.7K",
-      56.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Cumberland",
-      "$27.9K",
-      55.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Dauphin",
-      "$43.2K",
-      68.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Delaware",
-      "$46.6K",
-      61.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Elk",
-      "$29.3K",
-      79.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Erie",
-      "$32.5K",
-      62.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fayette",
-      "$22.4K",
-      39.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Forest",
-      "$27.8K",
-      81.1,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Franklin",
-      "$64.7K",
-      76.6,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Fulton",
-      "$64.9K",
-      78.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Greene",
-      "$19.0K",
-      57.0,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Huntingdon",
-      "$22.4K",
-      76.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Indiana",
-      "$17.6K",
-      47.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Jefferson",
-      "$52.8K",
-      86.0,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Juniata",
-      "$27.0K",
-      72.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lackawanna",
-      "$33.0K",
-      72.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lancaster",
-      "$56.9K",
-      64.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lawrence",
-      "$22.1K",
-      45.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lebanon",
-      "$36.6K",
-      42.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lehigh",
-      "$23.3K",
-      57.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Luzerne",
-      "$39.9K",
-      67.0,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Lycoming",
-      "$60.0K",
-      73.2,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "McKean",
-      "$25.1K",
-      69.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mercer",
-      "$28.1K",
-      50.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Mifflin",
-      "$49.4K",
-      82.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Monroe",
-      "$30.4K",
-      38.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montgomery",
-      "$33.9K",
-      63.9,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Montour",
-      "$38.9K",
-      66.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northampton",
-      "$30.2K",
-      55.1,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Northumberland",
-      "$44.8K",
-      58.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Perry",
-      "$27.1K",
-      76.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Philadelphia",
-      "$62.1K",
-      51.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Pike",
-      "$34.7K",
-      64.1,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Potter",
-      "$23.9K",
-      69.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Schuylkill",
-      "$25.2K",
-      60.3,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Snyder",
-      "$31.7K",
-      44.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Somerset",
-      "$45.7K",
-      56.0,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Sullivan",
-      "$18.3K",
-      68.4,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Susquehanna",
-      "$29.5K",
-      73.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Tioga",
-      "$34.4K",
-      78.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Union",
-      "$31.4K",
-      73.6,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Venango",
-      "$41.6K",
-      73.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Warren",
-      "$31.3K",
-      75.7,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Washington",
-      "$30.2K",
-      63.6,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wayne",
-      "$34.0K",
-      46.8,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Westmoreland",
-      "$23.5K",
-      71.1,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "Wyoming",
-      "$28.7K",
-      69.5,
-    ],
-    "outlier": false
-  },
-  {
-    "data": [
-      "York",
-      "$27.0K",
-      59.2,
-    ],
-    "outlier": false
-  }
-];
-
-export const PA_AVG_POSTING_RATE = 63.2;
-
-export const MDJ_DATA = [
-  {
-    "data": [
-      "",
-      "Adams",
-      31.3,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 31.3,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 28.4,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 14.91,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 25.4,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Adams"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Little, Tony J.",
-          25.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 46.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Little, Tony J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Harvey, Matthew Robert",
-          35.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 44.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 3.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 17.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Harvey, Matthew Robert"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bowman, Daniel S.",
-          34.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 26.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bowman, Daniel S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Beauchat, Mark D.",
-          28.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 10.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 28.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Beauchat, Mark D."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Allegheny",
-      42.6,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 42.6,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 2.7,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 29.29,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 25.4,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.03,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Allegheny"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Cramer, Jesse J.",
-          69.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 69.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 22.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 8.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cramer, Jesse J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Schricker, Scott H.",
-          23.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 23.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 7.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 68.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Schricker, Scott H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Torkowsky, Thomas R.",
-          57.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 57.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 7.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 34.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Torkowsky, Thomas R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hoots, Kim Marie",
-          64.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 64.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 13.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 10.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 12.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hoots, Kim Marie"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Dzvonick, Robert Paul",
-          27.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 10.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 61.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Dzvonick, Robert Paul"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Welsh, Regis C.",
-          79.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 79.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 11.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 8.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Welsh, Regis C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Miller, Thomas Jr.",
-          42.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 11.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 46.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Miller, Thomas Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Wagner, William",
-          42.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 8.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 16.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Wagner, William"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Saveikis, Anthony",
-          38.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 17.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 43.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Saveikis, Anthony"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Larotonda, Blaise P.",
-          42.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 17.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 40.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Larotonda, Blaise P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bengel, Carolyn S.",
-          51.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 17.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 29.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bengel, Carolyn S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kaiser, Ralph E.",
-          25.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 18.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 55.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kaiser, Ralph E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Barton, David J.",
-          32.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 19.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 48.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Barton, David J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Herbst, Jeffrey L.",
-          21.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 21.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 20.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 58.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Herbst, Jeffrey L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Eichler, Roxanne Sakoian",
-          24.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 24.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 5.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 22.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 47.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Eichler, Roxanne Sakoian"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Costa, Ron Sr.",
-          54.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 54.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 23.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Costa, Ron Sr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Stephens, Craig C.",
-          47.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 8.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 24.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 19.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Stephens, Craig C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Motznik, James A.",
-          49.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 24.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 25.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Motznik, James A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Manning, Jeffrey A.",
-          24.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 24.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 5.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 26.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 43.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Manning, Jeffrey A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "McGraw-Desmet, Maureen",
-          30.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 26.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 42.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McGraw-Desmet, Maureen"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mills, Beth S.",
-          41.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 26.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 31.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mills, Beth S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Tibbs, Edward A.",
-          65.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 65.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 27.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 7.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Tibbs, Edward A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Opiela, Richard G.",
-          29.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 24.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 27.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 18.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Opiela, Richard G."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ricciardi, Eugene",
-          48.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 48.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 27.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 23.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ricciardi, Eugene"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Armour, John W.",
-          63.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 63.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 29.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 6.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Armour, John W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Barner, Robert L.",
-          62.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 62.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 29.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 8.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Barner, Robert L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Sosovicka, David J.",
-          47.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 30.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 21.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Sosovicka, David J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "DeLuca, Anthony L.",
-          34.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 31.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 33.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "DeLuca, Anthony L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hanley, James Joseph Jr.",
-          33.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 31.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hanley, James Joseph Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Martini, Randy C.",
-          49.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 32.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 18.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Martini, Randy C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Butler, Daniel E.",
-          45.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 32.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Butler, Daniel E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cooper, Kevin E.",
-          36.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 2.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 34.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 27.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cooper, Kevin E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Zucco, Linda Inez",
-          25.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 34.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 39.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Zucco, Linda Inez"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hromyak, Leonard J.",
-          50.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 38.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 10.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hromyak, Leonard J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Swan, Tom",
-          25.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 39.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 34.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Swan, Tom"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Rushing, Derwin",
-          33.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 40.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Rushing, Derwin"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ravenstahl, Robert Jr.",
-          30.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 40.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 28.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ravenstahl, Robert Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Zyra, Gary M.",
-          48.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 48.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 41.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 9.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Zyra, Gary M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "King, Richard G.",
-          31.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 2.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 43.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "King, Richard G."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Martin, Armand",
-          37.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 44.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 17.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Martin, Armand"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Smith, Tara",
-          34.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 5.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 45.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 15.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Smith, Tara"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lang, Elissa Marie",
-          23.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 23.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 46.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 30.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lang, Elissa Marie"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Shaffer, Peter H.",
-          35.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 49.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 15.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Shaffer, Peter H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Swearingen-Batch, Carla M.",
-          27.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 57.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 15.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Swearingen-Batch, Carla M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Caulfield, Thomas P.",
-          25.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 62.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 12.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Caulfield, Thomas P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ford, Robert L.",
-          34.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 63.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ford, Robert L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cercone, Mary A.",
-          23.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 23.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 66.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 10.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cercone, Mary A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Brletic, Thomas S.",
-          71.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 71.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 12.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 14.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Brletic, Thomas S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Olasz, Richard D. Jr.",
-          27.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 51.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 19.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Olasz, Richard D. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Joyce, Dennis Robert",
-          38.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 48.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 12.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Joyce, Dennis Robert"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ceoffe, Anthony M.",
-          32.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 3.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 36.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 27.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ceoffe, Anthony M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Petite, Oscar Jerome Jr.",
-          34.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 36.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 28.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Petite, Oscar Jerome Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Riazzi, Eugene F. Jr.",
-          37.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 34.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 27.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Riazzi, Eugene F. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Murray, Mary P.",
-          19.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 19.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 35.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 44.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Murray, Mary P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Arnoni, Ronald A.",
-          37.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 18.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 39.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Arnoni, Ronald A."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Armstrong",
-      41.5,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 41.5,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 12.7,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 3.11,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 42.7,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Armstrong"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Andring, James",
-          61.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 61.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 38.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Andring, James"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Owen, James H.",
-          40.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 10.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 47.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Owen, James H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Decomo, J. Gary",
-          36.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 8.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 54.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Decomo, J. Gary"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Beaver",
-      50.8,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 50.8,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 13.0,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 2.03,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 34.1,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.02,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Beaver"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Livingston, William R. II",
-          67.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 67.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 5.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Livingston, William R. II"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hladio, Andrew M.",
-          62.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 62.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 14.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hladio, Andrew M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Schafer, Joseph",
-          43.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 17.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 38.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Schafer, Joseph"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Howe, Edward",
-          55.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 55.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 13.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 29.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Howe, Edward"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Nicholson, Dale F.",
-          49.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 29.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Nicholson, Dale F."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Finn, Timothy",
-          32.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 24.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 41.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Finn, Timothy"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Loughner, C. Douglas.",
-          53.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 3.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 41.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Loughner, C. Douglas."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Conroy, Eileen M.",
-          29.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 6.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 64.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Conroy, Eileen M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Armour, John W.",
-          55.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 55.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 2.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 6.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 35.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Armour, John W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Swihart, Janet",
-          53.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 14.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 31.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Swihart, Janet"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Bedford",
-      37.4,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 37.4,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 60.7,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 1.9,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Bedford"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Bingham, H. Cyril Jr.",
-          45.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 55.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bingham, H. Cyril Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Osman, Tonya M.",
-          32.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 66.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Osman, Tonya M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Calhoun, Kathy S.",
-          34.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Calhoun, Kathy S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Baker, Brian K.",
-          37.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 59.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Baker, Brian K."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Berks",
-      50.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 50.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 33.1,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.88,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 15.1,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.03,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Berks"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Glass, David E.",
-          56.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 56.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 43.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Glass, David E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Patton, Dean R.",
-          45.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 54.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Patton, Dean R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Frederick, Victor M. IV",
-          36.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 63.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Frederick, Victor M. IV"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Greth, Gail M.",
-          35.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 64.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Greth, Gail M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hartman, Michael G.",
-          33.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 67.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hartman, Michael G."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hadzick, Paul J.",
-          82.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 82.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 17.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hadzick, Paul J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Robinson, Alvin B.",
-          67.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 67.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Robinson, Alvin B."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kowalski, Phyllis J.",
-          55.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 55.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 43.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kowalski, Phyllis J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Leonardziak, Michael J.",
-          49.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 49.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Leonardziak, Michael J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Xavios, Thomas H.",
-          54.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 54.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 44.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Xavios, Thomas H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kennedy, Stuart D.",
-          62.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 62.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 21.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 16.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kennedy, Stuart D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Yoch, David L.",
-          43.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 24.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Yoch, David L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Scott, Kyley L.",
-          52.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 52.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 21.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Scott, Kyley L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bentz, Nicholas M. Jr.",
-          37.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 27.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 35.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bentz, Nicholas M. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bagenstose, Kim L.",
-          31.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 36.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bagenstose, Kim L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Young, Ann L.",
-          37.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 46.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Young, Ann L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Dougherty, Timothy M.",
-          29.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 6.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 63.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Dougherty, Timothy M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gauby, Thomas M. Sr.",
-          42.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 31.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 26.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gauby, Thomas M. Sr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Fegley, Sandra L.",
-          32.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 30.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 37.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Fegley, Sandra L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hall, William N. Jr.",
-          95.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 95.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 4.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hall, William N. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Book, Andrea",
-          43.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 38.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 18.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Book, Andrea"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Blair",
-      30.8,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 30.8,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 68.7,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.07,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.4,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Blair"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Aigner, Paula M.",
-          39.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Aigner, Paula M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ormsby, Craig E.",
-          32.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 67.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ormsby, Craig E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kelly, Todd F.",
-          29.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 70.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kelly, Todd F."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Jackson, Steven D.",
-          17.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 17.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 82.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Jackson, Steven D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Miller, Fred B.",
-          42.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 56.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Miller, Fred B."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Auker, Jeffrey P.",
-          27.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 70.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Auker, Jeffrey P."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Bradford",
-      45.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 45.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 13.5,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 28.99,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 11.6,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Bradford"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Wheaton, Fred M.",
-          44.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 47.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 7.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Wheaton, Fred M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Wilcox, Jonathan",
-          36.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 11.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 4.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 47.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Wilcox, Jonathan"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Shaw, Michael",
-          60.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 60.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 2.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 35.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Shaw, Michael"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Clark, Timothy M.",
-          41.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 54.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Clark, Timothy M."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Bucks",
-      34.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 34.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 49.0,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.24,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 15.9,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.01,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Bucks"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Petrucci, Michael W.",
-          42.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 57.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Petrucci, Michael W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kelly, John J. Jr.",
-          33.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 66.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kelly, John J. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Douple, Mark D.",
-          41.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 58.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Douple, Mark D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Burns, Michael J.",
-          38.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 48.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 12.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Burns, Michael J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Waltman, John I.",
-          48.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 48.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 35.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 16.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Waltman, John I."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Armitage, Regina",
-          31.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 43.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 24.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Armitage, Regina"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Schnell, Robert A. Jr.",
-          40.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 24.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 34.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Schnell, Robert A. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Wagner, Robert L. Jr.",
-          46.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 46.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 18.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 35.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Wagner, Robert L. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Snow, Maggie",
-          32.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 30.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 36.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Snow, Maggie"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Daly, Philip J.",
-          27.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 30.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 42.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Daly, Philip J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Roth, C. Robert",
-          30.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 21.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 48.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Roth, C. Robert"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Deatelhauser, Kenneth E.",
-          35.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 51.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Deatelhauser, Kenneth E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Falcone, Joseph P.",
-          34.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 63.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Falcone, Joseph P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gallagher, Michael W.",
-          33.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 65.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gallagher, Michael W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gambardella, Gary",
-          32.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 34.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 33.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gambardella, Gary"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Vislosky, Jan",
-          33.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 66.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Vislosky, Jan"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Seaman, Jean",
-          30.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 18.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 50.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Seaman, Jean"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Baum, Charles W.",
-          31.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 68.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Baum, Charles W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Benz, William J.",
-          18.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 18.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 81.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Benz, William J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Finello, Daniel J. Jr.",
-          38.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Finello, Daniel J. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Peranteau, Frank W. Sr.",
-          44.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 51.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 2.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Peranteau, Frank W. Sr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kline, Joanne V.",
-          45.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 6.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 44.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kline, Joanne V."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Baranoski, Daniel",
-          33.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 26.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 39.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Baranoski, Daniel"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Durkin, John J.",
-          35.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 63.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.8,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Durkin, John J."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Butler",
-      35.5,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 35.5,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 6.3,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 8.61,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 49.0,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.55,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Butler"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "O'Donnell, William S.",
-          30.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 8.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 60.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "O'Donnell, William S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kovach, David T.",
-          45.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 9.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 6.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 37.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kovach, David T."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Seibel, Wayne D.",
-          21.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 21.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 19.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 46.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Seibel, Wayne D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "O'Donnell, Kevin P.",
-          25.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 71.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "O'Donnell, Kevin P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Haggerty, Sue",
-          32.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 4.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 50.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Haggerty, Sue"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Stoughton, Lewis E.",
-          35.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 4.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 15.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 44.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.6,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Stoughton, Lewis E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Fullerton, William T.",
-          44.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 2.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 10.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 41.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.7,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Fullerton, William T."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Cambria",
-      45.0,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 45.0,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 34.2,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.05,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 20.7,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Cambria"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Varner, Rick W.",
-          53.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 45.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Varner, Rick W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Price, Kevin J.",
-          40.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 57.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 2.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Price, Kevin J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Musulin, Michael",
-          55.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 55.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 24.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Musulin, Michael"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Barron, John W.",
-          36.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 37.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Barron, John W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Zungali, Michael",
-          35.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Zungali, Michael"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Creany, Fred",
-          50.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 9.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 40.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Creany, Fred"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Prebish, John Jr.",
-          38.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 41.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 19.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Prebish, John Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Zanghi, Mary Ann",
-          55.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 55.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 25.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Zanghi, Mary Ann"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Cameron",
-      22.1,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 22.1,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 77.9,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.0,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Cameron"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Brown, Barry D.",
-          21.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 21.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 78.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Brown, Barry D."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Carbon",
-      32.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 32.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 52.9,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 14.2,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Carbon"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Homanko, Joseph D. Sr.",
-          35.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 57.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 6.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Homanko, Joseph D. Sr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kissner, William J.",
-          27.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 57.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 15.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kissner, William J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kosciolek, Casimir T.",
-          38.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 45.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 15.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kosciolek, Casimir T."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Schrantz, Eric M.",
-          32.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 50.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 16.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Schrantz, Eric M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lewis, Edward M.",
-          20.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 20.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 57.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lewis, Edward M."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Centre",
-      27.3,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 27.3,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 11.1,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.03,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 61.6,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Centre"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Jordan, Thomas N.",
-          41.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 13.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 46.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Jordan, Thomas N."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gillette-Walker, Kelley",
-          44.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 8.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 46.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gillette-Walker, Kelley"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Prestia, Carmine W. Jr.",
-          20.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 20.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 64.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Prestia, Carmine W. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lachman, Steven Frederic",
-          18.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 18.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 13.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 68.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lachman, Steven Frederic"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Horner, Ronald J.",
-          6.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 6.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 3.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 90.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Horner, Ronald J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Nileski, Charity L.",
-          0.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 0.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 98.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Nileski, Charity L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Sinclair, Allen W.",
-          27.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 60.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Sinclair, Allen W."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Chester",
-      38.3,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 38.3,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 39.8,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.02,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 20.8,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 1.05,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Chester"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Brown, Leonard J.",
-          25.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 44.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 29.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Brown, Leonard J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Nistico, Charles",
-          24.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 24.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 33.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 42.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Nistico, Charles"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Michaels, Theodore Peter Jr.",
-          35.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 43.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 20.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Michaels, Theodore Peter Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hines, Gregory V.",
-          60.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 60.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 33.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 5.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hines, Gregory V."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gill, Nancy",
-          42.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 47.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 9.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gill, Nancy"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Donatelli, Lori Novak",
-          43.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 35.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 21.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Donatelli, Lori Novak"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Vito, Marian T.",
-          46.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 46.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 20.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Vito, Marian T."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bailey, John R.",
-          38.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 42.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 18.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bailey, John R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Koon, Grover E.",
-          51.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 40.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 7.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.6,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Koon, Grover E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Massey, Scott A.",
-          43.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 38.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 17.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.8,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Massey, Scott A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Knapp, Gwenn S.",
-          21.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 21.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 46.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 31.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.9,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Knapp, Gwenn S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cabry, Michael J. III",
-          39.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 38.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 20.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cabry, Michael J. III"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kraut, William D.",
-          32.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 41.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 24.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kraut, William D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Sondergaard, Analisa",
-          32.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 37.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 28.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.8,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Sondergaard, Analisa"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Tartaglio, Thomas W.",
-          38.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 36.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.8,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Tartaglio, Thomas W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bruno, Mark A.",
-          36.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 29.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.9,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bruno, Mark A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Seavey, Matthew",
-          35.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 36.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.9,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Seavey, Matthew"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Valocchi, Jeffrey J.",
-          31.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 48.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 18.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 2.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Valocchi, Jeffrey J."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Clarion",
-      39.4,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 39.4,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 34.1,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.08,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 26.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Clarion"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Miller, Jeffrey C.",
-          44.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 52.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Miller, Jeffrey C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Long Turk, Amy L.",
-          28.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 38.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Long Turk, Amy L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Schill, Timothy P.",
-          42.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 18.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 39.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Schill, Timothy P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Quinn, Duane L.",
-          37.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 29.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 33.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Quinn, Duane L."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Clearfield",
-      37.0,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 37.0,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 62.9,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.1,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Clearfield"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Ireland, Richard Allen",
-          42.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 57.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ireland, Richard Allen"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hawkins, James L.",
-          39.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hawkins, James L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ford, Patrick N.",
-          35.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 64.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ford, Patrick N."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Nevling, Jerome M.",
-          28.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 70.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Nevling, Jerome M."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Clinton",
-      33.3,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 33.3,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 53.5,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.17,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 13.0,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.08,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Clinton"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Maggs, John W.",
-          57.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 57.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 42.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Maggs, John W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mills, Frank P.",
-          12.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 12.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 65.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mills, Frank P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Sanders, Joseph L.",
-          65.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 65.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Sanders, Joseph L."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Columbia",
-      40.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 40.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 37.6,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.13,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 21.4,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Columbia"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Lawton, Russell L.",
-          27.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 72.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lawton, Russell L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Long, Craig W.",
-          43.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 20.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 35.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Long, Craig W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Knecht, Richard W.",
-          45.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 8.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 46.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Knecht, Richard W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Brewer, Doug D.",
-          50.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 23.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Brewer, Doug D."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Crawford",
-      35.6,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 35.6,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 12.9,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 8.44,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 43.0,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Crawford"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Marwood, Rita J.",
-          27.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 20.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 52.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Marwood, Rita J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Nicols, Amy L.",
-          37.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 16.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 45.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Nicols, Amy L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Pendolino, Samuel V.",
-          39.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 9.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 38.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Pendolino, Samuel V."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Zilhaver, Lincoln S.",
-          35.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 4.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 21.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 38.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Zilhaver, Lincoln S."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Cumberland",
-      41.1,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 41.1,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 19.2,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.43,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 39.2,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.1,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Cumberland"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Beckley, Elizabeth S.",
-          53.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 47.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Beckley, Elizabeth S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Correal, Paula P.",
-          44.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 16.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 39.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Correal, Paula P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Martin, Mark",
-          37.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 22.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 39.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Martin, Mark"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Fegley, Paul M",
-          42.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 41.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Fegley, Paul M"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Adams, H. Anthony",
-          25.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 58.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Adams, H. Anthony"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Day, Susan K.",
-          42.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 11.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 45.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Day, Susan K."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Silcox, Kathryn H.",
-          45.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 27.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Silcox, Kathryn H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Birbeck, Jonathan R.",
-          42.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 6.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 48.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Birbeck, Jonathan R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cohick, Vivian",
-          38.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 16.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 42.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cohick, Vivian"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Clement, Charles A. Jr.",
-          45.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 42.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Clement, Charles A. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Dougherty, Richard S. Jr.",
-          42.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 44.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.7,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Dougherty, Richard S. Jr."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Dauphin",
-      44.2,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 44.2,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 35.7,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 1.08,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 19.0,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.06,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Dauphin"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Pianka, Barbara",
-          59.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 59.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 40.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Pianka, Barbara"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lindsey, Joseph S.",
-          34.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 65.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lindsey, Joseph S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Smith, Michael J.",
-          32.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 67.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Smith, Michael J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Semic, Steven M.",
-          84.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 84.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Semic, Steven M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lenker, James A.",
-          42.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 56.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lenker, James A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Zozos, Paul T.",
-          49.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 49.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Zozos, Paul T."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Shugars, Raymond F.",
-          90.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 90.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 8.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Shugars, Raymond F."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "O'Leary, David",
-          34.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 2.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "O'Leary, David"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lenker, Kenneth A.",
-          39.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 34.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lenker, Kenneth A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Margerum, Rebecca J.",
-          35.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 28.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 36.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Margerum, Rebecca J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Teyral, Joann L.",
-          15.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 15.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 48.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 36.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Teyral, Joann L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Judy, David H.",
-          40.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 40.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Judy, David H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Wenner, William C.",
-          43.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 11.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 45.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Wenner, William C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Pelino, Dominic",
-          23.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 23.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 10.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 15.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 50.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Pelino, Dominic"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Witmer, Lowell A.",
-          48.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 48.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Witmer, Lowell A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Zozos, George A.",
-          66.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 66.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Zozos, George A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Johnson, Gregory D.",
-          30.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 56.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Johnson, Gregory D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "McKnight, Sonya M.",
-          39.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 34.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McKnight, Sonya M."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Delaware",
-      55.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 55.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 43.4,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.01,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.1,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.6,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Delaware"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Tenaglia, Leonard V.",
-          73.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 73.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 26.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Tenaglia, Leonard V."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gallagher, Vincent D. Jr.",
-          71.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 71.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 29.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gallagher, Vincent D. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Berardocco, Ann",
-          70.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 70.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 29.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Berardocco, Ann"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Loftus, Greg J.",
-          68.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 68.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 31.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Loftus, Greg J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Radano, Robert J.",
-          62.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 62.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 37.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Radano, Robert J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lippincott, Nicholas S.",
-          60.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 60.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 39.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lippincott, Nicholas S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Tozer, Peter P.",
-          60.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 60.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 39.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Tozer, Peter P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Griffin, David",
-          51.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 48.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Griffin, David"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Burke, Robert R.",
-          51.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 49.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Burke, Robert R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Krull, Deborah A.",
-          48.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 48.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 51.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Krull, Deborah A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mattox, Christopher R.",
-          58.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 58.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 41.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mattox, Christopher R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lacianca, Elisa C.",
-          41.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 57.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lacianca, Elisa C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lippart, Jack D.",
-          42.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 57.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lippart, Jack D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Vann, Dawn L.",
-          52.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 52.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 47.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Vann, Dawn L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Williams, W Keith II",
-          57.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 57.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 42.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Williams, W Keith II"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Sandone, Steven A.",
-          70.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 70.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 29.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Sandone, Steven A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Roberts, Wendy B.",
-          28.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 71.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Roberts, Wendy B."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Turner, Phillip S.",
-          60.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 60.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 39.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Turner, Phillip S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Merkins, James",
-          61.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 61.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 38.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Merkins, James"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "D'Agostino, Robert M.",
-          29.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 70.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "D'Agostino, Robert M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hunter, Leon",
-          53.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 43.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 2.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hunter, Leon"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Davis, Wilden H.",
-          75.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 75.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 23.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Davis, Wilden H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Holefelder, Diane M.",
-          51.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 47.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.6,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Holefelder, Diane M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Strohl, Walter A.",
-          51.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 47.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.6,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Strohl, Walter A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Puppio, Andrea B.",
-          57.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 57.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 42.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.7,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Puppio, Andrea B."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Karapalides, Harry J. Jr.",
-          56.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 56.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 42.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.7,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Karapalides, Harry J. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Micozzie-Aguirre, Kelly A.",
-          49.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 49.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.7,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Micozzie-Aguirre, Kelly A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Seaton, Spencer B. Jr.",
-          73.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 73.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.7,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Seaton, Spencer B. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Nistico, Charles",
-          44.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 54.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.6,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Nistico, Charles"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lacey, Thomas J.",
-          44.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 53.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 2.6,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lacey, Thomas J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lang, David H.",
-          34.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 4.8,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lang, David H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "McCray, C. Walter III",
-          35.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 53.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 10.7,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McCray, C. Walter III"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Elk",
-      28.6,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 28.6,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 71.4,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.0,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Elk"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Martin, James L.",
-          26.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 26.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 73.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Martin, James L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Jacob, Mark S.",
-          25.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 74.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Jacob, Mark S."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Erie",
-      47.1,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 47.1,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 18.8,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.68,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 33.4,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Erie"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Mackendrick, Chris K.",
-          39.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mackendrick, Chris K."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "DiPaolo, Dominick D.",
-          97.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 97.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 2.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "DiPaolo, Dominick D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Manzi, Paul",
-          38.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 59.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 2.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Manzi, Paul"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hammer, Scott B.",
-          47.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 13.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 38.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hammer, Scott B."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Krahe, Mark R.",
-          25.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 16.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 58.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Krahe, Mark R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "McGowan, Brian M.",
-          21.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 21.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 18.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 60.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McGowan, Brian M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Nichols, Brenda A.",
-          17.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 17.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 16.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 66.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Nichols, Brenda A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Carney, Thomas",
-          89.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 89.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 10.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Carney, Thomas"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Stuck-Lewis, Denise",
-          34.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 10.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 54.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Stuck-Lewis, Denise"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Strohmeyer, Susan D.",
-          30.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 10.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 57.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Strohmeyer, Susan D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bizzarro, Paul A.",
-          51.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bizzarro, Paul A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Urbaniak, Paul G.",
-          63.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 63.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 5.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 28.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Urbaniak, Paul G."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mack, Suzanne C.",
-          61.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 61.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 11.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 3.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 23.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mack, Suzanne C."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Fayette",
-      44.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 44.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 55.0,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.1,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Fayette"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Jeffries, Jennifer L.",
-          52.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 52.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 47.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Jeffries, Jennifer L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Haggerty, Ronald J. Sr.",
-          47.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 53.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Haggerty, Ronald J. Sr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Shimshock, Daniel C.",
-          46.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 46.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 53.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Shimshock, Daniel C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Metros, Michael",
-          45.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 54.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Metros, Michael"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Defino, Michael J. Jr.",
-          41.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 58.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Defino, Michael J. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kasunic, Richard II",
-          37.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kasunic, Richard II"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Dennis, Wendy D.",
-          47.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 52.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Dennis, Wendy D."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Forest",
-      35.1,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 35.1,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 52.3,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 12.6,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Forest"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Miller, Daniel L.",
-          32.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 54.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 13.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Miller, Daniel L."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Franklin",
-      37.3,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 37.3,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 11.6,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.61,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 50.4,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.02,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Franklin"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Plum, David L.",
-          46.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 46.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 17.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 36.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Plum, David L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Rock, Kelly L.",
-          35.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 11.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 52.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Rock, Kelly L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cunningham, Duane K.",
-          54.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 54.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 7.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 37.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cunningham, Duane K."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Williams, Todd R.",
-          29.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 54.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Williams, Todd R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Eyer, Jody C.",
-          40.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 23.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 34.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Eyer, Jody C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Pentz, Larry G.",
-          25.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 7.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 66.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Pentz, Larry G."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Manns, Glenn Kenneth",
-          39.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 8.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 51.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Manns, Glenn Kenneth"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Fulton",
-      28.3,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 28.3,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 14.8,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 5.25,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 51.8,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Fulton"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Mellott, Wendy",
-          23.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 23.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 7.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 68.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mellott, Wendy"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Horne, Devin C.",
-          32.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 16.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 50.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Horne, Devin C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Heming, Tamela M.",
-          31.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 17.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 25.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Heming, Tamela M."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Greene",
-      39.4,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 39.4,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 35.9,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.25,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 24.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.13,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Greene"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Bates, D Glenn",
-          32.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 67.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bates, D Glenn"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Watson, Lee",
-          52.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 52.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 18.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 28.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Watson, Lee"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cramer, Jesse J.",
-          33.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 21.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 44.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cramer, Jesse J."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Huntingdon",
-      38.6,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 38.6,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 31.4,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 30.0,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Huntingdon"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Jamison, Mary",
-          37.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Jamison, Mary"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gummo, Douglas L.",
-          27.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 34.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 38.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gummo, Douglas L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Wilt, Richard S.",
-          46.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 46.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 9.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 44.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Wilt, Richard S."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Indiana",
-      40.7,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 40.7,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 36.1,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 23.2,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Indiana"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Thachik, George M.",
-          39.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Thachik, George M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Rega, Jennifer J.",
-          40.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 46.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 13.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Rega, Jennifer J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Haberl, Guy B.",
-          40.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 30.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 29.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Haberl, Guy B."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Steffee, Susanne V.",
-          41.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 38.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Steffee, Susanne V."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Jefferson",
-      38.7,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 38.7,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 61.1,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.09,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.1,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Jefferson"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Inzana, David B.",
-          43.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 56.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Inzana, David B."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Chambers, Douglas R.",
-          37.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Chambers, Douglas R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bazylak, Gregory M.",
-          34.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 65.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bazylak, Gregory M."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Juniata",
-      34.2,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 34.2,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 38.5,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 7.79,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 19.5,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Juniata"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Lyter, Barbara M.",
-          31.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 68.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lyter, Barbara M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Leister, Jacqueline T.",
-          30.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 13.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 16.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 39.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Leister, Jacqueline T."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Lackawanna",
-      52.6,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 52.6,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 38.1,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 7.42,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 1.8,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.07,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Lackawanna"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Turlip-Murphy, Laura",
-          46.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 46.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 50.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Turlip-Murphy, Laura"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Farrell, Alyce Hailstone",
-          50.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 42.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 6.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Farrell, Alyce Hailstone"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ware, Paul J.",
-          55.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 55.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 35.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 7.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ware, Paul J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Giglio, Theodore J.",
-          68.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 68.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 9.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Giglio, Theodore J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gallagher, Terrence V.",
-          38.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 48.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 12.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gallagher, Terrence V."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Pesota, John P.",
-          53.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 28.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 14.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Pesota, John P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "McGraw, Sean P.",
-          56.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 56.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 42.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McGraw, Sean P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Keeler, Paul",
-          51.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 40.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 3.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Keeler, Paul"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Corbett, Joanne Price",
-          57.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 57.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 9.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Corbett, Joanne Price"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Lancaster",
-      45.1,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 45.1,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 40.1,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.1,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 14.6,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.09,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Lancaster"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Willwerth, Jene",
-          64.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 64.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 35.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Willwerth, Jene"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mylin, Stuart J.",
-          50.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 49.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mylin, Stuart J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Chudzik, Brian E.",
-          47.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 52.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Chudzik, Brian E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Albert, Scott E.",
-          42.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 57.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Albert, Scott E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Benner, William E. Jr.",
-          56.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 56.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 43.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Benner, William E. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Jimenez, Janice",
-          63.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 63.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 31.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 5.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Jimenez, Janice"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Russell, Tony S.",
-          54.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 54.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 39.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 5.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Russell, Tony S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Commins, B. Denise",
-          40.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 52.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 6.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Commins, B. Denise"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hartman, Rodney H.",
-          58.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 58.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 33.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 7.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hartman, Rodney H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Sheller, Raymond S.",
-          59.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 59.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 8.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Sheller, Raymond S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bixler, Miles K.",
-          43.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 40.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 15.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bixler, Miles K."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Miller, David P.",
-          45.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 36.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 17.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Miller, David P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mongiovi Sponaugle, Mary",
-          43.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 21.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 35.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mongiovi Sponaugle, Mary"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Herman, Robert A. Jr.",
-          9.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 9.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 24.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 66.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Herman, Robert A. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hamill, Nancy G.",
-          62.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 62.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 37.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hamill, Nancy G."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Duncan, Jayne F.",
-          29.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 66.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Duncan, Jayne F."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Reinaker, Dennis E.",
-          6.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 6.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 42.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 50.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Reinaker, Dennis E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Tobin, Edward A.",
-          49.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 41.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 6.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Tobin, Edward A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Roth, Bruce A.",
-          62.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 62.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 36.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Roth, Bruce A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Witkonis, Adam J.",
-          50.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 38.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 11.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Witkonis, Adam J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Keller, Joshua R.",
-          41.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 38.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 19.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Keller, Joshua R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Winters, John C.",
-          55.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 55.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 43.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.8,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Winters, John C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Reuter, William G.",
-          38.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 59.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 2.8,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Reuter, William G."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Lawrence",
-      50.7,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 50.7,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 2.4,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 24.68,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 22.1,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.05,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Lawrence"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Rishel, David B.",
-          42.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 21.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 34.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Rishel, David B."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "McGrath, Scott",
-          47.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 8.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 21.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McGrath, Scott"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cartwright, Jerry G. Jr.",
-          27.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 28.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 42.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cartwright, Jerry G. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Nicholson, Jennifer L.",
-          48.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 48.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 33.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 18.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Nicholson, Jennifer L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Amodie, Melissa Ann",
-          66.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 66.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 20.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 11.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Amodie, Melissa Ann"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Lebanon",
-      37.8,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 37.8,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 61.9,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Lebanon"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Capello, Thomas M.",
-          44.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 55.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Capello, Thomas M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Garver, Carl Russell",
-          41.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 58.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Garver, Carl Russell"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Wolfe, Kim R.",
-          41.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 58.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Wolfe, Kim R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Verna, Anthony J.",
-          35.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 64.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Verna, Anthony J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Dissinger, Maria M.",
-          35.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 64.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Dissinger, Maria M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ditzler, John W.",
-          29.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 68.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ditzler, John W."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Lehigh",
-      56.5,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 56.5,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 35.0,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 8.4,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.17,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Lehigh"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Manescu, Ronald S.",
-          69.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 69.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 30.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Manescu, Ronald S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Pochron, Michael Joseph",
-          65.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 65.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 34.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Pochron, Michael Joseph"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Maura, Wayne",
-          65.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 65.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 34.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Maura, Wayne"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Balliet, Carl L.",
-          60.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 60.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 39.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Balliet, Carl L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Engler, Patricia M.",
-          59.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 59.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 40.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Engler, Patricia M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Devine, Karen C.",
-          58.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 58.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 41.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Devine, Karen C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Howells, David M. Jr.",
-          56.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 56.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 43.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Howells, David M. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Halal, Robert C.",
-          55.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 55.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 44.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Halal, Robert C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Crawford, Charles H.",
-          51.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 48.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Crawford, Charles H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Beck, Rod",
-          53.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 21.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Beck, Rod"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hammond, Jacob E.",
-          49.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 22.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 27.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hammond, Jacob E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Santiago, Rashid",
-          61.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 61.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 5.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Santiago, Rashid"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Butler, Donna R.",
-          59.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 59.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 39.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Butler, Donna R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Faulkner, Michael J.",
-          40.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 58.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Faulkner, Michael J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Trexler, Daniel C.",
-          61.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 61.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 25.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Trexler, Daniel C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "D'Amore, Michael D.",
-          43.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 35.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "D'Amore, Michael D."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Luzerne",
-      40.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 40.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 27.3,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 1.13,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 30.7,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.03,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Luzerne"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Roberts, Paul J.",
-          43.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 56.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Roberts, Paul J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Sharkey, Thomas",
-          16.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 16.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 9.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 73.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Sharkey, Thomas"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Tupper, Brian James",
-          28.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 14.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 56.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Tupper, Brian James"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Barilla, David A.",
-          44.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 23.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Barilla, David A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Dixon, James M.",
-          47.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 39.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 12.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Dixon, James M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Zola, Joseph D.",
-          40.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 39.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Zola, Joseph D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Halesey, Joseph A.",
-          53.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 21.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 24.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Halesey, Joseph A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kravitz, Alexandra Kokura",
-          41.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 30.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 28.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kravitz, Alexandra Kokura"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Carmody, Joseph J.",
-          38.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 45.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 15.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Carmody, Joseph J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cronauer, Rick",
-          37.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 29.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 31.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cronauer, Rick"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Malast, Diana",
-          28.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 45.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Malast, Diana"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "O'Donnell, Daniel",
-          46.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 46.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 3.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 30.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "O'Donnell, Daniel"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Dotzel, Michael G.",
-          29.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 5.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 52.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Dotzel, Michael G."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hasay, John E.",
-          52.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 52.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 11.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 7.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 29.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hasay, John E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Malloy, Thomas F. Sr.",
-          31.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 34.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 33.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Malloy, Thomas F. Sr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Spagnuolo, Joseph D. Jr.",
-          44.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 33.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 21.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Spagnuolo, Joseph D. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Whittaker, Donald L.",
-          61.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 61.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 7.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 30.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Whittaker, Donald L."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Lycoming",
-      34.4,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 34.4,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 65.3,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Lycoming"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Solomon, William C.",
-          42.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 57.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Solomon, William C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Page, Allen P. III",
-          37.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Page, Allen P. III"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lepley, Jerry C.",
-          36.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 63.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lepley, Jerry C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Whiteman, Gary A.",
-          28.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 71.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Whiteman, Gary A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kemp, Jon Edward",
-          29.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 70.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kemp, Jon Edward"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Frey, Christian David",
-          33.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 65.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Frey, Christian David"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "McKean",
-      41.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 41.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 53.0,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.09,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 5.0,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "McKean"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Engman, David Richard",
-          45.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 51.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Engman, David Richard"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Luther, Richard W.",
-          39.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 55.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 5.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Luther, Richard W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cercone, Dominic Jr.",
-          43.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 49.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 7.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cercone, Dominic Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Todd, William K.",
-          40.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 56.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Todd, William K."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Mercer",
-      35.7,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 35.7,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 40.7,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 12.09,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 11.5,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Mercer"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Fagley, William L.",
-          18.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 18.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 81.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Fagley, William L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Arthur, Brian R.",
-          44.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 54.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Arthur, Brian R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "McEwen, D. Neil",
-          41.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 56.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 2.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McEwen, D. Neil"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hinch, Lorinda L.",
-          35.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 48.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 16.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hinch, Lorinda L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Songer, Dennis M.",
-          43.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 29.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 12.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 15.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Songer, Dennis M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Antos, Ronald E.",
-          26.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 26.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 28.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 19.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Antos, Ronald E."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Mifflin",
-      48.1,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 48.1,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 51.2,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.29,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.4,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.07,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Mifflin"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Reed, Jonathan W.",
-          49.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 49.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Reed, Jonathan W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Smith, Kent A.",
-          38.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 61.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Smith, Kent A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Miller, Jack E.",
-          54.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 54.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 44.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Miller, Jack E."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Monroe",
-      33.6,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 33.6,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 48.4,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.45,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 17.6,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.02,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Monroe"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Muth, Michael R.",
-          39.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Muth, Michael R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Claypool, Richard",
-          29.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 70.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Claypool, Richard"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mancuso, Colleen",
-          36.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 63.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mancuso, Colleen"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Anzini, Kristina",
-          38.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 38.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 61.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Anzini, Kristina"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Fluegel, Anthony D.",
-          45.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 30.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 23.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Fluegel, Anthony D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Higgins, C. Daniel",
-          24.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 24.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 43.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Higgins, C. Daniel"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Riley, Phillip R.",
-          37.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 47.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Riley, Phillip R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Olsen, Thomas E.",
-          27.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 72.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Olsen, Thomas E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Krawitz, Jolana",
-          34.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 9.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 4.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 52.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Krawitz, Jolana"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Germano, Brian",
-          27.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 68.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Germano, Brian"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Montgomery",
-      37.5,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 37.5,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 46.7,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.49,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 15.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Montgomery"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "McHugh Casey, Elizabeth A.",
-          44.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 55.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McHugh Casey, Elizabeth A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Nesbitt, Harry J. III",
-          40.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 59.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Nesbitt, Harry J. III"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Saylor, Maurice H.",
-          39.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Saylor, Maurice H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kelly Rebar, Cathleen",
-          37.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kelly Rebar, Cathleen"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Casillo, Ester J.",
-          35.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 64.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Casillo, Ester J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "McGill, Katherine E.",
-          35.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 64.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McGill, Katherine E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Eisner Zucker, Karen",
-          30.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 69.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Eisner Zucker, Karen"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Schireson, Henry J.",
-          29.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 71.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Schireson, Henry J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Augustine, Albert J.",
-          37.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Augustine, Albert J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hummel Fried, Catherine M.",
-          29.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 70.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hummel Fried, Catherine M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kropp, Edward C. Sr.",
-          44.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 55.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kropp, Edward C. Sr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Leo, Paul N.",
-          34.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 65.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Leo, Paul N."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Maruszczak, William I.",
-          28.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 71.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Maruszczak, William I."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cerski, Christopher",
-          46.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 46.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 52.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cerski, Christopher"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Zaffarano, Patricia Ann",
-          36.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Zaffarano, Patricia Ann"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Palladino, Scott T.",
-          51.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 45.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Palladino, Scott T."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lawrence, Francis J. Jr.",
-          62.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 62.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 16.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 20.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lawrence, Francis J. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hudak Duffy, Andrea",
-          29.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 46.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 24.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hudak Duffy, Andrea"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hunsicker, Margaret A.",
-          46.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 46.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 28.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 25.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hunsicker, Margaret A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bernhardt, Francis J. III",
-          37.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 31.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 30.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bernhardt, Francis J. III"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Sobeck, Robert M.",
-          36.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 30.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Sobeck, Robert M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gallagher, James",
-          36.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 30.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 33.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gallagher, James"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gadzicki, Walter F. Jr.",
-          33.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 34.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gadzicki, Walter F. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kessler, John D.",
-          27.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 34.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 38.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kessler, John D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lukens, Deborah",
-          37.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 22.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 40.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lukens, Deborah"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Friedenberg, Jay S.",
-          24.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 24.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 24.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 50.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Friedenberg, Jay S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Levine, Edward",
-          29.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 22.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 47.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Levine, Edward"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Scott, Gregory L.",
-          61.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 61.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 33.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Scott, Gregory L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Quinn, Michael P.",
-          35.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 63.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Quinn, Michael P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Price, Juanita A.",
-          39.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 12.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Price, Juanita A."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Montour",
-      35.4,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 35.4,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 22.4,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.79,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 41.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Montour"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Shrawder, Marvin K.",
-          21.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 21.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 23.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 54.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Shrawder, Marvin K."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Northampton",
-      50.7,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 50.7,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 40.7,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.03,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 8.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.2,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Northampton"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Capobianco, John C.",
-          52.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 52.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 47.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Capobianco, John C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Narlesky, James J.",
-          47.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 52.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Narlesky, James J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Barner, Joseph K.",
-          30.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 69.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Barner, Joseph K."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Broscius, Patricia C.",
-          39.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Broscius, Patricia C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hawke, Robert A.",
-          57.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 57.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 42.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hawke, Robert A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Manwaring, Roy A. II",
-          48.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 48.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 46.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Manwaring, Roy A. II"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Corpora, Daniel G.",
-          59.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 59.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 35.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Corpora, Daniel G."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Tidd, David W.",
-          39.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 22.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 37.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Tidd, David W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Romig-Gainer, Elizabeth A.",
-          23.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 23.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 17.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 58.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Romig-Gainer, Elizabeth A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Matos Gonzalez, Nancy",
-          65.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 65.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 29.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 5.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Matos Gonzalez, Nancy"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Zito, Alicia Rose",
-          56.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 56.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 42.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Zito, Alicia Rose"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Yetter, Richard H. III",
-          57.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 57.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 35.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 6.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Yetter, Richard H. III"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Taschner, Jacqueline M.",
-          53.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 27.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 18.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Taschner, Jacqueline M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Grifo, Antonia",
-          58.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 58.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 15.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Grifo, Antonia"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Schlegel, Douglas",
-          50.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 16.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.9,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Schlegel, Douglas"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Rapp, Anthony G. Jr.",
-          33.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 64.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Rapp, Anthony G. Jr."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Northumberland",
-      37.7,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 37.7,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 50.4,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.09,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 11.8,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.04,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Northumberland"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Cashman, Richard P.",
-          35.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 64.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cashman, Richard P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Diehl, Michael I.",
-          40.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 56.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Diehl, Michael I."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gembic, John",
-          42.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 56.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gembic, John"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Apfelbaum, Benjamin",
-          28.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 32.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 38.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Apfelbaum, Benjamin"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Perry",
-      30.2,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 30.2,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 24.6,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.93,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 42.7,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 1.55,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Perry"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Frownfelter, Elizabeth R.",
-          46.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 46.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 7.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 46.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Frownfelter, Elizabeth R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "McGuire, Daniel R.",
-          45.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 3.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 50.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McGuire, Daniel R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Schechterly, Michael E.",
-          17.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 17.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 37.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 40.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 2.6,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Schechterly, Michael E."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Philadelphia",
-      49.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 49.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 10.0,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 5.74,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 34.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Philadelphia"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Hayden, Charles",
-          7.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 7.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 90.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hayden, Charles"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Washington, Craig M.",
-          2.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 2.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 94.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 2.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Washington, Craig M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Shuter, David C.",
-          19.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 19.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 76.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Shuter, David C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Jimenez, Nazario Jr.",
-          35.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Jimenez, Nazario Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Pew, Wendy L.",
-          19.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 19.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 76.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Pew, Wendy L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Dugan, Patrick F.",
-          16.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 16.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 79.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Dugan, Patrick F."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "DeLeon, James M.",
-          11.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 11.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 84.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "DeLeon, James M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Meehan, William Austin Jr.",
-          16.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 16.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 77.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 5.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Meehan, William Austin Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kosinski, Gerard A.",
-          16.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 16.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 77.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 6.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kosinski, Gerard A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Robbins, Harvey W.",
-          16.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 16.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 79.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Robbins, Harvey W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Stack, Patrick",
-          51.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 48.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Stack, Patrick"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Rebstock, Francis J.",
-          53.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 5.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 40.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Rebstock, Francis J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Rice, Jane M.",
-          51.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 16.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 30.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Rice, Jane M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "O'Brien, James",
-          51.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 51.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 9.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 5.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 33.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "O'Brien, James"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "E-Filing Judge",
-          59.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 59.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 6.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 18.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "E-Filing Judge"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bedford, Sheila M.",
-          49.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 3.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 12.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 34.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bedford, Sheila M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Devlin, Kevin R.",
-          47.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 2.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 13.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 37.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Devlin, Kevin R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Emergency Arraignment Court Magistrate",
-          49.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 49.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 1.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 15.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 33.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Emergency Arraignment Court Magistrate"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Pike",
-      33.3,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 33.3,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 6.0,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 31.7,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 28.9,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.1,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Pike"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Cooper, Alan B.",
-          27.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 10.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 26.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 35.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cooper, Alan B."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Menditto, Paul D. Sr.",
-          29.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 9.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 39.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 21.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Menditto, Paul D. Sr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Muir, Shannon L.",
-          32.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 0.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 54.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 12.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Muir, Shannon L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Fischer, Deborah",
-          40.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 7.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 49.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Fischer, Deborah"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Potter",
-      22.5,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 22.5,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 59.4,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 2.14,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 15.9,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Potter"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "McCleaft, Kari A.",
-          27.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 72.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McCleaft, Kari A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Weiss, Delores G.",
-          22.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 22.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 61.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 16.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Weiss, Delores G."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Easton, Annette L.",
-          19.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 19.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 49.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 5.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Easton, Annette L."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Schuylkill",
-      39.9,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 39.9,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 48.6,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 11.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.15,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Schuylkill"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Rossi, David J.",
-          47.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 52.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Rossi, David J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Reiley, James",
-          41.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 58.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Reiley, James"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ferrier, James R.",
-          31.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 68.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ferrier, James R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Kilker, Anthony J.",
-          37.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kilker, Anthony J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Plachko, David A.",
-          47.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 51.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Plachko, David A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hale, Christina E.",
-          43.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 23.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hale, Christina E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bayer, Stephen J.",
-          34.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 49.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.9,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bayer, Stephen J."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Snyder",
-      36.3,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 36.3,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 57.1,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 2.77,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 3.8,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Snyder"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Reed, John H.",
-          36.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 60.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Reed, John H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hackenberg, Lori R.",
-          35.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 52.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 6.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 6.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hackenberg, Lori R."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Somerset",
-      25.0,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 25.0,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 23.9,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 48.65,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 2.5,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Somerset"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Stevanus, Sandra L.",
-          36.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 27.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 34.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 1.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Stevanus, Sandra L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Johnson, Kenneth W.",
-          22.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 22.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 28.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 49.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Johnson, Kenneth W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bell, Douglas McCall",
-          20.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 20.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 19.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 49.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 10.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bell, Douglas McCall"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Seger, William E.",
-          23.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 23.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 50.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Seger, William E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mankamyer, Susan",
-          25.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 14.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 55.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mankamyer, Susan"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Sullivan",
-      36.5,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 36.5,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 61.5,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 1.9,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Sullivan"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Susquehanna",
-      39.4,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 39.4,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 33.5,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.95,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 26.2,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Susquehanna"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Hollister, Jeffrey L.",
-          52.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 52.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 38.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 9.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hollister, Jeffrey L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Cordner, Jodi L.",
-          34.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 25.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 39.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Cordner, Jodi L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Brainard, Suzanne M.",
-          29.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 38.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 3.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 28.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Brainard, Suzanne M."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Tioga",
-      31.3,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 31.3,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 68.7,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.0,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Tioga"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Edgcomb, James R.",
-          37.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 62.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Edgcomb, James R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Carlson, James E.",
-          29.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 70.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Carlson, James E."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Repard, Robert L.",
-          24.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 24.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 75.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Repard, Robert L."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Union",
-      25.6,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 25.6,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 11.0,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 14.56,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 48.8,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Union"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Armbruster, Leo S.",
-          15.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 15.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 5.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 3.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 75.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Armbruster, Leo S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mensch, Jeffrey L.",
-          26.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 26.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 18.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 34.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 21.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mensch, Jeffrey L."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Venango",
-      38.4,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 38.4,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 61.4,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.1,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Venango"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Kirtland, Matthew T.",
-          28.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 71.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kirtland, Matthew T."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Fish, Andrew F.",
-          43.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 56.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Fish, Andrew F."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Lowrey, Patrick E.",
-          41.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 58.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Lowrey, Patrick E."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Warren",
-      40.5,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 40.5,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 15.6,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 2.55,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 41.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Warren"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Carlson, Glenn S.",
-          45.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 21.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 33.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Carlson, Glenn S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Woodin, Todd A.",
-          33.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 33.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 16.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 49.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Woodin, Todd A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bauer, Laura",
-          35.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 6.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 8.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 49.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bauer, Laura"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Washington",
-      39.6,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 39.6,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 33.3,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 1.04,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 26.1,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.02,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Washington"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Kanalis, Joshua P.",
-          30.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 69.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kanalis, Joshua P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ward, Ethan T.",
-          50.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 49.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ward, Ethan T."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Hopkins, Larry W.",
-          53.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 45.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Hopkins, Larry W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "McDonald, Traci L.",
-          27.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 52.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 20.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "McDonald, Traci L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Wilson, Mark",
-          53.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 53.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 23.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Wilson, Mark"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Havelka, Gary H.",
-          50.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 36.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Havelka, Gary H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Ellis, James C.",
-          31.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 12.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 56.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Ellis, James C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Thompson, Curtis",
-          34.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 65.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Thompson, Curtis"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Weller, Jay",
-          29.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 2.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 3.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 64.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Weller, Jay"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mark, David W.",
-          40.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 7.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 4.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 47.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mark, David W."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Redlinger, Robert W.",
-          43.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 39.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 16.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Redlinger, Robert W."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Wayne",
-      37.6,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 37.6,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 28.1,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 34.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Wayne"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Carney, Bonnie L.",
-          39.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 49.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 11.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Carney, Bonnie L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Myers, Linus H.",
-          34.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 23.7,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 41.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Myers, Linus H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Edwards, Ronald",
-          39.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 39.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 8.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 53.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Edwards, Ronald"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Westmoreland",
-      31.7,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 31.7,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 31.0,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 4.58,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 32.8,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Westmoreland"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Kistler, Helen M.",
-          30.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 68.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Kistler, Helen M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "DeMarchis, Joseph R.",
-          45.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 51.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 3.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "DeMarchis, Joseph R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Weimer, Douglas Reid",
-          26.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 26.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 69.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 4.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Weimer, Douglas Reid"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Thiel, Denise S.",
-          30.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 30.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 27.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 42.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Thiel, Denise S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bilik, Mark",
-          37.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 37.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 13.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 49.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bilik, Mark"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mahady, Michael",
-          25.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 25.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 7.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 67.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mahady, Michael"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Pallone, Frank J. Jr.",
-          45.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 24.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 29.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Pallone, Frank J. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Peck, Yackopec Cheryl J.",
-          28.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 71.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Peck, Yackopec Cheryl J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Albert, James",
-          29.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 50.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.1,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 19.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Albert, James"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Buczak, Jason",
-          29.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 27.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 43.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Buczak, Jason"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Eckels, Roger",
-          34.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 29.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 36.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Eckels, Roger"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bompiani, L. Anthony",
-          24.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 24.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 26.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 49.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bompiani, L. Anthony"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gongaware, Wayne",
-          18.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 18.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 50.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 30.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gongaware, Wayne"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Conway, Charles R.",
-          15.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 15.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 26.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 57.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Conway, Charles R."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Falcon, James N.",
-          27.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 27.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 44.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Falcon, James N."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Moore, Charles D.",
-          31.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 3.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 4.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 60.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Moore, Charles D."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Christner, Charles M.",
-          32.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 32.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 10.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 17.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 39.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Christner, Charles M."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Dalfonso, Joseph A.",
-          35.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 13.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 22.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 29.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Dalfonso, Joseph A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Mansour, Mark Stephen",
-          34.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 34.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 14.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 24.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Mansour, Mark Stephen"
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "Wyoming",
-      35.5,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 35.5,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 64.3,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 0.0,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 0.2,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.0,
-            "name": "Nominal"
-          }
-        ],
-        "name": "Wyoming"
-      }
-    ],
-    "outlier": true,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Plummer, David K",
-          28.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 28.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 71.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Plummer, David K"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Smith, Carl W. Jr.",
-          44.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 44.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 54.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Smith, Carl W. Jr."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  },
-  {
-    "data": [
-      "",
-      "York",
-      46.1,
-      {
-        "type": "dist",
-        "values": [
-          {
-            "className": "cash-bar",
-            "value": 46.1,
-            "name": "Cash bail"
-          },
-          {
-            "className": "unsecured-bar",
-            "value": 14.7,
-            "name": "Unsecured"
-          },
-          {
-            "className": "nonmonetary-bar",
-            "value": 5.55,
-            "name": "Nonmonetary"
-          },
-          {
-            "className": "ror-bar",
-            "value": 33.3,
-            "name": "ROR"
-          },
-          {
-            "className": "nominal-bar",
-            "value": 0.34,
-            "name": "Nominal"
-          }
-        ],
-        "name": "York"
-      }
-    ],
-    "outlier": false,
-    "collapseData": [
-      {
-        "data": [
-          "",
-          "Meisenhelter, Douglas F.",
-          82.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 82.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 17.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Meisenhelter, Douglas F."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Groom, Walter",
-          55.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 55.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 43.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Groom, Walter"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Dubs, Dwayne A.",
-          36.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 36.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 14.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 49.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Dubs, Dwayne A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Reilly, Thomas J.",
-          40.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 40.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 28.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 29.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Reilly, Thomas J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Edie, Nancy Lee",
-          18.6,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 18.6,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 2.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 77.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Edie, Nancy Lee"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Albright, Keith L.",
-          41.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 30.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 26.1,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Albright, Keith L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Clancy, Jennifer J.P.",
-          54.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 54.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 20.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 23.2,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Clancy, Jennifer J.P."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Eckenrode, Robert A.",
-          35.1,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 35.1,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 11.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 50.3,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Eckenrode, Robert A."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Eshbach, David C.",
-          55.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 55.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 10.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 11.9,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 22.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Eshbach, David C."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Laird, Scott",
-          43.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 43.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 7.1,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 13.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 35.9,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.0,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Laird, Scott"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Bloss, Barry L.",
-          47.7,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 47.7,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 5.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 14.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.1,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Bloss, Barry L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Manifold, Laura S.",
-          42.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.8,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 5.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 35.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Manifold, Laura S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Miner, James S.",
-          45.2,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 45.2,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 6.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.8,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 47.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Miner, James S."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Toluba, Joel N.",
-          42.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 42.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 23.3,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.3,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 33.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Toluba, Joel N."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Williams, Linda L.",
-          48.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 48.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 2.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 15.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 32.7,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Williams, Linda L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Haskell, Ronald J. Jr.",
-          50.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.4,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 9.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 25.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.2,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Haskell, Ronald J. Jr."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Oberdorf, Jeffrey L.",
-          29.0,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 29.0,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 23.9,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 2.5,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 44.4,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Oberdorf, Jeffrey L."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Gross, Scott J.",
-          41.4,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.4,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 17.5,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 5.7,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 35.0,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Gross, Scott J."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Morgan, James H.",
-          50.9,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 50.9,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 1.6,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 31.8,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.4,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Morgan, James H."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Martin, Richard E. II",
-          77.5,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 77.5,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 21.6,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 0.0,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 0.5,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 0.5,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Martin, Richard E. II"
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Thomas, Richard T.",
-          41.3,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 41.3,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 15.0,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 8.4,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 33.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 1.6,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Thomas, Richard T."
-          }
-        ],
-        "outlier": false
-      },
-      {
-        "data": [
-          "",
-          "Fishel, John H.",
-          31.8,
-          {
-            "type": "dist",
-            "values": [
-              {
-                "className": "cash-bar",
-                "value": 31.8,
-                "name": "Cash bail"
-              },
-              {
-                "className": "unsecured-bar",
-                "value": 7.2,
-                "name": "Unsecured"
-              },
-              {
-                "className": "nonmonetary-bar",
-                "value": 7.2,
-                "name": "Nonmonetary"
-              },
-              {
-                "className": "ror-bar",
-                "value": 50.6,
-                "name": "ROR"
-              },
-              {
-                "className": "nominal-bar",
-                "value": 3.3,
-                "name": "Nominal"
-              }
-            ],
-            "name": "Fishel, John H."
-          }
-        ],
-        "outlier": false
-      }
-    ],
-    "isCollapsed": true
-  }
-];
 
 // https://github.com/deldersveld/topojson/blob/master/countries/us-states/PA-42-pennsylvania-counties.json
 export const COUNTY_MAP_DATA = {

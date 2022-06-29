@@ -1,4 +1,5 @@
 import { configureTooltip } from "./Tooltip";
+import { toMoney, toPercent, toNumberString } from "../helpers";
 
 const VIEW_ALL = "VIEW ALL";
 const VIEW_LESS = "VIEW LESS";
@@ -83,9 +84,16 @@ class FootnoteCell extends Cell {
 class NumberCell extends Cell {
   constructor(content, className, data) {
     super(className);
-    const isPercent = data["unit"] === "percent";
-    this.content = isPercent ? `${content.toFixed(1)}%` : content.toLocaleString();
+    this.data = data;
+    this.content = this.formatValue(content);
     this.render();
+  }
+
+  formatValue(value) {
+    const sign = this.data["showSigns"] ? (value > 0 ? "+" : "") : "";
+    if (this.data["unit"] === "percent") return `${sign}${toPercent(value)}`;
+    if (this.data["unit"] === "dollars") return `${sign}${toMoney(value)}`;
+    return `${sign}${toNumberString(value)}`;
   }
 
   render() {
@@ -115,11 +123,9 @@ class BarGraphCell extends Cell {
     if (this.showDiff) {
       const label = document.createElement("div");
       const diff = this.content - this.average;
+      label.textContent = `${diff.toFixed(1)}`
       if (diff > 0) {
-        label.textContent = `+${diff.toFixed(1)}`;
-      }
-      if (diff < 0) {
-        label.textContent = `${diff.toFixed(1)}`;
+        label.textContent = `+${label.textContent}`;
       }
       label.className = "bar-label";
       bar.appendChild(label);
@@ -158,13 +164,12 @@ class DistributionBarCell extends Cell {
       container.appendChild(text);
       return container;
     };
-    const renderValue = (value) => `${value.toFixed(1)}%`;
 
     this.renderTooltip = configureTooltip({
       rows: this.values.map((v) => ({
         rowHeader: createHeader(v.name, v.className),
         dataKey: v.className,
-        render: renderValue
+        render: (value) => toPercent(value)
       })),
       placement: "top",
       followCursor: true
@@ -184,7 +189,7 @@ class DistributionBarCell extends Cell {
       container.appendChild(bar);
     });
     // configure sizes of distribution bars
-    const distWidths = this.values.map((dist) => `${dist["value"]}%`);
+    const distWidths = this.values.map((dist) => `${dist["value"] * 100}%`);
     container.style.gridTemplateColumns = distWidths.join(" ");
     this.renderTooltip(container, this.tooltipValues, this.tooltipName);
     this.element.appendChild(container);
@@ -305,17 +310,17 @@ class VizHeaderCell extends HeaderCell {
     super(data, className, sortCol, sortDir, initSort, table, id);
   }
 
-  render() {
-    const start = this.content["start"];
-    const end = this.content["end"];
-    const unit = this.content["unit"];
+  formatValue(value) {
+    if (this.content["unit"] === "percent") return toPercent(value, 0, false);
+    if (this.content["unit"] === "dollars") return toMoney(value, 0);
+    return toNumberString(value);
+  }
 
+  render() {
     const cell = document.createElement("th");
     cell.className = this.className;
-    // create start, end, and average tick/number elements
-    const startText =
-      unit === "dollars" ? `$${Math.round(start / 1000)}K` : start;
-    const endText = unit === "dollars" ? `$${Math.round(end / 1000)}K` : end;
+    const startText = this.formatValue(this.content["start"]);
+    const endText = this.formatValue(this.content["end"]);
     const startElement = this.createTickElement(startText, "start-num");
     const endElement = this.createTickElement(endText, "end-num");
     // add all the elements to the cell
@@ -333,10 +338,10 @@ class VizHeaderCell extends HeaderCell {
     if (className.includes("average")) text.className = "average-text";
     wrapper.appendChild(text);
     // adjust padding based on number of digits
-    if (className === "start-num" && content.toString().length === 1) {
+    if (className === "start-num" && content.length === 1) {
       wrapper.style.paddingLeft = "10px";
     } else if (className === "end-num") {
-      wrapper.style.paddingRight = `${13 - 3 * content.toString().length}px`;
+      wrapper.style.paddingRight = `${13 - 3 * content.length}px`;
       wrapper.style.marginRight = "-13px";
     }
 
@@ -603,9 +608,9 @@ export class Table {
       const isTruncated =
         this.isTruncated && numVisibleRows >= NUM_TRUNCATED_ROWS;
       const isHiddenOutlier = row.outlier && !this.showOutliers;
-      const isRowVisible =
-        isRowSearched ||
-        (!isTruncated && !isHiddenOutlier && !this.isSearching());
+      const isRowVisible = isRowSearched || (
+        !isTruncated && !isHiddenOutlier && !this.isSearching()
+      );
       if (row.collapseData !== undefined && row.collapseData.length > 0) {
         const collapseRows = row.collapseData.map((collapseRow) => {
           const isSubRowSearched = this.searchTerms.some(
@@ -614,8 +619,9 @@ export class Table {
               collapseRow.data[1].toLowerCase() === searchTerm.toLowerCase()
           );
           const isSubRowHiddenOutlier = collapseRow.outlier && !this.showOutliers;
-          const isSubRowVisible =
-            isSubRowSearched || (!row.isCollapsed && !isSubRowHiddenOutlier && !this.isSearching());
+          const isSubRowVisible = isSubRowSearched || (
+            !row.isCollapsed && !isSubRowHiddenOutlier && !this.isSearching()
+          );
           return new BodyRow(
             this.getCells(collapseRow.data, collapseRow.outlier),
             collapseRow.outlier,
