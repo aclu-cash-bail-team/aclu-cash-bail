@@ -1,7 +1,8 @@
 import * as d3 from "d3";
 import { feature } from "topojson-client";
-import { COUNTY_MAP_DATA } from "../data.js";
+import { COUNTY_MAP_DATA } from "../raw-data.js";
 import { configureTooltip } from "./Tooltip";
+import { toMoney, toPercent, toNumberString } from "../helpers";
 
 const DEFAULT_MAP_WIDTH = 600;
 const DEFAULT_MAP_HEIGHT = 400;
@@ -13,7 +14,6 @@ class ColorScaleLegend {
   constructor(
     id,
     colorDomain,
-    labels,
     color,
     averages,
     onMouseOver,
@@ -22,7 +22,7 @@ class ColorScaleLegend {
     offsetY = 35
   ) {
     this.colorDomain = colorDomain;
-    this.labels = labels;
+    this.labels = [0].concat(colorDomain);
     this.color = color;
     this.averages = averages;
     this.title = title;
@@ -112,7 +112,7 @@ class ColorScaleLegend {
         const [start, end] = this.color.invertExtent(color);
         return `${start}-${end}`;
       })
-      .text((_, i) => `${this.labels[i]}`);
+      .text((_, i) => toPercent(this.labels[i], 0, false));
     // Set up legend max label
     this.svg
       .select(`g[data-label="${this.labels[this.labels.length - 2]}"]`)
@@ -124,12 +124,11 @@ class ColorScaleLegend {
       .attr("y", this.labelOffsetY)
       .attr("class", legendTextClassName)
       .attr(BUCKET_ATTRIBUTE, this.labels[this.labels.length - 1])
-      .text(this.labels[this.labels.length - 1] + "%");
+      .text(toPercent(this.labels[this.labels.length - 1], 0));
     // Set up average label
     const maxValue = this.colorDomain[this.colorDomain.length - 1];
     this.averages.forEach((avg) => {
-      const avgOffsetX =
-        this.offsetX + (this.legendWidth * avg.value) / maxValue;
+      const avgOffsetX = this.offsetX + this.legendWidth * avg.value / maxValue;
       const legendLineClassName = "legend-avg-line";
       this.svg
         .append("line")
@@ -149,7 +148,7 @@ class ColorScaleLegend {
         .attr("x", avgOffsetX - 15)
         .attr("y", this.offsetY - 10)
         .attr("class", legendTextClassName)
-        .text(`${avg.value}%`);
+        .text(toPercent(avg.value));
       // Add title, if any
       this.svg
         .append("text")
@@ -158,59 +157,6 @@ class ColorScaleLegend {
         .attr("class", legendTextClassName)
         .text(this.title);
     });
-  }
-}
-
-class SpikeLegend {
-  constructor(id, title, values, getSpike) {
-    this.title = title;
-    this.values = values;
-    this.getSpike = getSpike;
-
-    this.spikeOffsetY = 110;
-    this.spikeOffsetX = 40;
-    this.spikeSpacingX = 30;
-
-    const svgWidth = 140;
-    const svgHeight = this.spikeOffsetY + 25;
-    this.svg = d3
-      .select(`#${id} .spike-legend`)
-      .append("svg")
-      .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
-  }
-
-  render() {
-    this.svg
-      .append("g")
-      .selectAll("path")
-      .data(this.values)
-      .enter()
-      .append("path")
-      .attr("d", this.getSpike)
-      .attr("transform", (_, i) => {
-        return `translate(${i * this.spikeSpacingX + this.spikeOffsetX}, ${
-          this.spikeOffsetY
-        })`;
-      })
-      .attr("fill", "#404040")
-      .attr("opacity", 1);
-    // Add spike labels
-    this.svg
-      .append("g")
-      .selectAll("path")
-      .data(this.values)
-      .join("text")
-      .attr("x", (_, i) => i * this.spikeSpacingX + this.spikeOffsetX / 2)
-      .attr("y", (_, i) => (this.values.length - i - 1) * 30 + 15)
-      .attr("class", "legend-text")
-      .text((d) => d);
-    // Add title
-    this.svg
-      .append("text")
-      .attr("x", 10)
-      .attr("y", this.spikeOffsetY + 20)
-      .attr("class", "legend-text")
-      .text(this.title);
   }
 }
 
@@ -304,14 +250,14 @@ export class BailRateMap extends Map {
         {
           rowHeader: tooltipHeader,
           dataKey: "x",
-          render: (value) => `${value.toFixed(1)}%`
+          render: (value) => toPercent(value)
         }
       ]
     });
     this.id = id;
     this.data = data;
 
-    const colorDomain = [10, 20, 30, 40, 50, 60];
+    const colorDomain = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6];
     this.color = d3
       .scaleThreshold()
       .domain(colorDomain)
@@ -335,7 +281,6 @@ export class BailRateMap extends Map {
     this.legend = new ColorScaleLegend(
       id,
       colorDomain,
-      [0, 10, 20, 30, 40, 50, 60],
       this.color,
       [
         {
@@ -392,7 +337,7 @@ export class BailRateMap extends Map {
   renderPA(features, path) {
     this.data.forEach((row) => {
       const countyName = row.data[0];
-      const cashBailRate = row.data[1];
+      const cashBailRate = row.data[2];
       const feature = features.find((f) => f.properties["NAME"] === countyName);
       feature.properties.rate = cashBailRate;
       feature.properties.color = this.color(cashBailRate);
@@ -419,12 +364,12 @@ class BailRaceMap extends Map {
         {
           rowHeader: "Cash Bail Rate, black",
           dataKey: "black",
-          render: (value) => `${value.toFixed(1)}%`
+          render: (value) => toPercent(value)
         },
         {
           rowHeader: "Cash Bail Rate, white",
           dataKey: "white",
-          render: (value) => `${value.toFixed(1)}%`
+          render: (value) => toPercent(value)
         }
       ]
     });
@@ -510,7 +455,7 @@ class BailRaceMap extends Map {
 
 export class RaceMapContainer {
   constructor(id, data, whiteAverage, blackAverage) {
-    const colorDomain = [20, 40, 60, 80, 100];
+    const colorDomain = [0.2, 0.4, 0.6, 0.8, 1];
     const color = d3
       .scaleThreshold()
       .domain(colorDomain)
@@ -544,7 +489,6 @@ export class RaceMapContainer {
     this.legend = new ColorScaleLegend(
       id,
       colorDomain,
-      [0, 20, 40, 60, 80, 100],
       color,
       [
         {
@@ -619,191 +563,6 @@ export class RaceMapContainer {
     this.legend.render();
     this.black.render();
     this.white.render();
-  }
-}
-
-export class BailPostingMap extends Map {
-  constructor(id, data, average, upperBound) {
-    super(`#${id} .map`, {
-      rows: [
-        {
-          rowHeader: "Cash Bail Rate",
-          dataKey: "x",
-          render: (value) => `${value.toFixed(1)}%`
-        },
-        {
-          rowHeader: "Avg. Bail Amount",
-          dataKey: "y",
-          render: (value) =>
-            value.toLocaleString("en", {
-              style: "currency",
-              currency: "USD",
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0
-            })
-        }
-      ]
-    });
-    this.data = data;
-
-    const colorDomain = [20, 40, 60, 80, 100];
-    this.color = d3
-      .scaleThreshold()
-      .domain(colorDomain)
-      .range(["#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"]);
-
-    this.spikeScale = d3.scaleLinear([0, upperBound], [0, 100]);
-
-    const onLegendMouseOver = (event) => {
-      this.highlightBar(event.target);
-      this.highlightMap(event.target);
-    };
-    const onLegendMouseOut = () => this.resetHighlight();
-    onLegendMouseOver.bind(this);
-    onLegendMouseOut.bind(this);
-
-    this.legend = new ColorScaleLegend(
-      id,
-      colorDomain,
-      [0, 20, 40, 60, 80, 100],
-      this.color,
-      [
-        {
-          value: average,
-          label: "Avg"
-        }
-      ],
-      onLegendMouseOver,
-      onLegendMouseOut,
-      "Non-Posting Rate",
-      85
-    );
-
-    const spike = this.spikeShape.bind(this);
-    this.spikeLegend = new SpikeLegend(
-      id,
-      "Average Bail Amount",
-      ["$20K", "$40K", "$60K"],
-      spike
-    );
-    this.spikeLegend.render();
-
-    this.render();
-  }
-
-  onMouseEnter(event) {
-    super.onMouseEnter(event);
-
-    const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
-    const attributeSelector = `${COUNTY_NAME_ATTRIBUTE}="${countyName}"`;
-
-    this.svg
-      .select(`.county-path[${attributeSelector}]`)
-      .classed("highlighted", true);
-
-    this.highlightBar(event.target);
-  }
-
-  onMouseOut(event) {
-    super.onMouseOut(event);
-
-    const countyName = event.target.getAttribute(COUNTY_NAME_ATTRIBUTE);
-    const attributeSelector = `${COUNTY_NAME_ATTRIBUTE}="${countyName}"`;
-
-    this.svg
-      .select(`.county-path[${attributeSelector}]`)
-      .classed("highlighted", false);
-
-    this.resetHighlight();
-  }
-
-  showTooltip(element) {
-    const countyName = element.getAttribute(COUNTY_NAME_ATTRIBUTE);
-    const countyRate = Number(element.getAttribute("data-rate"));
-    const countyAmount = element.getAttribute("data-bail-amount");
-    const attributeSelector = `${COUNTY_NAME_ATTRIBUTE}="${countyName}"`;
-    const spike = this.svg.select(`.spike[${attributeSelector}]`);
-    super.showTooltip(spike.node(), {
-      name: countyName,
-      x: countyRate,
-      y: countyAmount
-    });
-  }
-
-  highlightBar(element) {
-    const bucket = Number(element.getAttribute(BUCKET_ATTRIBUTE));
-    this.legend.highlightBars([bucket]);
-  }
-
-  highlightMap(element) {
-    const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
-    const attributeSelector = `${BUCKET_ATTRIBUTE}="${bucket}"`;
-    this.svg
-      .selectAll(`.spike:not([${attributeSelector}])`)
-      .classed("faded", true);
-  }
-
-  resetHighlight() {
-    this.legend.resetHighlight();
-    this.svg.selectAll("path.spike").classed("faded", false);
-  }
-
-  spikeShape(bailAmount) {
-    const length = this.spikeScale(Number(bailAmount.replace(/[^\d.-]/g, "")));
-    const width = 5;
-    return `M${-width / 2},0L0,${-length}L${width / 2},0`;
-  }
-
-  renderPA(features, path) {
-    this.data.forEach((row) => {
-      const countyName = row.data[0];
-      const bailAmount = row.data[1];
-      const nonPostingRate = row.data[2];
-      const feature = features.find((f) => f.properties["NAME"] === countyName);
-      feature.properties.rate = nonPostingRate;
-      feature.properties.amount = bailAmount;
-      feature.properties.color = this.color(nonPostingRate);
-      feature.properties.bucket = this.color.invertExtent(
-        feature.properties.color
-      )[1];
-      feature.properties.position = path.centroid(feature);
-    });
-
-    const paths = super.renderPA(features, path);
-    paths
-      .attr("data-rate", (feature) => feature.properties.rate)
-      .attr("data-bail-amount", (feature) => feature.properties.amount)
-      .attr(BUCKET_ATTRIBUTE, (feature) => feature.properties.bucket);
-
-    // Render spikes
-    this.svg
-      .append("g")
-      .selectAll("path")
-      .data(
-        features.sort(
-          (a, b) =>
-            d3.ascending(a.properties.position[1], b.properties.position[1]) ||
-            d3.ascending(a.properties.position[0], b.properties.position[0])
-        )
-      )
-      .join("path")
-      .attr("transform", (feature) => {
-        return `translate(${feature.properties.position})`;
-      })
-      .attr("d", (feature) => this.spikeShape(feature.properties.amount))
-      .attr("fill", (feature) => feature.properties.color)
-      .attr("stroke", (feature) => feature.properties.color)
-      .attr("class", "spike")
-      .attr("data-rate", (feature) => feature.properties.rate)
-      .attr("data-bail-amount", (feature) => feature.properties.amount)
-      .on("mouseenter focus", this.onMouseEnter.bind(this))
-      .on("mouseout", this.onMouseOut.bind(this))
-      .attr(BUCKET_ATTRIBUTE, (feature) => feature.properties.bucket)
-      .attr(COUNTY_NAME_ATTRIBUTE, (feature) => feature.properties["NAME"]);
-
-    this.legend.render();
-
-    this.renderCities();
   }
 }
 

@@ -15,13 +15,13 @@
 }
 
 .county-path {
-  stroke: rgba(255, 255, 255, 0.2);
+  stroke: rgba(0, 0, 0, 0.2);
   fill: rgba(255, 255, 255, 0.1);
   stroke-width: 0.5px;
 }
 
 .choropleth .county-path {
-  stroke: rgba(255, 255, 255, 0.8);
+  stroke: rgba(0, 0, 0, 1);
 }
 
 .faded {

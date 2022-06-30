@@ -23,6 +23,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h2 {
+  text-align: center;
+}
+
 .container {
   max-width: 600px;
   margin: auto;
@@ -40,6 +44,11 @@ body {
   color: rgba(255, 255, 255, 0.75);
   font-family: "GT America";
   font-size: 12px;
+  text-align: left;
+}
+
+.footnote.graph-footnote {
+  margin-top: 80px;
 }
 
 .mobile-only {

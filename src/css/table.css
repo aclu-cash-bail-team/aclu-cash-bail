@@ -52,9 +52,9 @@
 }
 
 .table-container > table .number-cell {
-  width: 60px;
+  width: auto;
   min-width: 60px;
-  max-width: 60px;
+  max-width: 80px;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
@@ -173,6 +173,6 @@
 
 /* Table-specific styling. */
 
-#mdj-table .county-name-cell {
+.mdj-table .county-name-cell {
   padding-left: 0;
 }

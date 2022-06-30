@@ -25,6 +25,7 @@
   <body>
     <div class="container">
       <div id="rate-chloropleth-container" class="map-container">
+        <h2>Rates of Cash Bail versus ROR by County</h2>
         <div class="switch-container">
           <div class="btn-text switch left showing">Cash Bail</div>
           <div class="btn-text switch right">ROR</div>
@@ -43,6 +44,7 @@
         </div>
       </div>
       <div id="rate-table-container">
+        <h2>Rates of Cash Bail versus ROR by County</h2>
         <div class="table-container" id="bail-rate-container">
           <div class="ui fluid multiple search selection dropdown">
             <input type="hidden" name="county" />
@@ -86,14 +88,22 @@
           </p>
         </div>
       </div>
-      <div id="bail-posting" class="map-container">
-        <div class="legend-container">
-          <div class="color-scale-legend"></div>
-          <div class="spike-legend"></div>
+      <div class="graph">
+        <h2>Average Bail Amount by County</h2>
+        <div class="bar-graph-subhead">
+          <div class="bar-graph-key">
+            <span class="key-circle yellow">>50% Non-Posting Rate</span>
+          </div>
         </div>
-        <div class="map"></div>
+        <div id="avg-bail-graph-container"></div>
+        <p class="footnote">
+          Note: The average cash bail amount does not take into account
+          percentage bail. Please see our report for more information about our
+          methodology and limitations.
+        </p>
       </div>
       <div class="table-container" id="bail-posting-container">
+        <h2>Average Cash Bail Amount and Rate of Posting by County</h2>
         <div class="ui fluid multiple search selection dropdown">
           <input type="hidden" name="county" />
           <i class="dropdown icon"></i>
@@ -105,9 +115,14 @@
           <tbody></tbody>
         </table>
         <div class="btn-text view-all-btn"></div>
+        <p class="footnote">
+          Note: The average cash bail amount does not take into account
+          percentage bail. Please see our report for more information about our
+          methodology and limitations.
+        </p>
       </div>
       <div class="graph" id="cases-scatter-plot">
-        <h3>Cash Bail Rates and Assigned Amounts Across Counties</h3>
+        <h2>Rates and Average Amounts of Cash Bail by County</h2>
         <div class="ui fluid multiple search selection dropdown">
           <input type="hidden" name="county" />
           <i class="dropdown icon"></i>
@@ -131,9 +146,14 @@
             xmlns="http://www.w3.org/2000/svg"
           ></svg>
         </div>
+        <p class="footnote graph-footnote">
+          Note: The average cash bail amount does not take into account
+          percentage bail. Please see our report for more information about our
+          methodology and limitations.
+        </p>
       </div>
       <div class="graph">
-        <h3 id="dist-graph-header">Bail Type Distributions Across Counties</h3>
+        <h2>Rates of Each Bail Type by County</h2>
         <div id="dist-graph-legend">
           <div class="legend-segment cash-bail-legend">
             <div class="legend-color-bar cash-bar"></div>
@@ -143,13 +163,17 @@
             <div class="legend-color-bar unsecured-bar"></div>
             <div class="legend-header">Unsecured</div>
           </div>
+          <div class="legend-segment ror-legend">
+            <div class="legend-color-bar ror-bar"></div>
+            <div class="legend-header">ROR</div>
+          </div>
           <div class="legend-segment nonmonetary-legend">
             <div class="legend-color-bar nonmonetary-bar"></div>
             <div class="legend-header">Nonmonetary</div>
           </div>
-          <div class="legend-segment ror-legend">
-            <div class="legend-color-bar ror-bar"></div>
-            <div class="legend-header">ROR</div>
+          <div class="legend-segment nominal-legend">
+            <div class="legend-color-bar nominal-bar"></div>
+            <div class="legend-header">Nominal</div>
           </div>
         </div>
         <div id="dist-graph-container"></div>
@@ -161,7 +185,7 @@
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/dropdown.min.js"></script>
   <script src="https://unpkg.com/popper.js@1"></script>
   <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
-  <script src="src/js/bail-trends.js" charset="utf-8"></script>
+  <script src="src/js/bail-trends.js" charset="utf-8" type="module"></script>
   <script>
     $(document).ready(() => {
       $(".dropdown").dropdown({
