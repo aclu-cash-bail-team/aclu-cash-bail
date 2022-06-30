@@ -238,7 +238,7 @@
 }
 
 #dist-graph-container:hover .unsecured-bar {
-  background-color: rgba(33, 95, 93, 0.4);
+  background-color: rgba(117, 203, 214, 0.4);
 }
 
 #dist-graph-container:hover .nonmonetary-bar {
@@ -246,7 +246,11 @@
 }
 
 #dist-graph-container:hover .ror-bar {
-  background-color: rgba(176, 140, 240, 0.4);
+  background-color: rgba(193, 78, 248, 0.4);
+}
+
+#dist-graph-container:hover .nominal-bar {
+  background-color: rgba(253, 177, 255, 0.4);
 }
 
 /* Allow specific row to remain highlighted on hover */
@@ -259,7 +263,7 @@
 }
 
 #dist-graph-container .dist-row:hover .unsecured-bar {
-  background-color: rgba(33, 95, 93, 1);
+  background-color: rgba(117, 203, 214, 1);
 }
 
 #dist-graph-container .dist-row:hover .nonmonetary-bar {
@@ -267,7 +271,12 @@
 }
 
 #dist-graph-container .dist-row:hover .ror-bar {
-  background-color: rgba(176, 140, 240, 1);
+  background-color: rgba(193, 78, 248, 1);
+}
+
+
+#dist-graph-container .dist-row:hover .nominal-bar {
+  background-color: rgba(253, 177, 255, 1);
 }
 
 .county-dist-row-container .dist-county-name {
