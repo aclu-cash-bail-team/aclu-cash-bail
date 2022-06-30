@@ -173,6 +173,6 @@
 
 /* Table-specific styling. */
 
-#mdj-table .county-name-cell {
+.mdj-table .county-name-cell {
   padding-left: 0;
 }

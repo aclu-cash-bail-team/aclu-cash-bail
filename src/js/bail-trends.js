@@ -7,76 +7,13 @@ import {
   DistributionGraph,
   CountyBarChart
 } from "./classes/Graph.js";
-import { STATE_DATA, COUNTY_DATA, MDJ_DATA } from "./data.js";
-
-// restructure county data for tables and maps
-const BAIL_RATE_DATA = COUNTY_DATA.map((countyData) => ({
-  data: [
-    countyData["name"],
-    {
-      type: "bar",
-      values: [countyData["cash_bail_pct"]]
-    },
-    countyData["cash_bail_pct"],
-    countyData["cash_bail_cases"],
-    countyData["total_cases"]
-  ]
-}));
-const ROR_RATE_DATA = COUNTY_DATA.map((countyData) => ({
-  data: [
-    countyData["name"],
-    {
-      type: "bar",
-      values: [countyData["ror_pct"]]
-    },
-    countyData["ror_pct"],
-    countyData["ror_cases"],
-    countyData["total_cases"]
-  ]
-}));
-const BAIL_POSTING_DATA = COUNTY_DATA.map((countyData) => ({
-  data: [
-    countyData["name"],
-    countyData["avg_bail_amount"],
-    countyData["non_posting_rate"],
-    countyData["total_cases"]
-  ]
-}));
-const COUNTY_BAIL_TYPE_DATA = COUNTY_DATA.map((countyData) => ({
-  data: [
-    countyData["name"],
-    {
-      type: "dist",
-      values: [
-        {
-          className: "cash-bar",
-          value: countyData["cash_bail_pct"],
-          name: "Cash Bail"
-        },
-        {
-          className: "unsecured-bar",
-          value: countyData["unsecured_pct"],
-          name: "Unsecured"
-        },
-        {
-          className: "ror-bar",
-          value: countyData["ror_pct"],
-          name: "ROR"
-        },
-        {
-          className: "nonmonetary-bar",
-          value: countyData["nonmonetary_pct"],
-          name: "Nonmonetary"
-        },
-        {
-          className: "nominal-bar",
-          value: countyData["nominal_pct"],
-          name: "Nominal"
-        }
-      ],
-    }
-  ],
-}));
+import { STATE_DATA, COUNTY_DATA } from "./raw-data.js";
+import {
+  BAIL_RATE_DATA,
+  ROR_RATE_DATA,
+  BAIL_POSTING_DATA,
+  COUNTY_BAIL_TYPE_DATA
+} from "./data";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {

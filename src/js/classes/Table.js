@@ -628,9 +628,7 @@ export class Table {
             !isSubRowVisible
           );
         });
-        const hasVisibleChildRow = collapseRows.some(
-          (bodyRow) => !bodyRow.isHidden
-        );
+        const hasVisibleChildRow = collapseRows.some(bodyRow => !bodyRow.isHidden);
         const isParentRowVisible = isRowVisible || hasVisibleChildRow;
         if (isParentRowVisible)
           numVisibleRows += collapseRows.reduce(
