@@ -70,7 +70,10 @@ const createMdjTable = (tableContainer, county = "") => {
 };
 
 /* RENDER PAGE */
-createMdjTable(document.getElementById("mdj-container"));
+const mdjContainer = document.getElementById("mdj-container")
+if (mdjContainer !== null) {
+  createMdjTable(mdjContainer);
+}
 
 const counties = COUNTY_DATA.map(county => county["name"]);
 counties.forEach((name) => {
