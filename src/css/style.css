@@ -73,6 +73,7 @@ h3.title {
   border: 1px #333 solid;
   cursor: pointer;
   user-select: none;
+  text-transform: uppercase;
 }
 
 .outliers-btn.showing {
