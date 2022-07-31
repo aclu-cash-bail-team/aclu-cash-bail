@@ -1,4 +1,4 @@
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 680px) {
   .table-container > table {
     max-width: 100%;
   }
@@ -13,6 +13,7 @@
 
   .table-container > table th.viz-cell {
     width: 100px;
+    margin: 0 1em;
   }
 
   .table-container > table td.viz-cell {
@@ -125,21 +126,21 @@
     width: 80px;
   }
 
-  .average-wrapper {
-    width: 80px;
-  }
-
+  .table-container > table th.viz-cell,
   .table-container > table td.viz-cell {
     width: 80px;
+    margin-right: 0;
   }
 
   .table-container > table .diff-cell,
-  .table-container > table .total-cases-cell {
+  .table-container > table .total-cases-cell,
+  .table-container > table th.race-disparity-viz-cell,
+  .table-container > table td.race-disparity-viz-cell {
     display: none;
   }
 
-  .table-container > table td.viz-cell {
-    margin-right: 0;
+  .average-wrapper {
+    width: 80px;
   }
 
   .color-scale-legend {

@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import { toMoney, toPercent, toNumberString } from "./helpers";
 import { Table, SwitchableTable } from "./classes/Table.js";
 import { BailRateMap, SwitchableMap } from "./classes/Map.js";
 import {
@@ -6,20 +7,13 @@ import {
   DistributionGraph,
   CountyBarChart
 } from "./classes/Graph.js";
+import { STATE_DATA, COUNTY_DATA } from "./raw-data.js";
 import {
   BAIL_RATE_DATA,
-  PA_BAIL_CASES,
-  PA_ROR_CASES,
-  PA_TOTAL_CASES,
-  PA_BAIL_RATE,
-  PA_ROR_RATE,
-  PA_AVG_POSTING_RATE,
-  PA_AVG_BAIL_AMT,
   ROR_RATE_DATA,
   BAIL_POSTING_DATA,
-  BAIL_CASES_SCATTER_PLOT,
-  MDJ_DATA
-} from "./data.js";
+  COUNTY_BAIL_TYPE_DATA
+} from "./data";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRateTable = () => {
@@ -37,11 +31,11 @@ const createBailRateTable = () => {
       class: "viz-cell",
       header: {
         start: 0,
-        end: 60,
+        end: 0.6,
         averages: [
           {
             name: "Avg.",
-            value: PA_BAIL_RATE
+            value: STATE_DATA["cash_bail_pct"]
           }
         ],
         unit: "percent",
@@ -83,11 +77,11 @@ const createBailRateTable = () => {
     "Pennsylvania",
     {
       type: "bar",
-      values: [PA_BAIL_RATE]
+      values: [STATE_DATA["cash_bail_pct"]]
     },
-    PA_BAIL_RATE,
-    PA_BAIL_CASES,
-    PA_TOTAL_CASES
+    STATE_DATA["cash_bail_pct"],
+    STATE_DATA["cash_bail_cases"],
+    STATE_DATA["total_cases"]
   ];
 
   const tableContainer = document.getElementById("bail-rate-container");
@@ -116,11 +110,11 @@ const createRorRateTable = () => {
       class: "viz-cell",
       header: {
         start: 0,
-        end: 75,
+        end: 0.75,
         averages: [
           {
             name: "Avg.",
-            value: PA_ROR_RATE
+            value: STATE_DATA["ror_pct"]
           }
         ],
         unit: "percent",
@@ -162,11 +156,11 @@ const createRorRateTable = () => {
     "Pennsylvania",
     {
       type: "bar",
-      values: [PA_ROR_RATE]
+      values: [STATE_DATA["ror_pct"]]
     },
-    PA_ROR_RATE,
-    PA_ROR_CASES,
-    PA_TOTAL_CASES
+    STATE_DATA["ror_pct"],
+    STATE_DATA["ror_cases"],
+    STATE_DATA["total_cases"]
   ];
 
   const tableContainer = document.getElementById("ror-rate-container");
@@ -203,15 +197,29 @@ const createBailPostingTable = () => {
     {
       class: "nonposting-rate-cell number-cell",
       header: {
-        text: "Non-posting rt.",
+        text: "Non-Posting Rt.",
         unit: "percent"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "total-cases-cell number-cell",
+      header: {
+        text: "Total Cases",
+        unit: "number"
       },
       sortable: true,
       searchable: false
     }
   ];
   const initSort = { col: 2, dir: -1 };
-  const stateData = ["Pennsylvania", PA_AVG_BAIL_AMT, PA_AVG_POSTING_RATE];
+  const stateData = [
+    "Pennsylvania",
+    STATE_DATA["avg_bail_amount"],
+    STATE_DATA["non_posting_rate"],
+    STATE_DATA["total_cases"]
+  ];
 
   const tableContainer = document.getElementById("bail-posting-container");
   return new Table(
@@ -225,23 +233,19 @@ const createBailPostingTable = () => {
 
 /* PLOT CREATION FUNCTIONS */
 const createCasesScatterPlot = () => {
-  const cashBailRateToText = (num) => `${num}%`;
-  const bailAmountToText = (num) => (num === 0 ? "0" : `${num}K`);
-  const totalBailCasesToText = (num) => num.toLocaleString();
-
   const xAxis = {
     name: "Cash Bail Rate",
-    min: 20,
-    max: 60,
+    min: 0.2,
+    max: 0.6,
     numTicks: 4,
-    convert: cashBailRateToText
+    convert: (value) => toPercent(value, 0)
   };
   const yAxis = {
     name: "Bail Amount",
     min: 0,
-    max: 90,
+    max: 90000,
     numTicks: 9,
-    convert: bailAmountToText
+    convert: (value) => toMoney(value, 0)
   };
 
   const tooltipConfig = {
@@ -249,20 +253,24 @@ const createCasesScatterPlot = () => {
       {
         rowHeader: "Cash Bail Rate",
         dataKey: "x",
-        render: (num) => `${num.toFixed(1)}%`
+        render: (value) => toPercent(value)
       },
       {
         rowHeader: "Average Bail Amount",
         dataKey: "y",
         render: (value) =>
-          (value * 1000).toLocaleString("en", {
+          value.toLocaleString("en", {
             style: "currency",
             currency: "USD",
             minimumFractionDigits: 0,
             maximumFractionDigits: 0
           })
       },
-      { rowHeader: "Total Cases", dataKey: "r", render: totalBailCasesToText }
+      {
+        rowHeader: "Total Cases",
+        dataKey: "r",
+        render: (value) => toNumberString(value)
+      }
     ]
   };
 
@@ -292,9 +300,27 @@ const createCasesScatterPlot = () => {
     mobile: mobileScale
   };
 
+  const PLOT_DATA = COUNTY_DATA.reduce(
+    (acc, countyData) => ({
+      ...acc,
+      [countyData["name"]]: {
+        showName: false,
+        x: countyData["cash_bail_pct"],
+        r: countyData["cash_bail_cases"],
+        y: countyData["avg_bail_amount"]
+      }
+    }),
+    {}
+  );
+  PLOT_DATA["State Average"] = {
+    showName: true,
+    x: STATE_DATA["cash_bail_pct"],
+    r: STATE_DATA["cash_bail_cases"],
+    y: STATE_DATA["avg_bail_amount"]
+  };
   const container = document.getElementById("cases-scatter-plot");
   return new ScatterPlot(
-    BAIL_CASES_SCATTER_PLOT,
+    PLOT_DATA,
     xAxis,
     yAxis,
     radiusScale,
@@ -304,15 +330,12 @@ const createCasesScatterPlot = () => {
 };
 
 const createAvgBailAmountBarChart = () => {
-  const nonPostingRateToText = (num) => `${num}%`;
-  const bailAmountToText = (num) => (num === 0 ? "0" : `$${num}K`);
-
   const xAxis = {
     name: "AVERAGE BAIL AMOUNT",
-    min: 10,
-    max: 80,
+    min: 10000,
+    max: 80000,
     numTicks: 7,
-    convert: bailAmountToText
+    convert: (value) => toMoney(value, 0)
   };
 
   const tooltipConfig = {
@@ -320,62 +343,87 @@ const createAvgBailAmountBarChart = () => {
       {
         rowHeader: "Average bail amount",
         dataKey: "x",
-        render: bailAmountToText
+        render: (value) => toMoney(value)
       },
       {
         rowHeader: "Non-posting rate",
         dataKey: "y",
-        render: nonPostingRateToText
+        render: (value) => toPercent(value)
       }
     ],
     placement: "top",
     followCursor: true
   };
 
-  const data = BAIL_POSTING_DATA.map(({ data: county }) => ({
-    name: county[0],
-    x: parseFloat(county[1].replace(/[$K]/g, "")),
-    y: county[2],
-    highlighted: county[2] > 50
+  const data = COUNTY_DATA.map((countyData) => ({
+    name: countyData["name"],
+    x: countyData["avg_bail_amount"],
+    y: countyData["non_posting_rate"],
+    highlighted: countyData["non_posting_rate"] > 0.5
   }));
 
   const container = document.getElementById("avg-bail-graph-container");
   return new CountyBarChart(data, xAxis, tooltipConfig, container);
 };
 
-/* RENDER PAGE */
+/* RENDER TABLES */
 const bailRateTable = createBailRateTable();
 const rorRateTable = createRorRateTable();
-
 const rateTableContainer = document.getElementById("rate-table-container");
 new SwitchableTable(bailRateTable, rorRateTable, rateTableContainer);
-
 createBailPostingTable();
 
+/* RENDER MAPS */
 const cashBailRateMap = new BailRateMap(
   "cash-bail-rate",
   BAIL_RATE_DATA,
-  PA_BAIL_RATE,
+  STATE_DATA["cash_bail_pct"],
   "Cash Bail Rate"
 );
-
 const rorRateMap = new BailRateMap(
   "ror-rate",
   ROR_RATE_DATA,
-  PA_ROR_RATE,
+  STATE_DATA["ror_pct"],
   "ROR Rate"
 );
-
 const rateChloroplethContainer = document.getElementById(
   "rate-chloropleth-container"
 );
 
 new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
 
-createAvgBailAmountBarChart();
-
+/* RENDER GRAPHS */
 createCasesScatterPlot();
+createAvgBailAmountBarChart();
+const headerConfig = [
+  {
+    title: "Cash Bail",
+    className: "cash-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "Unsecured",
+    className: "unsecured-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "ROR",
+    className: "ror-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "Nonmonetary",
+    className: "nonmonetary-bar",
+    render: (value) => toPercent(value)
+  },
+  {
+    title: "Nominal",
+    className: "nominal-bar",
+    render: (value) => toPercent(value)
+  }
+];
 new DistributionGraph(
   document.getElementById("dist-graph-container"),
-  MDJ_DATA
+  COUNTY_BAIL_TYPE_DATA,
+  headerConfig
 );

@@ -1,19 +1,9 @@
+import { toMoney, toPercent } from "./helpers";
 import { Table, SwitchableTable } from "./classes/Table.js";
 import { RaceMapContainer } from "./classes/Map.js";
 import { ScatterPlot } from "./classes/Graph.js";
-import {
-  BAIL_RACE_RATE_DATA,
-  BAIL_RACE_AMOUNT_DATA,
-  PA_AVG_BLACK_BAIL_RATE,
-  PA_AVG_WHITE_BAIL_RATE,
-  PA_BLACK_CASES,
-  PA_WHITE_CASES,
-  PA_AVG_BLACK_BAIL_AMT,
-  PA_AVG_WHITE_BAIL_AMT,
-  PA_AVG_RACE_BAIL_AMT_DIFF,
-  PA_AVG_RACE_BAIL_RATE_DIFF,
-  RACE_SCATTER_PLOT
-} from "./data.js";
+import { STATE_DATA, COUNTY_DATA } from "./raw-data.js";
+import { BAIL_RACE_RATE_DATA, BAIL_RACE_AMOUNT_DATA } from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRaceRateTable = () => {
@@ -30,7 +20,16 @@ const createBailRaceRateTable = () => {
     {
       class: "bail-black-cell number-cell",
       header: {
-        text: "Black",
+        text: "Black Cases",
+        unit: "number"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-black-cell number-cell",
+      header: {
+        text: "Black Rate",
         unit: "percent"
       },
       sortable: true,
@@ -39,25 +38,34 @@ const createBailRaceRateTable = () => {
     {
       class: "bail-white-cell number-cell",
       header: {
-        text: "White",
+        text: "White Cases",
+        unit: "number"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-white-cell number-cell",
+      header: {
+        text: "White Rate",
         unit: "percent"
       },
       sortable: true,
       searchable: false
     },
     {
-      class: "viz-cell",
+      class: "viz-cell race-disparity-viz-cell",
       header: {
         start: 0,
-        end: 100,
+        end: 1,
         averages: [
           {
             name: "Black",
-            value: PA_AVG_BLACK_BAIL_RATE
+            value: STATE_DATA["cash_bail_pct_black"]
           },
           {
             name: "White",
-            value: PA_AVG_WHITE_BAIL_RATE
+            value: STATE_DATA["cash_bail_pct_white"]
           }
         ],
         unit: "percent"
@@ -69,7 +77,8 @@ const createBailRaceRateTable = () => {
       class: "diff-cell number-cell",
       header: {
         text: "Gap",
-        unit: "percent"
+        unit: "percent",
+        showSigns: true
       },
       sortable: true,
       searchable: false
@@ -78,13 +87,18 @@ const createBailRaceRateTable = () => {
   const initSort = { col: 4, dir: -1 }; // initially sort by difference
   const stateData = [
     "Pennsylvania",
-    PA_AVG_BLACK_BAIL_RATE,
-    PA_AVG_WHITE_BAIL_RATE,
+    STATE_DATA["cash_bail_cases_black"],
+    STATE_DATA["cash_bail_pct_black"],
+    STATE_DATA["cash_bail_cases_white"],
+    STATE_DATA["cash_bail_pct_white"],
     {
       type: "line",
-      values: [PA_AVG_BLACK_BAIL_RATE, PA_AVG_WHITE_BAIL_RATE]
+      values: [
+        STATE_DATA["cash_bail_pct_black"],
+        STATE_DATA["cash_bail_pct_white"]
+      ]
     },
-    PA_AVG_RACE_BAIL_RATE_DIFF
+    STATE_DATA["cash_bail_pct_black"] - STATE_DATA["cash_bail_pct_white"]
   ];
 
   const tableContainer = document.getElementById("bail-race-rate-container");
@@ -113,7 +127,16 @@ const createBailRaceAmountTable = () => {
     {
       class: "bail-black-cell number-cell",
       header: {
-        text: "Black",
+        text: "Black Cases",
+        unit: "number"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-black-cell number-cell",
+      header: {
+        text: "Black Amt.",
         unit: "dollars"
       },
       sortable: true,
@@ -122,28 +145,38 @@ const createBailRaceAmountTable = () => {
     {
       class: "bail-white-cell number-cell",
       header: {
-        text: "White",
+        text: "White Cases",
+        unit: "number"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-white-cell number-cell",
+      header: {
+        text: "White Amt.",
         unit: "dollars"
       },
       sortable: true,
       searchable: false
     },
     {
-      class: "viz-cell",
+      class: "viz-cell race-disparity-viz-cell",
       header: {
         start: 10000,
         end: 80000,
         averages: [
           {
             name: "Black",
-            value: PA_BLACK_CASES
+            value: STATE_DATA["bail_amount_black"]
           },
           {
             name: "White",
-            value: PA_WHITE_CASES
+            value: STATE_DATA["bail_amount_white"]
           }
         ],
-        unit: "dollars"
+        unit: "dollars",
+        showSigns: true
       },
       sortable: false,
       searchable: false
@@ -161,13 +194,18 @@ const createBailRaceAmountTable = () => {
   const initSort = { col: 4, dir: -1 }; // initially sort by difference
   const stateData = [
     "Pennsylvania",
-    PA_AVG_BLACK_BAIL_AMT,
-    PA_AVG_WHITE_BAIL_AMT,
+    STATE_DATA["cash_bail_cases_black"],
+    STATE_DATA["bail_amount_black"],
+    STATE_DATA["cash_bail_cases_white"],
+    STATE_DATA["bail_amount_white"],
     {
       type: "line",
-      values: [PA_BLACK_CASES, PA_WHITE_CASES]
+      values: [
+        STATE_DATA["bail_amount_black"],
+        STATE_DATA["bail_amount_white"]
+      ]
     },
-    PA_AVG_RACE_BAIL_AMT_DIFF
+    STATE_DATA["bail_amount_black"] - STATE_DATA["bail_amount_white"]
   ];
 
   const tableContainer = document.getElementById("bail-race-amount-container");
@@ -187,25 +225,25 @@ const createRaceScatterPlot = () => {
   const xAxis = {
     name: "Cash Bail Rate",
     min: 0,
-    max: 100,
+    max: 1,
     numTicks: 10,
-    convert: (num) => `${num}%`
+    convert: (value) => toPercent(value, 0)
   };
   const yAxis = {
     name: "Bail Amount",
     min: 0,
     max: 100000,
     numTicks: 10,
-    convert: (num) => (num === 0 ? "0" : `${num / 1000}K`)
+    convert: (value) => toMoney(value, 0, false)
   };
 
   const tooltipConfig = {
     columns: [
       { dataKey: "name", isRowHeader: true },
       {
-        columnHeader: "% Cash Bail",
+        columnHeader: "Cash\xa0Bail\xa0Rt.",
         dataKey: "x",
-        render: (value) => `${value.toFixed(1)}%`
+        render: (value) => toPercent(value)
       },
       {
         columnHeader: "Bail Amount",
@@ -221,9 +259,36 @@ const createRaceScatterPlot = () => {
     ]
   };
 
+  const PLOT_DATA = COUNTY_DATA.reduce((acc, countyData) => ({
+    ...acc,
+    [countyData["name"]]: {
+      showName: false,
+      outlier: countyData["is_outlier"],
+      x: {
+        black: countyData["cash_bail_pct_black"],
+        white: countyData["cash_bail_pct_white"]
+      },
+      y: {
+        black: countyData["bail_amount_black"],
+        white: countyData["bail_amount_white"]
+      }
+    }
+  }), {});
+  PLOT_DATA["State Average"] = {
+    showName: true,
+    outlier: false,
+    x: {
+      black: STATE_DATA["cash_bail_pct_black"],
+      white: STATE_DATA["cash_bail_pct_white"]
+    },
+    y: {
+      black: STATE_DATA["bail_amount_black"],
+      white: STATE_DATA["bail_amount_white"]
+    }
+  };
   const container = document.getElementById("race-scatter-plot");
   return new ScatterPlot(
-    RACE_SCATTER_PLOT,
+    PLOT_DATA,
     xAxis,
     yAxis,
     null,
@@ -232,13 +297,19 @@ const createRaceScatterPlot = () => {
   );
 };
 
-/* RENDER PAGE */
+/* RENDER TABLES */
 const bailRaceRateTable = createBailRaceRateTable();
 const bailRaceAmountTable = createBailRaceAmountTable();
-
 const raceContainer = document.getElementById("race-container");
 new SwitchableTable(bailRaceRateTable, bailRaceAmountTable, raceContainer);
 
-new RaceMapContainer("race-rate", BAIL_RACE_RATE_DATA, PA_AVG_WHITE_BAIL_RATE, PA_AVG_BLACK_BAIL_RATE);
+/* RENDER MAPS */
+new RaceMapContainer(
+  "race-rate",
+  BAIL_RACE_RATE_DATA,
+  STATE_DATA["cash_bail_pct_black"],
+  STATE_DATA["cash_bail_pct_white"]
+);
 
+/* RENDER GRAPHS */
 createRaceScatterPlot();

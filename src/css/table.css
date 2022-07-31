@@ -158,7 +158,7 @@
 }
 
 .view-all-btn {
-  margin: 1.5em 0;
+  margin: 1.5em 0 10px 0;
   cursor: pointer;
   user-select: none;
 }
@@ -173,6 +173,6 @@
 
 /* Table-specific styling. */
 
-#mdj-table .county-name-cell {
+.mdj-table .county-name-cell {
   padding-left: 0;
 }

@@ -8,17 +8,6 @@
   outline: none;
 }
 
-.graph h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-family: "GT America Bold";
-  font-size: 13px;
-  font-weight: normal;
-  line-height: 28px;
-  text-align: center;
-  color: #fff;
-}
-
 .graph .outliers-btn {
   position: absolute;
   right: 0;
@@ -121,7 +110,7 @@ svg.scatter-plot {
 
 .bar-graph-subhead {
   position: relative;
-  margin: 30px 0;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -133,7 +122,7 @@ svg.scatter-plot {
 
 .bar-graph-key-box-container {
   display: inline-block;
-  padding: 10px 16px;
+  padding: 12px 16px;
   border-radius: 4px;
   border: 1px solid #525252;
 }
@@ -145,8 +134,8 @@ svg.scatter-plot {
 
 .bar-graph-key span {
   font-size: 12px;
-  line-height: 16px;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 13px;
+  color: #fff;
 }
 
 .bar-graph-key span:not(:last-of-type) {

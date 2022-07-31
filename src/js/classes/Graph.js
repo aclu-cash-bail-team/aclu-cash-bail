@@ -1,6 +1,12 @@
 import { configureTooltip } from "./Tooltip";
-
-const SVG_NS = "http://www.w3.org/2000/svg";
+import { getSizing } from "../helpers";
+import {
+  SVG_NS,
+  SMALL_PHONE,
+  LARGE_PHONE,
+  SMALL_BROWSER,
+  REGULAR_WIDTH
+} from "../constants";
 
 class CountyPoint {
   constructor(
@@ -27,8 +33,8 @@ class CountyPoint {
     this.renderTooltip = (elements, config) =>
       renderTooltip(elements, this.data, this.county, config);
     [this.xs, this.ys] = this.getPositions();
-    this.rs_desktop = this.getRadiis(radiusScale?.desktop || radiusScale);
-    this.rs_mobile = this.getRadiis(radiusScale?.mobile || radiusScale);
+    this.rsDesktop = this.getRadiis(radiusScale?.desktop || radiusScale);
+    this.rsMobile = this.getRadiis(radiusScale?.mobile || radiusScale);
     this.elements = [];
     this.tooltipTriggerTargets = [];
   }
@@ -152,7 +158,7 @@ export class ScatterPlot {
     this.renderTooltip = configureTooltip(tooltipConfig);
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
-    this.mobileSizing;
+    this.sizing;
     this.setUpSearchBar();
     this.render();
   }
@@ -234,22 +240,21 @@ export class ScatterPlot {
   }
 
   updateViewBox() {
-    const prevMobileSizing = this.mobileSizing;
-    this.mobileSizing = window.innerWidth <= 670;
+    const prevSizing = this.sizing;
+    this.sizing = getSizing(window.innerWidth);
 
     // set viewbox based on window size (customized for specific phones)
-    const iPhoneSE = window.innerWidth < 350;
-    const iPhone8 = window.innerWidth < 400;
-    const width = iPhoneSE
-      ? 180
-      : iPhone8
-      ? 280
-      : this.mobileSizing
-      ? 300
-      : 600;
-    const height = this.mobileSizing ? 400 : 500;
+    const width =
+      this.sizing === SMALL_PHONE
+        ? 180
+        : this.sizing === LARGE_PHONE
+        ? 280
+        : this.sizing === SMALL_BROWSER
+        ? 300
+        : 600;
+    const height = this.sizing === REGULAR_WIDTH ? 500 : 400;
     this.plot.setAttributeNS(null, "viewBox", `0 0 ${width} ${height}`);
-    if (prevMobileSizing !== this.mobileSizing) {
+    if (prevSizing !== this.sizing) {
       // rerender axes with mobile sizing value
       this.renderAxis(this.xAxis, false);
       this.renderAxis(this.yAxis, true);
@@ -262,7 +267,9 @@ export class ScatterPlot {
           circles[i].setAttributeNS(
             null,
             "r",
-            this.mobileSizing ? point.rs_mobile[i] : point.rs_desktop[i]
+            this.sizing === REGULAR_WIDTH
+              ? point.rsDesktop[i]
+              : point.rsMobile[i]
           );
         });
       });
@@ -271,7 +278,6 @@ export class ScatterPlot {
 
   render() {
     // set up svg to resize on window resize
-
     window.addEventListener("resize", () => this.updateViewBox());
 
     // render axes
@@ -312,7 +318,7 @@ export class ScatterPlot {
       // adjust for the coordinate system starting at the top left
       const axisPlacement = isYAxis ? 0 : "100%";
       // get offset based on window size
-      const dxy = this.mobileSizing ? 18 : 26;
+      const dxy = this.sizing === REGULAR_WIDTH ? 26 : 18;
 
       const tick = document.createElementNS(SVG_NS, "text");
       tick.setAttributeNS(null, "class", "axis-tick");
@@ -337,25 +343,25 @@ export class ScatterPlot {
 
   renderAxisLabels(axis, isYAxis, isLower) {
     // for mobile we only need one label
-    if (this.mobileSizing && !isLower) return;
+    if (this.sizing !== REGULAR_WIDTH && !isLower) return;
 
     // wrap axis labels in svgs to do local rotation
     const wrapper = document.createElementNS(SVG_NS, "svg");
     wrapper.setAttributeNS(null, "class", "label-wrapper");
-    if (this.mobileSizing) {
-      wrapper.setAttributeNS(null, "x", isYAxis ? 0 : "50%");
-      wrapper.setAttributeNS(null, "y", isYAxis ? "50%" : "100%");
-    } else {
+    if (this.sizing === REGULAR_WIDTH) {
       wrapper.setAttributeNS(null, "x", isLower ? 0 : isYAxis ? 0 : "100%");
       wrapper.setAttributeNS(
         null,
         "y",
         isLower ? "100%" : isYAxis ? 0 : "100%"
       );
+    } else {
+      wrapper.setAttributeNS(null, "x", isYAxis ? 0 : "50%");
+      wrapper.setAttributeNS(null, "y", isYAxis ? "50%" : "100%");
     }
 
     // get offset based on window size
-    const dy = this.mobileSizing ? 40 : 60;
+    const dy = this.sizing === REGULAR_WIDTH ? 60 : 40;
 
     const label = document.createElementNS(SVG_NS, "text");
     label.setAttributeNS(null, "class", "axis-label");
@@ -388,36 +394,26 @@ export class ScatterPlot {
 }
 
 class DistributionRow {
-  constructor(
-    county,
-    cashBailRate,
-    unsecuredRate,
-    nonmonetaryRate,
-    rorRate,
-    nominalRate,
-    renderTooltip
-  ) {
+  constructor(county, distributions, renderTooltip) {
     this.county = county;
-    this.cashBailRate = cashBailRate;
-    this.unsecuredRate = unsecuredRate;
-    this.nonmonetaryRate = nonmonetaryRate;
-    this.rorRate = rorRate;
-    this.nominalRate = nominalRate;
+    this.distributions = distributions;
+    this.renderTooltip = renderTooltip;
+  }
 
-    this.renderTooltip = (elements) =>
-      renderTooltip(
-        elements,
-        [
-          {
-            cashBailRate: cashBailRate["value"],
-            nominalRate: nominalRate["value"],
-            unsecuredRate: unsecuredRate["value"],
-            nonmonetaryRate: nonmonetaryRate["value"],
-            rorRate: rorRate["value"]
-          }
-        ],
-        county
-      );
+  createTooltip(elements) {
+    return this.renderTooltip(
+      elements,
+      [
+        this.distributions.reduce(
+          (acc, dist) => ({
+            ...acc,
+            [dist["className"]]: dist["value"]
+          }),
+          {}
+        )
+      ],
+      this.county
+    );
   }
 
   render() {
@@ -428,39 +424,33 @@ class DistributionRow {
     // Add distribution bars
     const distBarsSegment = document.createElement("div");
     distBarsSegment.className = "dist-bars-segment";
-    [
-      this.cashBailRate,
-      this.nominalRate,
-      this.unsecuredRate,
-      this.nonmonetaryRate,
-      this.rorRate
-    ].forEach((dist) => {
+    this.distributions.forEach((dist) => {
       const distBarElement = document.createElement("div");
       distBarElement.classList.add("dist-column-segment");
       distBarElement.classList.add(dist["className"]);
       distBarsSegment.appendChild(distBarElement);
     });
     // Set width of bar based on distribution
-    const colWidths = `${this.cashBailRate["value"]}% ${this.nominalRate["value"]}% ${this.unsecuredRate["value"]}% ${this.nonmonetaryRate["value"]}% ${this.rorRate["value"]}%`;
-    distBarsSegment.style.gridTemplateColumns = colWidths;
+    const cols = this.distributions.map((dist) => `${dist["value"] * 100}%`);
+    distBarsSegment.style.gridTemplateColumns = cols.join(" ");
 
-    this.renderTooltip(distBarsSegment);
+    this.createTooltip(distBarsSegment);
 
     const rowElement = document.createElement("div");
     rowElement.className = "dist-row";
     rowElement.appendChild(nameElement);
     rowElement.appendChild(distBarsSegment);
-
     return rowElement;
   }
 }
 
 export class DistributionGraph {
-  constructor(container, data) {
+  constructor(container, data, headerConfig) {
     this.container = container;
     this.data = data;
-    this.nameIdx = 1;
-    this.distributionIdx = 3;
+    this.headerConfig = headerConfig;
+    this.nameIdx = 0;
+    this.distributionIdx = 1;
     // Sort data by county name
     this.data.sort((a, b) =>
       a["data"][this.nameIdx] > b["data"][this.nameIdx]
@@ -469,7 +459,10 @@ export class DistributionGraph {
         ? -1
         : 0
     );
+    this.render();
+  }
 
+  renderTooltip(headerConfig) {
     const createHeader = (hdr, colorClassName) => {
       const container = document.createElement("div");
       container.style.display = "flex";
@@ -484,54 +477,28 @@ export class DistributionGraph {
       container.appendChild(text);
       return container;
     };
-    const renderValue = (value) => `${value.toFixed(1)}%`;
-    this.renderTooltip = configureTooltip({
-      rows: [
-        {
-          rowHeader: createHeader("Cash Bail", "cash-bar"),
-          dataKey: "cashBailRate",
-          render: renderValue
-        },
-        {
-          rowHeader: createHeader("Nominal", "nominal-bar"),
-          dataKey: "nominalRate",
-          render: renderValue
-        },
-        {
-          rowHeader: createHeader("Unsecured", "unsecured-bar"),
-          dataKey: "unsecuredRate",
-          render: renderValue
-        },
-        {
-          rowHeader: createHeader("Nonmonetary", "nonmonetary-bar"),
-          dataKey: "nonmonetaryRate",
-          render: renderValue
-        },
-        {
-          rowHeader: createHeader("ROR", "ror-bar"),
-          dataKey: "rorRate",
-          render: renderValue
-        }
-      ],
+
+    // configureTooltip returns a render function to which we'll pass the data
+    return configureTooltip({
+      rows: headerConfig.map((header) => ({
+        rowHeader: createHeader(header.title, header.className),
+        dataKey: header.className,
+        render: header.render
+      })),
       placement: "top",
       followCursor: true
     });
-
-    this.render();
   }
 
   render() {
     this.data.forEach((county) => {
-      const countyName = county["data"][1];
+      const countyName = county["data"][this.nameIdx];
       const distributions = county["data"][this.distributionIdx]["values"];
       const distributionRow = new DistributionRow(
         countyName,
-        distributions[0],
-        distributions[1],
-        distributions[2],
-        distributions[3],
-        distributions[4],
-        this.renderTooltip
+        distributions,
+        // closure since we always want the header config to be the same
+        this.renderTooltip(this.headerConfig)
       );
       this.container.appendChild(distributionRow.render());
     });
@@ -543,7 +510,6 @@ class Row {
     this.data = data;
     this.renderTooltip = (elements) =>
       renderTooltip(elements, [data], this.data.name);
-
     this.barWidth = ((data.x - minValue) * 100) / (maxValue - minValue);
   }
 
@@ -559,7 +525,7 @@ class Row {
     const bar = document.createElement("div");
     bar.classList.add("county-bar-chart-bar");
     if (this.data.highlighted) bar.classList.add("highlighted");
-    bar.style.width = this.barWidth + "%";
+    bar.style.width = `${this.barWidth}%`;
     barContainer.appendChild(bar);
 
     const rowElement = document.createElement("div");

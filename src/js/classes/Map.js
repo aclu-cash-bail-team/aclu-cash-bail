@@ -1,19 +1,19 @@
 import * as d3 from "d3";
 import { feature } from "topojson-client";
-import { COUNTY_MAP_DATA } from "../data.js";
+import { COUNTY_MAP_DATA } from "../raw-data.js";
 import { configureTooltip } from "./Tooltip";
-
-const DEFAULT_MAP_WIDTH = 600;
-const DEFAULT_MAP_HEIGHT = 400;
-
-const COUNTY_NAME_ATTRIBUTE = "data-county-name";
-const BUCKET_ATTRIBUTE = "data-bucket";
+import { toPercent } from "../helpers";
+import {
+  DEFAULT_MAP_WIDTH,
+  DEFAULT_MAP_HEIGHT,
+  COUNTY_NAME_ATTRIBUTE,
+  BUCKET_ATTRIBUTE
+} from "../constants";
 
 class ColorScaleLegend {
   constructor(
     id,
     colorDomain,
-    labels,
     color,
     averages,
     onMouseOver,
@@ -22,7 +22,7 @@ class ColorScaleLegend {
     offsetY = 35
   ) {
     this.colorDomain = colorDomain;
-    this.labels = labels;
+    this.labels = [0].concat(colorDomain);
     this.color = color;
     this.averages = averages;
     this.title = title;
@@ -112,7 +112,7 @@ class ColorScaleLegend {
         const [start, end] = this.color.invertExtent(color);
         return `${start}-${end}`;
       })
-      .text((_, i) => `${this.labels[i]}`);
+      .text((_, i) => toPercent(this.labels[i], 0, false));
     // Set up legend max label
     this.svg
       .select(`g[data-label="${this.labels[this.labels.length - 2]}"]`)
@@ -124,12 +124,11 @@ class ColorScaleLegend {
       .attr("y", this.labelOffsetY)
       .attr("class", legendTextClassName)
       .attr(BUCKET_ATTRIBUTE, this.labels[this.labels.length - 1])
-      .text(this.labels[this.labels.length - 1] + "%");
+      .text(toPercent(this.labels[this.labels.length - 1], 0));
     // Set up average label
     const maxValue = this.colorDomain[this.colorDomain.length - 1];
     this.averages.forEach((avg) => {
-      const avgOffsetX =
-        this.offsetX + (this.legendWidth * avg.value) / maxValue;
+      const avgOffsetX = this.offsetX + this.legendWidth * avg.value / maxValue;
       const legendLineClassName = "legend-avg-line";
       this.svg
         .append("line")
@@ -149,7 +148,7 @@ class ColorScaleLegend {
         .attr("x", avgOffsetX - 15)
         .attr("y", this.offsetY - 10)
         .attr("class", legendTextClassName)
-        .text(`${avg.value}%`);
+        .text(toPercent(avg.value));
       // Add title, if any
       this.svg
         .append("text")
@@ -251,14 +250,14 @@ export class BailRateMap extends Map {
         {
           rowHeader: tooltipHeader,
           dataKey: "x",
-          render: (value) => `${value.toFixed(1)}%`
+          render: (value) => toPercent(value)
         }
       ]
     });
     this.id = id;
     this.data = data;
 
-    const colorDomain = [10, 20, 30, 40, 50, 60];
+    const colorDomain = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6];
     this.color = d3
       .scaleThreshold()
       .domain(colorDomain)
@@ -282,7 +281,6 @@ export class BailRateMap extends Map {
     this.legend = new ColorScaleLegend(
       id,
       colorDomain,
-      [0, 10, 20, 30, 40, 50, 60],
       this.color,
       [
         {
@@ -366,12 +364,12 @@ class BailRaceMap extends Map {
         {
           rowHeader: "Cash Bail Rate, black",
           dataKey: "black",
-          render: (value) => `${value.toFixed(1)}%`
+          render: (value) => toPercent(value)
         },
         {
           rowHeader: "Cash Bail Rate, white",
           dataKey: "white",
-          render: (value) => `${value.toFixed(1)}%`
+          render: (value) => toPercent(value)
         }
       ]
     });
@@ -457,7 +455,7 @@ class BailRaceMap extends Map {
 
 export class RaceMapContainer {
   constructor(id, data, whiteAverage, blackAverage) {
-    const colorDomain = [20, 40, 60, 80, 100];
+    const colorDomain = [0.2, 0.4, 0.6, 0.8, 1];
     const color = d3
       .scaleThreshold()
       .domain(colorDomain)
@@ -491,7 +489,6 @@ export class RaceMapContainer {
     this.legend = new ColorScaleLegend(
       id,
       colorDomain,
-      [0, 20, 40, 60, 80, 100],
       color,
       [
         {
