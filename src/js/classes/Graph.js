@@ -348,17 +348,8 @@ export class ScatterPlot {
     // wrap axis labels in svgs to do local rotation
     const wrapper = document.createElementNS(SVG_NS, "svg");
     wrapper.setAttributeNS(null, "class", "label-wrapper");
-    if (this.sizing === REGULAR_WIDTH) {
-      wrapper.setAttributeNS(null, "x", isLower ? 0 : isYAxis ? 0 : "100%");
-      wrapper.setAttributeNS(
-        null,
-        "y",
-        isLower ? "100%" : isYAxis ? 0 : "100%"
-      );
-    } else {
-      wrapper.setAttributeNS(null, "x", isYAxis ? 0 : "50%");
-      wrapper.setAttributeNS(null, "y", isYAxis ? "50%" : "100%");
-    }
+    wrapper.setAttributeNS(null, "x", isYAxis ? 0 : "50%");
+    wrapper.setAttributeNS(null, "y", isYAxis ? "50%" : "100%");
 
     // get offset based on window size
     const dy = this.sizing === REGULAR_WIDTH ? 60 : 40;
