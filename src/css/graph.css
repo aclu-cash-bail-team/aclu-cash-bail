@@ -157,11 +157,6 @@ svg.label-wrapper {
   stroke-width: 0.5px;
 }
 
-.scatter-text.hovering,
-.scatter-text.searched {
-  text-shadow: 1px 0px;
-}
-
 .scatter-plot .scatter-line.outlier,
 .scatter-plot .scatter-point.outlier,
 .scatter-plot .scatter-text.outlier {
@@ -200,14 +195,14 @@ svg.label-wrapper {
   mix-blend-mode: hard-light;
 }
 
-.scatter-point.state-average {
+.scatter-point.state-average:not(.black):not(.white) {
   fill: rgb(255, 255, 255, 0.9);
   stroke: #fff;
   mix-blend-mode: hard-light;
 }
 
-.scatter-point.state-average.hovering.total,
-.scatter-point.state-average.searched.total {
+.scatter-point.state-average:not(.black):not(.white).hovering.total,
+.scatter-point.state-average:not(.black):not(.white).searched.total {
   fill: #fff;
   stroke: #fff;
   stroke-width: 2px;
