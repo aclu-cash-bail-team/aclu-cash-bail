@@ -269,7 +269,11 @@ const createCasesScatterPlot = () => {
       {
         rowHeader: "Total Cases",
         dataKey: "r",
-        render: (value) => toNumberString(value)
+        render: (value) =>
+          toNumberString(value, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+          })
       }
     ]
   };
@@ -315,7 +319,7 @@ const createCasesScatterPlot = () => {
   PLOT_DATA["State Average"] = {
     showName: true,
     x: STATE_DATA["cash_bail_pct"],
-    r: STATE_DATA["cash_bail_cases"],
+    r: STATE_DATA["cash_bail_cases"] / COUNTY_DATA.length, // dividing by total # of counties to get avg_cash_bail_cases
     y: STATE_DATA["avg_bail_amount"]
   };
   const container = document.getElementById("cases-scatter-plot");

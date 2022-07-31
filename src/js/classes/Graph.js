@@ -73,7 +73,7 @@ class CountyPoint {
     text.setAttributeNS(null, "class", className);
     text.setAttributeNS(null, "x", this.xs[0]);
     text.setAttributeNS(null, "y", this.ys[0]);
-    text.setAttributeNS(null, "dx", 11);
+    text.setAttributeNS(null, "dx", 16);
     text.setAttributeNS(null, "dy", 3);
     text.appendChild(document.createTextNode(this.county));
     this.plot.appendChild(text);
@@ -87,9 +87,9 @@ class CountyPoint {
 
   renderPoints() {
     this.data.forEach((data, i) => {
-      const className = `${data.name} scatter-point${
-        this.outlier ? " outlier" : ""
-      }`;
+      const className = `${data.name} ${this.county
+        .replace(/ +/g, "-")
+        .toLowerCase()} scatter-point${this.outlier ? " outlier" : ""}`;
       const point = document.createElementNS(SVG_NS, "circle");
       point.setAttributeNS(null, "class", className);
       point.setAttributeNS(null, "cx", this.xs[i]);

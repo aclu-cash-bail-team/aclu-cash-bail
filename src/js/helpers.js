@@ -15,11 +15,12 @@ export const toMoney = (value, precision = 1, showUnit = true) => {
 export const toPercent = (value, precision = 1, showUnit = true) => {
   return `${(value * 100).toFixed(precision)}${showUnit ? "%" : ""}`;
 };
-export const toNumberString = (value) => value.toLocaleString();
+export const toNumberString = (value, options = {}) =>
+  value.toLocaleString("en", options);
 
 export const getSizing = (windowWidth) => {
   if (windowWidth <= SMALL_PHONE_WIDTH) return SMALL_PHONE;
   if (windowWidth <= LARGE_PHONE_WIDTH) return LARGE_PHONE;
   if (windowWidth <= SMALL_BROWSER_WIDTH) return SMALL_BROWSER;
   return REGULAR_WIDTH;
-}
+};
