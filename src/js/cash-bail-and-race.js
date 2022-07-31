@@ -20,7 +20,16 @@ const createBailRaceRateTable = () => {
     {
       class: "bail-black-cell number-cell",
       header: {
-        text: "Black",
+        text: "Black Cases",
+        unit: "number"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-black-cell number-cell",
+      header: {
+        text: "Black Rate",
         unit: "percent"
       },
       sortable: true,
@@ -29,14 +38,23 @@ const createBailRaceRateTable = () => {
     {
       class: "bail-white-cell number-cell",
       header: {
-        text: "White",
+        text: "White Cases",
+        unit: "number"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-white-cell number-cell",
+      header: {
+        text: "White Rate",
         unit: "percent"
       },
       sortable: true,
       searchable: false
     },
     {
-      class: "viz-cell",
+      class: "viz-cell race-disparity-viz-cell",
       header: {
         start: 0,
         end: 1,
@@ -69,7 +87,9 @@ const createBailRaceRateTable = () => {
   const initSort = { col: 4, dir: -1 }; // initially sort by difference
   const stateData = [
     "Pennsylvania",
+    STATE_DATA["cash_bail_cases_black"],
     STATE_DATA["cash_bail_pct_black"],
+    STATE_DATA["cash_bail_cases_white"],
     STATE_DATA["cash_bail_pct_white"],
     {
       type: "line",
@@ -107,7 +127,16 @@ const createBailRaceAmountTable = () => {
     {
       class: "bail-black-cell number-cell",
       header: {
-        text: "Black",
+        text: "Black Cases",
+        unit: "number"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-black-cell number-cell",
+      header: {
+        text: "Black Amt.",
         unit: "dollars"
       },
       sortable: true,
@@ -116,14 +145,23 @@ const createBailRaceAmountTable = () => {
     {
       class: "bail-white-cell number-cell",
       header: {
-        text: "White",
+        text: "White Cases",
+        unit: "number"
+      },
+      sortable: true,
+      searchable: false
+    },
+    {
+      class: "bail-white-cell number-cell",
+      header: {
+        text: "White Amt.",
         unit: "dollars"
       },
       sortable: true,
       searchable: false
     },
     {
-      class: "viz-cell",
+      class: "viz-cell race-disparity-viz-cell",
       header: {
         start: 10000,
         end: 80000,
@@ -156,7 +194,9 @@ const createBailRaceAmountTable = () => {
   const initSort = { col: 4, dir: -1 }; // initially sort by difference
   const stateData = [
     "Pennsylvania",
+    STATE_DATA["cash_bail_cases_black"],
     STATE_DATA["bail_amount_black"],
+    STATE_DATA["cash_bail_cases_white"],
     STATE_DATA["bail_amount_white"],
     {
       type: "line",

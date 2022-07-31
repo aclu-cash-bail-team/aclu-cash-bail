@@ -33,11 +33,12 @@ export const STATE_DATA = {
   "cash_bail_pct_black": 0.559,
   "cash_bail_cases_black": 63922,
   "cash_bail_pct_white": 0.365,
-  "cash_bail_cases_white": 0, // TODO: need this datapoint
+  "cash_bail_cases_white": 90700,
   "bail_amount_black": 45452,
   "bail_amount_white": 31965,
   "is_outlier": false
 };
+
 export const COUNTY_DATA = [
   {
     "name": "Adams",
@@ -54,6 +55,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.442982,
     "cash_bail_cases_black": 101,
     "cash_bail_pct_white": 0.301849,
+    "cash_bail_cases_white": 604,
     "bail_amount_black": 39302.9703,
     "bail_amount_white": 29094.86755,
     "is_outlier": false
@@ -73,6 +75,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.525011,
     "cash_bail_cases_black": 11031,
     "cash_bail_pct_white": 0.349545,
+    "cash_bail_cases_white": 8955,
     "bail_amount_black": 18845.16218,
     "bail_amount_white": 13921.65751,
     "is_outlier": false
@@ -92,6 +95,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.622807,
     "cash_bail_cases_black": 71,
     "cash_bail_pct_white": 0.401119,
+    "cash_bail_cases_white": 645,
     "bail_amount_black": 19380.28169,
     "bail_amount_white": 14656.74419,
     "is_outlier": false
@@ -111,6 +115,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.653036,
     "cash_bail_cases_black": 1054,
     "cash_bail_pct_white": 0.460601,
+    "cash_bail_cases_white": 1777,
     "bail_amount_black": 32043.50285,
     "bail_amount_white": 15969.64266,
     "is_outlier": false
@@ -130,6 +135,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.55814,
     "cash_bail_cases_black": 48,
     "cash_bail_pct_white": 0.360063,
+    "cash_bail_cases_white": 458,
     "bail_amount_black": 82145.83333,
     "bail_amount_white": 51605.8952,
     "is_outlier": true
@@ -149,6 +155,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.585288,
     "cash_bail_cases_black": 1098,
     "cash_bail_pct_white": 0.501453,
+    "cash_bail_cases_white": 4485,
     "bail_amount_black": 41514.57377,
     "bail_amount_white": 35373.15496,
     "is_outlier": false
@@ -168,6 +175,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.538084,
     "cash_bail_cases_black": 219,
     "cash_bail_pct_white": 0.290748,
+    "cash_bail_cases_white": 1081,
     "bail_amount_black": 50874.42922,
     "bail_amount_white": 30764.80111,
     "is_outlier": false
@@ -187,6 +195,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.615385,
     "cash_bail_cases_black": 32,
     "cash_bail_pct_white": 0.455742,
+    "cash_bail_cases_white": 762,
     "bail_amount_black": 68109.375,
     "bail_amount_white": 34295.28084,
     "is_outlier": true
@@ -206,6 +215,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.455865,
     "cash_bail_cases_black": 1193,
     "cash_bail_pct_white": 0.326778,
+    "cash_bail_cases_white": 3556,
     "bail_amount_black": 87411.6513,
     "bail_amount_white": 73918.96991,
     "is_outlier": false
@@ -225,6 +235,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.593684,
     "cash_bail_cases_black": 282,
     "cash_bail_pct_white": 0.330989,
+    "cash_bail_cases_white": 1506,
     "bail_amount_black": 43726.24823,
     "bail_amount_white": 21800.64011,
     "is_outlier": false
@@ -244,6 +255,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.663657,
     "cash_bail_cases_black": 588,
     "cash_bail_pct_white": 0.398235,
+    "cash_bail_cases_white": 1354,
     "bail_amount_black": 58433.33333,
     "bail_amount_white": 32649.18759,
     "is_outlier": false
@@ -263,6 +275,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 1,
     "cash_bail_cases_black": 2,
     "cash_bail_pct_white": 0.262136,
+    "cash_bail_cases_white": 27,
     "bail_amount_black": 42175,
     "bail_amount_white": 27851.85185,
     "is_outlier": true
@@ -282,6 +295,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.475,
     "cash_bail_cases_black": 95,
     "cash_bail_pct_white": 0.319692,
+    "cash_bail_cases_white": 789,
     "bail_amount_black": 43984.21053,
     "bail_amount_white": 31083.78961,
     "is_outlier": false
@@ -301,6 +315,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.489796,
     "cash_bail_cases_black": 240,
     "cash_bail_pct_white": 0.227858,
+    "cash_bail_cases_white": 566,
     "bail_amount_black": 56770.83333,
     "bail_amount_white": 46869.4364,
     "is_outlier": false
@@ -320,6 +335,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.490007,
     "cash_bail_cases_black": 1373,
     "cash_bail_pct_white": 0.343277,
+    "cash_bail_cases_white": 2359,
     "bail_amount_black": 37417.2622,
     "bail_amount_white": 31420.82705,
     "is_outlier": false
@@ -339,6 +355,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.396825,
     "cash_bail_cases_black": 25,
     "cash_bail_pct_white": 0.403721,
+    "cash_bail_cases_white": 434,
     "bail_amount_black": 14104,
     "bail_amount_white": 24033.87097,
     "is_outlier": true
@@ -358,6 +375,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.657143,
     "cash_bail_cases_black": 46,
     "cash_bail_pct_white": 0.362388,
+    "cash_bail_cases_white": 607,
     "bail_amount_black": 59500,
     "bail_amount_white": 27240.85667,
     "is_outlier": true
@@ -377,6 +395,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.398058,
     "cash_bail_cases_black": 41,
     "cash_bail_pct_white": 0.330594,
+    "cash_bail_cases_white": 362,
     "bail_amount_black": 30579.29268,
     "bail_amount_white": 28093.25967,
     "is_outlier": true
@@ -396,6 +415,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.428571,
     "cash_bail_cases_black": 72,
     "cash_bail_pct_white": 0.411899,
+    "cash_bail_cases_white": 540,
     "bail_amount_black": 60937.5,
     "bail_amount_white": 34290.85185,
     "is_outlier": false
@@ -415,6 +435,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.551282,
     "cash_bail_cases_black": 86,
     "cash_bail_pct_white": 0.341324,
+    "cash_bail_cases_white": 598,
     "bail_amount_black": 29781.97674,
     "bail_amount_white": 26269.23077,
     "is_outlier": false
@@ -434,6 +455,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.551493,
     "cash_bail_cases_black": 739,
     "cash_bail_pct_white": 0.375695,
+    "cash_bail_cases_white": 1960,
     "bail_amount_black": 35423.58728,
     "bail_amount_white": 25383.11684,
     "is_outlier": false
@@ -453,6 +475,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.536661,
     "cash_bail_cases_black": 2774,
     "cash_bail_pct_white": 0.378675,
+    "cash_bail_cases_white": 2486,
     "bail_amount_black": 45889.83886,
     "bail_amount_white": 40000.19469,
     "is_outlier": false
@@ -472,6 +495,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.641501,
     "cash_bail_cases_black": 5472,
     "cash_bail_pct_white": 0.48597,
+    "cash_bail_cases_white": 3637,
     "bail_amount_black": 52748.20925,
     "bail_amount_white": 35606.1592,
     "is_outlier": false
@@ -491,6 +515,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.294118,
     "cash_bail_cases_black": 5,
     "cash_bail_pct_white": 0.286667,
+    "cash_bail_cases_white": 215,
     "bail_amount_black": 17460,
     "bail_amount_white": 29516.27907,
     "is_outlier": true
@@ -510,6 +535,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.678438,
     "cash_bail_cases_black": 1268,
     "cash_bail_pct_white": 0.394262,
+    "cash_bail_cases_white": 1814,
     "bail_amount_black": 41009.0694,
     "bail_amount_white": 26792.57056,
     "is_outlier": false
@@ -529,6 +555,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.541899,
     "cash_bail_cases_black": 485,
     "cash_bail_pct_white": 0.43027,
+    "cash_bail_cases_white": 1737,
     "bail_amount_black": 29696.28866,
     "bail_amount_white": 20176.5688,
     "is_outlier": false
@@ -548,6 +575,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.888889,
     "cash_bail_cases_black": 16,
     "cash_bail_pct_white": 0.3125,
+    "cash_bail_cases_white": 30,
     "bail_amount_black": 27375,
     "bail_amount_white": 27086.66667,
     "is_outlier": true
@@ -567,6 +595,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.494532,
     "cash_bail_cases_black": 407,
     "cash_bail_pct_white": 0.350513,
+    "cash_bail_cases_white": 1231,
     "bail_amount_black": 65076.16708,
     "bail_amount_white": 64309.91064,
     "is_outlier": false
@@ -586,6 +615,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.285714,
     "cash_bail_cases_black": 10,
     "cash_bail_pct_white": 0.290909,
+    "cash_bail_cases_white": 96,
     "bail_amount_black": 38000,
     "bail_amount_white": 69270.83333,
     "is_outlier": true
@@ -605,6 +635,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.583333,
     "cash_bail_cases_black": 21,
     "cash_bail_pct_white": 0.39749,
+    "cash_bail_cases_white": 285,
     "bail_amount_black": 21023.80952,
     "bail_amount_white": 18309.63509,
     "is_outlier": true
@@ -624,6 +655,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.648276,
     "cash_bail_cases_black": 94,
     "cash_bail_pct_white": 0.369732,
+    "cash_bail_cases_white": 386,
     "bail_amount_black": 24255.31915,
     "bail_amount_white": 21800.12953,
     "is_outlier": false
@@ -643,6 +675,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.493548,
     "cash_bail_cases_black": 153,
     "cash_bail_pct_white": 0.393148,
+    "cash_bail_cases_white": 723,
     "bail_amount_black": 28699.34641,
     "bail_amount_white": 15395.98894,
     "is_outlier": false
@@ -662,6 +695,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.69697,
     "cash_bail_cases_black": 23,
     "cash_bail_pct_white": 0.383937,
+    "cash_bail_cases_white": 392,
     "bail_amount_black": 79565.21739,
     "bail_amount_white": 51413.26531,
     "is_outlier": true
@@ -681,6 +715,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.4375,
     "cash_bail_cases_black": 7,
     "cash_bail_pct_white": 0.365915,
+    "cash_bail_cases_white": 146,
     "bail_amount_black": 39071.42857,
     "bail_amount_white": 26784.24658,
     "is_outlier": true
@@ -700,6 +735,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.666667,
     "cash_bail_cases_black": 788,
     "cash_bail_pct_white": 0.490579,
+    "cash_bail_cases_white": 2187,
     "bail_amount_black": 43937.30965,
     "bail_amount_white": 29251.71468,
     "is_outlier": false
@@ -719,6 +755,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.552574,
     "cash_bail_cases_black": 1256,
     "cash_bail_pct_white": 0.43393,
+    "cash_bail_cases_white": 4315,
     "bail_amount_black": 66013.01752,
     "bail_amount_white": 55177.34693,
     "is_outlier": false
@@ -738,6 +775,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.68784,
     "cash_bail_cases_black": 379,
     "cash_bail_pct_white": 0.451511,
+    "cash_bail_cases_white": 717,
     "bail_amount_black": 30965.69921,
     "bail_amount_white": 16481.8689,
     "is_outlier": false
@@ -757,6 +795,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.511429,
     "cash_bail_cases_black": 179,
     "cash_bail_pct_white": 0.37101,
+    "cash_bail_cases_white": 1267,
     "bail_amount_black": 67514.52514,
     "bail_amount_white": 33646.29203,
     "is_outlier": false
@@ -776,6 +815,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.625051,
     "cash_bail_cases_black": 1537,
     "cash_bail_pct_white": 0.545657,
+    "cash_bail_cases_white": 3914,
     "bail_amount_black": 27318.21991,
     "bail_amount_white": 22187.57741,
     "is_outlier": false
@@ -795,6 +835,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.577887,
     "cash_bail_cases_black": 1061,
     "cash_bail_pct_white": 0.368782,
+    "cash_bail_cases_white": 2632,
     "bail_amount_black": 52198.33662,
     "bail_amount_white": 36195.32523,
     "is_outlier": false
@@ -814,6 +855,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.559162,
     "cash_bail_cases_black": 534,
     "cash_bail_pct_white": 0.277141,
+    "cash_bail_cases_white": 822,
     "bail_amount_black": 85748.12734,
     "bail_amount_white": 43319.95134,
     "is_outlier": false
@@ -833,6 +875,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.605634,
     "cash_bail_cases_black": 43,
     "cash_bail_pct_white": 0.412916,
+    "cash_bail_cases_white": 422,
     "bail_amount_black": 35930.23256,
     "bail_amount_white": 24742.891,
     "is_outlier": true
@@ -852,6 +895,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.456349,
     "cash_bail_cases_black": 460,
     "cash_bail_pct_white": 0.326274,
+    "cash_bail_cases_white": 1063,
     "bail_amount_black": 33481.52174,
     "bail_amount_white": 25741.76858,
     "is_outlier": false
@@ -871,6 +915,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.702381,
     "cash_bail_cases_black": 59,
     "cash_bail_pct_white": 0.469756,
+    "cash_bail_cases_white": 598,
     "bail_amount_black": 114474.5763,
     "bail_amount_white": 43165.90301,
     "is_outlier": false
@@ -890,6 +935,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.361759,
     "cash_bail_cases_black": 543,
     "cash_bail_pct_white": 0.331622,
+    "cash_bail_cases_white": 1292,
     "bail_amount_black": 38310.6814,
     "bail_amount_white": 27099.69118,
     "is_outlier": false
@@ -909,6 +955,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.487213,
     "cash_bail_cases_black": 3010,
     "cash_bail_pct_white": 0.319375,
+    "cash_bail_cases_white": 3394,
     "bail_amount_black": 36939.01522,
     "bail_amount_white": 30934.82705,
     "is_outlier": false
@@ -928,6 +975,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.478261,
     "cash_bail_cases_black": 11,
     "cash_bail_pct_white": 0.35,
+    "cash_bail_cases_white": 77,
     "bail_amount_black": 39545.45455,
     "bail_amount_white": 39188.31169,
     "is_outlier": true
@@ -947,6 +995,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.600712,
     "cash_bail_cases_black": 844,
     "cash_bail_pct_white": 0.486885,
+    "cash_bail_cases_white": 2413,
     "bail_amount_black": 42868.66114,
     "bail_amount_white": 26636.32491,
     "is_outlier": false
@@ -966,6 +1015,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.590674,
     "cash_bail_cases_black": 114,
     "cash_bail_pct_white": 0.353759,
+    "cash_bail_cases_white": 687,
     "bail_amount_black": 72181.57895,
     "bail_amount_white": 42108.45124,
     "is_outlier": false
@@ -985,6 +1035,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.442857,
     "cash_bail_cases_black": 31,
     "cash_bail_pct_white": 0.286848,
+    "cash_bail_cases_white": 253,
     "bail_amount_black": 49388.06452,
     "bail_amount_white": 24192.49012,
     "is_outlier": true
@@ -1004,6 +1055,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.558269,
     "cash_bail_cases_black": 20503,
     "cash_bail_pct_white": 0.431232,
+    "cash_bail_cases_white": 11184,
     "bail_amount_black": 65123.11369,
     "bail_amount_white": 56370.81098,
     "is_outlier": false
@@ -1023,6 +1075,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.385965,
     "cash_bail_cases_black": 44,
     "cash_bail_pct_white": 0.330855,
+    "cash_bail_cases_white": 267,
     "bail_amount_black": 53193.18182,
     "bail_amount_white": 32148.13109,
     "is_outlier": true
@@ -1042,6 +1095,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.8,
     "cash_bail_cases_black": 4,
     "cash_bail_pct_white": 0.2249,
+    "cash_bail_cases_white": 112,
     "bail_amount_black": 33562.5,
     "bail_amount_white": 23535.71429,
     "is_outlier": true
@@ -1061,6 +1115,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.487535,
     "cash_bail_cases_black": 176,
     "cash_bail_pct_white": 0.394481,
+    "cash_bail_cases_white": 1701,
     "bail_amount_black": 37605.11364,
     "bail_amount_white": 24236.65491,
     "is_outlier": false
@@ -1080,6 +1135,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.521739,
     "cash_bail_cases_black": 36,
     "cash_bail_pct_white": 0.350348,
+    "cash_bail_cases_white": 302,
     "bail_amount_black": 33048.61111,
     "bail_amount_white": 31631.78808,
     "is_outlier": true
@@ -1099,6 +1155,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.705882,
     "cash_bail_cases_black": 60,
     "cash_bail_pct_white": 0.231132,
+    "cash_bail_cases_white": 392,
     "bail_amount_black": 84933.33333,
     "bail_amount_white": 38187.5,
     "is_outlier": false
@@ -1118,6 +1175,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.625,
     "cash_bail_cases_black": 5,
     "cash_bail_pct_white": 0.326087,
+    "cash_bail_cases_white": 30,
     "bail_amount_black": 8000,
     "bail_amount_white": 20516.66667,
     "is_outlier": true
@@ -1137,6 +1195,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.65,
     "cash_bail_cases_black": 13,
     "cash_bail_pct_white": 0.388652,
+    "cash_bail_cases_white": 274,
     "bail_amount_black": 43346.15385,
     "bail_amount_white": 29491.60584,
     "is_outlier": true
@@ -1156,6 +1215,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.535714,
     "cash_bail_cases_black": 15,
     "cash_bail_pct_white": 0.304455,
+    "cash_bail_cases_white": 246,
     "bail_amount_black": 49300,
     "bail_amount_white": 33552.84553,
     "is_outlier": true
@@ -1175,6 +1235,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.381579,
     "cash_bail_cases_black": 29,
     "cash_bail_pct_white": 0.235094,
+    "cash_bail_cases_white": 138,
     "bail_amount_black": 45637.93103,
     "bail_amount_white": 28018.11594,
     "is_outlier": true
@@ -1194,6 +1255,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.635659,
     "cash_bail_cases_black": 82,
     "cash_bail_pct_white": 0.359568,
+    "cash_bail_cases_white": 466,
     "bail_amount_black": 53475.60976,
     "bail_amount_white": 39360.51502,
     "is_outlier": false
@@ -1213,6 +1275,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.684211,
     "cash_bail_cases_black": 13,
     "cash_bail_pct_white": 0.398983,
+    "cash_bail_cases_white": 314,
     "bail_amount_black": 49769.23077,
     "bail_amount_white": 30089.17198,
     "is_outlier": true
@@ -1232,6 +1295,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.567729,
     "cash_bail_cases_black": 570,
     "cash_bail_pct_white": 0.365188,
+    "cash_bail_cases_white": 1819,
     "bail_amount_black": 46258.07018,
     "bail_amount_white": 23939.11435,
     "is_outlier": false
@@ -1251,6 +1315,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.6,
     "cash_bail_cases_black": 21,
     "cash_bail_pct_white": 0.36099,
+    "cash_bail_cases_white": 248,
     "bail_amount_black": 28619.04762,
     "bail_amount_white": 36399.59677,
     "is_outlier": true
@@ -1270,6 +1335,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.495816,
     "cash_bail_cases_black": 948,
     "cash_bail_pct_white": 0.287781,
+    "cash_bail_cases_white": 2725,
     "bail_amount_black": 38192.51213,
     "bail_amount_white": 18989.29884,
     "is_outlier": false
@@ -1289,6 +1355,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.434783,
     "cash_bail_cases_black": 10,
     "cash_bail_pct_white": 0.353579,
+    "cash_bail_cases_white": 326,
     "bail_amount_black": 39000,
     "bail_amount_white": 28822.77607,
     "is_outlier": true
@@ -1308,6 +1375,7 @@ export const COUNTY_DATA = [
     "cash_bail_pct_black": 0.568894,
     "cash_bail_cases_black": 1924,
     "cash_bail_pct_white": 0.427047,
+    "cash_bail_cases_white": 4323,
     "bail_amount_black": 37078.00813,
     "bail_amount_white": 23258.83229,
     "is_outlier": false

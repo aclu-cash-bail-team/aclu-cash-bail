@@ -1,7 +1,7 @@
 import { Table } from "./classes/Table.js";
 import { DistributionGraph } from "./classes/Graph.js";
 import { MDJ_BAIL_TYPE_DATA, COUNTY_BAIL_TYPE_DATA } from "./data.js";
-import { toMoney, toPercent, toNumberString } from "./helpers";
+import { toPercent } from "./helpers";
 import { COUNTY_DATA } from "./raw-data.js";
 
 /* TABLE CREATION FUNCTIONS */

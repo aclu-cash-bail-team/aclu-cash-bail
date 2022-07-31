@@ -8,17 +8,6 @@
   outline: none;
 }
 
-.graph h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-family: "GT America Bold";
-  font-size: 13px;
-  font-weight: normal;
-  line-height: 28px;
-  text-align: center;
-  color: #fff;
-}
-
 .graph .outliers-btn {
   position: absolute;
   right: 0;
@@ -121,7 +110,7 @@ svg.scatter-plot {
 
 .bar-graph-subhead {
   position: relative;
-  margin: 30px 0;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -131,6 +120,13 @@ svg.scatter-plot {
   font-weight: normal;
 }
 
+.bar-graph-key-box-container {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: 1px solid #525252;
+}
+
 .bar-graph-key {
   align-items: center;
   display: inline-flex;
@@ -138,8 +134,8 @@ svg.scatter-plot {
 
 .bar-graph-key span {
   font-size: 12px;
-  line-height: 16px;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 13px;
+  color: #fff;
 }
 
 .bar-graph-key span:not(:last-of-type) {
@@ -151,6 +147,7 @@ svg.scatter-plot {
   font-size: 12px;
   line-height: 13px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 svg.label-wrapper {
@@ -166,11 +163,6 @@ svg.label-wrapper {
 .axis-line {
   stroke: rgba(255, 255, 255, 0.1);
   stroke-width: 0.5px;
-}
-
-.scatter-text.hovering,
-.scatter-text.searched {
-  text-shadow: 1px 0px;
 }
 
 .scatter-plot .scatter-line.outlier,
@@ -209,6 +201,19 @@ svg.label-wrapper {
   fill: #55eaac66;
   stroke: #55eaac;
   mix-blend-mode: hard-light;
+}
+
+.scatter-point.state-average:not(.black):not(.white) {
+  fill: rgb(255, 255, 255, 0.9);
+  stroke: #fff;
+  mix-blend-mode: hard-light;
+}
+
+.scatter-point.state-average:not(.black):not(.white).hovering.total,
+.scatter-point.state-average:not(.black):not(.white).searched.total {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 2px;
 }
 
 .scatter-point.hovering.total,
@@ -253,7 +258,7 @@ svg.label-wrapper {
 }
 
 /* these are custom breakpoints to make the svg work well on phones */
-@media only screen and (max-width: 670px) {
+@media only screen and (max-width: 680px) {
   .scatter-plot {
     width: 300px;
     height: 400px;
