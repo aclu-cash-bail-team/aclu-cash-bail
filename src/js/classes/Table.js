@@ -122,7 +122,7 @@ class BarGraphCell extends Cell {
     if (this.showDiff) {
       const label = document.createElement("div");
       const diff = this.content - this.average;
-      label.textContent = `${diff.toFixed(1)}`
+      label.textContent = `${diff.toFixed(1)}`;
       if (diff > 0) {
         label.textContent = `+${label.textContent}`;
       }
@@ -627,7 +627,7 @@ export class Table {
       const isHiddenOutlier = row.outlier && !this.showOutliers;
       const isRowVisible = isRowSearched || (
         !isTruncated && !isHiddenOutlier && !this.isSearching()
-      );
+        );
       if (row.collapseData !== undefined && row.collapseData.length > 0) {
         const collapseRows = row.collapseData.map((collapseRow) => {
           const isSubRowSearched = this.searchTerms.some(
@@ -638,7 +638,7 @@ export class Table {
           const isSubRowHiddenOutlier = collapseRow.outlier && !this.showOutliers;
           const isSubRowVisible = isSubRowSearched || (
             !row.isCollapsed && !isSubRowHiddenOutlier && !this.isSearching()
-          );
+            );
           return new BodyRow(
             this.getCells(collapseRow.data, collapseRow.outlier),
             collapseRow.outlier,
@@ -749,6 +749,16 @@ export class Table {
           });
         }
       });
+
+      // hide "view all" button when it wouldn't change table
+      const viewAllButton =
+        this.container.getElementsByClassName("view-all-btn")[0];
+      const numVisibleRows = this.rows.filter((row) => !row.isHidden).length;
+      if (numVisibleRows < NUM_TRUNCATED_ROWS) {
+        viewAllButton.classList.add("hidden");
+      } else {
+        viewAllButton.classList.remove("hidden");
+      }
     }
   }
 }
