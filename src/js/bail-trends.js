@@ -269,7 +269,11 @@ const createCasesScatterPlot = () => {
       {
         rowHeader: "Total Cases",
         dataKey: "r",
-        render: (value) => toNumberString(value)
+        render: (value) =>
+          toNumberString(value, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+          })
       }
     ]
   };
@@ -300,19 +304,22 @@ const createCasesScatterPlot = () => {
     mobile: mobileScale
   };
 
-  const PLOT_DATA = COUNTY_DATA.reduce((acc, countyData) => ({
-    ...acc,
-    [countyData["name"]]: {
-      showName: false,
-      x: countyData["cash_bail_pct"],
-      r: countyData["cash_bail_cases"],
-      y: countyData["avg_bail_amount"]
-    }
-  }), {});
+  const PLOT_DATA = COUNTY_DATA.reduce(
+    (acc, countyData) => ({
+      ...acc,
+      [countyData["name"]]: {
+        showName: false,
+        x: countyData["cash_bail_pct"],
+        r: countyData["cash_bail_cases"],
+        y: countyData["avg_bail_amount"]
+      }
+    }),
+    {}
+  );
   PLOT_DATA["State Average"] = {
     showName: true,
     x: STATE_DATA["cash_bail_pct"],
-    r: STATE_DATA["cash_bail_cases"],
+    r: STATE_DATA["cash_bail_cases"] / COUNTY_DATA.length, // dividing by total # of counties to get avg_cash_bail_cases
     y: STATE_DATA["avg_bail_amount"]
   };
   const container = document.getElementById("cases-scatter-plot");
@@ -415,7 +422,7 @@ const headerConfig = [
     title: "Nominal",
     className: "nominal-bar",
     render: (value) => toPercent(value)
-  },
+  }
 ];
 new DistributionGraph(
   document.getElementById("dist-graph-container"),

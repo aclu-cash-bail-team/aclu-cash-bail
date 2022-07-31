@@ -73,7 +73,7 @@ class CountyPoint {
     text.setAttributeNS(null, "class", className);
     text.setAttributeNS(null, "x", this.xs[0]);
     text.setAttributeNS(null, "y", this.ys[0]);
-    text.setAttributeNS(null, "dx", 11);
+    text.setAttributeNS(null, "dx", 16);
     text.setAttributeNS(null, "dy", 3);
     text.appendChild(document.createTextNode(this.county));
     this.plot.appendChild(text);
@@ -87,9 +87,9 @@ class CountyPoint {
 
   renderPoints() {
     this.data.forEach((data, i) => {
-      const className = `${data.name} scatter-point${
-        this.outlier ? " outlier" : ""
-      }`;
+      const className = `${data.name} ${this.county
+        .replace(/ +/g, "-")
+        .toLowerCase()} scatter-point${this.outlier ? " outlier" : ""}`;
       const point = document.createElementNS(SVG_NS, "circle");
       point.setAttributeNS(null, "class", className);
       point.setAttributeNS(null, "cx", this.xs[i]);
@@ -244,13 +244,14 @@ export class ScatterPlot {
     this.sizing = getSizing(window.innerWidth);
 
     // set viewbox based on window size (customized for specific phones)
-    const width = this.sizing === SMALL_PHONE
-      ? 180
-      : this.sizing === LARGE_PHONE
-      ? 280
-      : this.sizing === SMALL_BROWSER
-      ? 300
-      : 600;
+    const width =
+      this.sizing === SMALL_PHONE
+        ? 180
+        : this.sizing === LARGE_PHONE
+        ? 280
+        : this.sizing === SMALL_BROWSER
+        ? 300
+        : 600;
     const height = this.sizing === REGULAR_WIDTH ? 500 : 400;
     this.plot.setAttributeNS(null, "viewBox", `0 0 ${width} ${height}`);
     if (prevSizing !== this.sizing) {
@@ -266,7 +267,9 @@ export class ScatterPlot {
           circles[i].setAttributeNS(
             null,
             "r",
-            this.sizing === REGULAR_WIDTH ? point.rsDesktop[i] : point.rsMobile[i]
+            this.sizing === REGULAR_WIDTH
+              ? point.rsDesktop[i]
+              : point.rsMobile[i]
           );
         });
       });
@@ -401,9 +404,13 @@ class DistributionRow {
     return this.renderTooltip(
       elements,
       [
-        this.distributions.reduce((acc, dist) => ({
-          ...acc, [dist["className"]]: dist["value"]
-        }), {})
+        this.distributions.reduce(
+          (acc, dist) => ({
+            ...acc,
+            [dist["className"]]: dist["value"]
+          }),
+          {}
+        )
       ],
       this.county
     );
@@ -469,7 +476,7 @@ export class DistributionGraph {
       container.appendChild(colorBox);
       container.appendChild(text);
       return container;
-    }
+    };
 
     // configureTooltip returns a render function to which we'll pass the data
     return configureTooltip({
@@ -501,9 +508,8 @@ export class DistributionGraph {
 class Row {
   constructor(data, minValue, maxValue, renderTooltip) {
     this.data = data;
-    this.renderTooltip = (elements) => renderTooltip(
-      elements, [data], this.data.name
-    );
+    this.renderTooltip = (elements) =>
+      renderTooltip(elements, [data], this.data.name);
     this.barWidth = ((data.x - minValue) * 100) / (maxValue - minValue);
   }
 
