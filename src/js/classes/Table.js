@@ -122,7 +122,7 @@ class BarGraphCell extends Cell {
     if (this.showDiff) {
       const label = document.createElement("div");
       const diff = this.content - this.average;
-      label.textContent = `${diff.toFixed(1)}`
+      label.textContent = `${diff.toFixed(1)}`;
       if (diff > 0) {
         label.textContent = `+${label.textContent}`;
       }
@@ -749,6 +749,16 @@ export class Table {
           });
         }
       });
+
+      // hide "view all" button when it wouldn't change table
+      const viewAllButton =
+        this.container.getElementsByClassName("view-all-btn")[0];
+      const numVisibleRows = this.rows.filter((row) => !row.isHidden).length;
+      if (numVisibleRows < NUM_TRUNCATED_ROWS) {
+        viewAllButton.classList.add("hidden");
+      } else {
+        viewAllButton.classList.remove("hidden");
+      }
     }
   }
 }
