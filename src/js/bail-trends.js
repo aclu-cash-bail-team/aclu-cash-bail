@@ -305,9 +305,10 @@ const createCasesScatterPlot = () => {
 
 const createAvgBailAmountBarChart = () => {
   const nonPostingRateToText = (num) => `${num}%`;
-  const bailAmountToText = (num) => (num === 0 ? "0" : `${num}K`);
+  const bailAmountToText = (num) => (num === 0 ? "0" : `$${num}K`);
 
   const xAxis = {
+    name: "AVERAGE BAIL AMOUNT",
     min: 10,
     max: 80,
     numTicks: 7,

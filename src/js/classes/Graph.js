@@ -634,6 +634,9 @@ export class CountyBarChart {
     sortButtonWrapper.className = "bar-chart-sort-button";
     const sortButton = document.createElement("button");
     sortButton.innerHTML = "SORT";
+    const label = document.createElement("h4");
+    label.innerHTML = xAxis.name;
+    label.className = "axis-label";
 
     let sortIndex = 0;
     const sortFunctions = [
@@ -663,6 +666,7 @@ export class CountyBarChart {
       tickWrapper.appendChild(tickSpan);
       axis.appendChild(tickWrapper);
     }
+    this.container.appendChild(label);
     this.container.appendChild(axis);
   }
 }
