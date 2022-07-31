@@ -1,15 +1,14 @@
 import { configureTooltip } from "./Tooltip";
-import { toMoney, toPercent, toNumberString } from "../helpers";
-
-const VIEW_ALL = "VIEW ALL";
-const VIEW_LESS = "VIEW LESS";
-const NUM_TRUNCATED_ROWS = 10;
-const CARET_SVG = `<svg class="caret" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7 0.999999L4 4L1 1" stroke="white" stroke-miterlimit="10"/>
-</svg>`;
-const ARROW_SVG = `<svg class="link-arrow" width="11" height="11" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-</svg>`;
+import { toMoney, toPercent, toNumberString, getSizing } from "../helpers";
+import {
+  VIEW_ALL,
+  VIEW_LESS,
+  NUM_TRUNCATED_ROWS,
+  CARET_SVG,
+  ARROW_SVG,
+  SMALL_BROWSER,
+  SMALL_PHONE
+} from "../constants";
 
 class Cell {
   constructor(className) {
@@ -242,6 +241,7 @@ class HeaderCell extends Cell {
     this.initSort = initSort;
     this.table = table;
     this.id = id;
+    this.sizing;
     this.render();
 
     // add event listener for sorting
@@ -317,6 +317,10 @@ class VizHeaderCell extends HeaderCell {
   }
 
   render() {
+    // set up tick elements to adjust position on window resize
+    this.sizing = getSizing(window.innerWidth);
+    window.addEventListener("resize", () => this.updateTickElements());
+
     const cell = document.createElement("th");
     cell.className = this.className;
     const startText = this.formatValue(this.content["start"]);
@@ -342,7 +346,8 @@ class VizHeaderCell extends HeaderCell {
       wrapper.style.paddingLeft = "10px";
     } else if (className === "end-num") {
       wrapper.style.paddingRight = `${13 - 3 * content.length}px`;
-      wrapper.style.marginRight = "-13px";
+      wrapper.style.marginRight = this.getEndNumMargin();
+      this.endNum = wrapper;
     }
 
     // create the vertical tick underneath the number
@@ -353,6 +358,18 @@ class VizHeaderCell extends HeaderCell {
     if (averageColor) line.className += ` ${averageColor}`;
     wrapper.appendChild(line);
     return wrapper;
+  }
+
+  updateTickElements() {
+    const prevSizing = this.sizing;
+    this.sizing = getSizing(window.innerWidth);
+    if (prevSizing !== this.sizing) {
+      this.endNum.style.marginRight = this.getEndNumMargin();
+    }
+  }
+
+  getEndNumMargin() {
+    return this.sizing === SMALL_PHONE || this.sizing === SMALL_BROWSER ? "0" : "-13px";
   }
 }
 

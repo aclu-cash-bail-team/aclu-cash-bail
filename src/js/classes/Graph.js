@@ -1,7 +1,12 @@
 import { configureTooltip } from "./Tooltip";
-import { toMoney, toPercent, toNumberString } from "../helpers";
-
-const SVG_NS = "http://www.w3.org/2000/svg";
+import { getSizing } from "../helpers";
+import {
+  SVG_NS,
+  SMALL_PHONE,
+  LARGE_PHONE,
+  SMALL_BROWSER,
+  REGULAR_WIDTH
+} from "../constants";
 
 class CountyPoint {
   constructor(
@@ -28,8 +33,8 @@ class CountyPoint {
     this.renderTooltip = (elements, config) =>
       renderTooltip(elements, this.data, this.county, config);
     [this.xs, this.ys] = this.getPositions();
-    this.rs_desktop = this.getRadiis(radiusScale?.desktop || radiusScale);
-    this.rs_mobile = this.getRadiis(radiusScale?.mobile || radiusScale);
+    this.rsDesktop = this.getRadiis(radiusScale?.desktop || radiusScale);
+    this.rsMobile = this.getRadiis(radiusScale?.mobile || radiusScale);
     this.elements = [];
     this.tooltipTriggerTargets = [];
   }
@@ -153,7 +158,7 @@ export class ScatterPlot {
     this.renderTooltip = configureTooltip(tooltipConfig);
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
-    this.mobileSizing;
+    this.sizing;
     this.setUpSearchBar();
     this.render();
   }
@@ -235,22 +240,20 @@ export class ScatterPlot {
   }
 
   updateViewBox() {
-    const prevMobileSizing = this.mobileSizing;
-    this.mobileSizing = window.innerWidth <= 670;
+    const prevSizing = this.sizing;
+    this.sizing = getSizing(window.innerWidth);
 
     // set viewbox based on window size (customized for specific phones)
-    const iPhoneSE = window.innerWidth < 350;
-    const iPhone8 = window.innerWidth < 400;
-    const width = iPhoneSE
+    const width = this.sizing === SMALL_PHONE
       ? 180
-      : iPhone8
+      : this.sizing === LARGE_PHONE
       ? 280
-      : this.mobileSizing
+      : this.sizing === SMALL_BROWSER
       ? 300
       : 600;
-    const height = this.mobileSizing ? 400 : 500;
+    const height = this.sizing === REGULAR_WIDTH ? 500 : 400;
     this.plot.setAttributeNS(null, "viewBox", `0 0 ${width} ${height}`);
-    if (prevMobileSizing !== this.mobileSizing) {
+    if (prevSizing !== this.sizing) {
       // rerender axes with mobile sizing value
       this.renderAxis(this.xAxis, false);
       this.renderAxis(this.yAxis, true);
@@ -263,7 +266,7 @@ export class ScatterPlot {
           circles[i].setAttributeNS(
             null,
             "r",
-            this.mobileSizing ? point.rs_mobile[i] : point.rs_desktop[i]
+            this.sizing === REGULAR_WIDTH ? point.rsDesktop[i] : point.rsMobile[i]
           );
         });
       });
@@ -312,7 +315,7 @@ export class ScatterPlot {
       // adjust for the coordinate system starting at the top left
       const axisPlacement = isYAxis ? 0 : "100%";
       // get offset based on window size
-      const dxy = this.mobileSizing ? 18 : 26;
+      const dxy = this.sizing === REGULAR_WIDTH ? 26 : 18;
 
       const tick = document.createElementNS(SVG_NS, "text");
       tick.setAttributeNS(null, "class", "axis-tick");
@@ -337,25 +340,25 @@ export class ScatterPlot {
 
   renderAxisLabels(axis, isYAxis, isLower) {
     // for mobile we only need one label
-    if (this.mobileSizing && !isLower) return;
+    if (this.sizing !== REGULAR_WIDTH && !isLower) return;
 
     // wrap axis labels in svgs to do local rotation
     const wrapper = document.createElementNS(SVG_NS, "svg");
     wrapper.setAttributeNS(null, "class", "label-wrapper");
-    if (this.mobileSizing) {
-      wrapper.setAttributeNS(null, "x", isYAxis ? 0 : "50%");
-      wrapper.setAttributeNS(null, "y", isYAxis ? "50%" : "100%");
-    } else {
+    if (this.sizing === REGULAR_WIDTH) {
       wrapper.setAttributeNS(null, "x", isLower ? 0 : isYAxis ? 0 : "100%");
       wrapper.setAttributeNS(
         null,
         "y",
         isLower ? "100%" : isYAxis ? 0 : "100%"
       );
+    } else {
+      wrapper.setAttributeNS(null, "x", isYAxis ? 0 : "50%");
+      wrapper.setAttributeNS(null, "y", isYAxis ? "50%" : "100%");
     }
 
     // get offset based on window size
-    const dy = this.mobileSizing ? 40 : 60;
+    const dy = this.sizing === REGULAR_WIDTH ? 60 : 40;
 
     const label = document.createElementNS(SVG_NS, "text");
     label.setAttributeNS(null, "class", "axis-label");

@@ -2,13 +2,13 @@ import * as d3 from "d3";
 import { feature } from "topojson-client";
 import { COUNTY_MAP_DATA } from "../raw-data.js";
 import { configureTooltip } from "./Tooltip";
-import { toMoney, toPercent, toNumberString } from "../helpers";
-
-const DEFAULT_MAP_WIDTH = 600;
-const DEFAULT_MAP_HEIGHT = 400;
-
-const COUNTY_NAME_ATTRIBUTE = "data-county-name";
-const BUCKET_ATTRIBUTE = "data-bucket";
+import { toPercent } from "../helpers";
+import {
+  DEFAULT_MAP_WIDTH,
+  DEFAULT_MAP_HEIGHT,
+  COUNTY_NAME_ATTRIBUTE,
+  BUCKET_ATTRIBUTE
+} from "../constants";
 
 class ColorScaleLegend {
   constructor(
