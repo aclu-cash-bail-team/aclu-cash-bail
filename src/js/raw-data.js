@@ -42,7 +42,7 @@ export const STATE_DATA = {
 export const COUNTY_DATA = [
   {
     "name": "Adams",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.149123,
     "cash_bail_pct": 0.313158,
     "ror_pct": 0.253509,
@@ -82,7 +82,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Armstrong",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.031073,
     "cash_bail_pct": 0.415254,
     "ror_pct": 0.426554,
@@ -122,8 +122,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Bedford",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.373563,
     "ror_pct": 0.019397,
     "unsecured_pct": 0.60704,
@@ -162,7 +162,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Blair",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.000698,
     "cash_bail_pct": 0.30805,
     "ror_pct": 0.004421,
@@ -182,7 +182,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Bradford",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.289904,
     "cash_bail_pct": 0.459109,
     "ror_pct": 0.116187,
@@ -242,7 +242,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Cambria",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.000455,
     "cash_bail_pct": 0.450057,
     "ror_pct": 0.207053,
@@ -262,10 +262,10 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Cameron",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.220588,
-    "ror_pct": 0.0,
+    "ror_pct": 0.000000,
     "unsecured_pct": 0.779412,
     "total_cases": 136,
     "cash_bail_cases": 30,
@@ -282,8 +282,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Carbon",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.328777,
     "ror_pct": 0.142446,
     "unsecured_pct": 0.528777,
@@ -302,7 +302,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Centre",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.000314,
     "cash_bail_pct": 0.272527,
     "ror_pct": 0.616327,
@@ -342,7 +342,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Clarion",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.000839,
     "cash_bail_pct": 0.394295,
     "ror_pct": 0.263423,
@@ -362,8 +362,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Clearfield",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.370141,
     "ror_pct": 0.001127,
     "unsecured_pct": 0.628732,
@@ -402,7 +402,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Columbia",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.001311,
     "cash_bail_pct": 0.408912,
     "ror_pct": 0.21363,
@@ -422,7 +422,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Crawford",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.084442,
     "cash_bail_pct": 0.356192,
     "ror_pct": 0.430399,
@@ -502,10 +502,10 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Elk",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.286073,
-    "ror_pct": 0.0,
+    "ror_pct": 0.000000,
     "unsecured_pct": 0.713927,
     "total_cases": 797,
     "cash_bail_cases": 228,
@@ -522,7 +522,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Erie",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.006849,
     "cash_bail_pct": 0.470667,
     "ror_pct": 0.334127,
@@ -542,8 +542,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Fayette",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.449371,
     "ror_pct": 0.000999,
     "unsecured_pct": 0.549631,
@@ -562,8 +562,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Forest",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.350993,
     "ror_pct": 0.125828,
     "unsecured_pct": 0.523179,
@@ -602,7 +602,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Fulton",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.0525,
     "cash_bail_pct": 0.2825,
     "ror_pct": 0.5175,
@@ -642,8 +642,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Huntingdon",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.386169,
     "ror_pct": 0.299922,
     "unsecured_pct": 0.313908,
@@ -662,8 +662,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Indiana",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.406648,
     "ror_pct": 0.23224,
     "unsecured_pct": 0.361111,
@@ -682,7 +682,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Jefferson",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.000921,
     "cash_bail_pct": 0.38674,
     "ror_pct": 0.000921,
@@ -702,7 +702,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Juniata",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.077922,
     "cash_bail_pct": 0.341991,
     "ror_pct": 0.194805,
@@ -782,8 +782,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Lebanon",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.377892,
     "ror_pct": 0.002828,
     "unsecured_pct": 0.61928,
@@ -803,7 +803,7 @@ export const COUNTY_DATA = [
   {
     "name": "Lehigh",
     "nominal_pct": 0.00168,
-    "nonmonetary_pct": 0.0,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.565002,
     "ror_pct": 0.083714,
     "unsecured_pct": 0.349603,
@@ -842,8 +842,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Lycoming",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.344184,
     "ror_pct": 0.002523,
     "unsecured_pct": 0.653293,
@@ -862,7 +862,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "McKean",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.00087,
     "cash_bail_pct": 0.41913,
     "ror_pct": 0.050435,
@@ -882,7 +882,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Mercer",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.120947,
     "cash_bail_pct": 0.356634,
     "ror_pct": 0.115429,
@@ -942,7 +942,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Montgomery",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.004938,
     "cash_bail_pct": 0.37538,
     "ror_pct": 0.152954,
@@ -962,7 +962,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Montour",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.007874,
     "cash_bail_pct": 0.354331,
     "ror_pct": 0.413386,
@@ -1042,7 +1042,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Philadelphia",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.057413,
     "cash_bail_pct": 0.499238,
     "ror_pct": 0.343043,
@@ -1082,7 +1082,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Potter",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.021359,
     "cash_bail_pct": 0.225243,
     "ror_pct": 0.159223,
@@ -1103,7 +1103,7 @@ export const COUNTY_DATA = [
   {
     "name": "Schuylkill",
     "nominal_pct": 0.00147,
-    "nonmonetary_pct": 0.0,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.399328,
     "ror_pct": 0.112744,
     "unsecured_pct": 0.486458,
@@ -1122,7 +1122,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Snyder",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.027748,
     "cash_bail_pct": 0.36286,
     "ror_pct": 0.03842,
@@ -1142,7 +1142,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Somerset",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.486546,
     "cash_bail_pct": 0.249863,
     "ror_pct": 0.024712,
@@ -1162,8 +1162,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Sullivan",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.365385,
     "ror_pct": 0.019231,
     "unsecured_pct": 0.615385,
@@ -1182,7 +1182,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Susquehanna",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.009485,
     "cash_bail_pct": 0.394309,
     "ror_pct": 0.261518,
@@ -1202,10 +1202,10 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Tioga",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.313167,
-    "ror_pct": 0.0,
+    "ror_pct": 0.000000,
     "unsecured_pct": 0.686833,
     "total_cases": 843,
     "cash_bail_cases": 264,
@@ -1222,7 +1222,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Union",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.145588,
     "cash_bail_pct": 0.255882,
     "ror_pct": 0.488235,
@@ -1242,8 +1242,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Venango",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.384401,
     "ror_pct": 0.001393,
     "unsecured_pct": 0.614206,
@@ -1262,7 +1262,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Warren",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.025455,
     "cash_bail_pct": 0.404848,
     "ror_pct": 0.413333,
@@ -1302,8 +1302,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Wayne",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.376344,
     "ror_pct": 0.342742,
     "unsecured_pct": 0.280914,
@@ -1322,7 +1322,7 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Westmoreland",
-    "nominal_pct": 0.0,
+    "nominal_pct": 0.000000,
     "nonmonetary_pct": 0.045757,
     "cash_bail_pct": 0.31714,
     "ror_pct": 0.327603,
@@ -1342,8 +1342,8 @@ export const COUNTY_DATA = [
   },
   {
     "name": "Wyoming",
-    "nominal_pct": 0.0,
-    "nonmonetary_pct": 0.0,
+    "nominal_pct": 0.000000,
+    "nonmonetary_pct": 0.000000,
     "cash_bail_pct": 0.355005,
     "ror_pct": 0.002064,
     "unsecured_pct": 0.642931,
