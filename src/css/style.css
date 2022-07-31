@@ -23,8 +23,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h2 {
+h3.title {
+  margin-top: 0;
+  margin-bottom: 20px;
   text-align: center;
+  font-family: "GT America Bold";
+  font-size: 14px;
+  line-height: 28px;
 }
 
 .container {
@@ -32,15 +37,13 @@ h2 {
   margin: auto;
 }
 
-.table-container {
-  margin: 3em 0;
-}
-
 .hidden {
   display: none;
 }
 
 .footnote {
+  max-width: 600px;
+  margin: 10px auto;
   color: rgba(255, 255, 255, 0.75);
   font-family: "GT America";
   font-size: 12px;
@@ -48,7 +51,7 @@ h2 {
 }
 
 .footnote.graph-footnote {
-  margin-top: 80px;
+  margin-top: 70px;
 }
 
 .mobile-only {
@@ -70,6 +73,7 @@ h2 {
   border: 1px #333 solid;
   cursor: pointer;
   user-select: none;
+  text-transform: uppercase;
 }
 
 .outliers-btn.showing {

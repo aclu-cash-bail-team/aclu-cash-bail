@@ -8,17 +8,6 @@
   outline: none;
 }
 
-.graph h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-family: "GT America Bold";
-  font-size: 13px;
-  font-weight: normal;
-  line-height: 28px;
-  text-align: center;
-  color: #fff;
-}
-
 .graph .outliers-btn {
   position: absolute;
   right: 0;
