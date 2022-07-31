@@ -627,7 +627,7 @@ export class Table {
       const isHiddenOutlier = row.outlier && !this.showOutliers;
       const isRowVisible = isRowSearched || (
         !isTruncated && !isHiddenOutlier && !this.isSearching()
-        );
+      );
       if (row.collapseData !== undefined && row.collapseData.length > 0) {
         const collapseRows = row.collapseData.map((collapseRow) => {
           const isSubRowSearched = this.searchTerms.some(
@@ -638,7 +638,7 @@ export class Table {
           const isSubRowHiddenOutlier = collapseRow.outlier && !this.showOutliers;
           const isSubRowVisible = isSubRowSearched || (
             !row.isCollapsed && !isSubRowHiddenOutlier && !this.isSearching()
-            );
+          );
           return new BodyRow(
             this.getCells(collapseRow.data, collapseRow.outlier),
             collapseRow.outlier,
