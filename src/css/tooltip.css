@@ -82,7 +82,7 @@
 }
 
 /* these are custom breakpoints to make the svg work well on phones */
-@media only screen and (max-width: 670px) {
+@media only screen and (max-width: 680px) {
   .tippy-popper {
     position: fixed !important;
     transform: none !important;

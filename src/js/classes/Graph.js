@@ -244,13 +244,14 @@ export class ScatterPlot {
     this.sizing = getSizing(window.innerWidth);
 
     // set viewbox based on window size (customized for specific phones)
-    const width = this.sizing === SMALL_PHONE
-      ? 180
-      : this.sizing === LARGE_PHONE
-      ? 280
-      : this.sizing === SMALL_BROWSER
-      ? 300
-      : 600;
+    const width =
+      this.sizing === SMALL_PHONE
+        ? 180
+        : this.sizing === LARGE_PHONE
+        ? 280
+        : this.sizing === SMALL_BROWSER
+        ? 300
+        : 600;
     const height = this.sizing === REGULAR_WIDTH ? 500 : 400;
     this.plot.setAttributeNS(null, "viewBox", `0 0 ${width} ${height}`);
     if (prevSizing !== this.sizing) {
@@ -266,7 +267,9 @@ export class ScatterPlot {
           circles[i].setAttributeNS(
             null,
             "r",
-            this.sizing === REGULAR_WIDTH ? point.rsDesktop[i] : point.rsMobile[i]
+            this.sizing === REGULAR_WIDTH
+              ? point.rsDesktop[i]
+              : point.rsMobile[i]
           );
         });
       });
@@ -345,17 +348,8 @@ export class ScatterPlot {
     // wrap axis labels in svgs to do local rotation
     const wrapper = document.createElementNS(SVG_NS, "svg");
     wrapper.setAttributeNS(null, "class", "label-wrapper");
-    if (this.sizing === REGULAR_WIDTH) {
-      wrapper.setAttributeNS(null, "x", isLower ? 0 : isYAxis ? 0 : "100%");
-      wrapper.setAttributeNS(
-        null,
-        "y",
-        isLower ? "100%" : isYAxis ? 0 : "100%"
-      );
-    } else {
-      wrapper.setAttributeNS(null, "x", isYAxis ? 0 : "50%");
-      wrapper.setAttributeNS(null, "y", isYAxis ? "50%" : "100%");
-    }
+    wrapper.setAttributeNS(null, "x", isYAxis ? 0 : "50%");
+    wrapper.setAttributeNS(null, "y", isYAxis ? "50%" : "100%");
 
     // get offset based on window size
     const dy = this.sizing === REGULAR_WIDTH ? 60 : 40;
@@ -401,9 +395,13 @@ class DistributionRow {
     return this.renderTooltip(
       elements,
       [
-        this.distributions.reduce((acc, dist) => ({
-          ...acc, [dist["className"]]: dist["value"]
-        }), {})
+        this.distributions.reduce(
+          (acc, dist) => ({
+            ...acc,
+            [dist["className"]]: dist["value"]
+          }),
+          {}
+        )
       ],
       this.county
     );
@@ -469,7 +467,7 @@ export class DistributionGraph {
       container.appendChild(colorBox);
       container.appendChild(text);
       return container;
-    }
+    };
 
     // configureTooltip returns a render function to which we'll pass the data
     return configureTooltip({
@@ -501,9 +499,8 @@ export class DistributionGraph {
 class Row {
   constructor(data, minValue, maxValue, renderTooltip) {
     this.data = data;
-    this.renderTooltip = (elements) => renderTooltip(
-      elements, [data], this.data.name
-    );
+    this.renderTooltip = (elements) =>
+      renderTooltip(elements, [data], this.data.name);
     this.barWidth = ((data.x - minValue) * 100) / (maxValue - minValue);
   }
 
