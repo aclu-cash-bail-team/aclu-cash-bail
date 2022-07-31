@@ -300,15 +300,18 @@ const createCasesScatterPlot = () => {
     mobile: mobileScale
   };
 
-  const PLOT_DATA = COUNTY_DATA.reduce((acc, countyData) => ({
-    ...acc,
-    [countyData["name"]]: {
-      showName: false,
-      x: countyData["cash_bail_pct"],
-      r: countyData["cash_bail_cases"],
-      y: countyData["avg_bail_amount"]
-    }
-  }), {});
+  const PLOT_DATA = COUNTY_DATA.reduce(
+    (acc, countyData) => ({
+      ...acc,
+      [countyData["name"]]: {
+        showName: false,
+        x: countyData["cash_bail_pct"],
+        r: countyData["cash_bail_cases"],
+        y: countyData["avg_bail_amount"]
+      }
+    }),
+    {}
+  );
   PLOT_DATA["State Average"] = {
     showName: true,
     x: STATE_DATA["cash_bail_pct"],
@@ -328,10 +331,11 @@ const createCasesScatterPlot = () => {
 
 const createAvgBailAmountBarChart = () => {
   const xAxis = {
+    name: "AVERAGE BAIL AMOUNT",
     min: 10000,
     max: 80000,
     numTicks: 7,
-    convert: (value) => toMoney(value, 0, false)
+    convert: (value) => toMoney(value, 0)
   };
 
   const tooltipConfig = {
@@ -385,6 +389,7 @@ const rorRateMap = new BailRateMap(
 const rateChloroplethContainer = document.getElementById(
   "rate-chloropleth-container"
 );
+
 new SwitchableMap(cashBailRateMap, rorRateMap, rateChloroplethContainer);
 
 /* RENDER GRAPHS */
@@ -415,7 +420,7 @@ const headerConfig = [
     title: "Nominal",
     className: "nominal-bar",
     render: (value) => toPercent(value)
-  },
+  }
 ];
 new DistributionGraph(
   document.getElementById("dist-graph-container"),

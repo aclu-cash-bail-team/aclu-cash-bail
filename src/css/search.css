@@ -9,7 +9,7 @@
   min-height: 33px;
   flex-grow: 1;
   background-color: #000;
-  border: 0.5px #181818 solid;
+  border: 1px rgba(255, 255, 255, 0.2) solid;
   border-radius: 3px;
   transition: border 0.2s ease;
 }
@@ -20,7 +20,7 @@
 
 .ui.fluid.dropdown:hover,
 .ui.fluid.dropdown:focus {
-  border: 0.5px rgba(255, 255, 255, 0.4) solid;
+  border: 1px rgba(255, 255, 255, 0.4) solid;
 }
 
 .ui.fluid.dropdown > .dropdown.icon {
