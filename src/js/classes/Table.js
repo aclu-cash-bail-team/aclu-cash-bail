@@ -369,7 +369,7 @@ class VizHeaderCell extends HeaderCell {
   }
 
   getEndNumMargin() {
-    return this.sizing === SMALL_PHONE || this.sizing === SMALL_BROWSER ? "0" : "-13px";
+    return this.sizing === SMALL_PHONE ? "0" : "-13px";
   }
 }
 

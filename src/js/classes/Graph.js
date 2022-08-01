@@ -410,7 +410,7 @@ class DistributionRow {
   render() {
     // Add county name
     const nameElement = document.createElement("div");
-    nameElement.className = "dist-county-name";
+    nameElement.className = "dist-county-name viz-county-name-column";
     nameElement.innerText = this.county;
     // Add distribution bars
     const distBarsSegment = document.createElement("div");
@@ -507,7 +507,7 @@ class Row {
   render() {
     // Add county name
     const nameElement = document.createElement("div");
-    nameElement.className = "county-name";
+    nameElement.className = "county-name viz-county-name-column";
     nameElement.innerText = this.data.name;
 
     // Add bar
@@ -573,7 +573,7 @@ export class CountyBarChart {
 
   renderPlotLines(xAxis) {
     const plotLines = document.createElement("div");
-    plotLines.className = "bar-chart-plotlines";
+    plotLines.className = "bar-chart-plotlines viz-plot-column";
     for (let i = 0; i < xAxis.numTicks; i++) {
       const plotLine = document.createElement("div");
       plotLine.className = "bar-chart-plotline";
@@ -588,7 +588,7 @@ export class CountyBarChart {
     axis.className = "bar-chart-xaxis";
 
     const sortButtonWrapper = document.createElement("div");
-    sortButtonWrapper.className = "bar-chart-sort-button";
+    sortButtonWrapper.className = "bar-chart-sort-button viz-county-name-column";
     const sortButton = document.createElement("button");
     sortButton.innerHTML = "SORT";
     const label = document.createElement("h4");
