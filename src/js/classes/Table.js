@@ -6,7 +6,6 @@ import {
   NUM_TRUNCATED_ROWS,
   CARET_SVG,
   ARROW_SVG,
-  SMALL_BROWSER,
   SMALL_PHONE
 } from "../constants";
 
