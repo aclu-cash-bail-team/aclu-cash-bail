@@ -23,3 +23,12 @@ export const REGULAR_WIDTH = "REGULAR_WIDTH";
 export const SMALL_BROWSER = "SMALL_BROWSER";
 export const LARGE_PHONE = "LARGE_PHONE";
 export const SMALL_PHONE = "SMALL_PHONE";
+
+export const BAIL_RATE_MAP_COLOR_CONFIG = {
+  domain: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
+  colors: ["#182935", "#215f5d", "#1b9b88", "#0fc59b", "#0fda92", "#00ed89"]
+};
+export const BAIL_RATE_RACE_MAP_COLOR_CONFIG = {
+  domain: [0.2, 0.4, 0.6, 0.8, 1],
+  colors: ["#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"]
+};

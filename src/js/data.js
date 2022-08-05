@@ -72,6 +72,15 @@ export const COUNTY_BAIL_TYPE_DATA = COUNTY_DATA.map((countyData) => ({
   ],
 }));
 
+export const BAIL_RATE_MAP_DATA = COUNTY_DATA.map((countyData) => ({
+  name: countyData["name"],
+  rorRate: countyData["ror_pct"],
+  cashBailRate: countyData["cash_bail_pct"],
+  cashBailRateBlack: countyData["cash_bail_pct_black"],
+  cashBailRateWhite: countyData["cash_bail_pct_white"],
+  outlier: countyData["is_outlier"]
+}));
+
 export const BAIL_RACE_RATE_DATA = COUNTY_DATA.map((countyData) => ({
   data: [
     countyData["name"],
