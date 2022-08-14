@@ -27,28 +27,18 @@
 }
 
 .table-container > table th {
-  padding: 13px 6px;
+  padding: 1em 0.4em;
   color: #fff;
   font-family: "GT America Condensed";
   font-weight: 400;
-  font-size: 12px;
   text-align: left;
   text-transform: uppercase;
   vertical-align: bottom;
 }
 
-.table-container > table th.number-cell {
-  text-align: right;
-  box-sizing: content-box;
-}
-
-.table-container > table th.retention-fee-cell {
-  text-align: left;
-}
-
 .table-container > table td {
   text-align: left;
-  padding: 8px 6px;
+  padding: 0.8em 0.4em;
 }
 
 .table-container > table .number-cell {
@@ -56,11 +46,18 @@
   min-width: 60px;
   max-width: 80px;
   text-align: right;
+}
+
+.table-container > table th.number-cell {
+  box-sizing: content-box;
+}
+
+.table-container > table td.number-cell {
   font-variant-numeric: tabular-nums;
 }
 
 .table-container > table .county-name-cell {
-  min-width: 170px;
+  min-width: 120px;
   color: rgba(255, 255, 255, 1);
 }
 

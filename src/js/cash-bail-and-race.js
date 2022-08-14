@@ -3,7 +3,11 @@ import { Table, SwitchableTable } from "./classes/Table.js";
 import { RaceMapContainer } from "./classes/Map.js";
 import { ScatterPlot } from "./classes/Graph.js";
 import { STATE_DATA, COUNTY_DATA } from "./raw-data.js";
-import { BAIL_RACE_RATE_DATA, BAIL_RACE_AMOUNT_DATA } from "./data.js";
+import {
+  BAIL_RACE_RATE_DATA,
+  BAIL_RACE_AMOUNT_DATA,
+  BAIL_RATE_MAP_DATA
+} from "./data.js";
 
 /* TABLE CREATION FUNCTIONS */
 const createBailRaceRateTable = () => {
@@ -306,9 +310,11 @@ new SwitchableTable(bailRaceRateTable, bailRaceAmountTable, raceContainer);
 /* RENDER MAPS */
 new RaceMapContainer(
   "race-rate",
-  BAIL_RACE_RATE_DATA,
-  STATE_DATA["cash_bail_pct_black"],
-  STATE_DATA["cash_bail_pct_white"]
+  BAIL_RATE_MAP_DATA,
+  {
+    black: STATE_DATA["cash_bail_pct_black"],
+    white: STATE_DATA["cash_bail_pct_white"]
+  }
 );
 
 /* RENDER GRAPHS */

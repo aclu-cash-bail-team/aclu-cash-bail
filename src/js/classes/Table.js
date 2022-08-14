@@ -6,7 +6,6 @@ import {
   NUM_TRUNCATED_ROWS,
   CARET_SVG,
   ARROW_SVG,
-  SMALL_BROWSER,
   SMALL_PHONE
 } from "../constants";
 
@@ -369,7 +368,7 @@ class VizHeaderCell extends HeaderCell {
   }
 
   getEndNumMargin() {
-    return this.sizing === SMALL_PHONE || this.sizing === SMALL_BROWSER ? "0" : "-13px";
+    return this.sizing === SMALL_PHONE ? "0" : "-13px";
   }
 }
 

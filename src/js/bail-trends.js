@@ -12,7 +12,8 @@ import {
   BAIL_RATE_DATA,
   ROR_RATE_DATA,
   BAIL_POSTING_DATA,
-  COUNTY_BAIL_TYPE_DATA
+  COUNTY_BAIL_TYPE_DATA,
+  BAIL_RATE_MAP_DATA
 } from "./data";
 
 /* TABLE CREATION FUNCTIONS */
@@ -380,13 +381,15 @@ createBailPostingTable();
 /* RENDER MAPS */
 const cashBailRateMap = new BailRateMap(
   "cash-bail-rate",
-  BAIL_RATE_DATA,
+  BAIL_RATE_MAP_DATA,
+  "cashBailRate",
   STATE_DATA["cash_bail_pct"],
   "Cash Bail Rate"
 );
 const rorRateMap = new BailRateMap(
   "ror-rate",
-  ROR_RATE_DATA,
+  BAIL_RATE_MAP_DATA,
+  "rorRate",
   STATE_DATA["ror_pct"],
   "ROR Rate"
 );

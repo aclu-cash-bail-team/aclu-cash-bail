@@ -7,7 +7,9 @@ import {
   DEFAULT_MAP_WIDTH,
   DEFAULT_MAP_HEIGHT,
   COUNTY_NAME_ATTRIBUTE,
-  BUCKET_ATTRIBUTE
+  BUCKET_ATTRIBUTE,
+  BAIL_RATE_MAP_COLOR_CONFIG,
+  BAIL_RATE_RACE_MAP_COLOR_CONFIG
 } from "../constants";
 
 class ColorScaleLegend {
@@ -230,6 +232,18 @@ class Map {
     }
   }
 
+  highlightMap(element) {
+    const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
+    const attributeSelector = `${BUCKET_ATTRIBUTE}="${bucket}"`;
+    this.svg
+      .selectAll(`path:not([${attributeSelector}])`)
+      .classed("faded", true);
+  }
+
+  resetHighlight() {
+    this.svg.selectAll("path").classed("faded", false);
+  }
+
   render() {
     const path = d3.geoPath().projection(this.projection);
 
@@ -244,7 +258,7 @@ class Map {
 }
 
 export class BailRateMap extends Map {
-  constructor(id, data, average, tooltipHeader) {
+  constructor(id, data, rateKey, average, tooltipHeader) {
     super(`#${id} .map`, {
       rows: [
         {
@@ -256,19 +270,12 @@ export class BailRateMap extends Map {
     });
     this.id = id;
     this.data = data;
+    this.rateKey = rateKey;
 
-    const colorDomain = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6];
     this.color = d3
       .scaleThreshold()
-      .domain(colorDomain)
-      .range([
-        "#182935",
-        "#215f5d",
-        "#1b9b88",
-        "#0fc59b",
-        "#0fda92",
-        "#00ed89"
-      ]);
+      .domain(BAIL_RATE_MAP_COLOR_CONFIG.domain)
+      .range(BAIL_RATE_MAP_COLOR_CONFIG.colors);
 
     const onLegendMouseOver = (event) => {
       this.highlightBar(event.target);
@@ -280,7 +287,7 @@ export class BailRateMap extends Map {
 
     this.legend = new ColorScaleLegend(
       id,
-      colorDomain,
+      BAIL_RATE_MAP_COLOR_CONFIG.domain,
       this.color,
       [
         {
@@ -321,23 +328,15 @@ export class BailRateMap extends Map {
     this.legend.highlightBars([bucket]);
   }
 
-  highlightMap(element) {
-    const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
-    const attributeSelector = `${BUCKET_ATTRIBUTE}="${bucket}"`;
-    this.svg
-      .selectAll(`path:not([${attributeSelector}])`)
-      .classed("faded", true);
-  }
-
   resetHighlight() {
+    super.resetHighlight();
     this.legend.resetHighlight();
-    this.svg.selectAll("path").classed("faded", false);
   }
 
   renderPA(features, path) {
     this.data.forEach((row) => {
-      const countyName = row.data[0];
-      const cashBailRate = row.data[2];
+      const countyName = row.name;
+      const cashBailRate = row[this.rateKey];
       const feature = features.find((f) => f.properties["NAME"] === countyName);
       feature.properties.rate = cashBailRate;
       feature.properties.color = this.color(cashBailRate);
@@ -358,7 +357,7 @@ export class BailRateMap extends Map {
 }
 
 class BailRaceMap extends Map {
-  constructor(selector, data, color, dataIdx, race, parent) {
+  constructor(selector, data, rateKey, color, race, parent) {
     super(selector, {
       rows: [
         {
@@ -374,7 +373,7 @@ class BailRaceMap extends Map {
       ]
     });
     this.data = data;
-    this.dataIdx = dataIdx;
+    this.rateKey = rateKey;
     this.race = race;
     this.parent = parent;
     this.color = color;
@@ -394,6 +393,7 @@ class BailRaceMap extends Map {
       .classed("faded", true);
     super.showTooltip(element, tooltipData);
   }
+
   _onMouseOut(countyName) {
     super.onMouseOut();
     this.svg
@@ -401,18 +401,10 @@ class BailRaceMap extends Map {
       .classed("faded", false);
   }
 
-  highlightMap(bucket) {
-    const attributeSelector = `${BUCKET_ATTRIBUTE}="${bucket}"`;
-
-    this.svg
-      .selectAll(`path:not([${attributeSelector}])`)
-      .classed("faded", true);
-  }
-
   resetHighlight() {
+    super.resetHighlight();
     this.svg.selectAll("rect").style("opacity", "1");
     this.svg.selectAll("text").style("opacity", "1");
-    this.svg.selectAll("path").classed("faded", false);
   }
 
   onMouseEnter(event) {
@@ -429,8 +421,8 @@ class BailRaceMap extends Map {
 
   renderPA(features, path) {
     this.data.forEach((row) => {
-      const countyName = row.data[0];
-      const cashBailRate = row.data[this.dataIdx];
+      const countyName = row.name;
+      const cashBailRate = row[this.rateKey];
       const feature = features.find((f) => f.properties["NAME"] === countyName);
       feature.properties.rate = cashBailRate;
       feature.properties.color = this.color(cashBailRate);
@@ -454,26 +446,25 @@ class BailRaceMap extends Map {
 }
 
 export class RaceMapContainer {
-  constructor(id, data, whiteAverage, blackAverage) {
-    const colorDomain = [0.2, 0.4, 0.6, 0.8, 1];
+  constructor(id, data, averages) {
     const color = d3
       .scaleThreshold()
-      .domain(colorDomain)
-      .range(["#CC2FFF", "#B08CF0", "#7AC7DF", "#5DDAB5", "#00ED89"]);
+      .domain(BAIL_RATE_RACE_MAP_COLOR_CONFIG.domain)
+      .range(BAIL_RATE_RACE_MAP_COLOR_CONFIG.colors);
 
     this.black = new BailRaceMap(
       `#${id} #black.map`,
       data,
+      "cashBailRateBlack",
       color,
-      1,
       "black",
       this
     );
     this.white = new BailRaceMap(
       `#${id} #white.map`,
       data,
+      "cashBailRateWhite",
       color,
-      2,
       "white",
       this
     );
@@ -488,15 +479,15 @@ export class RaceMapContainer {
 
     this.legend = new ColorScaleLegend(
       id,
-      colorDomain,
+      BAIL_RATE_RACE_MAP_COLOR_CONFIG.domain,
       color,
       [
         {
-          value: whiteAverage,
+          value: averages.white,
           label: "White"
         },
         {
-          value: blackAverage,
+          value: averages.black,
           label: "Black"
         }
       ],
@@ -548,9 +539,8 @@ export class RaceMapContainer {
   }
 
   highlightMap(element) {
-    const bucket = element.getAttribute(BUCKET_ATTRIBUTE);
-    this.black.highlightMap(bucket);
-    this.white.highlightMap(bucket);
+    this.black.highlightMap(element);
+    this.white.highlightMap(element);
   }
 
   resetHighlight() {
