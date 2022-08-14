@@ -28,7 +28,7 @@ h3.title {
   margin-bottom: 20px;
   text-align: center;
   font-family: "GT America Bold";
-  font-size: 14px;
+  font-size: 18px;
   line-height: 28px;
 }
 
@@ -43,7 +43,7 @@ h3.title {
 
 .footnote {
   max-width: 600px;
-  margin: 10px auto;
+  margin: 40px auto;
   color: rgba(255, 255, 255, 0.75);
   font-family: "GT America";
   font-size: 12px;
@@ -51,7 +51,11 @@ h3.title {
 }
 
 .footnote.graph-footnote {
-  margin-top: 70px;
+  margin-top: 100px;
+}
+
+.footnote.map-footnote {
+  margin-top: 0;
 }
 
 .mobile-only {
