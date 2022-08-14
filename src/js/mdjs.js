@@ -19,7 +19,7 @@ const createMdjTable = (tableContainer, county = "") => {
     {
       class: "county-name-cell",
       header: {
-        text: "",
+        text: "Name",
         unit: ""
       },
       sortable: false,
