@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import { feature } from "topojson-client";
 import { COUNTY_MAP_DATA } from "../raw-data.js";
 import { configureTooltip } from "./Tooltip";
-import { toPercent } from "../helpers";
+import { getColorThreshold, toPercent } from "../helpers";
 import {
   DEFAULT_MAP_WIDTH,
   DEFAULT_MAP_HEIGHT,
@@ -15,17 +15,16 @@ import {
 class ColorScaleLegend {
   constructor(
     id,
-    colorDomain,
-    color,
+    labels,
+    colorThreshold,
     averages,
     onMouseOver,
     onMouseOut,
     title = "",
     offsetY = 35
   ) {
-    this.colorDomain = colorDomain;
-    this.labels = [0].concat(colorDomain);
-    this.color = color;
+    this.labels = labels;
+    this.colorThreshold = colorThreshold;
     this.averages = averages;
     this.title = title;
     this.onMouseOver = onMouseOver;
@@ -38,9 +37,9 @@ class ColorScaleLegend {
     );
 
     this.legendWidth = svgWidth - 30;
-    this.sectionWidth = this.legendWidth / this.colorDomain.length;
+    this.sectionWidth = this.legendWidth / (labels.length - 1);
     this.sectionHeight = 10;
-    this.offsetX = 7;
+    this.offsetX = 10;
     this.offsetY = offsetY;
     this.labelOffsetX = this.offsetX - 9;
     this.labelOffsetY = this.offsetY + 28;
@@ -89,7 +88,7 @@ class ColorScaleLegend {
       .attr("width", this.sectionWidth)
       .attr("height", this.sectionHeight)
       .attr(BUCKET_ATTRIBUTE, (_, i) => this.labels[i + 1])
-      .style("fill", (d) => this.color(d))
+      .style("fill", (d) => this.colorThreshold(d))
       .on("mouseover", (event) => {
         this.onMouseOver(event);
       })
@@ -110,8 +109,8 @@ class ColorScaleLegend {
       .attr("y", this.labelOffsetY)
       .attr("class", legendTextClassName)
       .attr(BUCKET_ATTRIBUTE, (d) => {
-        const color = this.color(d);
-        const [start, end] = this.color.invertExtent(color);
+        const color = this.colorThreshold(d);
+        const [start, end] = this.colorThreshold.invertExtent(color);
         return `${start}-${end}`;
       })
       .text((_, i) => toPercent(this.labels[i], 0, false));
@@ -128,9 +127,9 @@ class ColorScaleLegend {
       .attr(BUCKET_ATTRIBUTE, this.labels[this.labels.length - 1])
       .text(toPercent(this.labels[this.labels.length - 1], 0));
     // Set up average label
-    const maxValue = this.colorDomain[this.colorDomain.length - 1];
+    const maxValue = this.labels[this.labels.length - 1];
     this.averages.forEach((avg) => {
-      const avgOffsetX = this.offsetX + this.legendWidth * avg.value / maxValue;
+      const avgOffsetX = this.offsetX + this.legendWidth * ((avg.value - this.labels[0]) / (maxValue - this.labels[0]));
       const legendLineClassName = "legend-avg-line";
       this.svg
         .append("line")
@@ -272,10 +271,7 @@ export class BailRateMap extends Map {
     this.data = data;
     this.rateKey = rateKey;
 
-    this.color = d3
-      .scaleThreshold()
-      .domain(BAIL_RATE_MAP_COLOR_CONFIG.domain)
-      .range(BAIL_RATE_MAP_COLOR_CONFIG.colors);
+    this.colorThreshold = getColorThreshold(BAIL_RATE_MAP_COLOR_CONFIG.domain, BAIL_RATE_MAP_COLOR_CONFIG.colors);
 
     const onLegendMouseOver = (event) => {
       this.highlightBar(event.target);
@@ -288,7 +284,7 @@ export class BailRateMap extends Map {
     this.legend = new ColorScaleLegend(
       id,
       BAIL_RATE_MAP_COLOR_CONFIG.domain,
-      this.color,
+      this.colorThreshold,
       [
         {
           value: average,
@@ -339,8 +335,8 @@ export class BailRateMap extends Map {
       const cashBailRate = row[this.rateKey];
       const feature = features.find((f) => f.properties["NAME"] === countyName);
       feature.properties.rate = cashBailRate;
-      feature.properties.color = this.color(cashBailRate);
-      feature.properties.bucket = this.color.invertExtent(
+      feature.properties.color = this.colorThreshold(cashBailRate);
+      feature.properties.bucket = this.colorThreshold.invertExtent(
         feature.properties.color
       )[1];
     });
@@ -357,7 +353,7 @@ export class BailRateMap extends Map {
 }
 
 class BailRaceMap extends Map {
-  constructor(selector, data, rateKey, color, race, parent) {
+  constructor(selector, data, rateKey, colorThreshold, race, parent) {
     super(selector, {
       rows: [
         {
@@ -376,7 +372,7 @@ class BailRaceMap extends Map {
     this.rateKey = rateKey;
     this.race = race;
     this.parent = parent;
-    this.color = color;
+    this.colorThreshold = colorThreshold;
     this.countyNameToBucket = {};
   }
 
@@ -425,11 +421,11 @@ class BailRaceMap extends Map {
       const cashBailRate = row[this.rateKey];
       const feature = features.find((f) => f.properties["NAME"] === countyName);
       feature.properties.rate = cashBailRate;
-      feature.properties.color = this.color(cashBailRate);
+      feature.properties.color = this.colorThreshold(cashBailRate);
       if (row.outlier) {
         feature.properties.color = "#303030";
       }
-      feature.properties.bucket = this.color.invertExtent(
+      feature.properties.bucket = this.colorThreshold.invertExtent(
         feature.properties.color
       )[1];
       this.countyNameToBucket[countyName] = feature.properties.bucket;
@@ -447,16 +443,13 @@ class BailRaceMap extends Map {
 
 export class RaceMapContainer {
   constructor(id, data, averages) {
-    const color = d3
-      .scaleThreshold()
-      .domain(BAIL_RATE_RACE_MAP_COLOR_CONFIG.domain)
-      .range(BAIL_RATE_RACE_MAP_COLOR_CONFIG.colors);
+    const colorThreshold = getColorThreshold(BAIL_RATE_RACE_MAP_COLOR_CONFIG.domain, BAIL_RATE_RACE_MAP_COLOR_CONFIG.colors);
 
     this.black = new BailRaceMap(
       `#${id} #black.map`,
       data,
       "cashBailRateBlack",
-      color,
+      colorThreshold,
       "black",
       this
     );
@@ -464,7 +457,7 @@ export class RaceMapContainer {
       `#${id} #white.map`,
       data,
       "cashBailRateWhite",
-      color,
+      colorThreshold,
       "white",
       this
     );
@@ -480,7 +473,7 @@ export class RaceMapContainer {
     this.legend = new ColorScaleLegend(
       id,
       BAIL_RATE_RACE_MAP_COLOR_CONFIG.domain,
-      color,
+      colorThreshold,
       [
         {
           value: averages.white,
