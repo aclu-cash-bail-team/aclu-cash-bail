@@ -1,3 +1,4 @@
+import * as d3 from "d3";
 import {
   SMALL_BROWSER_WIDTH,
   LARGE_PHONE_WIDTH,
@@ -24,3 +25,13 @@ export const getSizing = (windowWidth) => {
   if (windowWidth <= SMALL_BROWSER_WIDTH) return SMALL_BROWSER;
   return REGULAR_WIDTH;
 };
+
+export const getColorThreshold = (labels, colors) => {
+  if (colors.length != labels.length - 1) {
+    throw "Invalid number of colors for color threshold";
+  }
+
+  return d3.scaleThreshold()
+  .domain(labels)
+  .range(["#FFF"].concat(colors)); // #FFF will never be displayed
+}
