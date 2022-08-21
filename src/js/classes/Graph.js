@@ -22,6 +22,7 @@ class CountyPoint {
     container
   ) {
     this.county = county;
+    this.isAverage = county === "State Average";
     this.data = data;
     this.xAxis = xAxis;
     this.yAxis = yAxis;
@@ -68,7 +69,8 @@ class CountyPoint {
   renderCountyName() {
     if (!this.showName) return;
 
-    const className = `scatter-text${this.outlier ? " outlier" : ""}`;
+    const className = `scatter-text${this.outlier ? " outlier" : ""}
+    ${this.isAverage ? " state-average" : ""}`;
     const text = document.createElementNS(SVG_NS, "text");
     text.setAttributeNS(null, "class", className);
     text.setAttributeNS(null, "x", this.xs[0]);
@@ -87,9 +89,8 @@ class CountyPoint {
 
   renderPoints() {
     this.data.forEach((data, i) => {
-      const className = `${data.name} ${this.county
-        .replace(/ +/g, "-")
-        .toLowerCase()} scatter-point${this.outlier ? " outlier" : ""}`;
+      const className = `${data.name}${this.outlier ? " outlier" : ""}
+      ${this.isAverage ? " state-average" : ""} scatter-point`;
       const point = document.createElementNS(SVG_NS, "circle");
       point.setAttributeNS(null, "class", className);
       point.setAttributeNS(null, "cx", this.xs[i]);
@@ -106,7 +107,8 @@ class CountyPoint {
   renderLine() {
     // only draw line if we have two data points
     if (this.data.length != 2) return;
-    const className = `scatter-line${this.outlier ? " outlier" : ""}`;
+    const className = `scatter-line${this.outlier ? " outlier" : ""}
+    ${this.isAverage ? " state-average" : ""}`;
     const line = document.createElementNS(SVG_NS, "line");
     line.setAttributeNS(null, "class", className);
     line.setAttributeNS(null, "x1", this.xs[0]);
@@ -158,6 +160,7 @@ export class ScatterPlot {
     this.renderTooltip = configureTooltip(tooltipConfig);
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
+    this.averagePoint = this.points.filter((point) => point.isAverage)[0];
     this.sizing;
     this.setUpSearchBar();
     this.render();
@@ -289,9 +292,15 @@ export class ScatterPlot {
     this.renderPlotLines(this.yAxis, true);
 
     // order: lines in background, then points, then names on top
-    this.points.forEach((point) => point.renderLine());
-    this.points.forEach((point) => point.renderPoints());
-    this.points.forEach((point) => point.renderCountyName());
+    const countyPoints = this.points.filter((point) => !point.isAverage);
+    countyPoints.forEach((point) => point.renderLine());
+    countyPoints.forEach((point) => point.renderPoints());
+    countyPoints.forEach((point) => point.renderCountyName());
+
+    // render state average on top of everything else
+    this.averagePoint.renderLine();
+    this.averagePoint.renderPoints();
+    this.averagePoint.renderCountyName();
 
     this.points.forEach((point) => {
       point.renderTooltip(point.tooltipTriggerTargets[0], {

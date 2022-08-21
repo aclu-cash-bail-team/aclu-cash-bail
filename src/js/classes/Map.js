@@ -452,7 +452,6 @@ class BailRaceMap extends Map {
       const color = this.colorThreshold(cashBailRate);
       feature.properties.color =
         row.outlier ? `url(#diagonalHatch${color.replace("#", "")})` : color;
-      if (row.outlier) console.warn(feature.properties.color);
       feature.properties.bucket = this.colorThreshold.invertExtent(color)[1];
       this.countyNameToBucket[countyName] = feature.properties.bucket;
       colors.push(color);
