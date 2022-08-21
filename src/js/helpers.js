@@ -34,4 +34,4 @@ export const getColorThreshold = (labels, colors) => {
   return d3.scaleThreshold()
   .domain(labels)
   .range(["#FFF"].concat(colors)); // #FFF will never be displayed
-}
+};
