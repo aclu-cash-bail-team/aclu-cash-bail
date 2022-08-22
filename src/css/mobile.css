@@ -83,18 +83,23 @@
     flex-wrap: wrap;
   }
 
-  .scatter-plot-key span {
-    font-size: 11px;
+  .scatter-plot {
+    width: 300px;
+    height: 400px;
   }
 
-  .axis-label {
-    font-size: 11px;
+  .plot-container {
+    position: static;
   }
 
-  .axis-tick {
-    font-size: 11px;
+  .key-circle.large::before {
+    width: 42px;
+    height: 42px;
   }
 
+  .scatter-plot-key span,
+  .axis-label,
+  .axis-tick,
   .scatter-text {
     font-size: 11px;
   }
@@ -153,6 +158,14 @@
     margin-top: 10px;
     font-size: 11px;
   }
+
+  .plot-container {
+    margin-left: 40px;
+  }
+
+  .scatter-plot {
+    width: 280px;
+  }
 }
 
 @media only screen and (max-width: 350px) {
@@ -180,6 +193,10 @@
 
   .viz-plot-column {
     inset: 0 0 0 90px;
+  }
+
+  .scatter-plot {
+    width: 250px;
   }
 
   #dist-graph-container,

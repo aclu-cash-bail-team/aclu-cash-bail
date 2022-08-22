@@ -160,9 +160,18 @@ svg.label-wrapper {
   line-height: 16px;
 }
 
+.axis-tick.state-average-tick {
+  fill: rgba(255, 255, 255, 1);
+}
+
 .axis-line {
   stroke: rgba(255, 255, 255, 0.1);
   stroke-width: 0.5px;
+}
+
+.axis-line.state-average-line {
+  stroke: rgba(255, 255, 255, 1);
+  stroke-dasharray: 5;
 }
 
 .scatter-plot .scatter-line.outlier,
@@ -246,33 +255,4 @@ svg.label-wrapper {
   font-size: 12px;
   line-height: 16px;
   cursor: default;
-}
-
-/* these are custom breakpoints to make the svg work well on phones */
-@media only screen and (max-width: 680px) {
-  .scatter-plot {
-    width: 300px;
-    height: 400px;
-  }
-
-  .plot-container {
-    position: static;
-  }
-
-  .key-circle.large::before {
-    width: 42px;
-    height: 42px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .plot-container {
-    padding: 20px;
-    justify-content: flex-end;
-  }
-
-  .scatter-plot {
-    width: 280px;
-    height: 400px;
-  }
 }

@@ -2,6 +2,7 @@ import { configureTooltip } from "./Tooltip";
 import { getSizing } from "../helpers";
 import {
   SVG_NS,
+  STATE_AVG,
   SMALL_PHONE,
   LARGE_PHONE,
   SMALL_BROWSER,
@@ -22,7 +23,7 @@ class CountyPoint {
     container
   ) {
     this.county = county;
-    this.isAverage = county === "State Average";
+    this.isAverage = county === STATE_AVG;
     this.data = data;
     this.xAxis = xAxis;
     this.yAxis = yAxis;
@@ -31,8 +32,9 @@ class CountyPoint {
     this.showName = showName;
     this.plot = plot;
     this.container = container;
-    this.renderTooltip = (elements, config) =>
-      renderTooltip(elements, this.data, this.county, config);
+    this.renderTooltip = (elements, config) => {
+      renderTooltip(elements, this.data, this.county, config)
+    };
     [this.xs, this.ys] = this.getPositions();
     this.rsDesktop = this.getRadiis(radiusScale?.desktop || radiusScale);
     this.rsMobile = this.getRadiis(radiusScale?.mobile || radiusScale);
@@ -40,13 +42,8 @@ class CountyPoint {
     this.tooltipTriggerTargets = [];
   }
 
-  isOutlier() {
-    return this.outlier;
-  }
-
   getPositions() {
-    const xs = [],
-      ys = [];
+    const xs = [], ys = [];
     this.data.forEach((data) => {
       const xDiff = this.xAxis.max - this.xAxis.min;
       const yDiff = this.yAxis.max - this.yAxis.min;
@@ -58,19 +55,16 @@ class CountyPoint {
   }
 
   getRadiis(radiusScale) {
-    const rs = [];
-    this.data.forEach((data) => {
-      if (!radiusScale) return rs.push(4);
-      rs.push(Math.max(radiusScale(data.r), 0));
+    return this.data.map((data) => {
+      return radiusScale ? Math.max(radiusScale(data.r), 0) : 4
     });
-    return rs;
   }
 
   renderCountyName() {
     if (!this.showName) return;
 
     const className = `scatter-text${this.outlier ? " outlier" : ""}
-    ${this.isAverage ? " state-average" : ""}`;
+      ${this.isAverage ? " state-average" : ""}`;
     const text = document.createElementNS(SVG_NS, "text");
     text.setAttributeNS(null, "class", className);
     text.setAttributeNS(null, "x", this.xs[0]);
@@ -87,28 +81,39 @@ class CountyPoint {
     text.addEventListener("mouseleave", () => this.onMouseLeave());
   }
 
-  renderPoints() {
+  renderPoints(sizing) {
+    this.circles = [];
     this.data.forEach((data, i) => {
       const className = `${data.name}${this.outlier ? " outlier" : ""}
-      ${this.isAverage ? " state-average" : ""} scatter-point`;
+        ${this.isAverage ? " state-average" : ""} scatter-point`;
       const point = document.createElementNS(SVG_NS, "circle");
       point.setAttributeNS(null, "class", className);
       point.setAttributeNS(null, "cx", this.xs[i]);
       point.setAttributeNS(null, "cy", this.ys[i]);
       this.plot.appendChild(point);
 
+      this.circles.push(point);
       this.elements.push(point);
       this.tooltipTriggerTargets.push(point);
       point.addEventListener("mouseenter", () => this.onMouseEnter());
       point.addEventListener("mouseleave", () => this.onMouseLeave());
+    });
+    this.updateRadius(sizing == REGULAR_WIDTH);
+  }
+
+  updateRadius(isRegularWidth) {
+    this.circles.forEach((circle, i) => {
+      const r = isRegularWidth ? this.rsDesktop[i] : this.rsMobile[i];
+      circle.setAttributeNS(null, "r", r);
     });
   }
 
   renderLine() {
     // only draw line if we have two data points
     if (this.data.length != 2) return;
+
     const className = `scatter-line${this.outlier ? " outlier" : ""}
-    ${this.isAverage ? " state-average" : ""}`;
+      ${this.isAverage ? " state-average" : ""}`;
     const line = document.createElementNS(SVG_NS, "line");
     line.setAttributeNS(null, "class", className);
     line.setAttributeNS(null, "x1", this.xs[0]);
@@ -149,6 +154,10 @@ class CountyPoint {
 export class ScatterPlot {
   constructor(data, xAxis, yAxis, radiusScale, tooltipConfig, container) {
     this.data = data;
+    this.countyData = Object.keys(this.data)
+      .filter((county) => county !== STATE_AVG)
+      .reduce((acc, county) => (acc[county] = this.data[county], acc), {});
+    this.averageData = this.data[STATE_AVG];
     this.xAxis = xAxis;
     this.yAxis = yAxis;
     this.ticks = { x: [], y: [] };
@@ -157,27 +166,29 @@ export class ScatterPlot {
     this.container = container;
     this.plotContainer =
       this.container.getElementsByClassName("plot-container")[0];
+
+    // custom average render tooltip function since we don't show total cases
     this.renderTooltip = configureTooltip(tooltipConfig);
+    const averageTooltipConfig = this.averageData.tooltipConfig;
+    this.renderAverageTooltip = configureTooltip(averageTooltipConfig || {});
+
     this.plot = this.container.getElementsByClassName("scatter-plot")[0];
     this.points = this.createPoints();
     this.averagePoint = this.points.filter((point) => point.isAverage)[0];
-    this.sizing;
+    this.sizing = getSizing(window.innerWidth);
     this.setUpSearchBar();
     this.render();
   }
 
   setUpSearchBar() {
-    const stateAvg = "State Average";
     const searchMenu = this.container.getElementsByClassName("menu")[0];
-    const counties = Object.keys(this.data)
-      .filter((c) => c !== stateAvg)
-      .sort();
+    const counties = Object.keys(this.countyData).sort();
     // make sure state average appears at the beginning of the search
-    counties.unshift(stateAvg);
+    counties.unshift(STATE_AVG);
     counties.forEach((county) => {
       const element = document.createElement("div");
       // state average should be bolded
-      element.className = county === stateAvg ? "item bold" : "item";
+      element.className = county === STATE_AVG ? "item bold" : "item";
       element.innerText = county;
       searchMenu.appendChild(element);
     });
@@ -205,13 +216,13 @@ export class ScatterPlot {
   }
 
   createPoints() {
-    const points = [];
-    for (const county in this.data) {
-      const outlier = this.data[county]["outlier"];
-      const showName = this.data[county]["showName"];
-      let x = this.data[county]["x"];
-      let y = this.data[county]["y"];
-      let r = this.data[county]["r"];
+    const data = this.averageData.showLines ? this.countyData : this.data;
+    const points = Object.keys(data).map((county) => {
+      const outlier = this.data[county].outlier;
+      const showName = this.data[county].showName;
+      let x = this.data[county].x;
+      let y = this.data[county].y;
+      let r = this.data[county].r;
       x = typeof x !== "object" ? { total: x } : x;
       y = typeof y !== "object" ? { total: y } : y;
       r = typeof r !== "object" ? { total: r } : r;
@@ -235,47 +246,40 @@ export class ScatterPlot {
           r: this.getNumber(r[key])
         };
       });
-      points.push(new CountyPoint(data, ...countyInfo));
-    }
+      return new CountyPoint(data, ...countyInfo);
+    });
 
-    const sortedPoints = points.sort((a, b) => b.data[0].r - a.data[0].r);
-    return sortedPoints;
+    return points.sort((a, b) => b.data[0].r - a.data[0].r);
   }
 
   updateViewBox() {
     const prevSizing = this.sizing;
     this.sizing = getSizing(window.innerWidth);
+    const isRegularWidth = this.sizing === REGULAR_WIDTH;
 
     // set viewbox based on window size (customized for specific phones)
     const width =
       this.sizing === SMALL_PHONE
-        ? 180
+        ? 250
         : this.sizing === LARGE_PHONE
         ? 280
         : this.sizing === SMALL_BROWSER
         ? 300
         : 600;
-    const height = this.sizing === REGULAR_WIDTH ? 500 : 400;
+    const height = isRegularWidth ? 500 : 400;
     this.plot.setAttributeNS(null, "viewBox", `0 0 ${width} ${height}`);
     if (prevSizing !== this.sizing) {
       // rerender axes with mobile sizing value
-      this.renderAxis(this.xAxis, false);
-      this.renderAxis(this.yAxis, true);
-      //set radii with mobile sizing value
-      this.points.forEach((point) => {
-        const circles = point.elements.filter(
-          (el) => el instanceof SVGCircleElement
-        );
-        circles.forEach((_, i) => {
-          circles[i].setAttributeNS(
-            null,
-            "r",
-            this.sizing === REGULAR_WIDTH
-              ? point.rsDesktop[i]
-              : point.rsMobile[i]
-          );
-        });
+      this.ticks.x.forEach((tick) => {
+        tick.setAttributeNS(null, "dy", isRegularWidth ? 26 : 18);
       });
+      this.ticks.y.forEach((tick) => {
+        tick.setAttributeNS(null, "dx", isRegularWidth ? -26 : -18);
+      });
+      this.axisLabels.x.setAttributeNS(null, "dy", isRegularWidth ? 60 : 40);
+      this.axisLabels.y.setAttributeNS(null, "dy", isRegularWidth ? -60 : -40);
+      // set radii with mobile sizing value
+      this.points.forEach((point) => point.updateRadius(isRegularWidth));
     }
   }
 
@@ -291,16 +295,33 @@ export class ScatterPlot {
     this.renderPlotLines(this.xAxis, false);
     this.renderPlotLines(this.yAxis, true);
 
+    // render state average lines before other points
+    if (this.averageData.showLines) {
+      const xTargets = this.renderAverageLine(
+        this.averageData.x, this.xAxis, false
+      );
+      const yTargets = this.renderAverageLine(
+        this.averageData.y, this.yAxis, true
+      );
+
+      this.renderAverageTooltip(xTargets[0], [this.averageData], STATE_AVG, {
+        triggerTarget: [...xTargets, ...yTargets],
+        followCursor: true
+      });
+    }
+
     // order: lines in background, then points, then names on top
     const countyPoints = this.points.filter((point) => !point.isAverage);
     countyPoints.forEach((point) => point.renderLine());
-    countyPoints.forEach((point) => point.renderPoints());
+    countyPoints.forEach((point) => point.renderPoints(this.sizing));
     countyPoints.forEach((point) => point.renderCountyName());
 
-    // render state average on top of everything else
-    this.averagePoint.renderLine();
-    this.averagePoint.renderPoints();
-    this.averagePoint.renderCountyName();
+    // render state average points on top of everything else
+    if (this.averagePoint) {
+      this.averagePoint.renderLine();
+      this.averagePoint.renderPoints(this.sizing);
+      this.averagePoint.renderCountyName();
+    }
 
     this.points.forEach((point) => {
       point.renderTooltip(point.tooltipTriggerTargets[0], {
@@ -311,49 +332,28 @@ export class ScatterPlot {
     this.updateViewBox();
   }
 
-  renderAxis(axis, isYAxis) {
-    // remove ticks from previous render
-    this.ticks[isYAxis ? "y" : "x"].forEach((tick) => tick.remove());
+  renderAverageLine(averageValue, axis, isYAxis) {
+    const position = 100 * (averageValue - axis.min) / (axis.max - axis.min);
+    const value = axis.convert(averageValue);
+    const tick = this.renderTick(value, position, isYAxis, "state-average-tick");
+    const hoverLine = this.renderPlotLine(
+      position, isYAxis, "state-average-line hover-line"
+    );
+    this.renderPlotLine(position, isYAxis, "state-average-line");
+    return [tick, hoverLine];
+  }
 
+  renderAxis(axis, isYAxis) {
     const tickSize = (axis.max - axis.min) / axis.numTicks;
     for (let i = 0; i < axis.numTicks + 1; i++) {
       const tickValue = axis.convert(axis.min + i * tickSize);
-
-      // calculate spacing value depending on axis
-      let spacingValue = (i / axis.numTicks) * 100;
-      if (isYAxis) spacingValue = 100 - spacingValue;
-      spacingValue = `${spacingValue}%`;
-
-      // adjust for the coordinate system starting at the top left
-      const axisPlacement = isYAxis ? 0 : "100%";
-      // get offset based on window size
-      const dxy = this.sizing === REGULAR_WIDTH ? 26 : 18;
-
-      const tick = document.createElementNS(SVG_NS, "text");
-      tick.setAttributeNS(null, "class", "axis-tick");
-      tick.setAttributeNS(null, "text-anchor", "middle");
-      tick.setAttributeNS(null, "x", isYAxis ? axisPlacement : spacingValue);
-      tick.setAttributeNS(null, "y", isYAxis ? spacingValue : axisPlacement);
-      tick.setAttributeNS(null, isYAxis ? "dx" : "dy", isYAxis ? -dxy : dxy);
-      // vertically center y-axis ticks
-      if (isYAxis) tick.setAttributeNS(null, "dy", 4);
-      tick.appendChild(document.createTextNode(tickValue));
-      this.ticks[isYAxis ? "y" : "x"].push(tick);
-      this.plot.appendChild(tick);
+      const spacingValue = (i / axis.numTicks) * 100;
+      this.renderTick(tickValue, spacingValue, isYAxis, "");
     }
-
-    // remove axis labels from previous render
-    this.axisLabels[isYAxis ? "y" : "x"].forEach((label) => label.remove());
-
-    // render lower and higher labels
-    this.renderAxisLabels(axis, isYAxis, true);
-    this.renderAxisLabels(axis, isYAxis, false);
+    this.renderAxisLabels(axis, isYAxis);
   }
 
-  renderAxisLabels(axis, isYAxis, isLower) {
-    // for mobile we only need one label
-    if (this.sizing !== REGULAR_WIDTH && !isLower) return;
-
+  renderAxisLabels(axis, isYAxis) {
     // wrap axis labels in svgs to do local rotation
     const wrapper = document.createElementNS(SVG_NS, "svg");
     wrapper.setAttributeNS(null, "class", "label-wrapper");
@@ -370,26 +370,47 @@ export class ScatterPlot {
     if (isYAxis) label.setAttributeNS(null, "transform", "rotate(-90)");
     label.appendChild(document.createTextNode(axis.name));
     wrapper.appendChild(label);
-    this.axisLabels[isYAxis ? "y" : "x"].push(wrapper);
+    this.axisLabels[isYAxis ? "y" : "x"] = label;
     this.plot.appendChild(wrapper);
   }
 
   renderPlotLines(axis, isYAxis) {
     for (let i = 0; i < axis.numTicks + 1; i++) {
-      // calculate spacing value depending on axis
-      let spacingValue = (i / axis.numTicks) * 100;
-      if (isYAxis) spacingValue = 100 - spacingValue;
-      spacingValue = `${spacingValue}%`;
-
-      // render the line for each axis tick
-      const line = document.createElementNS(SVG_NS, "line");
-      line.setAttributeNS(null, "class", "axis-line");
-      line.setAttributeNS(null, "x1", !isYAxis ? spacingValue : 0);
-      line.setAttributeNS(null, "y1", !isYAxis ? 0 : spacingValue);
-      line.setAttributeNS(null, "x2", !isYAxis ? spacingValue : "100%");
-      line.setAttributeNS(null, "y2", !isYAxis ? "100%" : spacingValue);
-      this.plot.appendChild(line);
+      const spacingValue = (i / axis.numTicks) * 100;
+      this.renderPlotLine(spacingValue, isYAxis, "");
     }
+  }
+
+  renderPlotLine(spacingValue, isYAxis, className) {
+    const value = isYAxis ? 100 - spacingValue : spacingValue;
+    const line = document.createElementNS(SVG_NS, "line");
+    line.setAttributeNS(null, "class", `axis-line ${className}`);
+    line.setAttributeNS(null, "x1", isYAxis ? 0 : `${value}%`);
+    line.setAttributeNS(null, "y1", isYAxis ? `${value}%` : 0);
+    line.setAttributeNS(null, "x2", isYAxis ? "100%" : `${value}%`);
+    line.setAttributeNS(null, "y2", isYAxis ? `${value}%` : "100%");
+    this.plot.appendChild(line);
+    return line;
+  }
+
+  renderTick(tickValue, spacingValue, isYAxis, className) {
+    const value = isYAxis ? 100 - spacingValue : spacingValue;
+    const tick = document.createElementNS(SVG_NS, "text");
+    tick.setAttributeNS(null, "class", `axis-tick ${className}`);
+    tick.setAttributeNS(null, "text-anchor", "middle");
+    tick.setAttributeNS(null, "x", isYAxis ? 0 : `${value}%`);
+    tick.setAttributeNS(null, "y", isYAxis ? `${value}%` : "100%");
+
+    // get offset based on window size
+    const dxy = this.sizing === REGULAR_WIDTH ? 26 : 18;
+    tick.setAttributeNS(null, isYAxis ? "dx" : "dy", isYAxis ? -dxy : dxy);
+
+    // vertically center y-axis ticks
+    if (isYAxis) tick.setAttributeNS(null, "dy", 4);
+    tick.appendChild(document.createTextNode(tickValue));
+    this.ticks[isYAxis ? "y" : "x"].push(tick);
+    this.plot.appendChild(tick);
+    return tick;
   }
 }
 
