@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import { feature } from "topojson-client";
 import { COUNTY_MAP_DATA } from "../raw-data.js";
 import { configureTooltip } from "./Tooltip";
-import { getColorThreshold, toPercent } from "../helpers";
+import { getColorThreshold, toPercent, getPercentOffset } from "../helpers";
 import {
   DEFAULT_MAP_WIDTH,
   DEFAULT_MAP_HEIGHT,
@@ -89,12 +89,8 @@ class ColorScaleLegend {
       .attr("height", this.sectionHeight)
       .attr(BUCKET_ATTRIBUTE, (_, i) => this.labels[i + 1])
       .style("fill", (d) => this.colorThreshold(d))
-      .on("mouseover", (event) => {
-        this.onMouseOver(event);
-      })
-      .on("mouseout", () => {
-        this.onMouseOut();
-      });
+      .on("mouseover", (event) => this.onMouseOver(event))
+      .on("mouseout", () => this.onMouseOut());
     // Add labels
     const legendTextClassName = "legend-text";
     const smallLabelOffset = (i) =>
@@ -129,7 +125,8 @@ class ColorScaleLegend {
     // Set up average label
     const maxValue = this.labels[this.labels.length - 1];
     this.averages.forEach((avg) => {
-      const avgOffsetX = this.offsetX + this.legendWidth * ((avg.value - this.labels[0]) / (maxValue - this.labels[0]));
+      const position = getPercentOffset(avg.value, this.labels[0], maxValue);
+      const avgOffsetX = this.offsetX + this.legendWidth * position / 100;
       const legendLineClassName = "legend-avg-line";
       this.svg
         .append("line")
@@ -220,7 +217,7 @@ class Map {
   }
 
   showTooltip(element, data) {
-    this.tooltip = this.renderTooltip(element, [data], data["name"]);
+    this.tooltip = this.renderTooltip(element, [data], data.name);
     this.tooltip.show();
   }
 

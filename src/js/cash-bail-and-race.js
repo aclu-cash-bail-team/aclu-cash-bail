@@ -252,13 +252,7 @@ const createRaceScatterPlot = () => {
       {
         columnHeader: "Bail Amount",
         dataKey: "y",
-        render: (value) =>
-          value.toLocaleString("en", {
-            style: "currency",
-            currency: "USD",
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0
-          })
+        render: (value) => toMoney(value, 0, true, false)
       }
     ]
   };

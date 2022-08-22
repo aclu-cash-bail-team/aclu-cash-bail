@@ -88,9 +88,9 @@ class NumberCell extends Cell {
   }
 
   formatValue(value) {
-    const sign = this.data["showSigns"] ? (value > 0 ? "+" : "") : "";
-    if (this.data["unit"] === "percent") return `${sign}${toPercent(value)}`;
-    if (this.data["unit"] === "dollars") return `${sign}${toMoney(value)}`;
+    const sign = this.data.showSigns ? value > 0 ? "+" : "" : "";
+    if (this.data.unit === "percent") return `${sign}${toPercent(value)}`;
+    if (this.data.unit === "dollars") return `${sign}${toMoney(value)}`;
     return `${sign}${toNumberString(value)}`;
   }
 
@@ -104,10 +104,10 @@ class BarGraphCell extends Cell {
   constructor(content, className, data) {
     super(className);
     // BarGraphCell should only ever be passed one number
-    this.content = content["values"][0];
-    this.average = data["averages"][0]["value"];
+    this.content = content.values[0];
+    this.average = data.averages[0].value;
     this.range = data;
-    this.showDiff = data["showDiff"];
+    this.showDiff = data.showDiff;
     this.render();
   }
 
@@ -116,7 +116,7 @@ class BarGraphCell extends Cell {
     // create the horizontal bar and scale its width by the value and range
     const bar = document.createElement("div");
     bar.className = "viz-bar";
-    bar.style.width = `${(this.content / this.range["end"]) * 100}%`;
+    bar.style.width = `${(this.content / this.range.end) * 100}%`;
     // label the bar with the difference between value and average
     if (this.showDiff) {
       const label = document.createElement("div");
@@ -132,7 +132,7 @@ class BarGraphCell extends Cell {
     // add the vertical line denoting the average
     const averageLine = document.createElement("div");
     averageLine.className = "bar-average-line green";
-    averageLine.style.left = `${(this.average / this.range["end"]) * 100}%`;
+    averageLine.style.left = `${(this.average / this.range.end) * 100}%`;
     this.element.appendChild(averageLine);
   }
 }
@@ -140,7 +140,7 @@ class BarGraphCell extends Cell {
 class DistributionBarCell extends Cell {
   constructor(content, className) {
     super(className);
-    this.values = content["values"];
+    this.values = content.values;
     this.tooltipValues = [
       this.values.reduce((obj, { value, className }) => {
         obj[className] = value;
@@ -172,7 +172,7 @@ class DistributionBarCell extends Cell {
       placement: "top",
       followCursor: true
     });
-    this.tooltipName = content["name"];
+    this.tooltipName = content.name;
     this.render();
   }
 
@@ -183,11 +183,11 @@ class DistributionBarCell extends Cell {
     // create bars for each distribution
     this.values.forEach((dist) => {
       const bar = document.createElement("div");
-      bar.className = `viz-bar ${dist["className"]}`;
+      bar.className = `viz-bar ${dist.className}`;
       container.appendChild(bar);
     });
     // configure sizes of distribution bars
-    const distWidths = this.values.map((dist) => `${dist["value"] * 100}%`);
+    const distWidths = this.values.map((dist) => `${dist.value * 100}%`);
     container.style.gridTemplateColumns = distWidths.join(" ");
     this.renderTooltip(container, this.tooltipValues, this.tooltipName);
     this.element.appendChild(container);
@@ -197,8 +197,8 @@ class DistributionBarCell extends Cell {
 class NumberLineCell extends Cell {
   constructor(content, className, data) {
     super(className);
-    this.content = content["values"];
-    this.averages = data["averages"];
+    this.content = content.values;
+    this.averages = data.averages;
     this.range = data;
     this.vizColors = ["green", "purple"];
     this.render();
@@ -215,7 +215,7 @@ class NumberLineCell extends Cell {
       const point = document.createElement("div");
       point.className = `viz-number-line-point ${this.vizColors[i]}`;
       point.style.left = `calc(${
-        ((value - this.range["start"]) / this.range["end"]) * 100
+        ((value - this.range.start) / this.range.end) * 100
       }% - 2px)`;
       this.element.appendChild(point);
     });
@@ -224,7 +224,7 @@ class NumberLineCell extends Cell {
       const averageLine = document.createElement("div");
       averageLine.className = `bar-average-line ${this.vizColors[i]}`;
       averageLine.style.left = `${
-        ((average["value"] - this.range["start"]) / this.range["end"]) * 100
+        ((average.value - this.range.start) / this.range.end) * 100
       }%`;
       this.element.appendChild(averageLine);
     });
@@ -310,8 +310,8 @@ class VizHeaderCell extends HeaderCell {
   }
 
   formatValue(value) {
-    if (this.content["unit"] === "percent") return toPercent(value, 0, false);
-    if (this.content["unit"] === "dollars") return toMoney(value, 0);
+    if (this.content.unit === "percent") return toPercent(value, 0, false);
+    if (this.content.unit === "dollars") return toMoney(value, 0);
     return toNumberString(value);
   }
 
@@ -322,8 +322,8 @@ class VizHeaderCell extends HeaderCell {
 
     const cell = document.createElement("th");
     cell.className = this.className;
-    const startText = this.formatValue(this.content["start"]);
-    const endText = this.formatValue(this.content["end"]);
+    const startText = this.formatValue(this.content.start);
+    const endText = this.formatValue(this.content.end);
     const startElement = this.createTickElement(startText, "start-num");
     const endElement = this.createTickElement(endText, "end-num");
     // add all the elements to the cell
@@ -564,7 +564,7 @@ export class Table {
     const headerCells = this.headers.map((header, i) => {
       const CellType = "text" in header ? HeaderCell : VizHeaderCell;
       return new CellType(
-        CellType === HeaderCell ? header["text"] : header,
+        CellType === HeaderCell ? header.text : header,
         this.classNames[i],
         this.sortCols[i],
         // 1 designates ascending; -1, descending (default); 0, not sortable
@@ -583,15 +583,15 @@ export class Table {
       if (typeof cell == "number") {
         CellType = NumberCell;
       } else if (typeof cell == "object") {
-        if (cell["type"] === "bar") {
+        if (cell.type === "bar") {
           CellType = BarGraphCell;
-        } else if (cell["type"] === "line") {
+        } else if (cell.type === "line") {
           CellType = NumberLineCell;
-        } else if (cell["type"] === "dist") {
+        } else if (cell.type === "dist") {
           CellType = DistributionBarCell;
-        } else if (cell["type"] === "link") {
+        } else if (cell.type === "link") {
           CellType = LinkCell;
-        } else if (cell["type"] === "footnote") {
+        } else if (cell.type === "footnote") {
           CellType = FootnoteCell;
         }
       }
@@ -680,7 +680,7 @@ export class Table {
 
   getSortable(data) {
     if (typeof data === "object" || /\d/.test(data)) {
-      const value = typeof data === "object" ? data["value"] : data;
+      const value = typeof data === "object" ? data.value : data;
       return Number(value.replace ? value.replace(/[^\d.-]/g, "") : value);
     }
     return data;

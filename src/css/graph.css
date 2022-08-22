@@ -162,6 +162,7 @@ svg.label-wrapper {
 
 .axis-tick.state-average-tick {
   fill: rgba(255, 255, 255, 1);
+  cursor: default;
 }
 
 .axis-line {
@@ -169,7 +170,7 @@ svg.label-wrapper {
   stroke-width: 0.5px;
 }
 
-.axis-line.state-average-line {
+.axis-line.state-average-line:not(.hover-line) {
   stroke: rgba(255, 255, 255, 1);
   stroke-dasharray: 5;
 }

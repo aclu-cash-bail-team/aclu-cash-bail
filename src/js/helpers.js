@@ -44,3 +44,7 @@ export const getColorThreshold = (labels, colors) => {
   .domain(labels)
   .range(["#FFF"].concat(colors)); // #FFF will never be displayed
 };
+
+export const getPercentOffset = (value, minValue, maxValue) => {
+  return 100 * (value - minValue) / (maxValue - minValue);
+}

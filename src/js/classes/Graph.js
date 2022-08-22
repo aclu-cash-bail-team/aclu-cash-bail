@@ -1,5 +1,5 @@
 import { configureTooltip } from "./Tooltip";
-import { getSizing } from "../helpers";
+import { getSizing, getPercentOffset } from "../helpers";
 import {
   SVG_NS,
   STATE_AVG,
@@ -35,23 +35,19 @@ class CountyPoint {
     this.renderTooltip = (elements, config) => {
       renderTooltip(elements, this.data, this.county, config)
     };
-    [this.xs, this.ys] = this.getPositions();
+    this.xs = this.getPositions("x", this.xAxis);
+    this.ys = this.getPositions("y", this.yAxis);
     this.rsDesktop = this.getRadiis(radiusScale?.desktop || radiusScale);
     this.rsMobile = this.getRadiis(radiusScale?.mobile || radiusScale);
     this.elements = [];
     this.tooltipTriggerTargets = [];
   }
 
-  getPositions() {
-    const xs = [], ys = [];
-    this.data.forEach((data) => {
-      const xDiff = this.xAxis.max - this.xAxis.min;
-      const yDiff = this.yAxis.max - this.yAxis.min;
-      xs.push(`${((data.x - this.xAxis.min) / xDiff) * 100}%`);
-      // svgs start Y from the top, so subtract the percentage from 100
-      ys.push(`${100 - ((data.y - this.yAxis.min) / yDiff) * 100}%`);
+  getPositions(dataKey, axis) {
+    return this.data.map((data) => {
+      const offset = getPercentOffset(data[dataKey], axis.min, axis.max);
+      return `${dataKey === "y" ? 100 - offset : offset}%`;
     });
-    return [xs, ys];
   }
 
   getRadiis(radiusScale) {
@@ -269,16 +265,14 @@ export class ScatterPlot {
     const height = isRegularWidth ? 500 : 400;
     this.plot.setAttributeNS(null, "viewBox", `0 0 ${width} ${height}`);
     if (prevSizing !== this.sizing) {
-      // rerender axes with mobile sizing value
-      this.ticks.x.forEach((tick) => {
-        tick.setAttributeNS(null, "dy", isRegularWidth ? 26 : 18);
-      });
-      this.ticks.y.forEach((tick) => {
-        tick.setAttributeNS(null, "dx", isRegularWidth ? -26 : -18);
-      });
-      this.axisLabels.x.setAttributeNS(null, "dy", isRegularWidth ? 60 : 40);
-      this.axisLabels.y.setAttributeNS(null, "dy", isRegularWidth ? -60 : -40);
-      // set radii with mobile sizing value
+      // adjust axis ticks and labels for mobile/desktop
+      const dxy = isRegularWidth ? 26 : 18;
+      this.ticks.x.forEach((tick) => tick.setAttributeNS(null, "dy", dxy));
+      this.ticks.y.forEach((tick) => tick.setAttributeNS(null, "dx", -dxy));
+      const dy = isRegularWidth ? 60 : 40;
+      this.axisLabels.x.setAttributeNS(null, "dy", dy);
+      this.axisLabels.y.setAttributeNS(null, "dy", -dy);
+      // set radii for mobile/desktop
       this.points.forEach((point) => point.updateRadius(isRegularWidth));
     }
   }
@@ -333,21 +327,21 @@ export class ScatterPlot {
   }
 
   renderAverageLine(averageValue, axis, isYAxis) {
-    const position = 100 * (averageValue - axis.min) / (axis.max - axis.min);
+    const position = getPercentOffset(averageValue, axis.min, axis.max);
     const value = axis.convert(averageValue);
-    const tick = this.renderTick(value, position, isYAxis, "state-average-tick");
-    const hoverLine = this.renderPlotLine(
-      position, isYAxis, "state-average-line hover-line"
-    );
     this.renderPlotLine(position, isYAxis, "state-average-line");
-    return [tick, hoverLine];
+    // return and hover line to be tooltip targets
+    return [
+      this.renderTick(value, position, isYAxis, "state-average-tick"),
+      this.renderPlotLine(position, isYAxis, "state-average-line hover-line")
+    ];
   }
 
   renderAxis(axis, isYAxis) {
     const tickSize = (axis.max - axis.min) / axis.numTicks;
     for (let i = 0; i < axis.numTicks + 1; i++) {
       const tickValue = axis.convert(axis.min + i * tickSize);
-      const spacingValue = (i / axis.numTicks) * 100;
+      const spacingValue = getPercentOffset(i, 0, axis.numTicks);
       this.renderTick(tickValue, spacingValue, isYAxis, "");
     }
     this.renderAxisLabels(axis, isYAxis);
@@ -426,11 +420,7 @@ class DistributionRow {
       elements,
       [
         this.distributions.reduce(
-          (acc, dist) => ({
-            ...acc,
-            [dist["className"]]: dist["value"]
-          }),
-          {}
+          (acc, dist) => (acc[dist.className] = dist.value, acc), {}
         )
       ],
       this.county
@@ -448,11 +438,11 @@ class DistributionRow {
     this.distributions.forEach((dist) => {
       const distBarElement = document.createElement("div");
       distBarElement.classList.add("dist-column-segment");
-      distBarElement.classList.add(dist["className"]);
+      distBarElement.classList.add(dist.className);
       distBarsSegment.appendChild(distBarElement);
     });
     // Set width of bar based on distribution
-    const cols = this.distributions.map((dist) => `${dist["value"] * 100}%`);
+    const cols = this.distributions.map((dist) => `${dist.value * 100}%`);
     distBarsSegment.style.gridTemplateColumns = cols.join(" ");
 
     this.createTooltip(distBarsSegment);
@@ -474,9 +464,9 @@ export class DistributionGraph {
     this.distributionIdx = 1;
     // Sort data by county name
     this.data.sort((a, b) =>
-      a["data"][this.nameIdx] > b["data"][this.nameIdx]
+      a.data[this.nameIdx] > b.data[this.nameIdx]
         ? 1
-        : a["data"][this.nameIdx] < b["data"][this.nameIdx]
+        : a.data[this.nameIdx] < b.data[this.nameIdx]
         ? -1
         : 0
     );
@@ -513,8 +503,8 @@ export class DistributionGraph {
 
   render() {
     this.data.forEach((county) => {
-      const countyName = county["data"][this.nameIdx];
-      const distributions = county["data"][this.distributionIdx]["values"];
+      const countyName = county.data[this.nameIdx];
+      const distributions = county.data[this.distributionIdx].values;
       const distributionRow = new DistributionRow(
         countyName,
         distributions,
@@ -531,7 +521,7 @@ class Row {
     this.data = data;
     this.renderTooltip = (elements) =>
       renderTooltip(elements, [data], this.data.name);
-    this.barWidth = ((data.x - minValue) * 100) / (maxValue - minValue);
+    this.barWidth = getPercentOffset(data.x, minValue, maxValue);
   }
 
   render() {
