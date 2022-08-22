@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import { feature } from "topojson-client";
 import { COUNTY_MAP_DATA } from "../raw-data.js";
 import { configureTooltip } from "./Tooltip";
-import { getColorThreshold, toPercent } from "../helpers";
+import { getColorThreshold, toPercent, getPercentOffset } from "../helpers";
 import {
   DEFAULT_MAP_WIDTH,
   DEFAULT_MAP_HEIGHT,
@@ -89,12 +89,8 @@ class ColorScaleLegend {
       .attr("height", this.sectionHeight)
       .attr(BUCKET_ATTRIBUTE, (_, i) => this.labels[i + 1])
       .style("fill", (d) => this.colorThreshold(d))
-      .on("mouseover", (event) => {
-        this.onMouseOver(event);
-      })
-      .on("mouseout", () => {
-        this.onMouseOut();
-      });
+      .on("mouseover", (event) => this.onMouseOver(event))
+      .on("mouseout", () => this.onMouseOut());
     // Add labels
     const legendTextClassName = "legend-text";
     const smallLabelOffset = (i) =>
@@ -129,7 +125,8 @@ class ColorScaleLegend {
     // Set up average label
     const maxValue = this.labels[this.labels.length - 1];
     this.averages.forEach((avg) => {
-      const avgOffsetX = this.offsetX + this.legendWidth * ((avg.value - this.labels[0]) / (maxValue - this.labels[0]));
+      const position = getPercentOffset(avg.value, this.labels[0], maxValue);
+      const avgOffsetX = this.offsetX + this.legendWidth * position / 100;
       const legendLineClassName = "legend-avg-line";
       this.svg
         .append("line")
@@ -220,7 +217,7 @@ class Map {
   }
 
   showTooltip(element, data) {
-    this.tooltip = this.renderTooltip(element, [data], data["name"]);
+    this.tooltip = this.renderTooltip(element, [data], data.name);
     this.tooltip.show();
   }
 
@@ -271,7 +268,10 @@ export class BailRateMap extends Map {
     this.data = data;
     this.rateKey = rateKey;
 
-    this.colorThreshold = getColorThreshold(BAIL_RATE_MAP_COLOR_CONFIG.domain, BAIL_RATE_MAP_COLOR_CONFIG.colors);
+    this.colorThreshold = getColorThreshold(
+      BAIL_RATE_MAP_COLOR_CONFIG.domain,
+      BAIL_RATE_MAP_COLOR_CONFIG.colors
+    );
 
     const onLegendMouseOver = (event) => {
       this.highlightBar(event.target);
@@ -415,21 +415,46 @@ class BailRaceMap extends Map {
     return Number(this.countyNameToBucket[countyName]);
   }
 
+  createHatchPatterns(colors) {
+    new Set(colors).forEach((color) => {
+      const pattern = this.svg
+        .append("defs")
+        .append("pattern")
+          .attr("id", `diagonalHatch${color.replace("#", "")}`)
+          .attr("patternUnits", "userSpaceOnUse")
+          .attr("patternTransform", "rotate(-45 2 2)")
+          .attr("width", 10)
+          .attr("height", 10);
+      pattern.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", 10)
+        .attr("height", 10)
+        .attr("fill", "#303030");
+      pattern.append("path")
+        .attr("d", "M -1,2 l 12,0")
+        .attr("stroke", `${color}`)
+        .attr("stroke-width", 5);
+    });
+  }
+
   renderPA(features, path) {
+    const colors = [];
     this.data.forEach((row) => {
       const countyName = row.name;
       const cashBailRate = row[this.rateKey];
       const feature = features.find((f) => f.properties["NAME"] === countyName);
       feature.properties.rate = cashBailRate;
-      feature.properties.color = this.colorThreshold(cashBailRate);
-      if (row.outlier) {
-        feature.properties.color = "#303030";
-      }
-      feature.properties.bucket = this.colorThreshold.invertExtent(
-        feature.properties.color
-      )[1];
+      // assign color based on outlier status; add to array for pattern creation
+      const color = this.colorThreshold(cashBailRate);
+      feature.properties.color =
+        row.outlier ? `url(#diagonalHatch${color.replace("#", "")})` : color;
+      feature.properties.bucket = this.colorThreshold.invertExtent(color)[1];
       this.countyNameToBucket[countyName] = feature.properties.bucket;
+      colors.push(color);
     });
+    // create svg hatch patterns for each possible color
+    this.createHatchPatterns(colors);
     const paths = super.renderPA(features, path);
     paths
       .style("fill", (feature) => feature.properties.color)
@@ -443,7 +468,10 @@ class BailRaceMap extends Map {
 
 export class RaceMapContainer {
   constructor(id, data, averages) {
-    const colorThreshold = getColorThreshold(BAIL_RATE_RACE_MAP_COLOR_CONFIG.domain, BAIL_RATE_RACE_MAP_COLOR_CONFIG.colors);
+    const colorThreshold = getColorThreshold(
+      BAIL_RATE_RACE_MAP_COLOR_CONFIG.domain,
+      BAIL_RATE_RACE_MAP_COLOR_CONFIG.colors
+    );
 
     this.black = new BailRaceMap(
       `#${id} #black.map`,

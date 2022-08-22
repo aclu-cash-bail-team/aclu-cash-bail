@@ -259,13 +259,7 @@ const createCasesScatterPlot = () => {
       {
         rowHeader: "Average Bail Amount",
         dataKey: "y",
-        render: (value) =>
-          value.toLocaleString("en", {
-            style: "currency",
-            currency: "USD",
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0
-          })
+        render: (value) => toMoney(value, 0, true, false)
       },
       {
         rowHeader: "Total Cases",
@@ -308,7 +302,7 @@ const createCasesScatterPlot = () => {
   const PLOT_DATA = COUNTY_DATA.reduce(
     (acc, countyData) => ({
       ...acc,
-      [countyData["name"]]: {
+      [countyData.name]: {
         showName: false,
         x: countyData["cash_bail_pct"],
         r: countyData["cash_bail_cases"],
@@ -318,9 +312,22 @@ const createCasesScatterPlot = () => {
     {}
   );
   PLOT_DATA["State Average"] = {
-    showName: true,
+    showLines: true,
+    tooltipConfig: {
+      rows: [
+        {
+          rowHeader: "Cash Bail Rate",
+          dataKey: "x",
+          render: (value) => toPercent(value)
+        },
+        {
+          rowHeader: "Average Bail Amount",
+          dataKey: "y",
+          render: (value) => toMoney(value, 0, true, false)
+        }
+      ]
+    },
     x: STATE_DATA["cash_bail_pct"],
-    r: STATE_DATA["cash_bail_cases"] / COUNTY_DATA.length, // dividing by total # of counties to get avg_cash_bail_cases
     y: STATE_DATA["avg_bail_amount"]
   };
   const container = document.getElementById("cases-scatter-plot");
