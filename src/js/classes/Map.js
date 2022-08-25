@@ -109,19 +109,7 @@ class ColorScaleLegend {
         const [start, end] = this.colorThreshold.invertExtent(color);
         return `${start}-${end}`;
       })
-      .text((_, i) => toPercent(this.labels[i], 0, false));
-    // Set up legend max label
-    this.svg
-      .select(`g[data-label="${this.labels[this.labels.length - 2]}"]`)
-      .append("text")
-      .attr(
-        "x",
-        this.labelOffsetX + (this.labels.length - 1) * this.sectionWidth
-      )
-      .attr("y", this.labelOffsetY)
-      .attr("class", legendTextClassName)
-      .attr(BUCKET_ATTRIBUTE, this.labels[this.labels.length - 1])
-      .text(toPercent(this.labels[this.labels.length - 1], 0));
+      .text((_, i) => i === 0 ? "" : toPercent(this.labels[i], 0, false));
     // Set up average label
     const maxValue = this.labels[this.labels.length - 1];
     this.averages.forEach((avg) => {
