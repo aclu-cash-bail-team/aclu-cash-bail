@@ -1,5 +1,7 @@
 export const SVG_NS = "http://www.w3.org/2000/svg";
 
+export const STATE_AVG = "State Average";
+
 export const DEFAULT_MAP_WIDTH = 600;
 export const DEFAULT_MAP_HEIGHT = 400;
 export const COUNTY_NAME_ATTRIBUTE = "data-county-name";

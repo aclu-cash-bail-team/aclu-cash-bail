@@ -160,9 +160,19 @@ svg.label-wrapper {
   line-height: 16px;
 }
 
+.axis-tick.state-average-tick {
+  fill: rgba(255, 255, 255, 1);
+  cursor: default;
+}
+
 .axis-line {
   stroke: rgba(255, 255, 255, 0.1);
   stroke-width: 0.5px;
+}
+
+.axis-line.state-average-line:not(.hover-line) {
+  stroke: rgba(255, 255, 255, 1);
+  stroke-dasharray: 5;
 }
 
 .scatter-plot .scatter-line.outlier,
@@ -181,6 +191,9 @@ svg.label-wrapper {
   transition: opacity 0.05s;
 }
 
+.scatter-line.state-average,
+.scatter-point.state-average,
+.scatter-text.state-average,
 .scatter-line.hovering,
 .scatter-point.hovering,
 .scatter-text.hovering {
@@ -192,7 +205,7 @@ svg.label-wrapper {
   stroke-width: 0.5px;
 }
 
-.hover-line {
+.hover-line:not(.state-average) {
   stroke: rgba(255, 255, 255, 0);
   stroke-width: 12px;
 }
@@ -207,20 +220,6 @@ svg.label-wrapper {
   fill: rgb(255, 255, 255, 0.9);
   stroke: #fff;
   mix-blend-mode: hard-light;
-}
-
-.scatter-point.state-average:not(.black):not(.white).hovering.total,
-.scatter-point.state-average:not(.black):not(.white).searched.total {
-  fill: #fff;
-  stroke: #fff;
-  stroke-width: 2px;
-}
-
-.scatter-point.hovering.total,
-.scatter-point.searched.total {
-  fill: #55eaacab;
-  stroke: #fff;
-  stroke-width: 2px;
 }
 
 .scatter-point.black {
@@ -243,6 +242,8 @@ svg.label-wrapper {
   fill: rgb(19, 19, 19);
 }
 
+.scatter-line.state-average,
+.scatter-point.state-average,
 .scatter-line.hovering,
 .scatter-point.hovering,
 .scatter-line.searched,
@@ -255,33 +256,4 @@ svg.label-wrapper {
   font-size: 12px;
   line-height: 16px;
   cursor: default;
-}
-
-/* these are custom breakpoints to make the svg work well on phones */
-@media only screen and (max-width: 680px) {
-  .scatter-plot {
-    width: 300px;
-    height: 400px;
-  }
-
-  .plot-container {
-    position: static;
-  }
-
-  .key-circle.large::before {
-    width: 42px;
-    height: 42px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .plot-container {
-    padding: 20px;
-    justify-content: flex-end;
-  }
-
-  .scatter-plot {
-    width: 280px;
-    height: 400px;
-  }
 }
