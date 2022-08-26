@@ -131,7 +131,7 @@ class BarGraphCell extends Cell {
     this.element.appendChild(bar);
     // add the vertical line denoting the average
     const averageLine = document.createElement("div");
-    averageLine.className = "bar-average-line green";
+    averageLine.className = "bar-average-line white";
     averageLine.style.left = `${(this.average / this.range.end) * 100}%`;
     this.element.appendChild(averageLine);
   }
@@ -200,7 +200,7 @@ class NumberLineCell extends Cell {
     this.content = content.values;
     this.averages = data.averages;
     this.range = data;
-    this.vizColors = ["green", "purple"];
+    this.vizColors = ["red", "blue"];
     this.render();
   }
 
