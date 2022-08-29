@@ -200,7 +200,7 @@ class NumberLineCell extends Cell {
     this.content = content.values;
     this.averages = data.averages;
     this.range = data;
-    this.vizColors = ["red", "blue"];
+    this.vizColors = ["black-race", "white-race"];
     this.render();
   }
 
