@@ -1,5 +1,6 @@
 .table-container > table * {
   box-sizing: unset;
+  line-height: 1;
 }
 
 .table-container > table {
