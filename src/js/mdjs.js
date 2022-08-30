@@ -19,10 +19,10 @@ const createMdjTable = (tableContainer, county = "") => {
     {
       class: "county-name-cell",
       header: {
-        text: "Name",
+        text: county !== "" ? "Name" : "",
         unit: ""
       },
-      sortable: false,
+      sortable: true,
       searchable: true
     },
     {
@@ -62,7 +62,7 @@ const createMdjTable = (tableContainer, county = "") => {
         } else {
           return [];
         }
-      })
+      });
     return new Table(countyMdjBailTypeData, columnConfigs, initSort, tableContainer);
   } else {
     return new Table(MDJ_BAIL_TYPE_DATA, columnConfigs, initSort, tableContainer);

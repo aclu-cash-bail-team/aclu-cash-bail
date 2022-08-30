@@ -27,10 +27,10 @@ export const LARGE_PHONE = "LARGE_PHONE";
 export const SMALL_PHONE = "SMALL_PHONE";
 
 export const BAIL_RATE_MAP_COLOR_CONFIG = {
-  domain: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
-  colors: ["#182935", "#215f5d", "#1b9b88", "#0fc59b", "#0fda92", "#00ed89"]
+  domain: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
+  colors: ["#75bfd1", "#aadfed", "#d8edf2", "#eecccd", "#da8989", "#cd5958", "#7b3535"]
 };
 export const BAIL_RATE_RACE_MAP_COLOR_CONFIG = {
-  domain: [0.2, 0.4, 0.6, 0.8],
-  colors: ["#B08CF0", "#7AC7DF", "#00ED89"]
+  domain: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
+  colors: ["#75bfd1", "#aadfed", "#d8edf2", "#eecccd", "#da8989", "#cd5958", "#7b3535"]
 };
