@@ -86,18 +86,19 @@ svg.scatter-plot {
   height: 22px;
 }
 
-.key-circle.green::before {
-  background-color: #00ed89;
+.key-circle.black-race::before {
+  background-color: #CD5958;
 }
 
-.key-circle.green-with-opacity::before {
-  background-color: #55eaac66;
-  border: 1px solid #55eaac;
-  mix-blend-mode: hard-light;
+.key-circle.black-race-with-opacity::before {
+  background-color: rgba(205, 89, 88, 0.4);
+  border: 1px solid #CD5958;
+  mix-blend-mode: normal;
+  background-blend-mode: multiply;
 }
 
-.key-circle.purple::before {
-  background-color: #c14ef8;
+.key-circle.white-race::before {
+  background-color: #AADFED;
 }
 
 .key-circle.yellow::before {
@@ -211,9 +212,10 @@ svg.label-wrapper {
 }
 
 .scatter-point.total {
-  fill: #55eaac66;
-  stroke: #55eaac;
-  mix-blend-mode: hard-light;
+  fill: rgba(205, 89, 88, 0.4);
+  stroke: #CD5958;
+  mix-blend-mode: normal;
+  background-blend-mode: multiply;
 }
 
 .scatter-point.state-average:not(.black):not(.white) {
@@ -223,19 +225,19 @@ svg.label-wrapper {
 }
 
 .scatter-point.black {
-  fill: #00ed89;
+  fill: #CD5958;
 }
 
 .scatter-point.white {
-  fill: #c14ef8;
+  fill: #AADFED;
 }
 
 .scatter-point.black.outlier {
-  stroke: #00ed89;
+  stroke: #CD5958;
 }
 
 .scatter-point.white.outlier {
-  stroke: #c14ef8;
+  stroke: #AADFED;
 }
 
 .scatter-point.outlier {

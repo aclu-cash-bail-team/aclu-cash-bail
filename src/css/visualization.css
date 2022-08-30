@@ -98,18 +98,18 @@
   bottom: -20px;
 }
 
-.average-line.green {
-  background: #00ed89;
+.average-line.black-race {
+  background: #CD5958;
 }
 
-.average-line.purple {
-  background: #c14ef8;
+.average-line.white-race {
+  background: #AADFED;
 }
 
 .viz-bar {
   position: relative;
   height: 0.75em;
-  background-color: #00ed89;
+  background-color: #CD5958;
 }
 
 .bar-label {
@@ -126,12 +126,16 @@
   margin: -1.7em 0;
 }
 
-.bar-average-line.green {
-  border-right: 1px dotted #00ed89;
+.bar-average-line.black-race {
+  border-right: 1px dotted #CD5958;
 }
 
-.bar-average-line.purple {
-  border-right: 1px dotted #c14ef8;
+.bar-average-line.white-race {
+  border-right: 1px dotted #AADFED;
+}
+
+.bar-average-line.gray {
+  border-right: 1px dotted rgba(255, 255, 255, 0.2);
 }
 
 .viz-number-line {
@@ -151,19 +155,18 @@
   z-index: 2;
 }
 
-.viz-number-line-point.green {
-  background-color: #00ed89;
+.viz-number-line-point.black-race {
+  background-color: #CD5958;
 }
 
-.viz-number-line-point.purple {
-  background-color: #c14ef8;
+.viz-number-line-point.white-race {
+  background-color: #AADFED;
 }
 
 /* General viz stuff; shared for easy mobile resizing! */
 
 .viz-county-name-column {
   width: 110px;
-  line-height: 1;
 }
 
 .viz-plot-column {
@@ -192,23 +195,23 @@
 }
 
 .cash-bar {
-  background-color: rgba(0, 237, 137, 1);
+  background-color: rgba(205, 89, 88, 1);
 }
 
 .unsecured-bar {
-  background-color: rgba(117, 203, 214, 1);
+  background-color: rgba(218, 137, 137, 1);
 }
 
 .nonmonetary-bar {
-  background-color: rgba(48, 48, 48, 1);
+  background-color: rgba(236, 255, 253, 1);
 }
 
 .ror-bar {
-  background-color: rgba(193, 78, 248, 1);
+  background-color: rgba(159, 208, 215, 1);
 }
 
 .nominal-bar {
-  background-color: rgba(253, 177, 255, 1);
+  background-color: rgba(121, 129, 169, 1);
 }
 
 .dist-row {
@@ -241,23 +244,23 @@
 }
 
 #dist-graph-container:hover .cash-bar {
-  background-color: rgba(0, 237, 137, 0.4);
+  background-color: rgba(205, 89, 88, 0.4);
 }
 
 #dist-graph-container:hover .unsecured-bar {
-  background-color: rgba(117, 203, 214, 0.4);
+  background-color: rgba(218, 137, 137, 0.4);
 }
 
 #dist-graph-container:hover .nonmonetary-bar {
-  background-color: rgba(48, 48, 48, 0.4);
+  background-color: rgba(236, 255, 253, 0.4);
 }
 
 #dist-graph-container:hover .ror-bar {
-  background-color: rgba(193, 78, 248, 0.4);
+  background-color: rgba(159, 208, 215, 0.4);
 }
 
 #dist-graph-container:hover .nominal-bar {
-  background-color: rgba(253, 177, 255, 0.4);
+  background-color: rgba(121, 129, 169, 0.4);
 }
 
 /* Allow specific row to remain highlighted on hover */
@@ -266,23 +269,23 @@
 }
 
 #dist-graph-container .dist-row:hover .cash-bar {
-  background-color: rgba(0, 237, 137, 1);
+  background-color: rgba(205, 89, 88, 1);
 }
 
 #dist-graph-container .dist-row:hover .unsecured-bar {
-  background-color: rgba(117, 203, 214, 1);
+  background-color: rgba(218, 137, 137, 1);
 }
 
 #dist-graph-container .dist-row:hover .nonmonetary-bar {
-  background-color: rgba(48, 48, 48, 1);
+  background-color: rgba(236, 255, 253, 1);
 }
 
 #dist-graph-container .dist-row:hover .ror-bar {
-  background-color: rgba(193, 78, 248, 1);
+  background-color: rgba(159, 208, 215, 1);
 }
 
 #dist-graph-container .dist-row:hover .nominal-bar {
-  background-color: rgba(253, 177, 255, 1);
+  background-color: rgba(121, 129, 169, 1);
 }
 
 .county-dist-row-container .dist-county-name {

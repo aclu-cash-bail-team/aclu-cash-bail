@@ -28,9 +28,9 @@ export const SMALL_PHONE = "SMALL_PHONE";
 
 export const BAIL_RATE_MAP_COLOR_CONFIG = {
   domain: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
-  colors: ["#75BFD1", "#AADFED", "#D8EDF2", "#EECCCD", "#DA8989", "#CD5958", "#7B3535"]
+  colors: ["#75bfd1", "#aadfed", "#d8edf2", "#eecccd", "#da8989", "#cd5958", "#7b3535"]
 };
 export const BAIL_RATE_RACE_MAP_COLOR_CONFIG = {
   domain: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
-  colors: ["#75BFD1", "#AADFED", "#D8EDF2", "#EECCCD", "#DA8989", "#CD5958", "#7B3535"]
+  colors: ["#75bfd1", "#aadfed", "#d8edf2", "#eecccd", "#da8989", "#cd5958", "#7b3535"]
 };
