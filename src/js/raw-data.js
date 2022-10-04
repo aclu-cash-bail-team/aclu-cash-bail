@@ -29,7 +29,7 @@ export const STATE_DATA = {
   "cash_bail_cases": 166299,
   "ror_cases": 86149,
   "avg_bail_amount": 34450.1196,
-  "non_posting_rate": 0.632, // TODO: should be more granular?
+  "non_posting_rate": 0.588236,
   "cash_bail_pct_black": 0.559,
   "cash_bail_cases_black": 63922,
   "cash_bail_pct_white": 0.365,
