@@ -547,9 +547,7 @@ export class Table {
     // set up outlier button
     const outlierButtons =
       this.container.getElementsByClassName("outliers-btn");
-    if (outlierButtons.length > 0) {
-      const outlierButton = outlierButtons[0];
-
+    for (const outlierButton of outlierButtons) {
       outlierButton.addEventListener("click", (e) => {
         if (this.toggleOutliers()) {
           e.target.classList.add("showing");
